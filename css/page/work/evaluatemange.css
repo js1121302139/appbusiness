@@ -3,7 +3,6 @@ html {
   background-color: #f5f5f5;
 }
 .mui-content {
-  overflow: hidden;
   font-size: 0.87rem;
   color: #333;
   background-color: #f5f5f5;
@@ -21,13 +20,13 @@ html {
   color: #333;
 }
 .btn-gradient {
-  padding: 10px;
+  padding: 0.625rem;
   background: -moz-linear-gradient(top, #0AADFE, #0D80EF);
   background: linear-gradient(top, #0AADFE, #0D80EF);
   background: -webkit-linear-gradient(top, #0AADFE, #0D80EF);
 }
 .btn-delete {
-  padding: 10px;
+  padding: 0.625rem;
   background: -moz-linear-gradient(top, #f15d5d, #f10101);
   background: linear-gradient(top, #f15d5d, #f10101);
   background: -webkit-linear-gradient(top, #f15d5d, #f10101);
@@ -192,21 +191,21 @@ input[type=submit]:enabled:active {
 }
 .bgImg {
   background: url(../../img/work_footer-01.png) center center no-repeat;
-  background-position-y: -33px;
+  background-position-y: -2.0625rem;
 }
 .bgImg1 {
   background: url(../../img/work_footer-02.png) center center no-repeat;
-  background-position-y: -33px;
+  background-position-y: -2.0625rem;
 }
 .bgImg2 {
   background: url(../../img/work_footer-03.png) center center no-repeat;
-  background-position-y: -33px;
+  background-position-y: -2.0625rem;
 }
 .mui-bar-tab .mui-tab-item .mui-icon {
   width: 2.06rem;
   height: 2.06rem;
   transition: all 0.5s;
-  background-size: 33px 4.12rem;
+  background-size: 2.0625rem 4.12rem;
 }
 .mui-bar img {
   width: 1.75rem;
@@ -349,12 +348,12 @@ table {
 .topBar {
   padding-top: 1.25rem;
   height: 4rem;
-  box-shadow: 0 1px 6px #ccc;
+  box-shadow: 0 0.0625rem 0.375rem #ccc;
 }
 .topBar .topBack-ico {
   display: inline-block;
-  width: 44px;
-  height: 44px;
+  width: 2.75rem;
+  height: 2.75rem;
   background: url("../../../img/topBackB-ico.png") left center no-repeat;
   background-size: 1.25rem 1.25rem;
 }
@@ -365,17 +364,17 @@ table {
 }
 .topBar .rightIco {
   display: block;
-  width: 44px;
-  height: 44px;
+  width: 2.75rem;
+  height: 2.75rem;
 }
 .mui-content {
   padding-top: 4rem !important;
 }
 .topBar {
   background: url("../../../images/evaluateBg.png") left top no-repeat;
-  background-size: 100% 86px;
+  background-size: 100% 5.375rem;
   box-shadow: none;
-  height: 86px;
+  height: 5.375rem;
 }
 .topBar * {
   color: #fff !important;
@@ -386,10 +385,12 @@ body,
   height: 100%;
   min-height: 100%;
   overflow: hidden;
+  background: #fff;
 }
 .mui-content {
   height: 100%;
   min-height: 100%;
+  background-color: #fff ;
 }
 .evaluateBox {
   position: fixed;
@@ -401,53 +402,56 @@ body,
 .evaluate-top {
   display: flex;
   flex: 1;
-  justify-content: space-between;
   align-items: center;
-  padding: 0 5px 0 10px;
-  height: 50px;
+  justify-content: space-between;
+  padding: 0 0.3125rem 0 0.625rem;
+  height: 3.125rem;
   margin: 0 auto;
-  box-shadow: 0px 4px 7px 2px rgba(184, 184, 184, 0.41);
+  box-shadow: 0px 0.25rem 0.4375rem 0.125rem rgba(184, 184, 184, 0.41);
   border-radius: 5px;
   z-index: 9999;
   background-color: #fff;
-  font-size: 15px;
+  font-size: 0.9375rem;
 }
 .evaluate-top .evaluateCount {
-  text-indent: 28px;
+  text-indent: 1.75rem;
   height: 1.37rem;
-  line-height: 22px;
+  line-height: 1.375rem;
   color: #333;
   background: url("../../../img/evaluate-ico.png") left center no-repeat;
-  background-size: 22px 22px;
+  background-size: 1.37rem 1.37rem;
 }
-.evaluate-top .evaluateStar {
+.evaluate-top .starLv {
+  display: flex;
+}
+.evaluate-top .starLv .evaluateStar {
   display: flex;
   width: 6.71rem;
   justify-content: space-between;
   position: relative;
 }
-.evaluate-top .evaluateStar .evaluateStarsLine {
-  width: 15px;
-  height: 15px;
+.evaluate-top .starLv .evaluateStar .evaluateStarsLine {
+  width: 0.9375rem;
+  height: 0.9375rem;
   background-image: url("../../../img/bigStarLine-ico.png");
   background-position-y: 0px;
-  background-size: 15px 15px;
+  background-size: 0.9375rem 0.9375rem;
 }
-.evaluate-top .evaluateStar .evaluateStars {
+.evaluate-top .starLv .evaluateStar .evaluateStars {
   position: absolute;
   width: 100%;
   left: 0;
 }
-.evaluate-top .evaluateStar .evaluateStars .evaluateStarsitem {
-  width: 15px;
-  height: 15px;
+.evaluate-top .starLv .evaluateStar .evaluateStars .evaluateStarsitem {
+  width: 0.9375rem;
+  height: 0.9375rem;
   float: left;
   margin-right: 0.5rem;
   background-image: url("../../../img/bigStar-ico.png.png");
   background-position-y: 0px;
-  background-size: 15px 15px;
+  background-size: 0.9375rem 0.9375rem;
 }
-.evaluate-top .evaluateStar .evaluateStars .evaluateStarsitem:last-child {
+.evaluate-top .starLv .evaluateStar .evaluateStars .evaluateStarsitem:last-child {
   margin-right: 0;
 }
 .mui-content {
@@ -469,8 +473,9 @@ body,
   display: none;
 }
 .mui-content .wrappers .wrapperList .wrapperListItem {
-  padding: 12px 12.5px;
+  padding: 0.75rem 0.78125rem;
   position: relative;
+  background-color: #fff ;
 }
 .mui-content .wrappers .wrapperList .wrapperListItem .ListItemTop {
   display: flex;
@@ -478,12 +483,12 @@ body,
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  height: 41px;
-  margin-bottom: 12px;
+  height: 2.5625rem;
+  margin-bottom: 0.75rem;
 }
 .mui-content .wrappers .wrapperList .wrapperListItem .ListItemTop img {
-  width: 41px;
-  height: 41px;
+  width: 2.5625rem;
+  height: 2.5625rem;
   margin-right: 0.68rem;
   border-radius: 20.5px;
 }
@@ -491,24 +496,26 @@ body,
   display: flex;
   flex: 1;
   flex-direction: column;
-  height: 30px;
+  height: 1.875rem;
 }
 .mui-content .wrappers .wrapperList .wrapperListItem .ListItemTop .userInfo .userName {
   align-self: flex-start;
-  margin-bottom: 5px;
+  margin-bottom: 0.3125rem;
+  font-size: 0.87rem;
+  color: #333;
 }
 .mui-content .wrappers .wrapperList .wrapperListItem .ListItemTop .userInfo .evaluateStar {
   display: flex;
-  width: 82px;
+  width: 5.125rem;
   justify-content: space-between;
   position: relative;
 }
 .mui-content .wrappers .wrapperList .wrapperListItem .ListItemTop .userInfo .evaluateStar .evaluateStarsLine {
-  width: 12px;
-  height: 12px;
+  width: 0.75rem;
+  height: 0.75rem;
   background-image: url("../../../img/smallStarLine-ico.png.png");
   background-position-y: 0px;
-  background-size: 12px 12px;
+  background-size: 0.75rem 0.75rem;
 }
 .mui-content .wrappers .wrapperList .wrapperListItem .ListItemTop .userInfo .evaluateStar .evaluateStars {
   position: absolute;
@@ -516,35 +523,41 @@ body,
   left: 0;
 }
 .mui-content .wrappers .wrapperList .wrapperListItem .ListItemTop .userInfo .evaluateStar .evaluateStars .evaluateStarsitem {
-  width: 12px;
-  height: 12px;
+  width: 0.75rem;
+  height: 0.75rem;
   float: left;
-  margin-right: 5.5px;
+  margin-right: 0.34375rem;
   background-image: url("../../../img/smallStar-ico.png.png");
   background-position-y: 0px;
-  background-size: 12px 12px;
+  background-size: 0.75rem 0.75rem;
 }
 .mui-content .wrappers .wrapperList .wrapperListItem .ListItemTop .userInfo .evaluateStar .evaluateStars .evaluateStarsitem:last-child {
   margin-right: 0;
 }
 .mui-content .wrappers .wrapperList .wrapperListItem .ListItemTop .evaluateDate {
   align-self: flex-start;
+  padding-top: 0.34rem;
+  font-size: 0.75rem;
+  color: #999;
+}
+.mui-content .wrappers .wrapperList .wrapperListItem .ListItemTop .evaluateMsg {
+  line-height: 1.25rem;
 }
 .mui-content .wrappers .wrapperList .wrapperListItem:after {
   position: absolute;
   content: " ";
   display: block;
   width: 95%;
-  height: 1px;
+  height: 0.0625rem;
   right: 0px;
   left: 0;
-  bottom: -1px;
+  bottom: -0.0625rem;
   margin: auto;
   background-color: #e5e5e5;
   transform: scaleY(0.5);
 }
 .evaluateNum {
-  margin-left: 10px;
-  font-size: 15px;
+  margin-left: 0.625rem;
+  font-size: 0.9375rem;
   color: #D7B374;
 }

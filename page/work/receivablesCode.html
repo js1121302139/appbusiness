@@ -26,8 +26,7 @@
 				</div>
 				<!--内容区-->
 				<div class="mui-card-content qrcodeBox">
-					<div id="qrcode" style="width:18.75rem; height:18.75rem; padding: 0.62rem; "></div>
-					<!--<img id="myMoneyCode" src="" width="300" height="300" alt="" />-->
+					<div id="qrcode" style="width:18.75rem; height:18.75rem;"></div>
 				</div>
 				<!--页脚，放置补充信息或支持的操作-->
 				<div class="card-footer mui-text-center">使用兑咖APP消费端扫一扫，向我付款</div>
@@ -36,9 +35,14 @@
 		<script src="../../js/mui.min.js"></script>
 		<script type="text/javascript" src="../../js/muihelper.js"></script>
 		<script type="text/javascript" src="../../js/qrcode.min.js"></script>
-		<script type="text/javascript" src="../../js/page/work/receivablesCode.js"></script>
+<!--		<script type="text/javascript" src="../../js/page/work/receivablesCode.js"></script>-->
 		<script type="text/javascript">
-			
+			var qrCodeBox = document.getElementById("qrcode");
+			var qrcode = new QRCode(qrCodeBox, {
+				width: qrCodeBox.clientHeight,
+				height: qrCodeBox.clientWidth
+			});
+			qrcode.makeCode('null?type=2&inviterUserId=445&merchantId=538');
 		</script>
 
 	</body>

@@ -22,7 +22,7 @@
 			</header>
 			<div class="mui-content">
 				<div class="activityBg">
- 
+
 				</div>
 				<div id="segmentedControl" class="mui-segmented-control mui-segmented-control-inverted mui-segmented-control-primary">
 					<a class="mui-control-item mui-active" href="#wrappers"><span>自建活动</span></a>
@@ -64,7 +64,7 @@
 				</div>
 				<div id="dayLsit" class="dayLsit mui-text-center mui-clearfix">
 					<div class="dayList-item" v-for="item in noneDay"></div>
-					<div @click="updateRoomNum(item.f2c)" :class="{active: item.isActive}" class="dayList-item" v-for="(item,key) in showDay" v-text="item.day"></div>
+					<div @click="updateRoomNum(key)" :class="{active: item.isActive}" class="dayList-item" v-for="(item,key) in showDay" v-text="item.day"></div>
 					<!--
 					<div class="dayList-item">1</div>
 					<div class="dayList-item">1</div>
@@ -80,7 +80,7 @@
 					<div class="dayList-item">1</div>-->
 				</div>
 				<div class="roomNum" v-if="isShowRoom">
-					<p id="editRoom" @click="changeRoom(activityId)" class="countRoom" v-text="'房间数量:'+ roomNum"> <img src="" alt="" /></p>
+					<p id="editRoom" @click="changeRoom(activityId,keys)" class="countRoom" v-text="'房间数量:'+ roomNum"> <img src="" alt="" /></p>
 					<p class="sellRoomNum" v-text="'已售数量:'+ soldNum"> 0</p>
 				</div>
 			</div>
@@ -93,7 +93,7 @@
 								<p v-text="item.remark">兑咖狂欢F2C积分够，全场8折畅心购</p>
 							</div>
 							<div :class="'activityState mui-text-center stateBg'+item.state">
-								<p class="runState">审批中</p>
+								<p class="runState">{{item.state==0?'审核中':item.activityDate | activityState}}</p>
 								<a href="javascript:;" class="rmActiveityBtn" @click="offShelfActivity(item.id)">撤销</a>
 							</div>
 						</li>
@@ -129,6 +129,7 @@
 						roomNum: 0,
 						soldNum: 0,
 						activityId: null,
+						keys:null
 					}
 				},
 				created: function() {
@@ -137,9 +138,9 @@
 					this.nowM = this.nowDate.getMonth() + 1;
 					this.nowD = this.nowDate.getDate();
 					mui.plusReady(function() {
-						
-						if(Fun_App.getdata("shopType")!="null"){
-							_this.isShowRoom=true
+
+						if(Fun_App.getdata("shopType") != "null") {
+							_this.isShowRoom = true
 						}
 						window.addEventListener("selfBuildActivity", function() {
 							_this.selfBuildActivity(function(resData) {
@@ -205,7 +206,7 @@
 								callBack(data)
 							}
 						}
-						console.log(sendData.config.activityDate)
+						/*console.log(sendData.config.activityDate)*/
 						Fun_App.ExAjax("merchantActivity/f2cActivity", sendData)
 					},
 					open: function() {
@@ -264,19 +265,9 @@
 							f2cActivityRoomNum: [],
 							f2cActivitySoldRoom: []
 						}
-						this.f2cActivity(function(resData) {
-							for(var i = 0; i < resData.data.length; i++) {
-								f2cActivityInfo.f2cActivityDay.push(resData.data[i].activityDate.split("-")[2]);
-								f2cActivityInfo.f2cActivityDayId.push(resData.data[i].id);
-								f2cActivityInfo.f2cActivityRoomNum.push(resData.data[i].roomNum)
-								f2cActivityInfo.f2cActivitySoldRoom.push(resData.data[i].saleNum)
-							}
-						}, this.nowM)
-
-						console.log(1 + f2cActivityInfo)
 						for(var i = 1; i <= yearArr[this.nowM - 1]; i++) {
-							var stri = (i <= 9 ? '0' + i : i).toString();
-							var f2cArrIndex = f2cActivityInfo.f2cActivityDay.indexOf(stri);
+							//var stri = (i <= 9 ? '0' + i : i).toString();
+							/*var f2cArrIndex = f2cActivityInfo.f2cActivityDay.indexOf(stri);
 							if(f2cArrIndex != -1) {
 								this.showDay.push({
 									day: stri,
@@ -292,17 +283,41 @@
 									day: stri,
 									isActive: false
 								})
-							}
+							}*/
+							this.showDay.push({
+								day: i,
+								isActive: false,
+								f2c: {
+									activityId: 0,
+									RoomNum: 0,
+									SoldRoom: 0,
+								}
+							})
 						}
-						console.log(JSON.stringify(this.showDay))
+						setTimeout(function() {
+
+							console.log(1)
+							_this.f2cActivity(function(resData) {
+								for(var i = 0; i < resData.data.length; i++) {
+									var day = Number(resData.data[i].activityDate.split("-")[2]);
+									_this.showDay[day - 1].isActive = true;
+									_this.showDay[day - 1].f2c.activityId = resData.data[i].id;
+									_this.showDay[day - 1].f2c.RoomNum = resData.data[i].roomNum;
+									_this.showDay[day - 1].f2c.SoldRoom = resData.data[i].saleNum;
+								}
+								console.log(JSON.stringify(_this.showDay))
+							}, _this.nowM)
+						}, 0)
+
+						/*console.log(JSON.stringify(this.showDay))*/
 						/*this.showDay = yearArr[this.nowM - 1]*/
 					},
-					updateRoomNum: function(f2c) {
-						if(f2c != undefined) {
-							this.roomNum = f2c.RoomNum;
-							this.soldNum = f2c.SoldRoom;
-							this.activityId = f2c.activityId;
-						}
+					updateRoomNum: function(key) {
+						console.log(JSON.stringify(this.showDay[key]))
+						this.roomNum = this.showDay[key].f2c.RoomNum;
+						this.soldNum = this.showDay[key].f2c.SoldRoom;
+						this.activityId = this.showDay[key].f2c.activityId;
+						this.keys = key;
 					},
 					changeRoom: function(id) {
 						var _this = this;
@@ -321,12 +336,24 @@
 						mui.prompt('', this.roomNum, '房间数量', ['取消', '确认'], function(e) {
 							if(e.index) {
 								sendData.config.roomNum = _this.roomNum = e.value;
-								console.log("-->" + _this.roomNum)
-								console.log(JSON.stringify(sendData.config))
+								_this.showDay[_this.keys].f2c.RoomNum=e.value;
 								Fun_App.ExAjax("merchantActivity/updateRoomNum", sendData);
 							}
 						}, 'div')
 						document.querySelector("input").setAttribute("type", "tel")
+
+					}
+				},
+				filters: {
+					activityState: function(val) {
+						var nowDate = new Date().getTime(),
+							activityDate = new Date(val).getTime();
+
+						if(nowDate < activityDate) {
+							return "未开始";
+						} else {
+							return "进行中";
+						}
 
 					}
 				}
