@@ -1,0 +1,644 @@
+{
+	"index.html": {
+		"resources": [
+			"js/mui.min.js",
+			"page/work/home.html",
+			"css/mui.min.css",
+			"css/page/common.css",
+			"img/work_footer-03.png",
+			"img/work_footer-02.png",
+			"img/work_footer-01.png",
+			"img/work_footer-01-active.png",
+			"img/ico-index3.png",
+			"img/ico-index1.png",
+			"img/ico-index2.png",
+			"js/muihelper.js"
+		],
+		"refer": [
+			"page/work/home.html",
+			"page/order/myorder.html",
+			"page/account/myaccount.html"
+		]
+	},
+	"page/work/home.html": {
+		"resources": [
+			"img/work-msgico.png",
+			"img/work-qrcode.png",
+			"img/work-tab-02.png",
+			"img/work-tab-08.png",
+			"img/work-tab-07.png",
+			"img/work-tab-01.png",
+			"img/work-tab-09.png",
+			"img/work-tab-04.png",
+			"img/work-postiom.png",
+			"img/work-head.png",
+			"img/work-tab-06.png",
+			"css/page/work/home.css",
+			"img/work-tab-03.png",
+			"img/work-tab-05.png",
+			"css/mui.min.css",
+			"js/muihelper.js",
+			"js/mui.min.js",
+			"page/work/myincome.html",
+			"page/work/myuser.html",
+			"img/work-yg.png",
+			"js/page/work/home.js",
+			"img/home-header-bg.png",
+			"images/detail_head_01.png",
+			"img/home-profit-bg.png",
+			"js/common.js",
+			"img/work-reserve-ico.png",
+			"img/work-partyAdmin-ico.png"
+		],
+		"refer": [
+			"page/work/myincome.html",
+			"page/work/myshop.html",
+			"page/work/shareprofit.html",
+			"page/work/evaluatemange.html",
+			"page/work/activityCenter.html",
+			"page/work/myuser.html",
+			"page/work/dataAnalysis.html",
+			"page/work/msgcenter.html",
+			"page/work/receivablesCode.html",
+			"page/work/teamAdmin.html",
+			"page/work/promotionAward.html",
+			"page/work/changeShop.html",
+			"page/work/partyAdmin.html",
+			"page/work/budgetAdmin.html"
+		]
+	},
+	"page/work/msgcenter.html": {
+		"resources": [
+			"css/page/work/msgcenter.css",
+			"img/��o.png",
+			"fonts/mui.ttf",
+			"img/work-msg.png",
+			"img/msgcenter.png",
+			"css/mui.min.css",
+			"js/mui.min.js",
+			"js/muihelper.js",
+			"js/page/work/msgcenter.js",
+			"css/pullToRefresh.css",
+			"img/topBack-ico.png",
+			"img/ico-data02.png",
+			"img/order-ListGo-ico.png"
+		],
+		"refer": [
+			"page/work/messageArticle.html"
+		]
+	},
+	"page/work/myuser.html": {
+		"resources": [
+			"img/user.png",
+			"css/page/textarea.css",
+			"img/banner-.png",
+			"js/mui.js",
+			"css/page/work/myuser.css",
+			"fonts/mui.ttf",
+			"img/work-head.png",
+			"css/mui.min.css",
+			"js/muihelper.js",
+			"js/page/work/myuser.js",
+			"img/topBack-ico.png",
+			"css/pullToRefresh.css",
+			"js/iscroll.js",
+			"js/pullToRefresh.js"
+		]
+	},
+	"page/work/myincome.html": {
+		"resources": [
+			"css/page/work/myincome.css",
+			"fonts/mui.ttf",
+			"js/muihelper.js",
+			"js/mui.min.js",
+			"css/mui.min.css",
+			"page/work/applysettlement.html",
+			"js/page/work/myincome.js",
+			"img/topBack-ico.png",
+			"css/pullToRefresh.css",
+			"img/topBackB-ico.png",
+			"js/iscroll.js",
+			"images/order-bg.png",
+			"js/vue.min.js",
+			"js/pullToRefresh.js"
+		],
+		"refer": [
+			"page/work/applysettlement.html",
+			"page/work/jsdentail.html"
+		]
+	},
+	"page/work/applysettlement.html": {
+		"resources": [
+			"css/page/work/applysettlement.css",
+			"page/work/myincome.html",
+			"js/page/work/applysettlement.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"img/topBack-ico.png"
+		],
+		"refer": [
+			"page/work/myincome.html"
+		]
+	},
+	"page/work/myshop.html": {
+		"resources": [
+			"css/page/work/myshop.css",
+			"img/account_myshop_moneybox.png",
+			"images/detail_head_01.png",
+			"fonts/mui.ttf",
+			"img/icon-location.png",
+			"js/muihelper.js",
+			"js/mui.min.js",
+			"css/mui.min.css"
+		]
+	},
+	"page/order/myorder.html": {
+		"resources": [
+			"img/close-icon.png",
+			"js/jquery-1.11.0.js",
+			"img/help-wh.png",
+			"css/page/order/myorder.css",
+			"js/muihelper.js",
+			"js/mui.min.js",
+			"css/mui.min.css",
+			"fonts/mui.ttf",
+			"js/mui.js",
+			"js/page/order/myorder.js",
+			"images/order-bg.png",
+			"js/mui.pullToRefresh.material.js",
+			"js/mui.pullToRefresh.js",
+			"js/pullToRefresh.js",
+			"js/pullToRefresh.mini.js",
+			"js/iscroll.js",
+			"css/pullToRefresh.css",
+			"img/order-ListDate-ico.png",
+			"img/order-ListGo-ico.png",
+			"images/order-ListBg.png",
+			"img/orderQuestion-ico.png",
+			"js/vue.min.js"
+		],
+		"refer": [
+			"page/order/orderdentail.html"
+		]
+	},
+	"login.html": {
+		"resources": [
+			"img/ico-login-logo.png",
+			"js/muihelper.js",
+			"js/mui.min.js",
+			"img/ico-login-phone.png",
+			"fonts/mui.ttf",
+			"images/60x60.gif",
+			"css/mui.min.css",
+			"img/ico-login-yzm.png",
+			"img/ico-login-pwd.png",
+			"css/copy/common.css",
+			"css/copy/login.css",
+			"js/common.js",
+			"images/login-bg.png",
+			"img/loginLogo.png",
+			"css/page/login.css",
+			"img/loginPwd-ico.png",
+			"img/loginPhoneNum-ico.png"
+		],
+		"refer": [
+			"index.html",
+			"repwd.html"
+		]
+	},
+	"page/account/myaccount.html": {
+		"resources": [
+			"images/detail_head_01.png",
+			"img/help_icon.png",
+			"img/security_icon.png",
+			"img/aboutydw_icon.png",
+			"img/inforemind_icon.png",
+			"img/contact_icon.png",
+			"img/clear_icon.png",
+			"css/page/account/account.css",
+			"img/customer .png",
+			"img/edition_icon.png",
+			"img/info_icon.png",
+			"fonts/mui.ttf",
+			"js/muihelper.js",
+			"js/mui.min.js",
+			"css/mui.min.css",
+			"images/user-img.png",
+			"js/page/accounnt/myaccount.js",
+			"img/customer.png"
+		],
+		"refer": [
+			"login.html",
+			"page/work/msgcenter.html",
+			"page/account/safeCenter.html",
+			"page/account/helpCenter.html",
+			"page/account/aboutyundui.html"
+		]
+	},
+	"page/work/shareprofit.html": {
+		"resources": [
+			"fonts/mui.ttf",
+			"css/page/work/shareprofit.css",
+			"js/muihelper.js",
+			"js/mui.min.js",
+			"css/mui.min.css",
+			"js/page/work/shareprofit.js",
+			"css/pullToRefresh.css",
+			"img/topBack-ico.png",
+			"img/topBackB-ico.png",
+			"img/order-ListGo-ico.png",
+			"js/iscroll.js",
+			"images/order-bg.png",
+			"js/vue.min.js",
+			"js/pullToRefresh.js"
+		],
+		"refer": [
+			"page/work/gxapplysettlement.html",
+			"page/work/gxjsdentail.html",
+			"page/work/monthlyEarnings.html",
+			"page/work/jsdentail.html",
+			"page/work/applysettlement.html"
+		]
+	},
+	"page/work/gxapplysettlement.html": {
+		"resources": [
+			"css/page/work/applysettlement.css",
+			"js/muihelper.js",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
+		]
+	},
+	"page/work/gxjsdentail.html": {
+		"resources": [
+			"css/page/work/jsdentail.css",
+			"js/muihelper.js",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
+		]
+	},
+	"page/work/evaluatemange.html": {
+		"resources": [
+			"img/evaluate.png",
+			"img/star-light.png",
+			"images/user-img.png",
+			"css/page/work/evaluatemange.css",
+			"js/muihelper.js",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"img/star-dark.png",
+			"js/page/work/evaluatemange.js",
+			"images/evaluateBg.png",
+			"img/evaluate-ico.png",
+			"img/bigStarLine-ico.png",
+			"img/bigStar-ico.png.png",
+			"css/pullToRefresh.css",
+			"js/iscroll.js",
+			"js/pullToRefresh.js",
+			"img/smallStar-ico.png.png",
+			"img/topBackB-ico.png"
+		]
+	},
+	"page/work/activityCenter.html": {
+		"resources": [
+			"js/page/date.js",
+			"images/activityCenterBg.png",
+			"css/page/work/activityCenter.css",
+			"js/muihelper.js",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"js/page/work/activityCenter.js",
+			"images/stateBg1.png",
+			"img/activityMNext-ico.png",
+			"images/stateBg2.png",
+			"img/activityMPre-ico.png",
+			"img/activeity-editIco.png",
+			"css/pullToRefresh.css",
+			"img/topBack-ico.png",
+			"js/iscroll.js",
+			"js/pullToRefresh.js"
+		],
+		"refer": [
+			"page/work/createactivity.html"
+		]
+	},
+	"page/work/dataAnalysis.html": {
+		"resources": [
+			"img/ico-data01.png",
+			"js/echarts.min.js",
+			"css/page/work/dataAnalysis.css",
+			"img/ico-data03.png",
+			"fonts/mui.ttf",
+			"images/dataanalysis-Topbg.png",
+			"img/ico-data02.png",
+			"js/muihelper.js",
+			"js/mui.min.js",
+			"css/mui.min.css",
+			"js/page/work/dataAnalysis.js"
+		]
+	},
+	"page/work/receivablesCode.html": {
+		"resources": [
+			"css/page/work/receivablesCode.css",
+			"js/muihelper.js",
+			"js/mui.min.js",
+			"img/work-head.png",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"js/page/work/receivablesCode.js",
+			"js/qrcode.min.js",
+			"img/topBack-ico.png",
+			"images/receivablesCode-bg.png"
+		]
+	},
+	"page/work/createactivity.html": {
+		"resources": [
+			"js/mui.picker.min.js",
+			"css/mui.dtpicker.css",
+			"css/mui.picker.min.css",
+			"css/page/work/createacrivity.css",
+			"js/muihelper.js",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"js/page/work/createactivity.js"
+		]
+	},
+	"page/order/orderdentail.html": {
+		"resources": [
+			"images/user-img.png",
+			"css/page/order/orderdentail.css",
+			"fonts/mui.ttf",
+			"js/muihelper.js",
+			"js/mui.min.js",
+			"css/mui.min.css"
+		]
+	},
+	"page/work/jsdentail.html": {
+		"resources": [
+			"css/page/work/jsdentail.css",
+			"css/mui.min.css",
+			"js/page/work/jsdentail.js",
+			"css/pullToRefresh.css",
+			"img/topBack-ico.png"
+		]
+	},
+	"page/account/safeCenter.html": {
+		"resources": [
+			"img/ico-safecenter-3.png",
+			"img/ico-safecenter-2.png",
+			"css/page/account/safeCenter.css",
+			"img/ico-safecenter-4.png",
+			"img/ico-safecenter-1.png",
+			"css/mui.min.css",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"js/muihelper.js",
+			"js/page/accounnt/safeCenter.js",
+			"img/topBack-ico.png"
+		],
+		"refer": [
+			"page/account/safepay.html",
+			"page/account/bindWeixin.html",
+			"page/account/safelogin.html",
+			"page/account/bindBankCard.html"
+		]
+	},
+	"page/account/safepay.html": {
+		"resources": [
+			"css/page/account/safelogin.css",
+			"css/mui.min.css"
+		]
+	},
+	"page/work/teamAdmin.html": {
+		"resources": [
+			"img/work-teamNull.png",
+			"css/page/work/teamAdmin.css",
+			"img/work-head.png",
+			"css/mui.min.css",
+			"js/muihelper.js",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"js/page/work/teamAdmin.js",
+			"img/topBack-ico.png",
+			"css/pullToRefresh.css",
+			"js/iscroll.js",
+			"js/pullToRefresh.js"
+		],
+		"refer": [
+			"page/work/addSonAccount.html"
+		]
+	},
+	"page/work/monthlyEarnings.html": {
+		"resources": [
+			"img/work-down.png",
+			"css/page/work/monthlyEarnings.css",
+			"css/mui.min.css",
+			"img/close-icon.png",
+			"js/mui.min.js",
+			"js/muihelper.js",
+			"fonts/mui.ttf",
+			"js/page/work/monthlyEarnings.js"
+		]
+	},
+	"page/work/addSonAccount.html": {
+		"resources": [
+			"js/mui.picker.min.js",
+			"js/mui.poppicker.js",
+			"css/mui.min.css",
+			"css/mui.poppicker.css",
+			"css/mui.picker.min.css",
+			"css/page/work/addSonAccount.css",
+			"js/muihelper.js",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"js/page/work/addSonAccount.js"
+		]
+	},
+	"page/work/promotionAward.html": {
+		"resources": [
+			"img/work-cashBtn.png",
+			"css/mui.min.css",
+			"css/page/work/promotionAward.css",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"js/muihelper.js",
+			"js/page/work/promotionAward.js",
+			"css/pullToRefresh.css",
+			"img/topBack-ico.png",
+			"img/topBackB-ico.png",
+			"js/iscroll.js",
+			"js/pullToRefresh.js"
+		],
+		"refer": [
+			"page/work/promotiondentail.html"
+		]
+	},
+	"page/work/promotiondentail.html": {
+		"resources": [
+			"css/page/work/jsdentail.css",
+			"js/muihelper.js",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"js/page/work/promotiondentail.js"
+		]
+	},
+	"page/account/bindWeixin.html": {
+		"resources": [
+			"js/common.js",
+			"js/muihelper.js",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"images/60x60.gif",
+			"css/mui.min.css",
+			"css/page/account/bindweixin.css"
+		],
+		"refer": [
+			"page/account/bindsuccess.html"
+		]
+	},
+	"page/account/bindsuccess.html": {
+		"resources": [
+			"js/common.js",
+			"js/muihelper.js",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"images/mine_icon_weixin_success.png"
+		]
+	},
+	"page/account/safelogin.html": {
+		"resources": [
+			"js/common.js",
+			"css/page/account/safelogin.css",
+			"css/mui.min.css"
+		]
+	},
+	"page/account/helpCenter.html": {
+		"resources": [
+			"css/mui.min.css",
+			"js/mui.min.js"
+		]
+	},
+	"page/account/aboutyundui.html": {
+		"resources": [
+			"images/aboutyundui.png",
+			"js/mui.min.js",
+			"css/mui.min.css",
+			"images/yunduifooter.png",
+			"css/page/work/aboutyundui.css",
+			"css/page/account/aboutyundui.css"
+		]
+	},
+	"page/work/changeShop.html": {
+		"resources": [
+			"js/muihelper.js",
+			"js/mui.min.js",
+			"css/mui.min.css",
+			"img/topBack-ico.png",
+			"css/page/work/changeShop.css"
+		]
+	},
+	"page/work/partyAdmin.html": {
+		"resources": [
+			"css/page/work/partyAdmin.css",
+			"img/createParty-ico.png",
+			"img/partyScanner-ico.png",
+			"css/pullToRefresh.css",
+			"js/mui.min.js",
+			"js/iscroll.js",
+			"css/mui.min.css",
+			"img/topBack-ico.png",
+			"js/pullToRefresh.js",
+			"js/muihelper.js"
+		],
+		"refer": [
+			"page/work/createParty.html",
+			"page/qrCode.html"
+		]
+	},
+	"page/work/budgetAdmin.html": {
+		"resources": [
+			"css/page/work/budgetAdmin.css",
+			"css/pullToRefresh.css",
+			"img/topBackB-ico.png",
+			"js/mui.min.js",
+			"images/budgetAdmin-bg.png",
+			"js/iscroll.js",
+			"css/mui.min.css",
+			"js/pullToRefresh.js"
+		]
+	},
+	"page/work/createParty.html": {
+		"resources": [
+			"js/mui.picker.min.js",
+			"css/page/work/createParty.css",
+			"js/mui.min.js",
+			"css/mui.min.css",
+			"img/createPartyjt-ico.png",
+			"css/mui.picker.min.css",
+			"js/muihelper.js",
+			"img/createPartyAdd-ico.png",
+			"img/createPartyAddImg-ico.png",
+			"images/createPartylogo.png",
+			"img/topBack-ico.png",
+			"img/createPartyImgDelete-ico.png",
+			"img/createPartyTit3-ico.png",
+			"img/createPartyTit2-ico.png",
+			"img/createPartyTit6-ico.png",
+			"img/createPartyTit5-ico.png",
+			"img/createPartyTit1-ico.png",
+			"img/createPartyTit4-ico.png",
+			"img/createPartyDelItemItem-ico.png"
+		]
+	},
+	"repwd.html": {
+		"resources": [
+			"img/loginPhoneCode-ico.png",
+			"css/page/repwd.css",
+			"img/topBackB-ico.png",
+			"css/mui.min.css"
+		]
+	},
+	"page/account/bindBankCard.html": {
+		"resources": [
+			"js/page/accounnt/bindBankCard.js",
+			"img/addbankCard-ico.png",
+			"css/mui.min.css",
+			"css/page/account/bindBankCard.css",
+			"images/jsyh.png"
+		],
+		"refer": [
+			"page/account/addBankCard.html"
+		]
+	},
+	"page/account/addBankCard.html": {
+		"resources": [
+			"js/mui.picker.min.js",
+			"js/mui.poppicker.js",
+			"img/order-ListGo-ico.png",
+			"css/mui.poppicker.css",
+			"css/mui.picker.min.css",
+			"js/addressArr.js",
+			"css/page/account/addBankCard.css",
+			"css/mui.min.css"
+		]
+	},
+	"page/qrCode.html": {
+		"resources": [
+			"img/game_icon01.png",
+			"page/qrcode/common.js",
+			"page/qrcode/common.css"
+		]
+	},
+	"page/work/messageArticle.html": {
+		"resources": [
+			"css/mui.min.css",
+			"css/page/work/messageArticle.css"
+		]
+	}
+}

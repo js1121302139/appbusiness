@@ -1,0 +1,181 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../../css/page/work/partyAdmin.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/pullToRefresh.css" />
+	</head>
+
+	<body>
+		<div id="partyAdmin">
+			<header class="mui-bar topBar mui-bar-nav">
+				<a class="mui-action-back topBack-ico mui-pull-left"></a>
+				<h1 class="mui-title">玩咖管理</h1>
+				<span id="createPartyRaiders" class=" mui-btn-blue mui-btn-link mui-pull-right">建趴攻略</span>
+			</header>
+			<div class="mui-content">
+				<div class="wrappers">
+					<div id="wrapper" class="wrapperList">
+						<ul>
+							<li class="listItem" v-for="(item,key) in list">
+
+								<div class="InfoTit">
+									<p class="partyTit mui-ellipsis" v-text="item.theme">
+									</p>
+									<p class="partyRoad">
+										<span v-text="partyType[item.type]"></span>
+									</p>
+									<p class="partyState" v-text="status[item.status]">
+
+									</p>
+								</div>
+								<div class="orderInfo">
+									<div class="orderInfoL">
+										<p class="orderMoney">
+											单价: ￥{{item.price}}
+										</p>
+										<p class="Sold">
+											已售: {{item.saleNumber}}/{{item.number}}
+										</p>
+										<p class="partyDate" v-show="item.prepareStartTime!=null">
+											众筹截止时间: {{item.prepareStartTime}}
+										</p>
+										<p class="crowdfundingEndTime">
+											活动时间: {{item.startTime}}
+										</p>
+									</div>
+									<div class="orderInfoR">
+										<div class="orderContainer mui-text-center">
+											<p class="orderContainerNum" v-text="item.useNumber==null?0:item.useNumber"></p>
+											<span class="orderContainerName">入场</span>
+										</div>
+									</div>
+								</div>
+
+								<div class="itemBottom mui-text-center">
+									<div class="orderSettlement" @click="open('Settlement',item.id)">
+										订单结算
+									</div>
+									<div class="seeInfo" @click="open('partyIn',item.id)">
+										查看详情
+									</div>
+								</div>
+							</li>
+							<li class="ListEnd mui-text-center">
+								<span>别再糟蹋生活 会在DUI的时代</span>
+							</li>
+						</ul>
+					</div> 
+
+				</div>
+			</div>
+			<footer class="mui-text-center">
+				<div class="createParty " id="createParty" @click="open('create','')">
+					<span class="footerico createParty-ico"></span>
+					<span>创建</span>
+				</div>
+				<div class="scanner" id="" @click="open('qrCode','')">
+					<span class="footerico partyScanner-ico"></span>
+					<span>扫描</span>
+				</div>
+			</footer>
+
+		</div>
+		<style>
+			.scannerBox {
+				position: absolute;
+				z-index: 10000;
+				top: 0;
+				background: #000;
+				width: 100%;
+				height: 100%;
+			}
+		</style>
+		<script src="../../js/mui.min.js"></script>
+		<script src="../../js/iscroll.js"></script>
+		<script src="../../js/pullToRefresh.js"></script>
+		<script type="text/javascript" src="../../js/muihelper.js"></script>
+		<script src="../../js/vue.min.js"></script>
+		<script type="text/javascript">
+			var Vue = new Vue({
+				el: "#partyAdmin",
+				data: {
+					status: {
+						'0': '未审核',
+						'1': "审核通过",
+						'2': "审核不通过",
+						"3": '下架',
+						"4": "众筹成功",
+						"5": "众筹失败"
+					},
+					partyType: {
+						3: "购票",
+						4: "众筹"
+					},
+					totalPage: null,
+					page: 1,
+					list: []
+				},
+				created: function() {
+					var _this = this;
+					mui.plusReady(function() {
+						refresher.init({
+							id: "wrapper",
+							pullUpAction: _this.Load
+						});
+						window.addEventListener("getPartyList", function() {
+							_this.getPartyList(function(resData) {
+								_this.list = resData.data;
+								_this.totalPage = resData.total;
+							});
+						})
+						_this.getPartyList(function(resData) {
+							_this.list = resData.data;
+							_this.totalPage = resData.total;
+						});
+					})
+				},
+				methods: {
+					getPartyList: function(callBack, page) {
+						var sendData = {
+							config: {
+								token: Fun_App.getdata("token"),
+								pageIndex: page
+							},
+							fun_Success: function(data) {
+								callBack(data);
+							}
+						}
+						Fun_App.ExAjax("merchantParty/playKaList", sendData)
+					},
+					open: function(openClass, id) {
+						var win = {
+							Settlement: './partySettlement.html',
+							partyIn: './partyIn.html',
+							create: './createParty.html',
+							qrCode: '../qrCode.html'
+						}
+						Fun_App.openWin(win[openClass], 'pop-in', id)
+					},
+					Load: function() {
+						this.page++;
+						var _this = this;
+						if(this.page < this.totalPage) {
+							this.getPartyList(function(resData) {
+								_this.list = _this.list.concat(resData.data);
+							}, this.page)
+						} else {
+							refresher.info.pullUpLable = '没有更多数据了!';
+						}
+						wrapper.refresh();
+					}
+				}
+			})
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <link href="../../css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../../css/page/account/helpCenter.css"/>
+</head>
+<style>
+
+</style>
+
+<body>
+	<div id="helpCenter">
+		<header class="mui-bar topBar mui-bar-nav">
+    <a class="mui-action-back topBack-ico mui-pull-left"></a>
+    <h1 class="mui-title">帮助中心</h1>
+</header>
+
+<div class="mui-content">
+    <div class="commonQuestions">
+        常见问题
+    </div>
+    <ul class="mui-table-view">
+        <li class="mui-table-view-cell mui-collapse" v-for="(item,key) in list">
+            <a class="mui-navigate-right" href="#" v-text="item.title">如何注册成兑咖会员</a>
+            <div class="mui-collapse-content" v-html="item.content">
+                如何注册成兑咖会员如何注册成兑咖会员如何注册成兑咖会员如何注册成兑咖会员 如何注册成兑咖会员如何注册成兑咖会员如何注册成兑咖会员如何注册成兑咖会员如何注册成兑咖会员
+                如何注册成兑咖会员如何注册成兑咖会员如何注册成兑咖会员如何注册成兑咖会员
+            </div>
+        </li>
+    </ul>
+</div>
+
+	</div>
+<script src="../../js/mui.min.js"></script>
+<script type="text/javascript" src="../../js/muihelper.js" ></script>
+<script type="text/javascript" src="../../js/page/accounnt/helpCenter.js"></script>
+<script type="text/javascript" src="../../js/vue.min.js" ></script>
+<script type="text/javascript">
+	var Vue = new Vue({
+		el:"#helpCenter",
+		data:function(){
+			return{
+				list:[]
+			}
+		},
+		created:function(){
+			var _this =this;
+			mui.plusReady(function(){
+				_this.getlist(function(resData){
+					_this.list=resData.data;
+				});
+			})
+		},
+		methods:{
+			getlist:function(callBack){
+				var sendData={
+					config:{
+						token:Fun_App.getdata("token")
+					},
+					fun_Success:function(data){
+						callBack(data);
+					}
+				}
+				Fun_App.ExAjax("merchantPerson/helpCenter",sendData);
+			}
+		}
+	})
+</script>
+</body>
+
+</html>

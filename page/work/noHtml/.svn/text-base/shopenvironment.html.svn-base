@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../../css/mui.min.css" rel="stylesheet" />
+		<link href="../../../css/page/common.css" rel="stylesheet" />
+		<link href="../../../css/page/work/shopenvironment.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title">店铺环境</h1>
+		</header>
+		<div class="mui-content">
+			<ul class="mui-table-view mui-grid-view">
+		        <li class="mui-table-view-cell mui-media mui-col-xs-6">
+		            <a href="#">
+		                <img class="mui-media-object" src="../../../img/upload-img.png">
+		                <div class="mui-media-body">
+		                	<img src="../../../img/edit-img.png">
+		                	<span class="imgfontintr">幸福就是<!--可以一起睡觉--></span>
+		                	
+		                </div>
+		            </a>
+		            <img src="../../../img/icon-delete.png" class="delete-img"/>
+		        </li>
+		        <li class="mui-table-view-cell mui-media mui-col-xs-6">
+		            <a href="#">
+		                <img class="mui-media-object" src="../../../img/upload-img.png">
+		                <div class="mui-media-body">
+		                	<img src="../../../img/edit-img.png">
+		                	<span class="imgfontintr">想要一间55522222225555555555ddddddddddddddddddd5555</span>
+		                </div>
+		            </a>
+		            <img src="../../../img/icon-delete.png" class="delete-img"/>
+		        </li>
+		        <li class="mui-table-view-cell mui-media mui-col-xs-6">
+		            <a href="#">
+		            	<img class="mui-media-object" src="../../../img/upload-img.png">
+		                <div class="mui-media-body">
+		                	<img src="../../../img/edit-img.png">
+		                	<span class="imgfontintr">Color of SIP CBD</span>
+		                </div>
+		            </a>
+		            <img src="../../../img/icon-delete.png" class="delete-img"/>
+		        </li>
+		        <li class="mui-table-view-cell mui-media mui-col-xs-6">
+		            <a href="#">
+		                <img class="mui-media-object" src="../../../img/upload-img.png">
+		                <div class="mui-media-body">
+		                	<img src="../../../img/edit-img.png">
+		                	<span class="imgfontintr">静静看这世界</span>
+		                	
+		                </div>
+		            </a>
+		            <img src="../../../img/icon-delete.png" class="delete-img"/>
+		        </li>
+		    </ul>
+		</div>
+		<button class="mui-btn mui-btn-block btn-gradient saveRelease">保存并发布</button>
+
+		<script src="../../../js/mui.min.js"></script>
+		<script type="text/javascript" src="../../../js/page/work/shopenvironment.js" ></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,140 @@
+@import "../common.less";
+
+.topBar{
+
+  background-color: #000;
+  *{
+    color: #fff !important;
+  }
+}
+header{
+  display: flex;
+  .wh(100%,190px);
+  padding:32px 12px 12px;
+    background:url(../../../images/budgetAdmin-bg.png) ;
+    background-size: 100% 11.87rem;
+  flex-direction: column;
+  p,a,span{
+    color: #fff !important;
+  }
+  .topNav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .topBack-ico{
+      display: inline-block;
+      .wh(20px,20px);
+      background: url("../../../img/topBackB-ico.png")center center no-repeat;
+      background-size: contain;
+    }
+  }
+  .settlementInfo{
+    display: flex;
+    flex: 1;
+    width: 100%;
+    .settlementInfoL{
+      display: flex;
+      flex: 1;
+      width: 100%;
+      margin-top: 17.5px;
+      flex-direction: column;
+      p{
+
+      }
+      .orderMoney{
+        b{
+          position: relative;
+          font-size: 36px;
+          margin-right: 10px;
+          span{
+            display: block;
+            top: -15px;
+            right: -45px;
+            position: absolute;
+            font-size: 11px;
+            .wh(46.5px,16.5px);
+            line-height: 16.5px;
+            border-radius: 8px 8px 8px 0;
+            background-color: #D7B374;
+          }
+        }
+
+      }
+      .orderNum{
+        margin-top: 19px;
+        font-size: 16px;
+      }
+    }
+    .settlementInfoR{
+      width: 97px;
+      background-size:97px 74px;
+      padding-bottom: 12px;
+    }
+  }
+}
+.wrapperList{
+  height: 476.5px !important;
+  .pullDown {
+    display: none;
+  }
+  .wrapperListItem {
+    list-style: none;
+    padding: 0 0.75rem;
+    margin-top: 0.62rem;
+    background-color: #fff;
+    font-size: 13px;
+    color: #333;
+    .ListItem-Tit {
+      display: flex;
+      flex: 1;
+      .wh(100%, 2.375rem);
+      line-height: 2.375rem;
+      border-bottom: 1px solid #e5e5e5;
+      div {
+        flex: 1;
+      }
+      .itemTit-orderDate {
+        color: #999;
+      }
+    }
+    .ListItem-Info {
+      height: 5.4375rem;
+      display: flex;
+      flex: 1;
+      .wh(100%, 87px);
+      .order-People {
+        width: 165px;
+        display: flex;
+        flex: 1;
+        align-items: center;
+        flex-direction: row;
+        .order-PeopleImg {
+          .wh(41px, 41px);
+          margin-right: 10px;
+          border-radius: 20.5px;
+          img {
+            .wh(41px, 41px);
+          }
+        }
+      }
+      .order-Income {
+        padding: 15px 0;
+        display: flex;
+        flex-direction: column;
+        align-content: space-around;
+        p {
+          display: flex;
+          flex: 1;
+          width: 100%;
+          align-items: center;
+          margin: 0;
+          color: #333;
+          span {
+            color: #D7B374;
+          }
+        }
+      }
+    }
+  }
+}
+

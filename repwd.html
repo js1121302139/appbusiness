@@ -1,0 +1,175 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/page/repwd.css">
+</head>
+
+<body>
+<header class="mui-bar topBar mui-bar-nav">
+			<a class="mui-action-back topBack-ico mui-pull-left"></a>
+			<h1 class="mui-title" id="pageTit">忘记密码</h1>
+		</header>
+<div class="logoImg">
+
+</div>
+<div class="mui-content content">
+    <div class="loginTop-box">
+        <img id="loginLogo" src="img/loginLogo.png">
+    </div>
+    <!--<div class="mui-card card">
+        <ul class="mui-table-view">
+            <li class="mui-table-view-cell mui-input-row input-border phoneNum">
+                <input type="number" class="mui-input-clear" typeName="phone" name="" id="phoneNum" value="" placeholder="请输入手机号！" />
+            </li>
+            <li class="mui-table-view-cell phoneCode phoneCode">
+                <input type="number" typeName="code" name="" id="phoneCode" value="" placeholder="请输入短信验证码！" />
+                <a href="javascript:;" class="phoneCodeNum">获取验证码</a>
+            </li>
+            <li class="mui-table-view-cell mui-input-row input-border newPwd">
+                <input type="password" class="mui-input-password" typeName="pwd" name="" id="newPwd" value="" placeholder="请输入新密码！" />
+            </li>
+
+        </ul>
+    </div>-->
+    <div class="login-box">
+        <div class="userPhoneNumber mui-input-row input-border">
+            <span class="userPhoneNumberIco"></span>
+            <input type="number" class="mui-input-clear" typeName="phone" name="" id="phoneNum" value=""
+                   placeholder="请输入手机号！"/>
+        </div>
+        <div class="userPhoneCode mui-input-row input-border">
+            <span class="userPhoneCodeIco"></span>
+            <input type="number" typeName="code" name="" id="phoneCode" value="" placeholder="请输入短信验证码！" />
+            <a href="javascript:;" class="phoneCodeNum mui-text-right">获取验证码</a>
+        </div>
+        <div class="userPwd mui-input-row input-border">
+            <span class="userPwdIco"></span>
+            <input type="password" class="mui-input-password" typeName="pwd" name="" id="newPwd" value="" placeholder="请输入新密码！" />
+        </div>
+    </div>
+
+</div>
+<div class="sureBtn mui-text-center">
+    <a href="javascript:;">确定</a>
+</div>
+<script src="js/mui.min.js"></script>
+<script type="text/javascript" src="js/muihelper.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript">
+    mui.init()
+    var phoneNumBox = document.querySelector("#phoneNum"),
+        phoneCodeBox = document.querySelector("#phoneCode"),
+        newPwdBox = document.querySelector("#newPwd"),
+        sureBtnBox = document.querySelector(".sureBtn"),
+        phoneCodeNumBox = document.querySelector(".phoneCodeNum"),
+        changeInfo = {
+            "password": null,
+            "messageCode": null,
+            'mobile': null
+        };
+    var check = new CheckValue();
+    mui.plusReady(function () {
+        mui("input").each(function (i, item) {
+            item.addEventListener("change", function () {
+                var typeName = item.getAttribute("typeName");
+                var thisVal = this.value;
+                switch (typeName) {
+                    case "phone":
+                        changeInfo.mobile = check.checkPhoneNum(thisVal)
+                        break;
+                    case "code":
+                        changeInfo.messageCode = check.checkCode(thisVal)
+                        break;
+                    case "pwd":
+                        changeInfo.password = check.checkPwd(thisVal)
+                        break;
+                }
+            })
+        })
+
+        function timeOut() {
+            console.log(123)
+            var i = 60;
+            setInterval(function () {
+                if (i <= 0) {
+                    phoneCodeNumBox.innerText = "获取验证码"
+                    return true;
+                }
+                ;
+                phoneCodeNumBox.innerText = "再次获取" + i + "s"
+                i--;
+            }, 1000)
+        }
+
+        var sendState = true;
+        phoneCodeNumBox.addEventListener("tap", function () {
+            this.focus();
+            if (sendState) {
+                if (changeInfo.mobile != null) {
+                    getMsgCode(this);
+                } else {
+                    mui.toast('请输入正确的手机号！')
+                }
+            } else {
+                mui.toast('请等会再试!');
+            }
+        })
+
+        function getMsgCode(doc) {
+            var smsWithdrawVerifyRes = {
+                config: {
+                    'phone': changeInfo.mobile
+                },
+                fun_Success: function (data) {
+                    if (data.success == true) {
+                        timeOut();
+                        sendState = false;
+                    } else {
+                        mui.toast(data.message);
+                    }
+                }
+            }
+            Fun_App.ExAjax("lookpwdSmsSend", smsWithdrawVerifyRes);
+
+        }
+
+        function changePwd() {
+            var sendData = {
+                config: {
+                    "password": changeInfo.password,
+                    "mobile": changeInfo.mobile,
+                    "messageCode": changeInfo.messageCode
+                },
+                fun_Success: function (data) {
+                    if (data.success) {
+                        document.querySelector(".changePwd").style.display = "block";
+                        setTimeout(function () {
+                            plus.webview.currentWebview().close();
+                        }, 2500)
+                    }
+                }
+            }
+            Fun_App.ExAjax("findPassword", sendData);
+        }
+
+        sureBtnBox.addEventListener("tap", function () {
+            this.focus();
+            console.log(JSON.stringify(changeInfo))
+            if (Fun_App.checkObjIsNull(changeInfo, null) == false) {
+                mui.toast('还有东西没填写完整')
+            } else {
+                changePwd()
+                console.log(JSON.stringify(changeInfo))
+            }
+        })
+    })
+</script>
+</body>
+
+</html>

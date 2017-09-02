@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../../css/page/work/receivablesCode.css" />
+	</head>
+
+	<body>
+		<header class="mui-bar topBar mui-bar-nav">
+			<a class="mui-action-back topBack-ico mui-pull-left"></a>
+			<h1 class="mui-title">收款二维码</h1>
+		</header>
+		<div class="mui-content">
+			<div class="mui-card">
+				<!--页眉，放置标题-->
+				<div class="mui-card-header">
+					<img id="logoImg" src="../../img/work-head.png" alt="" />
+					<p id="merchantName" class="merchantName mui-pull-left mui-text-left mui-ellipsis">
+					</p>
+				</div>
+				<!--内容区-->
+				<div class="mui-card-content qrcodeBox">
+					<div id="qrcode" style="width:18.75rem; height:18.75rem; padding: 0.62rem; "></div>
+					<!--<img id="myMoneyCode" src="" width="300" height="300" alt="" />-->
+				</div>
+				<!--页脚，放置补充信息或支持的操作-->
+				<div class="card-footer mui-text-center">使用兑咖APP消费端扫一扫，向我付款</div>
+			</div>
+		</div>
+		<script src="../../js/mui.min.js"></script>
+		<script type="text/javascript" src="../../js/muihelper.js"></script>
+		<script type="text/javascript" src="../../js/qrcode.min.js"></script>
+		<script type="text/javascript" src="../../js/page/work/receivablesCode.js"></script>
+		<script type="text/javascript">
+			
+		</script>
+
+	</body>
+
+</html>

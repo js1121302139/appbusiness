@@ -1,0 +1,376 @@
+@import "../common.less";
+
+#header01 .mui-bar {
+    background: rgba(0, 0, 0, 0.01);
+    box-shadow: none;
+    -webkit-box-shadow: none; 
+    .yd-btn-back {
+        line-height: 2.75rem;
+        img {
+            width: 2rem;
+        }
+    }
+    .mui-icon {
+        margin-right: 0.31rem;
+        img {
+            width: 1.75rem;
+        }
+    }
+    .mui-btn {
+        font-weight: normal;
+        font-size: 1.06rem;
+    }
+    .mui-btn-link {
+        top: 0.06rem;
+    }
+    .mui-title {
+        right: 3.12rem;
+    }
+}
+
+#header02 .mui-bar {
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.55);
+    -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.55);
+    .yd-btn-back {
+        line-height: 2.75rem;
+        img {
+            width: 2rem;
+        }
+    }
+    .mui-icon {
+        margin-right: 0.31rem;
+        img {
+            width: 1.75rem;
+        }
+    }
+    .mui-btn {
+        font-weight: normal;
+        font-size: 1.06rem;
+    }
+    .mui-btn-link {
+        top: 0.06rem;
+    }
+    .mui-title {
+        text-align: left;
+        padding-top: 0.31rem;
+        color: #333;
+        width: 50%;
+    }
+}
+
+//轮播图
+.master-img {
+    width: 100%;
+    min-height: 10rem;
+    .mui-slider-item {
+        min-height: 10rem;
+        img {
+            width: 100%;
+            min-height: 10rem;
+        }
+    }
+}
+
+//商家信息展示
+.detail-shopinfo-show {
+    background: #fff;
+    padding: 0.62rem 0.62rem 0;
+    a {
+        color: #666;
+    }
+    .detail-shopinfo-title {
+        display: block;
+        margin-bottom: 0.62rem;
+        font-size: 1rem;
+        color: #333;
+        margin-top: 0.31rem;
+    }
+    .detail-shopinfo-content {
+        color: #747474;
+        margin-top: 0.31rem;
+    }
+    .detail-shopinfo-tel {
+        color: #747474;
+        margin-top: 0.31rem;
+    }
+}
+
+//商家信息
+.detail-shopinfo {
+    margin-top: 0.93rem;
+    background: #fff;
+    padding: 0.62rem 0.62rem 0;
+    .detail-shopinfo-title {
+        display: block;
+        margin-bottom: 0.62rem;
+        font-size: 1rem;
+        color: #333;
+        margin-top: 0.31rem;
+        font-weight: 600;
+    }
+    .detail-shopinfo-content {
+        color: #333;
+        margin-top: 0.31rem;
+        margin-bottom: 0.31rem;
+        img {
+            width: 1.25rem;
+            line-height: 1.56rem;
+            margin-right: 0.31rem;
+            vertical-align: bottom;
+        }
+    }
+    .detail-shopinfo-text {
+        margin-left: 2em;
+        margin-bottom: 0.31rem;
+    }
+}
+
+//评价框
+.detail-starscore {
+    margin-top: 0.93rem;
+    background: #fff;
+    font-size: 0.87rem;
+    //星星评分
+    .atar_Show {
+        background: url("../../../img/stark2.png");
+        width: 110px;
+        height: 14px;
+        position: relative;
+        float: left;
+        p {
+            margin: 0;
+            padding: 0;
+            background: url("../../../img/stars2.png");
+            left: 0;
+            height: 14px;
+            width: 66px;
+        }
+    }
+    span {
+        color: #adadad;
+    }
+}
+
+//商家图片
+.detail-scroll-box {
+    margin-top: 0.93rem;
+    position: relative;
+    margin-top: 0.93rem;
+    background: #fff;
+    .mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active {
+        color: @BascicColor;
+    }
+    .mui-segmented-control.mui-segmented-control-inverted~.mui-slider-progress-bar {
+        background-color: @BascicColor;
+    }
+    .mui-control-content {
+        background-color: #fff;
+        min-height: 8.75rem;
+        .mui-loading {
+            margin-top: 3.12rem;
+        }
+    }
+    .mui-slider .mui-segmented-control.mui-segmented-control-inverted~.mui-slider-group .mui-slider-item {
+        border-bottom: none;
+    }
+    .mui-scroll-wrapper {
+        padding: 0.93rem;
+        background: #FFFFFF;
+        .mui-scroll {
+            width: auto;
+            white-space: nowrap;
+            > a {
+                display: inline-block;
+                width: 8.75rem;
+                margin-right: 0.62rem;
+                position: relative;
+                img {
+                    width: 8.75rem;
+                    height: 6.25rem;
+                }
+                .detail-title {
+                    position: absolute;
+                    bottom: 0;
+                    background-color: rgba(0, 0, 0, 0.5);
+                    width: 100%;
+                    text-align: left;
+                    color: #fff;
+                    font-size: 0.87rem;
+                    padding-left: 0.62rem;
+                }
+            }
+        }
+    }
+}
+
+//店长推荐
+.detail-shop-recommend {
+    margin-top: 0.93rem;
+    background: #FFFFFF;
+    padding: 0 0.62rem;
+    h4:after {
+        content: url("../../../img/detail_rec.png");
+        width: 0.12rem;
+        height: 1.43rem;
+        display: inline-block;
+        vertical-align: middle;
+    }
+    .mui-table-view .mui-media-object {
+        max-width: 6rem;
+        height: 6rem;
+        border-radius: 50%;
+    }
+    .mui-table-view .mui-media,
+    .mui-table-view .mui-media-body {
+        margin-top: 8%;
+    }
+    .mui-table-view:before {
+        background-color: #fff;
+    }
+    .detail-shop-recommend-content {
+        line-height: 1.75rem;
+        padding-top: 0.31rem;
+        p {
+            color: #666;
+        }
+    }
+    .detail-shop-recommend-more {
+        color: #999999;
+        text-align: center;
+        padding: 0.62rem;
+        font-size: 0.87rem;
+    }
+}
+
+//附近商家
+.detail-near-shop {
+    margin-top: 0.93rem;
+    background: #fff;
+    padding: 0.62rem 0.62rem 0;
+    .detail-near-shop-title {
+        display: block;
+        margin-bottom: 0.62rem;
+        font-size: 1rem;
+        color: #333;
+        margin-top: 0.31rem;
+        font-weight: 600;
+    }
+    .mui-media-body {
+        color: #333;
+    }
+    .mui-table-view.mui-grid-view .mui-table-view-cell {
+        text-align: left;
+        .mui-media-object {
+            min-height: 5rem;
+            width: 100%;
+        }
+        .mui-media-body {
+            height: auto;
+            line-height: 1.25rem;
+            p {
+                font-size: 0.75rem;
+            }
+        }
+    }
+    .detail-near-box {
+        position: relative;
+        .detail-near-title {
+            position: absolute;
+            bottom: 0.31rem;
+            background-color: rgba(0, 0, 0, 0.5);
+            width: 100%;
+            text-align: left;
+            color: #fff;
+            height: 1.37rem;
+            line-height: 1.37rem;
+            //星星评分
+            .atar_Show {
+                margin-top: 3px;
+                background: url("../../../img/stark2.png");
+                width: 110px;
+                height: 14px;
+                position: relative;
+                float: left;
+                p {
+                    margin: 0;
+                    padding: 0;
+                    background: url("../../../img/stars2.png");
+                    left: 0;
+                    height: 14px;
+                    width: 66px;
+                }
+            } 
+            p {
+                color: #fff;
+            }
+        } 
+    }
+} 
+
+//底部菜单按钮
+.detail-button-box {
+    box-shadow: 0 0 1px rgba(0, 0, 0, .35);
+    .detail-left {
+        width: 40%;
+        background-color: rgba(255, 255, 255, 0.9);
+        font-size: 0.75rem;
+        .mui-tab-item {
+            display: inline-block;
+            width: 50%;
+            .mui-icon {
+                top: 6px;
+            }
+        }
+        img {
+            width: 1.5rem;
+            display: block;
+            margin: 0 auto;
+        }
+    }
+    .detail-right {
+        width: 60%;
+        font-size: 1.12rem;
+        line-height: 52px;
+        .btn-gradient {
+            display: block;
+            color: #fff;
+            height: 100%;
+            width: 100%;
+            padding: 0;
+        }
+    }
+    .detail-left .mui-tab-item,
+    .detail-right {
+        display: inline-block;
+        height: 100%;
+        float: left;
+        overflow: hidden;
+        position: relative;
+        text-align: center;
+    }
+}
+
+//分享链接
+#share {
+    .mui-table-view {
+        margin: 0;
+        color: #333;
+    }
+    .share-panel {
+        text-align: left;
+        .mui-table-view-cell {
+            .mui-media-body {
+                margin-top: 0;
+            }
+            img {
+                margin-top: 0.56rem;
+                width: 3.25rem;
+                height: 3.25rem;
+            }
+        }
+        .mui-table-view-cell:after {
+            background-color: #fff;
+        }
+    }
+}

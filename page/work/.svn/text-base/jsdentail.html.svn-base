@@ -1,0 +1,674 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../../css/pullToRefresh.css" />
+		<link href="../../css/page/work/jsdentail.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<div id="jsdentail">
+			<header class="mui-bar topBar mui-bar-nav">
+				<a class="mui-action-back topBack-ico mui-pull-left"></a>
+				<h1 class="mui-title">结算明细</h1>
+			</header>
+			<div class="mui-content">
+				<div id="wrapper" class="wrapperList">
+					<ul id="jsList">
+						<li class="wrapperListItem" v-for="(item,key) in list">
+							<div class="orderLeft">
+								<div class="orderCode" v-text="'结算单号:'+item.orderSn">
+									结算单号:132456987212
+								</div>
+								<div class="orderDate" v-text="'结算时间:'+item.createTime">
+									2017-02-11 11:02
+								</div>
+							</div>
+							<div class="orderRight">
+								<div class=" withdrawals" v-text="'结算:'+item.money">
+									结算955.55
+								</div>
+								<div class="balance" v-text="'余额:'+item.moneyAfter">
+									余额10000000
+								</div>
+							</div>
+						</li>
+						<!--<li class="wrapperListItem">
+							<div class="orderLeft">
+								<div class="orderCode">
+									结算单号:132456987212
+								</div>
+								<div class="orderDate">
+									2017-02-11 11:02
+								</div>
+							</div>
+							<div class="orderRight">
+								<div class=" withdrawals">
+									结算955.55
+								</div>
+								<div class="balance">
+									余额10000000
+								</div>
+							</div>
+						</li>
+						<li class="wrapperListItem">
+							<div class="orderLeft">
+								<div class="orderCode">
+									结算单号:132456987212
+								</div>
+								<div class="orderDate">
+									2017-02-11 11:02
+								</div>
+							</div>
+							<div class="orderRight">
+								<div class=" withdrawals">
+									结算955.55
+								</div>
+								<div class="balance">
+									余额10000000
+								</div>
+							</div>
+						</li>
+						<li class="wrapperListItem">
+							<div class="orderLeft">
+								<div class="orderCode">
+									结算单号:132456987212
+								</div>
+								<div class="orderDate">
+									2017-02-11 11:02
+								</div>
+							</div>
+							<div class="orderRight">
+								<div class=" withdrawals">
+									结算955.55
+								</div>
+								<div class="balance">
+									余额10000000
+								</div>
+							</div>
+						</li>
+						<li class="wrapperListItem">
+							<div class="orderLeft">
+								<div class="orderCode">
+									结算单号:132456987212
+								</div>
+								<div class="orderDate">
+									2017-02-11 11:02
+								</div>
+							</div>
+							<div class="orderRight">
+								<div class=" withdrawals">
+									结算955.55
+								</div>
+								<div class="balance">
+									余额10000000
+								</div>
+							</div>
+						</li>
+						<li class="wrapperListItem">
+							<div class="orderLeft">
+								<div class="orderCode">
+									结算单号:132456987212
+								</div>
+								<div class="orderDate">
+									2017-02-11 11:02
+								</div>
+							</div>
+							<div class="orderRight">
+								<div class=" withdrawals">
+									结算955.55
+								</div>
+								<div class="balance">
+									余额10000000
+								</div>
+							</div>
+						</li>
+						<li class="wrapperListItem">
+							<div class="orderLeft">
+								<div class="orderCode">
+									结算单号:132456987212
+								</div>
+								<div class="orderDate">
+									2017-02-11 11:02
+								</div>
+							</div>
+							<div class="orderRight">
+								<div class=" withdrawals">
+									结算955.55
+								</div>
+								<div class="balance">
+									余额10000000
+								</div>
+							</div>
+						</li>
+						<li class="wrapperListItem">
+							<div class="orderLeft">
+								<div class="orderCode">
+									结算单号:132456987212
+								</div>
+								<div class="orderDate">
+									2017-02-11 11:02
+								</div>
+							</div>
+							<div class="orderRight">
+								<div class=" withdrawals">
+									结算955.55
+								</div>
+								<div class="balance">
+									余额10000000
+								</div>
+							</div>
+						</li>
+						<li class="wrapperListItem">
+							<div class="orderLeft">
+								<div class="orderCode">
+									结算单号:132456987212
+								</div>
+								<div class="orderDate">
+									2017-02-11 11:02
+								</div>
+							</div>
+							<div class="orderRight">
+								<div class=" withdrawals">
+									结算955.55
+								</div>
+								<div class="balance">
+									余额10000000
+								</div>
+							</div>
+						</li>
+						<li class="wrapperListItem">
+							<div class="orderLeft">
+								<div class="orderCode">
+									结算单号:132456987212
+								</div>
+								<div class="orderDate">
+									2017-02-11 11:02
+								</div>
+							</div>
+							<div class="orderRight">
+								<div class=" withdrawals">
+									结算955.55
+								</div>
+								<div class="balance">
+									余额10000000
+								</div>
+							</div>
+						</li>
+						<li class="wrapperListItem">
+							<div class="orderLeft">
+								<div class="orderCode">
+									结算单号:132456987212
+								</div>
+								<div class="orderDate">
+									2017-02-11 11:02
+								</div>
+							</div>
+							<div class="orderRight">
+								<div class=" withdrawals">
+									结算955.55
+								</div>
+								<div class="balance">
+									余额10000000
+								</div>
+							</div>
+						</li>
+						<li class="wrapperListItem">
+							<div class="orderLeft">
+								<div class="orderCode">
+									结算单号:132456987212
+								</div>
+								<div class="orderDate">
+									2017-02-11 11:02
+								</div>
+							</div>
+							<div class="orderRight">
+								<div class=" withdrawals">
+									结算955.55
+								</div>
+								<div class="balance">
+									余额10000000
+								</div>
+							</div>
+						</li>
+						<li class="wrapperListItem">
+							<div class="orderLeft">
+								<div class="orderCode">
+									结算单号:132456987212
+								</div>
+								<div class="orderDate">
+									2017-02-11 11:02
+								</div>
+							</div>
+							<div class="orderRight">
+								<div class=" withdrawals">
+									结算955.55
+								</div>
+								<div class="balance">
+									余额10000000
+								</div>
+							</div>
+						</li>
+						<li class="wrapperListItem">
+							<div class="orderLeft">
+								<div class="orderCode">
+									结算单号:132456987212
+								</div>
+								<div class="orderDate">
+									2017-02-11 11:02
+								</div>
+							</div>
+							<div class="orderRight">
+								<div class=" withdrawals">
+									结算955.55
+								</div>
+								<div class="balance">
+									余额10000000
+								</div>
+							</div>
+						</li>
+						<li class="wrapperListItem">
+							<div class="orderLeft">
+								<div class="orderCode">
+									结算单号:132456987212
+								</div>
+								<div class="orderDate">
+									2017-02-11 11:02
+								</div>
+							</div>
+							<div class="orderRight">
+								<div class=" withdrawals">
+									结算955.55
+								</div>
+								<div class="balance">
+									余额10000000
+								</div>
+							</div>
+						</li>
+						<li class="wrapperListItem">
+							<div class="orderLeft">
+								<div class="orderCode">
+									结算单号:132456987212
+								</div>
+								<div class="orderDate">
+									2017-02-11 11:02
+								</div>
+							</div>
+							<div class="orderRight">
+								<div class=" withdrawals">
+									结算955.55
+								</div>
+								<div class="balance">
+									余额10000000
+								</div>
+							</div>
+						</li>
+						<li class="wrapperListItem">
+							<div class="orderLeft">
+								<div class="orderCode">
+									结算单号:132456987212
+								</div>
+								<div class="orderDate">
+									2017-02-11 11:02
+								</div>
+							</div>
+							<div class="orderRight">
+								<div class=" withdrawals">
+									结算955.55
+								</div>
+								<div class="balance">
+									余额10000000
+								</div>
+							</div>
+						</li>
+						<li class="wrapperListItem">
+							<div class="orderLeft">
+								<div class="orderCode">
+									结算单号:132456987212
+								</div>
+								<div class="orderDate">
+									2017-02-11 11:02
+								</div>
+							</div>
+							<div class="orderRight">
+								<div class=" withdrawals">
+									结算955.55
+								</div>
+								<div class="balance">
+									余额10000000
+								</div>
+							</div>
+						</li>
+						<li class="wrapperListItem">
+							<div class="orderLeft">
+								<div class="orderCode">
+									结算单号:132456987212
+								</div>
+								<div class="orderDate">
+									2017-02-11 11:02
+								</div>
+							</div>
+							<div class="orderRight">
+								<div class=" withdrawals">
+									结算955.55
+								</div>
+								<div class="balance">
+									余额10000000
+								</div>
+							</div>
+						</li>
+						<li class="wrapperListItem">
+							<div class="orderLeft">
+								<div class="orderCode">
+									结算单号:132456987212
+								</div>
+								<div class="orderDate">
+									2017-02-11 11:02
+								</div>
+							</div>
+							<div class="orderRight">
+								<div class=" withdrawals">
+									结算955.55
+								</div>
+								<div class="balance">
+									余额10000000
+								</div>
+							</div>
+						</li>
+						<li class="wrapperListItem">
+							<div class="orderLeft">
+								<div class="orderCode">
+									结算单号:132456987212
+								</div>
+								<div class="orderDate">
+									2017-02-11 11:02
+								</div>
+							</div>
+							<div class="orderRight">
+								<div class=" withdrawals">
+									结算955.55
+								</div>
+								<div class="balance">
+									余额10000000
+								</div>
+							</div>
+						</li>
+						<li class="wrapperListItem">
+							<div class="orderLeft">
+								<div class="orderCode">
+									结算单号:132456987212
+								</div>
+								<div class="orderDate">
+									2017-02-11 11:02
+								</div>
+							</div>
+							<div class="orderRight">
+								<div class=" withdrawals">
+									结算955.55
+								</div>
+								<div class="balance">
+									余额10000000
+								</div>
+							</div>
+						</li>
+						<li class="wrapperListItem">
+							<div class="orderLeft">
+								<div class="orderCode">
+									结算单号:132456987212
+								</div>
+								<div class="orderDate">
+									2017-02-11 11:02
+								</div>
+							</div>
+							<div class="orderRight">
+								<div class=" withdrawals">
+									结算955.55
+								</div>
+								<div class="balance">
+									余额10000000
+								</div>
+							</div>
+						</li>
+						<li class="wrapperListItem">
+							<div class="orderLeft">
+								<div class="orderCode">
+									结算单号:132456987212
+								</div>
+								<div class="orderDate">
+									2017-02-11 11:02
+								</div>
+							</div>
+							<div class="orderRight">
+								<div class=" withdrawals">
+									结算955.55
+								</div>
+								<div class="balance">
+									余额10000000
+								</div>
+							</div>
+						</li>
+						<li class="wrapperListItem">
+							<div class="orderLeft">
+								<div class="orderCode">
+									结算单号:132456987212
+								</div>
+								<div class="orderDate">
+									2017-02-11 11:02
+								</div>
+							</div>
+							<div class="orderRight">
+								<div class=" withdrawals">
+									结算955.55
+								</div>
+								<div class="balance">
+									余额10000000
+								</div>
+							</div>
+						</li>
+						<li class="wrapperListItem">
+							<div class="orderLeft">
+								<div class="orderCode">
+									结算单号:132456987212
+								</div>
+								<div class="orderDate">
+									2017-02-11 11:02
+								</div>
+							</div>
+							<div class="orderRight">
+								<div class=" withdrawals">
+									结算955.55
+								</div>
+								<div class="balance">
+									余额10000000
+								</div>
+							</div>
+						</li>
+						<li class="wrapperListItem">
+							<div class="orderLeft">
+								<div class="orderCode">
+									结算单号:132456987212
+								</div>
+								<div class="orderDate">
+									2017-02-11 11:02
+								</div>
+							</div>
+							<div class="orderRight">
+								<div class=" withdrawals">
+									结算955.55
+								</div>
+								<div class="balance">
+									余额10000000
+								</div>
+							</div>
+						</li>
+						<li class="wrapperListItem">
+							<div class="orderLeft">
+								<div class="orderCode">
+									结算单号:132456987212
+								</div>
+								<div class="orderDate">
+									2017-02-11 11:02
+								</div>
+							</div>
+							<div class="orderRight">
+								<div class=" withdrawals">
+									结算955.55
+								</div>
+								<div class="balance">
+									余额10000000
+								</div>
+							</div>
+						</li>
+						<li class="wrapperListItem">
+							<div class="orderLeft">
+								<div class="orderCode">
+									结算单号:132456987212
+								</div>
+								<div class="orderDate">
+									2017-02-11 11:02
+								</div>
+							</div>
+							<div class="orderRight">
+								<div class=" withdrawals">
+									结算955.55
+								</div>
+								<div class="balance">
+									余额10000000
+								</div>
+							</div>
+						</li>
+						<li class="wrapperListItem">
+							<div class="orderLeft">
+								<div class="orderCode">
+									结算单号:132456987212
+								</div>
+								<div class="orderDate">
+									2017-02-11 11:02
+								</div>
+							</div>
+							<div class="orderRight">
+								<div class=" withdrawals">
+									结算955.55
+								</div>
+								<div class="balance">
+									余额10000000
+								</div>
+							</div>
+						</li>
+						<li class="wrapperListItem">
+							<div class="orderLeft">
+								<div class="orderCode">
+									结算单号:132456987212
+								</div>
+								<div class="orderDate">
+									2017-02-11 11:02
+								</div>
+							</div>
+							<div class="orderRight">
+								<div class=" withdrawals">
+									结算955.55
+								</div>
+								<div class="balance">
+									余额10000000
+								</div>
+							</div>
+						</li>
+						<li class="wrapperListItem">
+							<div class="orderLeft">
+								<div class="orderCode">
+									结算单号:132456987212
+								</div>
+								<div class="orderDate">
+									2017-02-11 11:02
+								</div>
+							</div>
+							<div class="orderRight">
+								<div class=" withdrawals">
+									结算955.55
+								</div>
+								<div class="balance">
+									余额10000000
+								</div>
+							</div>
+						</li>-->
+
+					</ul>
+				</div>
+			</div>
+
+		</div>
+		<script>
+		</script>
+
+	</body>
+	<script src="../../js/mui.min.js"></script>
+	<script type="text/javascript" src="../../js/muihelper.js"></script>
+	<!--<script type="text/javascript" src="../../js/page/work/jsdentail.js"></script>-->
+	<script type="text/javascript" src="../../js/iscroll.js"></script>
+	<script type="text/javascript" src="../../js/pullToRefresh.js"></script>
+	<script type="text/javascript" src="../../js/vue.min.js"></script>
+	<script type="text/javascript">
+		var Vue = new Vue({
+			el: "#jsdentail",
+			data: function() {
+				return {
+					requestUrl: '',
+					page: 1,
+					totalPage: null,
+					pageLen: pageLen,
+					list: []
+				}
+			},
+			created: function() {
+				var _this = this;
+				mui.plusReady(function() {
+					_this.requestUrl = Fun_App.getextrasdata();
+					_this.getJsDentail(function(resData) {
+						_this.list = resData.data;
+						_this.totalPage = Math.ceil(resData.total/_this.pageLen);
+					}, 1)
+					refresher.init({
+						id: "wrapper",
+						/*pullDownAction: Refresh,*/
+						pullUpAction: _this.Load
+					});
+				})
+			},
+			methods: {
+				getJsDentail: function(callBack, page) {
+					var sendData = {
+						config: {
+							token: Fun_App.getdata("token"),
+							pageIndex: page
+						},
+						fun_Success: function(data) {
+							callBack(data);
+						}
+					}
+					Fun_App.ExAjax(this.requestUrl, sendData);
+				},
+				Load: function() {
+					this.page++;
+					var _this =this;
+					if(this.page <= this.totalPage) {
+						this.getJsDentail(function(resData) {
+							_this.list = _this.list.concat(resData.data);
+						}, this.page)
+					} else {
+						refresher.info.pullUpLable = '没有更多数据了!';
+					}
+					wrapper.refresh();
+				}
+			}
+		})
+
+		/*function Refresh() {
+			wrapper.refresh();
+		}*/
+	</script>
+
+</html>

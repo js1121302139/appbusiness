@@ -1,0 +1,267 @@
+@import "../common";
+.topBar("../../../img/topBack-ico.png");
+html,
+body,
+#activityCenter {
+    min-height: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.Topactivity {
+    color: #000000 !important;
+}
+
+.activityBg {
+    height: 8.12rem;
+    background: url(../../../images/activityCenterBg.png) left top no-repeat;
+    background-size: 100% 100%;
+}
+
+#segmentedControl {
+    background: #fff;
+    .mui-control-item {
+        border-bottom: none;
+        span {
+            color: #999;
+            display: inline-block;
+        }
+    }
+    .mui-active {
+        span {
+            color: #333;
+            border-bottom: 2px solid #333;
+        }
+    }
+}
+input[type="text"]{
+   
+}
+input[type="tel"]{
+    
+}
+.optionDate {
+    font-family: "微软雅黑";
+    width: 90%;
+    margin: auto;
+    margin-top: 1.25rem;
+    padding-bottom: 0.31rem;
+    box-shadow: 0 0 15px 5px rgba(184, 184, 184, 0.4);
+    .dateHeader {
+        height: 2.81rem;
+        line-height: 2.81rem;
+        color: #333;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        width: 100%;
+        .headerM {
+            -webkit-box-flex: 1;
+            -ms-flex: 1;
+            flex: 1;
+            font-size: 16px;
+        }
+        .next {
+            width: 2.75rem;
+            background: url("../../../img/activityMNext-ico.png")center center no-repeat;
+            background-size: 16px 16px;
+        }
+        .pre {
+            width: 2.75rem;
+            background: url("../../../img/activityMPre-ico.png")center center no-repeat;
+            background-size: 16px 16px;
+        }
+    }
+    .weekLsit {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        width: 100%;
+        font-size: 14px;
+        color: #999;
+        .weekLsit-item {
+            -webkit-box-flex: 1;
+            -ms-flex: 1;
+            flex: 1;
+            font-weight: bold;
+            padding: 1.09rem 0;
+        }
+    }
+    .dayLsit {
+        .dayList-item {
+            position: relative;
+            width: 100% / 7;
+            height: 48px;
+            line-height: 48px;
+            float: left;
+            color: #4f5f6f;
+        }
+        .active {
+            text-align: center;
+            color: #fff;
+            border-radius: 0.18rem;
+            background: transparent;
+            position: relative;
+            z-index: 1;
+            /*      -webkit-box-shadow: 0 0 0 1px #838f9a;
+      box-shadow: 0 0 0 1px #838f9a;*/
+            &:after {
+                content: " ";
+                z-index: -1;
+                min-width: 0.93rem;
+                width: 1.4rem;
+                min-height: 0.93rem;
+                height: 1.4rem;
+                border-radius: 50%;
+                padding: 0.5rem;
+                display: block;
+                background: #D7B374;
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                margin: auto;
+            }
+        }
+    }
+    .dateFooter {
+        margin-bottom: 1.87rem;
+        p {
+            font-size: 0.75rem;
+            color: #333;
+            margin-bottom: 0px;
+        }
+        .dateFooter-footer {
+            color: #0A7FF1;
+        }
+    }
+    .roomNum {
+        display: flex;
+        flex: 1;
+        height: 3.43rem;
+        line-height: 0.21rem;
+        border-top: 1px solid #CCCCCC;
+        p:first-child {
+            margin-right: 1.25rem;
+            background: url(../../../img/activeity-editIco.png) right center no-repeat;
+            background-size:1rem 1rem;
+        }
+        p {
+            margin: 0;
+            width: 50%;
+            height: 3.43rem;
+            line-height: 3.43rem;
+            text-indent: 2.81rem;
+        }
+    }
+}
+
+
+/*活动列表*/
+
+@BascicColor: #007aff;
+@OrangeColor: #FE6606;
+@grayColor: #696766;
+.wrappers {
+    margin-top: 0.62rem;
+    position: relative;
+    height: 100%;
+    .wrapperList {
+        background-color: #fff;
+        .pullDown {
+            display: none;
+        }
+        ul {
+            padding: 0 12px;
+            padding-bottom: 25.5rem;
+        }
+        .pullUp {
+            position: relative;
+            top: -25.5rem;
+        }
+        .ListItem {
+            display: flex;
+            flex: 1;
+            .wh(100%,
+            83px);
+            padding: 19px 0;
+            background-color: #fff;
+            border-bottom: 1px solid #e5e5e5;
+            .activityInfo {
+                width: 278px;
+                p {
+                    font-size: 13px;
+                    color: #999;
+                }
+                p:first-child {
+                    font-size: 15px;
+                    margin-bottom: 16px;
+                    color: #333;
+                    span {
+                        color: #D7B374;
+                    }
+                }
+            }
+            .stateBg5 {
+                background: url("../../../images/stateBg1.png") center center no-repeat;
+                p,
+                a {
+                    display: none !important;
+                }
+            }
+            .stateBg2 {
+                background: url("../../../images/stateBg2.png") center center no-repeat;
+                p,
+                a {
+                    display: none !important;
+                }
+            }
+            .activityState {
+                .wh(66px,
+                50px);
+                background-size: contain;
+                p {
+                    font-size: 14px;
+                    color: #D7B374;
+                }
+                a {
+                    display: inline-block;
+                    .wh(49px,
+                    22px);
+                    margin-top: 12.5px;
+                    line-height: 22px;
+                    border: 1px solid #333;
+                    border-radius: 4px;
+                    font-size: 13px;
+                    color: #333;
+                }
+            }
+        }
+    }
+}
+
+
+/*弹出框*/
+
+.roomNumInput {
+    display: flex;
+    width: 16.87rem;
+    line-height: 3.12rem;
+    padding: 1rem 1rem;
+    background-color: #fff;
+    text-indent: 1rem;
+    input {
+        padding: 0;
+        margin: 0;
+        width: 7.03rem;
+        float: left;
+        text-indent: 0.62rem;
+    }
+}

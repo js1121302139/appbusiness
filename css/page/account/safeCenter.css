@@ -1,0 +1,399 @@
+body,
+html {
+  background-color: #f5f5f5;
+}
+.mui-content {
+  overflow: hidden;
+  font-size: 0.87rem;
+  color: #333;
+  background-color: #f5f5f5;
+}
+.mui-bar {
+  background-color: #fff;
+}
+.mui-bar a {
+  color: #666666;
+}
+.mui-bar-tab .mui-tab-item.mui-active {
+  color: #929292;
+}
+.mui-bar .mui-btn-link {
+  color: #333;
+}
+.btn-gradient {
+  padding: 10px;
+  background: -moz-linear-gradient(top, #0AADFE, #0D80EF);
+  background: linear-gradient(top, #0AADFE, #0D80EF);
+  background: -webkit-linear-gradient(top, #0AADFE, #0D80EF);
+}
+.btn-delete {
+  padding: 10px;
+  background: -moz-linear-gradient(top, #f15d5d, #f10101);
+  background: linear-gradient(top, #f15d5d, #f10101);
+  background: -webkit-linear-gradient(top, #f15d5d, #f10101);
+}
+a {
+  color: #333;
+}
+.mui-input-group .mui-input-row:after {
+  left: 0px;
+}
+input {
+  font-size: 0.87rem;
+}
+.mui-input-group:before,
+.mui-input-group:after {
+  background-color: #FFFFFF;
+}
+.mui-btn-blue.mui-active:enabled,
+.mui-btn-blue:enabled:active,
+.mui-btn-primary.mui-active:enabled,
+.mui-btn-primary:enabled:active,
+input[type=submit].mui-active:enabled,
+input[type=submit]:enabled:active {
+  color: #fff;
+  border: 1px solid #0B84F0;
+  background-color: #0B84F0;
+}
+.shop-good-box {
+  width: 100%;
+  margin-top: 0.62rem;
+}
+.shop-good-box .shop-good-box-title {
+  font-size: 0rem;
+}
+.shop-good-box .shop-good-box-title img {
+  max-width: 100%;
+  vertical-align: bottom;
+}
+.shop-good-box .mui-table-view.mui-grid-view {
+  padding: 0rem;
+}
+.shop-good-box .mui-table-view.mui-grid-view .mui-table-view-cell {
+  padding: 0rem;
+  margin-right: 0rem;
+  border-bottom: 1px #f5f5f5 solid;
+  border-right: 1px #f5f5f5 solid;
+}
+.shop-good-box .mui-table-view.mui-grid-view .shop-good-item-box {
+  background-color: #fff;
+  padding: 0.62rem 0.18rem;
+}
+.shop-good-box .mui-table-view:after,
+.shop-good-box .mui-table-view:before {
+  background-color: #f5f5f5;
+}
+.shop-good-box ul {
+  background-color: #f5f5f5;
+}
+.shop-good-box ul li .shop-good-title {
+  width: 100%;
+  text-align: left;
+}
+.shop-good-box ul li img {
+  width: 100%;
+  vertical-align: bottom;
+}
+.shop-good-box ul li span {
+  font-size: 0.75rem;
+  min-height: 2.75rem;
+}
+.shop-good-box ul li .shop-good-bottom-box {
+  margin-top: 0.31rem;
+  line-height: 1.75rem;
+  width: 100%;
+  height: 1.75rem;
+}
+.shop-good-box ul li .shop-good-bottom-box .shop-good-price {
+  float: left;
+  padding: 0rem;
+  color: #333;
+  font-weight: bold;
+}
+.shop-good-box ul li .shop-good-bottom-box .shop-good-btn {
+  padding: 0rem 0.31rem;
+  float: right;
+  min-width: 4.25rem;
+  color: #fff;
+  border-radius: 0.5rem;
+  font-size: 0.75rem;
+}
+.shop-good-box ul li .shop-good-bottom-box .shop-good-delete {
+  text-decoration: line-through;
+}
+.shop-good-box ul li .shop-good-bottom-box .shop-good-btn-green {
+  background: -moz-linear-gradient(top, #11ca08, #079600);
+  background: linear-gradient(top, #11ca08, #079600);
+  background: -webkit-linear-gradient(top, #11ca08, #079600);
+}
+.shop-good-box ul li .shop-good-bottom-box .shop-good-btn-orange {
+  background: -moz-linear-gradient(top, #ffad00, #fe7f00);
+  background: linear-gradient(top, #ffad00, #fe7f00);
+  background: -webkit-linear-gradient(top, #ffad00, #fe7f00);
+}
+.shop-good-box ul li .shop-good-bottom-box .shop-good-btn-blue {
+  background: -moz-linear-gradient(top, #7ac2ff, #1c85df);
+  background: linear-gradient(top, #7ac2ff, #1c85df);
+  background: -webkit-linear-gradient(top, #7ac2ff, #1c85df);
+}
+.shop-good-box ul li .shop-good-bottom-box .shop-good-btn-navy {
+  background: -moz-linear-gradient(top, #32dd9b, #06b16f);
+  background: linear-gradient(top, #32dd9b, #06b16f);
+  background: -webkit-linear-gradient(top, #32dd9b, #06b16f);
+}
+.shop-good-box ul li .shop-good-bottom-box .shop-good-btn-pink {
+  background: -moz-linear-gradient(top, #fe82c9, #e00982);
+  background: linear-gradient(top, #fe82c9, #e00982);
+  background: -webkit-linear-gradient(top, #fe82c9, #e00982);
+}
+.shop-good-box ul li .shop-good-bottom-box .shop-good-btn-yellow {
+  background: -moz-linear-gradient(top, #ffcc83, #eba104);
+  background: linear-gradient(top, #ffcc83, #eba104);
+  background: -webkit-linear-gradient(top, #ffcc83, #eba104);
+}
+.shop-good-box ul li .shop-good-bottom-box .shop-good-btn-violet {
+  background: -moz-linear-gradient(top, #d77dfd, #9f04df);
+  background: linear-gradient(top, #d77dfd, #9f04df);
+  background: -webkit-linear-gradient(top, #d77dfd, #9f04df);
+}
+.shop-good-box ul li .shop-good-bottom-box .shop-good-btn-gray {
+  background: -moz-linear-gradient(top, #f5f5f5, #ccc);
+  background: linear-gradient(top, #f5f5f5, #ccc);
+  background: -webkit-linear-gradient(top, #f5f5f5, #ccc);
+}
+.mui-content > .mui-table-view:first-child {
+  margin-top: 0rem;
+}
+.ico-work {
+  background: url(../../img/work_footer-01.png) center center no-repeat;
+  background-size: cover;
+}
+.ico-order {
+  background: url(../../img/work_footer-02.png) center center no-repeat;
+  background-size: cover;
+}
+.ico-account {
+  background: url(../../img/work_footer-03.png) center center no-repeat;
+  background-size: cover;
+}
+.mui-table-view:before,
+.mui-table-view:after {
+  background-color: #fff;
+}
+.mui-bar-tab .mui-tab-item.mui-active {
+  color: #5c9df4;
+}
+.mui-bar-tab .mui-tab-item {
+  text-align: center;
+  border-top: 1px solid #000;
+}
+.mui-bar-tab .mui-tab-item .mui-tab-label {
+  color: #333;
+}
+.bgImg {
+  background: url(../../img/work_footer-01.png) center center no-repeat;
+  background-position-y: -33px;
+}
+.bgImg1 {
+  background: url(../../img/work_footer-02.png) center center no-repeat;
+  background-position-y: -33px;
+}
+.bgImg2 {
+  background: url(../../img/work_footer-03.png) center center no-repeat;
+  background-position-y: -33px;
+}
+.mui-bar-tab .mui-tab-item .mui-icon {
+  width: 2.06rem;
+  height: 2.06rem;
+  transition: all 0.5s;
+  background-size: 33px 4.12rem;
+}
+.mui-bar img {
+  width: 1.75rem;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+.mui-active .mui-icon {
+  background-position-y: 0rem;
+}
+/*resetcss*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  font-family: Arial !important;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  cursor: pointer;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/*resetcssEnd*/
+/*重构的顶部*/
+/*顶部的卡片视图*/
+.topBar {
+  padding-top: 1.25rem;
+  height: 4rem;
+  box-shadow: 0 1px 6px #ccc;
+}
+.topBar .topBack-ico {
+  display: inline-block;
+  width: 1.25rem;
+  height: 44px;
+  background: url("../../../img/topBack-ico.png") center center no-repeat;
+  background-size: 1.25rem 1.25rem;
+}
+.topBar .mui-title {
+  font-size: 1.12rem;
+  color: #333;
+  z-index: -1;
+}
+.mui-content {
+  padding-top: 4rem !important;
+}
+.mui-content {
+  margin-top: 0.62rem;
+}
+.mui-content .mui-table-view-cell:after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0px;
+  height: 1px;
+  content: '';
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+  background-color: #c8c7cc;
+}
+.mui-content .mui-table-view-cell .myLogin {
+  background: url(../../../img/ico-safecenter-1.png) 1.09rem center no-repeat;
+  background-size: 6% !important;
+}
+.mui-content .mui-table-view-cell .myPlay {
+  background: url(../../../img/ico-safecenter-2.png) 1.09rem center no-repeat;
+}
+.mui-content .mui-table-view-cell .myWecath {
+  background: url(../../../img/ico-safecenter-3.png) 1.09rem center no-repeat;
+}
+.mui-content .mui-table-view-cell .myBankCard {
+  background: url(../../../img/ico-safecenter-4.png) 1.09rem center no-repeat;
+}
+.mui-content .mui-table-view-cell .mui-navigate-right {
+  text-indent: 3.12rem;
+  background-size: 8%;
+}

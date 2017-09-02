@@ -1,0 +1,337 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../../css/pullToRefresh.css">
+		<link rel="stylesheet" href="../../css/page/work/activityCenter.css" />
+	</head>
+	<style>
+
+	</style>
+
+	<body>
+		<div id="activityCenter">
+			<header class="mui-bar topBar mui-bar-nav">
+				<a class="mui-action-back topBack-ico mui-pull-left"></a>
+				<h1 class="mui-title">活动管理</h1>
+				<span id="Topactivity" class="mui-btn  Topactivity mui-btn-blue mui-btn-link mui-pull-right" @click="open">创建活动</span>
+			</header>
+			<div class="mui-content">
+				<div class="activityBg">
+ 
+				</div>
+				<div id="segmentedControl" class="mui-segmented-control mui-segmented-control-inverted mui-segmented-control-primary">
+					<a class="mui-control-item mui-active" href="#wrappers"><span>自建活动</span></a>
+					<a class="mui-control-item " href="#item1"><span>兑贝体验</span></a>
+				</div>
+			</div>
+			<div class="optionDate mui-slider-item mui-control-content " id="item1">
+				<div id="dateHeader" class="dateHeader mui-text-center">
+					<span name="pre" @click="changeMouth('pre')" class=" pre mui-pull-left">
+                	</span>
+					<div id="headerM" class="headerM" v-text="nowY +'年'+ nowM + '月'">
+					</div>
+					<span name="next" @click="changeMouth('next')" class="next mui-pull-right">
+       				</span>
+				</div>
+				<div class="weekLsit mui-text-center">
+					<div class="weekLsit-item">
+						日
+					</div>
+					<div class="weekLsit-item">
+						一
+					</div>
+					<div class="weekLsit-item">
+						二
+					</div>
+					<div class="weekLsit-item">
+						三
+					</div>
+					<div class="weekLsit-item">
+						四
+					</div>
+					<div class="weekLsit-item">
+						五
+					</div>
+					<div class="weekLsit-item">
+						六
+					</div>
+
+				</div>
+				<div id="dayLsit" class="dayLsit mui-text-center mui-clearfix">
+					<div class="dayList-item" v-for="item in noneDay"></div>
+					<div @click="updateRoomNum(item.f2c)" :class="{active: item.isActive}" class="dayList-item" v-for="(item,key) in showDay" v-text="item.day"></div>
+					<!--
+					<div class="dayList-item">1</div>
+					<div class="dayList-item">1</div>
+					<div class="dayList-item">1</div>
+					<div class="dayList-item">1</div>
+					<div class="dayList-item">1</div>
+					<div class="dayList-item">1</div>
+					<div class="dayList-item">1</div> 
+					<div class="dayList-item">1</div>
+					<div class="dayList-item">1</div>
+					<div class="dayList-item">1</div>
+					<div class="dayList-item">1</div>
+					<div class="dayList-item">1</div>-->
+				</div>
+				<div class="roomNum" v-if="isShowRoom">
+					<p id="editRoom" @click="changeRoom(activityId)" class="countRoom" v-text="'房间数量:'+ roomNum"> <img src="" alt="" /></p>
+					<p class="sellRoomNum" v-text="'已售数量:'+ soldNum"> 0</p>
+				</div>
+			</div>
+			<div class="wrappers mui-active  mui-control-content" id="wrappers">
+				<div id="wrapper" class="wrapperList">
+					<ul id="activityList">
+						<li class="ListItem" v-for="(item,key) in list">
+							<div class="activityInfo">
+								<p v-html="item.activityName + item.activityDate +'期 '+'<span>('+item.discount+'折)</span>'">兑咖狂欢日 2017-06-12 期{{1}}<span>(折)</span></p>
+								<p v-text="item.remark">兑咖狂欢F2C积分够，全场8折畅心购</p>
+							</div>
+							<div :class="'activityState mui-text-center stateBg'+item.state">
+								<p class="runState">审批中</p>
+								<a href="javascript:;" class="rmActiveityBtn" @click="offShelfActivity(item.id)">撤销</a>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<script src="../../js/mui.min.js"></script>
+		<script type="text/javascript" src="../../js/muihelper.js"></script>
+		<script src="../../js/common.js"></script>
+		<script type="text/javascript" src="../../js/iscroll.js"></script>
+		<script type="text/javascript" src="../../js/pullToRefresh.js"></script>
+		<!--<script type="text/javascript" src="../../js/page/work/activityCenter.js"></script>-->
+		<!--		<script type="text/javascript" src="../../js/page/date.js"></script>-->
+		<script type="text/javascript" src="../../js/vue.min.js"></script>
+		<script type="text/javascript">
+			var Vue = new Vue({
+				el: "#activityCenter",
+				data: function() {
+					return {
+						list: [],
+						page: 1,
+						pageLen: pageLen,
+						totalPage: null,
+						activityDay: {},
+						noneDay: 0,
+						showDay: [],
+						nowDate: new Date(),
+						nowY: 0,
+						nowM: 0,
+						nowD: 0,
+						isShowRoom: false,
+						roomNum: 0,
+						soldNum: 0,
+						activityId: null,
+					}
+				},
+				created: function() {
+					var _this = this;
+					this.nowY = this.nowDate.getFullYear();
+					this.nowM = this.nowDate.getMonth() + 1;
+					this.nowD = this.nowDate.getDate();
+					mui.plusReady(function() {
+						
+						if(Fun_App.getdata("shopType")!="null"){
+							_this.isShowRoom=true
+						}
+						window.addEventListener("selfBuildActivity", function() {
+							_this.selfBuildActivity(function(resData) {
+								_this.totalPage = Math.ceil(resData.total / _this.pageLen);
+								_this.list = resData.data;
+							}, 1);
+						})
+						_this.selfBuildActivity(function(resData) {
+							_this.totalPage = Math.ceil(resData.total / _this.pageLen);
+							_this.list = resData.data;
+						}, 1)
+						refresher.init({
+							id: "wrapper",
+							pullDownAction: _this.Refresh,
+							pullUpAction: _this.Load
+						});
+						/*日历*/
+						_this.renderMonth();
+					})
+
+				},
+				methods: {
+					selfBuildActivity: function(callBack, page) {
+						var sendData = {
+							config: {
+								"token": Fun_App.getdata("token"),
+								"pageIndex": page
+							},
+							fun_Success: function(data) {
+								callBack(data);
+							}
+						};
+						Fun_App.ExAjax("merchantActivity/selfBuildActivity", sendData);
+
+					},
+					//活动下架
+					offShelfActivity: function(rmId) {
+						var _this = this;
+						var rmActiveityData = {
+							config: {
+								"token": Fun_App.getdata("token"),
+								"id": rmId
+							},
+							fun_Success: function(data) {
+								if(data.success) {
+									_this.selfBuildActivity(function(resData) {
+										_this.list = resData.data;
+									}, 1)
+								}
+							}
+						}
+						mui.plusReady(function() {
+							Fun_App.ExAjax("merchantActivity/offShelfActivity", rmActiveityData)
+						})
+					},
+					f2cActivity: function(callBack, otherM) {
+						var sendData = {
+							config: {
+								"token": Fun_App.getdata("token"),
+								"activityDate": this.nowY + "-" + ((otherM <= 9) ? "0" + otherM : otherM) + "-" + "01"
+							},
+							fun_Success: function(data) {
+								callBack(data)
+							}
+						}
+						console.log(sendData.config.activityDate)
+						Fun_App.ExAjax("merchantActivity/f2cActivity", sendData)
+					},
+					open: function() {
+						mui.plusReady(function() {
+							Fun_App.openWin('createactivity.html', 'pop-in', ''); //创建活动
+						})
+					},
+					Load: function() {
+						var _this = this;
+						this.page++;
+						if(this.page <= this.totalPage) {
+							this.selfBuildActivity(function(resData) {
+								_this.list = _this.list.concat(resData.data);
+							}, this.page)
+						} else {
+							refresher.info.pullUpLable = '没有更多数据了!';
+						}
+						wrapper.refresh();
+					},
+					Refresh: function() {
+						wrapper.refresh();
+					},
+					changeMouth: function(change) {
+						if(change == 'pre') {
+							if(this.nowM <= 1) {
+								this.nowM = 13;
+								this.nowY -= 1;
+							}
+							this.nowM--;
+						} else {
+							if(this.nowM >= 12) {
+								this.nowM = 0;
+								this.nowY += 1;
+							}
+							this.nowM++;
+						}
+						this.renderMonth();
+					},
+					isLeapYear: function(year) {
+						return(year % 100 == 0 ? res = (year % 400 == 0 ? 1 : 0) : res = (year % 4 == 0 ? 1 : 0));
+					},
+					setMonth: function(mouth) {
+						var changeDate = this.nowY + "-" + (mouth <= 9 ? '0' + mouth : mouth) + "-01";
+						var date = new Date(changeDate);
+						return date.getDay();
+					},
+					renderMonth: function() {
+						var _this = this;
+						this.showDay = [];
+						var yearArr = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+						yearArr[1] += this.isLeapYear(this.nowY);
+						this.noneDay = this.setMonth(this.nowM);
+						var f2cActivityInfo = {
+							f2cActivityDay: [],
+							f2cActivityDayId: [],
+							f2cActivityRoomNum: [],
+							f2cActivitySoldRoom: []
+						}
+						this.f2cActivity(function(resData) {
+							for(var i = 0; i < resData.data.length; i++) {
+								f2cActivityInfo.f2cActivityDay.push(resData.data[i].activityDate.split("-")[2]);
+								f2cActivityInfo.f2cActivityDayId.push(resData.data[i].id);
+								f2cActivityInfo.f2cActivityRoomNum.push(resData.data[i].roomNum)
+								f2cActivityInfo.f2cActivitySoldRoom.push(resData.data[i].saleNum)
+							}
+						}, this.nowM)
+
+						console.log(1 + f2cActivityInfo)
+						for(var i = 1; i <= yearArr[this.nowM - 1]; i++) {
+							var stri = (i <= 9 ? '0' + i : i).toString();
+							var f2cArrIndex = f2cActivityInfo.f2cActivityDay.indexOf(stri);
+							if(f2cArrIndex != -1) {
+								this.showDay.push({
+									day: stri,
+									isActive: true,
+									f2c: {
+										activityId: f2cActivityInfo.f2cActivityDayId[f2cArrIndex],
+										RoomNum: f2cActivityInfo.f2cActivityRoomNum[f2cArrIndex],
+										SoldRoom: f2cActivityInfo.f2cActivitySoldRoom[f2cArrIndex],
+									}
+								})
+							} else {
+								this.showDay.push({
+									day: stri,
+									isActive: false
+								})
+							}
+						}
+						console.log(JSON.stringify(this.showDay))
+						/*this.showDay = yearArr[this.nowM - 1]*/
+					},
+					updateRoomNum: function(f2c) {
+						if(f2c != undefined) {
+							this.roomNum = f2c.RoomNum;
+							this.soldNum = f2c.SoldRoom;
+							this.activityId = f2c.activityId;
+						}
+					},
+					changeRoom: function(id) {
+						var _this = this;
+						var sendData = {
+							config: {
+								"token": Fun_App.getdata("token"),
+								"id": id, //活动id
+								"roomNum": null //预留的房间数
+							},
+							fun_Success: function(data) {
+								if(data.success) {
+
+								}
+							}
+						}
+						mui.prompt('', this.roomNum, '房间数量', ['取消', '确认'], function(e) {
+							if(e.index) {
+								sendData.config.roomNum = _this.roomNum = e.value;
+								console.log("-->" + _this.roomNum)
+								console.log(JSON.stringify(sendData.config))
+								Fun_App.ExAjax("merchantActivity/updateRoomNum", sendData);
+							}
+						}, 'div')
+						document.querySelector("input").setAttribute("type", "tel")
+
+					}
+				}
+			})
+		</script>
+	</body>
+
+</html>

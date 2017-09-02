@@ -1,0 +1,162 @@
+@import "../common.less";
+.topBar("../../../img/topBackB-ico.png");
+.topBar {
+    position: relative;
+    * {
+        color: #fff !important;
+    }
+    padding-bottom: 10.5rem;
+    background: url(../../../images/partyInTopBar-bg.png) left top no-repeat;
+    background-size: 100% 12.5rem;
+    .rightIco {
+        background: url(../../../img/partyStateIcoshare-ico.png) right center no-repeat;
+        background-size: 22px 22px !important;
+    }
+}
+
+.mui-content {
+    .partyArticle {
+        padding: 0 12px;
+        img {
+            width: 100%;
+            margin-bottom: 18px;
+        }
+        p {
+            font-size: 13px;
+            color: #333;
+            line-height: 20px;
+            word-break: break-all;
+        }
+        .partyArticleTit {
+            margin-bottom: 22.5px;
+            .partyTit {
+                display: inline-block;
+                padding: 2.5px 10px 15px 10px;
+                font-size: 18px;
+                border-bottom: 1px solid #333;
+                color: #333333;
+            }
+        }
+    }
+}
+
+.partyCardBox {
+    position: absolute;
+    top: 4.15rem;
+    z-index: 999;
+    width: 100%;
+    padding:0 0.93rem;
+    *{
+        color: #fff;
+    }
+    .partyCard{
+        padding-top: 0.37rem;
+        padding-right: 0.62rem;
+        padding-bottom: 0.93rem;
+        background: url(../../../images/partyCard-bg.png) center center no-repeat;
+        background-size: cover;
+        .partyState{
+            display: flex;
+            flex: 1;
+            width: 100%;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 0.81rem;
+            .Ico1{
+                 background: url(../../../img/partyStateIco1-ico.png) left center no-repeat;
+            }
+            .partyStateIco{
+                position: relative;
+                left: -3px;
+                line-height: 1.43rem;
+                text-align: center;
+               .wh(3.93rem,1.43rem);
+               background-size:3.93rem 1.43rem;
+            }
+            .partyStateDate{
+                
+            }
+        }
+        .partyInPeople{
+            margin-top:1.87rem;
+            margin-bottom: 1.78rem;
+            color: #D7B374;
+            font-size: 1rem;
+            #rcNum{
+                font-size: 3.06rem;
+                color: #D7B374;
+            }
+        }
+        .partyCardFooter{
+            display: flex;
+            flex: 1;
+            width: 100%;
+            align-items: flex-end;
+            .CardFooterMoney{
+                flex: 2;
+                font-size: 0.81rem;
+                text-indent: 0.59rem;
+            }
+            .CardFooterNum{
+                font-size: 0.81rem; 
+            }
+            .partyClass{
+                margin-left: 0.56rem;
+                .wh(36.5px,15px);
+                text-align: center;
+                line-height: 0.93rem;
+                font-size: 0.75rem;
+                background: #D7B374;
+                border-radius: 7.5px 7.5px 7.5px 0;
+            }
+        }
+    }
+}
+
+.shareShowBox {
+    position: fixed;
+    display: flex;
+    flex: 1;
+    bottom: 0;
+    z-index: 999;
+    width: 100%;
+    padding: 0 1.68rem;
+    padding-top: 1.25rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    animation: shareRotate .5s;
+    background: #fff;
+    .shareShowBoxItem {
+        display: flex;
+        flex: 1;
+        .wh(60px,
+        71px);
+        margin-bottom: 0.87rem;
+        text-align: center;
+        flex-direction: column;
+        justify-content: center;
+        .wx {
+            background: url(../../../img/shareWX-ico.png) center center no-repeat;
+        }
+        .qq {
+            background: url(../../../img/shareQQ-ico.png) center center no-repeat;
+        }
+        .wb {
+            background: url(../../../img/shareWB-ico.png) center center no-repeat;
+        }
+        .link {
+            background: url(../../../img/shareLink-ico.png) center center no-repeat;
+        }
+        .shareShowBoxItem-ico {
+            display: flex;
+            flex: 1;
+            height: 3.12rem;
+            margin: 0;
+            background-size: 3.12rem;
+        }
+        p {
+            color: #333;
+        }
+    }
+}

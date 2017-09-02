@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>系统消息-文章</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../../css/page/work/messageArticle.css">
+	</head>
+
+	<body>
+		<div id="">
+			<header class="mui-bar topBar mui-bar-nav">
+				<a class="mui-action-back topBack-ico mui-pull-left"></a>
+				<h1 class="mui-title" v-text="pageData.pTitle"></h1>
+			</header>
+			<div class="mui-content">
+				<div class="ArticleTop mui-text-center">
+					<h1 class="Article-Tit" v-text="pageData.title">asdjaskdasd</h1>
+					<p class="Article-TitDate" v-text="pageData.createTime">2017-6-11</p>
+				</div>
+			</div>
+			<div class="ArticleContiner" v-html="pageData.description">
+
+			</div>
+			<div class="ArticleContinerFooter mui-text-center">
+				别再糟蹋生活,活在DUI的时代
+			</div>
+		</div>
+		<script src="../../js/mui.min.js"></script>
+		<script type="text/javascript" src="../../js/muihelper.js"></script>
+		<script type="text/javascript" src="../../js/vue.min.js"></script>
+		<script type="text/javascript">
+			var Vue = new Vue({
+				el: "#Article",
+				data: function() {
+					return {
+						pageData: {}
+					}
+				},
+				created: function() {
+					var _this = this;
+					mui.plusReady(function() {
+						_this.pageData = Fun_App.getextrasdata();
+						_this.pageData.status == 0 ? _this.readMessage([_this.pageData.adminMessageId]) : "";
+						console.log(JSON.stringify(plus.webview.all()))
+					})
+				},
+				methods: {
+					readMessage: function(adminMessageId) {
+						var sendData = {
+							config: {
+								"token": Fun_App.getdata("token"),
+								"adminMessageIds": adminMessageId
+							},
+							fun_Success: function(data) {
+								if(data.success) {
+									detailPage = plus.webview.getWebviewById('msgcenter.html');
+									mui.fire(detailPage, "messageList");
+									detailPage = plus.webview.getWebviewById('page/work/home.html');
+									mui.fire(detailPage, "getindexData");
+								}
+							}
+						}
+						Fun_App.ExAjax("merchant/read", sendData);
+					}
+
+				}
+			})
+		</script>
+	</body>
+
+</html>

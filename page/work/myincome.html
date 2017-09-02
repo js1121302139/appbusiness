@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title>兑咖-营业收入</title>
+		<link rel="stylesheet" href="../../css/mui.min.css">
+		<link rel="stylesheet" href="../../css/pullToRefresh.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/page/work/myincome.css" />
+	</head>
+
+	<body>
+		<div id="myincome">
+			<div class="minetop-box">
+				<div class="topBar">
+					<div class="mui-action-back topBack-ico mui-pull-left"></div>
+					<div class="" id="myDetailed" @click="open('dentail')">结算明细</div>
+				</div>
+				<div class="mine-topInfo mui-text-center">
+					<p class="topInfoTit">总营业收入</p>
+					<p class="topInfoCountMoney" id="yyaccount" v-text="topInfo.saleMoney==null?0:topInfo.saleMoney">99</p>
+				</div>
+				<div class="mine-topInfoMoney mui-text-center">
+					<div class="preMoney">
+						<p>已结算金额(元)</p>
+						<p class="money" id="SettlementMoney" v-text="topInfo.settled==null?0:topInfo.settled">99999</p>
+					</div>
+					<div class="nextMoney">
+						<p>可结算金额(元)</p>
+						<p class="money" id="OutstandingMoney" v-text="topInfo.balance==null?0:topInfo.balance">99999</p>
+					</div>
+				</div>
+			</div>
+			<div class="mui-content">
+				<div class="wrappers">
+					<div id="wrapper" class="wrapperList">
+						<ul id="yyaccountList">
+							<!--<li class="wrapperListItem" >
+							<p class="ordersDate" >2016-01-12 16:00:00</p> 
+							<p class="ordersMoney mui-right"  >￥99</p>
+						</li>
+						<li class="wrapperListItem" >
+							<p class="ordersDate" >2016-01-12 16:00:00</p> 
+							<p class="ordersMoney mui-right"  >￥99</p>
+						</li>
+						<li class="wrapperListItem" >
+							<p class="ordersDate" >2016-01-12 16:00:00</p> 
+							<p class="ordersMoney mui-right"  >￥99</p>
+						</li>-->
+
+							<li class="wrapperListItem" :key="key" v-for="(item,key) in incomeList">
+								<p class="ordersDate" v-text="item.createTime">2016-01-12 16:00:00</p>
+								<p class="ordersMoney mui-right" v-text="item.money">￥99</p>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="footerButton mui-text-center" id="myMoney" @click="open('applysettlement')">
+					申请结算
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../../js/mui.min.js"></script>
+	<script type="text/javascript" src="../../js/muihelper.js"></script>
+	<script type="text/javascript" src="../../js/iscroll.js"></script>
+	<script type="text/javascript" src="../../js/pullToRefresh.js"></script>
+	<script type="text/javascript" src="../../js/vue.min.js"></script>
+	<script type="text/javascript">
+		var Vue = new Vue({
+			el: "#myincome",
+			data: function() {
+				return {
+					page: 1,
+					pageLen: pageLen,
+					totalPage: null,
+					topInfo: {},
+					incomeList: []
+				}
+			},
+			created: function() {
+				var _this = this;
+				mui.plusReady(function() {
+					Fun_App.pulldownRefresh();
+					window.addEventListener("myincome", function() {
+						_this.getMyIncome(function(infoData) { //顶部收入
+							console.log(Fun_App.getdata("token"))
+							_this.topInfo = infoData.data;
+
+						})
+						_this.getMyIncomeList(function(resData) { //列表数据
+							_this.incomeList = resData.data;
+							_this.totalPage = Math.ceil(resData.total / _this.pageLen);
+							console.log(JSON.stringify(_this.incomeList))
+						}, 1)
+					})
+					_this.getMyIncome(function(infoData) { //顶部收入
+						console.log(Fun_App.getdata("token"))
+						_this.topInfo = infoData.data;
+
+					})
+					_this.getMyIncomeList(function(resData) { //列表数据
+						_this.incomeList = resData.data;
+						_this.totalPage = Math.ceil(resData.total / _this.pageLen);
+						console.log(JSON.stringify(_this.incomeList))
+					}, 1)
+					refresher.init({
+						id: "wrapper",
+						pullDownAction: _this.Refresh,
+						pullUpAction: _this.Load
+					});
+				})
+			},
+			methods: {
+				getMyIncome: function(callBack) {
+					var sendData = {
+						config: {
+							token: Fun_App.getdata("token")
+						},
+						fun_Success: function(data) {
+							callBack(data);
+						}
+					}
+					Fun_App.ExAjax("merchantBalance/info", sendData);
+				},
+				getMyIncomeList: function(callBack, page) {
+					var sendData = {
+						config: {
+							token: Fun_App.getdata("token"),
+							pageIndex: page
+						},
+						fun_Success: function(data) {
+							callBack(data);
+						}
+					}
+					Fun_App.ExAjax("merchantBalance/moreInfo", sendData);
+				},
+				Load: function() {
+					var _this = this;
+					this.page++;
+					if(this.page <= this.totalPage) {
+						this.getMyIncomeList(function(infoData) {
+							_this.incomeList = _this.incomeList.concat(infoData.data)
+						}, this.page);
+					} else {
+						refresher.info.pullUpLable = '没有更多数据了!';
+					}
+
+					wrapper.refresh();
+				},
+				/*Refresh:function(){
+					alert()
+				},*/
+				open: function(pageClass) {
+					var win = {
+						dentail: {
+							url: './jsdentail.html',
+							transmitData: 'merchantBalance/withdrawInfo'
+						},
+						applysettlement: {
+							url: './applysettlement.html',
+							transmitData: {
+								type: 1,
+								money: this.topInfo.balance,
+								msgType:4,
+								url:'merchantBalance/withdrawInfo'
+							}
+						}
+					}
+					mui.plusReady(function() {
+						Fun_App.openWin(win[pageClass].url, 'pop-in', win[pageClass].transmitData);
+					})
+				}
+			}
+		})
+	</script>
+
+</html>

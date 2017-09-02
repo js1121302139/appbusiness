@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>订单详情</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link href="../../css/page/order/orderdentail.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<div id="orderdentail">
+			<header class="mui-bar topBar mui-bar-nav">
+				<a class="mui-action-back topBack-ico mui-pull-left"></a>
+				<h1 class="mui-title">订单详情</h1>
+			</header>
+			<div class="mui-content">
+				<div id="wrapper" class="wrapperList">
+					<ul>
+						<li class="wrapperListItem" v-for="(item,key) in list">
+							<div class="ListItem-Tit">
+								<div class="itemTit-orderNum" v-text="'订单号:' +item.orderSn ">
+									订单号: 1611111111111
+								</div>
+								<div class="itemTit-orderDate mui-text-right" v-text="item.createTime">
+									2017-04-20 16:20
+								</div>
+							</div>
+							<div class="ListItem-Info">
+								<div class="order-People">
+									<div class="order-PeopleImg"><img class="order-PeopleImg" :src="picservice + item.headImg" alt=""></div>
+									<div class="order-PeopleInfo" v-text="item.memberName">罗炼羽 15632456528</div>
+								</div>
+								<div class="order-Income">
+									<p>消费金额:<span v-text="item.moneyTotal">8654.65</span></p>
+									<p>营业收入:<span v-text="item.actualTotalIncome">8654.65</span></p>
+									<p>佣&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 金:<span v-text="item.scalingAmount">86565</span></p>
+									<p>兑贝抵扣:<span v-text="item.integral">86565</span></p>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<script src="../../js/mui.min.js"></script>
+		<script type="text/javascript" src="../../js/iscroll.js"></script>
+		<script type="text/javascript" src="../../js/pullToRefresh.js"></script>
+		<script type="text/javascript" src="../../js/muihelper.js"></script>
+		<!--<script type="text/javascript" src="../../js/page/order/orderdentail.js" ></script>-->
+		<script src="../../js/vue.min.js"></script>
+		<script type="text/javascript">
+			var Vue = new Vue({
+				el: "#orderdentail",
+				data: function() {
+					return {
+						page: 1,
+						totalPage: null,
+						pageLen: pageLen,
+						picservice: picservice,
+						list: [],
+						statisTime: null
+					}
+				},
+				created: function() {
+
+					var _this = this;
+					mui.plusReady(function() {
+						_this.statisTime = Fun_App.getextrasdata();
+						_this.getList(function(resData) {
+							_this.list = resData.data;
+							_this.totalPage = Math.ceil(resData.total / _this.pageLen);
+						}, 1)
+						refresher.init({
+							id: "wrapper",
+							pullDownAction: _this.Refresh,
+							pullUpAction: _this.Load
+						});
+					})
+				},
+				methods: {
+					getList: function(callBack, page) {
+						var sendData = {
+							config: {
+								token: Fun_App.getdata("token"),
+								statisTime: this.statisTime,
+								pageIndex: page
+							},
+							fun_Success: function(data) {
+								callBack(data)
+							}
+						}
+						Fun_App.ExAjax("merchantOrders/detailInfo", sendData)
+					},
+					Load: function() {
+						var _this = this ;
+						this.page++;
+						if(this.page <= this.totalPage){
+							this.getList(function(resData) {
+								_this.list = _this.list.concat(resData.data)
+							}, this.page)
+						}else{
+							refresher.info.pullUpLable = '没有更多数据了!';
+						}
+							
+						wrapper.refresh();
+					}
+				}
+
+			})
+		</script>
+	</body>
+
+</html>

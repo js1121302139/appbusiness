@@ -1,0 +1,203 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>订单</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../../css/page/order/myorder.css" />
+		<link rel="stylesheet" href="../../css/pullToRefresh.css" />
+	</head>
+
+	<body>
+		<div class="mui-content" id="myorder">
+			<div class="mine-top-box">
+				<div class="totalMoney mui-text-center">
+					<p class="totalMoney-Tit">总营业收入(元)</p>
+					<p class="totalMoney-Money" id="totalMoney" v-text="pageTop.actualTotalIncome==null?0:pageTop.actualTotalIncome">9999.99</p>
+				</div>
+				<div class="orderInfo mui-text-center">
+					<div class="totalOrder">
+						<p>总订单数(单)</p>
+						<p id="orderNum" v-text="pageTop.ordersTotal==null?0:pageTop.ordersTotal">789789</p>
+					</div>
+					<div class="orderTotalMoney">
+						<p>订单总额(元)</p>
+						<p id="orderTotal" v-text="pageTop.ordersTotalMoney==null?0:pageTop.ordersTotalMoney">99999</p>
+					</div>
+				</div>
+			</div>
+			<div id="wrapper" class="wrapperList">
+				<ul id="allOrderList">
+					<li class="wrapperListItem" v-for="(item, key) in list">
+						<div class="ordersItemTit">
+							<div class="ordersDate">
+								{{item.statisTime | cutTime}}
+							</div>
+							<div class="question mui-text-center" @click="showPopup(item)">
+
+							</div>
+							<div class="seeInfo mui-text-right" @click="detailInfo(item.statisTime)">
+								查看明细
+							</div>
+						</div>
+						<div class="ordersInfo ">
+							<div class="ordersCount mui-text-left">
+								<p>订单数</p>
+								<p v-text="item.orderNum">68856</p>
+							</div>
+							<div class="ordersMoney mui-text-center">
+								<p>订单总额</p>
+								<p v-text="item.moneyTotal">68856</p>
+							</div>
+							<div class="ordersIncome mui-text-right">
+								<p>营业收入</p>
+								<p v-text="item.actualIncome">68856</p>
+							</div>
+						</div>
+					</li>
+
+				</ul>
+			</div>
+		</div>
+		<script src="../../js/mui.js"></script>
+		<script src="../../js/jquery-1.11.0.js"></script>
+		<script type="text/javascript" src="../../js/muihelper.js"></script>
+		<!--<script type="text/javascript" src="../../js/page/order/myorder.js"></script>-->
+		<script type="text/javascript" src="../../js/iscroll.js"></script>
+		<script type="text/javascript" src="../../js/pullToRefresh.js"></script>
+		<script type="text/javascript" src="../../js/vue.min.js"></script>
+		<script type="text/javascript">
+			var Vue = new Vue({
+				el: "#myorder",
+				data: function() {
+					return {
+						page: 1,
+						totalPage: null,
+						pageTop: {},
+						list: []
+					}
+				},
+				created: function() {
+					var _this = this;
+					mui.plusReady(function() {
+						Fun_App.pulldownRefresh();
+						window.addEventListener("myOrderList", function() {
+							_this.myOrderList(function(resData) {
+								_this.list = resData.data;
+							}, 1)
+						})
+						window.addEventListener("getMyOrderTop", function() {
+							_this.getMyOrderTop(function(resData) {
+								_this.pageTop = resData.data;
+							})
+						})
+						_this.myOrderList(function(resData) {
+							_this.list = resData.data;
+						}, 1)
+						_this.getMyOrderTop(function(resData) {
+							_this.pageTop = resData.data;
+						})
+						_this.todayOrdersStatistics(function(resdata) {
+							if(resdata.data != null) {
+								_this.list.unshift(resdata.data)
+							}
+						})
+						refresher.init({
+							id: "wrapper",
+							pullDownAction: _this.Refresh,
+							pullUpAction: _this.Load
+						});
+					})
+				},
+				methods: {
+					getMyOrderTop: function(callBack) {
+						var sendData = {
+							config: {
+								token: Fun_App.getdata("token")
+							},
+							fun_Success: function(data) {
+								callBack(data)
+							}
+						}
+						Fun_App.ExAjax("merchantOrders/statistics", sendData)
+					},
+					myOrderList: function(callBack, page) {
+						var sendData = {
+							config: {
+								token: Fun_App.getdata("token"),
+								pageIndex: page
+							},
+							fun_Success: function(data) {
+								callBack(data)
+							}
+						}
+						Fun_App.ExAjax("merchantOrders/moreStatistics", sendData)
+					},
+					todayOrdersStatistics: function(callBack) {
+						var sendData = {
+							config: {
+								token: Fun_App.getdata("token")
+							},
+							fun_Success: function(data) {
+								callBack(data)
+							}
+						}
+						Fun_App.ExAjax("merchantOrders/todayOrdersStatistics", sendData)
+					},
+					Load: function() {
+						this.page++;
+						var _this = this;
+						if(this.page < this.totalPage) {
+							this.myOrderList(function(resdata) {
+								_this = _this.list.concat(resdata.data);
+								console.log(JSON.stringify(resdata));
+							}, this.page)
+						} else {
+							refresher.info.pullUpLable = '没有更多数据了!';
+						}
+						wrapper.refresh();
+					},
+					/*Refresh: function() {
+						var _this = this;
+						this.todayOrdersStatistics(function(resdata) {
+							if(resdata.data != null) {
+								_this.list.splice(0, 1)
+								_this.list.unshift(resdata.data)
+							}
+						})
+
+						console.log(JSON.stringify(this.list));
+					},*/
+					showPopup: function(showData) {
+						console.log(JSON.stringify(showData))
+						var alertStr =
+							'<div class=""><p>订单数</p><p>' + showData.orderNum + '</p></div>' +
+							'<div class=""><p>订单总额</p><p>' + showData.moneyTotal + '</p></div>' +
+							'<div class=""><p>兑贝抵扣</p><p>' + showData.integral + '</p></div>' +
+							'<div class=""><p>佣金扣除</p><p>' + showData.scalingAmount + '</p></div>' +
+							'<div class=""><p>营业收入</p><p>' + showData.actualIncome + '</p></div>';
+						mui.alert(alertStr, '', '知道了', function(e) {
+							e.index
+						}, 'div')
+					},
+					detailInfo: function(statisTime) {
+						mui.plusReady(function() {
+							Fun_App.openWin("./orderdentail.html", 'pop-in', statisTime);
+						})
+					}
+
+				},
+				filters: {
+					cutTime: function(timer) {
+						var str = timer.split(" ")[0]
+						console.log(str)
+						return str;
+					}
+				}
+			})
+		</script>
+	</body>
+
+</html>

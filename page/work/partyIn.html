@@ -1,0 +1,204 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../../css/page/work/partyIn.css" />
+	</head>
+
+	<body>
+		<div id="partyIn">
+			<header class="mui-bar topBar mui-bar-nav">
+				<a class="mui-action-back topBack-ico mui-pull-left"></a>
+				<h1 class="mui-title mui-ellipsis" id="tit" v-text="pageData.theme"></h1>
+				<span id="createPartyRaiders" class="rightIco mui-pull-right" @click="share"></span>
+			</header>
+			<div class="partyCardBox">
+				<div class="partyCard">
+					<div class="partyState">
+						<p class="partyStateIco Ico1" id="partyState" v-text="status[pageData.status]"></p>
+						<p id="partyStarTime" class="partyStateDate mui-text-right" v-text="pageData.startTime">2017-08-05 18:00-22:00</p>
+					</div>
+					<div class="partyInPeople mui-text-center">
+						<span id="rcNum" v-text="pageData.useNumber"></span>入场
+					</div>
+					<div class="partyCardFooter">
+						<p class="CardFooterMoney" id="CardFooterMoney">单价:￥{{pageData.price}}</p>
+						<p class="CardFooterNum" id="CardFooterNum">已售:{{pageData.saleNumber}}/{{pageData.number}} </p>
+						<p class="partyClass" id="partyClass" v-text="type[pageData.type]"></p>
+					</div>
+				</div>
+			</div>
+			<div class="mui-content">
+
+				<div class="partyArticle" id="partyArticle" v-html="pageData.description">
+					<div class="partyArticleTit mui-text-center">
+						<span class="partyTit">活动详情</span>
+					</div>
+
+				</div>
+			</div>
+			<div class="shareShowBox" v-show="shareShowBox">
+				<div class="shareShowBoxItem">
+					<div class="shareShowBoxItem-ico wx">
+
+					</div>
+					<p>微信</p>
+				</div>
+				<div class="shareShowBoxItem">
+					<div class="shareShowBoxItem-ico qq">
+
+					</div>
+					<p>微信</p>
+				</div>
+				<div class="shareShowBoxItem">
+					<div class="shareShowBoxItem-ico wb">
+
+					</div>
+					<p>微信</p>
+				</div>
+				<div class="shareShowBoxItem">
+					<div class="shareShowBoxItem-ico link">
+
+					</div>
+					<p>复制链接</p>
+				</div>
+			</div>
+		</div>
+		<script src="../../js/mui.min.js"></script>
+		<script type="text/javascript" src="../../js/muihelper.js"></script>
+		<script src="../../js/vue.min.js"></script>
+		<script type="text/javascript">
+			var Vue = new Vue({
+				el: "#partyIn",
+				data: function() {
+					return {
+						shares: null,
+						shareShowBox: false,
+						type: {
+							'4': '众筹',
+							'3': '购票'
+						},
+						status: {
+							'0': '未审核',
+							'1': "审核通过",
+							'2': "审核不通过",
+							"3": '下架',
+							"4": "众筹成功",
+							"5": "众筹失败",
+							"6":'预览'
+						},
+						arcId: null,
+						pageData: {}
+					}
+				},
+				created: function() {
+					var _this = this;
+					mui.plusReady(function() {
+						Fun_App.pulldownRefresh();
+						console.log(JSON.stringify(Fun_App.getextrasdata()))
+						if(Fun_App.getextrasdata().id!="see") {
+							_this.getPartyIn(Fun_App.getextrasdata(), function(resData) {
+								_this.pageData = resData.data;
+								console.log(JSON.stringify(_this.pageData))
+							});
+						}else{
+							_this.pageData = Fun_App.getextrasdata().data;
+						}
+
+					})
+				},
+				methods: {
+					getPartyIn: function(id, callBack) {
+						var sendData = {
+							config: {
+								token: Fun_App.getdata("token"),
+								id: id
+							},
+							fun_Success: function(data) {
+								callBack(data)
+							}
+						}
+						Fun_App.ExAjax("merchantParty/playKaDetail", sendData)
+					},
+					share: function() {
+						this.shareShowBox = !this.shareShowBox;
+					},
+					/**
+					 * 更新分享服务
+					 */
+					updateSerivces: function() {
+						var _this = this;
+						plus.share.getServices(function(s) {
+							console.log("分享：" + JSON.stringify(s));
+							_this.shares = {};
+							for(var i in s) {
+								var t = s[i];
+								_this.shares[t.id] = t;
+							}
+						}, function(e) {
+							console.log('获取分享服务列表失败：' + e.message);
+						});
+					},
+
+					/**
+					 * 分享操作
+					 * @param {JSON} sb 分享操作对象s.s为分享通道对象(plus.share.ShareService)
+					 * @param {Boolean} bh 是否分享链接
+					 */
+					shareAction: function(sb, bh) {
+						if(!sb || !sb.s) {
+							console.log('无效的分享服务！');
+							return;
+						}
+						var msg = {
+							content: "兑咖",
+							extra: {
+								scene: sb.x
+							}
+						};
+						sharehref = "http://www.yunduiwang.com/";
+						if(bh) {
+							msg.href = sharehref;
+							msg.title = "兑咖";
+							msg.content = "兑咖描述";
+							msg.thumbs = ['_www/logo1.jpg'];
+							msg.pictures = ['_www/logo1.jpg'];
+						}
+						// 发送分享
+						if(sb.s.authenticated) {
+							console.log('---已授权---');
+							shareMessage(msg, sb.s);
+						} else {
+							console.log('---未授权---');
+							sb.s.authorize(function() {
+								shareMessage(msg, sb.s);
+							}, function(e) {
+								console.log('认证授权失败：' + e.code + ' - ' + e.message);
+							});
+						}
+					},
+					/**
+					 * 发送分享消息
+					 * @param {JSON} msg
+					 * @param {plus.share.ShareService} s
+					 */
+					shareMessage: function(msg, s) {
+						console.log("发送分享消息" + JSON.stringify(msg));
+						s.send(msg, function() {
+							console.log('分享到"' + s.description + '"成功！');
+						}, function(e) {
+							console.log('分享到"' + s.description + '"失败: ' + JSON.stringify(e));
+						});
+					}
+				}
+
+			})
+			mui.init()
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title>我的共享收益</title>
+		<link rel="stylesheet" href="../../css/mui.min.css">
+		<link rel="stylesheet" href="../../css/pullToRefresh.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/page/work/shareprofit.css" />
+	</head>
+
+	<body>
+		<div id="shareprofit">
+			<div class="minetop-box">
+				<div class="topBar">
+					<div class="mui-action-back topBack-ico mui-pull-left"></div>
+					<div id="myDetailed" @click="open('dentail')">结算明细</div>
+				</div>
+				<div class="mine-topInfo mui-text-center">
+					<p class="topInfoTit">共享收益(元)</p>
+					<p class="topInfoCountMoney" id="goubeiaccount" v-text="pageData.shareMoney">99</p>
+				</div>
+				<div class="mine-topInfoMoney mui-text-center">
+					<div class="preMoney">
+						<p>已结算金额(元)</p>
+						<p class="money" id="mine-goubei-online" v-text="shareBalanceMoney">99999</p>
+					</div>
+					<div class="nextMoney">
+						<p>可结算金额(元)</p>
+						<p class="money" id="mine-goubei-offline" v-text="pageData.shareBalance">99999</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="monthlyEarnings mui-text-right" id="everyMoth" @click="open('everyMouth')">
+				<span>每月收益</span> <img src="../../img/order-ListGo-ico.png" alt="">
+			</div>
+			<div class="wrappers">
+				<div id="wrapper" class="wrapperList">
+					<ul id="yyaccountList">
+						<li class="ListItem" v-for="(items,key) in list">
+							<div class="ListItemTop">
+								<p class="itemInfo" v-text="items.merchantName"></p>
+								<p class="itemMoney" v-text="items.money"></p>
+							</div>
+							<p class="ListItemDate" v-text="items.createTime">
+
+							</p>
+						</li>
+					</ul>
+				</div>
+
+			</div>
+			<div class="footerButton mui-text-center" id="myMoney" @click="open('applysettlement')">
+				申请结算
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../../js/mui.min.js"></script>
+	<script type="text/javascript" src="../../js/muihelper.js"></script>
+	<!--<script type="text/javascript" src="../../js/page/work/shareprofit.js"></script>-->
+	<script type="text/javascript" src="../../js/iscroll.js"></script>
+	<script type="text/javascript" src="../../js/pullToRefresh.js"></script>
+	<script type="text/javascript" src="../../js/vue.min.js"></script>
+	<script type="text/javascript">
+		var Vue = new Vue({
+			el: "#shareprofit",
+			data: function() {
+				return {
+					totalPage: null,
+					page: 1,
+					pageLen: pageLen,
+					pageList: [],
+					shareBalanceMoney: 0,
+					pageData: {},
+					list: []
+				}
+			},
+			created: function() {
+				var _this = this;
+				mui.plusReady(function() {
+					Fun_App.pulldownRefresh();
+					window.addEventListener("shareprofit", function() {
+						_this.getMyIncome(function(resData) {
+							_this.pageData = resData.data;
+							_this.shareBalanceMoney = _this.pageData.shareMoney - _this.pageData.shareBalance
+						});
+						_this.getMoreInfo(function(resData) {
+							_this.list = resData.data
+							_this.totalPage = Math.ceil(resData.total / _this.pageLen);
+						}, 1)
+					})
+					_this.getMyIncome(function(resData) {
+						_this.pageData = resData.data;
+						_this.shareBalanceMoney = _this.pageData.shareMoney - _this.pageData.shareBalance
+					});
+					_this.getMoreInfo(function(resData) {
+						_this.list = resData.data
+						_this.totalPage = Math.ceil(resData.total / _this.pageLen);
+					}, 1)
+					refresher.init({
+						id: "wrapper",
+						pullUpAction: _this.Load
+					});
+				})
+			},
+			methods: {
+				getMyIncome: function(callBack) {
+					var sendData = {
+						config: {
+							token: Fun_App.getdata("token")
+						},
+						fun_Success: function(data) {
+							callBack(data);
+						}
+					}
+					Fun_App.ExAjax("merchantShare/info", sendData);
+				},
+				getMoreInfo: function(callBack, page) {
+					var sendData = {
+						config: {
+							token: Fun_App.getdata("token"),
+							pageIndex: page
+						},
+						fun_Success: function(data) {
+							callBack(data);
+						}
+					}
+					Fun_App.ExAjax("merchantShare/moreInfo", sendData);
+				},
+				Load: function() {
+					this.page++;
+					var _this = this;
+					if(this.page <= this.totalPage) {
+						this.getMoreInfo(function(infoData) {
+							_this.list = _this.list.concat(infoData.data);
+						}, this.page);
+					} else {
+						refresher.info.pullUpLable = '没有更多数据了!';
+					}
+
+					wrapper.refresh();
+				},
+				open: function(pageClass) {
+					var win = {
+						dentail: {
+							url: './jsdentail.html',
+							transmitData: 'merchantShare/withdrawInfo'
+						},
+						applysettlement: {
+							url: './applysettlement.html',
+							transmitData: {
+								type: 2,
+								money: this.pageData.shareBalance,
+								msgType:3,
+								url:'merchantShare/withdrawInfo'
+							}
+						},
+						everyMouth: {
+							url: './monthlyEarnings.html',
+							transmitData: ''
+						}
+					}
+					mui.plusReady(function() {
+						Fun_App.openWin(win[pageClass].url, 'pop-in', win[pageClass].transmitData);
+					})
+				}
+			}
+		})
+	</script>
+
+</html>

@@ -1,0 +1,33 @@
+/*头部提示信息*/
+.integralMsg {
+  padding: 1.15rem 0;
+  background: url(../../../img/ico-bigdeng.png) 1.25rem center no-repeat;
+  background-size: 2.4rem;
+  padding-left: 4.37rem;
+  padding-right: 2.03rem;
+}
+/*页面的主体部分*/
+.integralContent {
+  padding: 0 0.75rem;
+  margin-bottom: 1.68rem;
+}
+.integralContent .mui-table-view-cell {
+  background: #fff;
+  line-height: 2.5rem;
+}
+.integralContent .mui-table-view-cell input {
+  height: 2.5rem;
+  border: none;
+  background: #F5F5F5;
+}
+.integralBtn {
+  padding: 0 0.75rem;
+}
+.integralBtn a {
+  color: #fff;
+  border: none;
+  background: linear-gradient(#00adff, #0a7ff1);
+}
+.integralBtn a:active {
+  background: linear-gradient(#0a7ff1, #00adff);
+}

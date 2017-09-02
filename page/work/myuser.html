@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title>Document</title>
+		<link rel="stylesheet" href="../../css/mui.min.css" />
+		<link rel="stylesheet" href="../../css/pullToRefresh.css" />
+		<link rel="stylesheet" href="../../css/page/work/myuser.css" />
+		<link rel="stylesheet" href="../../css/page/textarea.css" />
+
+	</head>
+
+	<body>
+		<div id="myuser">
+			<header class="mui-bar topBar mui-bar-nav">
+				<a class="mui-action-back topBack-ico mui-pull-left"></a>
+				<h1 class="mui-title">我的用户</h1>
+			</header>
+			<div class="mui-content">
+				<div class="bgImg">
+
+				</div>
+				<div class="userscount">
+					<div class="mui-row">
+						<div class="mui-col-sm-6 mui-col-xs-6 mui-pull-left userBg">
+							我的用户
+						</div>
+						<div class="mui-col-sm-6 mui-col-xs-6 mui-pull-right mui-text-right totalUser">
+							<span class="userNum" id="userNum" v-text="pageData.total">12</span>位用户
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="wrapper">
+				<div id="wrapper" class="wrapperList">
+					<ul class="userLsit" id="userList">
+						<li class="mui-table-view-cell userBox" @click.stop="checks(key)" v-for="(item,key) in list">
+							<div class="checkAndImg mui-checkbox">
+								<input class="check" :checked="item.ischeck" v-model="item.ischeck" type="checkbox">
+								<img :src="picservice + item.headImg" />
+							</div>
+							<div class="userInfo">
+								<p v-text="'用户名:' + item.memberName +'(ID'+item.memberId+')'">用户名:锤子(ID:007)</p>
+								<p v-text="'等级:' + item.grade">用户名:锤子(ID:007)</p>
+								<p v-text="'关注时间:' + item.createTime">用户名:锤子(ID:007)</p>
+							</div>
+							<div class="moneyAndMsgBtn">
+								<p class="mui-text-center" v-text="'￥' + item.money==null?0:item.money">￥5000</p>
+								<a href="javascript:;" class="mui-text-center" @click.stop="send(key,[item.memberId])">发送消息</a>
+							</div>
+						</li>
+
+					</ul>
+				</div>
+
+			</div>
+			<nav class="mui-bar mui-bar-tab">
+				<div class="mui-row">
+					<div class="mui-col-sm-8 mui-col-xs-8 selectAll">
+						<div class="mui-input-row mui-checkbox mui-left" @click="checkAll">
+							<label class="Allcheck" @click="checkAll">全选</label>
+							<input class="Allcheck" type="checkbox" id="Allcheck">
+						</div>
+					</div>
+					<div class="mui-col-sm-4 mui-col-xs-4 senAllMsg mui-text-center">
+						<a href="javascript:;" @click="send('all')">发送消息</a>
+					</div>
+				</div>
+			</nav>
+
+		</div>
+	</body>
+	<script src="../../js/mui.js"></script>
+	<script type="text/javascript" src="../../js/muihelper.js"></script>
+	<script type="text/javascript" src="../../js/iscroll.js"></script>
+	<script type="text/javascript" src="../../js/pullToRefresh.js"></script>
+	<!--<script type="text/javascript" src="../../js/page/work/myuser.js"></script>-->
+	<script type="text/javascript" src="../../js/vue.min.js"></script>
+	<script type="text/javascript">
+		var Vue = new Vue({
+			el: "#myuser",
+			data: function() {
+				return {
+					picservice: picservice,
+					page: 1,
+					totalPage: null,
+					pageLen: pageLen,
+					pageData: {},
+					list: [],
+					sendArr: [],
+					checkAlls: false
+				}
+			},
+			created: function() {
+				var _this = this;
+				mui.plusReady(function() {
+					_this.getUser(function(resData) {
+						console.log(JSON.stringify(resData))
+						_this.totalPage = Math.ceil(resData.total / _this.pageLen);
+						_this.pageData = resData;
+						_this.appendList(resData.data);
+						console.log(JSON.stringify(_this.list))
+					}, 1)
+					refresher.init({
+						id: "wrapper",
+						pullDownAction: _this.Refresh,
+						pullUpAction: _this.Load
+					});
+				})
+			},
+			methods: {
+				getUser: function(callBack, page) {
+					var sendData = {
+						config: {
+							"token": Fun_App.getdata("token"),
+							"pageIndex": page
+						},
+						fun_Success: function(data) {
+							callBack(data)
+						}
+					}
+					Fun_App.ExAjax("merchantPerson/myUsers", sendData)
+				},
+				send: function(key) {
+					var shopData = {
+						config: {
+							"token": Fun_App.getdata("token"),
+							"memberIds": this.sendArr,
+							"content": null
+						},
+						fun_Success: function(data) {
+
+						}
+					}
+					
+					if(this.sendArr.length!=0) {
+						mui.prompt('', '请输入文字', '发送消息', ['取消', '确认'], function(e) {
+							if(e.index) {
+								var msgTxt = document.querySelector("textarea").value;
+								shopData.config.content = msgTxt;
+								msgTxt.length <= 50 && msgTxt.length > 0 ? Fun_App.ExAjax("merchantPerson/sendMessage", shopData) : mui.toast('超长字符！')
+							}
+						}, 'div')
+					}
+				},
+				Load: function() {
+					this.page++;
+					var _this = this;
+					if(this.page <= this.totalPage) {
+						this.getUser(function(resData) {
+							_this.list = _this.list.concat(resData.data)
+						}, this.page)
+					} else {
+						refresher.info.pullUpLable = '没有更多数据了!';
+					}
+					wrapper.refresh();
+				},
+				appendList: function(val) {
+					for(var i = 0; i < val.length; i++) {
+						this.list.push({
+							memberId: val[i].memberId,
+							memberName: val[i].memberName,
+							grade: val[i].grade,
+							headImg: val[i].headImg,
+							money: val[i].money,
+							createTime: val[i].createTime,
+							ischeck: false
+						})
+					}
+				},
+				checks: function(key) {
+					this.list[key].ischeck = !this.list[key].ischeck;
+					this.list[key].ischeck ? this.sendArr.push(this.list[key].memberId) : this.sendArr.splice(key, 1)
+					console.log(JSON.stringify(this.sendArr))
+
+				},
+				checkAll: function() {
+					var _this = this;
+					this.list.forEach(function(i, item) {
+						i.ischeck = true;
+						(_this.sendArr.indexOf(i.memberId) == -1) ? _this.sendArr.push(i.memberId): ""
+					})
+				}
+
+			}
+		})
+	</script>
+
+</html>

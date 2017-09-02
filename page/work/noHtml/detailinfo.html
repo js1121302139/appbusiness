@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title>预览店铺</title>
+		<link rel="stylesheet" href="../../../css/mui.min.css">
+		<link rel="stylesheet" href="../../../css/page/work/detailinfo.css" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title">预览店铺</h1>
+		</header>
+		<nav class="mui-bar mui-bar-tab detail-button-box">
+			<div class="detail-left">
+				<a class="mui-tab-item " href="tel:" id="itemTelphoneBtn">
+					<span class="mui-icon "><img src="../../../img/icon_tel.png"></span>
+					<span class="mui-tab-label">联系商家</span>
+				</a>
+				<a class="mui-tab-item" href="javascript:">
+					<span class="mui-icon"><img src="../../../img/icon_map.png"></span>
+					<span class="mui-tab-label">导航</span>
+				</a>
+			</div>
+			<div class="detail-right">
+				<a href="javascript:" id="payBtn" class=" btn-gradient">立即付款</a>
+			</div>
+		</nav>
+
+		<div class="mui-content">
+			<!--轮播图片-->
+			<div id="slider" class="mui-slider master-img">
+				<div class="mui-slider-group mui-slider-loop" id="masterImg">
+					<!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+					<div class="mui-slider-item mui-slider-item-duplicate">
+						<a href="javascript:">
+							<img src="../../../images/yuantiao.jpg">
+						</a>
+					</div>
+					<!-- 第一张 -->
+					<div class="mui-slider-item">
+						<a href="javascript:">
+							<img src="../../../images/shuijiao.jpg">
+						</a>
+					</div>
+					<!-- 第二张 -->
+					<div class="mui-slider-item">
+						<a href="javascript:">
+							<img src="../../../images/yuantiao.jpg">
+						</a>
+					</div>
+					<!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+					<div class="mui-slider-item mui-slider-item-duplicate">
+						<a href="javascript:">
+							<img src="../../../images/shuijiao.jpg">
+						</a>
+					</div>
+				</div>
+				<div class="mui-slider-indicator">
+					<div class="mui-indicator mui-active"></div>
+					<div class="mui-indicator"></div>
+				</div>
+			</div>
+			<div class="detail-shopinfo-show">
+				<div class="mui-table">
+					<div class="mui-table-cell mui-col-xs-12">
+						<span class="detail-shopinfo-title">商家商户信息展示</span>
+					</div>
+				</div>
+				<div class="mui-table" style="border-bottom: 1px solid #e6e6e6;">
+					<div class="mui-table-cell mui-col-xs-8">
+						<p class="mui-ellipsis detail-shopinfo-content"><span class="mui-icon mui-icon-location"></span><span id="itemAddress"></span></p>
+					</div>
+					<div class="mui-table-cell mui-col-xs-4 mui-text-right">
+						<p class=" detail-shopinfo-distance">1.5km</p>
+					</div>
+				</div>
+				<div class="mui-table">
+					<div class="mui-table-cell mui-col-xs-12">
+						<p class="detail-shopinfo-tel"><span class="mui-icon mui-icon-phone"></span>
+							<a href="tel:" id="customerServicePhone"></a>
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="detail-shopinfo">
+				<div class="mui-table" style="border-bottom: 1px solid #e6e6e6;">
+					<div class="mui-table-cell mui-col-xs-12">
+						<span class="detail-shopinfo-title">商家信息</span>
+					</div>
+				</div>
+				<div class="mui-table">
+					<div class="mui-table-cell mui-col-xs-12">
+						<p class="mui-ellipsis detail-shopinfo-content"><span class="mui-icon"><img src="../../../img/icon_intro.png"> </span>商家简介：</p>
+					</div>
+				</div>
+				<div class="mui-table">
+					<div class="mui-table-cell mui-col-xs-12">
+						<p class="mui-ellipsis-2 detail-shopinfo-text" id="itemDescription"></p>
+					</div>
+				</div>
+				<div class="mui-table">
+					<div class="mui-table-cell mui-col-xs-12">
+						<p class="mui-ellipsis detail-shopinfo-content"><span class="mui-icon "><img src="../../../img/icon_date.png"></span>营业时间：</p>
+					</div>
+				</div>
+				<div class="mui-table">
+					<div class="mui-table-cell mui-col-xs-12">
+						<p class="mui-ellipsis-2 detail-shopinfo-text" id="itemTime"></p>
+					</div>
+				</div>
+				<div class="mui-table">
+					<div class="mui-table-cell mui-col-xs-12">
+						<p class="mui-ellipsis detail-shopinfo-content"><span class="mui-icon "><img src="../../../img/icon_bussiness.png"></span>主营业务：</p>
+					</div>
+				</div>
+				<div class="mui-table">
+					<div class="mui-table-cell mui-col-xs-12">
+						<p class="mui-ellipsis-2 detail-shopinfo-text" id="itemBusiness"></p>
+					</div>
+				</div>
+			</div>
+	
+<!--
+	评价信息栏
+-->
+			<div class="detail-starscore">
+				<div class="mui-table-view-cell">
+					<a class="mui-navigate-right" id="commentBtn">
+						<div class="mui-table">
+							<div class="mui-table-cell mui-col-xs-5">
+								<div class="atar_Show">
+									<p tip="0" id="itemGrade"></p>
+								</div>
+							</div>
+							<div class="mui-table-cell mui-col-xs-3">
+								<span class="detail-starscore-price" id="itemAverageConsume">20元/人</span>
+							</div>
+							<div class="mui-table-cell mui-col-xs-4">
+								<span class="detail-starscore-num mui-text-right" id="itemScoreService">88人已评价</span>
+							</div>
+						</div>
+					</a>
+				</div>
+			</div>
+
+			<!--
+            	作者：foreverxhj@sohu.com
+            	时间：2017-04-11
+            	描述：商家图片
+            -->
+			<div class="detail-scroll-box">
+				<div id="slider" class="mui-slider">
+					<div id="sliderSegmentedControl" class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+						<a class="mui-control-item mui-active" href="#item1mobile">
+							商铺环境
+						</a>
+						<a class="mui-control-item" href="#item2mobile">
+							店家精选
+						</a>
+						<a class="mui-control-item" href="#item3mobile">
+							商家资质
+						</a>
+					</div>
+					<div id="sliderProgressBar" class="mui-slider-progress-bar mui-col-xs-4"></div>
+					<div class="mui-slider-group">
+						<div id="item1mobile" class="mui-slider-item mui-control-content mui-active">
+							<div class="mui-scroll-wrapper">
+								<div class="mui-scroll">
+									<a href="#"><img src="../../../images/detail_pic_01.png" />
+										<div class="detail-title mui-ellipsis">肯德基大厅</div>
+									</a>
+								</div>
+							</div>
+
+						</div>
+						<div id="item2mobile" class="mui-slider-item mui-control-content">
+							<div class="mui-scroll-wrapper">
+								<div class="mui-scroll">
+									<a href="#"><img src="../../../images/detail_pic_01.png" />
+										<div class="detail-title mui-ellipsis">肯德基大厅</div>
+									</a>
+								</div>
+							</div>
+
+						</div>
+						<div id="item3mobile" class="mui-slider-item mui-control-content">
+							<div class="mui-scroll-wrapper">
+								<div class="mui-scroll" id="shopQualificationsPic">
+									<!--<a href="#"><img src="../../images/detail_pic_01.png" />
+										<div class="detail-title mui-ellipsis">肯德基大厅</div>
+									</a>-->
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!--
+            	作者：foreverxhj@sohu.com
+            	时间：2017-04-11
+            	描述：店长推荐
+            -->
+			<div class="detail-shop-recommend">
+				<ul class="mui-table-view mui-table-view-chevron">
+					<li class="mui-table-view-cell mui-media" style="border-bottom: 1px solid #e6e6e6;">
+						<img class="mui-media-object mui-pull-left head-img" id="itemHeadImg" src="../../../images/detail_head_01.png">
+						<div class="mui-media-body">
+							<h4>店长推荐</h4>
+							<p class="mui-ellipsis">大厅经理</p>
+						</div>
+					</li>
+				</ul>
+				<div class="detail-shop-recommend-content">
+					<p class="mui-ellipsis-2" id="itemRemarks"></p>
+				</div>
+				<div class="detail-shop-recommend-more">
+					点击查看更多<span class="mui-icon mui-icon-arrowdown"></span>
+				</div>
+			</div>
+
+			<!--
+            	作者：foreverxhj@sohu.com
+            	时间：2017-04-11
+            	描述：附近商家
+            -->
+			<div class="detail-near-shop">
+				<div class="mui-table" style="border-bottom: 1px solid #e6e6e6;">
+					<div class="mui-table-cell mui-col-xs-12">
+						<span class="detail-near-shop-title">附近商家</span>
+					</div>
+				</div>
+
+				<ul class="mui-table-view mui-grid-view" id="nearShopList">
+					<!--<li class="mui-table-view-cell mui-media mui-col-xs-6">
+						<a href="javascript:">
+							<div class="detail-near-box">
+								<img class="mui-media-object" src="../../images/detail_pic_01.png">
+								<div class="detail-near-title mui-ellipsis">
+									<div class="atar_Show">
+										<p tip="3.5"></p>
+									</div>
+									<p class="mui-pull-right">1.5KM</p>
+								</div>
+							</div>
+							<div class="mui-media-body">
+								大丰收李家仓山
+								<p class="mui-ellipsis">仓山万达店单人自助晚餐！</p>
+							</div>
+						</a>
+					</li>-->
+				</ul>
+			</div>
+		</div>
+		<div id="share" class="mui-popover mui-popover-action mui-popover-bottom">
+			<ul class="mui-table-view mui-grid-view mui-grid-10 share-panel">
+				<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+					<a href="javascript:">
+						<img src="../../img/icon_weixin.png" />
+						<div class="mui-media-body">微信</div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+					<a href="javascript:">
+						<img src="../../img/icon_pengyouquan.png" />
+						<div class="mui-media-body">朋友圈</div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+					<a href="javascript:">
+						<img src="../../img/icon_qq.png" />
+						<div class="mui-media-body">QQ</div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+					<a href="javascript:">
+						<img src="../../img/icon_qzone.png" />
+						<div class="mui-media-body">空间</div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+					<a href="javascript:">
+						<img src="../../img/icon_weibo.png" />
+						<div class="mui-media-body">新浪微博</div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media mui-col-xs-3 mui-col-sm-3">
+					<a href="javascript:">
+						<img src="../../img/icon_href.png" />
+						<div class="mui-media-body">复制链接</div>
+					</a>
+				</li>
+			</ul>
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<a href="#share"><b>取消</b></a>
+				</li>
+			</ul>
+		</div>
+		<script src="../../../js/mui.min.js"></script>
+		<!--<script src="../../js/muihelper.js"></script>
+		<script src="../../js/mui.lazyload.js"></script>
+		<script src="../../js/mui.lazyload.img.js"></script>
+		<!--<script type="text/javascript" src="../../js/common.js"></script>-->
+		<!--<script>
+			//获取商品ID
+			var Id = 0;
+			//省市区ID
+			var provinceId = Fun_App.getdata("provinceId");
+			var cityId = Fun_App.getdata("cityId");
+			var areaId = Fun_App.getdata("areaId");
+
+			//获取商品主图
+			var masterImgBox = document.getElementById("masterImg");
+			//商家地址
+			var itemAddressBox = document.getElementById("itemAddress");
+			//客服电话 
+			var customerServicePhoneBox = document.getElementById("customerServicePhone");
+			//商家简介
+			var itemDescriptionBox = document.getElementById("itemDescription");
+			//营业时间
+			var itemTimeBox = document.getElementById("itemTime");
+			//主营业务
+			var itemBusinessBox = document.getElementById("itemBusiness");
+			//评分服务
+			var itemGradeBox = document.getElementById("itemGrade");
+			//人均消费
+			var itemAverageConsumeBox = document.getElementById("itemAverageConsume");
+			//评价人数
+			var itemScoreServiceBox = document.getElementById("itemScoreService");
+			//店长推荐
+			var itemRemarksBox = document.getElementById("itemRemarks");
+			//附近商家
+			var nearShopListBox = document.getElementById("nearShopList");
+			//头像
+			var itemHeadImgBox = document.getElementById("itemHeadImg");
+			//商家资质
+			var shopQualificationsPicBox = document.getElementById("shopQualificationsPic");
+			//联系商家按钮
+			var itemTelphoneBtnBox = document.getElementById("itemTelphoneBtn");
+			//商家名称 
+			var itemNameTxtBox = document.getElementById("itemNameTxt");
+
+			(function($, doc) {
+				$.plusReady(function() {
+					//返回关闭当前WEBVIEW
+					mui.back = function() {
+						mui.currentWebview.close();
+					}
+
+					//获取页面间传值
+					Id = Fun_App.getextrasdata();
+					//console.log("shopid:" + Id);
+
+					//获取商品详情
+					getItemDetail();
+
+					//获取附近商家
+					getNearShop();
+
+					//打开评论页面
+					mui(document.body).on('tap', '#commentBtn', function(e) {
+						Fun_App.openWin('comment.html', 'pop-in', Id);
+					});
+
+					//点击进入商铺详情页
+					mui(document.body).on('tap', '.shopdetailbtn', function(e) {
+						var dataid = this.getAttribute("dataid");
+						Fun_App.openWin('detail.html', 'pop-in', dataid);
+					});
+
+					//便利星星评分设置星星评分
+					mui.each(mui('.atar_Show p'), function(index, item) {
+						var num = item.getAttribute("tip");
+						var www = num * 2 * 11;
+						item.style.width = www + 'px';
+					});
+
+				});
+			}(mui, document));
+
+			//获取附近商家
+			/*function getNearShop() {
+				var nearShopData = {
+					config: {
+						"longitude": 1,
+						"latitude": 2,
+						"provinceId": provinceId,
+						"cityId": cityId,
+						"areaId": areaId,
+						"sort": 1,
+						"cate1Id": "",
+						"cate2Id": "",
+						"pageIndex": 1
+					},
+					fun_Success: function(data) {
+						for(var i = 0; i < data.rows.length; i++) {
+							var item = data.rows[i];
+							nearShopListBox.innerHTML += '<li class="shopdetailbtn mui-table-view-cell mui-media mui-col-xs-6"  dataid="' + item.id + '">' +
+								'<a href="javascript:">' +
+								'<div class="detail-near-box">' +
+								'<img class="mui-media-object" src="' + picservice + item.logoImg + '">' +
+								'<div class="detail-near-title mui-ellipsis">' +
+								'<div class="atar_Show">' +
+								'<p tip="' + item.grade + '"></p>' +
+								'</div>' +
+								/*'<p class="mui-pull-right">' + (item.distance / 1000).toFixed(2) + 'KM</p>' +
+								'</div>' +
+								'</div>' +
+								'<div class="mui-media-body">' +
+								'<span>' + item.merchantNane + '</span>' +
+								'<p class="mui-ellipsis">' + (item.merchantDes != "" ? item.merchantDes : "暂无介绍") + '</p>' +
+								'</div>' +
+								'</a>' +
+								'</li>';
+						}
+					}
+				}
+				Fun_App.ExAjax("api/merchant/getRecommendMerchant.html", nearShopData);
+			}
+*/
+			//获取商品详情
+			/*function getItemDetail() {
+				var itemData = {
+					config: {
+						"id": Id
+					},
+					fun_Success: function(data) {
+						if(data.success == true) {
+							masterImgBox.innerHTML = '<div class="mui-slider-item mui-slider-item-duplicate">' +
+								'<a href="javascript:">' +
+								'<img src="' + picservice + data.rows.masterImg + '">' +
+								'</a>' +
+								'</div>' +
+								'<div class="mui-slider-item">' +
+								'<a href="javascript:">' +
+								'<img src="' + picservice + data.rows.masterImg + '">' +
+								'</a>' +
+								'</div>' +
+								'<div class="mui-slider-item mui-slider-item-duplicate">' +
+								'<a href="javascript:">' +
+								'<img src="' + picservice + data.rows.masterImg + '">' +
+								'</a>' +
+								'</div>';
+							itemNameTxtBox.innerHTML = data.rows.merchantNane;
+							itemAddressBox.innerHTML = data.rows.addressInfo;
+							customerServicePhoneBox.innerHTML = data.rows.customerServicePhone;
+							customerServicePhoneBox.setAttribute("href", "tel:" + data.rows.customerServicePhone);
+							itemDescriptionBox.innerHTML = data.rows.merchantDes;
+							itemTimeBox.innerHTML = data.rows.startTime + "-" + data.rows.closeTime;
+							itemBusinessBox.innerHTML = data.rows.business;
+							itemGradeBox.setAttribute("tip", data.rows.grade);
+							itemAverageConsumeBox.innerHTML = data.rows.averageConsume + "元/人";
+							itemScoreServiceBox.innerHTML = data.rows.scoreService + "人已评价";
+							itemRemarksBox.innerHTML = data.rows.remarks;
+							itemHeadImgBox.setAttribute("src", (data.rows.logoImg != null ? picservice + data.rows.logoImg : "../../images/detail_head_01.png"));
+							shopQualificationsPicBox.innerHTML = '<a href="javascript:"><img src="' + picservice + data.rows.businessLicenseImg + '" />' +
+								'<div class="detail-title mui-ellipsis">营业执照扫描件</div>' +
+								'</a>' +
+								'<a href="javascript:"><img src="' + picservice + data.rows.taxImg + '" />' +
+								'<div class="detail-title mui-ellipsis">税务登记扫描件</div>' +
+								'</a>';
+							itemTelphoneBtnBox.setAttribute("href", "tel:" + data.rows.customerServicePhone);
+						}
+					}
+				}
+				Fun_App.ExAjax("api/merchant/getDetailMerchant.html", itemData);
+			}*/
+
+			//菜单渐变
+			window.addEventListener('scroll', function(e) {
+				if(window.scrollY < 200) {
+					document.getElementById('header01').classList.remove("mui-hidden");
+					document.getElementById('header02').classList.add("mui-hidden");
+				} else {
+					document.getElementById('header01').classList.add("mui-hidden");
+					document.getElementById('header02').classList.remove("mui-hidden");
+				}
+			});
+
+			//打开支付页面
+			Fun_App.OpenPage('#payBtn', 'pay.html', 'pop-in', '');
+
+			//顶部弹窗举报商家按钮
+			mui('body').on('tap', '.yd-btn-message', function(e) {
+				var btnArray = [{
+					title: "举报商家"
+				}, {
+					title: "基本信息错误"
+				}, {
+					title: "地理位置错误"
+				}];
+				plus.nativeUI.actionSheet({
+					cancel: "取消",
+					buttons: btnArray
+				}, function(e) {
+					var index = e.index - 1;
+					switch(index) {
+						case 0:
+							//进入举报商家页面
+							Fun_App.openWin('report.html', 'pop-in', Id);
+							break;
+						case 1:
+							Fun_App.openWin('feedback.html', 'pop-in', '');
+							break;
+						case 2:
+							Fun_App.openWin('report.html', 'pop-in', '');
+							break;
+					}
+				});
+			});
+
+			//图片滚动
+			mui('.detail-scroll-box .mui-scroll-wrapper').scroll({
+				deceleration: 0.0005, //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
+				scrollX: true,
+				scrollY: false,
+				indicators: false, //是否显示滚动条
+				bounce: true
+			});
+
+			//设置自动播放时间5000毫秒
+			var slider = mui("#slider");
+			slider.slider({
+				interval: 5000
+			});
+
+			//分享按钮面板点击事件
+			mui('body').on('tap', '.share-panel li>a', function() {
+				//关闭actionsheet
+				mui('#share').popover('toggle');
+				mui.toast("你刚点击了按钮");
+			});
+		</script>-->
+		<script type="text/javascript" src="../../../js/page/work/detailinfo.js" ></script>
+	</body>
+
+</html>

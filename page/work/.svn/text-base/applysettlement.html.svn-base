@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title>兑咖网-申请结算</title>
+		<link rel="stylesheet" type="text/css" href="../../css/mui.min.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/page/work/applysettlement.css" />
+	</head>
+
+	<body>
+		<div id="applysettlement">
+			<header class="mui-bar topBar mui-bar-nav">
+				<a class="mui-action-back topBack-ico mui-pull-left"></a>
+				<h1 class="mui-title">申请结算</h1>
+			</header>
+			<div class="mui-content">
+				<div class="mine-cash-top">
+					<div class="mui-card">
+						<form class="mui-input-group">
+							<div class="mui-input-row mui-radio">
+								<label>结算方式</label>
+							</div>
+							<div class="mui-input-row mui-radio" v-for="(item,key) in Card">
+								<label>{{item.bankName+'储蓄卡('}}{{item.bankCode | replacex }}{{')'}}</label>
+								<input name="radio1" type="radio" checked="">
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="mine-cash-middle">
+					<div class="topMoney">
+						<p class="isMoney" id="numTotal">可结算 {{pageData.money==null?0:pageData.money}}</p>
+						<a href="JavaScript:;" class="mui-btn setMoney" @click="money=pageData.money" id="allMoneyBtn">全部结算</a>
+					</div>
+					<div class="cashMiddleItem">
+						<h1 class="settlement">结算金额</h1>
+						<input type="number" v-model="money" @input="maxMoney" class="bigInput" id="cashMoneyNum">
+					</div>
+					<div class="cashMiddleItem phoneNum">
+						<div class="phoneNumCode">
+							<h1 class="settlement">短信验证码</h1>
+							<input type="tel" maxlength="6" v-model="pageData.messageCode" id="smCode">
+							<button href="JavaScript:;" class="mui-btn getPhoneCode" :disabled="showOutTime" @click="smsVerify" v-text="second==90?'获取验证码':'剩余'+second+'秒'" id="getPhoneCode">获取验证码</button>
+						</div>
+						<div class="phoneNumCodePrompt mui-text-right">
+
+						</div>
+					</div>
+
+					<div class="cashMiddleItem">
+						<h1 class="settlement">结算密码</h1>
+						<input type="password" v-model="pageData.balancePwd" class="bigInput" placeholder="请输入结算密码">
+					</div>
+				</div>
+				<button class="footerButton mui-text-center" :disabled="applyBtn" id="cashBtn" @click="applyDrawing">
+					结算
+				</button>
+			</div>
+		</div>
+		<!--弹出菜单-->
+
+		<script type="text/javascript" src="../../js/mui.min.js"></script>
+		<script type="text/javascript" src="../../js/muihelper.js"></script>
+		<!--<script src="../../js/page/work/applysettlement.js"></script>-->
+		<script type="text/javascript" src="../../js/vue.min.js"></script>
+		<script>
+			var Vue = new Vue({
+				el: "#applysettlement",
+				data: function() {
+					return {
+						Card: [],
+						pageData: {
+							money: null,
+							type: null,
+							messageCode: null,
+							balancePwd: null,
+							applyId: null
+						},
+						money: null, //输入的结算金额
+						showOutTime: false, //显示倒计时
+						second: 90, //总计时
+						applyBtn: false,
+						url:null,
+						msgType: null
+					}
+				},
+				created: function() {
+					var _this = this;
+					mui.plusReady(function() {
+						console.log(JSON.stringify(plus.webview.all()))
+						var getData = Fun_App.getextrasdata(); //获取可结算的金额
+						console.log(JSON.stringify(getData))
+						_this.pageData.money = getData.money; //取到可结算金额
+						_this.pageData.type = getData.type; //结算的类型
+						_this.msgType = getData.msgType; //短信的类型
+						_this.url = getData.url;//结算成功后查看详情的接口
+						_this.pageData.applyId = (getData.id == undefined) ? "" : getData.id;
+						setTimeout(
+							_this.getCardLsit(function(resData) {
+								_this.Card = resData.data;
+							}), 0)
+					})
+				},
+				methods: {
+					applyDrawing: function() {
+						var _this = this ;
+						var sendData = {
+							config: {
+								token: Fun_App.getdata("token"),
+								money: this.money,
+								type: this.pageData.type,
+								messageCode: this.pageData.messageCode,
+								balancePwd: this.pageData.balancePwd
+							},
+							fun_Success: function(data) {
+								if(data.success) {
+									switch(sendData.config.type) {
+										case 6:
+											var ws = plus.webview.getWebviewById("./partySettlement.html");
+											var ws1 = plus.webview.getWebviewById("partyAdmin.html");
+											mui.fire(ws, "getListData")
+											mui.fire(ws1, "getPartyList")
+											break;
+										case 1:
+											var ws = plus.webview.getWebviewById("myincome.html");
+											mui.fire(ws, "myincome")
+											break;
+										case 2:
+											var ws = plus.webview.getWebviewById("shareprofit.html");
+											mui.fire(ws, "shareprofit")
+											break;
+									}
+									plus.webview.currentWebview().close();
+									Fun_App.openWin("./cashsuccess.html", 'pop-in', {
+										allMoney: _this.pageData.money,//所有金额
+										money: _this.money,//结算金额
+										account: _this.Card,//结算账户
+										url:_this.url//结算成功后查看详情的接口
+									});
+									
+								} else {
+									if(data.message == "您未设置结算密码，请设置结算密码") {
+										Fun_App.openWin("../account/safepay.html");
+									}
+									mui.toast(data.message)
+
+								}
+							}
+						}
+						if(this.pageData.money > 0) {
+							//判断类型是不是为6 根据短信验证码的type
+							if(this.pageData.type != 6) {
+								console.log(JSON.stringify(sendData))
+								Fun_App.checkObjIsNull(sendData.config, "") != false ? Fun_App.ExAjax('merchant/applyDrawing', sendData) : mui.toast('你还有东西没填!')
+							} else {
+								sendData.config.id = this.pageData.applyId;
+								delete sendData.config.type
+								Fun_App.checkObjIsNull(sendData.config, "") != false ? Fun_App.ExAjax('merchantParty/playKaSettleAccounts', sendData) : mui.toast('你还有东西没填!')
+							}
+
+						} else {
+							mui.toast('你结算的金额要大于0')
+						}
+
+					},
+					smsVerify: function() {
+						var _this = this;
+						var sendData = {
+							config: {
+								token: Fun_App.getdata("token"),
+								type: this.msgType
+							},
+							fun_Success: function(data) {
+								if(data.success) {
+									mui.toast(data.message)
+								} else {
+									mui.toast(data.message)
+								}
+							}
+						}
+						if(this.showOutTime == false) {
+							console.log(this.msgType)
+							Fun_App.ExAjax("merchant/smsVerify", sendData);
+						}
+						this.showOutTime = true;
+						_this.second--;
+						if(_this.second < 1) {
+							this.showOutTime = false;
+							this.second = 90;
+						} else {
+							var timeout = setTimeout(_this.smsVerify, 1000)
+						}
+					},
+					getCardLsit: function(callBack) {
+						var sendData = {
+							config: {
+								token: Fun_App.getdata("token")
+							},
+							fun_Success: function(data) {
+								callBack(data)
+							}
+						}
+						Fun_App.ExAjax("merchantPerson/allBankCard", sendData)
+					},
+					maxMoney: function() {
+						this.money > this.pageData.money ? this.money = this.pageData.money : "";
+					}
+				},
+				filters: {
+					replacex: function(value) {
+						return value.replace(/\*/g, "");
+					}
+				}
+
+			})
+		</script>
+	</body>
+
+</html>

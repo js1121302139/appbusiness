@@ -1,0 +1,26 @@
+ @import "../common";
+.topBar("../../../img/topBack-ico.png");
+
+.mui-content{
+    margin-top: 0.62rem;
+    .mui-active{
+        background: #fff;
+    }
+    .mui-table-view-cell{
+        display: flex;
+        flex: 1;
+        padding: 0 0.75rem;
+        .wh(100%,60px);
+        align-items: center;
+        font-size: 1rem;
+        color: #333;
+        img{
+            .wh(43px,43px);
+            margin-right: 0.43rem;
+            border-radius: 1.37rem;
+        }
+        &:after{
+            left: 0;
+        }
+    }
+}

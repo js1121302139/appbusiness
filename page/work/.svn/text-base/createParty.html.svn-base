@@ -1,0 +1,433 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../../css/mui.picker.min.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/page/work/createParty.css" />
+	</head>
+
+	<body>
+		<header class="mui-bar topBar mui-bar-nav">
+			<a class="mui-action-back topBack-ico mui-pull-left"></a>
+			<h1 class="mui-title">玩咖管理</h1>
+		</header>
+		<div id="app">
+			<div class="mui-content">
+				<div class="partyForm">
+					<div class="partyFormItem partyName">
+						<div class="partyTitUpImg mui-text-center">
+							<img :src="locaImg.masterImg==''?'../../images/createPartylogo.png':locaImg.masterImg" alt="">
+							<a href="JavaScript:;" ref="vue" id="partyNameUpImg" @click="addmasterImg">上传活动主图(必填)</a>
+						</div>
+						<div class="partyTit" id="partyTit">
+							<textarea placeholder="活动标题(必填15字)" @input="titleLen" v-model="data.theme" id="partyTitText" maxlength="15"></textarea>
+							<span class="textNum">
+                       ({{titLen}}/15)
+                    </span>
+						</div>
+					</div>
+					<div class="partyFormItem partyImg ">
+						<div class="partyFormItemTit partyImg-ico">
+							活动图片(必填)
+						</div>
+						<div class="partyImgList">
+
+							<!--<div class="partyImgItem">
+                        <img src="../../images/createPartylogo.png" alt="" />
+                    </div>-->
+							<div class="partyImgItem" :id="key" @click="removeImgBox('partyImgBox',locaImg.partyImgBox,key)" v-for="(item,key) in locaImg.partyImgBox">
+								<img :src="item" alt="" />
+							</div>
+							<a href="JavaScript:;" @click="addPartyImgs('partyImgBox')" class="addPartyImg"></a>
+						</div>
+						<p class="bz">备注:??? 图片大小:？？</p>
+					</div>
+					<div class="partyFormItem partyClass partyClass-ico">
+						<div class="partyFormItemTit">
+							活动类型(必填)
+						</div>
+						<div class="partyClassBtn mui-text-center">
+							<a href="javascript:;" @click="changePartyClass(3)" :class="{active:!isActive}">购票</a>
+							<a href="javascript:;" @click="changePartyClass(4)" :class="{active:isActive}">众筹</a>
+						</div>
+					</div>
+					<div class="partyFormItem partyDateAndMoney partyFormItem-ico">
+						<div class="partyFormItemTit">
+							活动时间与定价(必填)
+						</div>
+						<ul class="partyDateAndMoneyList">
+							<li class="partyDateAndMoneyListItem">
+								<span v-text="isActive?'众筹单价':'购票单价'">众筹单价</span>
+								<input type="tel" id="partyPrice" v-model.number="data.price" placeholder="请输入单价">
+							</li>
+							<li class="partyDateAndMoneyListItem">
+								<span v-text="isActive?'众筹人数':'购票人数'">众筹人数</span>
+								<input type="tel" id="peopleNum" v-model.number="data.number" placeholder="请输入人数">
+							</li>
+							<li class="partyDateAndMoneyListItem" v-show="isActive">
+								<span>众筹开始时间</span>
+								<div class="optionDate" @click="addTime('prepareStartTime')" id="prepareEndTime" v-text="data.prepareStartTime==''?'请选择':data.prepareStartTime"></div>
+								<img src="../../img/createPartyjt-ico.png" alt="">
+							</li>
+							<li class="partyDateAndMoneyListItem" v-show="isActive">
+								<span>众筹结束时间</span>
+								<div class="optionDate" @click="addTime('prepareEndTime')" id="prepareEndTime" v-text="data.prepareEndTime==''?'请选择':data.prepareEndTime"></div>
+								<img src="../../img/createPartyjt-ico.png" alt="">
+							</li>
+							<li class="partyDateAndMoneyListItem">
+								<span>活动起始时间</span>
+								<div class="optionDate" @click="addTime('startTime')" id="startTime" v-text="data.startTime==''?'请选择':data.startTime"></div>
+								<img src="../../img/createPartyjt-ico.png" alt="">
+							</li>
+							<li class="partyDateAndMoneyListItem">
+								<span>活动结束时间</span>
+								<div class="optionDate" @click="addTime('endTime')" id="endTime" v-text="data.endTime==''?'请选择':data.endTime"></div>
+								<img src="../../img/createPartyjt-ico.png" alt="">
+							</li>
+						</ul>
+					</div>
+					<div class="partyFormItem partyPackage partyInfo partyInfo-ico">
+						<div class="partyFormItemTit">
+							活动详情(必填)
+						</div>
+						<div class="Info">
+							<div class="infoItem" v-for="(item,key) in partyInfoMod">
+								<textarea placeholder="请输入详情" v-model="locaImg.partyInfoText[key]"></textarea>
+								<div class="partyImgList">
+									<div class="partyImgItem" @click="removeImgBox('',locaImg.models[key],keys)" v-for="(i,keys) in locaImg.models[key]">
+										<img :src="i" alt="" />
+									</div>
+									<!--<div class="partyImgItem">
+                                	<img src="../../images/createPartylogo.png" alt="" />
+                            	</div>-->
+									<a href="JavaScript:;" @click="addModelImg(key)" class="addPartyImg"></a>
+								</div>
+							</div>
+						</div>
+						<a href="JavaScript:;" @click="addModel" id="addmodel" class="addBtn addMod">
+							<img src="../../img/createPartyAdd-ico.png" alt="">
+							<span>添加模板</span>
+						</a>
+					</div>
+
+					<div class="partyFormItem partyPackage partyStrem-ico">
+						<div class="partyFormItemTit">
+							活动流程(必填)
+						</div>
+						<ol class="partyPackageList">
+							<!--<li class="partyPackageItem">
+							<span>1.1400-14:30 活动签到,集合1.1400-14:30 活动签到,集合1.1400-14:30 活动签到,集合1.1400-14:30 活动签到,集合</span>
+							<a href="JavaScript:;" class="delItem">del</a>
+						</li>-->
+							<!--<li class="partyPackageItem">
+							<span>1.1400-14:30 活动签到,集合</span>
+							<a href="JavaScript:;" class="delItem">del</a>
+						</li>-->
+							<li class="partyPackageItem" :key="key" v-for="(item,key) in  data.activityFlow">
+								<input type="text" v-model="data.activityFlow[key]" placeholder="请填写" />
+								<a href="JavaScript:;" @click="removListItem('activityFlow',key)" class="delItem"></a>
+							</li>
+						</ol>
+						<a href="JavaScript:;" id="partyCourse" @click="addListItem('step')" class="addBtn addLi addMenu">
+							<img src="../../img/createPartyAdd-ico.png" alt="">
+							<span>添加流程</span>
+						</a>
+					</div>
+					<div class="partyFormItem partyPackage partyPackage-ico">
+						<div class="partyFormItemTit">
+							MENU套餐(必填)
+						</div>
+						<ol class="partyPackageList">
+							<li class="partyPackageItem" :key="key" v-for="(item,key) in  data.activityPackage">
+								<input type="text" v-model="data.activityPackage[key]" placeholder="请填写" />
+								<a href="JavaScript:;" @click="removListItem('activityPackage',key)" class="delItem"></a>
+							</li>
+							<!--<li class="partyPackageItem">
+							<span>1.1400-14:30 活动签到,集合</span>
+							<a href="JavaScript:;" class="delItem">del</a>
+						</li>
+						<li class="partyPackageItem">
+							<span>1.1400-14:30 活动签到,集合</span>
+							<a href="JavaScript:;" class="delItem">del</a>
+						</li>-->
+							<!--<li class="partyProcessItem">
+							<input type="text" onblur="changeInput(this)" placeholder="placeholder">
+							<a href="JavaScript:;" class="delItem"></a>
+						</li>-->
+						</ol>
+						<a href="javascript:;" id="menu" @click="addListItem('menu')" class="addBtn addLi addMenu">
+							<img src="../../img/createPartyAdd-ico.png" alt="">
+							<span>添加套餐</span>
+						</a>
+					</div>
+					<div class="ListEnd mui-text-center">
+						<span>别再糟蹋生活 会在兑的时代</span>
+					</div>
+				</div>
+			</div>
+			<footer class="mui-text-center">
+				<a href="JavaScript:;" @click="open" class="preview">预览</a>
+				<a href="JavaScript:;" @click="checkObj" class="submitParty">提交审核</a>
+			</footer>
+
+		</div>
+		<script src="../../js/mui.min.js"></script>
+		<script type="text/javascript" src="../../js/muihelper.js"></script>
+		<script type="text/javascript" src="../../js/mui.picker.min.js"></script>
+		<script type="text/javascript" src="../../js/vue.min.js"></script>
+		<script type="text/javascript">
+			var Vue = new Vue({
+				el: "#app",
+				components: {
+
+				},
+				data: {
+					partyInfoMod: 0, //模板的步长
+					partyImgBox: [], //活动图片
+					partyInfoImgBox: [], //活动详情图片
+					locaImg: { //本地文件
+						masterImg: "", //主图
+						partyImgBox: [], //活动图片
+						models: [], //活动详情图片
+						serverModels: [], //服务器的图片路径
+						partyInfoText: [], //活动文本
+						locaDescription: "" //本地展示的详情
+					},
+					//data是上传到服务器的数据
+					data: {
+						token: Fun_App.getdata("token"),
+						theme: "", //标题字符
+						type: 3, //活动类别
+						masterImg: "", //主图
+						price: '',
+						number: null,
+						prepareStartTime: "",
+						prepareEndTime: "",
+						startTime: "",
+						endTime: "",
+						description: "",
+						activityFlow: [], //活動步骤
+						activityPackage: [], //活动的菜单
+						description: "", //活动的详情
+						pictures: [] //活动的图片不包含模块
+					},
+					isActive: false,
+					titLen: 0
+				},
+				methods: {
+					changePartyClass: function(index) { //更改活动类型 众筹 还是 购票
+						this.isActive = !this.isActive;
+						this.data.type = index;
+						console.log(this.data.r)
+					},
+					titleLen: function() { //标题的长度
+						this.titLen = this.data.theme.length;
+					},
+					addTime: function(timeCalss) { //添加时间
+						var _this = this;
+						var picker = new mui.DtPicker();
+						picker.show(function(rs) {
+							_this.data[timeCalss] = rs.text + ':00';
+							picker.dispose();
+						});
+					},
+					removListItem: function(types, key) { //移除列表项
+						this.data[types].splice(key, 1);
+					},
+					addModel: function() { //添加模块
+						this.locaImg.models.push([]);
+						this.locaImg.serverModels.push([]);
+						this.partyInfoImgBox.push([]);
+						this.locaImg.partyInfoText[this.partyInfoMod] = null;
+						this.partyInfoMod++;
+					},
+					addModelImg: function(key) { //添加模块的图片
+						var _this = this;
+						mui.plusReady(function() {
+							plus.gallery.pick(function(e) {
+								//上传图片
+								//_this.locaImg.models['model'+key].push(e);
+								Fun_App.zipImg(e, function(data) {
+									var datas={}
+									Fun_App.uploadFiles(data, function(datas) {
+										console.log(JSON.stringify(datas))
+										if(datas.data!=null){
+											_this.locaImg.models[key].push(e);
+											_this.locaImg.serverModels[key].push(datas.data.url);
+										}
+									})
+								});
+							}, function(e) {
+								mui.toast('打开相册失败!');
+							}, {
+								filter: "image",
+								multiple: false
+							})
+						})
+					},
+					addListItem: function(types) { //添加列表项
+						if(types == 'menu') {
+							this.data.activityPackage.push("");
+						} else {
+							this.data.activityFlow.push("");
+						}
+					},
+					removeImgBox: function(option, Imgclass, key) { //移除图片
+						var imgInfo = String(Imgclass).indexOf("file");
+						Imgclass.splice(key, 1)
+						if(imgInfo != -1 && option != '') this.data.pictures.splice(key, 1);
+					},
+					addmasterImg: function() { //添加活动主图
+						var _this = this;
+						mui.plusReady(function() {
+							plus.gallery.pick(function(e) {
+								_this.locaImg.masterImg = e;
+								//上传图片
+								Fun_App.zipImg(e, function(data) {
+									Fun_App.uploadFiles(data, function(datas) {
+										console.log(JSON.stringify(datas) + "--------->")
+										if(datas.data!=null){											
+											_this.data.masterImg = datas.data.saveFilePath;
+										}else{
+											mui.toast('上传失败!');
+											mui.toast(datas.message);
+										}
+									})
+								});
+							}, function(e) {
+								mui.toast('打开相册失败!')
+							}, {
+								filter: "image",
+								multiple: false
+							})
+						})
+					},
+					addPartyImgs: function(ImgClass) { //活动的图片
+						var _this = this;
+						mui.plusReady(function() {
+							plus.gallery.pick(function(e) {
+								//上传图片
+								Fun_App.zipImg(e, function(data) {
+									Fun_App.uploadFiles(data, function(datas) {
+										console.log(JSON.stringify(datas))
+										if(datas.data!=null){
+											_this.locaImg[ImgClass].push(e);
+											_this.data.pictures.push(datas.data.saveFilePath);											
+										}else{
+											mui.toast('上传失败!');
+											mui.toast(datas.message);
+										}
+									})
+								});
+							}, function(e) {
+								mui.toast('打开相册失败!')
+							}, {
+								filter: "image",
+								multiple: false
+							})
+						})
+					},
+					picturesHtml: function(pic, txt) {
+						var htmlstr = "";
+						for(var i = 0; i < pic.length; i++) {
+							htmlstr += "<p>" + txt + "</p>"
+							for(var j = 0; j < pic[i].length; j++) {
+								htmlstr += "<img src=" + pic[i][j] + ">"
+							}
+
+						}
+						return htmlstr;
+					},
+					checkObj: function() {
+						var _this = this;
+						var activityFlow = this.data.activityFlow.toString().replace(/\,/g, ";");
+						var activityPackage = this.data.activityPackage.toString().replace(/\,/g, ";");
+						//拼接html
+						this.data.description = this.picturesHtml(this.locaImg.serverModels, this.locaImg.partyInfoText);
+						var cont = ["prepareStartTime", "prepareEndTime"]; //需要跳过检查的字段
+						if(Fun_App.checkObjIsNull(this.data, (this.data.type == 3) ? cont : "") != false) {
+							var partyTime = Fun_App.checkDateTime(this.data.startTime, this.data.endTime),
+								prepareTime = (this.data.partyClass == 4) ? Fun_App.checkDateTime(this.data.prepareStartTime, this.data.prepareEndTime) : true;
+							if(partyTime != false && prepareTime != false) {
+								mui.plusReady(function() {
+									_this.createParty(activityFlow, activityPackage);
+								})
+							}
+						} else {
+							console.log(JSON.stringify(this.data))
+							mui.toast('还有数据没有填写,请检查后重试!')
+						}
+
+						/*console.log(JSON.stringify(this.locaImg))
+						console.log(this.picturesHtml())*/
+					},
+					open: function() {
+						var _this = this;
+						console.log(JSON.stringify(this.data));
+						console.log(JSON.stringify(this.locaImg));
+						//本地预览的数据
+						var sendData = {
+							theme:this.data.theme,
+							price:this.data.price,
+							endTime:this.data.endTime,
+							saleNumber:0,
+							useNumber:0,
+							status:6,
+							type:this.data.type,
+							number:this.data.number,
+							startTime:this.data.startTime,
+							description:this.picturesHtml(this.locaImg.models, this.locaImg.partyInfoText),//文章
+						}
+						console.log(this.data.description)
+						mui.plusReady(function() {
+							Fun_App.openWin("./partyIn.html", "pop-in", {id:'see',data:sendData});
+						})
+					},
+					createParty: function(activityFlow, activityPackage, pictures) {
+						var _this = this;
+						var sendData = {
+							config: {
+								token: this.data.token,
+								theme: this.data.theme,
+								masterImg: this.data.masterImg,
+								type: this.data.type,
+								startTime: this.data.startTime,
+								endTime: this.data.endTime,
+								prepareStartTime: this.data.prepareStartTime,
+								prepareEndTime: this.data.prepareEndTime,
+								price: this.data.price,
+								number: this.data.number,
+								description: this.data.description,
+								activityFlow: activityFlow,
+								activityPackage: activityPackage,
+								pictures: this.data.pictures
+							},
+							fun_Success: function(data) {
+								if(data.success) {
+									mui.alert('活动创建成功!', '提示', '知道了!', function(e) {
+										var ws = plus.webview.getWebviewById("partyAdmin.html");
+										mui.fire(ws, "getPartyList");
+										mui.back()
+									}, 'div')
+								}
+							}
+						}
+						sendData.config.pictures.unshift(sendData.config.masterImg)
+						Fun_App.ExAjax("merchantParty/create", sendData);
+					}
+
+				},
+				created: function() {
+					mui.plusReady(function() {
+
+					})
+				}
+			})
+		</script>
+	</body>
+
+</html>

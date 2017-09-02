@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <link href="../../css/mui.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../../css/pullToRefresh.css">
+    <link rel="stylesheet" href="../../css/page/work/teamAdmin.css"/>
+</head>
+
+<body>
+<header class="mui-bar topBar mui-bar-nav">
+    <a class="mui-action-back topBack-ico mui-pull-left"></a>
+    <h1 class="mui-title">员工管理</h1>
+    <span id="addSonAccNum" class="m  addSonAccNum mui-btn-blue mui-btn-link mui-pull-right">绑定子账号</span>
+</header> 
+<div class="mui-content">
+    <div id="" class="wrapperList">
+        <ul  id="teamList">
+            
+            <!--<li class="mui-table-view-cell mui-row">
+                <div class="mui-pull-left memberLeft">
+                    <div class="membersHeadImg mui-left">
+                        <img src="../../img/work-head.png" alt=""/>
+                    </div>
+                    <div class="membersInfo mui-pull-left ">
+                        <p class="mui-ellipsis"><span>店長</span></p>
+                        <p class="mui-ellipsis">用户名: <span>锤子</span></p>
+                        <p class="mui-ellipsis">电话号码：<span>15750897281</span></p>
+                    </div>
+                </div>
+                <div class="mui-pull-right memberRight">
+                    <p class="membersMoney mui-text-right">
+                        ￥ 5000
+                    </p>
+                    <a href="#" type="button" class="mui-btn btnJY" sId="btnJY">禁用</a>
+                    <a href="#" type="button" class="mui-btn mui-pull-right btnEd" sId="btnEd">编辑</a>
+                </div>
+            </li>-->
+
+        </ul>
+    </div>
+    <div class="accountNull mui-text-center">
+        <p>您还未添加子账号，点击右上角添加</p>
+    </div>
+</div>
+
+<script src="../../js/mui.min.js"></script>
+<script type="text/javascript" src="../../js/muihelper.js"></script>
+<script type="text/javascript" src="../../js/page/work/teamAdmin.js"></script>
+<script type="text/javascript">
+ 
+</script>
+</body>
+
+</html>

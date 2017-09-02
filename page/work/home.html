@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title>商家端-工作台</title>
+		<link rel="stylesheet" href="../../css/mui.min.css">
+		<link rel="stylesheet" href="../../css/page/work/home.css" />
+	</head>
+
+	<body id="pullrefresh">
+
+		<div class="mui-content header">
+			<div class="funBar">
+				<!--<a href="javascript:;">切换店铺</a>
+				<a href="javascript:;" class="tap msg right" id="msgCneter">
+					<span class=" mui-badge mui-badge-warning" id="msgNum">1</span>
+				</a>
+				<a href="javascript:;" class="qrcode tap right" id="moneyCode">
+
+				</a>-->
+
+				<a href="javascript:;" id="changeShop" class="changeShop tap">切换店铺</a>
+				<div class="funBarIcoBtn">
+					<a href="javascript:;" class="tap msg right" id="msgCneter">
+						<span class="mui-badge mui-badge-warning mui-text-center" id="msgNum">1</span>
+					</a>
+					<a href="javascript:;" class="qrcode tap right" id="moneyCode"></a>
+				</div>
+			</div>
+			<div class="shopCard">
+				<div class="profit">
+					<div class="business">
+						<div class="headerImg">
+							<img src="../../img/work-head.png" id="logoimg" alt="" />
+						</div>
+						<div class="businessInfo mui-ellipsis">
+							<p id="businessName" class="businessName mui-ellipsis"></p>
+							<p id="businessAddress" class="businessAddress mui-ellipsis"></p>
+						</div>
+					</div>
+					<div class="mui-text-center infoBoard">
+						<div>
+							<p>今日订单总额(元)</p>
+							<span class="profitCount " id="todayOrderTotalMoney">0</span>
+						</div>
+						<div>
+							<p>今日订单(个)</p>
+							<span class="profitCount" id="todayOrders">0</span>
+						</div>
+						<div>
+							<p>今日共享收益(元)</p>
+							<span class="profitCount" id="todayShareIncome">0</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--
+    	作者：offline 
+    	时间：2017-05-15
+    	描述：功能列表
+   -->
+		<div class="funLsit">
+			<ul class="mui-table-view mui-grid-view mui-grid-9">
+				<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4 tap" id="zhgl">
+					<a href="javascript:;">
+						<span class="mui-icon funLsit-icocommon funLsit-ico1"></span>
+						<div class="mui-media-body">员工管理</div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4 tap" id="myUser">
+					<a href="myuser.html">
+						<span class="mui-icon funLsit-icocommon funLsit-ico2"></span>
+						<div class="mui-media-body">我的用户</div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4 tap" id="myIncome">
+					<a href="myincome.html">
+						<span class="mui-icon funLsit-icocommon funLsit-ico3"></span>
+						<div class="mui-media-body">我的营业收入</div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4 tap" id="mySharedIncome">
+					<a href="#">
+						<span class="mui-icon funLsit-icocommon funLsit-ico4"></span>
+						<div class="mui-media-body">我的共享收益</div>
+					</a>
+				</li>
+				<!--<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4" id="myDuBei">
+			    <a href="#">
+			        <span class="mui-icon funLsit-icocommon funLsit-ico5"></span>
+			        <div class="mui-media-body">我的兑贝</div>
+			    </a>
+			</li>-->
+				<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4 tap" id="myQrCode">
+					<a href="#">
+						<span class="mui-icon funLsit-icocommon funLsit-ico6"></span>
+						<div class="mui-media-body">收款二维码</div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4 tap" id="evaluate">
+					<a href="#">
+						<span class="mui-icon funLsit-icocommon funLsit-ico7"></span>
+						<div class="mui-media-body">评价管理</div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4 tap" id="activity">
+					<a href="#">
+						<span class="mui-icon funLsit-icocommon funLsit-ico8"></span>
+						<div class="mui-media-body">活动管理</div>
+					</a>
+				</li>
+				<!--<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4 tap" id="dataAnalysis">
+					<a href="#">
+						<span class="mui-icon funLsit-icocommon funLsit-ico9"></span>
+						<div class="mui-media-body">数据分析 </div>
+					</a>
+				</li>-->
+				<!--<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4 tap" id="tgjl">
+					<a href="#">
+						<span class="mui-icon funLsit-icocommon funLsit-ico5"></span>
+						<div class="mui-media-body">推广奖励 </div>
+					</a>
+				</li>-->
+				<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4 tap" id="partyAdmin">
+					<a href="#">
+						<span class="mui-icon funLsit-icocommon funLsit-ico10"></span>
+						<div class="mui-media-body">玩咖管理 </div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4 tap" id="budgetAdmin">
+					<a href="#">
+						<span class="mui-icon funLsit-icocommon funLsit-ico11"></span>
+						<div class="mui-media-body">预订管理 </div>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</body>
+	<script type="text/javascript" src="../../js/mui.min.js"></script>
+	<script type="text/javascript" src="../../js/muihelper.js"></script>
+	<script type="text/javascript" src="../../js/page/work/home.js"></script>
+	<script type="text/javascript" src="../../js/common.js"></script>
+	<script>
+				
+	</script>
+
+</html>

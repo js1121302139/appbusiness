@@ -1,0 +1,201 @@
+@import "../common.less";
+.topBar("../../../img/topBack-ico.png");
+html,
+body,
+#partyAdmin {
+    min-height: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.mui-content{
+    height: 100%;
+}
+.wrappers {
+    position: relative;
+    height: 100%;
+    .wrapperList {
+        .pullDown {
+            display: none;
+        }
+        .pullUp {
+            position: relative;
+            top: -4.62rem;
+        }
+        ul {
+            padding-bottom: 4.62rem;
+        }
+        .listItem {
+            display: flex;
+            flex: 1;
+            width: 100%;
+            flex-direction: column;
+            padding: 15px 12px 0 12px;
+            margin-bottom: 10px;
+            background-color: #fff;
+            * {
+                font-size: 13px;
+                color: #333;
+            }
+            .InfoTit {
+                display: flex;
+                flex: 1;
+                width: 100%;
+                justify-content: space-between;
+                margin-bottom: 0.5px;
+                .partyTit{
+                    display: flex;
+                }
+                .partyState {
+                    font-size: 14px;
+                    color: #D7B374;
+                    
+                }
+                .partyRoad{
+                    display: flex;
+                    flex: 1;
+                    width: 100%;
+                    justify-content: flex-start;
+                    padding-left: 0.37rem;
+                    span{
+                        display: flex;
+                        .wh(2.28rem,0.96rem);
+                        background: #D7B374;
+                        align-items: center;
+                        justify-content: center;
+                        border-radius: 0.46rem 0.46rem 0.46rem 0;
+                        font-size: 0.68rem;
+                        color: #fff;
+                    }
+                }
+            }
+            .orderInfo {
+                display: flex;
+                flex: 1;
+                width: 100%;
+                flex-direction: row;
+                justify-content: space-between;
+                padding-bottom: 15px;
+                .orderInfoL {
+                    p {
+                        margin-top: 13px;
+                    }
+                }
+                .orderInfoR {
+                    display: flex;
+                    width: 70px;
+                    align-items: flex-end;
+                    .orderContainer {
+                        display: flex;
+                        align-items: center;
+                        flex-direction: column;
+                        .wh(70px, 70px);
+                        border-radius: 35px;
+                        padding: 16px 0 13.5px 0;
+                        box-shadow: inset 0 0 0 3px #D7B374;
+                        .orderContainerNum {
+                            font-size: 21px;
+                            color: #333;
+                        }
+                        .orderContainerName {
+                            font-size: 12px;
+                            color: #999;
+                        }
+                    }
+                }
+            }
+            .itemBottom {
+                display: flex;
+                flex: 1;
+                .wh(100%, 33.5px);
+                line-height: 33.5px;
+                overflow: hidden;
+                border-top: 1px solid #e5e5e5;
+                div {
+                    flex: 1;
+                    position: relative;
+                    &:after {
+                        content: " ";
+                        display: block;
+                        position: absolute;
+                        .wh(1px, 17px);
+                        bottom: 0;
+                        top: 0;
+                        right: -1px;
+                        margin: auto;
+                        background-color: #e5e5e5;
+                    }
+                }
+            }
+        }
+        .ListEnd {
+            .wh(100%, 51.5px);
+            position: relative;
+            line-height: 51.5px;
+            margin-top: -10px;
+            background-color: #f5f5f5;
+            span {
+                display: inline-block;
+                &:after {
+                    content: " ";
+                    display: block;
+                    .wh(82px, 1px);
+                    position: absolute;
+                    left: 13px;
+                    top: 0;
+                    bottom: 0;
+                    margin: auto;
+                    background-color: #e8e8e8;
+                }
+                &:before {
+                    content: " ";
+                    display: block;
+                    position: absolute;
+                    .wh(82px, 1px);
+                    right: 13px;
+                    top: 0;
+                    bottom: 0;
+                    margin: auto;
+                    background-color: #e8e8e8;
+                }
+            }
+        }
+    }
+}
+
+footer {
+    display: flex;
+    flex: 1;
+    position: fixed;
+    z-index: 99999;
+    justify-content: center;
+    align-items: center;
+    bottom: 0;
+    .wh(100%, 50px);
+    color: #fff;
+    div {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        justify-content: center;
+        &:after {
+            content: " ";
+            display: block;
+            .wh(1px, 29px);
+            position: absolute;
+            right: 0;
+        }
+        .createParty-ico {
+            background: url(../../../img/createParty-ico.png) center center no-repeat;
+        }
+        .partyScanner-ico {
+            background: url(../../../img/partyScanner-ico.png) center center no-repeat;
+        }
+        .footerico {
+            align-self: center;
+            display: inline-block;
+            .wh( 2.06rem, 2.06rem);
+            background-size: 1.37rem 1.37rem;
+        }
+    }
+    background-color: #222;
+}
