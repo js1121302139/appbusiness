@@ -75,6 +75,7 @@
 					return {
 						page: 1,
 						totalPage: null,
+						pageLen:pageLen,
 						pageTop: {},
 						list: []
 					}
@@ -86,6 +87,7 @@
 						window.addEventListener("myOrderList", function() {
 							_this.myOrderList(function(resData) {
 								_this.list = resData.data;
+								_this.totalPage=Math.ceil(resData.total/_this.pageLen);
 							}, 1)
 						})
 						window.addEventListener("getMyOrderTop", function() {
@@ -152,13 +154,12 @@
 						if(this.page < this.totalPage) {
 							this.myOrderList(function(resdata) {
 								_this = _this.list.concat(resdata.data);
-								console.log(JSON.stringify(resdata));
 							}, this.page)
 						} else {
 							refresher.info.pullUpLable = '没有更多数据了!';
 						}
 						wrapper.refresh();
-					},
+					}, 
 					/*Refresh: function() {
 						var _this = this;
 						this.todayOrdersStatistics(function(resdata) {
@@ -171,7 +172,6 @@
 						console.log(JSON.stringify(this.list));
 					},*/
 					showPopup: function(showData) {
-						console.log(JSON.stringify(showData))
 						var alertStr =
 							'<div class=""><p>订单数</p><p>' + showData.orderNum + '</p></div>' +
 							'<div class=""><p>订单总额</p><p>' + showData.moneyTotal + '</p></div>' +
@@ -192,7 +192,6 @@
 				filters: {
 					cutTime: function(timer) {
 						var str = timer.split(" ")[0]
-						console.log(str)
 						return str;
 					}
 				}

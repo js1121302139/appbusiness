@@ -27,7 +27,7 @@
 					<ul id="moneyList">
 						<li class="listItem" v-for="(item,key) in list">
 							<p class="itemDate" v-text="item.createTime">2017-02-15</p>
-							<p class="itemMoney" v-text="item.money">+888.66</p>
+							<p class="itemMoney" v-text="'+' +item.money">+888.66</p>
 						</li>
 
 					</ul>
@@ -67,9 +67,10 @@
 					var _this = this;
 					mui.plusReady(function() {
 						_this.getIncomeMonth(function(resData) {
-							_this.totalPage = resData.total / _this.pageLen;
+							_this.totalPage = Math.ceil(resData.total / _this.pageLen);
 							_this.pageData = resData.data;
-							_this.list = resData.merchantShareLogsList;
+							_this.list = resData.data.merchantShareLogsList;
+							console.log(JSON.stringify(resData.merchantShareLogsList))
 						}, 1, null)
 						refresher.init({
 							id: "wrapper",
@@ -99,7 +100,7 @@
 							_this.list =_this.list.concat(resData.data.merchantShareLogsList);
 							}, this.page, this.mouth)
 						} else {
-							mui.toast('没有更多数据了!')
+							refresher.info.pullUpLable = '没有更多数据了!';
 						}
 						wrapper.refresh();
 					},

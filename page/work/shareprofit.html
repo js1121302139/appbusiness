@@ -44,12 +44,19 @@
 						<li class="ListItem" v-for="(items,key) in list">
 							<div class="ListItemTop">
 								<p class="itemInfo" v-text="items.merchantName"></p>
-								<p class="itemMoney" v-text="items.money"></p>
+								<p class="itemMoney" v-text="'￥' +items.money"></p>
 							</div>
 							<p class="ListItemDate" v-text="items.createTime">
-
 							</p>
 						</li>
+						<!--<li class="ListItem" v-for="(items,key) in list">
+							<div class="ListItemTop">
+								<p class="itemInfo" v-text="items.merchantName">asd</p>
+								<p class="itemMoney" v-text="'￥' +items.money">￥123</p>
+							</div>
+							<p class="ListItemDate" v-text="items.createTime">
+							</p>
+						</li>-->
 					</ul>
 				</div>
 
@@ -83,6 +90,7 @@
 				var _this = this;
 				mui.plusReady(function() {
 					Fun_App.pulldownRefresh();
+					//刷新页面数据
 					window.addEventListener("shareprofit", function() {
 						_this.getMyIncome(function(resData) {
 							_this.pageData = resData.data;
@@ -93,6 +101,7 @@
 							_this.totalPage = Math.ceil(resData.total / _this.pageLen);
 						}, 1)
 					})
+					
 					_this.getMyIncome(function(resData) {
 						_this.pageData = resData.data;
 						_this.shareBalanceMoney = _this.pageData.shareMoney - _this.pageData.shareBalance

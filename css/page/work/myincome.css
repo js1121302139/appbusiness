@@ -426,24 +426,20 @@ body,
   margin-top: 0.46875rem;
   font-size: 1rem;
 }
-.wrappers {
-  margin-top: 0.68rem;
-  height: 100%;
-}
-.wrappers ul {
-  padding-bottom: 15.31rem;
-}
-.wrappers .wrapperList {
+.wrapperList {
   background-color: #fff;
 }
-.wrappers .wrapperList .pullDown {
+.wrapperList ul {
+  margin-bottom: 18.43rem;
+}
+.wrapperList .pullDown {
   display: none;
 }
-.wrappers .wrapperList .pullUp {
+.wrapperList .pullUp {
   position: relative;
-  top: -15.31rem;
+  top: -18.43rem;
 }
-.wrappers .wrapperList .wrapperListItem {
+.wrapperList .wrapperListItem {
   position: relative;
   display: flex;
   flex: 1;
@@ -452,7 +448,7 @@ body,
   padding: 0 0.96875rem 0 0.9375rem;
   justify-content: space-between;
 }
-.wrappers .wrapperList .wrapperListItem:after {
+.wrapperList .wrapperListItem:after {
   position: absolute;
   content: " ";
   display: block;
@@ -465,12 +461,12 @@ body,
   background-color: #e5e5e5;
   transform: scaleY(0.5);
 }
-.wrappers .wrapperList .wrapperListItem .ordersDate {
+.wrapperList .wrapperListItem .ordersDate {
   width: 17.65625rem;
   font-size: 0.81rem;
   color: #333;
 }
-.wrappers .wrapperList .wrapperListItem .ordersMoney {
+.wrapperList .wrapperListItem .ordersMoney {
   font-size: 0.9375rem;
   color: #D7B374;
 }
