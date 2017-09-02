@@ -4,57 +4,54 @@ body {
 }
 
 html,
-body,#myincome{
+body,
+#myincome {
     height: 100%;
     min-height: 100%;
     overflow: hidden;
 }
 
 .mine-top-box("../../../images/order-bg.png", "../../../img/topBackB-ico.png");
-
-.wrappers {
-    height: 100%;
+.wrapperList {
     ul {
-        padding-bottom: 15.31rem;
+        margin-bottom: 18.43rem;
     }
-    .wrapperList {
-        background-color: #fff;
-        .pullDown {
-            display: none;
+    background-color: #fff;
+    .pullDown {
+        display: none;
+    }
+    .pullUp {
+        position: relative;
+        top: -18.43rem;
+    }
+    .wrapperListItem {
+        position: relative;
+        display: flex;
+        flex: 1;
+        height: 2.75rem;
+        line-height: 2.75rem;
+        padding: 0 0.96875rem 0 0.9375rem;
+        justify-content: space-between;
+        &:after {
+            position: absolute;
+            content: " ";
+            display: block;
+            .wh(95%, 0.0625rem);
+            right: 0px;
+            left: 0;
+            bottom: -0.0625rem;
+            margin: auto;
+            background-color: #e5e5e5;
+            transform: scaleY(0.5);
         }
-        .pullUp {
-            position: relative;
-            top: -15.31rem;
+        .ordersDate {
+            width: 17.65625rem;
+            font-size: 0.81rem;
+            color: #333;
         }
-        .wrapperListItem {
-            position: relative;
-            display: flex;
-            flex: 1;
-            height: 44px;
-            line-height: 44px;
-            padding: 0 15.5px 0 15px;
-            justify-content: space-between;
-            &:after {
-                position: absolute;
-                content: " ";
-                display: block;
-                .wh(95%, 1px);
-                right: 0px;
-                left: 0;
-                bottom: -1px;
-                margin: auto;
-                background-color: #e5e5e5;
-                transform: scaleY(0.5);
-            }
-            .ordersDate {
-                width: 282.5px;
-                font-size: 13px;
-                color: #333;
-            }
-            .ordersMoney {
-                font-size: 15px;
-                color: #D7B374;
-            }
+        .ordersMoney {
+            font-size: 0.9375rem;
+            color: #D7B374;
         }
     }
 }
@@ -62,8 +59,10 @@ body,#myincome{
 .footerButton {
     position: fixed;
     bottom: 0px;
-    .wh(100%, 49px);
-    line-height: 49px;
+    .wh(100%, 3.0625rem);
+    line-height: 3.0625rem;
     background-color: #D7B374;
+    color: #fff;
+    font-size: 1.12rem;
     z-index: 9999;
 }

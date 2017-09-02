@@ -20,9 +20,10 @@
 				<div class="evaluateBox">
 					<div class="evaluate-top">
 					<div class="evaluateCount" id="evaluateContent" v-text="'评论条数:' + pageData.totalNum">
-
+评论条数:2345
 					</div>
-					<div class="evaluateStar">
+					<div class="starLv">
+						<div class="evaluateStar">
 						<div class="evaluateStars" tip="3.4">
 							<p class="evaluateStarsitem" v-for="(items,key) in pageData.averageGrade |0"></p>
 						</div>
@@ -33,6 +34,8 @@
 						<p class="evaluateStarsLine"></p>
 					</div>
 					<div class="evaluateNum" id="evaluateNum" v-text="pageData.averageGrade">
+						4.8
+					</div>
 					</div>
 				</div>
 				
@@ -71,7 +74,7 @@
 							<li class="wrapperListItem" v-for="(item,key) in list">
 								<div class="ListItemTop">
 									<div class="userImg">
-										<img :src="picservice + item.headImg" alt="">
+										<img src="../../images/user-img.png" :src="picservice + item.headImg" alt="">
 									</div>
 									<div class="userInfo">
 										<p class="userName" v-text="item.userName">123</p>
@@ -87,11 +90,11 @@
 										</div>
 									</div>
 									<div class="evaluateDate" v-text="item.createTime">
-
+2017-06-03 13:20:35
 									</div>
 								</div>
 								<div class="evaluateMsg" v-text="item.content">
-
+上世纪70年代上世纪70年代上世纪70年代上世纪70年代上世纪70年代上世纪70年代
 								</div>
 							</li>
 						</ul>

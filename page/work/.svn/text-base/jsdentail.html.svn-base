@@ -27,6 +27,9 @@
 								<div class="orderDate" v-text="'结算时间:'+item.createTime">
 									2017-02-11 11:02
 								</div>
+								<div v-text="dentailState[item.state]">
+									
+								</div>
 							</div>
 							<div class="orderRight">
 								<div class=" withdrawals" v-text="'结算:'+item.money">
@@ -620,7 +623,14 @@
 					page: 1,
 					totalPage: null,
 					pageLen: pageLen,
-					list: []
+					list: [],
+					dentailState:{
+						1:'审核中',
+						2:'已打款',
+						3:'已打款',
+						5:'申请不通过',
+						null:"已打款"
+					}
 				}
 			},
 			created: function() {

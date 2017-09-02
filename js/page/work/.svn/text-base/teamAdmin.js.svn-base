@@ -30,9 +30,9 @@ function getTeamList() {
 		fun_Success: function(data) {
 			teamListBox.innerHTML = "";
 			if(data.data.length == 0) {
-				document.querySelector(".accountNull").style.display = "block";
+				//document.querySelector(".accountNull").style.display = "block";
 			} else {
-				document.querySelector(".accountNull").style.display = "none";
+				//document.querySelector(".accountNull").style.display = "none";
 			}
 			if(data.success) {
 				for(var i = 0; i < data.data.length; i++) {

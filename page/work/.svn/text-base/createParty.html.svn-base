@@ -44,7 +44,7 @@
 							</div>
 							<a href="JavaScript:;" @click="addPartyImgs('partyImgBox')" class="addPartyImg"></a>
 						</div>
-						<p class="bz">备注:??? 图片大小:？？</p>
+						<p class="bz">备注:仅限两张 图片大小:750*480</p>
 					</div>
 					<div class="partyFormItem partyClass partyClass-ico">
 						<div class="partyFormItemTit">
@@ -252,14 +252,14 @@
 								//上传图片
 								//_this.locaImg.models['model'+key].push(e);
 								Fun_App.zipImg(e, function(data) {
-									var datas={}
+									var datas = {}
 									Fun_App.uploadFiles(data, function(datas) {
 										console.log(JSON.stringify(datas))
-										if(datas.data!=null){
+										if(datas.data != null) {
 											_this.locaImg.models[key].push(e);
 											_this.locaImg.serverModels[key].push(datas.data.url);
 										}
-									})
+									}, 'modelImg')
 								});
 							}, function(e) {
 								mui.toast('打开相册失败!');
@@ -290,9 +290,9 @@
 								Fun_App.zipImg(e, function(data) {
 									Fun_App.uploadFiles(data, function(datas) {
 										console.log(JSON.stringify(datas) + "--------->")
-										if(datas.data!=null){											
+										if(datas.data != null) {
 											_this.data.masterImg = datas.data.saveFilePath;
-										}else{
+										} else {
 											mui.toast('上传失败!');
 											mui.toast(datas.message);
 										}
@@ -308,28 +308,33 @@
 					},
 					addPartyImgs: function(ImgClass) { //活动的图片
 						var _this = this;
-						mui.plusReady(function() {
-							plus.gallery.pick(function(e) {
-								//上传图片
-								Fun_App.zipImg(e, function(data) {
-									Fun_App.uploadFiles(data, function(datas) {
-										console.log(JSON.stringify(datas))
-										if(datas.data!=null){
-											_this.locaImg[ImgClass].push(e);
-											_this.data.pictures.push(datas.data.saveFilePath);											
-										}else{
-											mui.toast('上传失败!');
-											mui.toast(datas.message);
-										}
-									})
-								});
-							}, function(e) {
-								mui.toast('打开相册失败!')
-							}, {
-								filter: "image",
-								multiple: false
+						if(this.data.pictures.length < 2) {
+							mui.plusReady(function() {
+								plus.gallery.pick(function(e) {
+									//上传图片
+									Fun_App.zipImg(e, function(data) {
+										Fun_App.uploadFiles(data, function(datas) {
+											console.log(JSON.stringify(datas))
+											if(datas.data != null) {
+												_this.locaImg[ImgClass].push(e);
+												_this.data.pictures.push(datas.data.saveFilePath);
+											} else {
+												mui.toast('上传失败!');
+												mui.toast(datas.message);
+											}
+										})
+									});
+								}, function(e) {
+									mui.toast('打开相册失败!')
+								}, {
+									filter: "image",
+									multiple: false
+								})
 							})
-						})
+						}else{
+							mui.toast('选择图片数量超过限制!')
+						}
+
 					},
 					picturesHtml: function(pic, txt) {
 						var htmlstr = "";
@@ -371,20 +376,23 @@
 						console.log(JSON.stringify(this.locaImg));
 						//本地预览的数据
 						var sendData = {
-							theme:this.data.theme,
-							price:this.data.price,
-							endTime:this.data.endTime,
-							saleNumber:0,
-							useNumber:0,
-							status:6,
-							type:this.data.type,
-							number:this.data.number,
-							startTime:this.data.startTime,
-							description:this.picturesHtml(this.locaImg.models, this.locaImg.partyInfoText),//文章
+							theme: this.data.theme,
+							price: this.data.price,
+							endTime: this.data.endTime,
+							saleNumber: 0,
+							useNumber: 0,
+							status: 6,
+							type: this.data.type,
+							number: this.data.number,
+							startTime: this.data.startTime,
+							description: this.picturesHtml(this.locaImg.models, this.locaImg.partyInfoText), //文章
 						}
 						console.log(this.data.description)
 						mui.plusReady(function() {
-							Fun_App.openWin("./partyIn.html", "pop-in", {id:'see',data:sendData});
+							Fun_App.openWin("./partyIn.html", "pop-in", {
+								id: 'see',
+								data: sendData
+							});
 						})
 					},
 					createParty: function(activityFlow, activityPackage, pictures) {

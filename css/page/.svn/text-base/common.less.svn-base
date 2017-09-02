@@ -31,14 +31,14 @@ html {
 }
 
 .btn-gradient {
-    padding: 10px;
+    padding: 0.625rem;
     background: -moz-linear-gradient(top, @BtnColorDeepBefore, @BtnColorDeepAfter);
     background: linear-gradient(top, @BtnColorDeepBefore, @BtnColorDeepAfter);
     background: -webkit-linear-gradient(top, @BtnColorDeepBefore, @BtnColorDeepAfter);
 }
 
 .btn-delete {
-    padding: 10px;
+    padding: 0.625rem;
     background: -moz-linear-gradient(top, #f15d5d, #f10101);
     background: linear-gradient(top, #f15d5d, #f10101);
     background: -webkit-linear-gradient(top, #f15d5d, #f10101);
@@ -106,7 +106,6 @@ input[type=submit]:enabled:active {
             .shop-good-title {
                 width: 100%;
                 text-align: left;
-                
             }
             img {
                 width: 100%;
@@ -221,24 +220,24 @@ input[type=submit]:enabled:active {
 
 .bgImg {
     background: url(../../img/work_footer-01.png) center center no-repeat;
-    background-position-y: -33px;
+    background-position-y: -2.0625rem;
 }
 
 .bgImg1 {
     background: url(../../img/work_footer-02.png) center center no-repeat;
-    background-position-y: -33px;
+    background-position-y: -2.0625rem;
 }
 
 .bgImg2 {
     background: url(../../img/work_footer-03.png) center center no-repeat;
-    background-position-y: -33px;
+    background-position-y: -2.0625rem;
 }
 
 .mui-bar-tab .mui-tab-item .mui-icon {
     width: 2.06rem;
     height: 2.06rem;
     transition: all 0.5s;
-    background-size: 33px 4.12rem;
+    background-size: 2.0625rem 4.12rem;
 }
 
 .mui-bar img {
@@ -404,10 +403,10 @@ table {
     .topBar {
         padding-top: 1.25rem;
         height: 4rem;
-        box-shadow: 0 1px 6px #ccc;
+        box-shadow: 0 0.0625rem 0.375rem #ccc;
         .topBack-ico {
             display: inline-block;
-            .wh(44px, 44px);
+            .wh(2.75rem, 2.75rem);
             background: url(@url) left center no-repeat;
             background-size: 1.25rem 1.25rem;
         }
@@ -418,8 +417,8 @@ table {
         }
         .rightIco {
             display: block;
-            width: 44px;
-            height: 44px;
+            width: 2.75rem;
+            height: 2.75rem;
         }
     }
     .mui-content {
@@ -432,7 +431,7 @@ table {
 
 .mine-top-box(@url, @backurl) {
     .minetop-box {
-        .wh(100%, 235px);
+        .wh(100%, 14.6875rem);
         padding-top: 1.25rem;
         background: url(@url) left top no-repeat;
         background-size: cover;
@@ -443,14 +442,18 @@ table {
         }
         .topBar {
             display: flex;
-            .wh(100%, 20px);
-            padding: 0 20px;
-            margin-top: 12px;
+            .wh(100%, 1.25rem);
+            padding: 0 1.25rem;
+            margin-top: 0.75rem; 
             justify-content: space-between;
+            #myDetailed {
+                font-size: 0.87rem;
+                line-height: 1.25rem;
+            }
             div:first-child {
-                .wh(40px, 40px);
+                .wh(2.5rem, 2.5rem);
                 background: url(@backurl) left center no-repeat;
-                background-size: 20px 20px;
+                background-size: 1.25rem 1.25rem;
             }
         }
         .mine-topInfo {
@@ -458,17 +461,17 @@ table {
             margin-top: 1.25rem;
             flex-direction: column;
             .topInfoTit {
-                font-size: 18px;
-                margin-bottom: 12px;
+                font-size: 1.125rem;
+                margin-bottom: 0.75rem;
             }
             .topInfoCountMoney {
-                font-size: 41px;
+                font-size: 2.5625rem;
             }
         }
         .mine-topInfoMoney {
-            margin-top: 41px;
+            margin-top: 2.5625rem;
             display: flex;
-            .wh(100%, 31.5px);
+            .wh(100%, 1.96875rem);
             div {
                 position: relative;
                 flex: 1;
@@ -476,19 +479,19 @@ table {
                     position: absolute;
                     content: " ";
                     display: block;
-                    .wh(1px, 30px);
-                    right: -1px;
+                    .wh(0.0625rem, 1.875rem);
+                    right: -0.0625rem;
                     top: 0;
                     bottom: 0;
                     margin: auto;
                     background-color: #fff;
                 }
                 p {
-                    font-size: 12px;
+                    font-size: 0.75rem;
                 }
                 .money {
-                    margin-top: 7.5px;
-                    font-size: 16px;
+                    margin-top: 0.46875rem;
+                    font-size: 1rem;
                 }
             }
         }

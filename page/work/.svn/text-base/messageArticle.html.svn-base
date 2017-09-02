@@ -10,7 +10,7 @@
 	</head>
 
 	<body>
-		<div id="Article">
+		<div id="">
 			<header class="mui-bar topBar mui-bar-nav">
 				<a class="mui-action-back topBack-ico mui-pull-left"></a>
 				<h1 class="mui-title" v-text="pageData.pTitle"></h1>

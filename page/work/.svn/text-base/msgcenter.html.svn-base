@@ -22,8 +22,8 @@
 			</header>
 			<div class="wrappers">
 				<div id="wrapper" class="wrapperList">
-				<ul id="msgList">
-					<li class="ListItem" v-for="(item,key) in list" @click="open(item)">
+					<ul id="msgList">
+						<!--<li class="ListItem" v-for="(item,key) in list" @click="open(item)">
 						<p class="msgDate mui-text-center" v-text="item.createTime">2017-06-10 16:00:00</p>
 						<div class="msgInfo">
 							<div class="msgTop">
@@ -37,23 +37,23 @@
 							</div>
 							<p class="magText mui-ellipsis" v-text="item.pTitle">福利大放送哦121321福利123132123大放送哦福利大放送哦福利大放送哦</p>
 						</div>
-					</li>
-					<!--<li class="ListItem">
-            <p class="msgDate mui-text-center">2017-06-10 16:00:00</p>
-            <div class="msgInfo">
-                <div class="msgTop">
-                    <h1 class="msgTit mui-ellipsis">一下下下下 </h1>
-                    <div class="msg-ico">
-                        <span class="msgBadge"></span>
-                    </div>
-                </div>
-                <div class="msgimg">
-                    <img src="../../img/ico-data02.png" alt="">
-                </div>
-                <p class="magText mui-ellipsis">福利大放送哦121321福利123132123大放送哦福利大放送哦福利大放送哦</p>
-            </div>
-        </li>-->
-					<!--<li class="ListItem">
+					</li>-->
+						<li class="ListItem">
+							<p class="msgDate mui-text-center">2017-06-10 16:00:00</p>
+							<div class="msgInfo">
+								<div class="msgTop">
+									<h1 class="msgTit mui-ellipsis">一下下下下 </h1>
+									<div class="msg-ico">
+										<span class="msgBadge"></span>
+									</div>
+								</div>
+								<div class="msgimg">
+									<img src="../../img/ico-data02.png" alt="">
+								</div>
+								<p class="magText mui-ellipsis">福利大放送哦121321福利123132123大放送哦福利大放送哦福利大放送哦</p>
+							</div>
+						</li>
+						<!--<li class="ListItem">
             <p class="msgDate mui-text-center">2017-06-10 16:00:00</p>
             <div class="msgInfo">
                 <div class="msgTop">
@@ -68,11 +68,11 @@
                 <p class="magText mui-ellipsis">福利大放送哦121321福利123132123大放送哦福利大放送哦福利大放送哦</p>
             </div>
         </li>-->
-				</ul>
-			</div>
+					</ul>
+				</div>
 
 			</div>
-			
+
 		</div>
 	</body>
 	<script src="../../js/mui.min.js"></script>
@@ -101,10 +101,10 @@
 						_this.list = resData.data;
 						console.log(JSON.stringify(resData.data))
 					})
-					window.addEventListener("messageList",function(){
+					window.addEventListener("messageList", function() {
 						_this.messageList(function(resData) {
-						_this.list = resData.data;
-					})
+							_this.list = resData.data;
+						})
 					})
 				})
 			},
@@ -130,7 +130,7 @@
 					for(var i = 0; i < this.list.length; i++) {
 						if(this.list[i].status == 0) {
 							mseeageId.push(this.list[i].adminMessageId)
-							this.list[i].status=1;
+							this.list[i].status = 1;
 						}
 					}
 					var sendData = {

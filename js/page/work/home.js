@@ -82,7 +82,9 @@ mui.plusReady(function() {
 		})
 	}(mui))
 	window.addEventListener("getindexData", function() {
-		getindexData();
+		setTimeout(function() {
+			getindexData();
+		}, 0)
 	})
 
 	function getindexData() {
@@ -130,7 +132,9 @@ mui.plusReady(function() {
 			budgetAdminBox.style.display = "none";
 		}
 	}
-	getindexData();
+	setTimeout(function() {
+		getindexData();
+	}, 0)
 
 	plus.navigator.setStatusBarBackground("rgba(0,0,0,0)");
 

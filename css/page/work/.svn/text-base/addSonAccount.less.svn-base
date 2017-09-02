@@ -1,4 +1,4 @@
-@import "common"
+@import "../common";
 .topBar("../../../img/topBack-ico.png");
 .mui-content {
     .mui-table-view-cell {
@@ -22,6 +22,7 @@
         input {
             border: none;
             text-align: right;
+            font-size: 0.81rem;
         }
         .mui-navigate-right {
           font-size: 14px;
@@ -34,6 +35,7 @@
         .option {
             position: absolute;
             display: block;
+            font-size: 0.87rem;
             line-height: 2.75rem;
             padding-right: 0.31rem;
             right: 1.9rem;
@@ -41,8 +43,8 @@
         }
     } 
     .addBtn {
-        margin: 32px auto 0;
-        display: block;
+        margin: 1.81rem auto 0;
+        display: block; 
         width: 95%;
         padding: 11.5px 0;
         font-size: 1.12rem;
@@ -53,7 +55,7 @@
     }
     .Bz {
       margin-top: 10px;
-        line-height: 1.5rem;
+        line-height: 1.12rem;
         font-size: 0.87rem;
         color: #666;
         padding: 0 1.71rem 0 0.93rem;

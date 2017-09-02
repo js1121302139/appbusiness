@@ -369,7 +369,6 @@ body {
   color: #fff;
 }
 .header .funBar .funBarIcoBtn {
-  width: 4.5rem;
   float: right;
 }
 .header .funBar .funBarIcoBtn .msg {
@@ -415,7 +414,7 @@ body {
 .header .shopCard .profit {
   background: #fff;
   background: url(../../../img/home-profit-bg.png) left top no-repeat;
-  background-size: 100% 10.62rem;
+  background-size: 100% 100%;
   margin: 0 auto;
   border-radius: 0.37rem;
 }
@@ -458,11 +457,24 @@ body {
   text-indent: 1rem;
 }
 .header .shopCard .profit .infoBoard {
+  position: relative;
   display: flex;
   height: 5.15rem;
-  align-items: center;
+  align-items: flex-end;
   overflow: hidden;
   font-size: 0;
+}
+.header .shopCard .profit .infoBoard:after {
+  position: absolute ;
+  content: "";
+  top: 0.93rem;
+  display: block;
+  height: 0.06rem;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 95%;
+  background: #222;
 }
 .header .shopCard .profit .infoBoard div {
   flex: 1;
@@ -475,8 +487,8 @@ body {
   content: " ";
   display: block;
   position: absolute;
-  right: -0.06rem;
-  top: 0;
+  right: 0;
+  top: -0.62rem;
   bottom: 0;
   margin: auto;
   width: 0.06rem;

@@ -75,6 +75,7 @@
 					return {
 						page: 1,
 						totalPage: null,
+						pageLen:pageLen,
 						pageTop: {},
 						list: []
 					}
@@ -82,10 +83,10 @@
 				created: function() {
 					var _this = this;
 					mui.plusReady(function() {
-						Fun_App.pulldownRefresh();
 						window.addEventListener("myOrderList", function() {
 							_this.myOrderList(function(resData) {
 								_this.list = resData.data;
+								_this.totalPage=Math.ceil(resData.total/_this.pageLen);
 							}, 1)
 						})
 						window.addEventListener("getMyOrderTop", function() {
@@ -95,6 +96,7 @@
 						})
 						_this.myOrderList(function(resData) {
 							_this.list = resData.data;
+							_this.totalPage=Math.ceil(resData.total/_this.pageLen);
 						}, 1)
 						_this.getMyOrderTop(function(resData) {
 							_this.pageTop = resData.data;
@@ -149,17 +151,16 @@
 					Load: function() {
 						this.page++;
 						var _this = this;
-						if(this.page < this.totalPage) {
+						if(this.page <= this.totalPage) {
 							this.myOrderList(function(resdata) {
-								_this = _this.list.concat(resdata.data);
-								console.log(JSON.stringify(resdata));
+								_this.list = _this.list.concat(resdata.data);
 							}, this.page)
 						} else {
 							refresher.info.pullUpLable = '没有更多数据了!';
 						}
 						wrapper.refresh();
-					},
-					/*Refresh: function() {
+					}, 
+					Refresh: function() { 
 						var _this = this;
 						this.todayOrdersStatistics(function(resdata) {
 							if(resdata.data != null) {
@@ -167,11 +168,9 @@
 								_this.list.unshift(resdata.data)
 							}
 						})
-
 						console.log(JSON.stringify(this.list));
-					},*/
+					},
 					showPopup: function(showData) {
-						console.log(JSON.stringify(showData))
 						var alertStr =
 							'<div class=""><p>订单数</p><p>' + showData.orderNum + '</p></div>' +
 							'<div class=""><p>订单总额</p><p>' + showData.moneyTotal + '</p></div>' +
@@ -192,7 +191,6 @@
 				filters: {
 					cutTime: function(timer) {
 						var str = timer.split(" ")[0]
-						console.log(str)
 						return str;
 					}
 				}

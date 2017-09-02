@@ -25,7 +25,7 @@
 								<label>结算方式</label>
 							</div>
 							<div class="mui-input-row mui-radio" v-for="(item,key) in Card">
-								<label>{{item.bankName+'储蓄卡('}}{{item.bankCode | replacex }}{{')'}}</label>
+								<label class="cardName">{{item.bankName+'储蓄卡('}}{{item.bankCode | replacex }}{{')'}}</label>
 								<input name="radio1" type="radio" checked="">
 							</div>
 						</form>
@@ -33,7 +33,7 @@
 				</div>
 				<div class="mine-cash-middle">
 					<div class="topMoney">
-						<p class="isMoney" id="numTotal">可结算 {{pageData.money==null?0:pageData.money}}</p>
+						<p class="isMoney" id="numTotal"><span class="allMoney">可提现</span> {{pageData.money==null?0:pageData.money}}</p>
 						<a href="JavaScript:;" class="mui-btn setMoney" @click="money=pageData.money" id="allMoneyBtn">全部结算</a>
 					</div>
 					<div class="cashMiddleItem">
@@ -43,8 +43,10 @@
 					<div class="cashMiddleItem phoneNum">
 						<div class="phoneNumCode">
 							<h1 class="settlement">短信验证码</h1>
-							<input type="tel" maxlength="6" v-model="pageData.messageCode" id="smCode">
+							<div class="phoneNumCodeRight">
+								<input type="tel" maxlength="6" v-model="pageData.messageCode" id="smCode">
 							<button href="JavaScript:;" class="mui-btn getPhoneCode" :disabled="showOutTime" @click="smsVerify" v-text="second==90?'获取验证码':'剩余'+second+'秒'" id="getPhoneCode">获取验证码</button>
+							</div>
 						</div>
 						<div class="phoneNumCodePrompt mui-text-right">
 

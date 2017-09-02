@@ -3,11 +3,15 @@
 .topBar {
     box-shadow: none;
 }
-html,body,#myuser{
+
+html,
+body,
+#myuser {
     height: 100%;
     min-height: 100%;
     overflow: hidden;
 }
+
 //我的用户
 .myusers {
     background: #fff;
@@ -36,13 +40,19 @@ html,body,#myuser{
     padding: 0 8px 0 0.75rem;
     height: 3.12rem;
     line-height: 3.12rem;
+    font-size: 0.93rem;
     .userBg {
         background: url(../../../img/work-tab-02.png) left center no-repeat;
-        background-size: 22px 22px;
+        background-size: 1.37rem 1.37rem;
         text-indent: 1.71rem;
+        font-size: 0.93rem;
     }
-    .userNum {
-        color: #D7B374;
+    .totalUser {
+        font-size: 0.81rem;
+        .userNum {
+            color: #D7B374;
+            font-size: 0.93rem;
+        }
     }
 }
 
@@ -68,18 +78,20 @@ html,body,#myuser{
 
 
 /*用户列表*/
-.wrapper{
+
+.wrapper {
     position: relative;
     height: 100%;
 }
+
 .wrapperList {
-    ul{
+    ul {
         margin-bottom: 18.12rem;
     }
     .pullDown {
         display: none;
     }
-    .pullUp{
+    .pullUp {
         position: relative;
         top: -18.12rem;
     }
@@ -131,19 +143,18 @@ html,body,#myuser{
                 display: flex;
                 flex-flow: column;
                 align-content: space-between;
-                p{
+                p {
                     flex: 1;
                     font-size: 1.12rem;
                     color: #D7B374;
-                    
                 }
-                a{
+                a {
                     display: block;
                     line-height: 1.37rem;
-                    .wh(4rem,1.37rem);
+                    .wh(4rem, 1.37rem);
                     font-size: 0.81rem;
                     color: #333;
-                    border-radius: 0.12rem;
+                    border-radius: 0.25rem;
                     box-shadow: 0 0 0 1px #333;
                 }
             }
@@ -163,20 +174,22 @@ html,body,#myuser{
     .mui-checkbox input[type=checkbox] {
         left: 10px;
         position: absolute;
-        top: 13px;
+        top: 0;
+        bottom: 0;
         right: 0px;
         display: inline-block;
-        width: 23px;
-        height: 23px;
+        width: 1rem;
+        height: 1rem;
         border: 0;
         outline: 0 !important;
         background-color: transparent;
         -webkit-appearance: none;
+        margin: auto 0;
     }
     .mui-checkbox input[type=checkbox]:before,
     .mui-radio input[type=radio]:before {
         font-family: Muiicons;
-        font-size: 23px;
+        font-size: 1rem;
         font-weight: 400;
         line-height: 1;
         text-decoration: none;
@@ -187,6 +200,8 @@ html,body,#myuser{
     }
     .mui-checkbox.mui-left label {
         padding: 0;
+        display: initial;
+        margin-left: 0.37rem;
     }
 }
 
@@ -195,7 +210,7 @@ html,body,#myuser{
     line-height: 3.12rem;
     background-color: #222;
     a {
-        font-size: 15px;
+        font-size: 0.93rem;
         color: #fff;
     }
 }

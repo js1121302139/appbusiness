@@ -50,7 +50,9 @@ mui.init();
 				alert()
 			} 
 		})*/
-		getInfodata();
+		setTimeout(function(){
+			getInfodata();			
+		},0)
 
 		var os = plus.os.name;
 		var msgState = Fun_App.getdata("pushMsg");

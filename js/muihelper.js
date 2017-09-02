@@ -360,13 +360,5 @@ mui.plusReady(function() {
 		mui.toast('当前' + networkinfo[(state - 1)]);
 		return false;
 	}, false)
-	window.addEventListener("tap", function() {
-		var topBar = document.querySelector(".topBar");
-		if(topBar != null) {
-			plus.navigator.setStatusBarStyle("dark");
-		} else {
-			plus.navigator.setStatusBarStyle("light");
-		}
-	})
-
 })
+

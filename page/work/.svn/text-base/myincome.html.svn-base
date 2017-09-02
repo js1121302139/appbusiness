@@ -35,7 +35,7 @@
 				</div>
 			</div>
 			<div class="mui-content">
-				<div class="wrappers">
+				<!--<div class="wrappers">
 					<div id="wrapper" class="wrapperList">
 						<ul id="yyaccountList">
 							<!--<li class="wrapperListItem" >
@@ -49,8 +49,18 @@
 						<li class="wrapperListItem" >
 							<p class="ordersDate" >2016-01-12 16:00:00</p> 
 							<p class="ordersMoney mui-right"  >￥99</p>
-						</li>-->
+						</li>
 
+							<li class="wrapperListItem" :key="key" v-for="(item,key) in incomeList">
+								<p class="ordersDate" v-text="item.createTime">2016-01-12 16:00:00</p>
+								<p class="ordersMoney mui-right" v-text="item.money">￥99</p>
+							</li>
+						</ul>
+					</div>
+				</div>-->
+				<div>
+					<div id="wrapper" class="wrapperList">
+						<ul>
 							<li class="wrapperListItem" :key="key" v-for="(item,key) in incomeList">
 								<p class="ordersDate" v-text="item.createTime">2016-01-12 16:00:00</p>
 								<p class="ordersMoney mui-right" v-text="item.money">￥99</p>
@@ -177,5 +187,4 @@
 			}
 		})
 	</script>
-
 </html>

@@ -29,8 +29,8 @@
 						<div class="mui-col-sm-6 mui-col-xs-6 mui-pull-left userBg">
 							我的用户
 						</div>
-						<div class="mui-col-sm-6 mui-col-xs-6 mui-pull-right mui-text-right">
-							<span class="userNum" id="userNum" v-text="pageData.total"></span>位用户
+						<div class="mui-col-sm-6 mui-col-xs-6 mui-pull-right mui-text-right totalUser">
+							<span class="userNum" id="userNum" v-text="pageData.total">12</span>位用户
 						</div>
 					</div>
 				</div>
@@ -38,9 +38,9 @@
 			<div class="wrapper">
 				<div id="wrapper" class="wrapperList">
 					<ul class="userLsit" id="userList">
-						<li class="mui-table-view-cell userBox" @click="checks(key)" v-for="(item,key) in list">
+						<li class="mui-table-view-cell userBox" @click.stop="checks(key)" v-for="(item,key) in list">
 							<div class="checkAndImg mui-checkbox">
-								<input class="check" :checked="item.ischeck" type="checkbox">
+								<input class="check" :checked="item.ischeck" v-model="item.ischeck" type="checkbox">
 								<img :src="picservice + item.headImg" />
 							</div>
 							<div class="userInfo">
@@ -50,7 +50,7 @@
 							</div>
 							<div class="moneyAndMsgBtn">
 								<p class="mui-text-center" v-text="'￥' + item.money==null?0:item.money">￥5000</p>
-								<a href="javascript:;" class="mui-text-center" @click="send([item.memberId])">发送消息</a>
+								<a href="javascript:;" class="mui-text-center" @click.stop="send(key,[item.memberId])">发送消息</a>
 							</div>
 						</li>
 
@@ -67,7 +67,7 @@
 						</div>
 					</div>
 					<div class="mui-col-sm-4 mui-col-xs-4 senAllMsg mui-text-center">
-						<a href="javascript:;" @click="send">发送消息</a>
+						<a href="javascript:;" @click="send('all')">发送消息</a>
 					</div>
 				</div>
 			</nav>
@@ -102,7 +102,7 @@
 						console.log(JSON.stringify(resData))
 						_this.totalPage = Math.ceil(resData.total / _this.pageLen);
 						_this.pageData = resData;
-						_this.list=resData.data;
+						_this.appendList(resData.data);
 						console.log(JSON.stringify(_this.list))
 					}, 1)
 					refresher.init({
@@ -125,7 +125,7 @@
 					}
 					Fun_App.ExAjax("merchantPerson/myUsers", sendData)
 				},
-				send: function() {
+				send: function(key) {
 					var shopData = {
 						config: {
 							"token": Fun_App.getdata("token"),
@@ -136,6 +136,7 @@
 
 						}
 					}
+					
 					if(this.sendArr.length!=0) {
 						mui.prompt('', '请输入文字', '发送消息', ['取消', '确认'], function(e) {
 							if(e.index) {
@@ -162,11 +163,11 @@
 					for(var i = 0; i < val.length; i++) {
 						this.list.push({
 							memberId: val[i].memberId,
-							name: val[i].name,
+							memberName: val[i].memberName,
 							grade: val[i].grade,
 							headImg: val[i].headImg,
 							money: val[i].money,
-							focusOnTime: val[i].focusOnTime,
+							createTime: val[i].createTime,
 							ischeck: false
 						})
 					}

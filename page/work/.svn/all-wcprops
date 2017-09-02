@@ -9,29 +9,23 @@ svn:wc:ra_dav:version-url
 V 69
 /svn/shop/!svn/ver/3503/Source/appbusiness/page/work/gxjsdentail.html
 END
+jsdentail.html
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/shop/!svn/ver/3632/Source/appbusiness/page/work/jsdentail.html
+END
 dataAnalysis.html
 K 25
 svn:wc:ra_dav:version-url
 V 70
 /svn/shop/!svn/ver/2956/Source/appbusiness/page/work/dataAnalysis.html
 END
-jsdentail.html
-K 25
-svn:wc:ra_dav:version-url
-V 67
-/svn/shop/!svn/ver/3577/Source/appbusiness/page/work/jsdentail.html
-END
 evaluatemange.html
 K 25
 svn:wc:ra_dav:version-url
 V 71
-/svn/shop/!svn/ver/3503/Source/appbusiness/page/work/evaluatemange.html
-END
-receivablesCode.html
-K 25
-svn:wc:ra_dav:version-url
-V 73
-/svn/shop/!svn/ver/3577/Source/appbusiness/page/work/receivablesCode.html
+/svn/shop/!svn/ver/3632/Source/appbusiness/page/work/evaluatemange.html
 END
 changeShop.html
 K 25
@@ -39,11 +33,11 @@ svn:wc:ra_dav:version-url
 V 68
 /svn/shop/!svn/ver/3423/Source/appbusiness/page/work/changeShop.html
 END
-myincome.html
+receivablesCode.html
 K 25
 svn:wc:ra_dav:version-url
-V 66
-/svn/shop/!svn/ver/3577/Source/appbusiness/page/work/myincome.html
+V 73
+/svn/shop/!svn/ver/3632/Source/appbusiness/page/work/receivablesCode.html
 END
 createactivity.html
 K 25
@@ -51,11 +45,23 @@ svn:wc:ra_dav:version-url
 V 72
 /svn/shop/!svn/ver/3577/Source/appbusiness/page/work/createactivity.html
 END
+myincome.html
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/shop/!svn/ver/3632/Source/appbusiness/page/work/myincome.html
+END
 monthlyEarnings.html
 K 25
 svn:wc:ra_dav:version-url
 V 73
-/svn/shop/!svn/ver/3423/Source/appbusiness/page/work/monthlyEarnings.html
+/svn/shop/!svn/ver/3632/Source/appbusiness/page/work/monthlyEarnings.html
+END
+createParty.html
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/shop/!svn/ver/3632/Source/appbusiness/page/work/createParty.html
 END
 budgetAdmin.html
 K 25
@@ -63,17 +69,11 @@ svn:wc:ra_dav:version-url
 V 69
 /svn/shop/!svn/ver/3577/Source/appbusiness/page/work/budgetAdmin.html
 END
-createParty.html
-K 25
-svn:wc:ra_dav:version-url
-V 69
-/svn/shop/!svn/ver/3586/Source/appbusiness/page/work/createParty.html
-END
 myuser.html
 K 25
 svn:wc:ra_dav:version-url
 V 64
-/svn/shop/!svn/ver/3577/Source/appbusiness/page/work/myuser.html
+/svn/shop/!svn/ver/3632/Source/appbusiness/page/work/myuser.html
 END
 addSonAccount.html
 K 25
@@ -81,23 +81,23 @@ svn:wc:ra_dav:version-url
 V 71
 /svn/shop/!svn/ver/3577/Source/appbusiness/page/work/addSonAccount.html
 END
-shareprofit.html
-K 25
-svn:wc:ra_dav:version-url
-V 69
-/svn/shop/!svn/ver/3577/Source/appbusiness/page/work/shareprofit.html
-END
 partyIn.html
 K 25
 svn:wc:ra_dav:version-url
 V 65
 /svn/shop/!svn/ver/3586/Source/appbusiness/page/work/partyIn.html
 END
+shareprofit.html
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/shop/!svn/ver/3632/Source/appbusiness/page/work/shareprofit.html
+END
 msgcenter.html
 K 25
 svn:wc:ra_dav:version-url
 V 67
-/svn/shop/!svn/ver/3577/Source/appbusiness/page/work/msgcenter.html
+/svn/shop/!svn/ver/3632/Source/appbusiness/page/work/msgcenter.html
 END
 promotiondentail.html
 K 25
@@ -109,7 +109,7 @@ messageArticle.html
 K 25
 svn:wc:ra_dav:version-url
 V 72
-/svn/shop/!svn/ver/3503/Source/appbusiness/page/work/messageArticle.html
+/svn/shop/!svn/ver/3632/Source/appbusiness/page/work/messageArticle.html
 END
 home.html
 K 25
@@ -121,19 +121,19 @@ applysettlement.html
 K 25
 svn:wc:ra_dav:version-url
 V 73
-/svn/shop/!svn/ver/3577/Source/appbusiness/page/work/applysettlement.html
+/svn/shop/!svn/ver/3632/Source/appbusiness/page/work/applysettlement.html
 END
 activityCenter.html
 K 25
 svn:wc:ra_dav:version-url
 V 72
-/svn/shop/!svn/ver/3503/Source/appbusiness/page/work/activityCenter.html
+/svn/shop/!svn/ver/3632/Source/appbusiness/page/work/activityCenter.html
 END
 teamAdmin.html
 K 25
 svn:wc:ra_dav:version-url
 V 67
-/svn/shop/!svn/ver/3503/Source/appbusiness/page/work/teamAdmin.html
+/svn/shop/!svn/ver/3632/Source/appbusiness/page/work/teamAdmin.html
 END
 partySettlement.html
 K 25

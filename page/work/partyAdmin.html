@@ -25,32 +25,33 @@
 
 								<div class="InfoTit">
 									<p class="partyTit mui-ellipsis" v-text="item.theme">
+										中国有嘻哈福州有兑咖
 									</p>
 									<p class="partyRoad">
-										<span v-text="partyType[item.type]"></span>
+										<span v-text="partyType[item.type]">众筹</span>
 									</p>
 									<p class="partyState" v-text="status[item.status]">
-
+										未审核
 									</p>
 								</div>
 								<div class="orderInfo">
 									<div class="orderInfoL">
-										<p class="orderMoney">
-											单价: ￥{{item.price}}
+										<p class="orderMoney" v-text="'单价: ￥'+{{item.price}}">
+											单价: ￥ 500 
 										</p>
-										<p class="Sold">
-											已售: {{item.saleNumber}}/{{item.number}}
+										<p class="Sold" v-text="'已售:'+ {{item.saleNumber}}/{{item.number}}">
+											已售: 50/100
 										</p>
-										<p class="partyDate" v-show="item.prepareStartTime!=null">
-											众筹截止时间: {{item.prepareStartTime}}
+										<p class="partyDate" v-text="'众筹截止时间:'+ {{item.prepareStartTime}}" v-show="item.prepareStartTime!=null">
+											众筹截止时间:2017-08-06 18:00-22:00
 										</p>
-										<p class="crowdfundingEndTime">
-											活动时间: {{item.startTime}}
+										<p class="crowdfundingEndTime" v-text="'活动时间:'+ {{item.startTime}}">
+											活动时间: 123
 										</p>
 									</div>
 									<div class="orderInfoR">
 										<div class="orderContainer mui-text-center">
-											<p class="orderContainerNum" v-text="item.useNumber==null?0:item.useNumber"></p>
+											<p class="orderContainerNum" v-text="item.useNumber==null?0:item.useNumber">30</p>
 											<span class="orderContainerName">入场</span>
 										</div>
 									</div>

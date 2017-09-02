@@ -3,7 +3,6 @@ html {
   background-color: #f5f5f5;
 }
 .mui-content {
-  overflow: hidden;
   font-size: 0.87rem;
   color: #333;
   background-color: #f5f5f5;
@@ -353,15 +352,20 @@ table {
 }
 .topBar .topBack-ico {
   display: inline-block;
-  width: 1.25rem;
+  width: 44px;
   height: 44px;
-  background: url("../../../img/topBack-ico.png") center center no-repeat;
+  background: url("../../../img/topBack-ico.png") left center no-repeat;
   background-size: 1.25rem 1.25rem;
 }
 .topBar .mui-title {
   font-size: 1.12rem;
   color: #333;
   z-index: -1;
+}
+.topBar .rightIco {
+  display: block;
+  width: 44px;
+  height: 44px;
 }
 .mui-content {
   padding-top: 4rem !important;
@@ -395,6 +399,11 @@ table {
   font-size: 0.93rem;
   color: #999;
 }
+.wrapperList .mui-table-view-cell {
+  background: #fff;
+  padding-top: 0.75rem;
+  padding-bottom: 0.5rem;
+}
 .wrapperList .mui-table-view-cell:after {
   display: block;
   left: 0;
@@ -427,8 +436,9 @@ table {
 }
 .wrapperList .mui-table-view-cell .memberRight .membersMoney {
   color: #D7B374;
-  font-size: 0.96rem;
+  font-size: 1.12rem;
   margin-bottom: 2.5rem;
+  margin-top: 0.28rem;
 }
 .wrapperList .mui-table-view-cell .memberRight .mui-btn {
   width: 49px;
@@ -437,8 +447,8 @@ table {
   padding: 0;
 }
 .wrapperList .mui-table-view-cell .memberRight .btnJY {
-  color: #666;
-  border: 1px solid #666;
+  color: #333;
+  border: 1px solid #333;
   transition: all .25s;
 }
 .wrapperList .mui-table-view-cell .memberRight .btnEd {

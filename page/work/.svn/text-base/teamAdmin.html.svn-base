@@ -21,7 +21,7 @@
     <div id="" class="wrapperList">
         <ul  id="teamList">
             
-            <!--<li class="mui-table-view-cell mui-row">
+            <li class="mui-table-view-cell mui-row">
                 <div class="mui-pull-left memberLeft">
                     <div class="membersHeadImg mui-left">
                         <img src="../../img/work-head.png" alt=""/>
@@ -34,18 +34,16 @@
                 </div>
                 <div class="mui-pull-right memberRight">
                     <p class="membersMoney mui-text-right">
-                        ￥ 5000
+                        ￥5000
                     </p>
                     <a href="#" type="button" class="mui-btn btnJY" sId="btnJY">禁用</a>
                     <a href="#" type="button" class="mui-btn mui-pull-right btnEd" sId="btnEd">编辑</a>
                 </div>
-            </li>-->
-
+            </li>
+ 
         </ul>
     </div>
-    <div class="accountNull mui-text-center">
-        <p>您还未添加子账号，点击右上角添加</p>
-    </div>
+ 
 </div>
 
 <script src="../../js/mui.min.js"></script>

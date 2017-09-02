@@ -275,7 +275,8 @@ var Fun_App = {
 	/*
 	 *文件上传
 	 * */
-	uploadFiles: function(fielUrl, callBack) {
+	uploadFiles: function(fielUrl,callBack,modelImg) {
+		var modelImg = modelImg;
 		mui.toast('上传图片中...')
 		var task = plus.uploader.createUpload(strservicef + "merchantParty/uploadFiles", {
 			method: "POST"
@@ -287,7 +288,7 @@ var Fun_App = {
 			}
 		})
 		task.addFile(fielUrl, {
-			key: "testJPG"
+			key: modelImg
 		});
 		task.addData("token", Fun_App.getdata("token"));
 		task.start();
