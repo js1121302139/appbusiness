@@ -19,7 +19,11 @@
     .orderLeft{
       display: flex;
       flex: 2;
-      flex-direction: column;
+      flex-direction: column; 
+      align-content: space-between;
+      div{
+          flex: 1;
+      }
     }
     .orderRight{
       display: flex;
@@ -28,14 +32,32 @@
     .orderCode,balance{
       font-size: 14px;
       color: #333;
+      margin-bottom: 0.93rem;
+    }
+    .state{
+        margin-bottom: 0.93rem;
+        font-size: 0.81rem;
+        span{
+            color: #333;
+        }
+    }
+    .state1{
+        span{
+            color: #D7B374;
+        }
+    }
+    .state5{
+        span{
+            color: #f00;
+        }
     }
     .withdrawals{
       margin-bottom: 16.5px;
       font-size: 15px;
+      
       color: #D7B374;
     }
     .orderDate{
-      margin-top: 16.5px;
       font-size: 12px;
       color: #999;
     }

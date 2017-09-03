@@ -18,7 +18,6 @@ function plusReady() {
 
 //页面加载完
 mui.plusReady(function () {
-    plus.navigator.setStatusBarStyle("light");
 //	var _self;
 //	_self = plus.webview.currentWebview();
 //	_self.setPullToRefresh({

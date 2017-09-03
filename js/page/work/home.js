@@ -135,7 +135,4 @@ mui.plusReady(function() {
 	setTimeout(function() {
 		getindexData();
 	}, 0)
-
-	plus.navigator.setStatusBarBackground("rgba(0,0,0,0)");
-
 })

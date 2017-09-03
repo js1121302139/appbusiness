@@ -5,7 +5,6 @@ mui.init();
 		window.addEventListener("getInfodata", function() {
 			getInfodata();
 		})
-		plus.navigator.setStatusBarStyle("dark");
 		var allWebview = plus.webview.all();
 		var exitBox = document.querySelector("#exit"); //退出登录按钮
 		//退出登录
