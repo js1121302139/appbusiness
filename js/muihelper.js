@@ -2,13 +2,15 @@
  * 服务器的地址
  * http://192.168.1.220/api/login
  */
+//内网地址
 /*var strservicef = 'http://192.168.1.220/merchant/';
 var picservice = 'http://192.168.1.220/ejsimage';*/
-var strservicef ='http://www.yunduiwang.com/merchant/';
-var picservice = 'http://www.yunduiwang.com:81/ejsimage'; 
+//测试环境
+/*var strservicef ='http://www.yunduiwang.com/merchant/';
+var picservice = 'http://www.yunduiwang.com:81/ejsimage'; */
 //外网链接
-/*var strservicef = 'http://47.90.22.110:8088/';
-var picservice =  'http://47.90.22.110:8080/ejsimage';*/
+var strservicef = 'http://sj.duikavip.com/merchant';
+var picservice =  'http://image.duikavip.com/ejsimage';
 
 /*
  * 主要的公共函数

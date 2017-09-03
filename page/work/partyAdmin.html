@@ -36,16 +36,16 @@
 								</div>
 								<div class="orderInfo">
 									<div class="orderInfoL">
-										<p class="orderMoney" v-text="'单价: ￥'+{{item.price}}">
+										<p class="orderMoney" v-text="'单价: ￥'+item.price">
 											单价: ￥ 500 
 										</p>
-										<p class="Sold" v-text="'已售:'+ {{item.saleNumber}}/{{item.number}}">
+										<p class="Sold" v-text="'已售:'+ item.saleNumber +'/' +item.number">
 											已售: 50/100
 										</p>
-										<p class="partyDate" v-text="'众筹截止时间:'+ {{item.prepareStartTime}}" v-show="item.prepareStartTime!=null">
+										<p class="partyDate" v-text="'众筹截止时间:'+ item.prepareStartTime" v-show="item.prepareStartTime!=null">
 											众筹截止时间:2017-08-06 18:00-22:00
 										</p>
-										<p class="crowdfundingEndTime" v-text="'活动时间:'+ {{item.startTime}}">
+										<p class="crowdfundingEndTime" v-text="'活动时间:'+ item.startTime">
 											活动时间: 123
 										</p>
 									</div>
@@ -56,7 +56,6 @@
 										</div>
 									</div>
 								</div>
-
 								<div class="itemBottom mui-text-center">
 									<div class="orderSettlement" @click="open('Settlement',item.id)">
 										订单结算
