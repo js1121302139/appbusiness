@@ -6,11 +6,11 @@
 /*var strservicef = 'http://192.168.1.220/merchant/';
 var picservice = 'http://192.168.1.220/ejsimage';*/
 //测试环境
-/*var strservicef ='http://www.yunduiwang.com/merchant/';
-var picservice = 'http://www.yunduiwang.com:81/ejsimage'; */
+var strservicef ='http://www.yunduiwang.com/merchant/';
+var picservice = 'http://www.yunduiwang.com:81/ejsimage'; 
 //外网链接
-var strservicef = 'http://sj.duikavip.com/merchant';
-var picservice =  'http://image.duikavip.com/ejsimage';
+/*var strservicef = 'http://sj.duikavip.com/merchant/';
+var picservice =  'http://image.duikavip.com/ejsimage';*/
 
 /*
  * 主要的公共函数

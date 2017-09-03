@@ -50,7 +50,7 @@
 							</div>
 							<div class="moneyAndMsgBtn">
 								<p class="mui-text-center" v-text="'￥' + item.money==null?0:item.money">￥5000</p>
-								<a href="javascript:;" class="mui-text-center" @click.stop="send(key,[item.memberId])">发送消息</a>
+								<a href="javascript:;" class="mui-text-center" @click.stop="send(key)">发送消息</a>
 							</div>
 						</li>
 
@@ -63,11 +63,11 @@
 					<div class="mui-col-sm-8 mui-col-xs-8 selectAll">
 						<div class="mui-input-row mui-checkbox mui-left" @click="checkAll">
 							<label class="Allcheck" @click="checkAll">全选</label>
-							<input class="Allcheck" type="checkbox" id="Allcheck">
+							<input class="Allcheck" :checked="checkAlls" type="checkbox" id="Allcheck">
 						</div>
 					</div>
 					<div class="mui-col-sm-4 mui-col-xs-4 senAllMsg mui-text-center">
-						<a href="javascript:;" @click="send('all')">发送消息</a>
+						<a href="javascript:;" @click="send('null')">发送消息</a>
 					</div>
 				</div>
 			</nav>
@@ -126,6 +126,12 @@
 					Fun_App.ExAjax("merchantPerson/myUsers", sendData)
 				},
 				send: function(key) {
+					if(key != 'null') {
+						this.list[key].ischeck = true;
+						var index = this.sendArr.indexOf(this.list[key].memberId);
+						(index == -1) ? this.sendArr.push(this.list[key].memberId): "";
+					}
+					console.log(JSON.stringify(this.sendArr))
 					var shopData = {
 						config: {
 							"token": Fun_App.getdata("token"),
@@ -133,10 +139,10 @@
 							"content": null
 						},
 						fun_Success: function(data) {
-
+							data.success?mui.toast('消息发送成功'):mui.toast('消息发送失败!');
 						}
 					}
-					if(this.sendArr.length!=0) {
+					if(this.sendArr.length != 0) {
 						mui.prompt('', '请输入文字', '发送消息', ['取消', '确认'], function(e) {
 							if(e.index) {
 								var msgTxt = document.querySelector("textarea").value;
@@ -173,14 +179,18 @@
 				},
 				checks: function(key) {
 					this.list[key].ischeck = !this.list[key].ischeck;
-					this.list[key].ischeck ? this.sendArr.push(this.list[key].memberId) : this.sendArr.splice(key, 1)
+					var index = this.sendArr.indexOf(this.list[key].memberId);
+					(index == -1) ? this.sendArr.push(this.list[key].memberId): this.sendArr.splice(index, 1);
+					(this.sendArr.length == this.list.length) ? this.checkAlls = !this.checkAlls: this.checkAlls = false;
+					/*this.list[key].ischeck ? this.sendArr.push(this.list[key].memberId) : this.sendArr.splice(key, 1)*/
 					console.log(JSON.stringify(this.sendArr))
 
 				},
 				checkAll: function() {
 					var _this = this;
+					this.checkAlls = !this.checkAlls;
 					this.list.forEach(function(i, item) {
-						i.ischeck = true;
+						i.ischeck = _this.checkAlls;
 						(_this.sendArr.indexOf(i.memberId) == -1) ? _this.sendArr.push(i.memberId): ""
 					})
 				}
