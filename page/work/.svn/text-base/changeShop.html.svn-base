@@ -56,6 +56,7 @@
 						},
 						fun_Success: function(data) {
 							if(data.success) {
+								//打开需要更新的页面
 								Fun_App.storagedata("token", data.data.token)
 								console.log(Fun_App.getdata("token"));
 								detailPage = plus.webview.getWebviewById('page/work/home.html');
@@ -73,6 +74,7 @@
 					Fun_App.ExAjax("merchant/switchMerchant", sendData)
 				}
 				getShops()
+				//店铺小于0则不切换
 					if(shops.length>1){						
 						mui("#shopList").on("tap", ".mui-table-view-cell", function() {
 							var shopId = this.getAttribute("id")

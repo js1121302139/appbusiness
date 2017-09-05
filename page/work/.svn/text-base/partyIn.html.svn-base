@@ -14,7 +14,7 @@
 			<header class="mui-bar topBar mui-bar-nav">
 				<a class="mui-action-back topBack-ico mui-pull-left"></a>
 				<h1 class="mui-title mui-ellipsis" id="tit" v-text="pageData.theme"></h1>
-				<span id="createPartyRaiders" class="rightIco mui-pull-right" @click="share"></span>
+				<span id="createPartyRaiders" class="rightIco mui-pull-right" @click="shareShowBox = !shareShowBox"></span>
 			</header>
 			<div class="partyCardBox">
 				<div class="partyCard">
@@ -41,24 +41,25 @@
 
 				</div>
 			</div>
+			<div class="mui-backdrop" @click="shareShowBox=!shareShowBox" v-show="shareShowBox"></div>
 			<div class="shareShowBox" v-show="shareShowBox">
-				<div class="shareShowBoxItem">
+				<div class="shareShowBoxItem" @click="share(2)">
 					<div class="shareShowBoxItem-ico wx">
 
 					</div>
 					<p>微信</p>
 				</div>
-				<div class="shareShowBoxItem">
+				<div class="shareShowBoxItem" @click="share(0)">
 					<div class="shareShowBoxItem-ico qq">
 
 					</div>
-					<p>微信</p>
+					<p>QQ</p>
 				</div>
-				<div class="shareShowBoxItem">
+				<div class="shareShowBoxItem" @click="share(1)">
 					<div class="shareShowBoxItem-ico wb">
 
 					</div>
-					<p>微信</p>
+					<p>微博</p>
 				</div>
 				<div class="shareShowBoxItem">
 					<div class="shareShowBoxItem-ico link">
@@ -89,10 +90,11 @@
 							"3": '下架',
 							"4": "众筹成功",
 							"5": "众筹失败",
-							"6":'预览'
+							"6": '预览'
 						},
 						arcId: null,
-						pageData: {}
+						pageData: {},
+						shareServer: null
 					}
 				},
 				created: function() {
@@ -100,15 +102,21 @@
 					mui.plusReady(function() {
 						Fun_App.pulldownRefresh();
 						console.log(JSON.stringify(Fun_App.getextrasdata()))
-						if(Fun_App.getextrasdata().id!="see") {
+						//see代表的是预览
+						if(Fun_App.getextrasdata().id != "see") {
 							_this.getPartyIn(Fun_App.getextrasdata(), function(resData) {
 								_this.pageData = resData.data;
 								console.log(JSON.stringify(_this.pageData))
 							});
-						}else{
+						} else {
 							_this.pageData = Fun_App.getextrasdata().data;
 						}
+						plus.share.getServices(function(s) {
+							_this.shareServer = s;
+							console.log(JSON.stringify(s))
+						}, function(e) {
 
+						})
 					})
 				},
 				methods: {
@@ -124,76 +132,25 @@
 						}
 						Fun_App.ExAjax("merchantParty/playKaDetail", sendData)
 					},
-					share: function() {
-						this.shareShowBox = !this.shareShowBox;
-					},
-					/**
-					 * 更新分享服务
-					 */
-					updateSerivces: function() {
-						var _this = this;
-						plus.share.getServices(function(s) {
-							console.log("分享：" + JSON.stringify(s));
-							_this.shares = {};
-							for(var i in s) {
-								var t = s[i];
-								_this.shares[t.id] = t;
-							}
-						}, function(e) {
-							console.log('获取分享服务列表失败：' + e.message);
-						});
-					},
-
-					/**
-					 * 分享操作
-					 * @param {JSON} sb 分享操作对象s.s为分享通道对象(plus.share.ShareService)
-					 * @param {Boolean} bh 是否分享链接
-					 */
-					shareAction: function(sb, bh) {
-						if(!sb || !sb.s) {
-							console.log('无效的分享服务！');
-							return;
-						}
-						var msg = {
-							content: "兑咖",
+					share: function(id) {
+						console.log(id)
+						console.log(JSON.stringify(this.shareServer))
+						var shareOption = this.shareServer[id];
+						var _this = this ;
+						console.log(this.arcId)
+						shareOption.send({
+							content: this.pageData.theme,
+							href: "http://api.duikavip.com/api/resources/html/introduction.html?id="+_this.arcId+"&from=groupmessage&isappinstalled=1",
 							extra: {
-								scene: sb.x
+								scene: "WXSceneTimeline"
 							}
-						};
-						sharehref = "http://www.yunduiwang.com/";
-						if(bh) {
-							msg.href = sharehref;
-							msg.title = "兑咖";
-							msg.content = "兑咖描述";
-							msg.thumbs = ['_www/logo1.jpg'];
-							msg.pictures = ['_www/logo1.jpg'];
-						}
-						// 发送分享
-						if(sb.s.authenticated) {
-							console.log('---已授权---');
-							shareMessage(msg, sb.s);
-						} else {
-							console.log('---未授权---');
-							sb.s.authorize(function() {
-								shareMessage(msg, sb.s);
-							}, function(e) {
-								console.log('认证授权失败：' + e.code + ' - ' + e.message);
-							});
-						}
-					},
-					/**
-					 * 发送分享消息
-					 * @param {JSON} msg
-					 * @param {plus.share.ShareService} s
-					 */
-					shareMessage: function(msg, s) {
-						console.log("发送分享消息" + JSON.stringify(msg));
-						s.send(msg, function() {
-							console.log('分享到"' + s.description + '"成功！');
+						}, function() {
+							alert("分享成功！");
 						}, function(e) {
-							console.log('分享到"' + s.description + '"失败: ' + JSON.stringify(e));
+							alert("分享失败：" + e.message);
 						});
 					}
+
 				}
 
 			})

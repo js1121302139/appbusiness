@@ -5,9 +5,12 @@
 			pageTitBox = doc.querySelector("#pageTit"), //页面标题
 			accountPhoneNumBox = doc.querySelector("#accountPhoneNum"), //账号电话
 			userResultBox = doc.querySelector("#userResult"), //角色
+			accountPhoneCodeBox = doc.querySelector("#accountPhoneCode"),
 			userResult1Box = doc.querySelector("#userResult1"), //团队
 			addBtnBox = doc.querySelector("#addBtn"), //添加按钮
-			jobCode = Fun_App.getdata("jobCode")
+			getMsgBox = doc.querySelector(".getMsg"),
+			jobCode = Fun_App.getdata("jobCode"),
+			second = 90;
 		jobs = [], groups = [];
 		var Job = new $.PopPicker(); //角色
 		var group = new $.PopPicker(); //团队
@@ -17,7 +20,8 @@
 			accountPhoneNum: null, //账户的电话
 			jobName: null, //角色的名称
 			jobId: null, //角色的id
-			groupId: null //团队的id
+			groupId: null, //团队的id
+			accountPhoneCode: null
 		};
 		getJobAndGroupData();
 
@@ -30,6 +34,9 @@
 			accountNameBox.value = accountData.accountName = getObj.name; //账户名称
 			accountPhoneNumBox.value = accountData.accountPhoneNum = getObj.phone; //电话号码 
 			userResultBox.innerText = accountData.jobName = getObj.jobName; //角色
+			delete accountData.accountPhoneCode;
+			console.log(JSON.stringify(accountData))
+			document.querySelector("#PhoneCode").style.display = 'none';
 			//获取团队的名称
 			for(var i = 0; i < groups.length; i++) {
 				if(groups[i].groupId == getObj.groupId) {
@@ -111,6 +118,36 @@
 			console.log(JSON.stringify(sendData.config))
 			Fun_App.ExAjax("merchantAccount/create", sendData)
 		}
+		getMsgBox.addEventListener("tap", function() {
+
+			smsVerify()
+		})
+
+		function smsVerify() {
+			var sendData = {
+				config: {
+					"token": Fun_App.getdata('token'),
+					'type': 7
+				},
+				fun_Success: function(data) {
+					(data.success) ? mui.toast(data.message): mui.toast(data.message);
+					if(data.success) {
+						second--;
+						if(second < 1) {
+							second = 90;
+							getMsgBox.disabled = true
+							getMsgBox.innerText = '获取短信验证码';
+						} else {
+							getMsgBox.disabled = false
+							getMsgBox.innerText = '还剩' + second + '秒';
+							setTimeout(smsVerify, 1000)
+						}
+					}
+				}
+			}
+			Fun_App.ExAjax("merchant/smsVerify", sendData);
+
+		}
 		//关闭窗口事件
 		function closeWin(timer) {
 			var detailPage = plus.webview.getWebviewById('teamAdmin.html');
@@ -151,7 +188,7 @@
 
 					sonDoc.innerText = accountData.jobName = items[0].text;
 					accountData.jobId = items[0].jobId;
-					if(items[0].text == "员工") {
+					if(items[0].text == "员工" && jobCode == 'BOSS') {
 						document.querySelector("#showUserPicker2").style.display = "block";
 					} else {
 						document.querySelector("#showUserPicker2").style.display = "none";
@@ -207,7 +244,7 @@
 
 		})
 		if(jobCode != 'BOSS') {
-			document.querySelector("#showUserPicker2").style.display="none";
+			document.querySelector("#showUserPicker2").style.display = "none";
 		}
 	})
 

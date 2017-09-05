@@ -147,7 +147,7 @@
 							if(e.index) {
 								var msgTxt = document.querySelector("textarea").value;
 								shopData.config.content = msgTxt;
-								msgTxt.length <= 50 && msgTxt.length > 0 ? Fun_App.ExAjax("merchantPerson/sendMessage", shopData) : mui.toast('超长字符！')
+								msgTxt.length <= 50 && msgTxt.length > 0 ? Fun_App.ExAjax("merchantPerson/sendMessage", shopData) : mui.toast('请输入1-50个字符!')
 							}
 						}, 'div')
 					}

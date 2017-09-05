@@ -43,6 +43,7 @@
 							<input type="tel" v-model.number="activity.roomNum" maxlength="3" placeholder="请输入参与活动房间数">
 							<span>间</span>
 						</li>
+						<!--此处估计后面有用-->
 						<!--<li class="mui-table-view-cell">
 							<span class="cellTit">限制单数</span>
 							<input type="tel" placeholder="请输入本次活动限制单数">

@@ -9,12 +9,12 @@ var picservice = 'http://192.168.1.220/ejsimage';*/
 var strservicef = 'http://www.yunduiwang.com/merchant/';
 var picservice = 'http://www.yunduiwang.com:81/ejsimage';
 //外网链接
-/*var strservicef = 'http://sj.duikavip.com/merchant/';
-var picservice =  'http://image.duikavip.com/ejsimage';*/
+var strservicef = 'http://sj.duikavip.com/merchant/';
+var picservice =  'http://image.duikavip.com/ejsimage';
 
 /*
  * 主要的公共函数
- */
+ */ 
 var Fun_App = {
 	/**
 	 * 完整的打开新页面方法

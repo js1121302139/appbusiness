@@ -475,7 +475,8 @@
 					"js/iscroll.js",
 					"js/pullToRefresh.js",
 					"img/smallStar-ico.png.png",
-					"img/topBackB-ico.png"
+					"img/topBackB-ico.png",
+					"img/smallStarLine-ico.png.png"
 				],
 				"refer": [],
 				"priority": 0
@@ -742,7 +743,8 @@
 					"img/topBack-ico.png",
 					"css/pullToRefresh.css",
 					"js/iscroll.js",
-					"js/pullToRefresh.js"
+					"js/pullToRefresh.js",
+					null
 				],
 				"refer": [
 					"page/work/addSonAccount.html"
@@ -774,7 +776,8 @@
 					"js/muihelper.js",
 					"js/mui.min.js",
 					"fonts/mui.ttf",
-					"js/page/work/addSonAccount.js"
+					"js/page/work/addSonAccount.js",
+					"img/work-successTrue.png"
 				],
 				"refer": [],
 				"priority": 0

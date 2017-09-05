@@ -41,7 +41,7 @@
 						<li class="mui-table-view-cell userBox" @click.stop="checks(key)" v-for="(item,key) in list">
 							<div class="checkAndImg mui-checkbox">
 								<input class="check" :checked="item.ischeck" v-model="item.ischeck" type="checkbox">
-								<img :src="picservice + item.headImg" />
+								<img :src="item.headImg!=''?picservice +item.headImg:'../../img/work-head.png'"/>
 							</div>
 							<div class="userInfo">
 								<p v-text="'用户名:' + item.memberName">用户名:锤子(ID:007)</p>
@@ -147,7 +147,7 @@
 							if(e.index) {
 								var msgTxt = document.querySelector("textarea").value;
 								shopData.config.content = msgTxt;
-								msgTxt.length <= 50 && msgTxt.length > 0 ? Fun_App.ExAjax("merchantPerson/sendMessage", shopData) : mui.toast('超长字符！')
+								msgTxt.length <= 50 && msgTxt.length > 0 ? Fun_App.ExAjax("merchantPerson/sendMessage", shopData) : mui.toast('请输入1-50个字符!')
 							}
 						}, 'div')
 					}

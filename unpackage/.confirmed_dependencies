@@ -1,144 +1,239 @@
 {
-  "index.html": {
-    "resources": [
-      "img/work_footer-03.png",
-      "page/work/home.html",
-      "img/work_footer-02.png",
-      "img/work_footer-01.png",
-      "css/page/common.css",
-      "css/mui.min.css"
-    ],
-    "refer": [
-      "page/order/myorder.html",
-      "page/work/home.html",
-      "page/account/myaccount.html"
-    ]
-  },
-  "page/order/myorder.html": {
-    "resources": [
-      "img/order-ListDate-ico.png",
-      "css/pullToRefresh.css",
-      "js/jquery-1.11.0.js",
-      "img/order-ListGo-ico.png",
-      "js/iscroll.js",
-      "images/order-bg.png",
-      "js/vue.min.js",
-      "js/mui.js",
-      "img/orderQuestion-ico.png",
-      "images/order-ListBg.png",
-      "js/pullToRefresh.js",
-      "css/page/order/myorder.css",
-      "css/mui.min.css"
-    ]
-  },
-  "page/work/home.html": {
-    "resources": [
-      "img/work-msgico.png",
-      "img/work-qrcode.png",
-      "img/home-header-bg.png",
-      "img/work-tab-02.png",
-      "img/work-tab-08.png",
-      "js/page/work/home.js",
-      "img/work-tab-07.png",
-      "img/work-tab-04.png",
-      "img/work-postiom.png",
-      "img/work-reserve-ico.png",
-      "img/work-partyAdmin-ico.png",
-      "img/work-tab-06.png",
-      "img/work-head.png",
-      "css/page/work/home.css",
-      "img/work-tab-03.png",
-      "img/work-yg.png",
-      "img/home-profit-bg.png",
-      "css/mui.min.css",
-      "js/common.js",
-      "js/mui.min.js",
-      "js/muihelper.js"
-    ],
-    "refer": [
-      "page/work/teamAdmin.html",
-      "page/work/myincome.html",
-      "page/work/shareprofit.html"
-    ]
-  },
-  "login.html": {
-    "resources": [
-      "js/common.js",
-      "images/login-bg.png",
-      "js/muihelper.js",
-      "js/mui.min.js",
-      "fonts/mui.ttf",
-      "css/mui.min.css",
-      "img/loginLogo.png",
-      "css/page/login.css",
-      "img/loginPwd-ico.png",
-      "img/loginPhoneNum-ico.png"
-    ],
-    "refer": [
-      "index.html",
-      "repwd.html"
-    ]
-  },
-  "page/account/myaccount.html": {
-    "resources": [
-      "img/customer.png",
-      "js/page/accounnt/myaccount.js",
-      "img/help_icon.png",
-      "img/security_icon.png",
-      "img/aboutydw_icon.png",
-      "img/inforemind_icon.png",
-      "img/contact_icon.png",
-      "img/clear_icon.png",
-      "css/page/account/account.css",
-      "img/edition_icon.png",
-      "img/info_icon.png",
-      "fonts/mui.ttf"
-    ]
-  },
-  "repwd.html": {
-    "resources": [
-      "img/loginPhoneCode-ico.png",
-      "img/topBackB-ico.png",
-      "css/mui.min.css",
-      "css/page/repwd.css",
-      "js/vue.min.js"
-    ]
-  },
-  "page/work/teamAdmin.html": {
-    "resources": [
-      "css/pullToRefresh.css",
-      "css/mui.min.css",
-      "img/topBack-ico.png",
-      "js/page/work/teamAdmin.js",
-      "css/page/work/teamAdmin.css"
-    ],
-    "refer": [
-      "page/work/addSonAccount.html"
-    ]
-  },
-  "page/work/myincome.html": {
-    "resources": [
-      "css/pullToRefresh.css",
-      "img/topBackB-ico.png",
-      "css/mui.min.css",
-      "css/page/work/myincome.css"
-    ]
-  },
-  "page/work/shareprofit.html": {
-    "resources": [
-      "css/pullToRefresh.css",
-      "css/mui.min.css",
-      "css/page/work/shareprofit.css"
-    ]
-  },
-  "page/work/addSonAccount.html": {
-    "resources": [
-      "js/page/work/addSonAccount.js",
-      "js/mui.picker.min.js",
-      "js/mui.poppicker.js",
-      "css/mui.poppicker.css",
-      "css/mui.picker.min.css",
-      "css/page/work/addSonAccount.css"
-    ]
-  }
+	"index.html": {
+		"resources": [
+			"img/work_footer-03.png",
+			"page/work/home.html",
+			"img/work_footer-02.png",
+			"img/work_footer-01.png",
+			"css/page/common.css",
+			"css/mui.min.css"
+		],
+		"refer": [
+			"page/order/myorder.html",
+			"page/work/home.html",
+			"page/account/myaccount.html"
+		]
+	},
+	"page/order/myorder.html": {
+		"resources": [
+			"img/order-ListDate-ico.png",
+			"css/pullToRefresh.css",
+			"js/jquery-1.11.0.js",
+			"img/order-ListGo-ico.png",
+			"js/iscroll.js",
+			"images/order-bg.png",
+			"js/vue.min.js",
+			"js/mui.js",
+			"img/orderQuestion-ico.png",
+			"images/order-ListBg.png",
+			"js/pullToRefresh.js",
+			"css/page/order/myorder.css",
+			"css/mui.min.css"
+		]
+	},
+	"page/work/home.html": {
+		"resources": [
+			"img/work-msgico.png",
+			"img/work-qrcode.png",
+			"img/home-header-bg.png",
+			"img/work-tab-02.png",
+			"img/work-tab-08.png",
+			"js/page/work/home.js",
+			"img/work-tab-07.png",
+			"img/work-tab-04.png",
+			"img/work-postiom.png",
+			"img/work-reserve-ico.png",
+			"img/work-partyAdmin-ico.png",
+			"img/work-tab-06.png",
+			"img/work-head.png",
+			"css/page/work/home.css",
+			"img/work-tab-03.png",
+			"img/work-yg.png",
+			"img/home-profit-bg.png",
+			"css/mui.min.css",
+			"js/common.js",
+			"js/mui.min.js",
+			"js/muihelper.js"
+		],
+		"refer": [
+			"page/work/teamAdmin.html",
+			"page/work/myincome.html",
+			"page/work/shareprofit.html",
+			"page/work/budgetAdmin.html",
+			"page/work/receivablesCode.html",
+			"page/work/changeShop.html",
+			"page/work/msgcenter.html",
+			"page/work/myuser.html",
+			"page/work/evaluatemange.html",
+			"page/work/activityCenter.html"
+		]
+	},
+	"login.html": {
+		"resources": [
+			"js/common.js",
+			"images/login-bg.png",
+			"js/muihelper.js",
+			"js/mui.min.js",
+			"fonts/mui.ttf",
+			"css/mui.min.css",
+			"img/loginLogo.png",
+			"css/page/login.css",
+			"img/loginPwd-ico.png",
+			"img/loginPhoneNum-ico.png"
+		],
+		"refer": [
+			"index.html",
+			"repwd.html"
+		]
+	},
+	"page/account/myaccount.html": {
+		"resources": [
+			"img/customer.png",
+			"js/page/accounnt/myaccount.js",
+			"img/help_icon.png",
+			"img/security_icon.png",
+			"img/aboutydw_icon.png",
+			"img/inforemind_icon.png",
+			"img/contact_icon.png",
+			"img/clear_icon.png",
+			"css/page/account/account.css",
+			"img/edition_icon.png",
+			"img/info_icon.png",
+			"fonts/mui.ttf",
+			"css/mui.min.css"
+		]
+	},
+	"repwd.html": {
+		"resources": [
+			"img/loginPhoneCode-ico.png",
+			"img/topBackB-ico.png",
+			"css/mui.min.css",
+			"css/page/repwd.css",
+			"js/vue.min.js"
+		]
+	},
+	"page/work/teamAdmin.html": {
+		"resources": [
+			"css/pullToRefresh.css",
+			"css/mui.min.css",
+			"img/topBack-ico.png",
+			"js/page/work/teamAdmin.js",
+			"css/page/work/teamAdmin.css"
+		],
+		"refer": [
+			"page/work/addSonAccount.html"
+		]
+	},
+	"page/work/myincome.html": {
+		"resources": [
+			"css/pullToRefresh.css",
+			"img/topBackB-ico.png",
+			"css/mui.min.css",
+			"css/page/work/myincome.css"
+		]
+	},
+	"page/work/shareprofit.html": {
+		"resources": [
+			"css/pullToRefresh.css",
+			"css/mui.min.css",
+			"css/page/work/shareprofit.css"
+		]
+	},
+	"page/work/addSonAccount.html": {
+		"resources": [
+			"js/page/work/addSonAccount.js",
+			"js/mui.picker.min.js",
+			"js/mui.poppicker.js",
+			"css/mui.poppicker.css",
+			"css/mui.picker.min.css",
+			"css/page/work/addSonAccount.css",
+			"css/mui.min.css",
+			"img/work-successTrue.png"
+		]
+	},
+	"page/work/budgetAdmin.html": {
+		"resources": [
+			"css/page/work/budgetAdmin.css",
+			"img/topBackB-ico.png",
+			"images/budgetAdmin-bg.png",
+			"css/mui.min.css",
+			"css/pullToRefresh.css"
+		]
+	},
+	"page/work/receivablesCode.html": {
+		"resources": [
+			"css/page/work/receivablesCode.css",
+			"js/page/work/receivablesCode.js",
+			"js/qrcode.min.js",
+			"img/work-head.png",
+			"css/mui.min.css",
+			"img/topBack-ico.png",
+			"images/receivablesCode-bg.png"
+		]
+	},
+	"page/work/changeShop.html": {
+		"resources": [
+			"css/mui.min.css",
+			"css/page/work/changeShop.css"
+		]
+	},
+	"page/work/msgcenter.html": {
+		"resources": [
+			"css/page/work/msgcenter.css",
+			"css/pullToRefresh.css",
+			"img/order-ListGo-ico.png",
+			"css/mui.min.css"
+		]
+	},
+	"page/work/myuser.html": {
+		"resources": [
+			"css/pullToRefresh.css",
+			"css/page/textarea.css",
+			"img/banner-.png",
+			"css/mui.min.css",
+			"css/page/work/myuser.css",
+			"fonts/mui.ttf",
+			"img/work-head.png"
+		]
+	},
+	"page/work/evaluatemange.html": {
+		"resources": [
+			"css/pullToRefresh.css",
+			"images/user-img.png",
+			"css/page/work/evaluatemange.css",
+			"css/mui.min.css",
+			"img/smallStarLine-ico.png.png",
+			"img/topBackB-ico.png",
+			"img/bigStarLine-ico.png",
+			"img/evaluate-ico.png",
+			"images/evaluateBg.png",
+			"img/smallStar-ico.png.png",
+			"img/bigStar-ico.png.png"
+		]
+	},
+	"page/work/activityCenter.html": {
+		"resources": [
+			"css/pullToRefresh.css",
+			"css/mui.min.css",
+			"images/activityCenterBg.png",
+			"img/topBack-ico.png",
+			"css/page/work/activityCenter.css",
+			"images/stateBg1.png",
+			"img/activityMNext-ico.png",
+			"img/activityMPre-ico.png",
+			"img/activeity-editIco.png"
+		],
+		"refer": [
+			"page/work/createactivity.html"
+		]
+	},
+	"page/work/createactivity.html": {
+		"resources": [
+			"js/mui.picker.min.js",
+			"css/mui.dtpicker.css",
+			"css/mui.min.css",
+			"css/mui.picker.min.css",
+			"css/page/work/createacrivity.css"
+		]
+	}
 }

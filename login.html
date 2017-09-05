@@ -10,116 +10,114 @@
 	</head>
 
 	<body>
-	<header class="mui-bar topBar mui-bar-nav">
-		<h1 class="mui-title">登录</h1>
-	</header>
 		<div class="mui-content" style="background: #fff;">
 			<div class="loginTop-box">
 				<img id="loginLogo" src="img/loginLogo.png">
-			</div>
+			</div> 
 			<div class="login-box">
 				<div class="userPhoneNumber mui-input-row input-border">
-                    <span class="userPhoneNumberIco"></span>
+					<span class="userPhoneNumberIco"></span>
 					<input id="uNumber" name="uNumber" type="tel" onblur="" placeholder="请输入手机号" value="" class="mui-input-clear">
 				</div>
 				<div class="userPwd mui-input-row input-border">
-                    <span class="userPwdIco "></span>
+					<span class="userPwdIco "></span>
 					<input id="uPwd" class="mui-input-password" name="uPwd" type="password" value="" placeholder="请输入密码">
 				</div>
 			</div>
-				<div class="forgetpassword mui-text-right">
-					<a href="javascript:;" class="">忘记密码?</a>
-				</div>
-				<div class="login_local mui-text-center">
-					<a id="buttom" class="" href="JavaScript:;">登录</a>
-				</div>
+			<div class="forgetpassword mui-text-right">
+				<a href="javascript:;" class="">忘记密码?</a>
 			</div>
-			<script src="js/mui.min.js"></script>
-			<script type="text/javascript" src="js/muihelper.js"></script>
-			<script type="text/javascript" src="js/common.js" ></script>
-			<script>
-				window.onload = function() {
-					(function(mui) {
-						var checkVal=new CheckValue();
-						mui.plusReady(function() {
-							if(Fun_App.getdata("token") != " ") {
-								Fun_App.openWin("index.html", "pop-in");
-							}
-							var ws = plus.webview.currentWebview();
-							var uAccount = {
-									uPwdOk: null,
-									uNumberOk: null,
-									//uVcodeOk: null
-								},
-								imgVcodeBox = document.querySelector("#imgVcode"),
-								state = false;						
-							function checkInput() { //检测用户输入的手机号和密码
-								var thisVal = "", //用户当前输入文本框的值
-									thisType = ""; //获取当前input的类型
-								var inputs = document.querySelectorAll("input");
-								for(var i = 0; i < inputs.length; i++) {
-									
-									inputs[i].addEventListener("blur", function() {
-										thisVal = this.value; //获取当前的value
-										thisType = this.getAttribute("name");
-										switch(thisType) {
-											case "uNumber":
-												uAccount.uNumberOk=checkVal.checkPhoneNum(thisVal);
-												break;
-											case "uPwd":
-												uAccount.uNumberOk=checkVal.checkPwd(thisVal);
-												console.log(uAccount.uPwdOk)
-												break;
+			<div class="login_local mui-text-center">
+				<a id="buttom" class="" href="JavaScript:;">登录</a>
+			</div>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript" src="js/muihelper.js"></script>
+		<script type="text/javascript" src="js/common.js"></script>
+		<script>
+			window.onload = function() {
+				(function(mui) {
+					var checkVal = new CheckValue();
+					mui.plusReady(function() {
+						if(Fun_App.getdata("token") != " ") {
+							Fun_App.openWin("index.html", "pop-in");
+						}
+						var ws = plus.webview.currentWebview();
+						var uAccount = {
+								uPwdOk: null,
+								uNumberOk: null,
+								//uVcodeOk: null
+							},
+							imgVcodeBox = document.querySelector("#imgVcode"),
+							state = false;
+
+						function checkInput() { //检测用户输入的手机号和密码
+							var thisVal = "", //用户当前输入文本框的值
+								thisType = ""; //获取当前input的类型
+							var inputs = document.querySelectorAll("input");
+							for(var i = 0; i < inputs.length; i++) {
+
+								inputs[i].addEventListener("blur", function() {
+									thisVal = this.value; //获取当前的value
+									thisType = this.getAttribute("name");
+									switch(thisType) {
+										case "uNumber":
+											uAccount.uNumberOk = checkVal.checkPhoneNum(thisVal);
+											break;
+										case "uPwd":
+											uAccount.uNumberOk = checkVal.checkPwd(thisVal);
+											console.log(uAccount.uPwdOk)
+											break;
 											/*case "Vcode":
 												//checkVcode(thisVal);
 												break;*/
-										}
+									}
 
-									})
-								}
+								})
 							}
-							checkInput()
-							mui(".login_local").on("tap", "#buttom", function() {
-								this.focus() //解决键盘问题
-								uAccount.uPwdOk = document.getElementById("uPwd").value
-								uAccount.uNumberOk = document.getElementById("uNumber").value
-								var userData = {
-									config: {
-										"userName": uAccount.uNumberOk,
-										"password": uAccount.uPwdOk,
-										"clientId": "gsd42154g5ewg5", //个推的clientId
-										"deviceId": plus.device.uuid, //设备id
-										"version": plus.runtime.innerVersion, //app版本
-										"source": (plus.os.name=="Android")?1:2//来源 1 Android ；2  iOS
+						}
+						checkInput()
+						mui(".login_local").on("tap", "#buttom", function() {
+							this.focus() //解决键盘问题
+							uAccount.uPwdOk = document.getElementById("uPwd").value
+							uAccount.uNumberOk = document.getElementById("uNumber").value
+							var userData = {
+								config: {
+									"userName": uAccount.uNumberOk,
+									"password": uAccount.uPwdOk,
+									"clientId": "gsd42154g5ewg5", //个推的clientId
+									"deviceId": plus.device.uuid, //设备id
+									"version": plus.runtime.innerVersion, //app版本
+									"source": (plus.os.name == "Android") ? 1 : 2 //来源 1 Android ；2  iOS
 
-									},
-									fun_Success: function(data) {
-										if(data.success) { //登录成功
-											Fun_App.storagedata("token", data.data.token);
-											Fun_App.storagedata("jobCode", data.data.jobCode); //当前账户的角色等级
-											Fun_App.storagedata("shopType",data.data.shopType);//当前商铺的类型
-											Fun_App.openWin("index.html", "pop-in");
-										} else {
-											mui.toast(data.message);
-										}
+								},
+								fun_Success: function(data) {
+									if(data.success) { //登录成功
+										Fun_App.storagedata("token", data.data.token);
+										Fun_App.storagedata("jobCode", data.data.jobCode); //当前账户的角色等级
+										Fun_App.storagedata("shopType", data.data.shopType); //当前商铺的类型
+										Fun_App.openWin("index.html", "pop-in");
+									} else {
+										mui.toast(data.message);
 									}
 								}
-								if(Fun_App.checkObjIsNull(uAccount,null) != false) {
-									Fun_App.ExAjax("login", userData);
-								} else {
-									mui.toast("手机号,密码不能为空");
-									return false;
-								}
-							})
-
+							}
+							if(Fun_App.checkObjIsNull(uAccount, null) != false) {
+								Fun_App.ExAjax("login", userData);
+							} else {
+								mui.toast("手机号,密码不能为空");
+								return false;
+							}
 						})
-						mui("body").on("tap",".forgetpassword",function(){
-							Fun_App.openWin("./repwd.html","pop-in","");
-						})
-					}(mui))
 
-				}
-			</script>
+					})
+					mui("body").on("tap", ".forgetpassword", function() {
+						Fun_App.openWin("./repwd.html", "pop-in", "");
+					})
+				}(mui))
+
+			}
+		</script>
 	</body>
 
 </html>

@@ -336,6 +336,7 @@
 						}
 
 					},
+					//拼接文章字符串
 					picturesHtml: function(pic, txt) {
 						var htmlstr = "";
 						for(var i = 0; i < pic.length; i++) {

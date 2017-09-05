@@ -58,10 +58,29 @@
 		<script type="text/javascript" src="../../js/mui.picker.min.js"></script>
 		<script type="text/javascript" src="../../js/mui.poppicker.js"></script>
 		<script type="text/javascript" src="../../js/muihelper.js"></script>
+		<!--<script type="text/javascript" src="../../js/vue.min.js" ></script>-->
 		<script type="text/javascript" src="../../js/page/work/addSonAccount.js" ></script>
-		<script type="text/javascript">
-			
+		<!--<script type="text/javascript">
+			var Vue = new Vue({
+				el:"addSonAccount",
+				data:function(){
+					return{
+						getObj:null;//获取编辑的数据
+						
+					}
+				},
+				created:function(){
+					mui.plusReady(function(){
+						this.getObj = Fun_App.getextrasdata();
+						console.log(this.getObj)
+					})
+				},
+				methods:{
+					
+				}
+			})
+			document.querySelector("#userResult1").style.display = 'none'
 		</script>
-	</body>
+-->	</body>
 
 </html>

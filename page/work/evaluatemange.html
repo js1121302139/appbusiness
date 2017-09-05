@@ -19,7 +19,7 @@
 			<div class="mui-content">
 				<div class="evaluateBox">
 					<div class="evaluate-top">
-					<div class="evaluateCount" id="evaluateContent" v-text="'评论条数:' + pageData.totalNum">
+					<div class="evaluateCount" id="evaluateContent" v-text="'评论条数:' + pageData.totalNum=='un'">
 评论条数:2345
 					</div>
 					<div class="starLv">
@@ -93,7 +93,7 @@
 2017-06-03 13:20:35
 									</div>
 								</div>
-								<div class="evaluateMsg" v-text="item.content">
+								<div class="evaluateMsg" v-html="item.content">
 上世纪70年代上世纪70年代上世纪70年代上世纪70年代上世纪70年代上世纪70年代
 								</div>
 							</li>
@@ -119,7 +119,7 @@
 						pageLen: pageLen,
 						totalPage: null,
 						pageData: {},
-						list: []
+						list:[]
 					}
 				},
 				created: function() {

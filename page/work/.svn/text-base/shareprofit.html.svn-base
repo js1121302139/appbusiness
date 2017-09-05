@@ -61,7 +61,7 @@
 				</div>
 
 			</div>
-			<div class="footerButton mui-text-center" id="myMoney" @click="open('applysettlement')">
+			<div class="footerButton mui-text-center" v-if="isShowApplyBtn" id="myMoney" @click="open('applysettlement')">
 				申请结算
 			</div>
 		</div>
@@ -82,6 +82,7 @@
 					pageLen: pageLen,
 					pageList: [],
 					shareBalanceMoney: 0,
+					isShowApplyBtn:false,
 					pageData: {},
 					list: []
 				}
@@ -89,7 +90,7 @@
 			created: function() {
 				var _this = this;
 				mui.plusReady(function() {
-					Fun_App.pulldownRefresh();
+					_this.isShowApplyBtn = (Fun_App.getdata("jobCode")=="BOSS")?true:false;
 					//刷新页面数据
 					window.addEventListener("shareprofit", function() {
 						_this.getMyIncome(function(resData) {

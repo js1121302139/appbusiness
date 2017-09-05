@@ -26,6 +26,11 @@
 					<span class="inputTit">电话</span>
 					<input type="tel" name="accountPhoneNum" id="accountPhoneNum" value="" placeholder="请输入电话号码" />
 				</li>
+				<li class="mui-table-view-cell" id="PhoneCode">
+					<span class="inputTit">验证码</span>
+					<input type="tel" class="msgCode" maxlength="6" name="accountPhoneCode" id="accountPhoneCode" value="" placeholder="请输入短信验证码" />
+					<button class="getMsg">获取短信验证码</button>
+				</li>
 				<li id='showUserPicker' class="select mui-text-left mui-btn mui-btn-block mui-table-view-cell">
 					<span class="option" id="userResult"></span>
 					<a href="javascript:;" class="mui-navigate-right">角色</a>
@@ -63,7 +68,7 @@
 		<!--<script type="text/javascript">
 			var Vue = new Vue({
 				el:"addSonAccount",
-				data:function(){
+				data:function(){ 
 					return{
 						getObj:null;//获取编辑的数据
 						

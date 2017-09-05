@@ -14,7 +14,7 @@
 			<header class="mui-bar topBar mui-bar-nav">
 				<a class="mui-action-back topBack-ico mui-pull-left"></a>
 				<h1 class="mui-title mui-ellipsis" id="tit" v-text="pageData.theme"></h1>
-				<span id="createPartyRaiders" class="rightIco mui-pull-right" @click="share"></span>
+				<span id="createPartyRaiders" class="rightIco mui-pull-right" @click="shareShowBox = !shareShowBox"></span>
 			</header>
 			<div class="partyCardBox">
 				<div class="partyCard">
@@ -43,23 +43,23 @@
 			</div>
 			<div class="mui-backdrop" @click="shareShowBox=!shareShowBox" v-show="shareShowBox"></div>
 			<div class="shareShowBox" v-show="shareShowBox">
-				<div class="shareShowBoxItem">
+				<div class="shareShowBoxItem" @click="share(2)">
 					<div class="shareShowBoxItem-ico wx">
 
 					</div>
 					<p>微信</p>
 				</div>
-				<div class="shareShowBoxItem">
+				<div class="shareShowBoxItem" @click="share(0)">
 					<div class="shareShowBoxItem-ico qq">
 
 					</div>
-					<p>微信</p>
+					<p>QQ</p>
 				</div>
-				<div class="shareShowBoxItem">
+				<div class="shareShowBoxItem" @click="share(1)">
 					<div class="shareShowBoxItem-ico wb">
 
 					</div>
-					<p>微信</p>
+					<p>微博</p>
 				</div>
 				<div class="shareShowBoxItem">
 					<div class="shareShowBoxItem-ico link">
@@ -90,10 +90,11 @@
 							"3": '下架',
 							"4": "众筹成功",
 							"5": "众筹失败",
-							"6":'预览'
+							"6": '预览'
 						},
 						arcId: null,
-						pageData: {}
+						pageData: {},
+						shareServer: null
 					}
 				},
 				created: function() {
@@ -101,15 +102,21 @@
 					mui.plusReady(function() {
 						Fun_App.pulldownRefresh();
 						console.log(JSON.stringify(Fun_App.getextrasdata()))
-						if(Fun_App.getextrasdata().id!="see") {
+						//see代表的是预览
+						if(Fun_App.getextrasdata().id != "see") {
 							_this.getPartyIn(Fun_App.getextrasdata(), function(resData) {
 								_this.pageData = resData.data;
 								console.log(JSON.stringify(_this.pageData))
 							});
-						}else{
+						} else {
 							_this.pageData = Fun_App.getextrasdata().data;
 						}
+						plus.share.getServices(function(s) {
+							_this.shareServer = s;
+							console.log(JSON.stringify(s))
+						}, function(e) {
 
+						})
 					})
 				},
 				methods: {
@@ -125,15 +132,25 @@
 						}
 						Fun_App.ExAjax("merchantParty/playKaDetail", sendData)
 					},
-					share: function() {
-						this.shareShowBox = !this.shareShowBox;
-						plus.share.getServices(function(s){
-							console.log(JSON.stringify(s))
-						},function(e){
-							
-						})
+					share: function(id) {
+						console.log(id)
+						console.log(JSON.stringify(this.shareServer))
+						var shareOption = this.shareServer[id];
+						var _this = this ;
+						console.log(this.arcId)
+						shareOption.send({
+							content: this.pageData.theme,
+							href: "http://api.duikavip.com/api/resources/html/introduction.html?id="+_this.arcId+"&from=groupmessage&isappinstalled=1",
+							extra: {
+								scene: "WXSceneTimeline"
+							}
+						}, function() {
+							alert("分享成功！");
+						}, function(e) {
+							alert("分享失败：" + e.message);
+						});
 					}
-					
+
 				}
 
 			})

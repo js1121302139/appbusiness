@@ -162,13 +162,19 @@
 					},
 					Refresh: function() {
 						var _this = this;
-						this.todayOrdersStatistics(function(resdata) {
-							if(resdata.data != null) {
-								_this.list.splice(0, 1)
-								_this.list.unshift(resdata.data)
-							}
-						})
-						console.log(JSON.stringify(this.list));
+						setTimeout(function() {
+							_this.getMyOrderTop(function(resData) {
+								_this.pageTop = resData.data;
+							})
+						}, 0)
+						setTimeout(function() {
+							_this.todayOrdersStatistics(function(resdata) {
+								if(resdata.data != null) {
+									_this.list.unshift(resdata.data)
+								}
+							})
+						}, 0)
+
 					},
 					showPopup: function(showData) {
 						var alertStr =

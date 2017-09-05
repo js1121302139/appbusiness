@@ -3,7 +3,6 @@ html {
   background-color: #f5f5f5;
 }
 .mui-content {
-  overflow: hidden;
   font-size: 0.87rem;
   color: #333;
   background-color: #f5f5f5;
@@ -21,13 +20,13 @@ html {
   color: #333;
 }
 .btn-gradient {
-  padding: 10px;
+  padding: 0.625rem;
   background: -moz-linear-gradient(top, #0AADFE, #0D80EF);
   background: linear-gradient(top, #0AADFE, #0D80EF);
   background: -webkit-linear-gradient(top, #0AADFE, #0D80EF);
 }
 .btn-delete {
-  padding: 10px;
+  padding: 0.625rem;
   background: -moz-linear-gradient(top, #f15d5d, #f10101);
   background: linear-gradient(top, #f15d5d, #f10101);
   background: -webkit-linear-gradient(top, #f15d5d, #f10101);
@@ -192,21 +191,21 @@ input[type=submit]:enabled:active {
 }
 .bgImg {
   background: url(../../img/work_footer-01.png) center center no-repeat;
-  background-position-y: -33px;
+  background-position-y: -2.0625rem;
 }
 .bgImg1 {
   background: url(../../img/work_footer-02.png) center center no-repeat;
-  background-position-y: -33px;
+  background-position-y: -2.0625rem;
 }
 .bgImg2 {
   background: url(../../img/work_footer-03.png) center center no-repeat;
-  background-position-y: -33px;
+  background-position-y: -2.0625rem;
 }
 .mui-bar-tab .mui-tab-item .mui-icon {
   width: 2.06rem;
   height: 2.06rem;
   transition: all 0.5s;
-  background-size: 33px 4.12rem;
+  background-size: 2.0625rem 4.12rem;
 }
 .mui-bar img {
   width: 1.75rem;
@@ -346,31 +345,6 @@ table {
 /*resetcssEnd*/
 /*重构的顶部*/
 /*顶部的卡片视图*/
-.topBar {
-  padding-top: 1.25rem;
-  height: 4rem;
-  box-shadow: 0 1px 6px #ccc;
-}
-.topBar .topBack-ico {
-  display: inline-block;
-  width: 44px;
-  height: 44px;
-  background: url("..") left center no-repeat;
-  background-size: 1.25rem 1.25rem;
-}
-.topBar .mui-title {
-  font-size: 1.12rem;
-  color: #333;
-  z-index: -1;
-}
-.topBar .rightIco {
-  display: block;
-  width: 44px;
-  height: 44px;
-}
-.mui-content {
-  padding-top: 4rem !important;
-}
 html,
 body {
   height: 100%;
@@ -396,12 +370,12 @@ body {
   display: flex;
   flex: 1;
   justify-content: center;
-  margin-bottom: 31px;
+  margin-bottom: 3.81rem;
   width: 100%;
-  height: 85px;
+  height: 10.18rem;
 }
 .mui-content .loginTop-box #loginLogo {
-  width: 85px;
+  width: 10.18rem;
 }
 .mui-content .login-box {
   display: flex;

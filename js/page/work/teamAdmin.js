@@ -80,7 +80,9 @@ function updateState(id, state) {
 		},
 		fun_Success: function(data) {
 			if(data.success) {
-
+				mui.toast(data.message)
+			}else{
+				mui.toast(data.message)
 			}
 		}
 	}

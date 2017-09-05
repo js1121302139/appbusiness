@@ -63,9 +63,23 @@
 					</div>
 
 				</div>
+				<!--id="dayLsit"-->
 				<div class="dayLsit mui-text-center mui-clearfix">
 					<div class="dayList-item" v-for="item in noneDay"></div>
 					<div @click="updateRoomNum(key)" :class="{active: item.isActive}" class="dayList-item" v-for="(item,key) in showDay" v-text="item.day"></div>
+					<!--
+					<div class="dayList-item">1</div>
+					<div class="dayList-item">1</div>
+					<div class="dayList-item">1</div>
+					<div class="dayList-item">1</div>
+					<div class="dayList-item">1</div>
+					<div class="dayList-item">1</div>
+					<div class="dayList-item">1</div> 
+					<div class="dayList-item">1</div>
+					<div class="dayList-item">1</div>
+					<div class="dayList-item">1</div>
+					<div class="dayList-item">1</div>
+					<div class="dayList-item">1</div>-->
 				</div>
 				<div class="roomNum" v-if="isShowRoom">
 					<p id="editRoom" @click="changeRoom(activityId,keys)" class="countRoom" v-text="'房间数量:'+ roomNum"> <img src="" alt="" /></p>
@@ -113,7 +127,7 @@
 		<script type="text/javascript" src="../../js/muihelper.js"></script>
 		<script src="../../js/common.js"></script>
 		<script type="text/javascript" src="../../js/iscroll.js"></script>
-		<script type="text/javascript" src="../../js/pullToRefresh.js"></script>
+		<!--<script type="text/javascript" src="../../js/pullToRefresh.js"></script>-->
 		<!--<script type="text/javascript" src="../../js/page/work/activityCenter.js"></script>-->
 		<!--		<script type="text/javascript" src="../../js/page/date.js"></script>-->
 		<script type="text/javascript" src="../../js/vue.min.js"></script>
@@ -129,7 +143,6 @@
 						isShowTab: true,
 						activityDay: {},
 						noneDay: 0,
-						refresher: refresher,
 						showDay: [],
 						nowDate: new Date(),
 						nowY: 0,
@@ -245,7 +258,7 @@
 								}, _this.page)
 							})
 						} else {
-
+							
 						}
 						mui("#pullrefresh").pullRefresh().endPullupToRefresh(this.page <= this.totalPage)
 						/*wrapper.refresh();*/
@@ -291,6 +304,24 @@
 							f2cActivitySoldRoom: []
 						}
 						for(var i = 1; i <= yearArr[this.nowM - 1]; i++) {
+							//var stri = (i <= 9 ? '0' + i : i).toString();
+							/*var f2cArrIndex = f2cActivityInfo.f2cActivityDay.indexOf(stri);
+							if(f2cArrIndex != -1) {
+								this.showDay.push({
+									day: stri,
+									isActive: true,
+									f2c: {
+										activityId: f2cActivityInfo.f2cActivityDayId[f2cArrIndex],
+										RoomNum: f2cActivityInfo.f2cActivityRoomNum[f2cArrIndex],
+										SoldRoom: f2cActivityInfo.f2cActivitySoldRoom[f2cArrIndex],
+									}
+								})
+							} else {
+								this.showDay.push({
+									day: stri,
+									isActive: false
+								})
+							}*/
 							this.showDay.push({
 								day: i,
 								isActive: false,
@@ -315,6 +346,9 @@
 								console.log(JSON.stringify(_this.showDay))
 							}, _this.nowM)
 						}, 0)
+
+						/*console.log(JSON.stringify(this.showDay))*/
+						/*this.showDay = yearArr[this.nowM - 1]*/
 					},
 					updateRoomNum: function(key) {
 						console.log(JSON.stringify(this.showDay[key]))
@@ -333,9 +367,7 @@
 							},
 							fun_Success: function(data) {
 								if(data.success) {
-									mui.toast('修改房间数成功')
-								} else {
-									mui.toast(data.message)
+
 								}
 							}
 						}
@@ -354,11 +386,13 @@
 					activityState: function(val) {
 						var nowDate = new Date().getTime(),
 							activityDate = new Date(val).getTime();
+
 						if(nowDate < activityDate) {
 							return "未开始";
 						} else {
 							return "进行中";
 						}
+
 					}
 				}
 			})
