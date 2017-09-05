@@ -75,7 +75,7 @@
 					return {
 						page: 1,
 						totalPage: null,
-						pageLen:pageLen,
+						pageLen: pageLen,
 						pageTop: {},
 						list: []
 					}
@@ -86,26 +86,26 @@
 						window.addEventListener("myOrderList", function() {
 							_this.myOrderList(function(resData) {
 								_this.list = resData.data;
-								_this.totalPage=Math.ceil(resData.total/_this.pageLen);
+								_this.totalPage = Math.ceil(resData.total / _this.pageLen);
 							}, 1)
-						})
-						window.addEventListener("getMyOrderTop", function() {
 							_this.getMyOrderTop(function(resData) {
 								_this.pageTop = resData.data;
 							})
 						})
-						_this.myOrderList(function(resData) {
-							_this.list = resData.data;
-							_this.totalPage=Math.ceil(resData.total/_this.pageLen);
-						}, 1)
-						_this.getMyOrderTop(function(resData) {
-							_this.pageTop = resData.data;
-						})
-						_this.todayOrdersStatistics(function(resdata) {
-							if(resdata.data != null) {
-								_this.list.unshift(resdata.data)
-							}
-						})
+						setTimeout(function() {
+							_this.myOrderList(function(resData) {
+								_this.list = resData.data;
+								_this.totalPage = Math.ceil(resData.total / _this.pageLen);
+							}, 1)
+							_this.getMyOrderTop(function(resData) {
+								_this.pageTop = resData.data;
+							})
+							_this.todayOrdersStatistics(function(resdata) {
+								if(resdata.data != null) {
+									_this.list.unshift(resdata.data)
+								}
+							})
+						}, 0)
 						refresher.init({
 							id: "wrapper",
 							pullDownAction: _this.Refresh,
@@ -159,8 +159,8 @@
 							refresher.info.pullUpLable = '没有更多数据了!';
 						}
 						wrapper.refresh();
-					}, 
-					Refresh: function() { 
+					},
+					Refresh: function() {
 						var _this = this;
 						this.todayOrdersStatistics(function(resdata) {
 							if(resdata.data != null) {

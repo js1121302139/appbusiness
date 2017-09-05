@@ -23,22 +23,532 @@
 			<div class="wrappers">
 				<div id="wrapper" class="wrapperList">
 					<ul id="msgList">
-						<!--<li class="ListItem" v-for="(item,key) in list" @click="open(item)">
-						<p class="msgDate mui-text-center" v-text="item.createTime">2017-06-10 16:00:00</p>
-						<div class="msgInfo">
-							<div class="msgTop">
-								<h1 class="msgTit mui-ellipsis" v-text="item.title">一下下下下 </h1>
-								<div class="msg-ico">
-									<span class="msgBadge" v-show="!item.status"></span> 
+						<li class="ListItem" v-for="(item,key) in list" @click="open(item)">
+							<p class="msgDate mui-text-center" v-text="item.createTime">2017-06-10 16:00:00</p>
+							<div class="msgInfo">
+								<div class="msgTop">
+									<h1 class="msgTit mui-ellipsis" v-text="item.title">一下下下下 </h1>
+									<div class="msg-ico">
+										<span class="msgBadge" v-show="!item.status"></span>
+									</div>
 								</div>
+								<div class="msgimg" v-if="item.desPicture!=''">
+									<img :src="picservice + item.desPicture" alt="">
+								</div>
+								<p class="magText mui-ellipsis" v-text="item.pTitle">福利大放送哦121321福利123132123大放送哦福利大放送哦福利大放送哦</p>
 							</div>
-							<div class="msgimg" v-if="item.desPicture!=''">
-								<img :src="picservice + item.desPicture" alt="">
+						</li>
+						<li class="ListItem" v-for="(item,key) in list" @click="open(item)">
+							<p class="msgDate mui-text-center" v-text="item.createTime">2017-06-10 16:00:00</p>
+							<div class="msgInfo">
+								<div class="msgTop">
+									<h1 class="msgTit mui-ellipsis" v-text="item.title">一下下下下 </h1>
+									<div class="msg-ico">
+										<span class="msgBadge" v-show="!item.status"></span>
+									</div>
+								</div>
+								<div class="msgimg" v-if="item.desPicture!=''">
+									<img :src="picservice + item.desPicture" alt="">
+								</div>
+								<p class="magText mui-ellipsis" v-text="item.pTitle">福利大放送哦121321福利123132123大放送哦福利大放送哦福利大放送哦</p>
 							</div>
-							<p class="magText mui-ellipsis" v-text="item.pTitle">福利大放送哦121321福利123132123大放送哦福利大放送哦福利大放送哦</p>
-						</div>
-					</li>-->
-						<li class="ListItem">
+						</li>
+						<li class="ListItem" v-for="(item,key) in list" @click="open(item)">
+							<p class="msgDate mui-text-center" v-text="item.createTime">2017-06-10 16:00:00</p>
+							<div class="msgInfo">
+								<div class="msgTop">
+									<h1 class="msgTit mui-ellipsis" v-text="item.title">一下下下下 </h1>
+									<div class="msg-ico">
+										<span class="msgBadge" v-show="!item.status"></span>
+									</div>
+								</div>
+								<div class="msgimg" v-if="item.desPicture!=''">
+									<img :src="picservice + item.desPicture" alt="">
+								</div>
+								<p class="magText mui-ellipsis" v-text="item.pTitle">福利大放送哦121321福利123132123大放送哦福利大放送哦福利大放送哦</p>
+							</div>
+						</li>
+						<li class="ListItem" v-for="(item,key) in list" @click="open(item)">
+							<p class="msgDate mui-text-center" v-text="item.createTime">2017-06-10 16:00:00</p>
+							<div class="msgInfo">
+								<div class="msgTop">
+									<h1 class="msgTit mui-ellipsis" v-text="item.title">一下下下下 </h1>
+									<div class="msg-ico">
+										<span class="msgBadge" v-show="!item.status"></span>
+									</div>
+								</div>
+								<div class="msgimg" v-if="item.desPicture!=''">
+									<img :src="picservice + item.desPicture" alt="">
+								</div>
+								<p class="magText mui-ellipsis" v-text="item.pTitle">福利大放送哦121321福利123132123大放送哦福利大放送哦福利大放送哦</p>
+							</div>
+						</li>
+						<li class="ListItem" v-for="(item,key) in list" @click="open(item)">
+							<p class="msgDate mui-text-center" v-text="item.createTime">2017-06-10 16:00:00</p>
+							<div class="msgInfo">
+								<div class="msgTop">
+									<h1 class="msgTit mui-ellipsis" v-text="item.title">一下下下下 </h1>
+									<div class="msg-ico">
+										<span class="msgBadge" v-show="!item.status"></span>
+									</div>
+								</div>
+								<div class="msgimg" v-if="item.desPicture!=''">
+									<img :src="picservice + item.desPicture" alt="">
+								</div>
+								<p class="magText mui-ellipsis" v-text="item.pTitle">福利大放送哦121321福利123132123大放送哦福利大放送哦福利大放送哦</p>
+							</div>
+						</li>
+						<li class="ListItem" v-for="(item,key) in list" @click="open(item)">
+							<p class="msgDate mui-text-center" v-text="item.createTime">2017-06-10 16:00:00</p>
+							<div class="msgInfo">
+								<div class="msgTop">
+									<h1 class="msgTit mui-ellipsis" v-text="item.title">一下下下下 </h1>
+									<div class="msg-ico">
+										<span class="msgBadge" v-show="!item.status"></span>
+									</div>
+								</div>
+								<div class="msgimg" v-if="item.desPicture!=''">
+									<img :src="picservice + item.desPicture" alt="">
+								</div>
+								<p class="magText mui-ellipsis" v-text="item.pTitle">福利大放送哦121321福利123132123大放送哦福利大放送哦福利大放送哦</p>
+							</div>
+						</li>
+						<li class="ListItem" v-for="(item,key) in list" @click="open(item)">
+							<p class="msgDate mui-text-center" v-text="item.createTime">2017-06-10 16:00:00</p>
+							<div class="msgInfo">
+								<div class="msgTop">
+									<h1 class="msgTit mui-ellipsis" v-text="item.title">一下下下下 </h1>
+									<div class="msg-ico">
+										<span class="msgBadge" v-show="!item.status"></span>
+									</div>
+								</div>
+								<div class="msgimg" v-if="item.desPicture!=''">
+									<img :src="picservice + item.desPicture" alt="">
+								</div>
+								<p class="magText mui-ellipsis" v-text="item.pTitle">福利大放送哦121321福利123132123大放送哦福利大放送哦福利大放送哦</p>
+							</div>
+						</li>
+						<li class="ListItem" v-for="(item,key) in list" @click="open(item)">
+							<p class="msgDate mui-text-center" v-text="item.createTime">2017-06-10 16:00:00</p>
+							<div class="msgInfo">
+								<div class="msgTop">
+									<h1 class="msgTit mui-ellipsis" v-text="item.title">一下下下下 </h1>
+									<div class="msg-ico">
+										<span class="msgBadge" v-show="!item.status"></span>
+									</div>
+								</div>
+								<div class="msgimg" v-if="item.desPicture!=''">
+									<img :src="picservice + item.desPicture" alt="">
+								</div>
+								<p class="magText mui-ellipsis" v-text="item.pTitle">福利大放送哦121321福利123132123大放送哦福利大放送哦福利大放送哦</p>
+							</div>
+						</li>
+						<li class="ListItem" v-for="(item,key) in list" @click="open(item)">
+							<p class="msgDate mui-text-center" v-text="item.createTime">2017-06-10 16:00:00</p>
+							<div class="msgInfo">
+								<div class="msgTop">
+									<h1 class="msgTit mui-ellipsis" v-text="item.title">一下下下下 </h1>
+									<div class="msg-ico">
+										<span class="msgBadge" v-show="!item.status"></span>
+									</div>
+								</div>
+								<div class="msgimg" v-if="item.desPicture!=''">
+									<img :src="picservice + item.desPicture" alt="">
+								</div>
+								<p class="magText mui-ellipsis" v-text="item.pTitle">福利大放送哦121321福利123132123大放送哦福利大放送哦福利大放送哦</p>
+							</div>
+						</li>
+						<li class="ListItem" v-for="(item,key) in list" @click="open(item)">
+							<p class="msgDate mui-text-center" v-text="item.createTime">2017-06-10 16:00:00</p>
+							<div class="msgInfo">
+								<div class="msgTop">
+									<h1 class="msgTit mui-ellipsis" v-text="item.title">一下下下下 </h1>
+									<div class="msg-ico">
+										<span class="msgBadge" v-show="!item.status"></span>
+									</div>
+								</div>
+								<div class="msgimg" v-if="item.desPicture!=''">
+									<img :src="picservice + item.desPicture" alt="">
+								</div>
+								<p class="magText mui-ellipsis" v-text="item.pTitle">福利大放送哦121321福利123132123大放送哦福利大放送哦福利大放送哦</p>
+							</div>
+						</li>
+						<li class="ListItem" v-for="(item,key) in list" @click="open(item)">
+							<p class="msgDate mui-text-center" v-text="item.createTime">2017-06-10 16:00:00</p>
+							<div class="msgInfo">
+								<div class="msgTop">
+									<h1 class="msgTit mui-ellipsis" v-text="item.title">一下下下下 </h1>
+									<div class="msg-ico">
+										<span class="msgBadge" v-show="!item.status"></span>
+									</div>
+								</div>
+								<div class="msgimg" v-if="item.desPicture!=''">
+									<img :src="picservice + item.desPicture" alt="">
+								</div>
+								<p class="magText mui-ellipsis" v-text="item.pTitle">福利大放送哦121321福利123132123大放送哦福利大放送哦福利大放送哦</p>
+							</div>
+						</li>
+						<li class="ListItem" v-for="(item,key) in list" @click="open(item)">
+							<p class="msgDate mui-text-center" v-text="item.createTime">2017-06-10 16:00:00</p>
+							<div class="msgInfo">
+								<div class="msgTop">
+									<h1 class="msgTit mui-ellipsis" v-text="item.title">一下下下下 </h1>
+									<div class="msg-ico">
+										<span class="msgBadge" v-show="!item.status"></span>
+									</div>
+								</div>
+								<div class="msgimg" v-if="item.desPicture!=''">
+									<img :src="picservice + item.desPicture" alt="">
+								</div>
+								<p class="magText mui-ellipsis" v-text="item.pTitle">福利大放送哦121321福利123132123大放送哦福利大放送哦福利大放送哦</p>
+							</div>
+						</li>
+						<li class="ListItem" v-for="(item,key) in list" @click="open(item)">
+							<p class="msgDate mui-text-center" v-text="item.createTime">2017-06-10 16:00:00</p>
+							<div class="msgInfo">
+								<div class="msgTop">
+									<h1 class="msgTit mui-ellipsis" v-text="item.title">一下下下下 </h1>
+									<div class="msg-ico">
+										<span class="msgBadge" v-show="!item.status"></span>
+									</div>
+								</div>
+								<div class="msgimg" v-if="item.desPicture!=''">
+									<img :src="picservice + item.desPicture" alt="">
+								</div>
+								<p class="magText mui-ellipsis" v-text="item.pTitle">福利大放送哦121321福利123132123大放送哦福利大放送哦福利大放送哦</p>
+							</div>
+						</li>
+						<li class="ListItem" v-for="(item,key) in list" @click="open(item)">
+							<p class="msgDate mui-text-center" v-text="item.createTime">2017-06-10 16:00:00</p>
+							<div class="msgInfo">
+								<div class="msgTop">
+									<h1 class="msgTit mui-ellipsis" v-text="item.title">一下下下下 </h1>
+									<div class="msg-ico">
+										<span class="msgBadge" v-show="!item.status"></span>
+									</div>
+								</div>
+								<div class="msgimg" v-if="item.desPicture!=''">
+									<img :src="picservice + item.desPicture" alt="">
+								</div>
+								<p class="magText mui-ellipsis" v-text="item.pTitle">福利大放送哦121321福利123132123大放送哦福利大放送哦福利大放送哦</p>
+							</div>
+						</li>
+						<li class="ListItem" v-for="(item,key) in list" @click="open(item)">
+							<p class="msgDate mui-text-center" v-text="item.createTime">2017-06-10 16:00:00</p>
+							<div class="msgInfo">
+								<div class="msgTop">
+									<h1 class="msgTit mui-ellipsis" v-text="item.title">一下下下下 </h1>
+									<div class="msg-ico">
+										<span class="msgBadge" v-show="!item.status"></span>
+									</div>
+								</div>
+								<div class="msgimg" v-if="item.desPicture!=''">
+									<img :src="picservice + item.desPicture" alt="">
+								</div>
+								<p class="magText mui-ellipsis" v-text="item.pTitle">福利大放送哦121321福利123132123大放送哦福利大放送哦福利大放送哦</p>
+							</div>
+						</li>
+						<li class="ListItem" v-for="(item,key) in list" @click="open(item)">
+							<p class="msgDate mui-text-center" v-text="item.createTime">2017-06-10 16:00:00</p>
+							<div class="msgInfo">
+								<div class="msgTop">
+									<h1 class="msgTit mui-ellipsis" v-text="item.title">一下下下下 </h1>
+									<div class="msg-ico">
+										<span class="msgBadge" v-show="!item.status"></span>
+									</div>
+								</div>
+								<div class="msgimg" v-if="item.desPicture!=''">
+									<img :src="picservice + item.desPicture" alt="">
+								</div>
+								<p class="magText mui-ellipsis" v-text="item.pTitle">福利大放送哦121321福利123132123大放送哦福利大放送哦福利大放送哦</p>
+							</div>
+						</li>
+						<li class="ListItem" v-for="(item,key) in list" @click="open(item)">
+							<p class="msgDate mui-text-center" v-text="item.createTime">2017-06-10 16:00:00</p>
+							<div class="msgInfo">
+								<div class="msgTop">
+									<h1 class="msgTit mui-ellipsis" v-text="item.title">一下下下下 </h1>
+									<div class="msg-ico">
+										<span class="msgBadge" v-show="!item.status"></span>
+									</div>
+								</div>
+								<div class="msgimg" v-if="item.desPicture!=''">
+									<img :src="picservice + item.desPicture" alt="">
+								</div>
+								<p class="magText mui-ellipsis" v-text="item.pTitle">福利大放送哦121321福利123132123大放送哦福利大放送哦福利大放送哦</p>
+							</div>
+						</li>
+						<li class="ListItem" v-for="(item,key) in list" @click="open(item)">
+							<p class="msgDate mui-text-center" v-text="item.createTime">2017-06-10 16:00:00</p>
+							<div class="msgInfo">
+								<div class="msgTop">
+									<h1 class="msgTit mui-ellipsis" v-text="item.title">一下下下下 </h1>
+									<div class="msg-ico">
+										<span class="msgBadge" v-show="!item.status"></span>
+									</div>
+								</div>
+								<div class="msgimg" v-if="item.desPicture!=''">
+									<img :src="picservice + item.desPicture" alt="">
+								</div>
+								<p class="magText mui-ellipsis" v-text="item.pTitle">福利大放送哦121321福利123132123大放送哦福利大放送哦福利大放送哦</p>
+							</div>
+						</li>
+						<li class="ListItem" v-for="(item,key) in list" @click="open(item)">
+							<p class="msgDate mui-text-center" v-text="item.createTime">2017-06-10 16:00:00</p>
+							<div class="msgInfo">
+								<div class="msgTop">
+									<h1 class="msgTit mui-ellipsis" v-text="item.title">一下下下下 </h1>
+									<div class="msg-ico">
+										<span class="msgBadge" v-show="!item.status"></span>
+									</div>
+								</div>
+								<div class="msgimg" v-if="item.desPicture!=''">
+									<img :src="picservice + item.desPicture" alt="">
+								</div>
+								<p class="magText mui-ellipsis" v-text="item.pTitle">福利大放送哦121321福利123132123大放送哦福利大放送哦福利大放送哦</p>
+							</div>
+						</li>
+						<li class="ListItem" v-for="(item,key) in list" @click="open(item)">
+							<p class="msgDate mui-text-center" v-text="item.createTime">2017-06-10 16:00:00</p>
+							<div class="msgInfo">
+								<div class="msgTop">
+									<h1 class="msgTit mui-ellipsis" v-text="item.title">一下下下下 </h1>
+									<div class="msg-ico">
+										<span class="msgBadge" v-show="!item.status"></span>
+									</div>
+								</div>
+								<div class="msgimg" v-if="item.desPicture!=''">
+									<img :src="picservice + item.desPicture" alt="">
+								</div>
+								<p class="magText mui-ellipsis" v-text="item.pTitle">福利大放送哦121321福利123132123大放送哦福利大放送哦福利大放送哦</p>
+							</div>
+						</li>
+						<li class="ListItem" v-for="(item,key) in list" @click="open(item)">
+							<p class="msgDate mui-text-center" v-text="item.createTime">2017-06-10 16:00:00</p>
+							<div class="msgInfo">
+								<div class="msgTop">
+									<h1 class="msgTit mui-ellipsis" v-text="item.title">一下下下下 </h1>
+									<div class="msg-ico">
+										<span class="msgBadge" v-show="!item.status"></span>
+									</div>
+								</div>
+								<div class="msgimg" v-if="item.desPicture!=''">
+									<img :src="picservice + item.desPicture" alt="">
+								</div>
+								<p class="magText mui-ellipsis" v-text="item.pTitle">福利大放送哦121321福利123132123大放送哦福利大放送哦福利大放送哦</p>
+							</div>
+						</li>
+						<li class="ListItem" v-for="(item,key) in list" @click="open(item)">
+							<p class="msgDate mui-text-center" v-text="item.createTime">2017-06-10 16:00:00</p>
+							<div class="msgInfo">
+								<div class="msgTop">
+									<h1 class="msgTit mui-ellipsis" v-text="item.title">一下下下下 </h1>
+									<div class="msg-ico">
+										<span class="msgBadge" v-show="!item.status"></span>
+									</div>
+								</div>
+								<div class="msgimg" v-if="item.desPicture!=''">
+									<img :src="picservice + item.desPicture" alt="">
+								</div>
+								<p class="magText mui-ellipsis" v-text="item.pTitle">福利大放送哦121321福利123132123大放送哦福利大放送哦福利大放送哦</p>
+							</div>
+						</li>
+						<li class="ListItem" v-for="(item,key) in list" @click="open(item)">
+							<p class="msgDate mui-text-center" v-text="item.createTime">2017-06-10 16:00:00</p>
+							<div class="msgInfo">
+								<div class="msgTop">
+									<h1 class="msgTit mui-ellipsis" v-text="item.title">一下下下下 </h1>
+									<div class="msg-ico">
+										<span class="msgBadge" v-show="!item.status"></span>
+									</div>
+								</div>
+								<div class="msgimg" v-if="item.desPicture!=''">
+									<img :src="picservice + item.desPicture" alt="">
+								</div>
+								<p class="magText mui-ellipsis" v-text="item.pTitle">福利大放送哦121321福利123132123大放送哦福利大放送哦福利大放送哦</p>
+							</div>
+						</li>
+						<li class="ListItem" v-for="(item,key) in list" @click="open(item)">
+							<p class="msgDate mui-text-center" v-text="item.createTime">2017-06-10 16:00:00</p>
+							<div class="msgInfo">
+								<div class="msgTop">
+									<h1 class="msgTit mui-ellipsis" v-text="item.title">一下下下下 </h1>
+									<div class="msg-ico">
+										<span class="msgBadge" v-show="!item.status"></span>
+									</div>
+								</div>
+								<div class="msgimg" v-if="item.desPicture!=''">
+									<img :src="picservice + item.desPicture" alt="">
+								</div>
+								<p class="magText mui-ellipsis" v-text="item.pTitle">福利大放送哦121321福利123132123大放送哦福利大放送哦福利大放送哦</p>
+							</div>
+						</li>
+						<li class="ListItem" v-for="(item,key) in list" @click="open(item)">
+							<p class="msgDate mui-text-center" v-text="item.createTime">2017-06-10 16:00:00</p>
+							<div class="msgInfo">
+								<div class="msgTop">
+									<h1 class="msgTit mui-ellipsis" v-text="item.title">一下下下下 </h1>
+									<div class="msg-ico">
+										<span class="msgBadge" v-show="!item.status"></span>
+									</div>
+								</div>
+								<div class="msgimg" v-if="item.desPicture!=''">
+									<img :src="picservice + item.desPicture" alt="">
+								</div>
+								<p class="magText mui-ellipsis" v-text="item.pTitle">福利大放送哦121321福利123132123大放送哦福利大放送哦福利大放送哦</p>
+							</div>
+						</li>
+						<li class="ListItem" v-for="(item,key) in list" @click="open(item)">
+							<p class="msgDate mui-text-center" v-text="item.createTime">2017-06-10 16:00:00</p>
+							<div class="msgInfo">
+								<div class="msgTop">
+									<h1 class="msgTit mui-ellipsis" v-text="item.title">一下下下下 </h1>
+									<div class="msg-ico">
+										<span class="msgBadge" v-show="!item.status"></span>
+									</div>
+								</div>
+								<div class="msgimg" v-if="item.desPicture!=''">
+									<img :src="picservice + item.desPicture" alt="">
+								</div>
+								<p class="magText mui-ellipsis" v-text="item.pTitle">福利大放送哦121321福利123132123大放送哦福利大放送哦福利大放送哦</p>
+							</div>
+						</li>
+						<li class="ListItem" v-for="(item,key) in list" @click="open(item)">
+							<p class="msgDate mui-text-center" v-text="item.createTime">2017-06-10 16:00:00</p>
+							<div class="msgInfo">
+								<div class="msgTop">
+									<h1 class="msgTit mui-ellipsis" v-text="item.title">一下下下下 </h1>
+									<div class="msg-ico">
+										<span class="msgBadge" v-show="!item.status"></span>
+									</div>
+								</div>
+								<div class="msgimg" v-if="item.desPicture!=''">
+									<img :src="picservice + item.desPicture" alt="">
+								</div>
+								<p class="magText mui-ellipsis" v-text="item.pTitle">福利大放送哦121321福利123132123大放送哦福利大放送哦福利大放送哦</p>
+							</div>
+						</li>
+						<li class="ListItem" v-for="(item,key) in list" @click="open(item)">
+							<p class="msgDate mui-text-center" v-text="item.createTime">2017-06-10 16:00:00</p>
+							<div class="msgInfo">
+								<div class="msgTop">
+									<h1 class="msgTit mui-ellipsis" v-text="item.title">一下下下下 </h1>
+									<div class="msg-ico">
+										<span class="msgBadge" v-show="!item.status"></span>
+									</div>
+								</div>
+								<div class="msgimg" v-if="item.desPicture!=''">
+									<img :src="picservice + item.desPicture" alt="">
+								</div>
+								<p class="magText mui-ellipsis" v-text="item.pTitle">福利大放送哦121321福利123132123大放送哦福利大放送哦福利大放送哦</p>
+							</div>
+						</li>
+						<li class="ListItem" v-for="(item,key) in list" @click="open(item)">
+							<p class="msgDate mui-text-center" v-text="item.createTime">2017-06-10 16:00:00</p>
+							<div class="msgInfo">
+								<div class="msgTop">
+									<h1 class="msgTit mui-ellipsis" v-text="item.title">一下下下下 </h1>
+									<div class="msg-ico">
+										<span class="msgBadge" v-show="!item.status"></span>
+									</div>
+								</div>
+								<div class="msgimg" v-if="item.desPicture!=''">
+									<img :src="picservice + item.desPicture" alt="">
+								</div>
+								<p class="magText mui-ellipsis" v-text="item.pTitle">福利大放送哦121321福利123132123大放送哦福利大放送哦福利大放送哦</p>
+							</div>
+						</li>
+						<li class="ListItem" v-for="(item,key) in list" @click="open(item)">
+							<p class="msgDate mui-text-center" v-text="item.createTime">2017-06-10 16:00:00</p>
+							<div class="msgInfo">
+								<div class="msgTop">
+									<h1 class="msgTit mui-ellipsis" v-text="item.title">一下下下下 </h1>
+									<div class="msg-ico">
+										<span class="msgBadge" v-show="!item.status"></span>
+									</div>
+								</div>
+								<div class="msgimg" v-if="item.desPicture!=''">
+									<img :src="picservice + item.desPicture" alt="">
+								</div>
+								<p class="magText mui-ellipsis" v-text="item.pTitle">福利大放送哦121321福利123132123大放送哦福利大放送哦福利大放送哦</p>
+							</div>
+						</li>
+						<li class="ListItem" v-for="(item,key) in list" @click="open(item)">
+							<p class="msgDate mui-text-center" v-text="item.createTime">2017-06-10 16:00:00</p>
+							<div class="msgInfo">
+								<div class="msgTop">
+									<h1 class="msgTit mui-ellipsis" v-text="item.title">一下下下下 </h1>
+									<div class="msg-ico">
+										<span class="msgBadge" v-show="!item.status"></span>
+									</div>
+								</div>
+								<div class="msgimg" v-if="item.desPicture!=''">
+									<img :src="picservice + item.desPicture" alt="">
+								</div>
+								<p class="magText mui-ellipsis" v-text="item.pTitle">福利大放送哦121321福利123132123大放送哦福利大放送哦福利大放送哦</p>
+							</div>
+						</li>
+						<li class="ListItem" v-for="(item,key) in list" @click="open(item)">
+							<p class="msgDate mui-text-center" v-text="item.createTime">2017-06-10 16:00:00</p>
+							<div class="msgInfo">
+								<div class="msgTop">
+									<h1 class="msgTit mui-ellipsis" v-text="item.title">一下下下下 </h1>
+									<div class="msg-ico">
+										<span class="msgBadge" v-show="!item.status"></span>
+									</div>
+								</div>
+								<div class="msgimg" v-if="item.desPicture!=''">
+									<img :src="picservice + item.desPicture" alt="">
+								</div>
+								<p class="magText mui-ellipsis" v-text="item.pTitle">福利大放送哦121321福利123132123大放送哦福利大放送哦福利大放送哦</p>
+							</div>
+						</li>
+						<li class="ListItem" v-for="(item,key) in list" @click="open(item)">
+							<p class="msgDate mui-text-center" v-text="item.createTime">2017-06-10 16:00:00</p>
+							<div class="msgInfo">
+								<div class="msgTop">
+									<h1 class="msgTit mui-ellipsis" v-text="item.title">一下下下下 </h1>
+									<div class="msg-ico">
+										<span class="msgBadge" v-show="!item.status"></span>
+									</div>
+								</div>
+								<div class="msgimg" v-if="item.desPicture!=''">
+									<img :src="picservice + item.desPicture" alt="">
+								</div>
+								<p class="magText mui-ellipsis" v-text="item.pTitle">福利大放送哦121321福利123132123大放送哦福利大放送哦福利大放送哦</p>
+							</div>
+						</li>
+						<li class="ListItem" v-for="(item,key) in list" @click="open(item)">
+							<p class="msgDate mui-text-center" v-text="item.createTime">2017-06-10 16:00:00</p>
+							<div class="msgInfo">
+								<div class="msgTop">
+									<h1 class="msgTit mui-ellipsis" v-text="item.title">一下下下下 </h1>
+									<div class="msg-ico">
+										<span class="msgBadge" v-show="!item.status"></span>
+									</div>
+								</div>
+								<div class="msgimg" v-if="item.desPicture!=''">
+									<img :src="picservice + item.desPicture" alt="">
+								</div>
+								<p class="magText mui-ellipsis" v-text="item.pTitle">福利大放送哦121321福利123132123大放送哦福利大放送哦福利大放送哦</p>
+							</div>
+						</li>
+						<li class="ListItem" v-for="(item,key) in list" @click="open(item)">
+							<p class="msgDate mui-text-center" v-text="item.createTime">2017-06-10 16:00:00</p>
+							<div class="msgInfo">
+								<div class="msgTop">
+									<h1 class="msgTit mui-ellipsis" v-text="item.title">一下下下下 </h1>
+									<div class="msg-ico">
+										<span class="msgBadge" v-show="!item.status"></span>
+									</div>
+								</div>
+								<div class="msgimg" v-if="item.desPicture!=''">
+									<img :src="picservice + item.desPicture" alt="">
+								</div>
+								<p class="magText mui-ellipsis" v-text="item.pTitle">福利大放送哦121321福利123132123大放送哦福利大放送哦福利大放送哦</p>
+							</div>
+						</li>
+						<!--<li class="ListItem">
 							<p class="msgDate mui-text-center">2017-06-10 16:00:00</p>
 							<div class="msgInfo">
 								<div class="msgTop">
@@ -52,7 +562,7 @@
 								</div>
 								<p class="magText mui-ellipsis">福利大放送哦121321福利123132123大放送哦福利大放送哦福利大放送哦</p>
 							</div>
-						</li>
+						</li>-->
 						<!--<li class="ListItem">
             <p class="msgDate mui-text-center">2017-06-10 16:00:00</p>
             <div class="msgInfo">

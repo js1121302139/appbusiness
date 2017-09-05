@@ -114,7 +114,8 @@ mui.plusReady(function() {
 				} else {
 					logoimgBox.src = "../../img/work-head.png";
 				}
-				businessNameBox.innerText = data.data.merchantName; //店铺名字
+				
+				businessNameBox.innerText = data.data.merchantName+((jobCodeName!="BOSS")?'(店长)':''); //店铺名字
 				businessAddressBox.innerText = data.data.merchantAddress; //店铺的地址
 				todayOrderTotalMoneyBox.innerText = (data.data.todayOrderTotalMoney == null) ? 0 : data.data.todayOrderTotalMoney; // 今日订单总额
 				todayOrdersBox.innerText = data.data.todayOrders == null ? 0 : data.data.todayOrders; // 今日订单个数

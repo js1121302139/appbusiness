@@ -41,6 +41,7 @@
 
 				</div>
 			</div>
+			<div class="mui-backdrop" @click="shareShowBox=!shareShowBox" v-show="shareShowBox"></div>
 			<div class="shareShowBox" v-show="shareShowBox">
 				<div class="shareShowBoxItem">
 					<div class="shareShowBoxItem-ico wx">
@@ -126,74 +127,13 @@
 					},
 					share: function() {
 						this.shareShowBox = !this.shareShowBox;
-					},
-					/**
-					 * 更新分享服务
-					 */
-					updateSerivces: function() {
-						var _this = this;
-						plus.share.getServices(function(s) {
-							console.log("分享：" + JSON.stringify(s));
-							_this.shares = {};
-							for(var i in s) {
-								var t = s[i];
-								_this.shares[t.id] = t;
-							}
-						}, function(e) {
-							console.log('获取分享服务列表失败：' + e.message);
-						});
-					},
-
-					/**
-					 * 分享操作
-					 * @param {JSON} sb 分享操作对象s.s为分享通道对象(plus.share.ShareService)
-					 * @param {Boolean} bh 是否分享链接
-					 */
-					shareAction: function(sb, bh) {
-						if(!sb || !sb.s) {
-							console.log('无效的分享服务！');
-							return;
-						}
-						var msg = {
-							content: "兑咖",
-							extra: {
-								scene: sb.x
-							}
-						};
-						sharehref = "http://www.yunduiwang.com/";
-						if(bh) {
-							msg.href = sharehref;
-							msg.title = "兑咖";
-							msg.content = "兑咖描述";
-							msg.thumbs = ['_www/logo1.jpg'];
-							msg.pictures = ['_www/logo1.jpg'];
-						}
-						// 发送分享
-						if(sb.s.authenticated) {
-							console.log('---已授权---');
-							shareMessage(msg, sb.s);
-						} else {
-							console.log('---未授权---');
-							sb.s.authorize(function() {
-								shareMessage(msg, sb.s);
-							}, function(e) {
-								console.log('认证授权失败：' + e.code + ' - ' + e.message);
-							});
-						}
-					},
-					/**
-					 * 发送分享消息
-					 * @param {JSON} msg
-					 * @param {plus.share.ShareService} s
-					 */
-					shareMessage: function(msg, s) {
-						console.log("发送分享消息" + JSON.stringify(msg));
-						s.send(msg, function() {
-							console.log('分享到"' + s.description + '"成功！');
-						}, function(e) {
-							console.log('分享到"' + s.description + '"失败: ' + JSON.stringify(e));
-						});
+						plus.share.getServices(function(s){
+							console.log(JSON.stringify(s))
+						},function(e){
+							
+						})
 					}
+					
 				}
 
 			})

@@ -17,19 +17,20 @@
 		<div id="activityCenter">
 			<header class="mui-bar topBar mui-bar-nav">
 				<a class="mui-action-back topBack-ico mui-pull-left"></a>
-				<h1 class="mui-title">活动管理</h1>
+				<h1 class="mui-title" @click="changeTab">活动管理</h1>
 				<span id="Topactivity" class="mui-btn  Topactivity mui-btn-blue mui-btn-link mui-pull-right" @click="open">创建活动</span>
 			</header>
 			<div class="mui-content">
 				<div class="activityBg">
 
 				</div>
-				<div id="segmentedControl" class="mui-segmented-control mui-segmented-control-inverted mui-segmented-control-primary">
-					<a class="mui-control-item mui-active" href="#wrappers"><span>自建活动</span></a>
-					<a class="mui-control-item " href="#item1"><span>兑贝体验</span></a>
+				<div id="activityControl" class="mui-text-center">
+					<a class="activity-item" @click="changeTab" :class="{'mui-active':isShowTab}"><span>自建活动</span></a>
+					<a class="activity-item  " @click="changeTab" :class="{'mui-active':!isShowTab}"><span>兑贝体验</span></a>
 				</div>
 			</div>
-			<div class="optionDate mui-slider-item mui-control-content " id="item1">
+			<!--id="item1"-->
+			<div v-show="!isShowTab" id="optionDate" class="optionDate">
 				<div id="dateHeader" class="dateHeader mui-text-center">
 					<span name="pre" @click="changeMouth('pre')" class=" pre mui-pull-left">
                 	</span>
@@ -62,7 +63,8 @@
 					</div>
 
 				</div>
-				<div id="dayLsit" class="dayLsit mui-text-center mui-clearfix">
+				<!--id="dayLsit"-->
+				<div class="dayLsit mui-text-center mui-clearfix">
 					<div class="dayList-item" v-for="item in noneDay"></div>
 					<div @click="updateRoomNum(key)" :class="{active: item.isActive}" class="dayList-item" v-for="(item,key) in showDay" v-text="item.day"></div>
 					<!--
@@ -84,7 +86,27 @@
 					<p class="sellRoomNum" v-text="'已售数量:'+ soldNum"> 0</p>
 				</div>
 			</div>
-			<div class="wrappers mui-active  mui-control-content" id="wrappers">
+			<!--1213-->
+			<div v-show="isShowTab" class="wrappers">
+				<div id="pullrefresh" class="mui-scroll-wrapper">
+					<div class="mui-scroll wrapperList">
+						<ul id="activityList">
+							<li class="ListItem" v-for="(item,key) in list">
+								<div class="activityInfo">
+									<p v-html="item.activityName + item.activityDate +'期 '+'<span>('+item.discount+'折)</span>'">兑咖狂欢日 2017-06-12 期{{1}}<span>(折)</span></p>
+									<p v-text="item.remark">兑咖狂欢F2C积分够，全场8折畅心购</p>
+								</div>
+								<div :class="'activityState mui-text-center stateBg'+item.state">
+									<p class="runState">{{item.state==0?'审核中':item.activityDate | activityState}}</p>
+									<a href="javascript:;" class="rmActiveityBtn" @click="offShelfActivity(item.id)">撤销</a>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<!--<div  class="wrappers" id="wrappers">
 				<div id="wrapper" class="wrapperList">
 					<ul id="activityList">
 						<li class="ListItem" v-for="(item,key) in list">
@@ -99,7 +121,7 @@
 						</li>
 					</ul>
 				</div>
-			</div>
+			</div>-->
 		</div>
 		<script src="../../js/mui.min.js"></script>
 		<script type="text/javascript" src="../../js/muihelper.js"></script>
@@ -118,8 +140,10 @@
 						page: 1,
 						pageLen: pageLen,
 						totalPage: null,
+						isShowTab: true,
 						activityDay: {},
 						noneDay: 0,
+						refresher: refresher,
 						showDay: [],
 						nowDate: new Date(),
 						nowY: 0,
@@ -129,7 +153,7 @@
 						roomNum: 0,
 						soldNum: 0,
 						activityId: null,
-						keys:null
+						keys: null
 					}
 				},
 				created: function() {
@@ -152,17 +176,28 @@
 							_this.totalPage = Math.ceil(resData.total / _this.pageLen);
 							_this.list = resData.data;
 						}, 1)
-						refresher.init({
-							id: "wrapper",
-							pullDownAction: _this.Refresh,
-							pullUpAction: _this.Load
-						});
+
 						/*日历*/
 						_this.renderMonth();
 					})
+					mui.init({
+						pullRefresh: {
+							container: '#pullrefresh', //待刷新区域标识，querySelector能定位的css选择器均可，比如：id、.class等
+							up: {
+								height: 50, //可选.默认50.触发上拉加载拖动距离
+								contentrefresh: "正在加载...", //可选，正在加载状态时，上拉加载控件上显示的标题内容
+								contentnomore: '没有更多数据了', //可选，请求完毕若没有更多数据时显示的提醒内容；
+								callback: this.Load
+							}
+						}
+					});
 
 				},
 				methods: {
+					changeTab: function() {
+						this.isShowTab = !this.isShowTab;
+
+					},
 					selfBuildActivity: function(callBack, page) {
 						var sendData = {
 							config: {
@@ -218,13 +253,17 @@
 						var _this = this;
 						this.page++;
 						if(this.page <= this.totalPage) {
-							this.selfBuildActivity(function(resData) {
-								_this.list = _this.list.concat(resData.data);
-							}, this.page)
+							mui.plusReady(function() {
+								_this.selfBuildActivity(function(resData) {
+									_this.list = _this.list.concat(resData.data);
+								}, _this.page)
+							})
 						} else {
-							refresher.info.pullUpLable = '没有更多数据了!';
+							
 						}
-						wrapper.refresh();
+						mui("#pullrefresh").pullRefresh().endPullupToRefresh(this.page <= this.totalPage)
+						/*wrapper.refresh();*/
+
 					},
 					Refresh: function() {
 						wrapper.refresh();
@@ -336,7 +375,7 @@
 						mui.prompt('', this.roomNum, '房间数量', ['取消', '确认'], function(e) {
 							if(e.index) {
 								sendData.config.roomNum = _this.roomNum = e.value;
-								_this.showDay[_this.keys].f2c.RoomNum=e.value;
+								_this.showDay[_this.keys].f2c.RoomNum = e.value;
 								Fun_App.ExAjax("merchantActivity/updateRoomNum", sendData);
 							}
 						}, 'div')

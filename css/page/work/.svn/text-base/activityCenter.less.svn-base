@@ -11,18 +11,23 @@ body,
 .Topactivity {
     color: #000000 !important;
 }
-
+ 
 .activityBg {
     height: 8.12rem;
     background: url(../../../images/activityCenterBg.png) left top no-repeat;
     background-size: 100% 100%;
 }
 
-#segmentedControl {
+#activityControl {
+    height: 2.81rem;
+    display: flex;
+    line-height: 2.81rem;
     background: #fff;
-    .mui-control-item {
+    .activity-item {
+        flex: 1;
         border-bottom: none;
         span {
+            font-size: 0.81rem;
             color: #999;
             display: inline-block;
         }
@@ -43,7 +48,9 @@ input[type="tel"]{
 .optionDate {
     font-family: "微软雅黑";
     width: 90%;
+    height: 24.06rem;
     margin: auto;
+    overflow: scroll;
     margin-top: 1.25rem;
     padding-bottom: 0.31rem;
     box-shadow: 0 0 15px 5px rgba(184, 184, 184, 0.4);
@@ -103,6 +110,7 @@ input[type="tel"]{
             color: #4f5f6f;
         }
         .active {
+            transition: all 0.25s;
             text-align: center;
             color: #fff;
             border-radius: 0.18rem;
@@ -173,6 +181,7 @@ input[type="tel"]{
     margin-top: 0.62rem;
     position: relative;
     height: 100%;
+    background: #fff;
     .wrapperList {
         background-color: #fff;
         .pullDown {
@@ -181,10 +190,6 @@ input[type="tel"]{
         ul {
             padding: 0 12px;
             padding-bottom: 25.5rem;
-        }
-        .pullUp {
-            position: relative;
-            top: -25.5rem;
         }
         .ListItem {
             display: flex;

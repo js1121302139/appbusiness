@@ -92,7 +92,7 @@
 					},
 					pageData: {},
 					shopType: null,//是否显示参与房间
-					isShow:true
+					isShow:false
 				}
 			},
 			created: function() {
@@ -101,9 +101,9 @@
 					var dateTime = new Date();
 					_this.activity.activityDate = dateTime.getFullYear() + "-" + ((dateTime.getMonth() + 1) <= 9 ? '0' + (dateTime.getMonth() + 1) : (dateTime.getMonth() + 1)) + "-" + ((dateTime.getDate()) <= 9 ? '0' + (dateTime.getDate()) : (dateTime.getDate()));
 					_this.shopType = Fun_App.getdata("shopType");
-					if(_this.shopType == 'null') { 
+					if(_this.shopType != 'null') { 
 						delete _this.activity.roomNum;
-						_this.isShow = false
+						_this.isShow = true
 					}
 					_this.activeityRule(function(resData) {
 						_this.pageData = resData.data;
@@ -111,9 +111,6 @@
 				})
 			},
 			methods: {
-				checkData: function() {
-
-				},
 				optionDate: function(option) {
 					var picker = new mui.DtPicker({
 							type: "date"

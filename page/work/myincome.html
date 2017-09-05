@@ -68,7 +68,7 @@
 						</ul>
 					</div>
 				</div>
-				<div class="footerButton mui-text-center" id="myMoney" @click="open('applysettlement')">
+				<div v-if="isShowApplyBtn" class="footerButton mui-text-center" id="myMoney" @click="open('applysettlement')">
 					申请结算
 				</div>
 			</div>
@@ -87,14 +87,16 @@
 					page: 1,
 					pageLen: pageLen,
 					totalPage: null,
-					topInfo: {},
-					incomeList: []
-				}
+					topInfo: {}, 
+					incomeList: [],
+					isShowApplyBtn: false,
+				} 
 			},
 			created: function() {
 				var _this = this;
 				mui.plusReady(function() {
-					Fun_App.pulldownRefresh();
+					_this.isShowApplyBtn = ((Fun_App.getdata("jobCode") != "BOSS") ? false : true);
+					console
 					window.addEventListener("myincome", function() {
 						_this.getMyIncome(function(infoData) { //顶部收入
 							console.log(Fun_App.getdata("token"))
@@ -175,8 +177,8 @@
 							transmitData: {
 								type: 1,
 								money: this.topInfo.balance,
-								msgType:4,
-								url:'merchantBalance/withdrawInfo'
+								msgType: 4,
+								url: 'merchantBalance/withdrawInfo'
 							}
 						}
 					}
@@ -187,4 +189,5 @@
 			}
 		})
 	</script>
+
 </html>

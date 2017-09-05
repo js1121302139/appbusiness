@@ -2,13 +2,15 @@
  * 服务器的地址
  * http://192.168.1.220/api/login
  */
+//内网地址
 /*var strservicef = 'http://192.168.1.220/merchant/';
 var picservice = 'http://192.168.1.220/ejsimage';*/
-var strservicef ='http://www.yunduiwang.com/merchant/';
-var picservice = 'http://www.yunduiwang.com:81/ejsimage'; 
+//测试环境
+/*var strservicef = 'http://www.yunduiwang.com/merchant/';
+var picservice = 'http://www.yunduiwang.com:81/ejsimage';*/
 //外网链接
-/*var strservicef = 'http://47.90.22.110:8088/';
-var picservice =  'http://47.90.22.110:8080/ejsimage';*/
+var strservicef = 'http://sj.duikavip.com/merchant/';
+var picservice =  'http://image.duikavip.com/ejsimage';
 
 /*
  * 主要的公共函数
@@ -102,7 +104,7 @@ var Fun_App = {
 
 		nowNetWorkState = this.getNetWorkState(); //现在的网络状态
 		//mui.toast("状态码："+nowNetWorkState); 
-		if(nowNetWorkState == 0 ) {
+		if(nowNetWorkState == 0) {
 			mui.toast("你的网络似乎开小差去咯！")
 			var historyData = JSON.parse(this.getdata(url)); //本地存储的数据
 			rdata.fun_Success(historyData)
@@ -112,7 +114,7 @@ var Fun_App = {
 		else {
 			mui.ajax({
 				url: strservicef + url,
-				type: "post", 
+				type: "post",
 				data: rdata.config,
 				dataType: 'json',
 				timeout: 10000,
@@ -258,7 +260,7 @@ var Fun_App = {
 	 * 开始时间 结束时间
 	 */
 	checkDateTime: function(date1, date2) {
-		if((date1==''||date1==null) || (date2==''||date2==null)) {	
+		if((date1 == '' || date1 == null) || (date2 == '' || date2 == null)) {
 			mui.toast('缺少时间');
 			return false;
 		} else {
@@ -266,16 +268,16 @@ var Fun_App = {
 			this.date2 = date2.replace(/-/g, "/");
 			var dateTime1 = new Date(this.date1).getTime();
 			var dateTime2 = new Date(this.date2).getTime();
-			if(dateTime2 < dateTime1){
+			if(dateTime2 < dateTime1) {
 				mui.toast('结束时间不能小于起始时间!')
 				return false;
-			} 
+			}
 		}
 	},
 	/*
 	 *文件上传
 	 * */
-	uploadFiles: function(fielUrl,callBack,modelImg) {
+	uploadFiles: function(fielUrl, callBack, modelImg) {
 		var modelImg = modelImg;
 		mui.toast('上传图片中...')
 		var task = plus.uploader.createUpload(strservicef + "merchantParty/uploadFiles", {
@@ -283,6 +285,7 @@ var Fun_App = {
 		}, function(e, s) {
 			if(s == 200) {
 				mui.toast('上传完成!')
+				console.log(JSON.stringify(e)+"-->")
 				var data = JSON.parse(e.responseText.replace(/\\/g, ""))
 				callBack(data);
 			}
@@ -310,13 +313,16 @@ var Fun_App = {
 			})
 
 	},
-	openCamera:function(cameraId){
+	openCamera: function(cameraId) {
 		var cmr = plus.camera.getCamera();
-		cmr.captureImage(function(e){
-			
-		},function(e){
-			
-		},{filename:"_doc/qrcode.jpg",index:1})
+		cmr.captureImage(function(e) {
+
+		}, function(e) {
+
+		}, {
+			filename: "_doc/qrcode.jpg",
+			index: 1
+		})
 	}
 }
 
@@ -341,14 +347,14 @@ mui("body").on("tap", ".mui-action-back", function() {
 /*
  *页码的长度
  */
-var pageLen = 1;
+var pageLen = 20;
 
 /*
  *角色的等级
  * */
 var jobCode = {
 	'BOSS': "BOSS",
-	'SHOPOWNER': "SHOPOWNER", 
+	'SHOPOWNER': "SHOPOWNER",
 	'STAFF': "STAFF"
 };
 
@@ -360,13 +366,18 @@ mui.plusReady(function() {
 		mui.toast('当前' + networkinfo[(state - 1)]);
 		return false;
 	}, false)
-	window.addEventListener("tap", function() {
-		var topBar = document.querySelector(".topBar");
-		if(topBar != null) {
-			plus.navigator.setStatusBarStyle("dark");
-		} else {
-			plus.navigator.setStatusBarStyle("light");
-		}
-	})
+	plus.navigator.setStatusBarStyle("dark")
+})
 
+window.addEventListener("tap", function() {
+	var topDoms = document.querySelector('header');
+	if(topDoms!=null){
+		var topDomsClass=topDoms.getAttribute("class");
+		if(topDomsClass.indexOf('topBar') != -1) {
+			/*plus.navigator.setStatusBarStyle("light")*/
+			getComputedStyle(document.querySelector(".topBar", false))['backgroundColor'] == "rgb(255, 255, 255)" ? plus.navigator.setStatusBarStyle("dark") :""
+		}
+	}else{
+		plus.navigator.setStatusBarStyle("light")
+	}
 })

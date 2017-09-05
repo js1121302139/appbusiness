@@ -6,7 +6,8 @@
 			accountPhoneNumBox = doc.querySelector("#accountPhoneNum"), //账号电话
 			userResultBox = doc.querySelector("#userResult"), //角色
 			userResult1Box = doc.querySelector("#userResult1"), //团队
-			addBtnBox = doc.querySelector("#addBtn") //添加按钮
+			addBtnBox = doc.querySelector("#addBtn"), //添加按钮
+			jobCode = Fun_App.getdata("jobCode")
 		jobs = [], groups = [];
 		var Job = new $.PopPicker(); //角色
 		var group = new $.PopPicker(); //团队
@@ -205,5 +206,9 @@
 			}
 
 		})
+		if(jobCode != 'BOSS') {
+			document.querySelector("#showUserPicker2").style.display="none";
+		}
 	})
+
 }(mui, document))

@@ -24,20 +24,20 @@
 				<div id="wrapper" class="wrapperList">
 					<ul id="msgList">
 						<li class="ListItem" v-for="(item,key) in list" @click="open(item)">
-						<p class="msgDate mui-text-center" v-text="item.createTime">2017-06-10 16:00:00</p>
-						<div class="msgInfo">
-							<div class="msgTop">
-								<h1 class="msgTit mui-ellipsis" v-text="item.title">一下下下下 </h1>
-								<div class="msg-ico">
-									<span class="msgBadge" v-show="!item.status"></span> 
+							<p class="msgDate mui-text-center" v-text="item.createTime">2017-06-10 16:00:00</p>
+							<div class="msgInfo">
+								<div class="msgTop">
+									<h1 class="msgTit mui-ellipsis" v-text="item.title">一下下下下 </h1>
+									<div class="msg-ico">
+										<span class="msgBadge" v-show="!item.status"></span>
+									</div>
 								</div>
+								<div class="msgimg" v-if="item.desPicture!=''">
+									<img :src="picservice + item.desPicture" alt="">
+								</div>
+								<p class="magText mui-ellipsis" v-text="item.pTitle">福利大放送哦121321福利123132123大放送哦福利大放送哦福利大放送哦</p>
 							</div>
-							<div class="msgimg" v-if="item.desPicture!=''">
-								<img :src="picservice + item.desPicture" alt="">
-							</div>
-							<p class="magText mui-ellipsis" v-text="item.pTitle">福利大放送哦121321福利123132123大放送哦福利大放送哦福利大放送哦</p>
-						</div>
-					</li>
+						</li>
 						<!--<li class="ListItem">
 							<p class="msgDate mui-text-center">2017-06-10 16:00:00</p>
 							<div class="msgInfo">
@@ -53,21 +53,6 @@
 								<p class="magText mui-ellipsis">福利大放送哦121321福利123132123大放送哦福利大放送哦福利大放送哦</p>
 							</div>
 						</li>-->
-						<!--<li class="ListItem">
-            <p class="msgDate mui-text-center">2017-06-10 16:00:00</p>
-            <div class="msgInfo">
-                <div class="msgTop">
-                    <h1 class="msgTit mui-ellipsis">一下下下下 </h1>
-                    <div class="msg-ico">
-                       <span class="msgBadge"></span>
-                    </div>
-                </div>
-                <div class="msgimg">
-                    <img src="../../img/ico-data02.png" alt="">
-                </div>
-                <p class="magText mui-ellipsis">福利大放送哦121321福利123132123大放送哦福利大放送哦福利大放送哦</p>
-            </div>
-        </li>-->
 					</ul>
 				</div>
 
@@ -87,7 +72,10 @@
 			data: function() {
 				return {
 					list: [],
-					picservice: picservice
+					picservice: picservice,
+					page: 1,
+					totalPage: null,
+					pageLen: pageLen
 				}
 			},
 			created: function() {
@@ -100,19 +88,22 @@
 					_this.messageList(function(resData) {
 						_this.list = resData.data;
 						console.log(JSON.stringify(resData.data))
-					})
+						_this.totalPage = Math.ceil(resData.total/_this.pageLen);
+					},1)
 					window.addEventListener("messageList", function() {
 						_this.messageList(function(resData) {
 							_this.list = resData.data;
-						})
+							_this.totalPage = Math.ceil(resData.total/_this.pageLen);
+						},1)
 					})
 				})
 			},
 			methods: {
-				messageList: function(callBack) {
+				messageList: function(callBack, page) {
 					var sendData = {
 						config: {
-							"token": Fun_App.getdata("token")
+							"token": Fun_App.getdata("token"),
+							'pageIndex': page
 						},
 						fun_Success: function(data) {
 							callBack(data);
@@ -147,10 +138,15 @@
 					Fun_App.ExAjax("merchant/read", sendData);
 				},
 				Load: function() {
-					/*var _this = this;
-					this.messageList(function(resData){
-						_this.list = _this.list.concat(resData.data);
-					})*/
+					this.page++;
+					var _this = this;
+					if(this.page<=this.totalPage){						
+						this.messageList(function(resData) {
+							_this.list =_this.list.concat(resData.data);
+						}, this.page)
+					}else{
+						refresher.info.pullUpLable = '没有更多数据了!';
+					}
 					wrapper.refresh();
 				}
 			}

@@ -23,8 +23,8 @@
 		<script src="../../js/mui.min.js"></script>
 		<script type="text/javascript" src="../../js/muihelper.js"></script>
 		<script type="text/javascript">
-			mui.ready(function() {
-
+			mui.plusReady(function() {
+				var shops = null;
 				function getShops() {
 					var html = "";
 					var sendData = {
@@ -33,7 +33,7 @@
 						},
 						fun_Success: function(data) {
 							if(data.success) {
-								var datas = data.data;
+								var datas = shops = data.data;
 								for(var i = 0; i < datas.length; i++) {
 									html +=
 										'<li class="mui-table-view-cell" id="' + datas[i].merchantId + '">' +
@@ -56,34 +56,29 @@
 						},
 						fun_Success: function(data) {
 							if(data.success) {
-								console.log("befor" + Fun_App.getdata("token"));
 								Fun_App.storagedata("token", data.data.token)
 								console.log(Fun_App.getdata("token"));
 								detailPage = plus.webview.getWebviewById('page/work/home.html');
 								mui.fire(detailPage, "getindexData")
-								mui.back()
 								detailPage = plus.webview.getWebviewById('page/order/myorder.html');
 								mui.fire(detailPage, "getMyOrderTop")
-								mui.back()
 								detailPage = plus.webview.getWebviewById('page/order/myorder.html');
 								mui.fire(detailPage, "myOrderList")
-								mui.back()
 								detailPage = plus.webview.getWebviewById('page/account/myaccount.html');
 								mui.fire(detailPage, "getInfodata")
 								mui.back()
-
 							}
 						}
 					};
 					Fun_App.ExAjax("merchant/switchMerchant", sendData)
 				}
-				mui.plusReady(function() {
-					getShops()
-					mui("#shopList").on("tap", ".mui-table-view-cell", function() {
-						var shopId = this.getAttribute("id")
-						changeShop(shopId);
-					})
-				})
+				getShops()
+					if(shops.length>1){						
+						mui("#shopList").on("tap", ".mui-table-view-cell", function() {
+							var shopId = this.getAttribute("id")
+							changeShop(shopId);
+						})
+					}
 			})
 		</script>
 	</body>

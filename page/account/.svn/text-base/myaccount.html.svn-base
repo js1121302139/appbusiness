@@ -12,17 +12,17 @@
 	</head>
 
 	<body>
-		<div class="login_user">
-				<div class="login_user_info">
-					<div class="userInfo mui-text-left">
-						<p id="myName"></p>
-						<p id="myphoneNum"></p>
-					</div>
-					<div class="userLogoImg">
-                        <img id="myHeadImg" src="" alt="">
-                    </div>
+		<header class="login_user topBar">
+			<div class="login_user_info">
+				<div class="userInfo mui-text-left">
+					<p id="myName"></p>
+					<p id="myphoneNum"></p>
+				</div>
+				<div class="userLogoImg">
+					<img id="myHeadImg" src="" alt="">
 				</div>
 			</div>
+		</header>
 		<div class="mui-content">
 			<div class="user-info-box">
 				<ul class="mui-table-view">
@@ -48,7 +48,7 @@
 						<a class="mui-navigate-right"><img src="../../img/edition_icon.png" /><span class="EditionCode mui-left">当前版本</span>
 							<span class="right-info mui-text-center" id="newVersion">new</span>
 						</a>
-					</li> 
+					</li>
 				</ul>
 				<ul class="mui-table-view">
 					<li class="mui-table-view-cell" id="aboutyundui">
@@ -59,19 +59,18 @@
 					</li>
 					<li class="mui-table-view-cell" id="feedbackBtn2">
 						<a href="tel:400-699-9171" class="mui-navigate-right"><img src="../../img/customer.png" /><span class="right-info">400-699-9171</span>联系兑咖客服</a>
-					</li> 
+					</li>
 				</ul>
-                <div class="exit-login mui-text-center">
-                    <a href="javascript:;" id="exit">退出</a>
-                </div>
+				<div class="exit-login mui-text-center">
+					<a href="javascript:;" id="exit">退出</a>
+				</div>
 			</div>
 
 		</div>
 		<script type="text/javascript" src="../../js/mui.min.js"></script>
 		<script type="text/javascript" src="../../js/muihelper.js"></script>
-		<script type="text/javascript" src="../../js/page/accounnt/myaccount.js" ></script>
+		<script type="text/javascript" src="../../js/page/accounnt/myaccount.js"></script>
 		<script>
-			
 		</script>
 	</body>
 

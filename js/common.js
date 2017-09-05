@@ -72,7 +72,7 @@ var CheckValue = function () {
         }
     }
     this.checkCode = function (val) {
-        var reg = /[\S]{4,4}/
+        var reg = /[\S]{6,6}/
         if (reg.test(val)) {
             return val;
         } else {

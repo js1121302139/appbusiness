@@ -19,7 +19,7 @@ evaluatemange.less
 K 25
 svn:wc:ra_dav:version-url
 V 75
-/svn/shop/!svn/ver/3630/Source/appbusiness/css/page/work/evaluatemange.less
+/svn/shop/!svn/ver/3697/Source/appbusiness/css/page/work/evaluatemange.less
 END
 detailinfo.less
 K 25
@@ -103,7 +103,7 @@ jsdentail.less
 K 25
 svn:wc:ra_dav:version-url
 V 71
-/svn/shop/!svn/ver/3143/Source/appbusiness/css/page/work/jsdentail.less
+/svn/shop/!svn/ver/3676/Source/appbusiness/css/page/work/jsdentail.less
 END
 dataAnalysis.less
 K 25
@@ -157,13 +157,13 @@ partyAdmin.css
 K 25
 svn:wc:ra_dav:version-url
 V 71
-/svn/shop/!svn/ver/3577/Source/appbusiness/css/page/work/partyAdmin.css
+/svn/shop/!svn/ver/3676/Source/appbusiness/css/page/work/partyAdmin.css
 END
 activityCenter.less
 K 25
 svn:wc:ra_dav:version-url
 V 76
-/svn/shop/!svn/ver/3505/Source/appbusiness/css/page/work/activityCenter.less
+/svn/shop/!svn/ver/3697/Source/appbusiness/css/page/work/activityCenter.less
 END
 shopenvironment.less
 K 25
@@ -175,7 +175,7 @@ jsdentail.css
 K 25
 svn:wc:ra_dav:version-url
 V 70
-/svn/shop/!svn/ver/3245/Source/appbusiness/css/page/work/jsdentail.css
+/svn/shop/!svn/ver/3676/Source/appbusiness/css/page/work/jsdentail.css
 END
 dataAnalysis.css
 K 25
@@ -223,7 +223,7 @@ activityCenter.css
 K 25
 svn:wc:ra_dav:version-url
 V 75
-/svn/shop/!svn/ver/3505/Source/appbusiness/css/page/work/activityCenter.css
+/svn/shop/!svn/ver/3697/Source/appbusiness/css/page/work/activityCenter.css
 END
 myshop.less
 K 25
@@ -391,7 +391,7 @@ evaluatemange.css
 K 25
 svn:wc:ra_dav:version-url
 V 74
-/svn/shop/!svn/ver/3630/Source/appbusiness/css/page/work/evaluatemange.css
+/svn/shop/!svn/ver/3697/Source/appbusiness/css/page/work/evaluatemange.css
 END
 shopmain.css
 K 25
@@ -433,5 +433,5 @@ partyAdmin.less
 K 25
 svn:wc:ra_dav:version-url
 V 72
-/svn/shop/!svn/ver/3577/Source/appbusiness/css/page/work/partyAdmin.less
+/svn/shop/!svn/ver/3676/Source/appbusiness/css/page/work/partyAdmin.less
 END

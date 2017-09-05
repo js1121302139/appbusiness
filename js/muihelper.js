@@ -375,7 +375,7 @@ window.addEventListener("tap", function() {
 		var topDomsClass=topDoms.getAttribute("class");
 		if(topDomsClass.indexOf('topBar') != -1) {
 			/*plus.navigator.setStatusBarStyle("light")*/
-			getComputedStyle(document.querySelector(".topBar", false))['backgroundColor'] == "rgb(255, 255, 255)" ? plus.navigator.setStatusBarStyle("dark") :plus.navigator.setStatusBarStyle("light")
+			getComputedStyle(document.querySelector(".topBar", false))['backgroundColor'] == "rgb(255, 255, 255)" ? plus.navigator.setStatusBarStyle("dark") :""
 		}
 	}else{
 		plus.navigator.setStatusBarStyle("light")
