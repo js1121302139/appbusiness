@@ -660,7 +660,8 @@
 				],
 				"refer": [
 					"index.html",
-					"repwd.html"
+					"repwd.html",
+					"guidePage.html"
 				],
 				"priority": 0
 			},
@@ -1022,6 +1023,18 @@
 				"resources": [
 					"css/mui.min.css",
 					"css/page/work/messageArticle.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"guidePage.html": {
+				"resources": [
+					"images/guidePage4.jpg",
+					"images/guidePage3.jpg",
+					"js/mui.js",
+					"images/guidePage2.jpg",
+					"images/guidePage1.jpg",
+					"js/ender.js"
 				],
 				"refer": [],
 				"priority": 0

@@ -143,8 +143,8 @@
 	</body>
 	<script type="text/javascript" src="../../js/mui.min.js"></script>
 	<script type="text/javascript" src="../../js/muihelper.js"></script>
-	<script type="text/javascript" src="../../js/page/work/home.js"></script>
-	<script type="text/javascript" src="../../js/common.js"></script>
+	<script type="text/javascript" src="../../js/common.js" ></script>
+	<script type="text/javascript" src="../../js/page/work/home.js" ></script>
 	<script>
 				
 	</script>

@@ -11,23 +11,18 @@ body,
 .Topactivity {
     color: #000000 !important;
 }
- 
+
 .activityBg {
     height: 8.12rem;
     background: url(../../../images/activityCenterBg.png) left top no-repeat;
     background-size: 100% 100%;
 }
 
-#activityControl {
-    height: 2.81rem;
-    display: flex;
-    line-height: 2.81rem;
+#segmentedControl {
     background: #fff;
-    .activity-item {
-        flex: 1;
+    .mui-control-item {
         border-bottom: none;
         span {
-            font-size: 0.81rem;
             color: #999;
             display: inline-block;
         }
@@ -39,21 +34,29 @@ body,
         }
     }
 }
-input[type="text"]{
-   
-}
-input[type="tel"]{
-    
-}
+
+input[type="text"] {}
+
+input[type="tel"] {}
+
 .optionDate {
+    position: absolute;
     font-family: "微软雅黑";
     width: 90%;
     height: 24.06rem;
+    left: 0;
+    right: 0;
     margin: auto;
-    overflow: scroll;
     margin-top: 1.25rem;
     padding-bottom: 0.31rem;
+    overflow: scroll;
     box-shadow: 0 0 15px 5px rgba(184, 184, 184, 0.4);
+    #scroll {
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        padding: 0;
+    }
     .dateHeader {
         height: 2.81rem;
         line-height: 2.81rem;
@@ -110,7 +113,6 @@ input[type="tel"]{
             color: #4f5f6f;
         }
         .active {
-            transition: all 0.25s;
             text-align: center;
             color: #fff;
             border-radius: 0.18rem;
@@ -159,7 +161,7 @@ input[type="tel"]{
         p:first-child {
             margin-right: 1.25rem;
             background: url(../../../img/activeity-editIco.png) right center no-repeat;
-            background-size:1rem 1rem;
+            background-size: 1rem 1rem;
         }
         p {
             margin: 0;
@@ -181,7 +183,6 @@ input[type="tel"]{
     margin-top: 0.62rem;
     position: relative;
     height: 100%;
-    background: #fff;
     .wrapperList {
         background-color: #fff;
         .pullDown {
@@ -190,6 +191,10 @@ input[type="tel"]{
         ul {
             padding: 0 12px;
             padding-bottom: 25.5rem;
+        }
+        .pullUp {
+            position: relative;
+            top: -25.5rem;
         }
         .ListItem {
             display: flex;

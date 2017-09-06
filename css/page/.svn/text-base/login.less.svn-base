@@ -1,9 +1,9 @@
 @import "common";
-.topBar("..");
 html,body{
   height: 100%;
   background: url("../../images/login-bg.png");
   background-size: cover;
+  overflow: hidden;
 }
 .mui-icon{
   font-family: Muiicons !important;
@@ -23,10 +23,10 @@ html,body{
     display: flex;
     flex: 1;
     justify-content: center;
-    margin-bottom: 31px;
-    .wh(100%,85px);
+    margin-bottom: 3.81rem;
+    .wh(100%,10.18rem);
     #loginLogo{
-      width: 85px;
+      width: 10.18rem;
     }
   }
   .login-box{

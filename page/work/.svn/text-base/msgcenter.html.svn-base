@@ -88,13 +88,13 @@
 					_this.messageList(function(resData) {
 						_this.list = resData.data;
 						console.log(JSON.stringify(resData.data))
-						_this.totalPage = Math.ceil(resData.total/_this.pageLen);
-					},1)
+						_this.totalPage = Math.ceil(resData.total / _this.pageLen);
+					}, 1)
 					window.addEventListener("messageList", function() {
 						_this.messageList(function(resData) {
 							_this.list = resData.data;
-							_this.totalPage = Math.ceil(resData.total/_this.pageLen);
-						},1)
+							_this.totalPage = Math.ceil(resData.total / _this.pageLen);
+						}, 1)
 					})
 				})
 			},
@@ -106,7 +106,14 @@
 							'pageIndex': page
 						},
 						fun_Success: function(data) {
-							callBack(data);
+							var datas = data;
+							for(var i = 0; i < datas.data.length; i++) {
+								if(datas.data[i].status == 1) {
+									datas.data.push(datas.data[i])
+									datas.data.splice(i, 1);
+								}
+							}
+							callBack(datas);
 						}
 					}
 					Fun_App.ExAjax("merchant/message", sendData);
@@ -130,9 +137,7 @@
 							"adminMessageIds": mseeageId
 						},
 						fun_Success: function(data) {
-							if(data.success == true) {
-
-							};
+							if(data.success == true) {};
 						}
 					}
 					Fun_App.ExAjax("merchant/read", sendData);
@@ -140,11 +145,11 @@
 				Load: function() {
 					this.page++;
 					var _this = this;
-					if(this.page<=this.totalPage){						
+					if(this.page <= this.totalPage) {
 						this.messageList(function(resData) {
-							_this.list =_this.list.concat(resData.data);
+							_this.list = _this.list.concat(resData.data);
 						}, this.page)
-					}else{
+					} else {
 						refresher.info.pullUpLable = '没有更多数据了!';
 					}
 					wrapper.refresh();

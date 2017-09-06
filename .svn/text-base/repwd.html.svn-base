@@ -20,7 +20,7 @@
 			</div>
 			<div class="mui-content content">
 				<div class="loginTop-box">
-					<img id="loginLogo" src="img/loginLogo.png">
+					<img id="loginLogo" src="img/loginLogo.png"> 
 				</div>
 				<div class="login-box">
 					<div class="userPhoneNumber mui-input-row input-border">

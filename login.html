@@ -27,7 +27,7 @@
 			<div class="forgetpassword mui-text-right">
 				<a href="javascript:;" class="">忘记密码?</a>
 			</div>
-			<div class="login_local mui-text-center">
+			<div class="login_local mui-text-center"> 
 				<a id="buttom" class="" href="JavaScript:;">登录</a>
 			</div>
 		</div>
@@ -39,6 +39,11 @@
 				(function(mui) {
 					var checkVal = new CheckValue();
 					mui.plusReady(function() {
+						//是否是第一次打开
+						if(Fun_App.getdata("isOneOpen")=='null'){
+							Fun_App.storagedata("isOneOpen","true")
+ 							Fun_App.openWin('./guidePage.html','pop-in','')
+						}
 						if(Fun_App.getdata("token") != " ") {
 							Fun_App.openWin("index.html", "pop-in");
 						}

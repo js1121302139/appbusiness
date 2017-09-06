@@ -13,7 +13,7 @@ login.css
 K 25
 svn:wc:ra_dav:version-url
 V 61
-/svn/shop/!svn/ver/3423/Source/appbusiness/css/page/login.css
+/svn/shop/!svn/ver/3801/Source/appbusiness/css/page/login.css
 END
 textarea.less
 K 25
@@ -31,13 +31,13 @@ repwd.less
 K 25
 svn:wc:ra_dav:version-url
 V 62
-/svn/shop/!svn/ver/3732/Source/appbusiness/css/page/repwd.less
+/svn/shop/!svn/ver/3776/Source/appbusiness/css/page/repwd.less
 END
 repwd.css
 K 25
 svn:wc:ra_dav:version-url
 V 61
-/svn/shop/!svn/ver/3732/Source/appbusiness/css/page/repwd.css
+/svn/shop/!svn/ver/3776/Source/appbusiness/css/page/repwd.css
 END
 common.less
 K 25
@@ -49,5 +49,5 @@ login.less
 K 25
 svn:wc:ra_dav:version-url
 V 62
-/svn/shop/!svn/ver/3423/Source/appbusiness/css/page/login.less
+/svn/shop/!svn/ver/3801/Source/appbusiness/css/page/login.less
 END

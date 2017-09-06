@@ -743,7 +743,8 @@
 					"img/topBack-ico.png",
 					"css/pullToRefresh.css",
 					"js/iscroll.js",
-					"js/pullToRefresh.js"
+					"js/pullToRefresh.js",
+					null
 				],
 				"refer": [
 					"page/work/addSonAccount.html"

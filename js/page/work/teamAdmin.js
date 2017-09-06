@@ -72,6 +72,7 @@ function getTeamList() {
 }
 
 function updateState(id, state) {
+	var isstate;
 	var sendData = {
 		config: {
 			"token": Fun_App.getdata("token"),
@@ -79,14 +80,16 @@ function updateState(id, state) {
 			"state": (state == 1) ? 2 : 1
 		},
 		fun_Success: function(data) {
+			isstate = data.success;
 			if(data.success) {
 				mui.toast(data.message)
-			}else{
+			} else {
 				mui.toast(data.message)
 			}
 		}
 	}
 	Fun_App.ExAjax("merchantAccount/updateState", sendData)
+	return isstate;
 }
 mui.plusReady(function() {
 	window.addEventListener('getTeamList', function() {
@@ -110,12 +113,13 @@ mui.plusReady(function() {
 				return false;
 			}
 			item.addEventListener("tap", function() {
-				thisTxt = this.innerText;
-				(thisTxt == "禁用") ? this.innerText = "启用": this.innerText = "禁用";
-				(thisTxt == "禁用") ? this.setAttribute("class", "mui-btn btnJY btn activeBtn"): this.setAttribute("class", "mui-btn btnJY btn");
 				var state = this.getAttribute("state"),
 					teamsId = this.getAttribute("teamsId");
-				updateState(teamsId, state);
+				if(updateState(teamsId, state)) {
+					thisTxt = this.innerText;
+					(thisTxt == "禁用") ? this.innerText = "启用": this.innerText = "禁用";
+					(thisTxt == "禁用") ? this.setAttribute("class", "mui-btn btnJY btn activeBtn"): this.setAttribute("class", "mui-btn btnJY btn");
+				}
 			})
 		})
 

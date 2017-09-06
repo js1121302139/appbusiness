@@ -97,7 +97,7 @@ muihelper.js
 K 25
 svn:wc:ra_dav:version-url
 V 58
-/svn/shop/!svn/ver/3746/Source/appbusiness/js/muihelper.js
+/svn/shop/!svn/ver/3802/Source/appbusiness/js/muihelper.js
 END
 jquery-1.11.0.js
 K 25
@@ -115,5 +115,5 @@ qrcode.min.js
 K 25
 svn:wc:ra_dav:version-url
 V 59
-/svn/shop/!svn/ver/3085/Source/appbusiness/js/qrcode.min.js
+/svn/shop/!svn/ver/3779/Source/appbusiness/js/qrcode.min.js
 END

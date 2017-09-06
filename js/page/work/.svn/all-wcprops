@@ -3,17 +3,17 @@ svn:wc:ra_dav:version-url
 V 55
 /svn/shop/!svn/ver/3502/Source/appbusiness/js/page/work
 END
-promotionAward.js
-K 25
-svn:wc:ra_dav:version-url
-V 73
-/svn/shop/!svn/ver/3502/Source/appbusiness/js/page/work/promotionAward.js
-END
 integral.js
 K 25
 svn:wc:ra_dav:version-url
 V 67
 /svn/shop/!svn/ver/2956/Source/appbusiness/js/page/work/integral.js
+END
+promotionAward.js
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/shop/!svn/ver/3502/Source/appbusiness/js/page/work/promotionAward.js
 END
 cashsuccess.js
 K 25
@@ -33,29 +33,17 @@ svn:wc:ra_dav:version-url
 V 70
 /svn/shop/!svn/ver/2956/Source/appbusiness/js/page/work/gxjsdentail.js
 END
-dataAnalysis.js
-K 25
-svn:wc:ra_dav:version-url
-V 71
-/svn/shop/!svn/ver/2956/Source/appbusiness/js/page/work/dataAnalysis.js
-END
 jsdentail.js
 K 25
 svn:wc:ra_dav:version-url
 V 68
 /svn/shop/!svn/ver/3502/Source/appbusiness/js/page/work/jsdentail.js
 END
-shopmain.js
+dataAnalysis.js
 K 25
 svn:wc:ra_dav:version-url
-V 67
-/svn/shop/!svn/ver/2956/Source/appbusiness/js/page/work/shopmain.js
-END
-detailinfo.js
-K 25
-svn:wc:ra_dav:version-url
-V 69
-/svn/shop/!svn/ver/2956/Source/appbusiness/js/page/work/detailinfo.js
+V 71
+/svn/shop/!svn/ver/2956/Source/appbusiness/js/page/work/dataAnalysis.js
 END
 evaluatemange.js
 K 25
@@ -63,11 +51,17 @@ svn:wc:ra_dav:version-url
 V 72
 /svn/shop/!svn/ver/3244/Source/appbusiness/js/page/work/evaluatemange.js
 END
-receivablesCode.js
+detailinfo.js
 K 25
 svn:wc:ra_dav:version-url
-V 74
-/svn/shop/!svn/ver/3577/Source/appbusiness/js/page/work/receivablesCode.js
+V 69
+/svn/shop/!svn/ver/2956/Source/appbusiness/js/page/work/detailinfo.js
+END
+shopmain.js
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/shop/!svn/ver/2956/Source/appbusiness/js/page/work/shopmain.js
 END
 myshop.js
 K 25
@@ -75,17 +69,23 @@ svn:wc:ra_dav:version-url
 V 65
 /svn/shop/!svn/ver/2956/Source/appbusiness/js/page/work/myshop.js
 END
-myincome.js
+receivablesCode.js
 K 25
 svn:wc:ra_dav:version-url
-V 67
-/svn/shop/!svn/ver/3244/Source/appbusiness/js/page/work/myincome.js
+V 74
+/svn/shop/!svn/ver/3779/Source/appbusiness/js/page/work/receivablesCode.js
 END
 createactivity.js
 K 25
 svn:wc:ra_dav:version-url
 V 73
 /svn/shop/!svn/ver/3423/Source/appbusiness/js/page/work/createactivity.js
+END
+myincome.js
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/shop/!svn/ver/3244/Source/appbusiness/js/page/work/myincome.js
 END
 monthlyEarnings.js
 K 25
@@ -115,7 +115,7 @@ addSonAccount.js
 K 25
 svn:wc:ra_dav:version-url
 V 72
-/svn/shop/!svn/ver/3733/Source/appbusiness/js/page/work/addSonAccount.js
+/svn/shop/!svn/ver/3792/Source/appbusiness/js/page/work/addSonAccount.js
 END
 shareprofit.js
 K 25
@@ -181,5 +181,5 @@ teamAdmin.js
 K 25
 svn:wc:ra_dav:version-url
 V 68
-/svn/shop/!svn/ver/3631/Source/appbusiness/js/page/work/teamAdmin.js
+/svn/shop/!svn/ver/3792/Source/appbusiness/js/page/work/teamAdmin.js
 END

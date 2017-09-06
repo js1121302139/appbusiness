@@ -103,7 +103,8 @@
 					"phone": accountData.accountPhoneNum, //手机号
 					"groupId": accountData.groupId, //团队ID
 					"jobId": accountData.jobId, //角色id
-					"jobName": accountData.jobName //角色名字
+					"jobName": accountData.jobName, //角色名字
+					'messageCode':accountData.accountPhoneCode
 				},
 				fun_Success: function(data) {
 					if(data.success) {
@@ -119,30 +120,35 @@
 			Fun_App.ExAjax("merchantAccount/create", sendData)
 		}
 		getMsgBox.addEventListener("tap", function() {
-
-			smsVerify()
+			this.focus();
+			accountData.accountPhoneNum != null ? smsVerify() :"";
 		})
 
 		function smsVerify() {
 			var sendData = {
 				config: {
 					"token": Fun_App.getdata('token'),
+					"phone": accountData.accountPhoneNum,
 					'type': 7
 				},
 				fun_Success: function(data) {
-					(data.success) ? mui.toast(data.message): mui.toast(data.message);
-					if(data.success) {
-						second--;
-						if(second < 1) {
-							second = 90;
-							getMsgBox.disabled = true
-							getMsgBox.innerText = '获取短信验证码';
-						} else {
-							getMsgBox.disabled = false
-							getMsgBox.innerText = '还剩' + second + '秒';
-							setTimeout(smsVerify, 1000)
-						}
-					}
+					(data.success && second == 90) ? mui.toast(data.message): mui.toast(data.message);
+					
+				}
+			}
+			console.log(sendData.config.phone)
+			secondTime()
+
+			function secondTime() {
+				second--;
+				if(second < 1) {
+					second = 90;
+					getMsgBox.disabled = false;
+					getMsgBox.innerText = '获取短信验证码';
+				} else {
+					getMsgBox.disabled = true;
+					getMsgBox.innerText = '还剩' + second + '秒';
+					setTimeout(secondTime, 1000)
 				}
 			}
 			Fun_App.ExAjax("merchant/smsVerify", sendData);
@@ -213,7 +219,7 @@
 					} else {
 						accountData.accountName = this.value;
 					}
-				} else {
+				} else if(ids == "accountPhoneNum") {
 					var pat = /(^(([0\+]\d{2,3}-)?(0\d{2,3})-)(\d{7,8})(-(\d{3,}))?$)|(^0{0,1}1[3|4|5|6|7|8|9][0-9]{9}$)/;
 					if(!pat.test(this.value)) {
 						$.toast("手机号码格式不正确")
@@ -221,6 +227,8 @@
 					} else {
 						accountData.accountPhoneNum = this.value;
 					}
+				}else{
+					accountData.accountPhoneCode = this.value;
 				}
 			})
 		})
@@ -232,6 +240,7 @@
 			this.focus();
 			if(Fun_App.checkObjIsNull(accountData, "groupId") == false) {
 				mui.toast("你还有东西没填哦")
+				console.log(JSON.stringify(accountData))
 			} else {
 				//判断当前页面的状态执行不同的任务
 				if(BtnTxt == "绑定") {

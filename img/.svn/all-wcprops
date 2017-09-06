@@ -99,17 +99,17 @@ svn:wc:ra_dav:version-url
 V 66
 /svn/shop/!svn/ver/2297/Source/appbusiness/img/ico-login-phone.png
 END
-ico-safecenter-4.png
-K 25
-svn:wc:ra_dav:version-url
-V 67
-/svn/shop/!svn/ver/3143/Source/appbusiness/img/ico-safecenter-4.png
-END
 icon-delete.png
 K 25
 svn:wc:ra_dav:version-url
 V 62
 /svn/shop/!svn/ver/2284/Source/appbusiness/img/icon-delete.png
+END
+ico-safecenter-4.png
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/shop/!svn/ver/3143/Source/appbusiness/img/ico-safecenter-4.png
 END
 img.sprite
 K 25
@@ -117,29 +117,29 @@ svn:wc:ra_dav:version-url
 V 57
 /svn/shop/!svn/ver/2348/Source/appbusiness/img/img.sprite
 END
-work-partyAdmin-ico.png
-K 25
-svn:wc:ra_dav:version-url
-V 70
-/svn/shop/!svn/ver/3423/Source/appbusiness/img/work-partyAdmin-ico.png
-END
 partysmall-ico.png
 K 25
 svn:wc:ra_dav:version-url
 V 65
 /svn/shop/!svn/ver/3245/Source/appbusiness/img/partysmall-ico.png
 END
-ico-data2.png
+work-partyAdmin-ico.png
 K 25
 svn:wc:ra_dav:version-url
-V 60
-/svn/shop/!svn/ver/2348/Source/appbusiness/img/ico-data2.png
+V 70
+/svn/shop/!svn/ver/3423/Source/appbusiness/img/work-partyAdmin-ico.png
 END
 contact_icon.png
 K 25
 svn:wc:ra_dav:version-url
 V 63
 /svn/shop/!svn/ver/3143/Source/appbusiness/img/contact_icon.png
+END
+ico-data2.png
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/shop/!svn/ver/2348/Source/appbusiness/img/ico-data2.png
 END
 work-tab-02.png
 K 25
@@ -177,17 +177,17 @@ svn:wc:ra_dav:version-url
 V 57
 /svn/shop/!svn/ver/2284/Source/appbusiness/img/starky.png
 END
-icon_map.png
-K 25
-svn:wc:ra_dav:version-url
-V 59
-/svn/shop/!svn/ver/2284/Source/appbusiness/img/icon_map.png
-END
 starsy.png
 K 25
 svn:wc:ra_dav:version-url
 V 57
 /svn/shop/!svn/ver/2284/Source/appbusiness/img/starsy.png
+END
+icon_map.png
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/shop/!svn/ver/2284/Source/appbusiness/img/icon_map.png
 END
 sysmsg.png
 K 25
@@ -211,7 +211,7 @@ loginLogo.png
 K 25
 svn:wc:ra_dav:version-url
 V 60
-/svn/shop/!svn/ver/3245/Source/appbusiness/img/loginLogo.png
+/svn/shop/!svn/ver/3778/Source/appbusiness/img/loginLogo.png
 END
 work_footer-03-active.png
 K 25
@@ -375,23 +375,17 @@ svn:wc:ra_dav:version-url
 V 64
 /svn/shop/!svn/ver/2348/Source/appbusiness/img/ico-data01.sprite
 END
-mine_cash_panel.png
-K 25
-svn:wc:ra_dav:version-url
-V 66
-/svn/shop/!svn/ver/2284/Source/appbusiness/img/mine_cash_panel.png
-END
 loginPhoneCode-ico.png
 K 25
 svn:wc:ra_dav:version-url
 V 69
 /svn/shop/!svn/ver/3245/Source/appbusiness/img/loginPhoneCode-ico.png
 END
-evaluate.png
+mine_cash_panel.png
 K 25
 svn:wc:ra_dav:version-url
-V 59
-/svn/shop/!svn/ver/2298/Source/appbusiness/img/evaluate.png
+V 66
+/svn/shop/!svn/ver/2284/Source/appbusiness/img/mine_cash_panel.png
 END
 stark2.png
 K 25
@@ -399,17 +393,17 @@ svn:wc:ra_dav:version-url
 V 57
 /svn/shop/!svn/ver/2284/Source/appbusiness/img/stark2.png
 END
+evaluate.png
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/shop/!svn/ver/2298/Source/appbusiness/img/evaluate.png
+END
 work-postiom.png
 K 25
 svn:wc:ra_dav:version-url
 V 63
 /svn/shop/!svn/ver/3085/Source/appbusiness/img/work-postiom.png
-END
-ico-data-day2.png
-K 25
-svn:wc:ra_dav:version-url
-V 64
-/svn/shop/!svn/ver/2404/Source/appbusiness/img/ico-data-day2.png
 END
 stars2.png
 K 25
@@ -417,11 +411,11 @@ svn:wc:ra_dav:version-url
 V 57
 /svn/shop/!svn/ver/2284/Source/appbusiness/img/stars2.png
 END
-banner-.png
+ico-data-day2.png
 K 25
 svn:wc:ra_dav:version-url
-V 58
-/svn/shop/!svn/ver/3143/Source/appbusiness/img/banner-.png
+V 64
+/svn/shop/!svn/ver/2404/Source/appbusiness/img/ico-data-day2.png
 END
 ico-login-eye2.png
 K 25
@@ -429,17 +423,23 @@ svn:wc:ra_dav:version-url
 V 65
 /svn/shop/!svn/ver/2297/Source/appbusiness/img/ico-login-eye2.png
 END
-ico-index2.sprite
+banner-.png
 K 25
 svn:wc:ra_dav:version-url
-V 64
-/svn/shop/!svn/ver/2404/Source/appbusiness/img/ico-index2.sprite
+V 58
+/svn/shop/!svn/ver/3143/Source/appbusiness/img/banner-.png
 END
 partyStateIco0-ico.png
 K 25
 svn:wc:ra_dav:version-url
 V 69
 /svn/shop/!svn/ver/3245/Source/appbusiness/img/partyStateIco0-ico.png
+END
+ico-index2.sprite
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/shop/!svn/ver/2404/Source/appbusiness/img/ico-index2.sprite
 END
 partyStateIco1-ico.png
 K 25
@@ -471,17 +471,17 @@ svn:wc:ra_dav:version-url
 V 60
 /svn/shop/!svn/ver/2298/Source/appbusiness/img/star-dark.png
 END
-loginPhoneNum-ico.png
-K 25
-svn:wc:ra_dav:version-url
-V 68
-/svn/shop/!svn/ver/3245/Source/appbusiness/img/loginPhoneNum-ico.png
-END
 order-ListDate-ico.png
 K 25
 svn:wc:ra_dav:version-url
 V 69
 /svn/shop/!svn/ver/3085/Source/appbusiness/img/order-ListDate-ico.png
+END
+loginPhoneNum-ico.png
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/shop/!svn/ver/3245/Source/appbusiness/img/loginPhoneNum-ico.png
 END
 ico-data-M1.png
 K 25
@@ -597,17 +597,17 @@ svn:wc:ra_dav:version-url
 V 59
 /svn/shop/!svn/ver/3143/Source/appbusiness/img/customer.png
 END
-ico-data2-2.png
-K 25
-svn:wc:ra_dav:version-url
-V 62
-/svn/shop/!svn/ver/2348/Source/appbusiness/img/ico-data2-2.png
-END
 ico-data1.png
 K 25
 svn:wc:ra_dav:version-url
 V 60
 /svn/shop/!svn/ver/2348/Source/appbusiness/img/ico-data1.png
+END
+ico-data2-2.png
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/shop/!svn/ver/2348/Source/appbusiness/img/ico-data2-2.png
 END
 shareWB-ico.png
 K 25
@@ -615,17 +615,17 @@ svn:wc:ra_dav:version-url
 V 62
 /svn/shop/!svn/ver/3423/Source/appbusiness/img/shareWB-ico.png
 END
-work-tab-01.png
-K 25
-svn:wc:ra_dav:version-url
-V 62
-/svn/shop/!svn/ver/2284/Source/appbusiness/img/work-tab-01.png
-END
 ico-data3.png
 K 25
 svn:wc:ra_dav:version-url
 V 60
 /svn/shop/!svn/ver/2348/Source/appbusiness/img/ico-data3.png
+END
+work-tab-01.png
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/shop/!svn/ver/2284/Source/appbusiness/img/work-tab-01.png
 END
 work-tab-03.png
 K 25
@@ -633,17 +633,17 @@ svn:wc:ra_dav:version-url
 V 62
 /svn/shop/!svn/ver/3085/Source/appbusiness/img/work-tab-03.png
 END
-work-tab-05.png
-K 25
-svn:wc:ra_dav:version-url
-V 62
-/svn/shop/!svn/ver/3085/Source/appbusiness/img/work-tab-05.png
-END
 ico-login-pwd.png
 K 25
 svn:wc:ra_dav:version-url
 V 64
 /svn/shop/!svn/ver/2297/Source/appbusiness/img/ico-login-pwd.png
+END
+work-tab-05.png
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/shop/!svn/ver/3085/Source/appbusiness/img/work-tab-05.png
 END
 work-tab-07.png
 K 25
@@ -711,11 +711,11 @@ svn:wc:ra_dav:version-url
 V 66
 /svn/shop/!svn/ver/3143/Source/appbusiness/img/inforemind_icon.png
 END
-edition_icon.png
+info_icon.png
 K 25
 svn:wc:ra_dav:version-url
-V 63
-/svn/shop/!svn/ver/3143/Source/appbusiness/img/edition_icon.png
+V 60
+/svn/shop/!svn/ver/3143/Source/appbusiness/img/info_icon.png
 END
 icon_intro.png
 K 25
@@ -723,11 +723,11 @@ svn:wc:ra_dav:version-url
 V 61
 /svn/shop/!svn/ver/2284/Source/appbusiness/img/icon_intro.png
 END
-info_icon.png
+edition_icon.png
 K 25
 svn:wc:ra_dav:version-url
-V 60
-/svn/shop/!svn/ver/3143/Source/appbusiness/img/info_icon.png
+V 63
+/svn/shop/!svn/ver/3143/Source/appbusiness/img/edition_icon.png
 END
 home-header-bg.png
 K 25
@@ -741,17 +741,17 @@ svn:wc:ra_dav:version-url
 V 73
 /svn/shop/!svn/ver/2890/Source/appbusiness/img/account-bindBankCardBg.png
 END
-work-msg.png
-K 25
-svn:wc:ra_dav:version-url
-V 59
-/svn/shop/!svn/ver/2284/Source/appbusiness/img/work-msg.png
-END
 aboutydw_icon.png
 K 25
 svn:wc:ra_dav:version-url
 V 64
 /svn/shop/!svn/ver/3143/Source/appbusiness/img/aboutydw_icon.png
+END
+work-msg.png
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/shop/!svn/ver/2284/Source/appbusiness/img/work-msg.png
 END
 ico-bigdeng.png
 K 25
