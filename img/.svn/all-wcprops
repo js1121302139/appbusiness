@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 46
-/svn/shop/!svn/ver/3423/Source/appbusiness/img
+/svn/shop/!svn/ver/3778/Source/appbusiness/img
 END
 icon_tel.png
 K 25
@@ -314,6 +314,12 @@ K 25
 svn:wc:ra_dav:version-url
 V 68
 /svn/shop/!svn/ver/3245/Source/appbusiness/img/createPartyjt-ico.png
+END
+sharewxhy-ico.png
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/shop/!svn/ver/3854/Source/appbusiness/img/sharewxhy-ico.png
 END
 loginPwd-ico.png
 K 25
@@ -691,7 +697,7 @@ shareWX-ico.png
 K 25
 svn:wc:ra_dav:version-url
 V 62
-/svn/shop/!svn/ver/3423/Source/appbusiness/img/shareWX-ico.png
+/svn/shop/!svn/ver/3854/Source/appbusiness/img/shareWX-ico.png
 END
 close-icon.png
 K 25

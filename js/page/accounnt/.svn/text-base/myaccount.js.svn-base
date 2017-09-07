@@ -12,6 +12,7 @@ mui.init();
 			mui.confirm('是否退出登录,退出会清除部分的数据', '提示', ['取消', '确认'], function(e) {
 				if(e.index == 1) {
 					Fun_App.storagedata("token", " ");
+					Fun_App.storagedata("qrCodeSrc", null);
 					//关闭所有打开页面
 					for(var i = 1; i < allWebview.length; i++) {
 						plus.webview.close(allWebview[i].id);
@@ -157,10 +158,11 @@ mui.init();
 					"type": plus.os.name == "iOS" ? 2 : 1 //1 android；2 ios'
 				},
 				fun_Success: function(data) {
-					if(plus.runtime.version != '2.0.01') {
-						//document.querySelector("#newVersion").style.display = "block"
+					if(plus.runtime.version != data.version) {
+						document.querySelector("#newVersion").style.display = "block"
 					} else {
-						document.querySelector("#newVersion").innerText="2.0.01"
+						document.querySelector("#newVersion").style.display = "none"
+						document.querySelector("#Edition a").innerText += " "+plus.runtime.version
 					}
 				}
 			}

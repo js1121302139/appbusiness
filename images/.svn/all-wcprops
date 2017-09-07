@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 49
-/svn/shop/!svn/ver/3425/Source/appbusiness/images
+/svn/shop/!svn/ver/3811/Source/appbusiness/images
 END
 order-ListBg.png
 K 25
@@ -27,11 +27,35 @@ svn:wc:ra_dav:version-url
 V 70
 /svn/shop/!svn/ver/3143/Source/appbusiness/images/activityCenterBg.png
 END
+guidePage1.jpg
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/shop/!svn/ver/3811/Source/appbusiness/images/guidePage1.jpg
+END
 aboutyundui.png
 K 25
 svn:wc:ra_dav:version-url
 V 65
 /svn/shop/!svn/ver/3425/Source/appbusiness/images/aboutyundui.png
+END
+guidePage2.jpg
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/shop/!svn/ver/3811/Source/appbusiness/images/guidePage2.jpg
+END
+guidePage3.jpg
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/shop/!svn/ver/3811/Source/appbusiness/images/guidePage3.jpg
+END
+guidePage4.jpg
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/shop/!svn/ver/3811/Source/appbusiness/images/guidePage4.jpg
 END
 jsyh.png
 K 25
@@ -111,17 +135,17 @@ svn:wc:ra_dav:version-url
 V 66
 /svn/shop/!svn/ver/2890/Source/appbusiness/images/yunduifooter.png
 END
-detail_pic_01.png
-K 25
-svn:wc:ra_dav:version-url
-V 67
-/svn/shop/!svn/ver/2284/Source/appbusiness/images/detail_pic_01.png
-END
 zsyh.png
 K 25
 svn:wc:ra_dav:version-url
 V 58
 /svn/shop/!svn/ver/3143/Source/appbusiness/images/zsyh.png
+END
+detail_pic_01.png
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/shop/!svn/ver/2284/Source/appbusiness/images/detail_pic_01.png
 END
 login-bg.png
 K 25
@@ -129,17 +153,17 @@ svn:wc:ra_dav:version-url
 V 62
 /svn/shop/!svn/ver/3777/Source/appbusiness/images/login-bg.png
 END
-order-bg.png
-K 25
-svn:wc:ra_dav:version-url
-V 62
-/svn/shop/!svn/ver/3085/Source/appbusiness/images/order-bg.png
-END
 xyyh.png
 K 25
 svn:wc:ra_dav:version-url
 V 58
 /svn/shop/!svn/ver/3143/Source/appbusiness/images/xyyh.png
+END
+order-bg.png
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/shop/!svn/ver/3085/Source/appbusiness/images/order-bg.png
 END
 zxyh.png
 K 25
@@ -153,23 +177,17 @@ svn:wc:ra_dav:version-url
 V 59
 /svn/shop/!svn/ver/2519/Source/appbusiness/images/Thumbs.db
 END
-applySuccess-bg.png
-K 25
-svn:wc:ra_dav:version-url
-V 69
-/svn/shop/!svn/ver/3423/Source/appbusiness/images/applySuccess-bg.png
-END
 createPartylogo.png
 K 25
 svn:wc:ra_dav:version-url
 V 69
 /svn/shop/!svn/ver/3245/Source/appbusiness/images/createPartylogo.png
 END
-receivablesCode-bg.png
+applySuccess-bg.png
 K 25
 svn:wc:ra_dav:version-url
-V 72
-/svn/shop/!svn/ver/3245/Source/appbusiness/images/receivablesCode-bg.png
+V 69
+/svn/shop/!svn/ver/3423/Source/appbusiness/images/applySuccess-bg.png
 END
 integral.png
 K 25
@@ -177,17 +195,23 @@ svn:wc:ra_dav:version-url
 V 62
 /svn/shop/!svn/ver/2298/Source/appbusiness/images/integral.png
 END
-shuijiao.jpg
+receivablesCode-bg.png
 K 25
 svn:wc:ra_dav:version-url
-V 62
-/svn/shop/!svn/ver/2284/Source/appbusiness/images/shuijiao.jpg
+V 72
+/svn/shop/!svn/ver/3245/Source/appbusiness/images/receivablesCode-bg.png
 END
 monthlyEarnings-bg.png
 K 25
 svn:wc:ra_dav:version-url
 V 72
 /svn/shop/!svn/ver/3143/Source/appbusiness/images/monthlyEarnings-bg.png
+END
+shuijiao.jpg
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/shop/!svn/ver/2284/Source/appbusiness/images/shuijiao.jpg
 END
 budgetAdmin-bg.png
 K 25

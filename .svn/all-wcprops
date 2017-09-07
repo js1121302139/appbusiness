@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 42
-/svn/shop/!svn/ver/3507/Source/appbusiness
+/svn/shop/!svn/ver/3822/Source/appbusiness
 END
 .project
 K 25
@@ -25,11 +25,17 @@ login.html
 K 25
 svn:wc:ra_dav:version-url
 V 53
-/svn/shop/!svn/ver/3803/Source/appbusiness/login.html
+/svn/shop/!svn/ver/3806/Source/appbusiness/login.html
+END
+guidePage.html
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/shop/!svn/ver/3807/Source/appbusiness/guidePage.html
 END
 manifest.json
 K 25
 svn:wc:ra_dav:version-url
 V 56
-/svn/shop/!svn/ver/3783/Source/appbusiness/manifest.json
+/svn/shop/!svn/ver/3822/Source/appbusiness/manifest.json
 END

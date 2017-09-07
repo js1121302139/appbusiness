@@ -18,8 +18,8 @@
 
 			<div class="mui-content">
 				<div class="backCardsList">
-					<div :class="'backCards ' + item.bankNameSpell" v-for="(item,key) in pageData.data">
-						<p class="backCardNumber mui-text-right" v-text="item.bankCode">**** **** **** <b>1234</b></p>
+					<div :class="'backCards ' + item.bankNameSpell" v-for="(item,key) in pageData.data" @click="open(item.bankCardId)">
+						<p class="backCardNumber mui-text-right">**** **** **** ***** <b>{{item.bankCode | bankCode}}</b></p>
 					</div>
 					<!--div :class="'page ' + item " v-for="(item,key) in 6">
 						<p class="backCardNumber mui-text-right" v-text="item"><b>1234</b></p>
@@ -29,7 +29,7 @@
         </div>-->
 				</div>
 				<div class="addBankCar">
-					<a class="addBankCardBtn" @click="open" v-if="showBtn">
+					<a class="addBankCardBtn" @click="open('null')" v-if="showBtn">
 						<img src="../../img/addbankCard-ico.png" alt="">添加银行卡
 					</a>
 				</div>
@@ -45,7 +45,7 @@
 				data: function() {
 					return {
 						pageData: {},
-						showBtn: true
+						showBtn: false
 					}
 				},
 				created: function() {
@@ -53,8 +53,8 @@
 					mui.plusReady(function() {
 						_this.getCardLsit(function(resData) {
 							_this.pageData = resData;
-							if(resData.data.length != 0) {
-								_this.showBtn = !_this.showBtn
+							if(resData.data.length == 0) {
+								_this.showBtn = true;
 							}
 						});
 					})
@@ -71,18 +71,23 @@
 						}
 						Fun_App.ExAjax("merchantPerson/allBankCard", sendData)
 					},
-					open: function() {
+					open: function(id) {
 						mui.plusReady(function() {
-							Fun_App.openWin("./addBankCard.html", "pop-in", "")
+							Fun_App.openWin("./addBankCard.html", "pop-in", id)
 						})
 					}
 				},
 				computed: {
 					classObject: function(item) {
 						return "backCards" + item
-
+					}
+				},
+				filters:{
+					bankCode:function(val){
+						return val.substring(val.length-4);
 					}
 				}
+				
 			})
 		</script>
 	</body>

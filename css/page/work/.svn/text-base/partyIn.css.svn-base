@@ -515,6 +515,9 @@ table {
 .shareShowBox .shareShowBoxItem .link {
   background: url(../../../img/shareLink-ico.png) center center no-repeat;
 }
+.shareShowBox .shareShowBoxItem .wxhy {
+  background: url(../../../img/sharewxhy-ico.png) center center no-repeat;
+}
 .shareShowBox .shareShowBoxItem .shareShowBoxItem-ico {
   display: flex;
   flex: 1;

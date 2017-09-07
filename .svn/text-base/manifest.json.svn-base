@@ -5,9 +5,9 @@
 		"iPad"
 	],
 	"id": "H5CA1B6A0",/*应用的标识，创建应用时自动生成，勿手动修改*/
-	"name": "App.Business.CloudCash",/*应用名称，程序桌面图标名称*/
+	"name": "兑咖联盟",/*应用名称，程序桌面图标名称*/
 	"version": {
-		"name": "1.0.0",/*应用版本名称*/
+		"name": "1.1.0",/*应用版本名称*/
 		"code": "83"
 	},
 	"description": "",/*应用描述信息*/
@@ -60,9 +60,7 @@
 		"Invocation": {
 			"description": "使用Native.js能力"
 		},
-		"Messaging": {
-			"description": "访问通讯能力"
-		},
+		
 		"Orientation": {
 			"description": "访问方向感应器"
 		},
@@ -119,7 +117,7 @@
 		"runmode": "liberate",/*应用的首次启动运行模式，可取liberate或normal，liberate模式在第一次启动时将解压应用资源（Android平台File API才可正常访问_www目录）*/
 		"signature": "Sk9JTiBVUyBtYWlsdG86aHIyMDEzQGRjbG91ZC5pbw==",/*可选，保留给应用签名，暂不使用*/
 		"distribute": {
-			"plugins": {"statics":{"umeng":{"appkey_ios":"","channelid_ios":"","appkey_android":"","channelid_android":""}},"share":{"qq":{"appid":"","description":"QQ分享"},"sina":{"appkey":"","appsecret":"","redirect_uri":"","description":"可选，新浪微博分享"},"weixin":{"appid":"","appsecret":"","description":"可选，微信分享"},"tencent":{"appkey":"","appsecret":"","redirect_uri":"","description":"可选，腾讯微博分享"}},
+			"plugins": {"statics":{"umeng":{"appkey_ios":"5955f7e5a40fa352b9001b38","channelid_ios":"ios","appkey_android":"5955f5e67f2c743f53001127","channelid_android":"duika"}},"share":{"sina":{"appkey":"2923147665","appsecret":"5a675d4a19db07979501e04e33a23966","redirect_uri":"http://www.yunduiwang.com","description":"可选，新浪微博分享"},"weixin":{"appid":"wxfae24d7c2ce1591a","appsecret":"fdf72ac7783f3f4a1d05027d41e97066","description":"可选，微信分享"}},
 				"push": {"igexin":{"appid":"7hOl1582exARBEMqJ2QVn5","appkey":"9iOUsPVcdT9QRj5QrZgIq8","appsecret":"ESzagSY31h7CKKZJCdUQw1"}}
 			},
 			"apple": {
@@ -146,63 +144,63 @@
 					"prerendered": true, /*应用图标是否已经高亮处理，在iOS6及以下设备上有效*/
 					"auto": "", /*应用图标，分辨率：512x512，用于自动生成各种尺寸程序图标*/
 					"iphone": {
-						"normal": "",/*iPhone普通屏幕程序图标，分辨率：57x57*/
-						"retina": "",/*iPhone高分屏程序图标，分辨率：114x114*/
-						"retina7": "",/*iPhone iOS7高分屏程序图标，分辨率：120x120*/
-						"spotlight-normal": "", /*iPhone Spotlight搜索程序图标，分辨率：29x29*/
-						"spotlight-retina": "", /*iPhone高分屏Spotlight搜索程序图标，分辨率：58x58*/
-						"spotlight-retina7": "",/*iPhone iOS7高分屏Spotlight搜索程序图标，分辨率：80x80*/
-						"settings-normal": "", /*iPhone设置页面程序图标，分辨率：29x29*/
-						"settings-retina": ""
+						"normal": "unpackage/res/icons/57x57.png",/*iPhone普通屏幕程序图标，分辨率：57x57*/
+						"retina": "unpackage/res/icons/114x114.png",/*iPhone高分屏程序图标，分辨率：114x114*/
+						"retina7": "unpackage/res/icons/120x120.png",/*iPhone iOS7高分屏程序图标，分辨率：120x120*/
+						"spotlight-normal": "unpackage/res/icons/29x29.png", /*iPhone Spotlight搜索程序图标，分辨率：29x29*/
+						"spotlight-retina": "unpackage/res/icons/58x58.png", /*iPhone高分屏Spotlight搜索程序图标，分辨率：58x58*/
+						"spotlight-retina7": "unpackage/res/icons/80x80.png",/*iPhone iOS7高分屏Spotlight搜索程序图标，分辨率：80x80*/
+						"settings-normal": "unpackage/res/icons/29x29.png", /*iPhone设置页面程序图标，分辨率：29x29*/
+						"settings-retina": "unpackage/res/icons/58x58.png","retina8":"unpackage/res/icons/180x180.png","settings-retina8":"unpackage/res/icons/87x87.png"
 					},
 					"ipad": {
-						"normal": "", /*iPad普通屏幕程序图标，分辨率：72x72*/
-						"retina": "", /*iPad高分屏程序图标，分辨率：144x144*/
-						"normal7": "", /*iPad iOS7程序图标，分辨率：76x76*/
-						"retina7": "", /*iPad iOS7高分屏程序图标，分辨率：152x152*/
-						"spotlight-normal": "", /*iPad Spotlight搜索程序图标，分辨率：50x50*/
-						"spotlight-retina": "", /*iPad高分屏Spotlight搜索程序图标，分辨率：100x100*/
-						"spotlight-normal7": "",/*iPad iOS7 Spotlight搜索程序图标，分辨率：40x40*/
-						"spotlight-retina7": "",/*iPad iOS7高分屏Spotlight搜索程序图标，分辨率：80x80*/
-						"settings-normal": "",/*iPad设置页面程序图标，分辨率：29x29*/
-						"settings-retina": ""
+						"normal": "unpackage/res/icons/72x72.png", /*iPad普通屏幕程序图标，分辨率：72x72*/
+						"retina": "unpackage/res/icons/144x144.png", /*iPad高分屏程序图标，分辨率：144x144*/
+						"normal7": "unpackage/res/icons/76x76.png", /*iPad iOS7程序图标，分辨率：76x76*/
+						"retina7": "unpackage/res/icons/152x152.png", /*iPad iOS7高分屏程序图标，分辨率：152x152*/
+						"spotlight-normal": "unpackage/res/icons/50x50.png", /*iPad Spotlight搜索程序图标，分辨率：50x50*/
+						"spotlight-retina": "unpackage/res/icons/100x100.png", /*iPad高分屏Spotlight搜索程序图标，分辨率：100x100*/
+						"spotlight-normal7": "unpackage/res/icons/40x40.png",/*iPad iOS7 Spotlight搜索程序图标，分辨率：40x40*/
+						"spotlight-retina7": "unpackage/res/icons/80x80.png",/*iPad iOS7高分屏Spotlight搜索程序图标，分辨率：80x80*/
+						"settings-normal": "unpackage/res/icons/29x29.png",/*iPad设置页面程序图标，分辨率：29x29*/
+						"settings-retina": "unpackage/res/icons/58x58.png"
 					}
 				},
 				"android": {
-					"mdpi": "", /*普通屏程序图标，分辨率：48x48*/
-					"ldpi": "", /*大屏程序图标，分辨率：48x48*/
-					"hdpi": "", /*高分屏程序图标，分辨率：72x72*/
-					"xhdpi": "",/*720P高分屏程序图标，分辨率：96x96*/
-					"xxhdpi": ""
+					"mdpi": "unpackage/res/icons/48x48.png", /*普通屏程序图标，分辨率：48x48*/
+					"ldpi": "unpackage/res/icons/48x48.png", /*大屏程序图标，分辨率：48x48*/
+					"hdpi": "unpackage/res/icons/72x72.png", /*高分屏程序图标，分辨率：72x72*/
+					"xhdpi": "unpackage/res/icons/96x96.png",/*720P高分屏程序图标，分辨率：96x96*/
+					"xxhdpi": "unpackage/res/icons/144x144.png","xxxhdpi":"unpackage/res/icons/192x192.png"
 				}
 			},
 			"splashscreen": {
 				"ios": {
 					"iphone": {
 						"default": "", /*iPhone3启动图片选，分辨率：320x480*/
-						"retina35": "",/*3.5英寸设备(iPhone4)启动图片，分辨率：640x960*/
-						"retina40": ""
+						"retina35": "D:/云兑网/云兑网UI/启动页/启动页/ios/启动页640960 拷贝.png",/*3.5英寸设备(iPhone4)启动图片，分辨率：640x960*/
+						"retina40": "D:/云兑网/云兑网UI/启动页/启动页/ios/启动页6401136 拷贝.png","retina55":"D:/云兑网/云兑网UI/启动页/启动页/ios/启动页12422208 拷贝.png","retina47":"D:/云兑网/云兑网UI/启动页/启动页/ios/启动页7501334.png","retina55l":"D:/云兑网/云兑网UI/启动页/启动页/ios/启动页7501334.png"
 					},
 					"ipad": {
-						"portrait": "", /*iPad竖屏启动图片，分辨率：768x1004*/
-						"portrait-retina": "",/*iPad高分屏竖屏图片，分辨率：1536x2008*/
-						"landscape": "", /*iPad横屏启动图片，分辨率：1024x748*/
-						"landscape-retina": "", /*iPad高分屏横屏启动图片，分辨率：2048x1496*/
-						"portrait7": "", /*iPad iOS7竖屏启动图片，分辨率：768x1024*/
-						"portrait-retina7": "",/*iPad iOS7高分屏竖屏图片，分辨率：1536x2048*/
-						"landscape7": "", /*iPad iOS7横屏启动图片，分辨率：1024x768*/
-						"landscape-retina7": ""
+						"portrait": "D:/云兑网/云兑网UI/启动页/启动页/ios/启动页7501334.png", /*iPad竖屏启动图片，分辨率：768x1004*/
+						"portrait-retina": "D:/云兑网/云兑网UI/启动页/启动页/ios/启动页7501334.png",/*iPad高分屏竖屏图片，分辨率：1536x2008*/
+						"landscape": "D:/云兑网/云兑网UI/启动页/启动页/ios/启动页7501334.png", /*iPad横屏启动图片，分辨率：1024x748*/
+						"landscape-retina": "D:/云兑网/云兑网UI/启动页/启动页/ios/启动页7501334.png", /*iPad高分屏横屏启动图片，分辨率：2048x1496*/
+						"portrait7": "D:/云兑网/云兑网UI/启动页/启动页/ios/启动页7501334.png", /*iPad iOS7竖屏启动图片，分辨率：768x1024*/
+						"portrait-retina7": "D:/云兑网/云兑网UI/启动页/启动页/ios/启动页7501334.png",/*iPad iOS7高分屏竖屏图片，分辨率：1536x2048*/
+						"landscape7": "D:/云兑网/云兑网UI/启动页/启动页/ios/启动页7501334.png", /*iPad iOS7横屏启动图片，分辨率：1024x768*/
+						"landscape-retina7": "D:/云兑网/云兑网UI/启动页/启动页/ios/启动页7501334.png"
 					}
 				},
 				"android": {
 					"mdpi": "", /*普通屏启动图片，分辨率：240x282*/
 					"ldpi": "", /*大屏启动图片，分辨率：320x442*/
-					"hdpi": "", /*高分屏启动图片，分辨率：480x762*/
-					"xhdpi": "", /*720P高分屏启动图片，分辨率：720x1242*/
-					"xxhdpi": ""
+					"hdpi": "D:/云兑网/云兑网UI/启动页/启动页/安卓/启动页480762 拷贝.png", /*高分屏启动图片，分辨率：480x762*/
+					"xhdpi": "D:/云兑网/云兑网UI/启动页/启动页/安卓/启动页7201242 拷贝.png", /*720P高分屏启动图片，分辨率：720x1242*/
+					"xxhdpi": "D:/云兑网/云兑网UI/启动页/启动页/安卓/启动页10801882 拷贝.png"
 				}
 			},
-			"debug": true
+			"debug": false
 		}
 	},
 	"dependencies": {
@@ -1048,5 +1046,19 @@
 			]
 		}
 	},
-	"fullscreen": false
+	"fullscreen": false,
+	"unpackage":[
+	  "css/page/work/applysettlement.less",
+	  "css/page/work/home.less",
+	  "css/page/work/msgcenter.less",
+	  "css/page/work/myincome.less",
+	  "css/page/work/myuser.less",
+	  "css/page/work/receivablesCode.less",
+	  "css/page/common.less",
+	  "css/page/textarea.less",
+	  "css/mui.css",
+	  "img/Thumbs.db",
+	  "img/work-select-1.png",
+	  "img/work-select-2.png"
+	]
 }

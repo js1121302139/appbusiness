@@ -1,0 +1,1237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="29883c8d-8a3e-42e9-9653-e783974a4752" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/login-bg.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/partyCard-bg.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/receivablesCode-bg.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/orderQuestion-ico.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/partyStateIco0-ico.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/partyStateIco1-ico.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/partyStateIcoshare-ico.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/partysmall-ico.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/unpackage/release" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/unpackage/release/H5CA1B6A0_0714201138.apk" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/page/repwd.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/unpackage/.dependencies" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/copy/common.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/copy/common.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/copy/login.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/copy/login.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/copy/repwd.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/copy/repwd.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/copy" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.project" afterPath="$PROJECT_DIR$/.project" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/page/account/aboutyundui.css" afterPath="$PROJECT_DIR$/css/page/account/aboutyundui.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/page/account/account.css" afterPath="$PROJECT_DIR$/css/page/account/account.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/page/account/addBankCard.css" afterPath="$PROJECT_DIR$/css/page/account/addBankCard.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/page/account/bindBankCard.css" afterPath="$PROJECT_DIR$/css/page/account/bindBankCard.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/page/account/bindweixin.css" afterPath="$PROJECT_DIR$/css/page/account/bindweixin.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/page/account/helpCenter.css" afterPath="$PROJECT_DIR$/css/page/account/helpCenter.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/page/account/safeCenter.css" afterPath="$PROJECT_DIR$/css/page/account/safeCenter.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/page/account/safelogin.css" afterPath="$PROJECT_DIR$/css/page/account/safelogin.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/page/account/safepay.css" afterPath="$PROJECT_DIR$/css/page/account/safepay.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/page/common.css" afterPath="$PROJECT_DIR$/css/page/common.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/page/common.less" afterPath="$PROJECT_DIR$/css/page/common.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/page/login.css" afterPath="$PROJECT_DIR$/css/page/login.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/page/login.less" afterPath="$PROJECT_DIR$/css/page/login.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/page/order/myorder.css" afterPath="$PROJECT_DIR$/css/page/order/myorder.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/page/order/myorder.less" afterPath="$PROJECT_DIR$/css/page/order/myorder.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/page/order/orderdentail.css" afterPath="$PROJECT_DIR$/css/page/order/orderdentail.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/page/order/orderdentail.less" afterPath="$PROJECT_DIR$/css/page/order/orderdentail.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/page/work/activityCenter.css" afterPath="$PROJECT_DIR$/css/page/work/activityCenter.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/page/work/activityCenter.less" afterPath="$PROJECT_DIR$/css/page/work/activityCenter.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/page/work/addSonAccount.css" afterPath="$PROJECT_DIR$/css/page/work/addSonAccount.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/page/work/applysettlement.css" afterPath="$PROJECT_DIR$/css/page/work/applysettlement.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/page/work/cashsuccess.css" afterPath="$PROJECT_DIR$/css/page/work/cashsuccess.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/page/work/changeShop.css" afterPath="$PROJECT_DIR$/css/page/work/changeShop.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/page/work/createacrivity.css" afterPath="$PROJECT_DIR$/css/page/work/createacrivity.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/page/work/dataAnalysis.css" afterPath="$PROJECT_DIR$/css/page/work/dataAnalysis.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/page/work/detailinfo.css" afterPath="$PROJECT_DIR$/css/page/work/detailinfo.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/page/work/evaluatemange.css" afterPath="$PROJECT_DIR$/css/page/work/evaluatemange.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/page/work/home.css" afterPath="$PROJECT_DIR$/css/page/work/home.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/page/work/jsdentail.css" afterPath="$PROJECT_DIR$/css/page/work/jsdentail.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/page/work/messageArticle.css" afterPath="$PROJECT_DIR$/css/page/work/messageArticle.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/page/work/monthlyEarnings.css" afterPath="$PROJECT_DIR$/css/page/work/monthlyEarnings.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/page/work/msgcenter.css" afterPath="$PROJECT_DIR$/css/page/work/msgcenter.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/page/work/myincome.css" afterPath="$PROJECT_DIR$/css/page/work/myincome.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/page/work/myincome.less" afterPath="$PROJECT_DIR$/css/page/work/myincome.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/page/work/myshop.css" afterPath="$PROJECT_DIR$/css/page/work/myshop.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/page/work/myuser.css" afterPath="$PROJECT_DIR$/css/page/work/myuser.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/page/work/myuser.less" afterPath="$PROJECT_DIR$/css/page/work/myuser.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/page/work/promotionAward.css" afterPath="$PROJECT_DIR$/css/page/work/promotionAward.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/page/work/receivablesCode.css" afterPath="$PROJECT_DIR$/css/page/work/receivablesCode.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/page/work/shareprofit.css" afterPath="$PROJECT_DIR$/css/page/work/shareprofit.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/page/work/teamAdmin.css" afterPath="$PROJECT_DIR$/css/page/work/teamAdmin.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/page/work/teamAdmin.less" afterPath="$PROJECT_DIR$/css/page/work/teamAdmin.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/common.js" afterPath="$PROJECT_DIR$/js/common.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/muihelper.js" afterPath="$PROJECT_DIR$/js/muihelper.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/page/order/myorder.js" afterPath="$PROJECT_DIR$/js/page/order/myorder.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/page/order/orderdentail.js" afterPath="$PROJECT_DIR$/js/page/order/orderdentail.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/page/work/activityCenter.js" afterPath="$PROJECT_DIR$/js/page/work/activityCenter.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/page/work/applysettlement.js" afterPath="$PROJECT_DIR$/js/page/work/applysettlement.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/page/work/evaluatemange.js" afterPath="$PROJECT_DIR$/js/page/work/evaluatemange.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/page/work/home.js" afterPath="$PROJECT_DIR$/js/page/work/home.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/page/work/jsdentail.js" afterPath="$PROJECT_DIR$/js/page/work/jsdentail.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/page/work/monthlyEarnings.js" afterPath="$PROJECT_DIR$/js/page/work/monthlyEarnings.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/page/work/msgcenter.js" afterPath="$PROJECT_DIR$/js/page/work/msgcenter.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/page/work/myincome.js" afterPath="$PROJECT_DIR$/js/page/work/myincome.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/page/work/myuser.js" afterPath="$PROJECT_DIR$/js/page/work/myuser.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/page/work/promotionAward.js" afterPath="$PROJECT_DIR$/js/page/work/promotionAward.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/page/work/promotiondentail.js" afterPath="$PROJECT_DIR$/js/page/work/promotiondentail.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/page/work/shareprofit.js" afterPath="$PROJECT_DIR$/js/page/work/shareprofit.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/login.html" afterPath="$PROJECT_DIR$/login.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manifest.json" afterPath="$PROJECT_DIR$/manifest.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page/order/myorder.html" afterPath="$PROJECT_DIR$/page/order/myorder.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page/order/orderdentail.html" afterPath="$PROJECT_DIR$/page/order/orderdentail.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page/work/activityCenter.html" afterPath="$PROJECT_DIR$/page/work/activityCenter.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page/work/applysettlement.html" afterPath="$PROJECT_DIR$/page/work/applysettlement.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page/work/createactivity.html" afterPath="$PROJECT_DIR$/page/work/createactivity.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page/work/evaluatemange.html" afterPath="$PROJECT_DIR$/page/work/evaluatemange.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page/work/home.html" afterPath="$PROJECT_DIR$/page/work/home.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page/work/jsdentail.html" afterPath="$PROJECT_DIR$/page/work/jsdentail.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page/work/monthlyEarnings.html" afterPath="$PROJECT_DIR$/page/work/monthlyEarnings.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page/work/msgcenter.html" afterPath="$PROJECT_DIR$/page/work/msgcenter.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page/work/myincome.html" afterPath="$PROJECT_DIR$/page/work/myincome.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page/work/promotionAward.html" afterPath="$PROJECT_DIR$/page/work/promotionAward.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page/work/promotiondentail.html" afterPath="$PROJECT_DIR$/page/work/promotiondentail.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page/work/shareprofit.html" afterPath="$PROJECT_DIR$/page/work/shareprofit.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page/work/teamAdmin.html" afterPath="$PROJECT_DIR$/page/work/teamAdmin.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/repwd.html" afterPath="$PROJECT_DIR$/repwd.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/unpackage/.confirmed_dependencies" afterPath="$PROJECT_DIR$/unpackage/.confirmed_dependencies" />
+    </list>
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <splitter split-orientation="horizontal" split-proportion="0.8096544">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="partyAdmin.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/page/work/partyAdmin.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="1680">
+                  <caret line="80" column="33" lean-forward="false" selection-start-line="80" selection-start-column="33" selection-end-line="80" selection-end-column="33" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="login.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/login.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="2415">
+                  <caret line="115" column="72" lean-forward="false" selection-start-line="115" selection-start-column="28" selection-end-line="115" selection-end-column="72" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="teamAdmin.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/page/work/teamAdmin.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="966">
+                  <caret line="46" column="10" lean-forward="false" selection-start-line="46" selection-start-column="10" selection-end-line="46" selection-end-column="10" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="myuser.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/page/work/myuser.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="1533">
+                  <caret line="73" column="62" lean-forward="false" selection-start-line="73" selection-start-column="62" selection-end-line="73" selection-end-column="62" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="myuser.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/js/page/work/myuser.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="1113">
+                  <caret line="66" column="30" lean-forward="false" selection-start-line="66" selection-start-column="30" selection-end-line="66" selection-end-column="30" />
+                  <folding>
+                    <element signature="n#!!block;n#sendMsg#0" expanded="false" />
+                    <element signature="e#3177#3433#0" expanded="false" />
+                    <element signature="e#3485#3564#0" expanded="false" />
+                    <element signature="e#3618#3644#0" expanded="false" />
+                    <marker date="1502801037760" expanded="true" signature="3280:3422" ph="{...}" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="createParty.html" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/page/work/createParty.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="287">
+                  <caret line="382" column="25" lean-forward="true" selection-start-line="382" selection-start-column="25" selection-end-line="382" selection-end-column="25" />
+                  <folding>
+                    <element signature="e#6153#6684#0" expanded="false" />
+                    <element signature="e#6700#7156#0" expanded="false" />
+                    <element signature="e#7257#8118#0" expanded="false" />
+                    <element signature="e#8173#8706#0" expanded="false" />
+                    <element signature="e#8794#9606#0" expanded="false" />
+                    <element signature="e#9677#9952#0" expanded="false" />
+                    <element signature="e#10023#10239#0" expanded="false" />
+                    <element signature="e#10342#11365#0" expanded="false" />
+                    <element signature="e#11436#11608#0" expanded="false" />
+                    <element signature="e#11674#12344#0" expanded="false" />
+                    <element signature="e#12414#12697#0" expanded="false" />
+                    <element signature="e#12757#13047#0" expanded="false" />
+                    <element signature="e#13113#13202#0" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="promotiondentail.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/page/work/promotiondentail.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="399">
+                  <caret line="19" column="32" lean-forward="false" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="myorder.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/page/order/myorder.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="1932">
+                  <caret line="92" column="12" lean-forward="false" selection-start-line="92" selection-start-column="12" selection-end-line="94" selection-end-column="20" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="orderdentail.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/page/order/orderdentail.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="1008">
+                  <caret line="48" column="8" lean-forward="false" selection-start-line="48" selection-start-column="8" selection-end-line="48" selection-end-column="8" />
+                  <folding>
+                    <marker date="1502957259255" expanded="true" signature="2139:2145" ph="..." />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="repwd.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/repwd.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="1827">
+                  <caret line="87" column="31" lean-forward="false" selection-start-line="87" selection-start-column="31" selection-end-line="87" selection-end-column="31" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="createParty.less" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/css/page/work/createParty.less">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="2520">
+                  <caret line="120" column="27" lean-forward="false" selection-start-line="120" selection-start-column="27" selection-end-line="120" selection-end-column="27" />
+                  <folding>
+                    <marker date="1503037405992" expanded="true" signature="8551:8554" ph="{...}" />
+                    <marker date="1503037405992" expanded="true" signature="8551:8556" ph="{...}" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="createParty.css" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/css/page/work/createParty.css">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="180">
+                  <caret line="10" column="10" lean-forward="false" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="common.js" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/js/common.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="392">
+                  <caret line="96" column="5" lean-forward="false" selection-start-line="96" selection-start-column="5" selection-end-line="96" selection-end-column="5" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="partySettlement.less" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/css/page/work/partySettlement.less">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="2184">
+                  <caret line="104" column="22" lean-forward="false" selection-start-line="104" selection-start-column="22" selection-end-line="104" selection-end-column="22" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="login.less" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/css/page/login.less">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="105">
+                  <caret line="5" column="23" lean-forward="false" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
+                  <folding>
+                    <element signature="e#356#531#0" expanded="false" />
+                    <element signature="e#544#1525#0" expanded="false" />
+                    <element signature="e#1543#1650#0" expanded="false" />
+                    <element signature="e#1665#1871#0" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="myorder.less" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/css/page/order/myorder.less">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="3024">
+                  <caret line="144" column="18" lean-forward="false" selection-start-line="144" selection-start-column="18" selection-end-line="144" selection-end-column="18" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="orderdentail.less" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/css/page/order/orderdentail.less">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="315">
+                  <caret line="73" column="6" lean-forward="false" selection-start-line="73" selection-start-column="6" selection-end-line="73" selection-end-column="6" />
+                  <folding>
+                    <element signature="e#265#1889#0" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="repwd.less" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/css/page/repwd.less">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="21">
+                  <caret line="1" column="14" lean-forward="false" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
+                  <folding>
+                    <element signature="e#356#531#0" expanded="false" />
+                    <element signature="e#2391#2597#0" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="teamAdmin.less" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/css/page/work/teamAdmin.less">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="336">
+                  <caret line="16" column="3" lean-forward="false" selection-start-line="16" selection-start-column="3" selection-end-line="16" selection-end-column="3" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="myorder.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/js/page/order/myorder.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="1239">
+                  <caret line="185" column="13" lean-forward="false" selection-start-line="185" selection-start-column="13" selection-end-line="185" selection-end-column="13" />
+                  <folding>
+                    <element signature="e#2597#4220#0" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="tsconfig.json" />
+        <option value="package_json" />
+        <option value="JavaScript File" />
+        <option value="Less File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>ordersList</find>
+      <find>.mine-top-box</find>
+      <find>topBar</find>
+      <find>userBox</find>
+      <find>$</find>
+      <find>alert(</find>
+      <find>myMoneyBox</find>
+      <find>cons</find>
+      <find>doc</find>
+    </findStrings>
+    <replaceStrings>
+      <replace />
+    </replaceStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/js/page/work/jsdentail.js" />
+        <option value="$PROJECT_DIR$/js/page/work/myincome.js" />
+        <option value="$PROJECT_DIR$/page/work/applysettlement.html" />
+        <option value="$PROJECT_DIR$/js/page/work/applysettlement.js" />
+        <option value="$PROJECT_DIR$/page/work/myincome.html" />
+        <option value="$PROJECT_DIR$/css/page/work/myincome.less" />
+        <option value="$PROJECT_DIR$/page/work/shareprofit.html" />
+        <option value="$PROJECT_DIR$/js/page/work/shareprofit.js" />
+        <option value="$PROJECT_DIR$/js/page/work/monthlyEarnings.js" />
+        <option value="$PROJECT_DIR$/page/work/monthlyEarnings.html" />
+        <option value="$PROJECT_DIR$/js/page/work/promotionAward.js" />
+        <option value="$PROJECT_DIR$/page/work/promotionAward.html" />
+        <option value="$PROJECT_DIR$/js/page/work/promotiondentail.js" />
+        <option value="$PROJECT_DIR$/css/page/work/myuser.less" />
+        <option value="$PROJECT_DIR$/page/work/evaluatemange.html" />
+        <option value="$PROJECT_DIR$/js/page/work/evaluatemange.js" />
+        <option value="$PROJECT_DIR$/page/work/createactivity.html" />
+        <option value="$PROJECT_DIR$/css/page/work/activityCenter.less" />
+        <option value="$PROJECT_DIR$/page/work/activityCenter.html" />
+        <option value="$PROJECT_DIR$/js/page/work/activityCenter.js" />
+        <option value="$PROJECT_DIR$/js/page/order/orderdentail.js" />
+        <option value="$PROJECT_DIR$/page/order/orderdentail.html" />
+        <option value="$PROJECT_DIR$/page/work/msgcenter.html" />
+        <option value="$PROJECT_DIR$/js/page/work/msgcenter.js" />
+        <option value="$PROJECT_DIR$/js/page/work/home.js" />
+        <option value="$PROJECT_DIR$/page/work/home.html" />
+        <option value="$PROJECT_DIR$/page/work/partyAdmin.html" />
+        <option value="$PROJECT_DIR$/css/page/work/partyAdmin.less" />
+        <option value="$PROJECT_DIR$/page/work/partyIn.html" />
+        <option value="$PROJECT_DIR$/css/page/work/partyIn.less" />
+        <option value="$PROJECT_DIR$/css/page/work/partySettlement.less" />
+        <option value="$PROJECT_DIR$/page/work/partySettlement.html" />
+        <option value="$PROJECT_DIR$/page/work/budgetAdmin.html" />
+        <option value="$PROJECT_DIR$/css/copy/login.less" />
+        <option value="$PROJECT_DIR$/css/copy/repwd.less" />
+        <option value="$PROJECT_DIR$/css/page/common.less" />
+        <option value="$PROJECT_DIR$/login.html" />
+        <option value="$PROJECT_DIR$/css/page/login.less" />
+        <option value="$PROJECT_DIR$/repwd.html" />
+        <option value="$PROJECT_DIR$/css/page/repwd.less" />
+        <option value="$PROJECT_DIR$/css/page/work/teamAdmin.less" />
+        <option value="$PROJECT_DIR$/page/work/promotiondentail.html" />
+        <option value="$PROJECT_DIR$/css/page/order/myorder.less" />
+        <option value="$PROJECT_DIR$/page/order/myorder.html" />
+        <option value="$PROJECT_DIR$/js/page/order/myorder.js" />
+        <option value="$PROJECT_DIR$/page/work/teamAdmin.html" />
+        <option value="$PROJECT_DIR$/js/page/work/myuser.js" />
+        <option value="$PROJECT_DIR$/css/page/work/createParty.less" />
+        <option value="$PROJECT_DIR$/css/page/work/createParty.css" />
+        <option value="$PROJECT_DIR$/js/common.js" />
+        <option value="$PROJECT_DIR$/page/work/createParty.html" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsFlowSettings">
+    <service-enabled>false</service-enabled>
+    <exe-path />
+    <annotation-enable>false</annotation-enable>
+    <other-services-enabled>false</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="1552" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="添加" />
+    <ConfirmationsSetting value="2" id="移除" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scratches" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="appbusiness" type="b2602c69:ProjectViewProjectNode" />
+              <item name="appbusiness" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="appbusiness" type="b2602c69:ProjectViewProjectNode" />
+              <item name="appbusiness" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="appbusiness" type="b2602c69:ProjectViewProjectNode" />
+              <item name="appbusiness" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+              <item name="page" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="appbusiness" type="b2602c69:ProjectViewProjectNode" />
+              <item name="appbusiness" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+              <item name="page" type="462c0819:PsiDirectoryNode" />
+              <item name="order" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="appbusiness" type="b2602c69:ProjectViewProjectNode" />
+              <item name="appbusiness" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+              <item name="page" type="462c0819:PsiDirectoryNode" />
+              <item name="work" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="appbusiness" type="b2602c69:ProjectViewProjectNode" />
+              <item name="appbusiness" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+              <item name="page" type="462c0819:PsiDirectoryNode" />
+              <item name="work" type="462c0819:PsiDirectoryNode" />
+              <item name="createParty.less" type="620a8d5e:NestingTreeNode" />
+            </path>
+            <path>
+              <item name="appbusiness" type="b2602c69:ProjectViewProjectNode" />
+              <item name="appbusiness" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="appbusiness" type="b2602c69:ProjectViewProjectNode" />
+              <item name="appbusiness" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="page" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="appbusiness" type="b2602c69:ProjectViewProjectNode" />
+              <item name="appbusiness" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="page" type="462c0819:PsiDirectoryNode" />
+              <item name="order" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="appbusiness" type="b2602c69:ProjectViewProjectNode" />
+              <item name="appbusiness" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="page" type="462c0819:PsiDirectoryNode" />
+              <item name="work" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="appbusiness" type="b2602c69:ProjectViewProjectNode" />
+              <item name="appbusiness" type="462c0819:PsiDirectoryNode" />
+              <item name="page" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="appbusiness" type="b2602c69:ProjectViewProjectNode" />
+              <item name="appbusiness" type="462c0819:PsiDirectoryNode" />
+              <item name="page" type="462c0819:PsiDirectoryNode" />
+              <item name="order" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="appbusiness" type="b2602c69:ProjectViewProjectNode" />
+              <item name="appbusiness" type="462c0819:PsiDirectoryNode" />
+              <item name="page" type="462c0819:PsiDirectoryNode" />
+              <item name="work" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="HbShouldOpenHtmlAsHb" value="" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="list.type.of.created.stylesheet" value="Less" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\js\AppData\Roaming\HBuilder\userprofiles\1121302139@qq.com\appbusiness\img" />
+      <recent name="C:\Users\js\AppData\Roaming\HBuilder\userprofiles\1121302139@qq.com\appbusiness\images" />
+      <recent name="C:\Users\js\AppData\Roaming\HBuilder\userprofiles\1121302139@qq.com\appbusiness\css\page\account" />
+      <recent name="C:\Users\js\AppData\Roaming\HBuilder\userprofiles\1121302139@qq.com\appbusiness\page\account" />
+      <recent name="K:\App.Business.CloudCash\page\work" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\js\AppData\Roaming\HBuilder\userprofiles\1121302139@qq.com\appbusiness\page\work\noHtml" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+    </configuration>
+    <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
+      <method />
+    </configuration>
+    <configuration default="true" type="DartTestRunConfigurationType" factoryName="Dart Test">
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerJest" factoryName="Jest">
+      <node-interpreter value="project" />
+      <working-dir value="" />
+      <envs />
+      <scope-kind value="ALL" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" working-dir="">
+      <method />
+    </configuration>
+    <configuration default="true" type="cucumber.js" factoryName="Cucumber.js">
+      <option name="cucumberJsArguments" value="" />
+      <option name="executablePath" />
+      <option name="filePath" />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <working-directory />
+      <pass-parent-env>true</pass-parent-env>
+      <envs />
+      <ui />
+      <extra-mocha-options />
+      <test-kind>DIRECTORY</test-kind>
+      <test-directory />
+      <recursive>false</recursive>
+      <method />
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration" cleanupOnStartRun="true">
+    <configuration>C:\Users\js\AppData\Roaming\Subversion</configuration>
+    <supportedVersion>125</supportedVersion>
+  </component>
+  <component name="SvnFileUrlMappingImpl">
+    <option name="myMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\Users\js\AppData\Roaming\HBuilder\userprofiles\1121302139@qq.com\appbusiness" />
+          <option name="myCopyRoot" value="C:\Users\js\AppData\Roaming\HBuilder\userprofiles\1121302139@qq.com\appbusiness" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
+    <option name="myMoreRealMappingRoots">
+      <list>
+        <SvnCopyRootSimple>
+          <option name="myVcsRoot" value="C:\Users\js\AppData\Roaming\HBuilder\userprofiles\1121302139@qq.com\appbusiness" />
+          <option name="myCopyRoot" value="C:\Users\js\AppData\Roaming\HBuilder\userprofiles\1121302139@qq.com\appbusiness" />
+        </SvnCopyRootSimple>
+      </list>
+    </option>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="29883c8d-8a3e-42e9-9653-e783974a4752" name="Default" comment="" />
+      <created>1494840890226</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1494840890226</updated>
+      <workItem from="1494840893311" duration="3428000" />
+      <workItem from="1495005556090" duration="2940000" />
+      <workItem from="1495083583287" duration="1253000" />
+      <workItem from="1495242312793" duration="82000" />
+      <workItem from="1495418232272" duration="345000" />
+      <workItem from="1495873798353" duration="5175000" />
+      <workItem from="1496122953846" duration="6018000" />
+      <workItem from="1496212389148" duration="1405000" />
+      <workItem from="1496218990785" duration="949000" />
+      <workItem from="1496382292995" duration="57000" />
+      <workItem from="1496714762885" duration="664000" />
+      <workItem from="1496716090663" duration="307000" />
+      <workItem from="1496734200780" duration="4085000" />
+      <workItem from="1496743009269" duration="1003000" />
+      <workItem from="1496800738336" duration="1028000" />
+      <workItem from="1496924143089" duration="2985000" />
+      <workItem from="1497004313290" duration="487000" />
+      <workItem from="1497151963267" duration="112000" />
+      <workItem from="1497152104028" duration="59000" />
+      <workItem from="1497255810711" duration="595000" />
+      <workItem from="1502176622082" duration="205000" />
+      <workItem from="1502186826972" duration="82000" />
+      <workItem from="1502193152381" duration="212000" />
+      <workItem from="1502195447659" duration="324000" />
+      <workItem from="1502195817925" duration="1212000" />
+      <workItem from="1502241575823" duration="8969000" />
+      <workItem from="1502258159691" duration="53268000" />
+      <workItem from="1502414818125" duration="24268000" />
+      <workItem from="1502615905363" duration="4110000" />
+      <workItem from="1502673023887" duration="43731000" />
+      <workItem from="1502775141725" duration="22881000" />
+      <workItem from="1502812018059" duration="1050000" />
+      <workItem from="1502813309338" duration="152000" />
+      <workItem from="1502898828853" duration="630000" />
+      <workItem from="1503040432102" duration="1280000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="195351000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="1358" y="-8" width="1936" height="1096" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.03951528" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32916668" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16649105" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$USER_HOME$" />
+    </ignored-roots>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/js/page/work/shareprofit.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1008">
+          <caret line="78" column="23" lean-forward="false" selection-start-line="78" selection-start-column="23" selection-end-line="78" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/page/work/myincome.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="443">
+          <caret line="26" column="27" lean-forward="false" selection-start-line="26" selection-start-column="27" selection-end-line="26" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/page/work/shareprofit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="40" column="25" lean-forward="false" selection-start-line="40" selection-start-column="12" selection-end-line="40" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/page/work/promotionAward.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="16" column="41" lean-forward="false" selection-start-line="16" selection-start-column="41" selection-end-line="16" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/page/work/jsdentail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="604">
+          <caret line="39" column="17" lean-forward="true" selection-start-line="22" selection-start-column="16" selection-end-line="39" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/page/work/promotiondentail.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="51" column="18" lean-forward="false" selection-start-line="51" selection-start-column="18" selection-end-line="51" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/page/work/myuser.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="588">
+          <caret line="85" column="24" lean-forward="false" selection-start-line="85" selection-start-column="24" selection-end-line="85" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/page/work/evaluatemange.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="28" column="9" lean-forward="false" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/stateBg2.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/page/work/activityCenter.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="194" column="13" lean-forward="false" selection-start-line="194" selection-start-column="5" selection-end-line="194" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/page/work/createactivity.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="534">
+          <caret line="47" column="31" lean-forward="false" selection-start-line="47" selection-start-column="31" selection-end-line="47" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/page/work/monthlyEarnings.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="81" column="0" lean-forward="false" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/page/work/evaluatemange.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="608">
+          <caret line="205" column="49" lean-forward="true" selection-start-line="205" selection-start-column="49" selection-end-line="205" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/page/work/promotionAward.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="131" column="37" lean-forward="false" selection-start-line="131" selection-start-column="21" selection-end-line="131" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/page/work/activityCenter.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="303">
+          <caret line="77" column="46" lean-forward="false" selection-start-line="77" selection-start-column="46" selection-end-line="77" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/page/work/activityCenter.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="154" column="25" lean-forward="true" selection-start-line="154" selection-start-column="25" selection-end-line="154" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/page/order/orderdentail.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="693">
+          <caret line="117" column="96" lean-forward="false" selection-start-line="117" selection-start-column="96" selection-end-line="117" selection-end-column="96" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/page/work/msgcenter.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1465">
+          <caret line="95" column="8" lean-forward="true" selection-start-line="95" selection-start-column="8" selection-end-line="96" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/page/work/home.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="534">
+          <caret line="107" column="71" lean-forward="true" selection-start-line="107" selection-start-column="71" selection-end-line="107" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/page/work/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="597">
+          <caret line="144" column="70" lean-forward="true" selection-start-line="144" selection-start-column="70" selection-end-line="144" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/page/work/messageArticle.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="37" column="10" lean-forward="false" selection-start-line="37" selection-start-column="10" selection-end-line="37" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/page/work/partyAdmin.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="666">
+          <caret line="119" column="22" lean-forward="false" selection-start-line="119" selection-start-column="22" selection-end-line="119" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/page/work/partyIn.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="2" selection-end-column="41" />
+          <folding>
+            <marker date="1502890780320" expanded="true" signature="77:81" ph="{...}" />
+            <marker date="1502890780320" expanded="true" signature="294:750" ph="{...}" />
+            <marker date="1502890780320" expanded="true" signature="310:748" ph="{...}" />
+            <marker date="1502890780320" expanded="true" signature="340:393" ph="{...}" />
+            <marker date="1502890780320" expanded="true" signature="399:502" ph="{...}" />
+            <marker date="1502890780320" expanded="true" signature="524:744" ph="{...}" />
+            <marker date="1502890780320" expanded="true" signature="571:738" ph="{...}" />
+            <marker date="1502890780320" expanded="true" signature="763:2289" ph="{...}" />
+            <marker date="1502890780320" expanded="true" signature="1009:1599" ph="{...}" />
+            <marker date="1502890780320" expanded="true" signature="1140:1354" ph="{...}" />
+            <marker date="1502890780320" expanded="true" signature="1375:1462" ph="{...}" />
+            <marker date="1502890780320" expanded="true" signature="1473:1595" ph="{...}" />
+            <marker date="1502890780320" expanded="true" signature="1617:1722" ph="{...}" />
+            <marker date="1502890780320" expanded="true" signature="1688:1718" ph="{...}" />
+            <marker date="1502890780320" expanded="true" signature="1742:2287" ph="{...}" />
+            <marker date="1502890780320" expanded="true" signature="1861:1960" ph="{...}" />
+            <marker date="1502890780320" expanded="true" signature="1982:2004" ph="{...}" />
+            <marker date="1502890780320" expanded="true" signature="2024:2104" ph="{...}" />
+            <marker date="1502890780320" expanded="true" signature="2121:2283" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/page/work/msgcenter.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="18" column="102" lean-forward="false" selection-start-line="18" selection-start-column="4" selection-end-line="18" selection-end-column="102" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/page/work/partyIn.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="22" column="26" lean-forward="false" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/page/work/myincome.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="406">
+          <caret line="90" column="0" lean-forward="false" selection-start-line="90" selection-start-column="0" selection-end-line="106" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/page/work/partySettlement.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2184">
+          <caret line="104" column="22" lean-forward="false" selection-start-line="104" selection-start-column="22" selection-end-line="104" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/page/work/partySettlement.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="47" column="42" lean-forward="false" selection-start-line="47" selection-start-column="42" selection-end-line="47" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/page/work/budgetAdmin.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="17" column="10" lean-forward="false" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/page/order/orderdentail.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="73" column="6" lean-forward="false" selection-start-line="73" selection-start-column="6" selection-end-line="73" selection-end-column="6" />
+          <folding>
+            <element signature="e#265#1889#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/copy/login.less" />
+    <entry file="file://$PROJECT_DIR$/css/copy/repwd.less" />
+    <entry file="file://$PROJECT_DIR$/css/page/common.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1188">
+          <caret line="66" column="36" lean-forward="false" selection-start-line="66" selection-start-column="36" selection-end-line="66" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/page/login.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="5" column="23" lean-forward="false" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
+          <folding>
+            <element signature="e#356#531#0" expanded="false" />
+            <element signature="e#544#1525#0" expanded="false" />
+            <element signature="e#1543#1650#0" expanded="false" />
+            <element signature="e#1665#1871#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/page/repwd.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="1" column="14" lean-forward="false" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
+          <folding>
+            <element signature="e#356#531#0" expanded="false" />
+            <element signature="e#2391#2597#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/repwd.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1827">
+          <caret line="87" column="31" lean-forward="false" selection-start-line="87" selection-start-column="31" selection-end-line="87" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2415">
+          <caret line="115" column="72" lean-forward="false" selection-start-line="115" selection-start-column="28" selection-end-line="115" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/page/order/orderdentail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1008">
+          <caret line="48" column="8" lean-forward="false" selection-start-line="48" selection-start-column="8" selection-end-line="48" selection-end-column="8" />
+          <folding>
+            <marker date="1502957259255" expanded="true" signature="2139:2145" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/page/work/promotiondentail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="19" column="32" lean-forward="false" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/page/order/myorder.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3024">
+          <caret line="144" column="18" lean-forward="false" selection-start-line="144" selection-start-column="18" selection-end-line="144" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/page/order/myorder.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1932">
+          <caret line="92" column="12" lean-forward="false" selection-start-line="92" selection-start-column="12" selection-end-line="94" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/page/order/myorder.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1239">
+          <caret line="185" column="13" lean-forward="false" selection-start-line="185" selection-start-column="13" selection-end-line="185" selection-end-column="13" />
+          <folding>
+            <element signature="e#2597#4220#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/page/work/teamAdmin.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="16" column="3" lean-forward="false" selection-start-line="16" selection-start-column="3" selection-end-line="16" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/page/work/partyAdmin.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1680">
+          <caret line="80" column="33" lean-forward="false" selection-start-line="80" selection-start-column="33" selection-end-line="80" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/page/work/teamAdmin.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="966">
+          <caret line="46" column="10" lean-forward="false" selection-start-line="46" selection-start-column="10" selection-end-line="46" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/page/work/myuser.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1533">
+          <caret line="73" column="62" lean-forward="false" selection-start-line="73" selection-start-column="62" selection-end-line="73" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/page/work/myuser.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1113">
+          <caret line="66" column="30" lean-forward="false" selection-start-line="66" selection-start-column="30" selection-end-line="66" selection-end-column="30" />
+          <folding>
+            <element signature="n#!!block;n#sendMsg#0" expanded="false" />
+            <element signature="e#3177#3433#0" expanded="false" />
+            <element signature="e#3485#3564#0" expanded="false" />
+            <element signature="e#3618#3644#0" expanded="false" />
+            <marker date="1502801037760" expanded="true" signature="3280:3422" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/page/work/createParty.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2520">
+          <caret line="120" column="27" lean-forward="false" selection-start-line="120" selection-start-column="27" selection-end-line="120" selection-end-column="27" />
+          <folding>
+            <marker date="1503037405992" expanded="true" signature="8551:8554" ph="{...}" />
+            <marker date="1503037405992" expanded="true" signature="8551:8556" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/page/work/createParty.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="10" lean-forward="false" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/common.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="392">
+          <caret line="96" column="5" lean-forward="false" selection-start-line="96" selection-start-column="5" selection-end-line="96" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/page/work/createParty.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="382" column="25" lean-forward="true" selection-start-line="382" selection-start-column="25" selection-end-line="382" selection-end-column="25" />
+          <folding>
+            <element signature="e#6153#6684#0" expanded="false" />
+            <element signature="e#6700#7156#0" expanded="false" />
+            <element signature="e#7257#8118#0" expanded="false" />
+            <element signature="e#8173#8706#0" expanded="false" />
+            <element signature="e#8794#9606#0" expanded="false" />
+            <element signature="e#9677#9952#0" expanded="false" />
+            <element signature="e#10023#10239#0" expanded="false" />
+            <element signature="e#10342#11365#0" expanded="false" />
+            <element signature="e#11436#11608#0" expanded="false" />
+            <element signature="e#11674#12344#0" expanded="false" />
+            <element signature="e#12414#12697#0" expanded="false" />
+            <element signature="e#12757#13047#0" expanded="false" />
+            <element signature="e#13113#13202#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

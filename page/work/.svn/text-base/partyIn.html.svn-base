@@ -43,11 +43,16 @@
 			</div>
 			<div class="mui-backdrop" @click="shareShowBox=!shareShowBox" v-show="shareShowBox"></div>
 			<div class="shareShowBox" v-show="shareShowBox">
-				<div class="shareShowBoxItem" @click="share(2)">
+				<div class="shareShowBoxItem" @click="share(2,'WXSceneTimeline')">
 					<div class="shareShowBoxItem-ico wx">
 
 					</div>
 					<p>微信</p>
+				</div>
+				<div class="shareShowBoxItem" @click="share(2,'WXSceneSession')">
+					<div class="shareShowBoxItem-ico wxhy">  
+					</div>
+					<p>好友</p>
 				</div>
 				<div class="shareShowBoxItem" @click="share(0)">
 					<div class="shareShowBoxItem-ico qq">
@@ -132,7 +137,7 @@
 						}
 						Fun_App.ExAjax("merchantParty/playKaDetail", sendData)
 					},
-					share: function(id) {
+					share: function(id,name) {
 						console.log(id)
 						console.log(JSON.stringify(this.shareServer))
 						var shareOption = this.shareServer[id];
@@ -142,7 +147,7 @@
 							content: this.pageData.theme,
 							href: "http://api.duikavip.com/api/resources/html/introduction.html?id="+_this.arcId+"&from=groupmessage&isappinstalled=1",
 							extra: {
-								scene: "WXSceneTimeline"
+								scene: name
 							}
 						}, function() {
 							alert("分享成功！");

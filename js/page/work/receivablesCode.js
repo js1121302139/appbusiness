@@ -1,23 +1,32 @@
 mui.plusReady(function() {
 	var qrCodeSrc = Fun_App.getdata("qrCodeSrc");
 	var qrCodeBox = document.getElementById("qrcode");
-	var qrcode = new QRCode(qrCodeBox, {
-		width: qrCodeBox.clientHeight,
-		height: qrCodeBox.clientWidth
-	});
 	//异步加载二维码效果还不错
 	setTimeout(function() {
-		if(qrCodeSrc == null) {
-			console.log(qrcode.makeCode(qrCode()));
-		} else {
-			qrCodeBox.querySelector("canvas").style.display = 'none';
-			qrCodeBox.querySelector("img").setAttribute("src", qrCodeSrc);
-			qrCodeBox.querySelector("img").style.display = 'block';
-
+	if(qrCodeSrc==null||qrCodeSrc=="null"){
+		var qrcode = new QRCode(qrCodeBox, {
+			width: qrCodeBox.clientHeight,
+			height: qrCodeBox.clientWidth
+		});
+		qrcode.makeCode(qrCode())
+		qrCodeBox.querySelector("img").onload=function(){
+			var src = qrCodeBox.querySelector("img").getAttribute("src")
+			Fun_App.storagedata("qrCodeSrc",src)
 		}
+	}else{
+		if(qrCodeSrc == null) {
+			console.log();
+		} else {
+			var img = document.createElement("img");
+			img.setAttribute("src",qrCodeSrc)
+			qrCodeBox.appendChild(img);
+			qrCodeBox.querySelector("img").style.display = 'block';
+		}
+	}
 	}, 0);
 	
-	setTimeout(getindexData(), 2000)
+	
+	setTimeout(getindexData(), 0)
 })
 
 function getindexData() {
