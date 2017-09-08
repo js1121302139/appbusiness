@@ -3,29 +3,26 @@ mui.plusReady(function() {
 	var qrCodeBox = document.getElementById("qrcode");
 	//异步加载二维码效果还不错
 	setTimeout(function() {
-	if(qrCodeSrc==null||qrCodeSrc=="null"){
-		var qrcode = new QRCode(qrCodeBox, {
-			width: qrCodeBox.clientHeight,
-			height: qrCodeBox.clientWidth
-		});
-		qrcode.makeCode(qrCode())
-		qrCodeBox.querySelector("img").onload=function(){
-			var src = qrCodeBox.querySelector("img").getAttribute("src")
-			Fun_App.storagedata("qrCodeSrc",src)
-		}
-	}else{
-		if(qrCodeSrc == null) {
-			console.log();
+		if(qrCodeSrc == null || qrCodeSrc == "null") {
+			var qrcode = new QRCode(qrCodeBox, {
+				width: qrCodeBox.clientHeight,
+				height: qrCodeBox.clientWidth
+			});
+			qrcode.makeCode(qrCode())
+			qrCodeBox.querySelector("img").onload = function() {
+				var src = qrCodeBox.querySelector("img").getAttribute("src")
+				Fun_App.storagedata("qrCodeSrc", src)
+				document.querySelector("#qrcodeLogo").style.display = "block";
+			}
 		} else {
 			var img = document.createElement("img");
-			img.setAttribute("src",qrCodeSrc)
+			img.setAttribute("src", qrCodeSrc)
 			qrCodeBox.appendChild(img);
 			qrCodeBox.querySelector("img").style.display = 'block';
+			document.querySelector("#qrcodeLogo").style.display="block";
 		}
-	}
 	}, 0);
-	
-	
+
 	setTimeout(getindexData(), 0)
 })
 

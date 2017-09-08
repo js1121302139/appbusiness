@@ -95,6 +95,7 @@
 
 									},
 									fun_Success: function(data) {
+										console.log(data)
 										if(data.success) { //登录成功
 											Fun_App.storagedata("token", data.data.token);
 											Fun_App.storagedata("jobCode", data.data.jobCode); //当前账户的角色等级

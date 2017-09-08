@@ -12,6 +12,7 @@ var picservice = 'http://www.yunduiwang.com:81/ejsimage';
 /*var strservicef = 'http://sj.duikavip.com/merchant/';
 var picservice =  'http://image.duikavip.com/ejsimage';*/
 
+var _self;
 /*
  * 主要的公共函数
  */ 
@@ -216,7 +217,6 @@ var Fun_App = {
 	 * 
 	 */
 	pulldownRefresh: function() {
-		var _self;
 		_self = plus.webview.currentWebview();
 		_self.setPullToRefresh({
 			support: true,

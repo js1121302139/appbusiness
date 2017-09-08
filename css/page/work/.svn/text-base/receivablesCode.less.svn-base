@@ -32,6 +32,9 @@ body {
     .mui-card-header {
         font-size: 1rem;
         color: #333;
+        &::after{
+            display: none;
+        }
         .merchantName {
             display: inline-block;
             text-indent: 0.62rem;
@@ -47,6 +50,7 @@ body {
         }
     }
     .qrcodeBox {
+        position: relative;
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
@@ -58,8 +62,18 @@ body {
         -ms-flex-pack: center;
         justify-content: center;
         #qrcode {
+            &>img:first-child{
+             position: absolute;
+                width: 50px;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                margin: auto;
+                display: none;
+        }
             img {
-                width: 100%;
+               width: 100%;
             }
         }
     }

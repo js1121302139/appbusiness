@@ -13,7 +13,7 @@ body {
     //background: linear-gradient(#00aeff, #218bea);
     //border-radius: 0 0 1.5rem 1.5rem;
     overflow: visible;
-    //顶部的消息提醒和二维码
+    //顶部的消息提醒和二维码 
     .funBar {
         position: absolute;
         width: 100%;
@@ -150,9 +150,6 @@ body {
                         height: 2.06rem;
                         background-color: #111;
                     }
-                    &:after:last-child{
-                        display: none;
-                    }
                     p {
                         flex: 1;
                         padding: 0.5rem 0 0.12rem 0;
@@ -162,6 +159,9 @@ body {
                     span {
                         flex: 1;
                     }
+                }
+                div:last-child:after{
+                    display: none;
                 }
                 .infoBoard {
                     

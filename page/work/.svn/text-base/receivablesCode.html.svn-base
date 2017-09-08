@@ -26,7 +26,10 @@
 				</div>
 				<!--内容区-->
 				<div class="mui-card-content qrcodeBox">
-					<div id="qrcode" style="width:18.75rem; height:18.75rem;"></div>
+					<div id="qrcode" style="width:18.75rem; height:18.75rem;">
+					<img id="qrcodeLogo" src="../../img/qrcode-ico.png" alt="" />
+						
+					</div>
 				</div>
 				<!--页脚，放置补充信息或支持的操作-->
 				<div class="card-footer mui-text-center">使用兑咖APP消费端扫一扫，向我付款</div>
@@ -41,7 +44,7 @@
 			var qrcode = new QRCode(qrCodeBox, {
 				width: qrCodeBox.clientHeight,
 				height: qrCodeBox.clientWidth
-			});
+			});  
 			if(false){				
 				qrcode.makeCode('null?type=2&inviterUserId=445&merchantId=538');
 			}else{
@@ -53,4 +56,3 @@
 
 	</body>
 
-</html>

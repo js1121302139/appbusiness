@@ -3,8 +3,8 @@
 
 	<head>
 		<meta charset="UTF-8">
-		<title></title>
-		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>兌咖-添加銀行卡</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
 		<link href="../../css/mui.min.css" rel="stylesheet" />
 		<link rel="stylesheet" href="../../css/mui.picker.min.css">
 		<link rel="stylesheet" href="../../css/mui.poppicker.css">
@@ -77,6 +77,7 @@
 					bankAddress: null,
 					showOutTime: false, // 显示倒计时
 					second: 90, // 总计时
+					bankCardAddress:null,// 这个是接口获取地址
 					isSeeCard: false
 				}
 			},
@@ -84,8 +85,7 @@
 				var _this = this;
 				mui.plusReady(function() {
 					var id = Fun_App.getextrasdata();
-					console.log(id)
-					if(id != null || id != 'null') {
+					if(id != null && id != 'null') {
 						_this.seeBankCard(function(resData) {
 							_this.pageData.bankUser = resData.bankUser
 							_this.pageData.bankName = resData.bankName
@@ -94,7 +94,12 @@
 						}, id)
 					} else {
 						_this.isSeeCard = true;
+						_this.getBankAddress(function(resData){
+							_this.bankCardAddress = resData.replace(/\\/g,'');
+							
+						})
 					}
+					
 				})
 			},
 			methods: {
@@ -131,17 +136,17 @@
 						_this.pageData.bankName = items[0].text;
 					});
 				},
-				// 银行的地址
+				// 添加银行的地址
 				bankAddr: function() {
 					var Add = new mui.PopPicker({
 						layer: 3
 					});
-					Add.setData(cityData3);
 					var _this = this;
+					Add.setData(JSON.parse(_this.bankCardAddress));
 					Add.show(function(items) {
-						_this.pageData.bankProvince = items[0].text;
-						_this.pageData.bankCity = items[1].text;
-						_this.pageData.bankArea = items[2].text;
+						_this.pageData.bankProvince = items[0].value;
+						_this.pageData.bankCity = items[1].value;
+						_this.pageData.bankArea = items[2].value;
 						_this.bankAddress = items[0].text + '-' + items[1].text + '-' + items[2].text
 					})
 				},
@@ -164,6 +169,19 @@
 					} else {
 						mui.toast('还有东西没有填写哦!')
 					}
+				},
+				// 获取银行地址
+				getBankAddress: function(callBack) {
+					var sendData = {
+						config: {
+							token: Fun_App.getdata("token")
+						},
+						fun_Success: function(data) {
+							console.log(Fun_App.getdata('token'))
+							callBack(data.data)
+						}
+					}
+					Fun_App.ExAjax("merchantPerson/getAllAddress", sendData)
 				},
 				// 查看銀行卡
 				seeBankCard: function(callBack, id) {

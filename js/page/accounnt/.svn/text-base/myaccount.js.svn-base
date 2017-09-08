@@ -173,7 +173,8 @@ mui.init();
 		function getInfodata() {
 			var myHeadImgBox = document.querySelector("#myHeadImg"),
 				myNameBox = document.querySelector("#myName"),
-				shopPeopleBox = document.querySelector("#shopPeople"),
+				feedbackBtnBox = document.querySelector("#feedbackBtn"),
+				callNumBox = document.querySelector(".callNum")
 				myPhoneNumBox = document.querySelector("#myphoneNum");
 			var sendData = {
 				config: {
@@ -183,12 +184,13 @@ mui.init();
 					myHeadImgBox.src = picservice + data.data.logoImg; //logo
 					myNameBox.innerText = data.data.personCharge;
 					myPhoneNumBox.innerText = data.data.personChargePhone;
-					shopPeopleBox.innerText = data.data.invitePhone;
-					shopPeopleBox.setAttribute("href", data.data.invitePhone)
+					feedbackBtnBox.querySelector(".shopPeople").innerText += data.data.invitePhone;
+					feedbackBtnBox.querySelector("a").setAttribute("href", data.data.invitePhone)
 				}
 			}
-			shopPeopleBox.addEventListener("tap", function() {
-				var callTel = this.getAttribute("href");
+			callNumBox.addEventListener("tap", function() {
+				var callTel = this.querySelector("a").getAttribute("href");
+				console.log(callTel)
 				plus.device.dial(callTel, true);
 			})
 			Fun_App.ExAjax("merchantPerson/index", sendData)

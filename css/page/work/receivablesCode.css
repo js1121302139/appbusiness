@@ -39,6 +39,7 @@ a {
 }
 input {
   font-size: 0.87rem;
+  -webkit-appearance: none;
 }
 .mui-input-group:before,
 .mui-input-group:after {
@@ -349,6 +350,7 @@ table {
   padding-top: 1.25rem;
   height: 4rem;
   box-shadow: 0 0.0625rem 0.375rem #ccc;
+  background-color: #fff;
 }
 .topBar .topBack-ico {
   display: inline-block;
@@ -399,6 +401,9 @@ body .mui-content {
   font-size: 1rem;
   color: #333;
 }
+.mui-card .mui-card-header::after {
+  display: none;
+}
 .mui-card .mui-card-header .merchantName {
   display: inline-block;
   text-indent: 0.62rem;
@@ -413,6 +418,7 @@ body .mui-content {
   width: 2.56rem;
 }
 .mui-card .qrcodeBox {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -423,6 +429,16 @@ body .mui-content {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
+}
+.mui-card .qrcodeBox #qrcode > img:first-child {
+  position: absolute;
+  width: 50px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  display: none;
 }
 .mui-card .qrcodeBox #qrcode img {
   width: 100%;

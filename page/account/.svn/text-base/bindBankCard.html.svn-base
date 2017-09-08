@@ -4,9 +4,16 @@
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
-		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
 		<link href="../../css/mui.min.css" rel="stylesheet" />
 		<link rel="stylesheet" type="text/css" href="../../css/page/account/bindBankCard.css" />
+		<script src="../../js/fas.js"></script>
+		<script>
+			//不知到為什麼這個頁面點擊會有延遲300ms
+			document.addEventListener('DOMContentLoaded', function() {
+				FastClick.attach(document.body);
+			}, false);
+		</script>
 	</head>
 
 	<body>

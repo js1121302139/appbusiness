@@ -169,6 +169,7 @@
 						setTimeout(function() {
 							_this.todayOrdersStatistics(function(resdata) {
 								if(resdata.data != null) {
+									_this.list.splice(0,1);
 									_this.list.unshift(resdata.data)
 								}
 							})
@@ -191,7 +192,6 @@
 							Fun_App.openWin("./orderdentail.html", 'pop-in', statisTime);
 						})
 					}
-
 				},
 				filters: {
 					cutTime: function(timer) {

@@ -39,6 +39,7 @@ a {
 }
 input {
   font-size: 0.87rem;
+  -webkit-appearance: none;
 }
 .mui-input-group:before,
 .mui-input-group:after {
@@ -495,9 +496,6 @@ body {
   height: 2.06rem;
   background-color: #111;
 }
-.header .shopCard .profit .infoBoard div:after:last-child {
-  display: none;
-}
 .header .shopCard .profit .infoBoard div p {
   flex: 1;
   padding: 0.5rem 0 0.12rem 0;
@@ -506,6 +504,9 @@ body {
 }
 .header .shopCard .profit .infoBoard div span {
   flex: 1;
+}
+.header .shopCard .profit .infoBoard div:last-child:after {
+  display: none;
 }
 .header .shopCard .profit .infoBoard .profitCount {
   color: #d7b374;
