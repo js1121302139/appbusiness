@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 56
-/svn/shop/!svn/ver/3791/Source/appbusiness/css/page/work
+/svn/shop/!svn/ver/3885/Source/appbusiness/css/page/work
 END
 applysettlement.css
 K 25
@@ -31,7 +31,7 @@ teamAdmin.css
 K 25
 svn:wc:ra_dav:version-url
 V 70
-/svn/shop/!svn/ver/3791/Source/appbusiness/css/page/work/teamAdmin.css
+/svn/shop/!svn/ver/3940/Source/appbusiness/css/page/work/teamAdmin.css
 END
 shareprofit.less
 K 25
@@ -103,7 +103,7 @@ jsdentail.less
 K 25
 svn:wc:ra_dav:version-url
 V 71
-/svn/shop/!svn/ver/3676/Source/appbusiness/css/page/work/jsdentail.less
+/svn/shop/!svn/ver/3940/Source/appbusiness/css/page/work/jsdentail.less
 END
 dataAnalysis.less
 K 25
@@ -163,7 +163,7 @@ activityCenter.less
 K 25
 svn:wc:ra_dav:version-url
 V 76
-/svn/shop/!svn/ver/3775/Source/appbusiness/css/page/work/activityCenter.less
+/svn/shop/!svn/ver/3934/Source/appbusiness/css/page/work/activityCenter.less
 END
 shopenvironment.less
 K 25
@@ -175,7 +175,7 @@ jsdentail.css
 K 25
 svn:wc:ra_dav:version-url
 V 70
-/svn/shop/!svn/ver/3676/Source/appbusiness/css/page/work/jsdentail.css
+/svn/shop/!svn/ver/3940/Source/appbusiness/css/page/work/jsdentail.css
 END
 dataAnalysis.css
 K 25
@@ -187,7 +187,7 @@ teamAdmin.less
 K 25
 svn:wc:ra_dav:version-url
 V 71
-/svn/shop/!svn/ver/3790/Source/appbusiness/css/page/work/teamAdmin.less
+/svn/shop/!svn/ver/3940/Source/appbusiness/css/page/work/teamAdmin.less
 END
 integral.less
 K 25
@@ -223,7 +223,7 @@ activityCenter.css
 K 25
 svn:wc:ra_dav:version-url
 V 75
-/svn/shop/!svn/ver/3775/Source/appbusiness/css/page/work/activityCenter.css
+/svn/shop/!svn/ver/3934/Source/appbusiness/css/page/work/activityCenter.css
 END
 myshop.less
 K 25
@@ -265,7 +265,7 @@ addSonAccount.less
 K 25
 svn:wc:ra_dav:version-url
 V 75
-/svn/shop/!svn/ver/3775/Source/appbusiness/css/page/work/addSonAccount.less
+/svn/shop/!svn/ver/3940/Source/appbusiness/css/page/work/addSonAccount.less
 END
 partyIn.less
 K 25
@@ -313,7 +313,7 @@ addSonAccount.css
 K 25
 svn:wc:ra_dav:version-url
 V 74
-/svn/shop/!svn/ver/3775/Source/appbusiness/css/page/work/addSonAccount.css
+/svn/shop/!svn/ver/3940/Source/appbusiness/css/page/work/addSonAccount.css
 END
 integralexchange.less
 K 25

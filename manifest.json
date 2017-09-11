@@ -295,7 +295,10 @@
 					"css/pullToRefresh.css",
 					"img/topBack-ico.png",
 					"img/ico-data02.png",
-					"img/order-ListGo-ico.png"
+					"img/order-ListGo-ico.png",
+					"js/iscroll.js",
+					"js/vue.min.js",
+					"js/pullToRefresh.js"
 				],
 				"refer": [
 					"page/work/messageArticle.html"
@@ -317,7 +320,8 @@
 					"img/topBack-ico.png",
 					"css/pullToRefresh.css",
 					"js/iscroll.js",
-					"js/pullToRefresh.js"
+					"js/pullToRefresh.js",
+					"js/vue.min.js"
 				],
 				"refer": [],
 				"priority": 0
@@ -353,7 +357,8 @@
 					"fonts/mui.ttf",
 					"css/mui.min.css",
 					"js/page/work/applysettlement.js",
-					"img/topBack-ico.png"
+					"img/topBack-ico.png",
+					"js/vue.min.js"
 				],
 				"refer": [],
 				"priority": 0
@@ -392,7 +397,8 @@
 					"js/page/work/promotiondentail.js",
 					"js/common.js",
 					"js/iscroll.js",
-					"js/pullToRefresh.js"
+					"js/pullToRefresh.js",
+					"js/vue.min.js"
 				],
 				"refer": [
 					"page/work/createactivity.html"
@@ -411,7 +417,8 @@
 					"js/page/work/receivablesCode.js",
 					"js/qrcode.min.js",
 					"img/topBack-ico.png",
-					"images/receivablesCode-bg.png"
+					"images/receivablesCode-bg.png",
+					"img/qrcode-ico.png"
 				],
 				"refer": [],
 				"priority": 0
@@ -426,7 +433,9 @@
 					"fonts/mui.ttf",
 					"css/mui.min.css",
 					"js/muihelper.js",
-					"js/page/work/createactivity.js"
+					"js/page/work/createactivity.js",
+					"js/common.js",
+					"js/vue.min.js"
 				],
 				"refer": [],
 				"priority": 0
@@ -442,7 +451,10 @@
 					"css/pullToRefresh.css",
 					"img/topBack-ico.png",
 					"img/topBackB-ico.png",
-					"img/order-ListGo-ico.png"
+					"img/order-ListGo-ico.png",
+					"js/iscroll.js",
+					"js/vue.min.js",
+					"js/pullToRefresh.js"
 				],
 				"refer": [
 					"page/work/applysettlement.html",
@@ -589,7 +601,12 @@
 					"js/mui.min.js",
 					"fonts/mui.ttf",
 					"css/mui.min.css",
-					"js/muihelper.js"
+					"js/muihelper.js",
+					"css/pullToRefresh.css",
+					"js/iscroll.js",
+					"js/vue.min.js",
+					"img/topBack-ico.png",
+					"js/pullToRefresh.js"
 				],
 				"refer": [],
 				"priority": 0
@@ -658,7 +675,8 @@
 				],
 				"refer": [
 					"index.html",
-					"repwd.html"
+					"repwd.html",
+					"guidePage.html"
 				],
 				"priority": 0
 			},
@@ -693,7 +711,10 @@
 					"js/muihelper.js",
 					"js/page/work/jsdentail.js",
 					"css/pullToRefresh.css",
-					"img/topBack-ico.png"
+					"img/topBack-ico.png",
+					"js/iscroll.js",
+					"js/vue.min.js",
+					"js/pullToRefresh.js"
 				],
 				"refer": [],
 				"priority": 0
@@ -723,7 +744,11 @@
 			"page/account/safepay.html": {
 				"resources": [
 					"css/page/account/safelogin.css",
-					"css/mui.min.css"
+					"css/mui.min.css",
+					"js/common.js",
+					"js/muihelper.js",
+					"js/vue.min.js",
+					"js/mui.js"
 				],
 				"refer": [],
 				"priority": 0
@@ -742,7 +767,8 @@
 					"css/pullToRefresh.css",
 					"js/iscroll.js",
 					"js/pullToRefresh.js",
-					null
+					null,
+					"js/vue.min.js"
 				],
 				"refer": [
 					"page/work/addSonAccount.html"
@@ -775,7 +801,8 @@
 					"js/mui.min.js",
 					"fonts/mui.ttf",
 					"js/page/work/addSonAccount.js",
-					"img/work-successTrue.png"
+					"img/work-successTrue.png",
+					"js/vue.min.js"
 				],
 				"refer": [],
 				"priority": 0
@@ -843,7 +870,10 @@
 				"resources": [
 					"js/common.js",
 					"css/page/account/safelogin.css",
-					"css/mui.min.css"
+					"css/mui.min.css",
+					"js/muihelper.js",
+					"js/vue.min.js",
+					"js/mui.js"
 				],
 				"refer": [],
 				"priority": 0
@@ -851,7 +881,12 @@
 			"page/account/helpCenter.html": {
 				"resources": [
 					"css/mui.min.css",
-					"js/mui.min.js"
+					"js/mui.min.js",
+					"css/page/account/helpCenter.css",
+					"img/helpCenter-commonQuestions.png",
+					"js/muihelper.js",
+					"js/vue.min.js",
+					"js/page/accounnt/helpCenter.js"
 				],
 				"refer": [],
 				"priority": 0
@@ -863,9 +898,14 @@
 					"css/mui.min.css",
 					"images/yunduifooter.png",
 					"css/page/work/aboutyundui.css",
-					"css/page/account/aboutyundui.css"
+					"css/page/account/aboutyundui.css",
+					"img/aboutLogo-ico.png",
+					"js/muihelper.js",
+					"img/topBack-ico.png"
 				],
-				"refer": [],
+				"refer": [
+					"page/account/aboutbook.html"
+				],
 				"priority": 0
 			},
 			"page/work/changeShop.html": {
@@ -986,7 +1026,11 @@
 					"js/page/accounnt/bindBankCard.js",
 					"img/addbankCard-ico.png",
 					"css/mui.min.css",
-					"css/page/account/bindBankCard.css"
+					"css/page/account/bindBankCard.css",
+					"js/muihelper.js",
+					"js/mui.min.js",
+					"js/vue.min.js",
+					"images/nyyh.png"
 				],
 				"refer": [
 					"page/account/addBankCard.html"
@@ -1002,7 +1046,10 @@
 					"css/mui.picker.min.css",
 					"js/addressArr.js",
 					"css/page/account/addBankCard.css",
-					"css/mui.min.css"
+					"css/mui.min.css",
+					"js/muihelper.js",
+					"js/mui.min.js",
+					"js/vue.min.js"
 				],
 				"refer": [],
 				"priority": 0
@@ -1011,7 +1058,9 @@
 				"resources": [
 					"img/game_icon01.png",
 					"page/qrcode/common.js",
-					"page/qrcode/common.css"
+					"page/qrcode/common.css",
+					"js/muihelper.js",
+					"js/mui.js"
 				],
 				"refer": [],
 				"priority": 0
@@ -1020,6 +1069,29 @@
 				"resources": [
 					"css/mui.min.css",
 					"css/page/work/messageArticle.css"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"guidePage.html": {
+				"resources": [
+					"images/guidePage4.jpg",
+					"images/guidePage3.jpg",
+					"js/mui.js",
+					"images/guidePage2.jpg",
+					"images/guidePage1.jpg",
+					"js/ender.js"
+				],
+				"refer": [],
+				"priority": 0
+			},
+			"page/account/aboutbook.html": {
+				"resources": [
+					"js/common.js",
+					"js/muihelper.js",
+					"js/mui.min.js",
+					"css/mui.min.css",
+					"css/page/account/aboutbook.css"
 				],
 				"refer": [],
 				"priority": 0

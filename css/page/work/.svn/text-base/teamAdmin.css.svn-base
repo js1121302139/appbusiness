@@ -39,6 +39,7 @@ a {
 }
 input {
   font-size: 0.87rem;
+  -webkit-appearance: none;
 }
 .mui-input-group:before,
 .mui-input-group:after {
@@ -450,7 +451,6 @@ table {
 .wrapperList .mui-table-view-cell .memberRight .btnJY {
   color: #333;
   border: 1px solid #333;
-  transition: all .25s;
 }
 .wrapperList .mui-table-view-cell .memberRight .btnEd {
   color: #fff;
@@ -458,6 +458,7 @@ table {
   border: 1px solid #333;
 }
 .wrapperList .mui-table-view-cell .memberRight .activeBtn {
+  transition: all .55s;
   border-color: #333;
   background-color: #333;
   color: #fff;

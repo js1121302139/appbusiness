@@ -81,7 +81,7 @@
 					<div class="dayList-item">1</div>-->
 					</div>
 					<div class="roomNum" v-if="isShowRoom">
-						<p id="editRoom" @click="changeRoom(activityId,keys)" class="countRoom" v-text="'房间数量:'+ roomNum"> <img src="" alt="" /></p>
+						<p id="editRoom" @click="changeRoom(activityId,keys)" class="countRoom">房间数量：{{roomNum}} <img src="../../img/activeity-editIco.png" alt="" /></p>
 						<p class="sellRoomNum" v-text="'已售数量:'+ soldNum"> 0</p>
 					</div>
 				</div>
@@ -140,7 +140,6 @@
 					this.nowY = this.nowDate.getFullYear();
 					this.nowM = this.nowDate.getMonth() + 1;
 					this.nowD = this.nowDate.getDate();
-
 					function loaded() {
 						this.myScroll = new iScroll(document.querySelector("#item1"), {
 							checkDOMChanges: true

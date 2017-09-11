@@ -1,7 +1,7 @@
 K 25
 svn:wc:ra_dav:version-url
 V 55
-/svn/shop/!svn/ver/3780/Source/appbusiness/page/account
+/svn/shop/!svn/ver/3894/Source/appbusiness/page/account
 END
 addBankCard.html
 K 25
@@ -25,7 +25,7 @@ bindBankCard.html
 K 25
 svn:wc:ra_dav:version-url
 V 73
-/svn/shop/!svn/ver/3885/Source/appbusiness/page/account/bindBankCard.html
+/svn/shop/!svn/ver/3923/Source/appbusiness/page/account/bindBankCard.html
 END
 myaccount.html
 K 25

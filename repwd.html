@@ -98,14 +98,20 @@
 							mui.plusReady(function() {
 								Fun_App.ExAjax("lookpwdSmsSend", sendData);
 							})
-						}
-						this.showOutTime = true;
-						this.second--;
-						if(this.second < 1) {
-							this.showOutTime = false;
-							this.second = 90;
-						} else {
-							var timeout = setTimeout(this.smsVerify, 1000)
+						}else{
+							if(this.changeInfo.mobile!=null){
+								this.showOutTime = true;
+								this.second--;
+								if(this.second < 1) {
+									this.showOutTime = false;
+									this.second = 90;
+								} else {
+									var timeout = setTimeout(this.smsVerify, 1000);
+								}
+							}else{
+								mui.toast('请输入手机号!');
+							}
+							
 						}
 					},
 					changePwd: function() {

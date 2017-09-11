@@ -46,7 +46,9 @@
 			"img/home-header-bg.png",
 			"images/detail_head_01.png",
 			"img/home-profit-bg.png",
-			"js/common.js"
+			"js/common.js",
+			"img/work-reserve-ico.png",
+			"img/work-partyAdmin-ico.png"
 		],
 		"refer": [
 			"page/work/myincome.html",
@@ -78,7 +80,10 @@
 			"js/page/work/msgcenter.js",
 			"css/pullToRefresh.css",
 			"img/topBack-ico.png",
-			"img/ico-data02.png"
+			"img/ico-data02.png",
+			"js/iscroll.js",
+			"js/vue.min.js",
+			"js/pullToRefresh.js"
 		]
 	},
 	"page/work/myuser.html": {
@@ -96,7 +101,8 @@
 			"img/topBack-ico.png",
 			"css/pullToRefresh.css",
 			"js/iscroll.js",
-			"js/pullToRefresh.js"
+			"js/pullToRefresh.js",
+			"js/vue.min.js"
 		]
 	},
 	"page/work/myincome.html": {
@@ -110,7 +116,10 @@
 			"js/page/work/myincome.js",
 			"img/topBack-ico.png",
 			"css/pullToRefresh.css",
-			"img/topBackB-ico.png"
+			"img/topBackB-ico.png",
+			"js/iscroll.js",
+			"js/vue.min.js",
+			"js/pullToRefresh.js"
 		],
 		"refer": [
 			"page/work/applysettlement.html",
@@ -121,7 +130,11 @@
 		"resources": [
 			"css/page/work/applysettlement.css",
 			"page/work/myincome.html",
-			"js/page/work/applysettlement.js"
+			"js/page/work/applysettlement.js",
+			"js/muihelper.js",
+			"js/mui.min.js",
+			"css/mui.min.css",
+			"js/vue.min.js"
 		],
 		"refer": [
 			"page/work/myincome.html"
@@ -161,7 +174,8 @@
 			"img/order-ListDate-ico.png",
 			"img/order-ListGo-ico.png",
 			"images/order-ListBg.png",
-			"img/orderQuestion-ico.png"
+			"img/orderQuestion-ico.png",
+			"js/vue.min.js"
 		],
 		"refer": [
 			"page/order/orderdentail.html"
@@ -189,7 +203,8 @@
 		],
 		"refer": [
 			"index.html",
-			"repwd.html"
+			"repwd.html",
+			"guidePage.html"
 		]
 	},
 	"page/account/myaccount.html": {
@@ -230,7 +245,10 @@
 			"css/mui.min.css",
 			"js/page/work/shareprofit.js",
 			"css/pullToRefresh.css",
-			"img/topBack-ico.png"
+			"img/topBack-ico.png",
+			"js/iscroll.js",
+			"js/vue.min.js",
+			"js/pullToRefresh.js"
 		],
 		"refer": [
 			"page/work/gxapplysettlement.html",
@@ -296,7 +314,11 @@
 			"img/activityMPre-ico.png",
 			"img/activeity-editIco.png",
 			"css/pullToRefresh.css",
-			"img/topBack-ico.png"
+			"img/topBack-ico.png",
+			"js/vue.min.js",
+			"js/pullToRefresh.js",
+			"js/common.js",
+			"js/iscroll.js"
 		],
 		"refer": [
 			"page/work/createactivity.html"
@@ -328,7 +350,8 @@
 			"js/page/work/receivablesCode.js",
 			"js/qrcode.min.js",
 			"img/topBack-ico.png",
-			"images/receivablesCode-bg.png"
+			"images/receivablesCode-bg.png",
+			"img/qrcode-ico.png"
 		]
 	},
 	"page/work/createactivity.html": {
@@ -341,7 +364,9 @@
 			"js/mui.min.js",
 			"fonts/mui.ttf",
 			"css/mui.min.css",
-			"js/page/work/createactivity.js"
+			"js/page/work/createactivity.js",
+			"js/common.js",
+			"js/vue.min.js"
 		]
 	},
 	"page/order/orderdentail.html": {
@@ -351,7 +376,12 @@
 			"fonts/mui.ttf",
 			"js/muihelper.js",
 			"js/mui.min.js",
-			"css/mui.min.css"
+			"css/mui.min.css",
+			"css/pullToRefresh.css",
+			"js/iscroll.js",
+			"js/vue.min.js",
+			"img/topBack-ico.png",
+			"js/pullToRefresh.js"
 		]
 	},
 	"page/work/jsdentail.html": {
@@ -360,7 +390,12 @@
 			"css/mui.min.css",
 			"js/page/work/jsdentail.js",
 			"css/pullToRefresh.css",
-			"img/topBack-ico.png"
+			"img/topBack-ico.png",
+			"js/muihelper.js",
+			"js/mui.min.js",
+			"js/iscroll.js",
+			"js/vue.min.js",
+			"js/pullToRefresh.js"
 		]
 	},
 	"page/account/safeCenter.html": {
@@ -373,18 +408,24 @@
 			"css/mui.min.css",
 			"js/mui.min.js",
 			"fonts/mui.ttf",
-			"js/muihelper.js"
+			"js/muihelper.js",
+			"js/page/accounnt/safeCenter.js"
 		],
 		"refer": [
 			"page/account/safepay.html",
 			"page/account/bindWeixin.html",
-			"page/account/safelogin.html"
+			"page/account/safelogin.html",
+			"page/account/bindBankCard.html"
 		]
 	},
 	"page/account/safepay.html": {
 		"resources": [
 			"css/page/account/safelogin.css",
-			"css/mui.min.css"
+			"css/mui.min.css",
+			"js/common.js",
+			"js/muihelper.js",
+			"js/vue.min.js",
+			"js/mui.js"
 		]
 	},
 	"page/work/teamAdmin.html": {
@@ -400,7 +441,8 @@
 			"img/topBack-ico.png",
 			"css/pullToRefresh.css",
 			"js/iscroll.js",
-			"js/pullToRefresh.js"
+			"js/pullToRefresh.js",
+			"js/vue.min.js"
 		],
 		"refer": [
 			"page/work/addSonAccount.html"
@@ -429,7 +471,9 @@
 			"js/muihelper.js",
 			"js/mui.min.js",
 			"fonts/mui.ttf",
-			"js/page/work/addSonAccount.js"
+			"js/page/work/addSonAccount.js",
+			"img/work-successTrue.png",
+			"js/vue.min.js"
 		]
 	},
 	"page/work/promotionAward.html": {
@@ -489,13 +533,21 @@
 		"resources": [
 			"js/common.js",
 			"css/page/account/safelogin.css",
-			"css/mui.min.css"
+			"css/mui.min.css",
+			"js/muihelper.js",
+			"js/vue.min.js",
+			"js/mui.js"
 		]
 	},
 	"page/account/helpCenter.html": {
 		"resources": [
 			"css/mui.min.css",
-			"js/mui.min.js"
+			"js/mui.min.js",
+			"css/page/account/helpCenter.css",
+			"img/helpCenter-commonQuestions.png",
+			"js/muihelper.js",
+			"js/vue.min.js",
+			"js/page/accounnt/helpCenter.js"
 		]
 	},
 	"page/account/aboutyundui.html": {
@@ -505,7 +557,13 @@
 			"css/mui.min.css",
 			"images/yunduifooter.png",
 			"css/page/work/aboutyundui.css",
-			"css/page/account/aboutyundui.css"
+			"css/page/account/aboutyundui.css",
+			"img/aboutLogo-ico.png",
+			"js/muihelper.js",
+			"img/topBack-ico.png"
+		],
+		"refer": [
+			"page/account/aboutbook.html"
 		]
 	},
 	"page/work/changeShop.html": {
@@ -528,10 +586,12 @@
 			"css/mui.min.css",
 			"img/topBack-ico.png",
 			"js/pullToRefresh.js",
-			"js/muihelper.js"
+			"js/muihelper.js",
+			"js/vue.min.js"
 		],
 		"refer": [
-			"page/work/createParty.html"
+			"page/work/createParty.html",
+			"page/qrCode.html"
 		]
 	},
 	"page/work/budgetAdmin.html": {
@@ -559,13 +619,77 @@
 			"img/createPartyAddImg-ico.png",
 			"images/createPartylogo.png",
 			"img/topBack-ico.png",
-			"img/createPartyImgDelete-ico.png"
+			"img/createPartyImgDelete-ico.png",
+			"img/createPartyTit3-ico.png",
+			"img/createPartyTit2-ico.png",
+			"img/createPartyTit5-ico.png",
+			"js/vue.min.js",
+			"img/createPartyTit4-ico.png",
+			"img/createPartyTit6-ico.png",
+			"img/createPartyTit1-ico.png"
 		]
 	},
 	"repwd.html": {
 		"resources": [
 			"img/loginPhoneCode-ico.png",
 			"css/page/repwd.css"
+		]
+	},
+	"guidePage.html": {
+		"resources": [
+			"images/guidePage4.jpg",
+			"images/guidePage3.jpg",
+			"js/mui.js",
+			"images/guidePage2.jpg",
+			"images/guidePage1.jpg",
+			"js/ender.js"
+		]
+	},
+	"page/account/bindBankCard.html": {
+		"resources": [
+			"js/muihelper.js",
+			"js/page/accounnt/bindBankCard.js",
+			"js/mui.min.js",
+			"img/addbankCard-ico.png",
+			"css/mui.min.css",
+			"js/vue.min.js",
+			"css/page/account/bindBankCard.css",
+			"images/nyyh.png"
+		],
+		"refer": [
+			"page/account/addBankCard.html"
+		]
+	},
+	"page/account/addBankCard.html": {
+		"resources": [
+			"js/mui.picker.min.js",
+			"js/muihelper.js",
+			"js/mui.min.js",
+			"js/mui.poppicker.js",
+			"css/mui.min.css",
+			"js/vue.min.js",
+			"css/mui.poppicker.css",
+			"css/mui.picker.min.css",
+			"js/addressArr.js",
+			"css/page/account/addBankCard.css"
+		]
+	},
+	"page/account/aboutbook.html": {
+		"resources": [
+			"js/common.js",
+			"js/muihelper.js",
+			"js/mui.min.js",
+			"css/mui.min.css",
+			"css/page/account/aboutbook.css"
+		]
+	},
+	"page/qrCode.html": {
+		"resources": [
+			"img/game_icon01.png",
+			"page/qrcode/common.js",
+			"js/muihelper.js",
+			"js/mui.js",
+			"page/qrcode/common.css"
 		]
 	}
 }

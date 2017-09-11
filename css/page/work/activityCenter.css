@@ -39,6 +39,7 @@ a {
 }
 input {
   font-size: 0.87rem;
+  -webkit-appearance: none;
 }
 .mui-input-group:before,
 .mui-input-group:after {
@@ -501,35 +502,35 @@ body,
   left: 0;
   margin: auto;
 }
-.optionDate .dateFooter {
-  margin-bottom: 1.87rem;
-}
-.optionDate .dateFooter p {
-  font-size: 0.75rem;
-  color: #333;
-  margin-bottom: 0px;
-}
-.optionDate .dateFooter .dateFooter-footer {
-  color: #0A7FF1;
-}
 .optionDate .roomNum {
   display: flex;
   flex: 1;
   height: 3.43rem;
   line-height: 0.21rem;
-  border-top: 1px solid #CCCCCC;
+  padding: 0 0.9375rem;
 }
-.optionDate .roomNum p:first-child {
-  margin-right: 1.25rem;
-  background: url(../../../img/activeity-editIco.png) right center no-repeat;
-  background-size: 1rem 1rem;
+.optionDate .roomNum img {
+  width: 1rem;
+  height: 1rem;
+  margin-left: 0.3125rem;
 }
 .optionDate .roomNum p {
-  margin: 0;
-  width: 50%;
-  height: 3.43rem;
-  line-height: 3.43rem;
-  text-indent: 2.81rem;
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  border-top: 1px solid #CCCCCC;
+}
+@media screen and (max-width: 320px) {
+  .optionDate {
+    height: 18.75rem !important;
+  }
+}
+@media screen and (max-width: 400px) {
+  .optionDate {
+    height: 18.75rem !important;
+  }
 }
 /*活动列表*/
 .wrappers {

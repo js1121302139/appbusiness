@@ -102,9 +102,11 @@
 					var dateTime = new Date();
 					_this.activity.activityDate = dateTime.getFullYear() + "-" + ((dateTime.getMonth() + 1) <= 9 ? '0' + (dateTime.getMonth() + 1) : (dateTime.getMonth() + 1)) + "-" + ((dateTime.getDate()) <= 9 ? '0' + (dateTime.getDate()) : (dateTime.getDate()));
 					_this.shopType = Fun_App.getdata("shopType");
+					console.log(_this.shopType)
 					if(_this.shopType != 'null') { 
-						delete _this.activity.roomNum;
 						_this.isShow = true
+					}else{
+						delete _this.activity.roomNum;
 					}
 					_this.activeityRule(function(resData) {
 						_this.pageData = resData.data;

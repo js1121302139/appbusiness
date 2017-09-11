@@ -83,6 +83,7 @@
 					_this.getJsDentail(function(resData) {
 						_this.list = resData.data;
 						_this.totalPage = Math.ceil(resData.total/_this.pageLen);
+						console.log(_this.totalPage+"asdasd")
 					}, 1)
 					refresher.init({
 						id: "wrapper",

@@ -192,7 +192,7 @@
 			if(ids === "showUserPicker") { //判断选项的类型
 				Job.show(function(items) {
 
-					sonDoc.innerText = accountData.jobName = items[0].text;
+					sonDoc.innerText = accountData.jobName = (items[0].text!=undefined?items[0].text:"");
 					accountData.jobId = items[0].jobId;
 					if(items[0].text == "员工" && jobCode == 'BOSS') {
 						document.querySelector("#showUserPicker2").style.display = "block";

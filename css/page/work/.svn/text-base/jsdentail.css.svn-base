@@ -39,6 +39,7 @@ a {
 }
 input {
   font-size: 0.87rem;
+  -webkit-appearance: none;
 }
 .mui-input-group:before,
 .mui-input-group:after {
@@ -373,10 +374,13 @@ table {
 }
 .wrapperList {
   top: 64px;
-  height: 603px !important;
+  bottom: 0rem;
 }
 .wrapperList .pullDown {
   display: none;
+}
+.wrapperList .scroller {
+  height: 100%;
 }
 .wrapperList .wrapperListItem {
   display: flex;

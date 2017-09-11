@@ -39,6 +39,7 @@ a {
 }
 input {
   font-size: 0.87rem;
+  -webkit-appearance: none;
 }
 .mui-input-group:before,
 .mui-input-group:after {
@@ -442,7 +443,6 @@ table {
   padding: 0 1.71rem 0 0.93rem;
 }
 .addSuccess {
-  display: none;
   position: absolute;
   top: 0;
   bottom: -17.18rem;

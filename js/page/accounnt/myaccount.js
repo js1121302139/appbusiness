@@ -9,7 +9,7 @@ mui.init();
 		var exitBox = document.querySelector("#exit"); //退出登录按钮
 		//退出登录
 		exitBox.addEventListener("tap", function() {
-			mui.confirm('是否退出登录,退出会清除部分的数据', '提示', ['取消', '确认'], function(e) {
+			mui.confirm('是否退出登录？', '提示', ['取消', '确认'], function(e) {
 				if(e.index == 1) {
 					Fun_App.storagedata("token", " ");
 					Fun_App.storagedata("qrCodeSrc", null);

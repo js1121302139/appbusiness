@@ -6,50 +6,116 @@
 		<title></title>
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<link href="../../css/mui.min.css" rel="stylesheet" />
-<!--		<link rel="stylesheet" href="../../css/pullToRefresh.css">-->
+		<!--		<link rel="stylesheet" href="../../css/pullToRefresh.css">-->
 		<link rel="stylesheet" href="../../css/page/work/teamAdmin.css" />
 	</head>
 
 	<body>
-		<header class="mui-bar topBar mui-bar-nav">
-			<a class="mui-action-back topBack-ico mui-pull-left"></a>
-			<h1 class="mui-title">员工管理</h1>
-			<span id="addSonAccNum" class="m  addSonAccNum mui-btn-blue mui-btn-link mui-pull-right">绑定子账号</span>
-		</header>
-		<div class="mui-content">
-			<div id="" class="wrapperList">
-				<ul id="teamList">
-					<!--此页面等下个版本改成vue-->
-					<!-- <li class="mui-table-view-cell mui-row">
-                <div class="mui-pull-left memberLeft">
-                    <div class="membersHeadImg mui-left">
-                        <img src="../../img/work-head.png" alt=""/>
-                    </div>
-                    <div class="membersInfo mui-pull-left ">
-                        <p class="mui-ellipsis"><span>店長</span></p>
-                        <p class="mui-ellipsis">用户名: <span>锤子</span></p>
-                        <p class="mui-ellipsis">电话号码：<span>15750897281</span></p>
-                    </div>
-                </div>
-                <div class="mui-pull-right memberRight">
-                    <p class="membersMoney mui-text-right">
-                        ￥5000
-                    </p>
-                    <a href="#" type="button" class="mui-btn btnJY" sId="btnJY">禁用</a>
-                    <a href="#" type="button" class="mui-btn mui-pull-right btnEd" sId="btnEd">编辑</a>
-                </div>
-            </li>-->
+		<div id="teamAdmin">
+			<header class="mui-bar topBar mui-bar-nav">
+				<a class="mui-action-back topBack-ico mui-pull-left"></a>
+				<h1 class="mui-title">员工管理</h1>
+				<span id="addSonAccNum" class="m  addSonAccNum mui-btn-blue mui-btn-link mui-pull-right" @click="open('add')">绑定子账号</span>
+			</header>
+			<div class="mui-content">
+				<div id="" class="wrapperList">
+					<ul id="teamList">
+						<!--此页面等下个版本改成vue-->
+						<li class="mui-table-view-cell mui-row" v-for="(item,key) in pageData">
+							<div class="mui-pull-left memberLeft">
+								<div class="membersHeadImg mui-left">
+									<img :src="shopLogo" alt="" />
+								</div>
+								<div class="membersInfo mui-pull-left ">
+									<p class="mui-ellipsis"><span v-text="item.jobName">店長</span></p>
+									<p class="mui-ellipsis">用户名: <span v-text="item.name">锤子</span></p>
+									<p class="mui-ellipsis">电话号码：<span v-text="item.phone">15750897281</span></p>
+								</div>
+							</div>
+							<div class="mui-pull-right memberRight">
+								<p class="membersMoney mui-text-right" v-text="'￥'+item.shareMoneyTotal">
+									￥5000
+								</p>
+								<a href="#" type="button" class="mui-btn btnJY" :class="{activeBtn:item.state==2}" sId="btnJY" @click="updateState(key)" v-text="item.state==2?'禁用':'启用'">禁用</a>
+								<a href="#" type="button" class="mui-btn mui-pull-right btnEd" sId="btnEd" @click="open(item)">编辑</a>
+							</div>
+						</li>
 
-				</ul>
+					</ul>
+				</div>
+
 			</div>
 
 		</div>
 
 		<script src="../../js/mui.min.js"></script>
 		<script type="text/javascript" src="../../js/muihelper.js"></script>
-		<script type="text/javascript" src="../../js/page/work/teamAdmin.js"></script>
+		<!--		<script type="text/javascript" src="../../js/page/work/teamAdmin.js"></script>-->
+		<script src="../../js/vue.min.js"></script>
 		<script type="text/javascript">
-			
+			var Vue = new Vue({
+				el: "#teamAdmin",
+				data: function() {
+					return {
+						pageData: null,
+						picservice: picservice,
+						shopLogo: null
+					}
+				},
+				created: function() {
+					var _this = this;
+					mui.plusReady(function() {
+						_this.shopLogo = Fun_App.getdata("shopLogo");
+						_this.getTeamList(function(resData) {
+							_this.pageData = resData.data;
+						})
+						window.addEventListener('getTeamList', function() {
+							_this.getTeamList(function(resData) {
+							_this.pageData = resData.data;
+						});
+						});
+					})
+				},
+				methods: {
+					getTeamList: function(callBack) {
+						var sendData = {
+							config: {
+								"token": Fun_App.getdata("token")
+							},
+							fun_Success: function(data) {
+								callBack(data)
+							}
+						}
+						Fun_App.ExAjax("merchantAccount/list", sendData)
+					},
+					open: function(id) {
+						Fun_App.openWin("addSonAccount.html", "pop-in", id)
+					},
+					updateState: function(key) {
+						this.pageData[key].state = (this.pageData[key].state == 1) ? 2 : 1;
+						var _this = this;
+						var sendData = {
+							config: {
+								"token": Fun_App.getdata("token"),
+								"id": this.pageData[key].id,
+								"state": this.pageData[key].state
+							},
+							fun_Success: function(data) {
+								isstate = data.success;
+								if(data.success) {
+									mui.toast(data.message)
+								} else {
+									mui.toast(data.message)
+									_this.pageData[key].state = 2;
+								}
+							}
+						}
+						mui.plusReady(function() {
+							Fun_App.ExAjax("merchantAccount/updateState", sendData)
+						})
+					}
+				}
+			})
 		</script>
 	</body>
 

@@ -22,11 +22,10 @@
 				<a class="mui-action-back topBack-ico mui-pull-left"></a>
 				<h1 class="mui-title">我的银行卡</h1>
 			</header>
-
 			<div class="mui-content">
 				<div class="backCardsList">
 					<div :class="'backCards ' + item.bankNameSpell" v-for="(item,key) in pageData.data" @click="open(item.bankCardId)">
-						<p class="backCardNumber mui-text-right">**** **** **** ***** <b>{{item.bankCode | bankCode}}</b></p>
+						<p class="backCardNumber mui-text-right">**** **** **** **** <b>{{item.bankCode | bankCode}}</b></p>
 					</div>
 					<!--div :class="'page ' + item " v-for="(item,key) in 6">
 						<p class="backCardNumber mui-text-right" v-text="item"><b>1234</b></p>
