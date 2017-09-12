@@ -20,7 +20,7 @@
 				<div class="partyCard">
 					<div class="partyState">
 						<p class="partyStateIco Ico1" id="partyState" v-text="status[pageData.status]"></p>
-						<p id="partyStarTime" class="partyStateDate mui-text-right" v-text="pageData.startTime">2017-08-05 18:00-22:00</p>
+						<p id="partyStarTime" class="partyStateDate mui-text-right" v-text="strartAndEnd">2017-08-05 18:00-22:00</p>
 					</div>
 					<div class="partyInPeople mui-text-center">
 						<span id="rcNum" v-text="pageData.useNumber"></span>入场
@@ -98,6 +98,7 @@
 							"6": '预览'
 						},
 						arcId: null,
+						strartAndEnd:null,
 						pageData: {},
 						shareServer: null
 					}
@@ -111,6 +112,8 @@
 						if(Fun_App.getextrasdata().id != "see") {
 							_this.getPartyIn(Fun_App.getextrasdata(), function(resData) {
 								_this.pageData = resData.data;
+								_this.strartAndEnd = resData.data.startTime;
+								_this.strartAndEnd +=" ~ "+resData.data.endTime.split(" ")[1];
 								console.log(JSON.stringify(_this.pageData))
 							});
 						} else {
@@ -155,8 +158,8 @@
 							alert("分享失败：" + e.message);
 						});
 					}
-
 				}
+				
 
 			})
 			mui.init()

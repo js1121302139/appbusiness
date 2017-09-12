@@ -43,7 +43,8 @@ input[type="tel"] {}
     position: absolute;
     font-family: "微软雅黑";
     width: 90%;
-    height: 24.06rem;
+    bottom: 1.875rem;
+    top: 15.78125rem;
     left: 0;
     right: 0;
     margin: auto;
@@ -160,16 +161,7 @@ input[type="tel"] {}
     }
 }
 
-@media screen and (max-width: 320px) {
-   .optionDate{
-       height: 18.75rem !important;
-   }
-}
-@media screen and (max-width: 400px) {
-   .optionDate{
-       height: 18.75rem !important;
-   }
-}
+
 /*活动列表*/
 
 @BascicColor: #007aff;

@@ -20,7 +20,7 @@
 			</div>
 			<div class="mui-content content">
 				<div class="loginTop-box">
-					<img id="loginLogo" src="img/loginLogo.png"> 
+					<img id="loginLogo" src="img/loginLogo.png">
 				</div>
 				<div class="login-box">
 					<div class="userPhoneNumber mui-input-row input-border">
@@ -81,37 +81,38 @@
 							}
 						}, 2000)
 					},
+					timeOut: function() {
+						this.showOutTime = true;
+						this.second--;
+						if(this.second < 1) {
+							this.showOutTime = false;
+							this.second = 90;
+						} else {
+							var timeout = setTimeout(this.timeOut, 1000);
+						}
+					},
 					smsVerify: function() {
+						var _this = this;
 						var sendData = {
 							config: {
 								'phone': this.changeInfo.mobile
 							},
 							fun_Success: function(data) {
-								if(data.success) {
-									mui.toast(data.message)
-								} else {
-									mui.toast(data.message)
-								}
+							if(data.success) {
+								mui.toast(data.message)
+								_this.timeOut();
+							} else {
+								mui.toast(data.message)
 							}
 						}
-						if(this.showOutTime == false && this.changeInfo.mobile!=null) {
+						}
+
+						if(this.showOutTime == false && this.changeInfo.mobile != null) {
 							mui.plusReady(function() {
 								Fun_App.ExAjax("lookpwdSmsSend", sendData);
 							})
-						}else{
-							if(this.changeInfo.mobile!=null){
-								this.showOutTime = true;
-								this.second--;
-								if(this.second < 1) {
-									this.showOutTime = false;
-									this.second = 90;
-								} else {
-									var timeout = setTimeout(this.smsVerify, 1000);
-								}
-							}else{
-								mui.toast('请输入手机号!');
-							}
-							
+						} else {
+							mui.toast('请输入手机号!');
 						}
 					},
 					changePwd: function() {
@@ -123,7 +124,7 @@
 									setTimeout(function() {
 										plus.webview.currentWebview().close();
 									}, 2500)
-								}else{
+								} else {
 									mui.toast(data.message)
 								}
 							}

@@ -35,29 +35,27 @@
 					</div>
 				</div>
 			</div>
-			<div class="wrapper">
-				<div id="wrapper" class="wrapperList">
-					<ul class="userLsit" id="userList">
-						<li class="mui-table-view-cell userBox" @click.stop="checks(key)" v-for="(item,key) in list">
-							<div class="checkAndImg mui-checkbox">
-								<input class="check" :checked="item.ischeck" v-model="item.ischeck" type="checkbox">
-								<img :src="item.headImg!=''?picservice +item.headImg:'../../img/work-head.png'"/>
-							</div>
-							<div class="userInfo">
-								<p v-text="'用户名:' + item.memberName">用户名:锤子(ID:007)</p>
-								<p v-text="'等级:' + item.grade">用户名:锤子(ID:007)</p>
-								<p v-text="'关注时间:' + item.createTime">用户名:锤子(ID:007)</p>
-							</div>
-							<div class="moneyAndMsgBtn">
-								<p class="mui-text-center" v-text="'￥' + item.money==null?0:item.money">￥5000</p>
-								<a href="javascript:;" class="mui-text-center" @click.stop="send(key)">发送消息</a>
-							</div>
-						</li>
+			<div id="wrapper" class="wrapperList">
+				<ul class="userLsit" id="userList">
+					<li class="mui-table-view-cell userBox" @click.stop="checks(key)" v-for="(item,key) in list">
+						<div class="checkAndImg mui-checkbox">
+							<input class="check" :checked="item.ischeck" v-model="item.ischeck" type="checkbox">
+							<img :src="item.headImg!=''?picservice +item.headImg:'../../img/work-head.png'" />
+						</div>
+						<div class="userInfo">
+							<p v-text="'用户名:' + item.memberName">用户名:锤子(ID:007)</p>
+							<p v-text="'等级:' + item.grade">用户名:锤子(ID:007)</p>
+							<p v-text="'关注时间:' + item.createTime">用户名:锤子(ID:007)</p>
+						</div>
+						<div class="moneyAndMsgBtn">
+							<p class="mui-text-center" v-text="'￥' + item.money==null?0:item.money">￥5000</p>
+							<a href="javascript:;" class="mui-text-center" @click.stop="send(key)">发送消息</a>
+						</div>
+					</li>
 
-					</ul>
-				</div>
-
+				</ul>
 			</div>
+
 			<nav class="mui-bar mui-bar-tab">
 				<div class="mui-row">
 					<div class="mui-col-sm-8 mui-col-xs-8 selectAll">
@@ -126,6 +124,7 @@
 					Fun_App.ExAjax("merchantPerson/myUsers", sendData)
 				},
 				send: function(key) {
+					console.log(JSON.stringify(this.list))
 					if(key != 'null') {
 						this.list[key].ischeck = true;
 						var index = this.sendArr.indexOf(this.list[key].memberId);
@@ -139,7 +138,7 @@
 							"content": null
 						},
 						fun_Success: function(data) {
-							data.success?mui.toast('消息发送成功'):mui.toast('消息发送失败!');
+							data.success ? mui.toast('消息发送成功') : mui.toast('消息发送失败!');
 						}
 					}
 					if(this.sendArr.length != 0) {
@@ -155,9 +154,10 @@
 				Load: function() {
 					this.page++;
 					var _this = this;
-					if(this.page <= this.totalPage) {
+					if(this.page <= this.totalPage) { 
 						this.getUser(function(resData) {
-							_this.list = _this.list.concat(resData.data)
+							_this.list = _this.list.concat(resData.data);
+							_this.appendList(resData.data);
 						}, this.page)
 					} else {
 						refresher.info.pullUpLable = '没有更多数据了!';
@@ -176,6 +176,7 @@
 							ischeck: false
 						})
 					}
+					console.log(JSON.stringify(this.list))
 				},
 				checks: function(key) {
 					this.list[key].ischeck = !this.list[key].ischeck;
@@ -189,10 +190,15 @@
 				checkAll: function() {
 					var _this = this;
 					this.checkAlls = !this.checkAlls;
-					this.list.forEach(function(i, item) {
-						i.ischeck = _this.checkAlls;
-						(_this.sendArr.indexOf(i.memberId) == -1) ? _this.sendArr.push(i.memberId): ""
-					})
+					if(this.checkAlls) {
+						this.list.forEach(function(i, item) {
+							i.ischeck = _this.checkAlls;
+							(_this.sendArr.indexOf(i.memberId) == -1) ? _this.sendArr.push(i.memberId): ""
+						})
+					} else {
+						this.sendArr = [];
+					}
+
 				}
 
 			}
