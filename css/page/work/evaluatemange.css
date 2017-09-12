@@ -39,6 +39,7 @@ a {
 }
 input {
   font-size: 0.87rem;
+  -webkit-appearance: none;
 }
 .mui-input-group:before,
 .mui-input-group:after {
@@ -388,11 +389,6 @@ body,
   overflow: hidden;
   background: #fff;
 }
-.mui-content {
-  height: 100%;
-  min-height: 100%;
-  background-color: #fff ;
-}
 .evaluateBox {
   position: fixed;
   width: 100%;
@@ -459,26 +455,19 @@ body,
   background: #fff;
   margin-top: 2.93rem;
 }
-.mui-content .wrappers {
-  height: 100%;
+.wrapperList {
+  top: 7.65625rem;
+  bottom: 0;
 }
-.mui-content .wrappers .wrapperList ul {
-  padding-bottom: 8.12rem;
-  padding-top: 0.75rem;
-}
-.mui-content .wrappers .wrapperList .pullUp {
-  position: relative;
-  top: -8.12rem;
-}
-.mui-content .wrappers .wrapperList .pullDown {
+.wrapperList .pullDown {
   display: none;
 }
-.mui-content .wrappers .wrapperList .wrapperListItem {
+.wrapperList .wrapperListItem {
   padding: 0.75rem 0.78125rem;
   position: relative;
-  background-color: #fff ;
+  background-color: #fff;
 }
-.mui-content .wrappers .wrapperList .wrapperListItem .ListItemTop {
+.wrapperList .wrapperListItem .ListItemTop {
   display: flex;
   flex: 1;
   justify-content: space-between;
@@ -487,43 +476,43 @@ body,
   height: 2.5625rem;
   margin-bottom: 0.75rem;
 }
-.mui-content .wrappers .wrapperList .wrapperListItem .ListItemTop img {
+.wrapperList .wrapperListItem .ListItemTop img {
   width: 2.5625rem;
   height: 2.5625rem;
   margin-right: 0.68rem;
   border-radius: 20.5px;
 }
-.mui-content .wrappers .wrapperList .wrapperListItem .ListItemTop .userInfo {
+.wrapperList .wrapperListItem .ListItemTop .userInfo {
   display: flex;
   flex: 1;
   flex-direction: column;
   height: 1.875rem;
 }
-.mui-content .wrappers .wrapperList .wrapperListItem .ListItemTop .userInfo .userName {
+.wrapperList .wrapperListItem .ListItemTop .userInfo .userName {
   align-self: flex-start;
   margin-bottom: 0.3125rem;
   font-size: 0.87rem;
   color: #333;
 }
-.mui-content .wrappers .wrapperList .wrapperListItem .ListItemTop .userInfo .evaluateStar {
+.wrapperList .wrapperListItem .ListItemTop .userInfo .evaluateStar {
   display: flex;
   width: 5.125rem;
   justify-content: space-between;
   position: relative;
 }
-.mui-content .wrappers .wrapperList .wrapperListItem .ListItemTop .userInfo .evaluateStar .evaluateStarsLine {
+.wrapperList .wrapperListItem .ListItemTop .userInfo .evaluateStar .evaluateStarsLine {
   width: 0.75rem;
   height: 0.75rem;
   background-image: url("../../../img/smallStarLine-ico.png.png");
   background-position-y: 0px;
   background-size: 0.75rem 0.75rem;
 }
-.mui-content .wrappers .wrapperList .wrapperListItem .ListItemTop .userInfo .evaluateStar .evaluateStars {
+.wrapperList .wrapperListItem .ListItemTop .userInfo .evaluateStar .evaluateStars {
   position: absolute;
   width: 100%;
   left: 0;
 }
-.mui-content .wrappers .wrapperList .wrapperListItem .ListItemTop .userInfo .evaluateStar .evaluateStars .evaluateStarsitem {
+.wrapperList .wrapperListItem .ListItemTop .userInfo .evaluateStar .evaluateStars .evaluateStarsitem {
   width: 0.75rem;
   height: 0.75rem;
   float: left;
@@ -532,19 +521,19 @@ body,
   background-position-y: 0px;
   background-size: 0.75rem 0.75rem;
 }
-.mui-content .wrappers .wrapperList .wrapperListItem .ListItemTop .userInfo .evaluateStar .evaluateStars .evaluateStarsitem:last-child {
+.wrapperList .wrapperListItem .ListItemTop .userInfo .evaluateStar .evaluateStars .evaluateStarsitem:last-child {
   margin-right: 0;
 }
-.mui-content .wrappers .wrapperList .wrapperListItem .ListItemTop .evaluateDate {
+.wrapperList .wrapperListItem .ListItemTop .evaluateDate {
   align-self: flex-start;
   padding-top: 0.34rem;
   font-size: 0.75rem;
   color: #999;
 }
-.mui-content .wrappers .wrapperList .wrapperListItem .ListItemTop .evaluateMsg {
+.wrapperList .wrapperListItem .ListItemTop .evaluateMsg {
   line-height: 1.25rem;
 }
-.mui-content .wrappers .wrapperList .wrapperListItem:after {
+.wrapperList .wrapperListItem:after {
   position: absolute;
   content: " ";
   display: block;

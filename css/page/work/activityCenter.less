@@ -2,7 +2,7 @@
 .topBar("../../../img/topBack-ico.png");
 html,
 body,
-#activityCenter {
+#activityCenter { 
     min-height: 100%;
     height: 100%;
     overflow: hidden;
@@ -37,11 +37,11 @@ body,
 
 input[type="text"] {}
 
-input[type="tel"] {}
+input[type="tel"] {} 
 
 .optionDate {
     position: absolute;
-    font-family: "微软雅黑";
+    font-family: "微软雅黑"; 
     width: 90%;
     bottom: 1.875rem;
     top: 15.78125rem;
@@ -168,21 +168,18 @@ input[type="tel"] {}
 @OrangeColor: #FE6606;
 @grayColor: #696766;
 .wrappers {
-    margin-top: 0.62rem;
-    position: relative;
-    height: 100%;
+    position: absolute;
+    top:15.5rem;
+    bottom: 0rem;
+    width: 100%;
     .wrapperList {
         background-color: #fff;
+        height: 100%;
+        ul{
+            padding: 0 0.75rem;
+        }
         .pullDown {
             display: none;
-        }
-        ul {
-            padding: 0 12px;
-            padding-bottom: 25.5rem;
-        }
-        .pullUp {
-            position: relative;
-            top: -25.5rem;
         }
         .ListItem {
             display: flex;

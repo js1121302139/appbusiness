@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 
-	<head>
+	<head> 
 		<meta charset="UTF-8">
 		<title></title>
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
@@ -17,9 +17,7 @@
 				<h1 class="mui-title">玩咖管理</h1>
 				<span id="createPartyRaiders" class=" mui-btn-blue mui-btn-link mui-pull-right">建趴攻略</span>
 			</header>
-			<div class="mui-content">
-				<div class="wrappers">
-					<div id="wrapper" class="wrapperList">
+			<div id="wrapper" class="wrapperList">
 						<ul>
 							<li class="listItem" v-for="(item,key) in list">
 
@@ -71,7 +69,6 @@
 						</ul>
 					</div> 
 
-				</div>
 			</div>
 			<footer class="mui-text-center">
 				<div class="createParty " id="createParty" @click="open('create','')">

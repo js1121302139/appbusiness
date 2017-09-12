@@ -383,9 +383,6 @@ table {
 .wrapperList .pullDown {
   display: none;
 }
-.wrapperList .scroller {
-  height: 100%;
-}
 .wrapperList .wrapperListItem {
   list-style: none;
   padding: 0 0.75rem;

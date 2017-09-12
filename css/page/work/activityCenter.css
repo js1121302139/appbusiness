@@ -525,23 +525,20 @@ body,
 }
 /*活动列表*/
 .wrappers {
-  margin-top: 0.62rem;
-  position: relative;
-  height: 100%;
+  position: absolute;
+  top: 15.5rem;
+  bottom: 0rem;
+  width: 100%;
 }
 .wrappers .wrapperList {
   background-color: #fff;
+  height: 100%;
+}
+.wrappers .wrapperList ul {
+  padding: 0 0.75rem;
 }
 .wrappers .wrapperList .pullDown {
   display: none;
-}
-.wrappers .wrapperList ul {
-  padding: 0 12px;
-  padding-bottom: 25.5rem;
-}
-.wrappers .wrapperList .pullUp {
-  position: relative;
-  top: -25.5rem;
 }
 .wrappers .wrapperList .ListItem {
   display: flex;

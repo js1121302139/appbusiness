@@ -11,7 +11,7 @@
 	</head>
 
 	<body>
-		<div id="evaluatemange"> 
+		<div id="evaluatemange">
 			<header class="mui-bar topBar mui-bar-nav">
 				<a class="mui-action-back topBack-ico mui-pull-left"></a>
 				<h1 class="mui-title">评价管理</h1>
@@ -19,31 +19,31 @@
 			<div class="mui-content">
 				<div class="evaluateBox">
 					<div class="evaluate-top">
-					<div class="evaluateCount" id="evaluateContent" v-text="'评论条数:' + evatotalNum">
-评论条数:2345
-					</div>
-					<div class="starLv">
-						<div class="evaluateStar">
-						<div class="evaluateStars" tip="3.4">
-							<p class="evaluateStarsitem" v-for="(items,key) in pageData.averageGrade |0"></p>
+						<div class="evaluateCount" id="evaluateContent" v-text="'评论条数:' + evatotalNum">
+							评论条数:2345
 						</div>
-						<p class="evaluateStarsLine"></p>
-						<p class="evaluateStarsLine"></p>
-						<p class="evaluateStarsLine"></p>
-						<p class="evaluateStarsLine"></p>
-						<p class="evaluateStarsLine"></p>
+						<div class="starLv">
+							<div class="evaluateStar">
+								<div class="evaluateStars" tip="3.4">
+									<p class="evaluateStarsitem" v-for="(items,key) in pageData.averageGrade |0"></p>
+								</div>
+								<p class="evaluateStarsLine"></p>
+								<p class="evaluateStarsLine"></p>
+								<p class="evaluateStarsLine"></p>
+								<p class="evaluateStarsLine"></p>
+								<p class="evaluateStarsLine"></p>
+							</div>
+							<div class="evaluateNum" id="evaluateNum" v-text="pageData.averageGrade">
+								4.8
+							</div>
+						</div>
 					</div>
-					<div class="evaluateNum" id="evaluateNum" v-text="pageData.averageGrade">
-						4.8
-					</div>
-					</div>
+
 				</div>
-				
-				</div>
-				<div class="wrappers">
-					<div id="wrapper" class="wrapperList">
-						<ul id="evaluateList">
-							<!--<li class="wrapperListItem">
+			</div>
+			<div id="wrapper" class="wrapperList">
+				<ul id="evaluateList">
+					<!--<li class="wrapperListItem">
 								<div class="ListItemTop">
 									<div class="userImg">
 										<img src="picservice + item" alt="">
@@ -71,37 +71,35 @@
 									大叔大婶大所所大撒多
 								</div>
 							</li>-->
-							<li class="wrapperListItem" v-for="(item,key) in list">
-								<div class="ListItemTop">
-									<div class="userImg">
-										<img src="../../images/user-img.png" :src="picservice + item.headImg" alt="">
+					<li class="wrapperListItem" v-for="(item,key) in list">
+						<div class="ListItemTop">
+							<div class="userImg">
+								<img src="../../images/user-img.png" :src="picservice + item.headImg" alt="">
+							</div>
+							<div class="userInfo">
+								<p class="userName" v-text="item.userName">123</p>
+								<div class="evaluateStar">
+									<div class="evaluateStars" tip="4.3">
+										<p class="evaluateStarsitem" v-for="(items1,key) in item.grade"></p>
 									</div>
-									<div class="userInfo">
-										<p class="userName" v-text="item.userName">123</p>
-										<div class="evaluateStar">
-											<div class="evaluateStars" tip="4.3">
-												<p class="evaluateStarsitem" v-for="(items1,key) in item.grade"></p>
-											</div>
-											<p class="evaluateStarsLine"></p>
-											<p class="evaluateStarsLine"></p>
-											<p class="evaluateStarsLine"></p>
-											<p class="evaluateStarsLine"></p>
-											<p class="evaluateStarsLine"></p>
-										</div>
-									</div>
-									<div class="evaluateDate" v-text="item.createTime">
-2017-06-03 13:20:35
-									</div>
+									<p class="evaluateStarsLine"></p>
+									<p class="evaluateStarsLine"></p>
+									<p class="evaluateStarsLine"></p>
+									<p class="evaluateStarsLine"></p>
+									<p class="evaluateStarsLine"></p>
 								</div>
-								<div class="evaluateMsg" v-html="item.content">
-上世纪70年代上世纪70年代上世纪70年代上世纪70年代上世纪70年代上世纪70年代
-								</div>
-							</li>
-						</ul>
-					</div>
-
-				</div>
+							</div>
+							<div class="evaluateDate" v-text="item.createTime">
+								2017-06-03 13:20:35
+							</div>
+						</div>
+						<div class="evaluateMsg" v-html="item.content">
+							上世纪70年代上世纪70年代上世纪70年代上世纪70年代上世纪70年代上世纪70年代
+						</div>
+					</li>
+				</ul>
 			</div>
+
 		</div>
 		<script src="../../js/mui.min.js"></script>
 		<script type="text/javascript" src="../../js/muihelper.js"></script>
@@ -119,8 +117,8 @@
 						pageLen: pageLen,
 						totalPage: null,
 						pageData: {},
-						list:[],
-						evatotalNum:0
+						list: [],
+						evatotalNum: 0
 					}
 				},
 				created: function() {
@@ -158,7 +156,7 @@
 								_this.list = _this.list.concat(resData.data.merchantComments);
 							}, this.page)
 						} else {
-							refresher.info.pullUpLable='没有更多数据了!';
+							refresher.info.pullUpLable = '没有更多数据了!';
 						}
 
 						wrapper.refresh();
