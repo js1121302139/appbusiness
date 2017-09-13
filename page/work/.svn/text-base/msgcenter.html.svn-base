@@ -20,25 +20,24 @@
 				<h1 class="mui-title"> 系统消息</h1>
 				<span id="TopMsg" class="mui-btn  Topactivity mui-btn-blue mui-btn-link mui-pull-right" @click="read">朕已阅</span>
 			</header>
-			<div class="wrappers">
-				<div id="wrapper" class="wrapperList">
-					<ul id="msgList">
-						<li class="ListItem" v-for="(item,key) in list" @click="open(item)">
-							<p class="msgDate mui-text-center" v-text="item.createTime">2017-06-10 16:00:00</p>
-							<div class="msgInfo">
-								<div class="msgTop">
-									<h1 class="msgTit mui-ellipsis" v-text="item.title">一下下下下 </h1>
-									<div class="msg-ico">
-										<span class="msgBadge" v-show="!item.status"></span>
-									</div>
+			<div id="wrapper" class="wrapperList">
+				<ul id="msgList">
+					<li class="ListItem" v-for="(item,key) in list" @click="open(item)">
+						<p class="msgDate mui-text-center" v-text="item.createTime">2017-06-10 16:00:00</p>
+						<div class="msgInfo">
+							<div class="msgTop">
+								<h1 class="msgTit mui-ellipsis" v-text="item.title">一下下下下 </h1>
+								<div class="msg-ico">
+									<span class="msgBadge" v-show="!item.status"></span>
 								</div>
-								<div class="msgimg" v-if="item.desPicture!=''">
-									<img :src="picservice + item.desPicture" alt="">
-								</div>
-								<p class="magText mui-ellipsis" v-text="item.pTitle">福利大放送哦121321福利123132123大放送哦福利大放送哦福利大放送哦</p>
 							</div>
-						</li>
-						<!--<li class="ListItem">
+							<div class="msgimg" v-if="item.desPicture!=''">
+								<img :src="picservice + item.desPicture" alt="">
+							</div>
+							<p class="magText mui-ellipsis" v-text="item.pTitle">福利大放送哦121321福利123132123大放送哦福利大放送哦福利大放送哦</p>
+						</div>
+					</li>
+					<!--<li class="ListItem">
 							<p class="msgDate mui-text-center">2017-06-10 16:00:00</p>
 							<div class="msgInfo">
 								<div class="msgTop">
@@ -53,9 +52,16 @@
 								<p class="magText mui-ellipsis">福利大放送哦121321福利123132123大放送哦福利大放送哦福利大放送哦</p>
 							</div>
 						</li>-->
-					</ul>
+				</ul>
+			</div>
+			<div class="isNoData"  :class="{scale1:isNoData}"> 
+				<div class="isNoDataInfo mui-text-center">
+					<div class="isNoDataBg"></div>
+					<p class="isNoDataTit">暂无消息</p>
+				<p>一有消息小兑立马通知您~</p> 
 				</div>
-
+				
+				</div>
 			</div>
 
 		</div>
@@ -73,21 +79,22 @@
 				return {
 					list: [],
 					picservice: picservice,
-					page: 1,
+					page: 1, 
 					totalPage: null,
-					pageLen: pageLen
-				}
+					pageLen: pageLen,
+					isNoData:true
+				} 
 			},
 			created: function() {
 				var _this = this;
 				mui.plusReady(function() {
 					refresher.init({
 						id: "wrapper",
-						pullUpAction: _this.Load
+						pullUpAction: _this.Load 
 					});
 					_this.messageList(function(resData) {
 						_this.list = resData.data;
-						console.log(JSON.stringify(resData.data))
+						(resData.total<1)?_this.isNoData=false:_this.isNoData=true;
 						_this.totalPage = Math.ceil(resData.total / _this.pageLen);
 					}, 1)
 					window.addEventListener("messageList", function() {
@@ -140,7 +147,7 @@
 							if(data.success == true) {};
 						}
 					}
-					Fun_App.ExAjax("merchant/read", sendData);
+					//Fun_App.ExAjax("merchant/read", sendData);
 				},
 				Load: function() {
 					this.page++;

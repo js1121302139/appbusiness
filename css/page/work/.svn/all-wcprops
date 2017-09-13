@@ -9,23 +9,23 @@ svn:wc:ra_dav:version-url
 V 76
 /svn/shop/!svn/ver/3630/Source/appbusiness/css/page/work/applysettlement.css
 END
-detailinfo.less
-K 25
-svn:wc:ra_dav:version-url
-V 72
-/svn/shop/!svn/ver/2284/Source/appbusiness/css/page/work/detailinfo.less
-END
-evaluatemange.less
-K 25
-svn:wc:ra_dav:version-url
-V 75
-/svn/shop/!svn/ver/3697/Source/appbusiness/css/page/work/evaluatemange.less
-END
 shopmain.less
 K 25
 svn:wc:ra_dav:version-url
 V 70
 /svn/shop/!svn/ver/2284/Source/appbusiness/css/page/work/shopmain.less
+END
+evaluatemange.less
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/shop/!svn/ver/3987/Source/appbusiness/css/page/work/evaluatemange.less
+END
+detailinfo.less
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/shop/!svn/ver/2284/Source/appbusiness/css/page/work/detailinfo.less
 END
 teamAdmin.css
 K 25
@@ -37,7 +37,7 @@ shareprofit.less
 K 25
 svn:wc:ra_dav:version-url
 V 73
-/svn/shop/!svn/ver/3423/Source/appbusiness/css/page/work/shareprofit.less
+/svn/shop/!svn/ver/3987/Source/appbusiness/css/page/work/shareprofit.less
 END
 qrcodeExchangeFor.less
 K 25
@@ -45,17 +45,17 @@ svn:wc:ra_dav:version-url
 V 79
 /svn/shop/!svn/ver/2297/Source/appbusiness/css/page/work/qrcodeExchangeFor.less
 END
-applysettlement.less
-K 25
-svn:wc:ra_dav:version-url
-V 77
-/svn/shop/!svn/ver/3630/Source/appbusiness/css/page/work/applysettlement.less
-END
 integralexchange.css
 K 25
 svn:wc:ra_dav:version-url
 V 77
 /svn/shop/!svn/ver/2297/Source/appbusiness/css/page/work/integralexchange.css
+END
+applysettlement.less
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/shop/!svn/ver/3630/Source/appbusiness/css/page/work/applysettlement.less
 END
 createacrivity.css
 K 25
@@ -63,17 +63,17 @@ svn:wc:ra_dav:version-url
 V 75
 /svn/shop/!svn/ver/3423/Source/appbusiness/css/page/work/createacrivity.css
 END
-receivablesCode.css
-K 25
-svn:wc:ra_dav:version-url
-V 76
-/svn/shop/!svn/ver/3885/Source/appbusiness/css/page/work/receivablesCode.css
-END
 myshop.css
 K 25
 svn:wc:ra_dav:version-url
 V 67
 /svn/shop/!svn/ver/3245/Source/appbusiness/css/page/work/myshop.css
+END
+receivablesCode.css
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/shop/!svn/ver/3885/Source/appbusiness/css/page/work/receivablesCode.css
 END
 partySettlement.less
 K 25
@@ -85,7 +85,7 @@ budgetAdmin.css
 K 25
 svn:wc:ra_dav:version-url
 V 72
-/svn/shop/!svn/ver/3245/Source/appbusiness/css/page/work/budgetAdmin.css
+/svn/shop/!svn/ver/3987/Source/appbusiness/css/page/work/budgetAdmin.css
 END
 cashsuccess.less
 K 25
@@ -103,7 +103,7 @@ jsdentail.less
 K 25
 svn:wc:ra_dav:version-url
 V 71
-/svn/shop/!svn/ver/3940/Source/appbusiness/css/page/work/jsdentail.less
+/svn/shop/!svn/ver/3987/Source/appbusiness/css/page/work/jsdentail.less
 END
 dataAnalysis.less
 K 25
@@ -145,7 +145,7 @@ myuser.less
 K 25
 svn:wc:ra_dav:version-url
 V 68
-/svn/shop/!svn/ver/3630/Source/appbusiness/css/page/work/myuser.less
+/svn/shop/!svn/ver/3987/Source/appbusiness/css/page/work/myuser.less
 END
 home.less
 K 25
@@ -157,13 +157,13 @@ partyAdmin.css
 K 25
 svn:wc:ra_dav:version-url
 V 71
-/svn/shop/!svn/ver/3676/Source/appbusiness/css/page/work/partyAdmin.css
+/svn/shop/!svn/ver/3987/Source/appbusiness/css/page/work/partyAdmin.css
 END
 activityCenter.less
 K 25
 svn:wc:ra_dav:version-url
 V 76
-/svn/shop/!svn/ver/3960/Source/appbusiness/css/page/work/activityCenter.less
+/svn/shop/!svn/ver/3987/Source/appbusiness/css/page/work/activityCenter.less
 END
 shopenvironment.less
 K 25
@@ -175,7 +175,7 @@ jsdentail.css
 K 25
 svn:wc:ra_dav:version-url
 V 70
-/svn/shop/!svn/ver/3940/Source/appbusiness/css/page/work/jsdentail.css
+/svn/shop/!svn/ver/3987/Source/appbusiness/css/page/work/jsdentail.css
 END
 dataAnalysis.css
 K 25
@@ -189,23 +189,17 @@ svn:wc:ra_dav:version-url
 V 71
 /svn/shop/!svn/ver/3940/Source/appbusiness/css/page/work/teamAdmin.less
 END
-createParty.css
-K 25
-svn:wc:ra_dav:version-url
-V 72
-/svn/shop/!svn/ver/3424/Source/appbusiness/css/page/work/createParty.css
-END
 integral.less
 K 25
 svn:wc:ra_dav:version-url
 V 70
 /svn/shop/!svn/ver/2298/Source/appbusiness/css/page/work/integral.less
 END
-partyIn.css
+createParty.css
 K 25
 svn:wc:ra_dav:version-url
-V 68
-/svn/shop/!svn/ver/3854/Source/appbusiness/css/page/work/partyIn.css
+V 72
+/svn/shop/!svn/ver/3424/Source/appbusiness/css/page/work/createParty.css
 END
 login.less
 K 25
@@ -213,17 +207,23 @@ svn:wc:ra_dav:version-url
 V 67
 /svn/shop/!svn/ver/2297/Source/appbusiness/css/page/work/login.less
 END
+partyIn.css
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/shop/!svn/ver/3854/Source/appbusiness/css/page/work/partyIn.css
+END
 msgcenter.css
 K 25
 svn:wc:ra_dav:version-url
 V 70
-/svn/shop/!svn/ver/3731/Source/appbusiness/css/page/work/msgcenter.css
+/svn/shop/!svn/ver/3987/Source/appbusiness/css/page/work/msgcenter.css
 END
-receivablesCode.less
+activityCenter.css
 K 25
 svn:wc:ra_dav:version-url
-V 77
-/svn/shop/!svn/ver/3885/Source/appbusiness/css/page/work/receivablesCode.less
+V 75
+/svn/shop/!svn/ver/3987/Source/appbusiness/css/page/work/activityCenter.css
 END
 myshop.less
 K 25
@@ -231,17 +231,17 @@ svn:wc:ra_dav:version-url
 V 68
 /svn/shop/!svn/ver/2546/Source/appbusiness/css/page/work/myshop.less
 END
-activityCenter.css
+receivablesCode.less
 K 25
 svn:wc:ra_dav:version-url
-V 75
-/svn/shop/!svn/ver/3960/Source/appbusiness/css/page/work/activityCenter.css
+V 77
+/svn/shop/!svn/ver/3987/Source/appbusiness/css/page/work/receivablesCode.less
 END
 myincome.less
 K 25
 svn:wc:ra_dav:version-url
 V 70
-/svn/shop/!svn/ver/3630/Source/appbusiness/css/page/work/myincome.less
+/svn/shop/!svn/ver/3987/Source/appbusiness/css/page/work/myincome.less
 END
 monthlyEarnings.less
 K 25
@@ -253,13 +253,7 @@ budgetAdmin.less
 K 25
 svn:wc:ra_dav:version-url
 V 73
-/svn/shop/!svn/ver/3245/Source/appbusiness/css/page/work/budgetAdmin.less
-END
-addSonAccount.less
-K 25
-svn:wc:ra_dav:version-url
-V 75
-/svn/shop/!svn/ver/3940/Source/appbusiness/css/page/work/addSonAccount.less
+/svn/shop/!svn/ver/3987/Source/appbusiness/css/page/work/budgetAdmin.less
 END
 extensionewm.less
 K 25
@@ -267,17 +261,23 @@ svn:wc:ra_dav:version-url
 V 74
 /svn/shop/!svn/ver/2298/Source/appbusiness/css/page/work/extensionewm.less
 END
-partySettlement.css
+addSonAccount.less
 K 25
 svn:wc:ra_dav:version-url
-V 76
-/svn/shop/!svn/ver/3577/Source/appbusiness/css/page/work/partySettlement.css
+V 75
+/svn/shop/!svn/ver/3940/Source/appbusiness/css/page/work/addSonAccount.less
 END
 partyIn.less
 K 25
 svn:wc:ra_dav:version-url
 V 69
 /svn/shop/!svn/ver/3854/Source/appbusiness/css/page/work/partyIn.less
+END
+partySettlement.css
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/shop/!svn/ver/3577/Source/appbusiness/css/page/work/partySettlement.css
 END
 integral.css
 K 25
@@ -301,19 +301,19 @@ myuser.css
 K 25
 svn:wc:ra_dav:version-url
 V 67
-/svn/shop/!svn/ver/3791/Source/appbusiness/css/page/work/myuser.css
-END
-addSonAccount.css
-K 25
-svn:wc:ra_dav:version-url
-V 74
-/svn/shop/!svn/ver/3940/Source/appbusiness/css/page/work/addSonAccount.css
+/svn/shop/!svn/ver/3987/Source/appbusiness/css/page/work/myuser.css
 END
 extensionewm.css
 K 25
 svn:wc:ra_dav:version-url
 V 73
 /svn/shop/!svn/ver/2298/Source/appbusiness/css/page/work/extensionewm.css
+END
+addSonAccount.css
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/shop/!svn/ver/3940/Source/appbusiness/css/page/work/addSonAccount.css
 END
 integralexchange.less
 K 25
@@ -345,17 +345,17 @@ svn:wc:ra_dav:version-url
 V 73
 /svn/shop/!svn/ver/3424/Source/appbusiness/css/page/work/createParty.less
 END
+msgcenter.less
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/shop/!svn/ver/3987/Source/appbusiness/css/page/work/msgcenter.less
+END
 promotionAward.css
 K 25
 svn:wc:ra_dav:version-url
 V 75
 /svn/shop/!svn/ver/3423/Source/appbusiness/css/page/work/promotionAward.css
-END
-msgcenter.less
-K 25
-svn:wc:ra_dav:version-url
-V 71
-/svn/shop/!svn/ver/3731/Source/appbusiness/css/page/work/msgcenter.less
 END
 messageArticle.less
 K 25
@@ -391,7 +391,7 @@ evaluatemange.css
 K 25
 svn:wc:ra_dav:version-url
 V 74
-/svn/shop/!svn/ver/3697/Source/appbusiness/css/page/work/evaluatemange.css
+/svn/shop/!svn/ver/3987/Source/appbusiness/css/page/work/evaluatemange.css
 END
 shopmain.css
 K 25
@@ -415,7 +415,7 @@ myincome.css
 K 25
 svn:wc:ra_dav:version-url
 V 69
-/svn/shop/!svn/ver/3630/Source/appbusiness/css/page/work/myincome.css
+/svn/shop/!svn/ver/3987/Source/appbusiness/css/page/work/myincome.css
 END
 decorationshop.css
 K 25
@@ -427,11 +427,11 @@ shareprofit.css
 K 25
 svn:wc:ra_dav:version-url
 V 72
-/svn/shop/!svn/ver/3423/Source/appbusiness/css/page/work/shareprofit.css
+/svn/shop/!svn/ver/3987/Source/appbusiness/css/page/work/shareprofit.css
 END
 partyAdmin.less
 K 25
 svn:wc:ra_dav:version-url
 V 72
-/svn/shop/!svn/ver/3676/Source/appbusiness/css/page/work/partyAdmin.less
+/svn/shop/!svn/ver/3987/Source/appbusiness/css/page/work/partyAdmin.less
 END

@@ -39,6 +39,7 @@ a {
 }
 input {
   font-size: 0.87rem;
+  -webkit-appearance: none;
 }
 .mui-input-group:before,
 .mui-input-group:after {
@@ -435,19 +436,18 @@ body,
   border-bottom: 1px solid #0A7FF1;
 }
 /*用户列表*/
-.wrapper {
-  position: relative;
-  height: 100%;
-}
-.wrapperList ul {
-  margin-bottom: 18.12rem;
+.wrapperList {
+  top: 15.3125rem;
+  bottom: 3.125rem;
+  background-color: #fff;
 }
 .wrapperList .pullDown {
   display: none;
 }
-.wrapperList .pullUp {
-  position: relative;
-  top: -18.12rem;
+.wrapperList .userLsit {
+  top: 0;
+  left: 0;
+  height: 100%;
 }
 .wrapperList .userLsit .userBox {
   padding: 0.75rem 0.75rem 0.75rem 0.93rem;

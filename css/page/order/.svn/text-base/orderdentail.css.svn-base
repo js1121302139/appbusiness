@@ -383,9 +383,6 @@ table {
 .wrapperList .pullDown {
   display: none;
 }
-.wrapperList .scroller {
-  height: 100%;
-}
 .wrapperList .wrapperListItem {
   list-style: none;
   padding: 0 0.75rem;
@@ -436,16 +433,28 @@ table {
   padding: 15px 0;
   display: flex;
   flex-direction: column;
-  align-content: space-around;
+  align-content: space-between;
 }
 .wrapperList .wrapperListItem .ListItem-Info .order-Income p {
   display: flex;
   flex: 1;
   width: 100%;
-  align-items: center;
   margin: 0;
   color: #333;
 }
 .wrapperList .wrapperListItem .ListItem-Info .order-Income p span {
   color: #D7B374;
+}
+.wrapperList .wrapperListItem .ListItem-Info .order-Income p .orderTit {
+  text-align: justify;
+  width: 52px;
+  vertical-align: top;
+  overflow: hidden;
+  display: inline-block;
+  color: #000;
+}
+.wrapperList .wrapperListItem .ListItem-Info .order-Income p .orderTit i {
+  display: inline-block;
+  width: 100%;
+  height: 0;
 }

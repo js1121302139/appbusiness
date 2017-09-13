@@ -66,6 +66,7 @@ mui.init();
 		msgBtnBox.addEventListener("tap", function() {
 			var isActive = document.getElementById("msgBtn").classList.contains("mui-active");
 			Fun_App.storagedata("pushMsg", isActive);
+			console.log(Fun_App.getdata("pushMsg"))
 		})
 		//通知消息存储
 		//透传消息的格式为{title:"通知标题",content:"通知内容",payload:"通知去干嘛这里可以自定义"}

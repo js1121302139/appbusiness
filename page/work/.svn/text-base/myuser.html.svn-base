@@ -35,29 +35,27 @@
 					</div>
 				</div>
 			</div>
-			<div class="wrapper">
-				<div id="wrapper" class="wrapperList">
-					<ul class="userLsit" id="userList">
-						<li class="mui-table-view-cell userBox" @click.stop="checks(key)" v-for="(item,key) in list">
-							<div class="checkAndImg mui-checkbox">
-								<input class="check" :checked="item.ischeck" v-model="item.ischeck" type="checkbox">
-								<img :src="item.headImg!=''?picservice +item.headImg:'../../img/work-head.png'"/>
-							</div>
-							<div class="userInfo">
-								<p v-text="'用户名:' + item.memberName">用户名:锤子(ID:007)</p>
-								<p v-text="'等级:' + item.grade">用户名:锤子(ID:007)</p>
-								<p v-text="'关注时间:' + item.createTime">用户名:锤子(ID:007)</p>
-							</div>
-							<div class="moneyAndMsgBtn">
-								<p class="mui-text-center" v-text="'￥' + item.money==null?0:item.money">￥5000</p>
-								<a href="javascript:;" class="mui-text-center" @click.stop="send(key)">发送消息</a>
-							</div>
-						</li>
+			<div id="wrapper" class="wrapperList">
+				<ul class="userLsit" id="userList">
+					<li class="mui-table-view-cell userBox" @click.stop="checks(key)" v-for="(item,key) in list">
+						<div class="checkAndImg mui-checkbox">
+							<input class="check" :checked="item.ischeck" v-model="item.ischeck" type="checkbox">
+							<img :src="item.headImg!=''?picservice +item.headImg:'../../img/work-head.png'" />
+						</div>
+						<div class="userInfo"> 
+							<p v-text="'用户名:' + item.memberName">用户名:锤子(ID:007)</p>
+							<p v-text="'等级:' + item.grade">用户名:锤子(ID:007)</p>
+							<p v-text="'关注时间:' + item.createTime">用户名:锤子(ID:007)</p>
+						</div>
+						<div class="moneyAndMsgBtn">
+							<p class="mui-text-center" v-text="item.money==null?'￥'+0:'￥'+item.money">￥5000</p>
+							<a href="javascript:;" class="mui-text-center" @click.stop="send(key)">发送消息</a>
+						</div>
+					</li>
 
-					</ul>
-				</div>
-
+				</ul>
 			</div>
+
 			<nav class="mui-bar mui-bar-tab">
 				<div class="mui-row">
 					<div class="mui-col-sm-8 mui-col-xs-8 selectAll">
@@ -71,7 +69,14 @@
 					</div>
 				</div>
 			</nav>
-
+			<div class="isNoData" v-if="isNoData" :class="{scale1:isNoData}">
+				<div class="isNoDataInfo mui-text-center">
+					<div class="isNoDataBg"></div>
+				</div>
+				<p class="isNoDataTit">暂无消息</p>
+				<p>一有消息小兑立马通知您~</p> 
+				</div>
+			</div>
 		</div>
 	</body>
 	<script src="../../js/mui.js"></script>
@@ -92,7 +97,8 @@
 					pageData: {},
 					list: [],
 					sendArr: [],
-					checkAlls: false
+					checkAlls: false,
+					isNoData:false
 				}
 			},
 			created: function() {
@@ -126,6 +132,7 @@
 					Fun_App.ExAjax("merchantPerson/myUsers", sendData)
 				},
 				send: function(key) {
+					console.log(JSON.stringify(this.list))
 					if(key != 'null') {
 						this.list[key].ischeck = true;
 						var index = this.sendArr.indexOf(this.list[key].memberId);
@@ -139,7 +146,7 @@
 							"content": null
 						},
 						fun_Success: function(data) {
-							data.success?mui.toast('消息发送成功'):mui.toast('消息发送失败!');
+							data.success ? mui.toast('消息发送成功') : mui.toast('消息发送失败!');
 						}
 					}
 					if(this.sendArr.length != 0) {
@@ -150,6 +157,8 @@
 								msgTxt.length <= 50 && msgTxt.length > 0 ? Fun_App.ExAjax("merchantPerson/sendMessage", shopData) : mui.toast('请输入1-50个字符!')
 							}
 						}, 'div')
+					}else{
+						mui.toast('请选择用户在进行后续操作!')
 					}
 				},
 				Load: function() {
@@ -157,7 +166,8 @@
 					var _this = this;
 					if(this.page <= this.totalPage) {
 						this.getUser(function(resData) {
-							_this.list = _this.list.concat(resData.data)
+							//_this.list = _this.list.concat(resData.data);
+							_this.appendList(resData.data);
 						}, this.page)
 					} else {
 						refresher.info.pullUpLable = '没有更多数据了!';
@@ -176,23 +186,27 @@
 							ischeck: false
 						})
 					}
+					console.log(JSON.stringify(this.list))
 				},
 				checks: function(key) {
 					this.list[key].ischeck = !this.list[key].ischeck;
 					var index = this.sendArr.indexOf(this.list[key].memberId);
 					(index == -1) ? this.sendArr.push(this.list[key].memberId): this.sendArr.splice(index, 1);
 					(this.sendArr.length == this.list.length) ? this.checkAlls = !this.checkAlls: this.checkAlls = false;
-					/*this.list[key].ischeck ? this.sendArr.push(this.list[key].memberId) : this.sendArr.splice(key, 1)*/
-					console.log(JSON.stringify(this.sendArr))
 
 				},
 				checkAll: function() {
 					var _this = this;
 					this.checkAlls = !this.checkAlls;
-					this.list.forEach(function(i, item) {
-						i.ischeck = _this.checkAlls;
-						(_this.sendArr.indexOf(i.memberId) == -1) ? _this.sendArr.push(i.memberId): ""
-					})
+					
+						this.list.forEach(function(i, item) {
+							i.ischeck = _this.checkAlls;
+							_this.sendArr.indexOf(i.memberId)==-1?_this.sendArr.push(i.memberId):'';
+						})
+						if(!this.checkAlls){
+							this.sendArr=[];
+						}
+
 				}
 
 			}

@@ -53,7 +53,15 @@
 							</div>
 						</li>-->
 				</ul>
-
+			</div>
+			<div class="isNoData" v-if="isNoData"  :class="{scale1:isNoData}"> 
+				<div class="isNoDataInfo mui-text-center">
+					<div class="isNoDataBg"></div>
+					<p class="isNoDataTit">暂无消息</p>
+				<p>一有消息小兑立马通知您~</p> 
+				</div>
+				
+				</div>
 			</div>
 
 		</div>
@@ -71,21 +79,22 @@
 				return {
 					list: [],
 					picservice: picservice,
-					page: 1,
+					page: 1, 
 					totalPage: null,
-					pageLen: pageLen
-				}
+					pageLen: pageLen,
+					isNoData:false
+				} 
 			},
 			created: function() {
 				var _this = this;
 				mui.plusReady(function() {
 					refresher.init({
 						id: "wrapper",
-						pullUpAction: _this.Load
+						pullUpAction: _this.Load 
 					});
 					_this.messageList(function(resData) {
 						_this.list = resData.data;
-						console.log(JSON.stringify(resData.data))
+						(resData.total<1)?_this.isNoData=true:_this.isNoData=false;
 						_this.totalPage = Math.ceil(resData.total / _this.pageLen);
 					}, 1)
 					window.addEventListener("messageList", function() {
@@ -138,7 +147,7 @@
 							if(data.success == true) {};
 						}
 					}
-					Fun_App.ExAjax("merchant/read", sendData);
+					//Fun_App.ExAjax("merchant/read", sendData);
 				},
 				Load: function() {
 					this.page++;

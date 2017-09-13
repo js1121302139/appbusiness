@@ -12,19 +12,11 @@ body,
     height: 100%;
 }
 
-.wrappers {
-    position: relative;
-    height: 100%;
     .wrapperList {
+        top:4rem;
+        bottom: 3.125rem;
         .pullDown {
             display: none;
-        }
-        .pullUp {
-            position: relative;
-            top: -4.62rem;
-        }
-        ul {
-            padding-bottom: 4.62rem;
         }
         .listItem {
             display: flex;
@@ -166,7 +158,6 @@ body,
             }
         }
     }
-}
 
 footer {
     display: flex;

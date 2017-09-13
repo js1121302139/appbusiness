@@ -22,16 +22,20 @@
 					<p class="countMony" id="countMony" v-text="pageData.withdrawInfoTotal==null?0:pageData.withdrawInfoTotal">9999</p>
 				</div>
 			</div>
-			<div class="wrappers">
-				<div id="wrapper" class="wrapperList">
-					<ul id="moneyList">
-						<li class="listItem" v-for="(item,key) in list">
-							<p class="itemDate" v-text="item.createTime">2017-02-15</p>
-							<p class="itemMoney" v-text="'+' +item.money">+888.66</p>
-						</li>
-
-					</ul>
-				</div>
+			<div id="wrapper" class="wrapperList">
+				<ul id="moneyList">
+					<li class="listItem" v-for="(item,key) in list">
+						<p class="itemDate" v-text="item.createTime">2017-02-15</p>
+						<p class="itemMoney" v-text="'+' +item.money">+888.66</p>
+					</li>
+				</ul>
+				<div class="isNoData" v-if="isNoData" :class="{scale1:isNoData}">
+						<div class="isNoDataInfo mui-text-center">
+							<div class="isNoDataBg"></div>
+							<p class="isNoDataTit">暂无收益信息</p>
+							<p>小主{{mouth}}月暂时还没有收益信息哦!</p>
+						</div>
+					</div>
 			</div>
 
 			<div class="MouthList mui-backdrop" v-show="showMouth">
@@ -51,7 +55,7 @@
 		<script type="text/javascript" src="../../js/vue.min.js"></script>
 		<script type="text/javascript">
 			var Vue = new Vue({
-				el: "#monthlyEarnings",
+				el: "#monthlyEarnings", 
 				data: function() {
 					return {
 						page: 1,
@@ -60,7 +64,8 @@
 						pageData: {},
 						mouth: new Date().getMonth() + 1,
 						list: [],
-						showMouth: false
+						showMouth: false,
+						isNoData:true
 					}
 				},
 				created: function() {
@@ -94,10 +99,10 @@
 					},
 					Load: function() {
 						this.page++;
-						var _this = this ;
+						var _this = this;
 						if(this.page <= this.totalPage) {
 							this.getIncomeMonth(function(resData) {
-							_this.list =_this.list.concat(resData.data.merchantShareLogsList);
+								_this.list = _this.list.concat(resData.data.merchantShareLogsList);
 							}, this.page, this.mouth)
 						} else {
 							refresher.info.pullUpLable = '没有更多数据了!';
@@ -113,7 +118,7 @@
 							console.log(_this.totalPage)
 							_this.pageData = resData.data;
 							_this.list = resData.data.merchantShareLogsList;
-							console.log(JSON.stringify(_this.list)) 
+							console.log(JSON.stringify(_this.list))
 						}, 1, mouth)
 					}
 				}

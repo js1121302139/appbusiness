@@ -33,10 +33,10 @@
 									<div class="order-PeopleInfo" v-text="item.memberName">罗炼羽 15632456528</div>
 								</div>
 								<div class="order-Income">
-									<p>消费金额:<span v-text="item.moneyTotal">8654.65</span></p>
-									<p>营业收入:<span v-text="item.actualTotalIncome">8654.65</span></p>
-									<p>佣&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 金:<span v-text="item.scalingAmount">86565</span></p>
-									<p>兑贝抵扣:<span v-text="item.integral">86565</span></p>
+									<p><span class="orderTit">消费金额<i></i></span><span v-text="item.moneyTotal">8654.65</span></p>
+									<p><span class="orderTit">营业收入<i></i></span>:<span v-text="item.actualTotalIncome">8654.65</span></p>
+									<p><span class="orderTit">佣金<i></i></span>:<span v-text="item.scalingAmount">86565</span></p>
+									<p><span class="orderTit">兑贝抵扣<i></i></span>:<span v-text="item.integral">86565</span></p>
 								</div>
 							</div>
 						</li>
@@ -49,6 +49,26 @@
 		<script type="text/javascript" src="../../js/pullToRefresh.js"></script>
 		<script type="text/javascript" src="../../js/muihelper.js"></script>
 		<!--<script type="text/javascript" src="../../js/page/order/orderdentail.js" ></script>-->
+		<script type="text/x-template" id="anchored-heading-template">
+			<h1 v-if="level === 1">
+    <slot></slot>
+  </h1>
+			<h2 v-else-if="level === 2">
+    <slot></slot>
+  </h2>
+			<h3 v-else-if="level === 3">
+    <slot></slot>
+  </h3>
+			<h4 v-else-if="level === 4">
+    <slot></slot>
+  </h4>
+			<h5 v-else-if="level === 5">
+    <slot></slot>
+  </h5>
+			<h6 v-else-if="level === 6">
+    <slot></slot>
+  </h6>
+		</script>
 		<script src="../../js/vue.min.js"></script>
 		<script type="text/javascript">
 			var Vue = new Vue({
@@ -94,16 +114,16 @@
 						Fun_App.ExAjax("merchantOrders/detailInfo", sendData)
 					},
 					Load: function() {
-						var _this = this ;
+						var _this = this;
 						this.page++;
-						if(this.page <= this.totalPage){
+						if(this.page <= this.totalPage) {
 							this.getList(function(resData) {
 								_this.list = _this.list.concat(resData.data)
 							}, this.page)
-						}else{
+						} else {
 							refresher.info.pullUpLable = '没有更多数据了!';
 						}
-							
+
 						wrapper.refresh();
 					}
 				}

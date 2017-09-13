@@ -19,11 +19,6 @@ body,
     overflow: hidden;
     background: #fff;
 }
-.mui-content {
-    height: 100%;
-    min-height: 100%;
-    background-color:#fff ;
-}
 
 .evaluateStar(@url1,
 @url2,
@@ -85,99 +80,94 @@ body,
     font-size: 0.9375rem;
     .evaluateCount {
         text-indent: 1.75rem;
-           height: 1.37rem;        
+        height: 1.37rem;
         line-height: 1.375rem;
         color: #333;
         background: url("../../../img/evaluate-ico.png") left center no-repeat;
         background-size: 1.37rem 1.37rem;
     }
-    .starLv{
+    .starLv {
         display: flex;
-        .evaluateStar("../../../img/bigStarLine-ico.png","../../../img/bigStar-ico.png.png", 6.71rem,0.9375rem,0.5rem);
+        .evaluateStar("../../../img/bigStarLine-ico.png",
+        "../../../img/bigStar-ico.png.png",
+        6.71rem,
+        0.9375rem,
+        0.5rem);
     }
-  
-
 }
 
 .mui-content {
     background: #fff;
-       margin-top: 2.93rem;
-    .wrappers {
-        height: 100%;
-        .wrapperList {
-            ul {
-                padding-bottom: 8.12rem;
-                padding-top: 0.75rem;
-            }
-            .pullUp {
-                position: relative;
-                top: -8.12rem;
-            }
-            .pullDown {
-                display: none;
-            }
-            .wrapperListItem {
-                padding: 0.75rem 0.78125rem;
-                position: relative;
-                background-color:#fff ;
-                .ListItemTop {
+    margin-top: 2.93rem;
+}
+
+
+    .wrapperList {
+        top: 7.65625rem;
+    bottom: 0;
+        .pullDown {
+            display: none;
+        }
+        .wrapperListItem {
+            padding: 0.75rem 0.78125rem;
+            position: relative;
+            background-color: #fff;
+            .ListItemTop {
+                display: flex;
+                flex: 1;
+                justify-content: space-between;
+                align-items: center;
+                .wh(100%,
+                2.5625rem);
+                margin-bottom: 0.75rem;
+                img {
+                    .wh(2.5625rem,
+                    2.5625rem);
+                    margin-right: 0.68rem;
+                    border-radius: 20.5px;
+                }
+                .userInfo {
                     display: flex;
                     flex: 1;
-                    justify-content: space-between;
-                    align-items: center;
-                    .wh(100%,
-                    2.5625rem);
-                    margin-bottom: 0.75rem;
-                    img {
-                        .wh(2.5625rem,
-                        2.5625rem);
-                        margin-right: 0.68rem;
-                        border-radius: 20.5px;
-                    }
-                    .userInfo {
-                        display: flex;
-                        flex: 1;
-                        flex-direction: column;
-                        height: 1.875rem;
-                        .userName {
-                            align-self: flex-start;
-                            margin-bottom: 0.3125rem;
-                            font-size: 0.87rem;
-                            color: #333;
-                        }
-                        .evaluateStar("../../../img/smallStarLine-ico.png.png",
-                        "../../../img/smallStar-ico.png.png",
-                        5.125rem,
-                        0.75rem,
-                        0.34375rem);
-                    }
-                    .evaluateDate {
+                    flex-direction: column;
+                    height: 1.875rem;
+                    .userName {
                         align-self: flex-start;
-                        padding-top: 0.34rem;
-                        font-size: 0.75rem;
-                        color: #999;
+                        margin-bottom: 0.3125rem;
+                        font-size: 0.87rem;
+                        color: #333;
                     }
-                    .evaluateMsg{
-                        line-height: 1.25rem;
-                    }
+                    .evaluateStar("../../../img/smallStarLine-ico.png.png",
+                    "../../../img/smallStar-ico.png.png",
+                    5.125rem,
+                    0.75rem,
+                    0.34375rem);
                 }
-                &:after {
-                    position: absolute;
-                    content: " ";
-                    display: block;
-                    .wh(95%,
-                    0.0625rem);
-                    right: 0px;
-                    left: 0;
-                    bottom: -0.0625rem;
-                    margin: auto;
-                    background-color: #e5e5e5;
-                    transform: scaleY(0.5);
+                .evaluateDate {
+                    align-self: flex-start;
+                    padding-top: 0.34rem;
+                    font-size: 0.75rem;
+                    color: #999;
                 }
+                .evaluateMsg {
+                    line-height: 1.25rem;
+                }
+            }
+            &:after {
+                position: absolute;
+                content: " ";
+                display: block;
+                .wh(95%,
+                0.0625rem);
+                right: 0px;
+                left: 0;
+                bottom: -0.0625rem;
+                margin: auto;
+                background-color: #e5e5e5;
+                transform: scaleY(0.5);
             }
         }
     }
-}
 
 .evaluateNum {
     margin-left: 0.625rem;

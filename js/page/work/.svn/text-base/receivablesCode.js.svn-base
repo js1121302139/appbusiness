@@ -21,6 +21,7 @@ mui.plusReady(function() {
 			qrCodeBox.querySelector("img").style.display = 'block';
 			document.querySelector("#qrcodeLogo").style.display="block";
 		}
+		document.querySelector("#qrcodeLogo").style.display = "block";
 	}, 0);
 
 	setTimeout(getindexData(), 0)

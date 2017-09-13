@@ -35,7 +35,7 @@
 								<button class="codeBtn mui-btn mui-btn-primary" @click="smsVerify" id="codeButton" :disabled="showOutTime" v-text="second==90?'获取验证码':'剩余'+second+'秒'">获取验证码</button>
 							</div>
 							<div class="mui-input-row">
-								<input type="password" id="newPwd" v-model="pageData.newPwd" placeholder="请输入新密码">
+								<input type="password" id="newPwd" v-model="pageData.newPwd" placeholder="请输入新结算密码">
 							</div>
 						<!--<div class="mui-input-row">
 						<input type="text" placeholder="请再次输入新newPwd">
@@ -79,13 +79,7 @@
 							},
 							fun_Success: function(data) {
 								if(data.success) {
-									mui.toast("支付密码修改成功");
-									setTimeout(function() {
-										var allWin = plus.webview.all();
-										for(var i = 1; i < allWin.length; i++) {
-											plus.webview.close(allWin[i]);
-										}
-									}, 2000)
+									mui.toast("结算密码修改成功!");
 								} else {
 									mui.toast(data.message);
 								}
@@ -93,9 +87,19 @@
 						}
 						var _this = this ;
 						mui.plusReady(function(){
-							Fun_App.checkObjIsNull(_this.pageData,"")!=false?Fun_App.ExAjax("merchantPerson/updatepassword", sendData):mui.toast('还有东西没有填写');
+							Fun_App.checkObjIsNull(_this.pageData,"")!=false?Fun_App.ExAjax("merchantPerson/updatebalancepassword", sendData):mui.toast('还有东西没有填写');
 						})
 						
+					},
+					timeOut: function() {
+						this.showOutTime = true;
+						this.second--;
+						if(this.second < 1) {
+							this.showOutTime = false;
+							this.second = 90;
+						} else {
+							var timeout = setTimeout(this.timeOut, 1000);
+						}
 					},
 					smsVerify: function() {
 						var _this = this;
@@ -105,10 +109,11 @@
 								type: 2
 							},
 							fun_Success: function(data) {
-								if(data.success) {
-									mui.toast(data.message)
+								if(data.data) {
+									_this.timeOut();
+									mui.toast(data.message);
 								}else{
-									mui.toast(data.message)
+									mui.toast(data.message);
 								}
 							}
 						}
@@ -116,14 +121,6 @@
 							mui.plusReady(function() {
 								Fun_App.ExAjax("merchant/smsVerify", sendData);
 							})
-						}
-						this.showOutTime = true;
-						_this.second--;
-						if(_this.second < 1) {
-							this.showOutTime = false;
-							this.second = 90;
-						} else {
-							var timeout = setTimeout(_this.smsVerify, 1000)
 						}
 					}
 				},

@@ -38,7 +38,6 @@
 			<div class="monthlyEarnings mui-text-right" id="everyMoth" @click="open('everyMouth')">
 				<span>每月收益</span> <img src="../../img/order-ListGo-ico.png" alt="">
 			</div>
-			<div class="wrappers">
 				<div id="wrapper" class="wrapperList">
 					<ul id="yyaccountList">
 						<li class="ListItem" v-for="(items,key) in list">
@@ -58,12 +57,11 @@
 							</p>
 						</li>-->
 					</ul>
-				</div>
 
 			</div>
-			<div class="footerButton mui-text-center" v-if="isShowApplyBtn" id="myMoney" @click="open('applysettlement')">
+			<button :disabled="isShowApplyBtn" class="footerButton mui-text-center" id="myMoney" @click="open('applysettlement')">
 				申请结算
-			</div>
+			</button>
 		</div>
 	</body>
 	<script type="text/javascript" src="../../js/mui.min.js"></script>
@@ -90,7 +88,7 @@
 			created: function() {
 				var _this = this;
 				mui.plusReady(function() {
-					_this.isShowApplyBtn = (Fun_App.getdata("jobCode")=="BOSS")?true:false;
+					_this.isShowApplyBtn = (Fun_App.getdata("jobCode")!="BOSS")?true:false;
 					//刷新页面数据
 					window.addEventListener("shareprofit", function() {
 						_this.getMyIncome(function(resData) {

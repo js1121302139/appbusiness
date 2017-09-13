@@ -39,6 +39,7 @@ a {
 }
 input {
   font-size: 0.87rem;
+  -webkit-appearance: none;
 }
 .mui-input-group:before,
 .mui-input-group:after {
@@ -427,17 +428,13 @@ body,
   font-size: 1rem;
 }
 .wrapperList {
+  width: 100%;
+  top: 15.375rem;
+  bottom: 3.125rem;
   background-color: #fff;
-}
-.wrapperList ul {
-  margin-bottom: 18.43rem;
 }
 .wrapperList .pullDown {
   display: none;
-}
-.wrapperList .pullUp {
-  position: relative;
-  top: -18.43rem;
 }
 .wrapperList .wrapperListItem {
   position: relative;

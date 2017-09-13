@@ -197,6 +197,16 @@
 					Fun_App.ExAjax("merchantPerson/previewBankCard", sendData)
 				},
 				// 发送短信验证码
+				timeOut: function() {
+						this.showOutTime = true;
+						this.second--;
+						if(this.second < 1) {
+							this.showOutTime = false;
+							this.second = 90;
+						} else {
+							var timeout = setTimeout(this.timeOut, 1000);
+						}
+					},
 				smsVerify: function() {
 					var _this = this;
 					var sendData = {
@@ -207,6 +217,9 @@
 						fun_Success: function(data) {
 							if(data.success) {
 								mui.toast(data.message)
+								_this.timeOut();
+							}else{
+								mui.toast(data.message)
 							}
 						}
 					}
@@ -214,14 +227,6 @@
 						mui.plusReady(function() {
 							Fun_App.ExAjax("merchant/smsVerify", sendData);
 						})
-					}
-					this.showOutTime = true;
-					_this.second--;
-					if(_this.second < 1) {
-						this.showOutTime = false;
-						this.second = 90;
-					} else {
-						var timeout = setTimeout(_this.smsVerify, 1000)
 					}
 				}
 			}

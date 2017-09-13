@@ -45,7 +45,15 @@
 				</div>
 
 			</div>
-
+			<div class="isNoData" v-if="isNoData"  :class="{scale1:isNoData}"> 
+				<div class="isNoDataInfo mui-text-center">
+					<div class="isNoDataBg"></div>
+					<p class="isNoDataTit">暂无员工</p>
+				<p>点击右上角绑定一个吧!</p> 
+				</div>
+				
+				</div>
+			</div>
 		</div>
 
 		<script src="../../js/mui.min.js"></script>
@@ -59,15 +67,17 @@
 					return {
 						pageData: null,
 						picservice: picservice,
-						shopLogo: null
+						shopLogo: null,
+						isNoData:false
 					}
 				},
 				created: function() {
 					var _this = this;
 					mui.plusReady(function() {
 						_this.shopLogo = Fun_App.getdata("shopLogo");
-						_this.getTeamList(function(resData) {
+						_this.getTeamList(function(resData) { 
 							_this.pageData = resData.data;
+							_this.isNoData = (resData.data.length<1)?true:false;
 						})
 						window.addEventListener('getTeamList', function() {
 							_this.getTeamList(function(resData) {

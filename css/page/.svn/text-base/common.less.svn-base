@@ -499,3 +499,11 @@ table {
         }
     }
 }
+
+/*没有数据*/
+.isNoData(url){
+    .isNoDataBg{
+       background: url(url) left top no-repeat;
+       background-size:100%;
+    }
+}

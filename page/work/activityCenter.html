@@ -334,7 +334,7 @@
 							},
 							fun_Success: function(data) {
 								if(data.success) {
-
+									mui.toast('修改房间数成功!')
 								}
 							}
 						}
@@ -346,7 +346,6 @@
 							}
 						}, 'div')
 						document.querySelector("input").setAttribute("type", "tel")
-
 					}
 				},
 				filters: {
@@ -359,7 +358,6 @@
 						} else {
 							return "进行中";
 						}
-
 					}
 				}
 			})

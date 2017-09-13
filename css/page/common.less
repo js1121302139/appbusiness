@@ -492,10 +492,48 @@ table {
                     font-size: 0.75rem;
                 }
                 .money {
-                    margin-top: 0.46875rem;
+                    margin-top: 0.46875rem; 
                     font-size: 1rem;
                 }
             }
         }
     }
+}
+
+/*没有数据*/
+.isNoData(@top,@bottom){
+    .isNoData {
+    position: absolute;
+    width: 100%;
+    top: @top;
+    bottom: @bottom;
+    z-index: 9999;
+    background: #fff;
+    transform: scale(0);
+    transition: all 0.25s;
+    .isNoDataInfo {
+        position: absolute;
+        top: 8.125rem;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        .isNoDataBg {
+            margin: 0 auto;
+            width: 4.21875rem;
+            height: 8.125rem;
+            margin-bottom: 0.9375rem;
+            background: url(../../../images/work-message-nomsgBg.png) left top no-repeat;
+            background-size: cover;
+        }
+        p{
+            margin-bottom: 0.625rem;
+            font-size: 0.6875rem;
+            color: #999;
+        }
+        .isNoDataTit{
+            font-size: 0.875rem;
+            color: #8d8e92;
+        }
+    }
+}
 }

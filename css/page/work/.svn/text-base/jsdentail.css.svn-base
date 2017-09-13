@@ -379,9 +379,6 @@ table {
 .wrapperList .pullDown {
   display: none;
 }
-.wrapperList .scroller {
-  height: 100%;
-}
 .wrapperList .wrapperListItem {
   display: flex;
   flex: 1;
@@ -395,6 +392,17 @@ table {
   flex: 2;
   flex-direction: column;
   align-content: space-between;
+}
+.wrapperList .wrapperListItem .orderLeft .orderTxt {
+  width: 60px;
+  display: inline-block;
+  text-align: justify;
+  vertical-align: top;
+}
+.wrapperList .wrapperListItem .orderLeft .orderTxt i {
+  display: inline-block;
+  width: 100%;
+  height: 0;
 }
 .wrapperList .wrapperListItem .orderLeft div {
   flex: 1;

@@ -18,7 +18,7 @@
 					<p class="totalMoney-Money" id="totalMoney" v-text="pageTop.actualTotalIncome==null?0:pageTop.actualTotalIncome">9999.99</p>
 				</div>
 				<div class="orderInfo mui-text-center">
-					<div class="totalOrder">
+					<div class="totalOrder"> 
 						<p>总订单数(单)</p>
 						<p id="orderNum" v-text="pageTop.ordersTotal==null?0:pageTop.ordersTotal">789789</p>
 					</div>

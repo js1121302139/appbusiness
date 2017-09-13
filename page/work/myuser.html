@@ -69,7 +69,14 @@
 					</div>
 				</div>
 			</nav>
-
+			<div class="isNoData" v-if="isNoData" :class="{scale1:isNoData}">
+				<div class="isNoDataInfo mui-text-center">
+					<div class="isNoDataBg"></div>
+				</div>
+				<p class="isNoDataTit">暂无消息</p>
+				<p>一有消息小兑立马通知您~</p> 
+				</div>
+			</div>
 		</div>
 	</body>
 	<script src="../../js/mui.js"></script>
@@ -90,7 +97,8 @@
 					pageData: {},
 					list: [],
 					sendArr: [],
-					checkAlls: false
+					checkAlls: false,
+					isNoData:false
 				}
 			},
 			created: function() {

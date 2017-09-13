@@ -73,7 +73,8 @@ header{
   }
 }
 .wrapperList{
-  height: 476.5px !important;
+  top: 11.875rem;
+  bottom: 0;
   .pullDown {
     display: none;
   }

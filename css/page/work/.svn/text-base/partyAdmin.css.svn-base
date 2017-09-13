@@ -39,6 +39,7 @@ a {
 }
 input {
   font-size: 0.87rem;
+  -webkit-appearance: none;
 }
 .mui-input-group:before,
 .mui-input-group:after {
@@ -381,21 +382,14 @@ body,
 .mui-content {
   height: 100%;
 }
-.wrappers {
-  position: relative;
-  height: 100%;
+.wrapperList {
+  top: 4rem;
+  bottom: 3.125rem;
 }
-.wrappers .wrapperList .pullDown {
+.wrapperList .pullDown {
   display: none;
 }
-.wrappers .wrapperList .pullUp {
-  position: relative;
-  top: -4.62rem;
-}
-.wrappers .wrapperList ul {
-  padding-bottom: 4.62rem;
-}
-.wrappers .wrapperList .listItem {
+.wrapperList .listItem {
   display: flex;
   flex: 1;
   width: 100%;
@@ -404,34 +398,34 @@ body,
   margin-bottom: 0.625rem;
   background-color: #fff;
 }
-.wrappers .wrapperList .listItem * {
+.wrapperList .listItem * {
   font-size: 0.8125rem;
   color: #333;
 }
-.wrappers .wrapperList .listItem .InfoTit {
+.wrapperList .listItem .InfoTit {
   display: flex;
   flex: 1;
   width: 100%;
   justify-content: space-between;
   margin-bottom: 0.03125rem;
 }
-.wrappers .wrapperList .listItem .InfoTit .partyTit {
+.wrapperList .listItem .InfoTit .partyTit {
   display: flex;
   align-self: flex-end;
   font-size: 1rem;
 }
-.wrappers .wrapperList .listItem .InfoTit .partyState {
+.wrapperList .listItem .InfoTit .partyState {
   font-size: 0.875rem;
   color: #D7B374;
 }
-.wrappers .wrapperList .listItem .InfoTit .partyRoad {
+.wrapperList .listItem .InfoTit .partyRoad {
   display: flex;
   flex: 1;
   width: 100%;
   justify-content: flex-start;
   padding-left: 0.37rem;
 }
-.wrappers .wrapperList .listItem .InfoTit .partyRoad span {
+.wrapperList .listItem .InfoTit .partyRoad span {
   display: flex;
   width: 2.28rem;
   height: 0.96rem;
@@ -442,7 +436,7 @@ body,
   font-size: 0.68rem;
   color: #fff;
 }
-.wrappers .wrapperList .listItem .orderInfo {
+.wrapperList .listItem .orderInfo {
   display: flex;
   flex: 1;
   width: 100%;
@@ -450,15 +444,15 @@ body,
   justify-content: space-between;
   padding-bottom: 0.9375rem;
 }
-.wrappers .wrapperList .listItem .orderInfo .orderInfoL p {
+.wrapperList .listItem .orderInfo .orderInfoL p {
   margin-top: 0.8125rem;
 }
-.wrappers .wrapperList .listItem .orderInfo .orderInfoR {
+.wrapperList .listItem .orderInfo .orderInfoR {
   display: flex;
   width: 4.375rem;
   align-items: flex-end;
 }
-.wrappers .wrapperList .listItem .orderInfo .orderInfoR .orderContainer {
+.wrapperList .listItem .orderInfo .orderInfoR .orderContainer {
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -468,16 +462,16 @@ body,
   padding: 1rem 0 0.84375rem 0;
   box-shadow: inset 0 0 0 0.1875rem #D7B374;
 }
-.wrappers .wrapperList .listItem .orderInfo .orderInfoR .orderContainer .orderContainerNum {
+.wrapperList .listItem .orderInfo .orderInfoR .orderContainer .orderContainerNum {
   font-size: 1.3125rem;
   color: #333;
   margin-bottom: 0.18rem;
 }
-.wrappers .wrapperList .listItem .orderInfo .orderInfoR .orderContainer .orderContainerName {
+.wrapperList .listItem .orderInfo .orderInfoR .orderContainer .orderContainerName {
   font-size: 0.75rem;
   color: #999;
 }
-.wrappers .wrapperList .listItem .itemBottom {
+.wrapperList .listItem .itemBottom {
   display: flex;
   flex: 1;
   width: 100%;
@@ -486,11 +480,11 @@ body,
   overflow: hidden;
   border-top: 1px solid #e5e5e5;
 }
-.wrappers .wrapperList .listItem .itemBottom div {
+.wrapperList .listItem .itemBottom div {
   flex: 1;
   position: relative;
 }
-.wrappers .wrapperList .listItem .itemBottom div:after {
+.wrapperList .listItem .itemBottom div:after {
   content: " ";
   display: block;
   position: absolute;
@@ -502,7 +496,7 @@ body,
   margin: auto;
   background-color: #e5e5e5;
 }
-.wrappers .wrapperList .ListEnd {
+.wrapperList .ListEnd {
   width: 100%;
   height: 51 0.3125rem;
   position: relative;
@@ -512,10 +506,10 @@ body,
   font-size: 0.75rem;
   color: #ccc;
 }
-.wrappers .wrapperList .ListEnd span {
+.wrapperList .ListEnd span {
   display: inline-block;
 }
-.wrappers .wrapperList .ListEnd span:after {
+.wrapperList .ListEnd span:after {
   content: " ";
   display: block;
   width: 5.125rem;
@@ -527,7 +521,7 @@ body,
   margin: auto;
   background-color: #e8e8e8;
 }
-.wrappers .wrapperList .ListEnd span:before {
+.wrapperList .ListEnd span:before {
   content: " ";
   display: block;
   position: absolute;

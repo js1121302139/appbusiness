@@ -33,7 +33,7 @@
 								</div>
 								<div class="successTxtItem">
 									<span class="left">结算账户</span>
-									<span class="right">{{pageData.account[0].bankCode | replacex}}</span>
+									<span class="right">{{bankCode | replacex}}</span>
 								</div>
 								<div class="successTxtItem">
 									<span class="left">可结算金额</span>
@@ -69,9 +69,11 @@
 						pageData: {
 							allMoney: 0,
 							money: 0,
-							account: 0,
 						    url:null
-						} 
+						},
+						bankCode:'***0000'
+						//bankCode:"***1321"
+						
 					}
 				},
 				created: function() {
@@ -79,11 +81,11 @@
 					mui.plusReady(function() {
 						//接受传递的参数
 						var getData = Fun_App.getextrasdata();
-						_this.pageData.allMoney = getData.allMoney;
-						_this.pageData.money = getData.money;
-						_this.pageData.account = getData.account;
-						_this.pageData.url = getData.url;
 						console.log(JSON.stringify(getData))
+						_this.pageData.allMoney = getData.allMoney;//所有的钱
+						_this.pageData.money = getData.money;//结算成功的钱
+						_this.bankCode = getData.account[0].bankCode;//银行卡账户 
+						_this.pageData.url = getData.url;//查询的接口地址
 					})
 				},
 				methods: {
@@ -92,6 +94,7 @@
 						mui.plusReady(function(){
 							Fun_App.openWin("./jsdentail.html",'pop-in',_this.pageData.url);
 						})
+						plus.webview.currentWebview().close();
 					},
 					close:function(){
 						mui.plusReady(function(){
@@ -100,8 +103,8 @@
 					}
 				},
 				filters: {
-					replacex: function(value) {
-						return value.replace(/\*/g, "");
+					replacex: function(ss) {
+						return ss.replace(/\*/g,"");
 					}
 				}
 			})

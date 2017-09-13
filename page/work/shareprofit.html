@@ -92,8 +92,8 @@
 					//刷新页面数据
 					window.addEventListener("shareprofit", function() {
 						_this.getMyIncome(function(resData) {
-							_this.pageData = resData.data;
-							_this.shareBalanceMoney = _this.pageData.shareMoney - _this.pageData.shareBalance
+							_this.pageData = resData.data; 
+							_this.shareBalanceMoney = (_this.pageData.shareMoney - _this.pageData.shareBalance).toFixed(2);
 						});
 						_this.getMoreInfo(function(resData) {
 							_this.list = resData.data
@@ -103,7 +103,7 @@
 					
 					_this.getMyIncome(function(resData) {
 						_this.pageData = resData.data;
-						_this.shareBalanceMoney = _this.pageData.shareMoney - _this.pageData.shareBalance
+						_this.shareBalanceMoney = (_this.pageData.shareMoney - _this.pageData.shareBalance).toFixed(2);
 					});
 					_this.getMoreInfo(function(resData) {
 						_this.list = resData.data

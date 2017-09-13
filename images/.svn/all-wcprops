@@ -9,6 +9,12 @@ svn:wc:ra_dav:version-url
 V 66
 /svn/shop/!svn/ver/3085/Source/appbusiness/images/order-ListBg.png
 END
+work-message-nomsgBg.png
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/shop/!svn/ver/3987/Source/appbusiness/images/work-message-nomsgBg.png
+END
 yzyh.png
 K 25
 svn:wc:ra_dav:version-url
@@ -87,17 +93,17 @@ svn:wc:ra_dav:version-url
 V 58
 /svn/shop/!svn/ver/3143/Source/appbusiness/images/hxyh.png
 END
-partySettlementEnd-bg.png
-K 25
-svn:wc:ra_dav:version-url
-V 75
-/svn/shop/!svn/ver/3245/Source/appbusiness/images/partySettlementEnd-bg.png
-END
 zgyh.png
 K 25
 svn:wc:ra_dav:version-url
 V 58
 /svn/shop/!svn/ver/3143/Source/appbusiness/images/zgyh.png
+END
+partySettlementEnd-bg.png
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/shop/!svn/ver/3245/Source/appbusiness/images/partySettlementEnd-bg.png
 END
 partyInTopBar-bg.png
 K 25
@@ -135,17 +141,17 @@ svn:wc:ra_dav:version-url
 V 66
 /svn/shop/!svn/ver/2890/Source/appbusiness/images/yunduifooter.png
 END
-zsyh.png
-K 25
-svn:wc:ra_dav:version-url
-V 58
-/svn/shop/!svn/ver/3143/Source/appbusiness/images/zsyh.png
-END
 detail_pic_01.png
 K 25
 svn:wc:ra_dav:version-url
 V 67
 /svn/shop/!svn/ver/2284/Source/appbusiness/images/detail_pic_01.png
+END
+zsyh.png
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/shop/!svn/ver/3143/Source/appbusiness/images/zsyh.png
 END
 login-bg.png
 K 25
@@ -153,17 +159,17 @@ svn:wc:ra_dav:version-url
 V 62
 /svn/shop/!svn/ver/3777/Source/appbusiness/images/login-bg.png
 END
-xyyh.png
-K 25
-svn:wc:ra_dav:version-url
-V 58
-/svn/shop/!svn/ver/3143/Source/appbusiness/images/xyyh.png
-END
 order-bg.png
 K 25
 svn:wc:ra_dav:version-url
 V 62
 /svn/shop/!svn/ver/3085/Source/appbusiness/images/order-bg.png
+END
+xyyh.png
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/shop/!svn/ver/3143/Source/appbusiness/images/xyyh.png
 END
 zxyh.png
 K 25
@@ -177,17 +183,17 @@ svn:wc:ra_dav:version-url
 V 59
 /svn/shop/!svn/ver/2519/Source/appbusiness/images/Thumbs.db
 END
-createPartylogo.png
-K 25
-svn:wc:ra_dav:version-url
-V 69
-/svn/shop/!svn/ver/3245/Source/appbusiness/images/createPartylogo.png
-END
 applySuccess-bg.png
 K 25
 svn:wc:ra_dav:version-url
 V 69
 /svn/shop/!svn/ver/3423/Source/appbusiness/images/applySuccess-bg.png
+END
+createPartylogo.png
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/shop/!svn/ver/3245/Source/appbusiness/images/createPartylogo.png
 END
 integral.png
 K 25

@@ -136,13 +136,13 @@
 											mui.fire(ws, "shareprofit")
 											break;
 									}
-									plus.webview.currentWebview().close();
 									Fun_App.openWin("./cashsuccess.html", 'pop-in', {
 										allMoney: _this.pageData.money,//所有金额
 										money: _this.money,//结算金额
 										account: _this.Card,//结算账户
 										url:_this.url//结算成功后查看详情的接口
 									});
+									plus.webview.currentWebview().close();
 									
 								} else {
 									if(data.message == "您未设置结算密码，请设置结算密码") {
@@ -169,6 +169,16 @@
 						}
 
 					},
+					timeOut: function() {
+						this.showOutTime = true;
+						this.second--;
+						if(this.second < 1) {
+							this.showOutTime = false;
+							this.second = 90;
+						} else {
+							var timeout = setTimeout(this.timeOut, 1000);
+						}
+					},
 					smsVerify: function() {
 						var _this = this;
 						var sendData = {
@@ -177,7 +187,8 @@
 								type: this.msgType
 							},
 							fun_Success: function(data) {
-								if(data.success) {
+								if(data.data) {
+									_this.timeOut();
 									mui.toast(data.message)
 								} else {
 									mui.toast(data.message)
@@ -185,16 +196,7 @@
 							}
 						}
 						if(this.showOutTime == false) {
-							console.log(this.msgType)
 							Fun_App.ExAjax("merchant/smsVerify", sendData);
-						}
-						this.showOutTime = true;
-						_this.second--;
-						if(_this.second < 1) {
-							this.showOutTime = false;
-							this.second = 90;
-						} else {
-							var timeout = setTimeout(_this.smsVerify, 1000)
 						}
 					},
 					getCardLsit: function(callBack) {

@@ -119,7 +119,7 @@
 						var sendData = {
 							config: this.changeInfo,
 							fun_Success: function(data) {
-								if(data.success) {
+								if(data.data) {
 									mui.toast('密码修改成功,2秒后跳回登录页面!')
 									setTimeout(function() {
 										plus.webview.currentWebview().close();

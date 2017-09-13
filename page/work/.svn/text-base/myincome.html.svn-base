@@ -56,21 +56,19 @@
 								<p class="ordersMoney mui-right" v-text="item.money">￥99</p>
 							</li>
 						</ul>
-					</div>
+					</div> 
 				</div>-->
-				<div>
-					<div id="wrapper" class="wrapperList">
-						<ul>
-							<li class="wrapperListItem" :key="key" v-for="(item,key) in incomeList">
-								<p class="ordersDate" v-text="item.createTime">2016-01-12 16:00:00</p>
-								<p class="ordersMoney mui-right" v-text="'￥'+item.money">99</p>
-							</li>
-						</ul>
-					</div>
+				<div id="wrapper" class="wrapperList">
+					<ul>
+						<li class="wrapperListItem" :key="key" v-for="(item,key) in incomeList">
+							<p class="ordersDate" v-text="item.createTime">2016-01-12 16:00:00</p>
+							<p class="ordersMoney mui-right" v-text="'￥'+item.money">99</p>
+						</li>
+					</ul>
 				</div>
-				<div v-if="isShowApplyBtn" class="footerButton mui-text-center" id="myMoney" @click="open('applysettlement')">
+				<button :disabled="isShowApplyBtn" class="footerButton mui-text-center" id="myMoney" @click="open('applysettlement')">
 					申请结算
-				</div>
+				</button>
 			</div>
 		</div>
 	</body>
@@ -87,16 +85,16 @@
 					page: 1,
 					pageLen: pageLen,
 					totalPage: null,
-					topInfo: {}, 
+					topInfo: {},
 					incomeList: [],
 					isShowApplyBtn: false,
-				} 
-			},
+				}
+			}, 
 			created: function() {
 				var _this = this;
 				mui.plusReady(function() {
-					_this.isShowApplyBtn = ((Fun_App.getdata("jobCode") != "BOSS") ? false : true);
-					console
+					//判断当前角色的状态是不是Boos
+					_this.isShowApplyBtn = ((Fun_App.getdata("jobCode") == "BOSS") ? false : true);
 					window.addEventListener("myincome", function() {
 						_this.getMyIncome(function(infoData) { //顶部收入
 							console.log(Fun_App.getdata("token"))
@@ -163,9 +161,6 @@
 
 					wrapper.refresh();
 				},
-				/*Refresh:function(){
-					alert()
-				},*/
 				open: function(pageClass) {
 					var win = {
 						dentail: {
