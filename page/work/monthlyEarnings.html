@@ -65,7 +65,7 @@
 						mouth: new Date().getMonth() + 1,
 						list: [],
 						showMouth: false,
-						isNoData:true
+						isNoData:false
 					}
 				},
 				created: function() {
@@ -75,6 +75,7 @@
 							_this.totalPage = Math.ceil(resData.total / _this.pageLen);
 							_this.pageData = resData.data;
 							_this.list = resData.data.merchantShareLogsList;
+							_this.isNoData = (_this.list.length < 1) ? true : '';
 							console.log(JSON.stringify(resData.merchantShareLogsList))
 						}, 1, null)
 						refresher.init({
@@ -115,10 +116,9 @@
 						var _this = this;
 						this.getIncomeMonth(function(resData) {
 							_this.totalPage = resData.total / _this.pageLen;
-							console.log(_this.totalPage)
 							_this.pageData = resData.data;
 							_this.list = resData.data.merchantShareLogsList;
-							console.log(JSON.stringify(_this.list))
+							_this.isNoData = (_this.list.length < 1) ? true : '';
 						}, 1, mouth)
 					}
 				}

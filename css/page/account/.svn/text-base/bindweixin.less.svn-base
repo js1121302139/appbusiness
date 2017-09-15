@@ -10,7 +10,7 @@
     font-size: 0.8125rem;
 }
 .mine-weixin-tips {
-    background-image: url("../../../img/mine_icon_tips.png");
+   // background-image: url("../../../img/mine_icon_tips.png");
     background-repeat: no-repeat;
     background-size: 18px 16px;
     background-position: 11px 10px;

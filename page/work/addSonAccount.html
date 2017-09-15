@@ -94,7 +94,7 @@
 						groups: [],
 						showOutTime: false,//显示倒计时
 						second: 90,
-						isSuccess: false//是否成功
+						isSuccess: false//是否成功显示成功提示
 					}
 				},
 				created: function() {
@@ -223,7 +223,6 @@
 						}
 					},
 					createAccount: function() {
-
 						var sendData = {
 							config: this.pageData,
 							fun_Success: function(data) {

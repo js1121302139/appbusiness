@@ -54,7 +54,7 @@
 						</li>-->
 				</ul>
 			</div>
-			<div class="isNoData"  :class="{scale1:isNoData}"> 
+			<div class="isNoData" v-if="isNoData"  :class="{scale1:isNoData}"> 
 				<div class="isNoDataInfo mui-text-center">
 					<div class="isNoDataBg"></div>
 					<p class="isNoDataTit">暂无消息</p>
@@ -82,7 +82,7 @@
 					page: 1, 
 					totalPage: null,
 					pageLen: pageLen,
-					isNoData:true
+					isNoData:false
 				} 
 			},
 			created: function() {
@@ -94,7 +94,7 @@
 					});
 					_this.messageList(function(resData) {
 						_this.list = resData.data;
-						(resData.total<1)?_this.isNoData=false:_this.isNoData=true;
+						(resData.total<1)?_this.isNoData=true:_this.isNoData=false;
 						_this.totalPage = Math.ceil(resData.total / _this.pageLen);
 					}, 1)
 					window.addEventListener("messageList", function() {
@@ -144,10 +144,14 @@
 							"adminMessageIds": mseeageId
 						},
 						fun_Success: function(data) {
-							if(data.success == true) {};
+							if(data.success == true) {
+								detailPage = plus.webview.getWebviewById('page/work/home.html');
+								mui.fire(detailPage, "getindexData");
+							};
 						}
 					}
-					//Fun_App.ExAjax("merchant/read", sendData);
+					mseeageId.length>=1?Fun_App.ExAjax("merchant/read", sendData):mui.toast('你还没有可读的消息！');
+					
 				},
 				Load: function() {
 					this.page++;

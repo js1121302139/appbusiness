@@ -39,6 +39,7 @@ a {
 }
 input {
   font-size: 0.87rem;
+  -webkit-appearance: none;
 }
 .mui-input-group:before,
 .mui-input-group:after {
@@ -345,6 +346,7 @@ table {
 /*resetcssEnd*/
 /*重构的顶部*/
 /*顶部的卡片视图*/
+/*没有数据*/
 /*11111111111111111111111111*/
 .topBar {
   padding-top: 1.25rem;

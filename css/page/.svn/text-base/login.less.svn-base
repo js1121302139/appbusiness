@@ -22,7 +22,7 @@ html,body{
     margin-top: 118px;
     display: flex;
     flex: 1;
-    justify-content: center;
+    justify-content: center; 
     margin-bottom: 3.81rem;
     .wh(100%,10.18rem);
     #loginLogo{
@@ -93,14 +93,19 @@ html,body{
   }
   .login_local{
     padding: 0 37.5px;
-    a{
+    button{
       display: block;
       height: 40px;
-      line-height: 40px;
+      width: 100%;
       font-size: 18px;
       border-radius: 5px;
+      border: none;
       background-color: #fff;
       color: #333;
+    }
+    button:active{
+        background-color: #ccc;
+        color: #fff;
     }
   }
 }

@@ -12,7 +12,7 @@
 	</head>
 
 	<body>
-		<header class="login_user topBar">
+		<header class="login_user ">
 			<div class="login_user_info">
 				<div class="userInfo mui-text-left">
 					<p id="myName"></p>

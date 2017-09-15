@@ -16,7 +16,7 @@
         margin-right: 12px;
         margin-top: 7px;
     }
-    .codeBtn {
+    .codeBtn { 
         float: right;
         height: 36px;
         width: 106px;

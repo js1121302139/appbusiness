@@ -94,6 +94,10 @@
                 background-color: #333;
                 color: #fff;
             }
-        }
+        } 
     }
 }
+.scale1{
+    transform: scale(1)!important;
+}
+.isNoData(4.1rem,0rem);

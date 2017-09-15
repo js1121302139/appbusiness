@@ -18,7 +18,7 @@
 					<p class="totalMoney-Money" id="totalMoney" v-text="pageTop.actualTotalIncome==null?0:pageTop.actualTotalIncome">9999.99</p>
 				</div>
 				<div class="orderInfo mui-text-center">
-					<div class="totalOrder"> 
+					<div class="totalOrder">
 						<p>总订单数(单)</p>
 						<p id="orderNum" v-text="pageTop.ordersTotal==null?0:pageTop.ordersTotal">789789</p>
 					</div>
@@ -57,15 +57,21 @@
 							</div>
 						</div>
 					</li>
-
+					<div class="isNoData" v-if="isNoData" :class="{scale1:isNoData}">
+						<div class="isNoDataInfo mui-text-center">
+							<div class="isNoDataBg"></div>
+							<p class="isNoDataTit">暂无订单数据</p>
+							<p>小主暂时还没有订单信息哦!</p>
+						</div>
+					</div>
 				</ul>
 			</div>
 		</div>
-		<script src="../../js/mui.js" ></script>
-		<script type="text/javascript" src="../../js/muihelper.js" ></script>
+		<script src="../../js/mui.js"></script>
+		<script type="text/javascript" src="../../js/muihelper.js"></script>
 		<!--<script type="text/javascript" src="../../js/page/order/myorder.js"></script>-->
-		<script type="text/javascript" src="../../js/iscroll.js" ></script>
-		<script type="text/javascript" src="../../js/pullToRefresh.js" ></script>
+		<script type="text/javascript" src="../../js/iscroll.js"></script>
+		<script type="text/javascript" src="../../js/pullToRefresh.js"></script>
 		<script type="text/javascript" src="../../js/vue.min.js"></script>
 		<script type="text/javascript">
 			var Vue = new Vue({
@@ -76,7 +82,8 @@
 						totalPage: null,
 						pageLen: pageLen,
 						pageTop: {},
-						list: []
+						list: [],
+						isNoData: false
 					}
 				},
 				created: function() {
@@ -85,7 +92,9 @@
 						window.addEventListener("myOrderList", function() {
 							_this.myOrderList(function(resData) {
 								_this.list = resData.data;
+								_this.isNoData = (_this.list.length < 1) ? true : '';
 								_this.totalPage = Math.ceil(resData.total / _this.pageLen);
+								_this.isNoData = (_this.list.length < 1) ? true : '';
 							}, 1)
 							_this.getMyOrderTop(function(resData) {
 								_this.pageTop = resData.data;
@@ -95,6 +104,7 @@
 							_this.myOrderList(function(resData) {
 								_this.list = resData.data;
 								_this.totalPage = Math.ceil(resData.total / _this.pageLen);
+								_this.isNoData = (_this.list.length < 1) ? true : '';
 							}, 1)
 							_this.getMyOrderTop(function(resData) {
 								_this.pageTop = resData.data;
@@ -126,7 +136,7 @@
 					},
 					myOrderList: function(callBack, page) {
 						var sendData = {
-							config: {
+							config: { 
 								token: Fun_App.getdata("token"),
 								pageIndex: page
 							},
@@ -169,7 +179,7 @@
 						setTimeout(function() {
 							_this.todayOrdersStatistics(function(resdata) {
 								if(resdata.data != null) {
-									_this.list.splice(0,1);
+									_this.list.splice(0, 1);
 									_this.list.unshift(resdata.data)
 								}
 							})

@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 
-	<head> 
+	<head>
 		<meta charset="UTF-8">
 		<title></title>
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
@@ -15,45 +15,47 @@
 			<header class="mui-bar topBar mui-bar-nav">
 				<a class="mui-action-back topBack-ico mui-pull-left"></a>
 				<h1 class="mui-title">玩咖管理</h1>
-				<span id="createPartyRaiders" class=" mui-btn-blue mui-btn-link mui-pull-right">建趴攻略</span>
+				<!--<span id="createPartyRaiders" class=" mui-btn-blue mui-btn-link mui-pull-right">建趴攻略</span>-->
 			</header>
-			<div id="wrapper" class="wrapperList">
+			<div class="mui-content">
+				<div class="wrappers">
+					<div id="wrapper" class="wrapperList">
 						<ul>
 							<li class="listItem" v-for="(item,key) in list">
 
 								<div class="InfoTit">
 									<p class="partyTit mui-ellipsis" v-text="item.theme">
-										中国有嘻哈福州有兑咖
 									</p>
 									<p class="partyRoad">
-										<span v-text="partyType[item.type]">众筹</span>
+										<span v-text="partyType[item.type]"></span>
 									</p>
 									<p class="partyState" v-text="status[item.status]">
-										未审核
+
 									</p>
 								</div>
 								<div class="orderInfo">
 									<div class="orderInfoL">
-										<p class="orderMoney" v-text="'单价: ￥'+item.price">
-											单价: ￥ 500 
+										<p class="orderMoney">
+											单价: ￥{{item.price}}
 										</p>
-										<p class="Sold" v-text="'已售:'+ item.saleNumber +'/' +item.number">
-											已售: 50/100
+										<p class="Sold">
+											已售: {{item.saleNumber}}/{{item.number}}
 										</p>
-										<p class="partyDate" v-text="'众筹截止时间:'+ item.prepareStartTime" v-show="item.prepareStartTime!=null">
-											众筹截止时间:2017-08-06 18:00-22:00
+										<p class="partyDate" v-show="item.prepareStartTime!=null">
+											众筹截止时间: {{item.prepareStartTime}}
 										</p>
-										<p class="crowdfundingEndTime" v-text="'活动时间:'+ item.startTime">
-											活动时间: 123
+										<p class="crowdfundingEndTime">
+											活动时间: {{item.startTime}}
 										</p>
 									</div>
 									<div class="orderInfoR">
 										<div class="orderContainer mui-text-center">
-											<p class="orderContainerNum" v-text="item.useNumber==null?0:item.useNumber">30</p>
+											<p class="orderContainerNum" v-text="item.useNumber==null?0:item.useNumber"></p>
 											<span class="orderContainerName">入场</span>
 										</div>
 									</div>
 								</div>
+
 								<div class="itemBottom mui-text-center">
 									<div class="orderSettlement" @click="open('Settlement',item.id)">
 										订单结算
@@ -64,11 +66,19 @@
 								</div>
 							</li>
 							<li class="ListEnd mui-text-center">
-								<span>别再糟蹋生活 活在DUI的时代</span>
+								<span>别再糟蹋生活 会在DUI的时代</span>
 							</li>
 						</ul>
 					</div> 
-
+					
+				</div>
+			</div>
+			<div class="isNoData" v-if="isNoData" :class="{scale1:isNoData}">
+				<div class="isNoDataInfo mui-text-center">
+					<div class="isNoDataBg"></div>
+					<p class="isNoDataTit">暂无派对</p>
+					<p>不妨去创建一个再来看看？</p>
+				</div>
 			</div>
 			<footer class="mui-text-center">
 				<div class="createParty " id="createParty" @click="open('create','')">
@@ -82,16 +92,6 @@
 			</footer>
 
 		</div>
-		<style>
-			.scannerBox {
-				position: absolute;
-				z-index: 10000;
-				top: 0;
-				background: #000;
-				width: 100%;
-				height: 100%;
-			}
-		</style>
 		<script src="../../js/mui.min.js"></script>
 		<script src="../../js/iscroll.js"></script>
 		<script src="../../js/pullToRefresh.js"></script>
@@ -115,7 +115,8 @@
 					},
 					totalPage: null,
 					page: 1,
-					list: []
+					list: [],
+					isNoData:false
 				},
 				created: function() {
 					var _this = this;
@@ -132,6 +133,7 @@
 						})
 						_this.getPartyList(function(resData) {
 							_this.list = resData.data;
+							_this.isNoData = (_this.list.length < 1) ? true : '';
 							_this.totalPage = resData.total;
 						});
 					})

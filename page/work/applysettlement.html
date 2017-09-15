@@ -45,7 +45,7 @@
 							<h1 class="settlement">短信验证码</h1>
 							<div class="phoneNumCodeRight">
 								<input type="tel" maxlength="6" v-model="pageData.messageCode" id="smCode">
-							<button href="JavaScript:;" class="mui-btn getPhoneCode" :disabled="showOutTime" @click="smsVerify" v-text="second==90?'获取验证码':'剩余'+second+'秒'" id="getPhoneCode">获取验证码</button>
+								<button href="JavaScript:;" class="mui-btn getPhoneCode" :disabled="showOutTime" @click="smsVerify" v-text="second==90?'获取验证码':'剩余'+second+'秒'" id="getPhoneCode">获取验证码</button>
 							</div>
 						</div>
 						<div class="phoneNumCodePrompt mui-text-right">
@@ -86,7 +86,7 @@
 						showOutTime: false, //显示倒计时
 						second: 90, //总计时
 						applyBtn: false,
-						url:null,
+						url: null,
 						msgType: null
 					}
 				},
@@ -99,7 +99,7 @@
 						_this.pageData.money = getData.money; //取到可结算金额
 						_this.pageData.type = getData.type; //结算的类型
 						_this.msgType = getData.msgType; //短信的类型
-						_this.url = getData.url;//结算成功后查看详情的接口
+						_this.url = getData.url; //结算成功后查看详情的接口
 						_this.pageData.applyId = (getData.id == undefined) ? "" : getData.id;
 						setTimeout(
 							_this.getCardLsit(function(resData) {
@@ -109,7 +109,7 @@
 				},
 				methods: {
 					applyDrawing: function() {
-						var _this = this ;
+						var _this = this;
 						var sendData = {
 							config: {
 								token: Fun_App.getdata("token"),
@@ -136,20 +136,21 @@
 											mui.fire(ws, "shareprofit")
 											break;
 									}
+
 									Fun_App.openWin("./cashsuccess.html", 'pop-in', {
-										allMoney: _this.pageData.money,//所有金额
-										money: _this.money,//结算金额
-										account: _this.Card,//结算账户
-										url:_this.url//结算成功后查看详情的接口
+										allMoney: _this.pageData.money, //所有金额
+										money: _this.money, //结算金额
+										account: _this.Card, //结算账户
+										url: _this.url //结算成功后查看详情的接口
 									});
-									plus.webview.currentWebview().close();
-									
+									/*setTimeout(function() {
+										plus.webview.close('./applysettlement.html', "slide-out-left", 500);
+									}, 10)*/
 								} else {
 									if(data.message == "您未设置结算密码，请设置结算密码") {
 										Fun_App.openWin("../account/safepay.html");
 									}
 									mui.toast(data.message)
-
 								}
 							}
 						}

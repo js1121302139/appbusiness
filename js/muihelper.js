@@ -15,7 +15,7 @@ var picservice =  'http://image.duikavip.com/ejsimage';*/
 var _self;
 /*
  * 主要的公共函数
- */ 
+ */
 var Fun_App = {
 	/**
 	 * 完整的打开新页面方法
@@ -285,7 +285,7 @@ var Fun_App = {
 		}, function(e, s) {
 			if(s == 200) {
 				mui.toast('上传完成!')
-				console.log(JSON.stringify(e)+"-->")
+				console.log(JSON.stringify(e) + "-->")
 				var data = JSON.parse(e.responseText.replace(/\\/g, ""))
 				callBack(data);
 			}
@@ -360,24 +360,24 @@ var jobCode = {
 
 /*实时监测网络状态变化*/
 mui.plusReady(function() {
-	var networkinfo = ["网络连接状态未知", "未连接网络", "无线WIFI网络", "蜂窝移动2G网络", "蜂窝移动3G网络", "蜂窝移动4G网络", "蜂窝移动5G网络"]
+	var networkinfo = ["未连接网络", "未连接网络", "无线WIFI网络", "蜂窝移动2G网络", "蜂窝移动3G网络", "蜂窝移动4G网络", "蜂窝移动5G网络"]
 	document.addEventListener("netchange", function() {
 		var state = Fun_App.getNetWorkState();
 		mui.toast('当前' + networkinfo[(state - 1)]);
+		//(state==0 ||state==1)mui.toast('asdasdasddddddd'):'';
 		return false;
 	}, false)
-	plus.navigator.setStatusBarStyle("dark")
 })
 
 window.addEventListener("tap", function() {
 	var topDoms = document.querySelector('header');
-	if(topDoms!=null){
-		var topDomsClass=topDoms.getAttribute("class");
+	if(topDoms != null) {
+		var topDomsClass = topDoms.getAttribute("class");
 		if(topDomsClass.indexOf('topBar') != -1) {
 			/*plus.navigator.setStatusBarStyle("light")*/
-			getComputedStyle(document.querySelector(".topBar", false))['backgroundColor'] == "rgb(255, 255, 255)" ? plus.navigator.setStatusBarStyle("dark") :""
+			getComputedStyle(document.querySelector(".topBar", false))['backgroundColor'] == "rgb(255, 255, 255)" ? plus.navigator.setStatusBarStyle("dark") : ""
 		}
-	}else{
+	} else {
 		plus.navigator.setStatusBarStyle("light")
 	}
 })

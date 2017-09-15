@@ -33,7 +33,7 @@
 								</div>
 								<div class="successTxtItem">
 									<span class="left">结算账户</span>
-									<span class="right">{{bankCode | replacex}}</span>
+									<span class="right" v-text="bankCode"></span>
 								</div>
 								<div class="successTxtItem">
 									<span class="left">可结算金额</span>
@@ -86,6 +86,7 @@
 						_this.pageData.money = getData.money;//结算成功的钱
 						_this.bankCode = getData.account[0].bankCode;//银行卡账户 
 						_this.pageData.url = getData.url;//查询的接口地址
+						plus.webview.close('./applysettlement.html', "slide-out-left", 500);
 					})
 				},
 				methods: {
@@ -94,11 +95,13 @@
 						mui.plusReady(function(){
 							Fun_App.openWin("./jsdentail.html",'pop-in',_this.pageData.url);
 						})
-						plus.webview.currentWebview().close();
+						setTimeout(function(){
+							/*plus.webview.close("./cashsuccess.html","slide-out-left",500);*/
+						},10)
 					},
 					close:function(){
 						mui.plusReady(function(){
-							plus.webview.currentWebview().close();
+							plus.webview.close("./cashsuccess.html","slide-out-right",250);
 						})
 					}
 				},

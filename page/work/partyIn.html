@@ -47,12 +47,12 @@
 					<div class="shareShowBoxItem-ico wx">
 
 					</div>
-					<p>微信</p>
+					<p>朋友圈</p>
 				</div>
 				<div class="shareShowBoxItem" @click="share(2,'WXSceneSession')">
 					<div class="shareShowBoxItem-ico wxhy">  
 					</div>
-					<p>好友</p>
+					<p>微信</p>
 				</div>
 				<div class="shareShowBoxItem" @click="share(0)">
 					<div class="shareShowBoxItem-ico qq">
@@ -64,7 +64,7 @@
 					<div class="shareShowBoxItem-ico wb">
 
 					</div>
-					<p>微博</p>
+					<p>新浪微博</p>
 				</div>
 				<div class="shareShowBoxItem">
 					<div class="shareShowBoxItem-ico link">
@@ -112,6 +112,7 @@
 						if(Fun_App.getextrasdata().id != "see") {
 							_this.getPartyIn(Fun_App.getextrasdata(), function(resData) {
 								_this.pageData = resData.data;
+								_this.arcId= resData.data.id;
 								_this.strartAndEnd = resData.data.startTime;
 								_this.strartAndEnd +=" ~ "+resData.data.endTime.split(" ")[1];
 								console.log(JSON.stringify(_this.pageData))
@@ -141,22 +142,24 @@
 						Fun_App.ExAjax("merchantParty/playKaDetail", sendData)
 					},
 					share: function(id,name) {
-						console.log(id)
+						var arc = this.pageData.description;
 						console.log(JSON.stringify(this.shareServer))
 						var shareOption = this.shareServer[id];
 						var _this = this ;
-						console.log(this.arcId)
 						shareOption.send({
-							content: this.pageData.theme,
-							href: "http://api.duikavip.com/api/resources/html/introduction.html?id="+_this.arcId+"&from=groupmessage&isappinstalled=1",
+							title:"我在【兑咖 · 娱乐】— 邀请您参加-"+this.pageData.theme+"-一起咖吃咖玩",
+							content: "脱掉你沉重的包袱和躯壳，引爆高潮，无趴不欢，尽在兑咖 · 娱乐",
+							href: "http://www.yunduiwang.com/api/resources/html/party.html?id="+_this.arcId+"&from=groupmessage",
 							extra: {
 								scene: name
-							}
+							},
+							thumbs:["shareLogo.png"]
 						}, function() {
-							alert("分享成功！");
+							mui.toast("分享成功!");
 						}, function(e) {
-							alert("分享失败：" + e.message);
+							mui.toast('分享失败!')
 						});
+						
 					}
 				}
 				

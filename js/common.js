@@ -76,7 +76,7 @@ var CheckValue = function () {
         if (reg.test(val)) {
             return val;
         } else {
-            mui.toast("请输入4位正确格式的验证码");
+            mui.toast("请输入6位正确格式的验证码");
         }
     }
     this.checkPwd = function (val) {

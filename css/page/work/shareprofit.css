@@ -374,7 +374,7 @@ table {
 .minetop-box .topBar div:first-child {
   width: 2.5rem;
   height: 2.5rem;
-  background: url("../../../img/topBackB-ico.png") left center no-repeat;
+  background: url("../../../img/topBackB-ico.png") left top no-repeat;
   background-size: 1.25rem 1.25rem;
 }
 .minetop-box .mine-topInfo {
@@ -499,4 +499,41 @@ body,
   border: none;
   border-radius: 0;
   background-color: #D7B374;
+}
+.scale1 {
+  transform: scale(1) !important;
+}
+.isNoData {
+  position: absolute;
+  width: 100%;
+  top: 0rem;
+  bottom: 0rem;
+  z-index: 9999;
+  background: #fff;
+  transform: scale(0);
+  transition: all 0.25s;
+}
+.isNoData .isNoDataInfo {
+  position: absolute;
+  top: 8.125rem;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+.isNoData .isNoDataInfo .isNoDataBg {
+  margin: 0 auto;
+  width: 4.21875rem;
+  height: 8.125rem;
+  margin-bottom: 0.9375rem;
+  background: url(../../../images/work-message-nomsgBg.png) left top no-repeat;
+  background-size: cover;
+}
+.isNoData .isNoDataInfo p {
+  margin-bottom: 0.625rem;
+  font-size: 0.6875rem;
+  color: #999;
+}
+.isNoData .isNoDataInfo .isNoDataTit {
+  font-size: 0.875rem;
+  color: #8d8e92;
 }

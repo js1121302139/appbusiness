@@ -39,6 +39,7 @@ a {
 }
 input {
   font-size: 0.87rem;
+  -webkit-appearance: none;
 }
 .mui-input-group:before,
 .mui-input-group:after {
@@ -345,10 +346,12 @@ table {
 /*resetcssEnd*/
 /*重构的顶部*/
 /*顶部的卡片视图*/
+/*没有数据*/
 .topBar {
   padding-top: 1.25rem;
   height: 4rem;
   box-shadow: 0 0.0625rem 0.375rem #ccc;
+  background-color: #fff;
 }
 .topBar .topBack-ico {
   display: inline-block;

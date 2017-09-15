@@ -43,32 +43,19 @@
 					</ul>
 				</div>
 			</div>
+			<div class="isNoData" v-if="isNoData" :class="{scale1:isNoData}">
+				<div class="isNoDataInfo mui-text-center">
+					<div class="isNoDataBg"></div>
+					<p class="isNoDataTit">暂无结算明细</p>
+					<p>小主暂时还没有订单信息哦!</p>
+				</div>
+			</div>
 		</div>
 		<script src="../../js/mui.min.js"></script>
 		<script type="text/javascript" src="../../js/iscroll.js"></script>
 		<script type="text/javascript" src="../../js/pullToRefresh.js"></script>
 		<script type="text/javascript" src="../../js/muihelper.js"></script>
 		<!--<script type="text/javascript" src="../../js/page/order/orderdentail.js" ></script>-->
-		<script type="text/x-template" id="anchored-heading-template">
-			<h1 v-if="level === 1">
-    <slot></slot>
-  </h1>
-			<h2 v-else-if="level === 2">
-    <slot></slot>
-  </h2>
-			<h3 v-else-if="level === 3">
-    <slot></slot>
-  </h3>
-			<h4 v-else-if="level === 4">
-    <slot></slot>
-  </h4>
-			<h5 v-else-if="level === 5">
-    <slot></slot>
-  </h5>
-			<h6 v-else-if="level === 6">
-    <slot></slot>
-  </h6>
-		</script>
 		<script src="../../js/vue.min.js"></script>
 		<script type="text/javascript">
 			var Vue = new Vue({
@@ -80,7 +67,8 @@
 						pageLen: pageLen,
 						picservice: picservice,
 						list: [],
-						statisTime: null
+						statisTime: null,
+						isNoData:true
 					}
 				},
 				created: function() {
@@ -90,6 +78,7 @@
 						_this.statisTime = Fun_App.getextrasdata();
 						_this.getList(function(resData) {
 							_this.list = resData.data;
+							_this.isNoData = (resData.data.length<1)?true:'';		
 							_this.totalPage = Math.ceil(resData.total / _this.pageLen);
 						}, 1)
 						refresher.init({

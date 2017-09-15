@@ -17,7 +17,7 @@
 			<div class="minetop-box">
 				<div class="topBar">
 					<div class="mui-action-back topBack-ico mui-pull-left"></div>
-					<div class="" id="myDetailed" @click="open('dentail')">结算明细</div>
+					<div class="" id="myDetailed" @click="open('dentail')" v-if="isShowApplyBtn">结算明细</div>
 				</div>
 				<div class="mine-topInfo mui-text-center">
 					<p class="topInfoTit">总营业收入</p>
@@ -58,15 +58,22 @@
 						</ul>
 					</div> 
 				</div>-->
-				<div id="wrapper" class="wrapperList">
+				<div id="wrapper" class="wrapperList" :class="{isbottom0:!isShowApplyBtn}">
 					<ul>
 						<li class="wrapperListItem" :key="key" v-for="(item,key) in incomeList">
 							<p class="ordersDate" v-text="item.createTime">2016-01-12 16:00:00</p>
 							<p class="ordersMoney mui-right" v-text="'￥'+item.money">99</p>
 						</li>
 					</ul>
+					<div class="isNoData" v-if="isNoData" :class="{scale1:isNoData}">
+						<div class="isNoDataInfo mui-text-center">
+							<div class="isNoDataBg"></div>
+							<p class="isNoDataTit">暂无营业收入</p>
+							<p>小主你还没有营业收入哦!</p>
+						</div>
+					</div>
 				</div>
-				<button :disabled="isShowApplyBtn" class="footerButton mui-text-center" id="myMoney" @click="open('applysettlement')">
+				<button v-if="isShowApplyBtn" class="footerButton mui-text-center" id="myMoney" @click="open('applysettlement')">
 					申请结算
 				</button>
 			</div>
@@ -88,13 +95,14 @@
 					topInfo: {},
 					incomeList: [],
 					isShowApplyBtn: false,
+					isNoData:false
 				}
-			}, 
+			},
 			created: function() {
 				var _this = this;
 				mui.plusReady(function() {
 					//判断当前角色的状态是不是Boos
-					_this.isShowApplyBtn = ((Fun_App.getdata("jobCode") == "BOSS") ? false : true);
+					_this.isShowApplyBtn = (Fun_App.getdata("jobCode") != "BOSS") ? false : true;
 					window.addEventListener("myincome", function() {
 						_this.getMyIncome(function(infoData) { //顶部收入
 							console.log(Fun_App.getdata("token"))
@@ -104,7 +112,7 @@
 						_this.getMyIncomeList(function(resData) { //列表数据
 							_this.incomeList = resData.data;
 							_this.totalPage = Math.ceil(resData.total / _this.pageLen);
-							console.log(JSON.stringify(_this.incomeList))
+							_this.isNoData = (_this.incomeList.length < 1) ? true : true;
 						}, 1)
 					})
 					_this.getMyIncome(function(infoData) { //顶部收入
@@ -115,6 +123,7 @@
 					_this.getMyIncomeList(function(resData) { //列表数据
 						_this.incomeList = resData.data;
 						_this.totalPage = Math.ceil(resData.total / _this.pageLen);
+						_this.isNoData = (_this.incomeList.length < 1) ? true : '';
 						console.log(JSON.stringify(_this.incomeList))
 					}, 1)
 					refresher.init({

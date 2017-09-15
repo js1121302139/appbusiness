@@ -22,13 +22,13 @@
 			</header>
 			<div class="mui-content">
 				<div class="activityBg">
-				</div> 
+				</div>
 				<div id="segmentedControl" class="mui-segmented-control mui-segmented-control-inverted mui-segmented-control-primary">
-					<a class="mui-control-item mui-active" href="#wrappers"><span>自建活动</span></a>
-					<a class="mui-control-item " href="#item1"><span>兑贝体验</span></a>
+					<!--<a class="mui-control-item mui-active" href="#wrappers"><span>自建活动</span></a>-->
+					<a class="mui-control-item mui-active" href="#item1"><span>兑贝体验</span></a>
 				</div>
 			</div>
-			<div class="optionDate mui-slider-item mui-control-content" id="item1">
+			<div class="optionDate mui-slider-item mui-control-content mui-active" id="item1">
 				<div id="scroll">
 					<div id="dateHeader" class="dateHeader mui-text-center">
 						<span name="pre" @click="changeMouth('pre')" class=" pre mui-pull-left">
@@ -85,7 +85,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="wrappers mui-active  mui-control-content" id="wrappers">
+			<div class="wrappers   mui-control-content" id="wrappers">
 				<div id="wrapper" class="wrapperList">
 					<ul id="activityList">
 						<li class="ListItem" v-for="(item,key) in list">
@@ -109,7 +109,15 @@
 								<a href="javascript:;" class="rmActiveityBtn">撤销</a>
 							</div>
 						</li>-->
+
 					</ul>
+					<div class="isNoData" v-if="isNoData" :class="{scale1:isNoData}">
+						<div class="isNoDataInfo mui-text-center">
+							<div class="isNoDataBg"></div>
+							<p class="isNoDataTit">暂无自建活动</p>
+							<p>小主点击右上角创建一个嘛!</p>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -131,18 +139,19 @@
 						pageLen: pageLen,
 						totalPage: null,
 						activityDay: {},
+						isNoData:false,//是否有自建活动
 						myScroll: null,
-						noneDay: 0,
-						showDay: [],
+						noneDay: 0,//占位的不是日期日期第一日前的空日期
+						showDay: [],//显示活动的数组
 						nowDate: new Date(),
 						nowY: 0,
 						nowM: 0,
 						nowD: 0,
-						isShowRoom: false,
-						roomNum: 0,
-						soldNum: 0,
-						activityId: null,
-						keys: null
+						isShowRoom: false,//是否显示编辑房间 酒店 ktv显示 其他不显示
+						roomNum: 0,//房间数
+						soldNum: 0,//售出
+						activityId: null,//存储编辑房间需要的showDay activityId
+						keys: null//存储编辑房间需要的showDay kye
 					}
 				},
 				created: function() {
@@ -150,6 +159,7 @@
 					this.nowY = this.nowDate.getFullYear();
 					this.nowM = this.nowDate.getMonth() + 1;
 					this.nowD = this.nowDate.getDate();
+
 					function loaded() {
 						this.myScroll = new iScroll(document.querySelector("#item1"), {
 							checkDOMChanges: true
@@ -159,7 +169,7 @@
 					document.addEventListener('touchmove', function(e) {
 						e.preventDefault();
 					}, false);
-					document.addEventListener('DOMContentLoaded',loaded,false)
+					document.addEventListener('DOMContentLoaded', loaded, false)
 					mui.plusReady(function() {
 
 						if(Fun_App.getdata("shopType") != "null") {
@@ -169,11 +179,13 @@
 							_this.selfBuildActivity(function(resData) {
 								_this.totalPage = Math.ceil(resData.total / _this.pageLen);
 								_this.list = resData.data;
+								_this.isNoData = (_this.list.length < 1) ? true : '';
 							}, 1);
 						})
 						_this.selfBuildActivity(function(resData) {
 							_this.totalPage = Math.ceil(resData.total / _this.pageLen);
 							_this.list = resData.data;
+							_this.isNoData = (_this.list.length < 1) ? true : '';
 						}, 1)
 						refresher.init({
 							id: "wrapper",
@@ -324,7 +336,7 @@
 						this.activityId = this.showDay[key].f2c.activityId;
 						this.keys = key;
 					},
-					changeRoom: function(id) {
+					changeRoom: function(id,keys) {
 						var _this = this;
 						var sendData = {
 							config: {
@@ -338,7 +350,8 @@
 								}
 							}
 						}
-						mui.prompt('', this.roomNum, '房间数量', ['取消', '确认'], function(e) {
+						if(_this.showDay[_this.keys].isActive){
+							mui.prompt('', this.roomNum, '房间数量', ['取消', '确认'], function(e) {
 							if(e.index) {
 								sendData.config.roomNum = _this.roomNum = e.value;
 								_this.showDay[_this.keys].f2c.RoomNum = e.value;
@@ -346,6 +359,10 @@
 							}
 						}, 'div')
 						document.querySelector("input").setAttribute("type", "tel")
+						}else{
+							mui.toast('当前日期不可编辑!')
+						}
+						
 					}
 				},
 				filters: {

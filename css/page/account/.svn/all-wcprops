@@ -7,25 +7,25 @@ safepay.css
 K 25
 svn:wc:ra_dav:version-url
 V 71
-/svn/shop/!svn/ver/3245/Source/appbusiness/css/page/account/safepay.css
+/svn/shop/!svn/ver/4077/Source/appbusiness/css/page/account/safepay.css
 END
 helpCenter.css
 K 25
 svn:wc:ra_dav:version-url
 V 74
-/svn/shop/!svn/ver/3245/Source/appbusiness/css/page/account/helpCenter.css
-END
-account.css
-K 25
-svn:wc:ra_dav:version-url
-V 71
-/svn/shop/!svn/ver/3934/Source/appbusiness/css/page/account/account.css
+/svn/shop/!svn/ver/4077/Source/appbusiness/css/page/account/helpCenter.css
 END
 addBankCard.less
 K 25
 svn:wc:ra_dav:version-url
 V 76
 /svn/shop/!svn/ver/3423/Source/appbusiness/css/page/account/addBankCard.less
+END
+account.css
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/shop/!svn/ver/4077/Source/appbusiness/css/page/account/account.css
 END
 safeCenter.less
 K 25
@@ -37,13 +37,13 @@ bindweixin.css
 K 25
 svn:wc:ra_dav:version-url
 V 74
-/svn/shop/!svn/ver/3245/Source/appbusiness/css/page/account/bindweixin.css
+/svn/shop/!svn/ver/4077/Source/appbusiness/css/page/account/bindweixin.css
 END
 bindBankCard.css
 K 25
 svn:wc:ra_dav:version-url
 V 76
-/svn/shop/!svn/ver/3586/Source/appbusiness/css/page/account/bindBankCard.css
+/svn/shop/!svn/ver/4077/Source/appbusiness/css/page/account/bindBankCard.css
 END
 aboutbook.less
 K 25
@@ -57,47 +57,47 @@ svn:wc:ra_dav:version-url
 V 72
 /svn/shop/!svn/ver/3143/Source/appbusiness/css/page/account/safepay.less
 END
-safelogin.css
-K 25
-svn:wc:ra_dav:version-url
-V 73
-/svn/shop/!svn/ver/3245/Source/appbusiness/css/page/account/safelogin.css
-END
 helpCenter.less
 K 25
 svn:wc:ra_dav:version-url
 V 75
 /svn/shop/!svn/ver/3143/Source/appbusiness/css/page/account/helpCenter.less
 END
+safelogin.css
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/shop/!svn/ver/4077/Source/appbusiness/css/page/account/safelogin.css
+END
 aboutyundui.css
 K 25
 svn:wc:ra_dav:version-url
 V 75
-/svn/shop/!svn/ver/3245/Source/appbusiness/css/page/account/aboutyundui.css
+/svn/shop/!svn/ver/4077/Source/appbusiness/css/page/account/aboutyundui.css
 END
 account.less
 K 25
 svn:wc:ra_dav:version-url
 V 72
-/svn/shop/!svn/ver/3934/Source/appbusiness/css/page/account/account.less
-END
-addBankCard.css
-K 25
-svn:wc:ra_dav:version-url
-V 75
-/svn/shop/!svn/ver/3423/Source/appbusiness/css/page/account/addBankCard.css
+/svn/shop/!svn/ver/4077/Source/appbusiness/css/page/account/account.less
 END
 bindweixin.less
 K 25
 svn:wc:ra_dav:version-url
 V 75
-/svn/shop/!svn/ver/3143/Source/appbusiness/css/page/account/bindweixin.less
+/svn/shop/!svn/ver/4077/Source/appbusiness/css/page/account/bindweixin.less
+END
+addBankCard.css
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/shop/!svn/ver/4077/Source/appbusiness/css/page/account/addBankCard.css
 END
 safeCenter.css
 K 25
 svn:wc:ra_dav:version-url
 V 74
-/svn/shop/!svn/ver/3949/Source/appbusiness/css/page/account/safeCenter.css
+/svn/shop/!svn/ver/4077/Source/appbusiness/css/page/account/safeCenter.css
 END
 bindBankCard.less
 K 25
@@ -109,17 +109,17 @@ aboutbook.css
 K 25
 svn:wc:ra_dav:version-url
 V 73
-/svn/shop/!svn/ver/3697/Source/appbusiness/css/page/account/aboutbook.css
+/svn/shop/!svn/ver/4077/Source/appbusiness/css/page/account/aboutbook.css
 END
 safelogin.less
 K 25
 svn:wc:ra_dav:version-url
 V 74
-/svn/shop/!svn/ver/3143/Source/appbusiness/css/page/account/safelogin.less
+/svn/shop/!svn/ver/4077/Source/appbusiness/css/page/account/safelogin.less
 END
 aboutyundui.less
 K 25
 svn:wc:ra_dav:version-url
 V 76
-/svn/shop/!svn/ver/3143/Source/appbusiness/css/page/account/aboutyundui.less
+/svn/shop/!svn/ver/4077/Source/appbusiness/css/page/account/aboutyundui.less
 END

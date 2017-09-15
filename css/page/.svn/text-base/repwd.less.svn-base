@@ -20,7 +20,7 @@ body {
 .topBar {
     box-shadow: none;
     * {
-        color: #fff !important; 
+        color: #fff !important;
     }
 }
 
@@ -149,13 +149,19 @@ body {
     padding: 0 37.5px;
     margin-top: 30px;
     height: 40px;
-    a {
+    button {
         display: block;
         background-color: #fff;
-        line-height: 40px;
+        width: 100%;
         border-radius: 5px;
         font-size: 16px;
+        border: none;
         color: #333;
+        transition: all 0.2s;
+        &:active {
+            background: #ccc;
+            color: #fff;
+        }
     }
 }
 

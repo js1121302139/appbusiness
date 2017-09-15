@@ -144,10 +144,14 @@
 							"adminMessageIds": mseeageId
 						},
 						fun_Success: function(data) {
-							if(data.success == true) {};
+							if(data.success == true) {
+								detailPage = plus.webview.getWebviewById('page/work/home.html');
+								mui.fire(detailPage, "getindexData");
+							};
 						}
 					}
-					//Fun_App.ExAjax("merchant/read", sendData);
+					mseeageId.length>=1?Fun_App.ExAjax("merchant/read", sendData):mui.toast('你还没有可读的消息！');
+					
 				},
 				Load: function() {
 					this.page++;

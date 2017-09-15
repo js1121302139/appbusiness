@@ -18,7 +18,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     .partyImgItem {
-        position: relative;
+        position: relative;  
         display: flex; 
         .wh(4.87rem, 4.87rem);
         margin-bottom: 0.62rem; 

@@ -589,7 +589,7 @@ body,
 .isNoData {
   position: absolute;
   width: 100%;
-  top: 4.1rem;
+  top: 0rem;
   bottom: 0rem;
   z-index: 9999;
   background: #fff;

@@ -11,7 +11,7 @@
   border: none;
   background-color: #fff;
 }
-.dataContent .mui-segmented-control1 a { 
+.dataContent .mui-segmented-control1 a {
   border: none;
   border-bottom: 0.06rem solid #E5E5E5;
 }

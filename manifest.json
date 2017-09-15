@@ -298,7 +298,8 @@
 					"img/order-ListGo-ico.png",
 					"js/iscroll.js",
 					"js/vue.min.js",
-					"js/pullToRefresh.js"
+					"js/pullToRefresh.js",
+					"images/work-message-nomsgBg.png"
 				],
 				"refer": [
 					"page/work/messageArticle.html"
@@ -321,7 +322,9 @@
 					"css/pullToRefresh.css",
 					"js/iscroll.js",
 					"js/pullToRefresh.js",
-					"js/vue.min.js"
+					"js/vue.min.js",
+					"images/work-message-nomsgBg.png",
+					"img/work-tab-02.png"
 				],
 				"refer": [],
 				"priority": 0
@@ -341,7 +344,8 @@
 					"js/iscroll.js",
 					"images/order-bg.png",
 					"js/vue.min.js",
-					"js/pullToRefresh.js"
+					"js/pullToRefresh.js",
+					"images/work-message-nomsgBg.png"
 				],
 				"refer": [
 					"page/work/jsdentail.html"
@@ -360,7 +364,9 @@
 					"img/topBack-ico.png",
 					"js/vue.min.js"
 				],
-				"refer": [],
+				"refer": [
+					"page/work/cashsuccess.html"
+				],
 				"priority": 0
 			},
 			"page/work/myshop.html": {
@@ -454,7 +460,9 @@
 					"img/order-ListGo-ico.png",
 					"js/iscroll.js",
 					"js/vue.min.js",
-					"js/pullToRefresh.js"
+					"js/pullToRefresh.js",
+					"images/work-message-nomsgBg.png",
+					"images/order-bg.png"
 				],
 				"refer": [
 					"page/work/applysettlement.html",
@@ -486,7 +494,9 @@
 					"js/pullToRefresh.js",
 					"img/smallStar-ico.png.png",
 					"img/topBackB-ico.png",
-					"img/smallStarLine-ico.png.png"
+					"img/smallStarLine-ico.png.png",
+					"images/work-message-nomsgBg.png",
+					"js/vue.min.js"
 				],
 				"refer": [],
 				"priority": 0
@@ -550,7 +560,8 @@
 					"img/order-ListGo-ico.png",
 					"images/order-ListBg.png",
 					"img/orderQuestion-ico.png",
-					"js/vue.min.js"
+					"js/vue.min.js",
+					"images/work-message-nomsgBg.png"
 				],
 				"refer": [
 					"page/order/orderdentail.html"
@@ -606,7 +617,8 @@
 					"js/iscroll.js",
 					"js/vue.min.js",
 					"img/topBack-ico.png",
-					"js/pullToRefresh.js"
+					"js/pullToRefresh.js",
+					"images/work-message-nomsgBg.png"
 				],
 				"refer": [],
 				"priority": 0
@@ -692,7 +704,9 @@
 					"fonts/mui.ttf",
 					"js/muihelper.js",
 					"js/page/accounnt/safeCenter.js",
-					"img/topBack-ico.png"
+					"img/topBack-ico.png",
+					"js/fas.js",
+					"js/vue.min.js"
 				],
 				"refer": [
 					"page/account/safepay.html",
@@ -714,7 +728,8 @@
 					"img/topBack-ico.png",
 					"js/iscroll.js",
 					"js/vue.min.js",
-					"js/pullToRefresh.js"
+					"js/pullToRefresh.js",
+					"images/work-message-nomsgBg.png"
 				],
 				"refer": [],
 				"priority": 0
@@ -748,7 +763,8 @@
 					"js/common.js",
 					"js/muihelper.js",
 					"js/vue.min.js",
-					"js/mui.js"
+					"js/mui.js",
+					"img/topBack-ico.png"
 				],
 				"refer": [],
 				"priority": 0
@@ -938,7 +954,8 @@
 					"img/topBack-ico.png",
 					"js/pullToRefresh.js",
 					"js/muihelper.js",
-					"js/vue.min.js"
+					"js/vue.min.js",
+					"images/work-message-nomsgBg.png"
 				],
 				"refer": [
 					"page/work/createParty.html",
@@ -1037,7 +1054,10 @@
 					"js/muihelper.js",
 					"js/mui.min.js",
 					"js/vue.min.js",
-					"images/nyyh.png"
+					"images/nyyh.png",
+					"images/jsyh.png",
+					"img/topBack-ico.png",
+					"js/fas.js"
 				],
 				"refer": [
 					"page/account/addBankCard.html"
@@ -1101,6 +1121,23 @@
 					"css/page/account/aboutbook.css"
 				],
 				"refer": [],
+				"priority": 0
+			},
+			"page/work/cashsuccess.html": {
+				"resources": [
+					"img/mine_cash_panel.png",
+					"js/common.js",
+					"css/page/work/cashsuccess.css",
+					"js/muihelper.js",
+					"js/page/work/cashsuccess.js",
+					"css/mui.min.css",
+					"js/vue.min.js",
+					"img/topBack-ico.png",
+					"images/applySuccess-bg.png"
+				],
+				"refer": [
+					"page/work/jsdentail.html"
+				],
 				"priority": 0
 			}
 		},

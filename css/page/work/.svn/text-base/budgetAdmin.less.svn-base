@@ -139,3 +139,7 @@ header{
   }
 }
 
+.scale1{
+    transform: scale(1)!important;
+}
+.isNoData(11.875rem,0rem);

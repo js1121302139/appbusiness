@@ -9,6 +9,7 @@
 		<link rel="stylesheet" href="../../css/pullToRefresh.css" />
 		<link href="../../css/page/work/evaluatemange.css" rel="stylesheet" />
 	</head>
+
 	<body>
 		<div id="evaluatemange">
 			<header class="mui-bar topBar mui-bar-nav">
@@ -73,7 +74,8 @@
 					<li class="wrapperListItem" v-for="(item,key) in list">
 						<div class="ListItemTop">
 							<div class="userImg">
-								<img src="../../images/user-img.png" :src="picservice + item.headImg" alt="">
+								<img v-if="item.headImg=='' || item.headImg==null" src="../../images/user-img.png" >
+								<img v-else="" :src="picservice + item.headImg" alt="">
 							</div>
 							<div class="userInfo">
 								<p class="userName" v-text="item.userName">123</p>
@@ -97,6 +99,13 @@
 						</div>
 					</li>
 				</ul>
+				<div class="isNoData" v-if="isNoData" :class="{scale1:isNoData}">
+					<div class="isNoDataInfo mui-text-center">
+						<div class="isNoDataBg"></div>
+						<p class="isNoDataTit">暂无评价信息</p>
+						<p>小主暂时还没有订单评价哦!</p>
+					</div>
+				</div>
 			</div>
 
 		</div>
@@ -117,7 +126,8 @@
 						totalPage: null,
 						pageData: {},
 						list: [],
-						evatotalNum: 0
+						evatotalNum: 0,
+						isNoData:false
 					}
 				},
 				created: function() {
@@ -128,6 +138,7 @@
 							_this.pageData = resData.data;
 							_this.evatotalNum = _this.pageData.totalNum;
 							_this.list = resData.data.merchantComments;
+							_this.isNoData = (_this.list.length < 1) ? true : '';
 						}, 1);
 						refresher.init({
 							id: "wrapper",
@@ -169,4 +180,5 @@
 			})
 		</script>
 	</body>
+
 </html>

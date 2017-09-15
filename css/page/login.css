@@ -39,6 +39,7 @@ a {
 }
 input {
   font-size: 0.87rem;
+  -webkit-appearance: none;
 }
 .mui-input-group:before,
 .mui-input-group:after {
@@ -345,6 +346,7 @@ table {
 /*resetcssEnd*/
 /*重构的顶部*/
 /*顶部的卡片视图*/
+/*没有数据*/
 html,
 body {
   height: 100%;
@@ -439,12 +441,17 @@ body {
 .mui-content .login_local {
   padding: 0 37.5px;
 }
-.mui-content .login_local a {
+.mui-content .login_local button {
   display: block;
   height: 40px;
-  line-height: 40px;
+  width: 100%;
   font-size: 18px;
   border-radius: 5px;
+  border: none;
   background-color: #fff;
   color: #333;
+}
+.mui-content .login_local button:active {
+  background-color: #ccc;
+  color: #fff;
 }

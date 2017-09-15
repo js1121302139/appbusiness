@@ -10,18 +10,19 @@
 	</head>
 
 	<body>
-	<header class="mui-bar topBar mui-bar-nav">
-		<a class="mui-action-back topBack-ico mui-pull-left"></a>
-		<h1 class="mui-title">安全中心</h1>
-	</header>
+		<div id="safeCenter">
+			<header class="mui-bar topBar mui-bar-nav">
+			<a class="mui-action-back topBack-ico mui-pull-left"></a>
+			<h1 class="mui-title">安全中心</h1>
+		</header>
 		<div class="mui-content">
 			<ul class="mui-table-view">
-				<li class="mui-table-view-cell">
+				<li class="mui-table-view-cell" @click="open('./safelogin.html')">
 					<a class="mui-navigate-right myLogin">
 						我的登录密码
 					</a>
 				</li>
-				<li class="mui-table-view-cell">
+				<li class="mui-table-view-cell" v-if="isShow"  @click="open('./safepay.html')">
 					<a class="mui-navigate-right myPlay">
 						我的结算密码
 					</a>
@@ -31,18 +32,43 @@
 						绑定微信号
 					</a>
 				</li>-->
-				<li class="mui-table-view-cell">
+				<li class="mui-table-view-cell" v-if="isShow" @click="open('./bindBankCard.html')">
 					<a class="mui-navigate-right myBankCard">
 						绑定银行卡
 					</a>
 				</li>
 			</ul>
 		</div>
+		</div>
+		
 		<script src="../../js/mui.min.js"></script>
 		<script type="text/javascript" src="../../js/muihelper.js"></script>
+		<script type="text/javascript" src="../../js/fas.js" ></script>
 		<script src="../../js/page/accounnt/safeCenter.js"></script>
+		<script type="text/javascript" src="../../js/vue.min.js"></script>
 		<script type="text/javascript">
-			
+			document.addEventListener('DOMContentLoaded', function() {
+				FastClick.attach(document.body);
+			}, false);
+			var Vue = new Vue({
+				el: "#safeCenter",
+				data: function() {
+					return {
+						isShow:false
+					}
+				},
+				created: function() {
+					var _this = this;
+					mui.plusReady(function() {
+						_this.isShow=(Fun_App.getdata("jobCode")=="BOSS")?true:'';
+					})
+				},
+				methods: {
+					open:function(page){
+						Fun_App.openWin(page,'pop-in','')
+					}
+				}
+			})
 		</script>
 	</body>
 

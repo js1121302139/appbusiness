@@ -39,7 +39,7 @@
 							<!--<div class="partyImgItem">
                         <img src="../../images/createPartylogo.png" alt="" />
                     </div>-->
-							<div class="partyImgItem" :id="key" @click="removeImgBox('partyImgBox',locaImg.partyImgBox,key)" v-for="(item,key) in locaImg.partyImgBox">
+							<div class="partyImgItem" :id="key" @click="removeImgBox('partyImgBox',locaImg.partyImgBox,'',key)" v-for="(item,key) in locaImg.partyImgBox">
 								<img :src="item" alt="" />
 							</div>
 							<a href="JavaScript:;" @click="addPartyImgs('partyImgBox')" class="addPartyImg"></a>
@@ -70,7 +70,7 @@
 							</li>
 							<li class="partyDateAndMoneyListItem" v-show="isActive">
 								<span>众筹开始时间</span>
-								<div class="optionDate" @click="addTime('prepareStartTime')" id="prepareEndTime" v-text="data.prepareStartTime==''?'请选择':data.prepareStartTime"></div>
+								<div class="optionDate" @click="addTime('prepareStartTime')" id="prepareStartTime" v-text="data.prepareStartTime==''?'请选择':data.prepareStartTime"></div>
 								<img src="../../img/createPartyjt-ico.png" alt="">
 							</li>
 							<li class="partyDateAndMoneyListItem" v-show="isActive">
@@ -98,7 +98,7 @@
 							<div class="infoItem" v-for="(item,key) in partyInfoMod">
 								<textarea placeholder="请输入详情" v-model="locaImg.partyInfoText[key]"></textarea>
 								<div class="partyImgList">
-									<div class="partyImgItem" @click="removeImgBox('',locaImg.models[key],keys)" v-for="(i,keys) in locaImg.models[key]">
+									<div class="partyImgItem" @click="removeImgBox('',locaImg.models[key],locaImg.serverModels[key],keys)" v-for="(i,keys) in locaImg.models[key]">
 										<img :src="i" alt="" />
 									</div>
 									<!--<div class="partyImgItem">
@@ -165,7 +165,7 @@
 						</a>
 					</div>
 					<div class="ListEnd mui-text-center">
-						<span>别再糟蹋生活 会在兑的时代</span>
+						<span>别再糟蹋生活 会在DUI的时代</span>
 					</div>
 				</div>
 			</div>
@@ -276,10 +276,12 @@
 							this.data.activityFlow.push("");
 						}
 					},
-					removeImgBox: function(option, Imgclass, key) { //移除图片
+					removeImgBox: function(option, Imgclass,ImgServerclass, key) { //移除图片
 						var imgInfo = String(Imgclass).indexOf("file");
-						Imgclass.splice(key, 1)
+						Imgclass.splice(key, 1);
+						ImgServerclass!=''?ImgServerclass.splice(key, 1):'';
 						if(imgInfo != -1 && option != '') this.data.pictures.splice(key, 1);
+						console.log(Imgclass)
 					},
 					addmasterImg: function() { //添加活动主图
 						var _this = this;
@@ -340,7 +342,7 @@
 					picturesHtml: function(pic, txt) {
 						var htmlstr = "";
 						for(var i = 0; i < pic.length; i++) {
-							htmlstr += "<p>" + txt + "</p>"
+							htmlstr += "<p>" + txt[i] + "</p>"
 							for(var j = 0; j < pic[i].length; j++) {
 								htmlstr += "<img src=" + pic[i][j] + ">"
 							}
@@ -397,6 +399,7 @@
 						})
 					},
 					createParty: function(activityFlow, activityPackage, pictures) {
+						console.log(JSON.stringify(this.locaImg.partyInfoText))
 						var _this = this;
 						var sendData = {
 							config: {

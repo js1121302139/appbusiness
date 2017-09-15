@@ -66,7 +66,14 @@
 					</ul>
 				</div>
 			</div>
-
+			<div class="isNoData" v-if="isNoData" :class="{scale1:isNoData}">
+				<div class="isNoDataInfo mui-text-center">
+					<div class="isNoDataBg"></div>
+					<p class="isNoDataTit">暂无结算明细</p>
+					<p>不妨去结算一单再来看看？</p>
+				</div>
+			</div>
+		</div>
 		</div>
 		<script>
 		</script>
@@ -94,7 +101,8 @@
 						3: '已打款',
 						5: '审核失败',
 						null: '已打款'
-					}
+					},
+					isNoData: false
 				}
 			},
 			created: function() {
@@ -103,8 +111,8 @@
 					_this.requestUrl = Fun_App.getextrasdata();
 					_this.getJsDentail(function(resData) {
 						_this.list = resData.data;
+						_this.isNoData = (resData.data.length < 1) ? true : '';
 						_this.totalPage = Math.ceil(resData.total / _this.pageLen);
-						console.log(_this.totalPage + "asdasd")
 					}, 1)
 					refresher.init({
 						id: "wrapper",
