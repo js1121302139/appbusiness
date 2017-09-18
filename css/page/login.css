@@ -429,6 +429,7 @@ body {
   background: none;
   color: #fff;
   text-indent: 24px;
+  border: none !important;
 }
 .mui-content .forgetpassword {
   padding: 0 37.5px;

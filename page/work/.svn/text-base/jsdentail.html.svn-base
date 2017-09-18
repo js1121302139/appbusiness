@@ -119,6 +119,7 @@
 						/*pullDownAction: Refresh,*/
 						pullUpAction: _this.Load
 					});
+					plus.webview.close("./cashsuccess.html","slide-out-right",250);
 				})
 			},
 			methods: {

@@ -11,8 +11,7 @@ mui.init();
 		exitBox.addEventListener("tap", function() {
 			mui.confirm('是否退出登录？', '提示', ['取消', '确认'], function(e) {
 				if(e.index == 1) {
-					Fun_App.storagedata("token", " ");
-					Fun_App.storagedata("qrCodeSrc", null);
+					plus.storage.clear();
 					//关闭所有打开页面
 					for(var i = 1; i < allWebview.length; i++) {
 						plus.webview.close(allWebview[i].id);
@@ -127,20 +126,22 @@ mui.init();
 
 		}
 		//是否显示清除缓存
-		if(os == "iOS") {
-			clearSizeBox.style.display = "none";
-		}
+		/*if(os == "iOS") {
+			clearSizeBox.style.display = "none"; 
+		}*/ 
 
 		//获取缓存
 		getSize()
 
 		function getSize() {
 			plus.cache.calculate(function(size) {
-				sizeBox.innerText = Math.ceil(size / 1024) + "M";
+				sizeBox.innerText =(size / 1024 / 1024).toFixed(2) + "M";
 			})
 		}
 		//清除缓存
 		clearSizeBox.addEventListener("tap", function() {
+			var token = Fun_App.getdata("token");
+			var isOneOpen = Fun_App.getdata("isOneOpen");
 			mui.confirm("确认清除所有缓存数据么？", "提示", ["确定", "取消"], function(index) {
 				if(index.index == 0) {
 					plus.cache.clear(function() {

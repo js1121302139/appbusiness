@@ -33,7 +33,7 @@
 									<div class="order-PeopleInfo" v-text="item.memberName">罗炼羽 15632456528</div>
 								</div>
 								<div class="order-Income">
-									<p><span class="orderTit">消费金额<i></i></span><span v-text="item.moneyTotal">8654.65</span></p>
+									<p><span class="orderTit">消费金额<i></i></span>:<span v-text="item.moneyTotal">8654.65</span></p>
 									<p><span class="orderTit">营业收入<i></i></span>:<span v-text="item.actualTotalIncome">8654.65</span></p>
 									<p><span class="orderTit">佣金<i></i></span>:<span v-text="item.scalingAmount">86565</span></p>
 									<p><span class="orderTit">兑贝抵扣<i></i></span>:<span v-text="item.integral">86565</span></p>

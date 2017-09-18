@@ -67,64 +67,6 @@ mui.init();
 			Fun_App.storagedata("pushMsg", isActive);
 			console.log(Fun_App.getdata("pushMsg"))
 		})
-		//通知消息存储
-		//透传消息的格式为{title:"通知标题",content:"通知内容",payload:"通知去干嘛这里可以自定义"}
-		var localmsg = "";
-
-		//消息推送
-		mui.plusReady(function() {
-
-			// 监听点击消息事件
-			plus.push.addEventListener("click", function(msg) {
-				var payload = (plus.os.name == 'iOS') ? msg.payload : JSON.parse(msg.payload);
-				switch(msg.payload) {
-					case "LocalMSG":
-						console.log("点击本地创建消息启动：");
-						break;
-					default:
-						console.log("点击离线推送消息启动：");
-						break;
-				}
-			}, false);
-
-			// 监听在线消息事件
-			plus.push.addEventListener("receive", function(msg) {
-				logoutPushMsg(msg);
-			}, false);
-
-		});
-
-		//获取穿透参数
-		function logoutPushMsg(msg) {
-			if(msg.payload) {
-
-				if(typeof(msg.payload) == "string") {
-					createLocalPushMsg(msg.content);
-					localmsg = eval('(' + msg.content + ')');
-				} else {
-					var data = JSON.parse(msg.payload);
-					createLocalPushMsg(data.content);
-					localmsg = msg.content;
-				}
-
-			} else {
-				console.log("payload: undefined");
-			}
-		}
-
-		//创建本地推送
-		function createLocalPushMsg(content) {
-
-			var options = {
-				cover: false,
-			};
-
-			plus.push.createMessage(content, "LocalMSG", options);
-			if(plus.os.name == "iOS") {
-				mui.toast('*如果无法创建消息，请到"设置"->"通知"中配置应用在通知中心显示!');
-			}
-
-		}
 		//是否显示清除缓存
 		/*if(os == "iOS") {
 			clearSizeBox.style.display = "none"; 

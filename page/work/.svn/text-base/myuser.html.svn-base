@@ -112,7 +112,6 @@
 						_this.usercount=resData.data.count;
 						_this.appendList(resData.data.list);
 						_this.isNoData = (_this.list.length < 1) ? true : '';
-						console.log(JSON.stringify(_this.list))
 					}, 1)
 					refresher.init({
 						id: "wrapper",
@@ -189,7 +188,6 @@
 							ischeck: false
 						})
 					}
-					console.log(JSON.stringify(this.list))
 				},
 				checks: function(key) {
 					this.list[key].ischeck = !this.list[key].ischeck;

@@ -102,7 +102,6 @@
 						Fun_App.openWin("addSonAccount.html", "pop-in", id)
 					},
 					updateState: function(key) {
-						this.pageData[key].state = (this.pageData[key].state == 1) ? 2 : 1;
 						var _this = this;
 						var sendData = {
 							config: {
@@ -114,9 +113,12 @@
 								isstate = data.success;
 								if(data.success) {
 									mui.toast(data.message)
+									_this.pageData[key].state = 2;
+									
 								} else {
 									mui.toast(data.message)
-									_this.pageData[key].state = 2;
+									_this.pageData[key].state=1;
+									
 								}
 							}
 						}

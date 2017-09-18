@@ -683,7 +683,8 @@
 					"img/loginLogo.png",
 					"css/page/login.css",
 					"img/loginPwd-ico.png",
-					"img/loginPhoneNum-ico.png"
+					"img/loginPhoneNum-ico.png",
+					"js/vue.min.js"
 				],
 				"refer": [
 					"index.html",
@@ -784,7 +785,8 @@
 					"js/iscroll.js",
 					"js/pullToRefresh.js",
 					null,
-					"js/vue.min.js"
+					"js/vue.min.js",
+					"images/work-message-nomsgBg.png"
 				],
 				"refer": [
 					"page/work/addSonAccount.html"
@@ -825,7 +827,8 @@
 					"js/page/work/addSonAccount.js",
 					"img/work-successTrue.png",
 					"js/vue.min.js",
-					"js/common.js"
+					"js/common.js",
+					"img/topBack-ico.png"
 				],
 				"refer": [],
 				"priority": 0
@@ -909,7 +912,9 @@
 					"img/helpCenter-commonQuestions.png",
 					"js/muihelper.js",
 					"js/vue.min.js",
-					"js/page/accounnt/helpCenter.js"
+					"js/page/accounnt/helpCenter.js",
+					"fonts/mui.ttf",
+					"img/topBack-ico.png"
 				],
 				"refer": [],
 				"priority": 0
@@ -937,7 +942,9 @@
 					"js/mui.min.js",
 					"css/mui.min.css",
 					"img/topBack-ico.png",
-					"css/page/work/changeShop.css"
+					"css/page/work/changeShop.css",
+					"images/work-message-nomsgBg.png",
+					"js/vue.min.js"
 				],
 				"refer": [],
 				"priority": 0
@@ -1013,7 +1020,15 @@
 					"css/page/repwd.css",
 					"img/topBackB-ico.png",
 					"css/mui.min.css",
-					"js/vue.min.js"
+					"js/vue.min.js",
+					"js/common.js",
+					"images/login-bg.png",
+					"js/muihelper.js",
+					"js/mui.min.js",
+					"fonts/mui.ttf",
+					"img/loginLogo.png",
+					"img/loginPwd-ico.png",
+					"img/loginPhoneNum-ico.png"
 				],
 				"refer": [],
 				"priority": 0
@@ -1040,9 +1055,16 @@
 					"css/mui.min.css",
 					"css/page/work/partySettlement.css",
 					"img/topBackB-ico.png",
-					"css/pullToRefresh.css"
+					"css/pullToRefresh.css",
+					"js/muihelper.js",
+					"js/mui.min.js",
+					"js/iscroll.js",
+					"js/vue.min.js",
+					"js/pullToRefresh.js"
 				],
-				"refer": [],
+				"refer": [
+					"page/work/applysettlement.html"
+				],
 				"priority": 0
 			},
 			"page/account/bindBankCard.html": {

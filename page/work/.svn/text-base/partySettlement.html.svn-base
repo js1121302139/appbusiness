@@ -81,14 +81,12 @@
 					applyState: {//申请结算的状态
 						id: null,
 						Text: ""
-					}
+					} 
 				}
 			},
 			created: function() {
 				var _this = this;
 				mui.plusReady(function() {
-					Fun_App.pulldownRefresh();
-					//fire事件监听
 					window.addEventListener("getListData", function() {
 						_this.getListData(_this.orderId, function(resData) {
 							_this.pageData = resData.data;
@@ -136,7 +134,7 @@
 				open: function() {
 					var _this = this;
 					//判断当前的状态为0则是未结算 && endTime<startTime
-					if(this.applyState.id == 0 && this.showIco) {
+					if(this.applyState.id == 0 && this.showIco && this.pageData.settleMoneyTotal!=0) {
 						mui.plusReady(function() {
 							Fun_App.openWin("../work/applysettlement.html", "pop-in", {
 								msgtype: 6,
@@ -145,7 +143,7 @@
 							})
 						})
 					}else{
-						mui.toast('当前状态不可结算哦!')
+						mui.toast('可结算金额大于0并且活动已结束才可结算!')
 					}
 
 				},

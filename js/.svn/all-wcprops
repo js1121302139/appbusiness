@@ -63,17 +63,17 @@ svn:wc:ra_dav:version-url
 V 66
 /svn/shop/!svn/ver/2570/Source/appbusiness/js/mui.pullToRefresh.js
 END
+common.js
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/shop/!svn/ver/4141/Source/appbusiness/js/common.js
+END
 mui.picker.min.js
 K 25
 svn:wc:ra_dav:version-url
 V 63
 /svn/shop/!svn/ver/2297/Source/appbusiness/js/mui.picker.min.js
-END
-common.js
-K 25
-svn:wc:ra_dav:version-url
-V 55
-/svn/shop/!svn/ver/4132/Source/appbusiness/js/common.js
 END
 pullToRefresh.mini.js
 K 25
@@ -81,17 +81,17 @@ svn:wc:ra_dav:version-url
 V 67
 /svn/shop/!svn/ver/3143/Source/appbusiness/js/pullToRefresh.mini.js
 END
-muiTest.js
-K 25
-svn:wc:ra_dav:version-url
-V 56
-/svn/shop/!svn/ver/2284/Source/appbusiness/js/muiTest.js
-END
 mui.js
 K 25
 svn:wc:ra_dav:version-url
 V 52
 /svn/shop/!svn/ver/3143/Source/appbusiness/js/mui.js
+END
+muiTest.js
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/shop/!svn/ver/2284/Source/appbusiness/js/muiTest.js
 END
 addressArr.js
 K 25

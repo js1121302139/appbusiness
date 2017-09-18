@@ -20,7 +20,7 @@
 				</div>
 				<div class="userLogoImg">
 					<img id="myHeadImg" src="" alt="">
-				</div>
+				</div> 
 			</div>
 		</header>
 		<div class="mui-content">

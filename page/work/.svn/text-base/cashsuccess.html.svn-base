@@ -86,6 +86,7 @@
 						_this.pageData.money = getData.money;//结算成功的钱
 						_this.bankCode = getData.account[0].bankCode;//银行卡账户 
 						_this.pageData.url = getData.url;//查询的接口地址
+						plus.webview.close('./applysettlement.html', "slide-out-left", 500);
 					})
 				},
 				methods: {
@@ -95,7 +96,7 @@
 							Fun_App.openWin("./jsdentail.html",'pop-in',_this.pageData.url);
 						})
 						setTimeout(function(){
-							plus.webview.close("./cashsuccess.html","slide-out-left",500);
+							/*plus.webview.close("./cashsuccess.html","slide-out-left",500);*/
 						},10)
 					},
 					close:function(){
