@@ -44,32 +44,8 @@
 		<script src="../../js/mui.min.js"></script>
 		<script type="text/javascript" src="../../js/muihelper.js"></script>
 		<script type="text/javascript" src="../../js/fas.js" ></script>
-		<script src="../../js/page/accounnt/safeCenter.js"></script>
 		<script type="text/javascript" src="../../js/vue.min.js"></script>
-		<script type="text/javascript">
-			document.addEventListener('DOMContentLoaded', function() {
-				FastClick.attach(document.body);
-			}, false);
-			var Vue = new Vue({
-				el: "#safeCenter",
-				data: function() {
-					return {
-						isShow:false
-					}
-				},
-				created: function() {
-					var _this = this;
-					mui.plusReady(function() {
-						_this.isShow=(Fun_App.getdata("jobCode")=="BOSS")?true:'';
-					})
-				},
-				methods: {
-					open:function(page){
-						Fun_App.openWin(page,'pop-in','')
-					}
-				}
-			})
-		</script>
+		<script src="../../js/page/accounnt/safeCenter.js"></script>
 	</body>
 
 </html>

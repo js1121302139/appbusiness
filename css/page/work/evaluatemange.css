@@ -449,6 +449,15 @@ body,
   background-position-y: 0px;
   background-size: 0.9375rem 0.9375rem;
 }
+.evaluate-top .starLv .evaluateStar .evaluateStars .evaluateStarsitem5 {
+  width: 0.9375rem;
+  height: 0.9375rem;
+  float: left;
+  margin-right: 0.5rem;
+  background-image: url('../../../img/bigStar-ico.5.png') !important;
+  background-position-y: 0px;
+  background-size: 0.9375rem 0.9375rem;
+}
 .evaluate-top .starLv .evaluateStar .evaluateStars .evaluateStarsitem:last-child {
   margin-right: 0;
 }
@@ -519,6 +528,15 @@ body,
   float: left;
   margin-right: 0.34375rem;
   background-image: url("../../../img/smallStar-ico.png.png");
+  background-position-y: 0px;
+  background-size: 0.75rem 0.75rem;
+}
+.wrapperList .wrapperListItem .ListItemTop .userInfo .evaluateStar .evaluateStars .evaluateStarsitem5 {
+  width: 0.75rem;
+  height: 0.75rem;
+  float: left;
+  margin-right: 0.34375rem;
+  background-image: url('../../../img/bigStar-ico.5.png') !important;
   background-position-y: 0px;
   background-size: 0.75rem 0.75rem;
 }

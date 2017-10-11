@@ -20,7 +20,6 @@
 			<div class="mui-content">
 				<div id="" class="wrapperList">
 					<ul id="teamList">
-						<!--此页面等下个版本改成vue-->
 						<li class="mui-table-view-cell mui-row" v-for="(item,key) in pageData">
 							<div class="mui-pull-left memberLeft">
 								<div class="membersHeadImg mui-left">
@@ -45,89 +44,22 @@
 				</div>
 
 			</div>
-			<div class="isNoData" v-if="isNoData"  :class="{scale1:isNoData}"> 
+			<div class="isNoData" v-if="isNoData" :class="{scale1:isNoData}">
 				<div class="isNoDataInfo mui-text-center">
 					<div class="isNoDataBg"></div>
 					<p class="isNoDataTit">暂无员工</p>
-				<p>点击右上角绑定一个吧!</p> 
+					<p>点击右上角绑定一个吧!</p>
 				</div>
-				
-				</div>
+
 			</div>
+		</div>
 		</div>
 
 		<script src="../../js/mui.min.js"></script>
 		<script type="text/javascript" src="../../js/muihelper.js"></script>
-		<!--		<script type="text/javascript" src="../../js/page/work/teamAdmin.js"></script>-->
 		<script src="../../js/vue.min.js"></script>
+		<script type="text/javascript" src="../../js/page/work/teamAdmin.js"></script>
 		<script type="text/javascript">
-			var Vue = new Vue({
-				el: "#teamAdmin",
-				data: function() {
-					return {
-						pageData: null,
-						picservice: picservice,
-						shopLogo: null,
-						isNoData:false
-					}
-				},
-				created: function() {
-					var _this = this;
-					mui.plusReady(function() {
-						_this.shopLogo = Fun_App.getdata("shopLogo");
-						_this.getTeamList(function(resData) { 
-							_this.pageData = resData.data;
-							_this.isNoData = (resData.data.length<1)?true:false;
-						})
-						window.addEventListener('getTeamList', function() {
-							_this.getTeamList(function(resData) {
-							_this.pageData = resData.data;
-						});
-						});
-					})
-				},
-				methods: {
-					getTeamList: function(callBack) {
-						var sendData = {
-							config: {
-								"token": Fun_App.getdata("token")
-							},
-							fun_Success: function(data) {
-								callBack(data)
-							}
-						}
-						Fun_App.ExAjax("merchantAccount/list", sendData)
-					},
-					open: function(id) {
-						Fun_App.openWin("addSonAccount.html", "pop-in", id)
-					},
-					updateState: function(key) {
-						var _this = this;
-						var sendData = {
-							config: {
-								"token": Fun_App.getdata("token"),
-								"id": this.pageData[key].id,
-								"state": this.pageData[key].state
-							},
-							fun_Success: function(data) {
-								isstate = data.success;
-								if(data.success) {
-									mui.toast(data.message)
-									_this.pageData[key].state = 2;
-									
-								} else {
-									mui.toast(data.message)
-									_this.pageData[key].state=1;
-									
-								}
-							}
-						}
-						mui.plusReady(function() {
-							Fun_App.ExAjax("merchantAccount/updateState", sendData)
-						})
-					}
-				}
-			})
 		</script>
 	</body>
 

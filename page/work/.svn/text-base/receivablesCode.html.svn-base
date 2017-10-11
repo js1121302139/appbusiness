@@ -26,8 +26,8 @@
 				</div>
 				<!--内容区-->
 				<div class="mui-card-content qrcodeBox">
-					<div id="qrcode" style="width:18.75rem; height:18.75rem;">
-					<img id="qrcodeLogo" src="../../img/qrcode-ico.png" alt="" />
+					<div id="qrcode" style="width:18.75rem;margin-top: -1.5625rem; height:18.75rem; padding: 1.5625rem 0;">
+						<img id="qrcodeLogo" src="../../img/qrcode-ico.png" alt="" />
 					</div>
 				</div>
 				<!--页脚，放置补充信息或支持的操作-->
@@ -38,6 +38,16 @@
 		<script type="text/javascript" src="../../js/muihelper.js"></script>
 		<script type="text/javascript" src="../../js/qrcode.min.js"></script>
 		<script type="text/javascript" src="../../js/page/work/receivablesCode.js"></script>
+		<!--<script>
+			
+			var qrCodeBox = document.getElementById("qrcode");
+			var qrcode = new QRCode(qrCodeBox, {
+				width: qrCodeBox.clientHeight,
+				height: qrCodeBox.clientWidth
+			});
+			qrcode.makeCode('http://www.yunduiwang.com/api/resources/html/extension.html?type=2&inviterUserId=445&merchantId=538');
+			console.log(qrCodeBox.querySelectorAll("img")[1].naturalHeight)
+		</script>-->
 		
 	</body>
 

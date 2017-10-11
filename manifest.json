@@ -7,7 +7,7 @@
 	"id": "H5CA1B6A0",/*应用的标识，创建应用时自动生成，勿手动修改*/
 	"name": "兑咖联盟",/*应用名称，程序桌面图标名称*/
 	"version": {
-		"name": "1.1.0",/*应用版本名称*/
+		"name": "1.1.2",/*应用版本名称*/
 		"code": "83"
 	},
 	"description": "",/*应用描述信息*/
@@ -221,7 +221,8 @@
 					"img/work_footer-03-active.png",
 					"img/work_footer-02_active.png",
 					"img/ico-index3.png",
-					"img/ico-index2.png"
+					"img/ico-index2.png",
+					"js/page/index.js"
 				],
 				"refer": [
 					"page/account/account.html",
@@ -262,7 +263,11 @@
 					"img/home-profit-bg.png",
 					"js/common.js",
 					"img/work-reserve-ico.png",
-					"img/work-partyAdmin-ico.png"
+					"img/work-partyAdmin-ico.png",
+					"img/work-scannerQrCode.png",
+					"js/fas.js",
+					"js/vue.min.js",
+					"img/work-f2cDay.png"
 				],
 				"refer": [
 					"page/work/myshop.html",
@@ -276,7 +281,8 @@
 					"page/work/promotionAward.html",
 					"page/work/changeShop.html",
 					"page/work/partyAdmin.html",
-					"page/work/budgetAdmin.html"
+					"page/work/budgetAdmin.html",
+					"page/qrCode.html"
 				],
 				"priority": 0
 			},
@@ -298,8 +304,7 @@
 					"img/order-ListGo-ico.png",
 					"js/iscroll.js",
 					"js/vue.min.js",
-					"js/pullToRefresh.js",
-					"images/work-message-nomsgBg.png"
+					"js/pullToRefresh.js"
 				],
 				"refer": [
 					"page/work/messageArticle.html"
@@ -322,9 +327,7 @@
 					"css/pullToRefresh.css",
 					"js/iscroll.js",
 					"js/pullToRefresh.js",
-					"js/vue.min.js",
-					"images/work-message-nomsgBg.png",
-					"img/work-tab-02.png"
+					"js/vue.min.js"
 				],
 				"refer": [],
 				"priority": 0
@@ -344,8 +347,7 @@
 					"js/iscroll.js",
 					"images/order-bg.png",
 					"js/vue.min.js",
-					"js/pullToRefresh.js",
-					"images/work-message-nomsgBg.png"
+					"js/pullToRefresh.js"
 				],
 				"refer": [
 					"page/work/jsdentail.html"
@@ -364,9 +366,7 @@
 					"img/topBack-ico.png",
 					"js/vue.min.js"
 				],
-				"refer": [
-					"page/work/cashsuccess.html"
-				],
+				"refer": [],
 				"priority": 0
 			},
 			"page/work/myshop.html": {
@@ -460,9 +460,7 @@
 					"img/order-ListGo-ico.png",
 					"js/iscroll.js",
 					"js/vue.min.js",
-					"js/pullToRefresh.js",
-					"images/work-message-nomsgBg.png",
-					"images/order-bg.png"
+					"js/pullToRefresh.js"
 				],
 				"refer": [
 					"page/work/applysettlement.html",
@@ -494,9 +492,7 @@
 					"js/pullToRefresh.js",
 					"img/smallStar-ico.png.png",
 					"img/topBackB-ico.png",
-					"img/smallStarLine-ico.png.png",
-					"images/work-message-nomsgBg.png",
-					"js/vue.min.js"
+					"img/smallStarLine-ico.png.png"
 				],
 				"refer": [],
 				"priority": 0
@@ -587,7 +583,11 @@
 					"css/mui.min.css",
 					"images/user-img.png",
 					"js/page/accounnt/myaccount.js",
-					"img/customer.png"
+					"img/customer.png",
+					"img/helpBook.png",
+					"img/myAccount-RightsBook-ico.png",
+					"images/half_update_bg.png",
+					"img/game_icon01.png"
 				],
 				"refer": [
 					"page/account/safeCenter.html",
@@ -618,7 +618,9 @@
 					"js/vue.min.js",
 					"img/topBack-ico.png",
 					"js/pullToRefresh.js",
-					"images/work-message-nomsgBg.png"
+					"img/work-head.png",
+					"images/work-message-nomsgBg.png",
+					"js/page/order/orderdentail.js"
 				],
 				"refer": [],
 				"priority": 0
@@ -684,7 +686,8 @@
 					"css/page/login.css",
 					"img/loginPwd-ico.png",
 					"img/loginPhoneNum-ico.png",
-					"js/vue.min.js"
+					"js/vue.min.js",
+					"js/page/login.js"
 				],
 				"refer": [
 					"index.html",
@@ -705,9 +708,7 @@
 					"fonts/mui.ttf",
 					"js/muihelper.js",
 					"js/page/accounnt/safeCenter.js",
-					"img/topBack-ico.png",
-					"js/fas.js",
-					"js/vue.min.js"
+					"img/topBack-ico.png"
 				],
 				"refer": [
 					"page/account/safepay.html",
@@ -729,8 +730,7 @@
 					"img/topBack-ico.png",
 					"js/iscroll.js",
 					"js/vue.min.js",
-					"js/pullToRefresh.js",
-					"images/work-message-nomsgBg.png"
+					"js/pullToRefresh.js"
 				],
 				"refer": [],
 				"priority": 0
@@ -764,8 +764,7 @@
 					"js/common.js",
 					"js/muihelper.js",
 					"js/vue.min.js",
-					"js/mui.js",
-					"img/topBack-ico.png"
+					"js/mui.js"
 				],
 				"refer": [],
 				"priority": 0
@@ -785,8 +784,7 @@
 					"js/iscroll.js",
 					"js/pullToRefresh.js",
 					null,
-					"js/vue.min.js",
-					"images/work-message-nomsgBg.png"
+					"js/vue.min.js"
 				],
 				"refer": [
 					"page/work/addSonAccount.html"
@@ -827,8 +825,7 @@
 					"js/page/work/addSonAccount.js",
 					"img/work-successTrue.png",
 					"js/vue.min.js",
-					"js/common.js",
-					"img/topBack-ico.png"
+					"js/common.js"
 				],
 				"refer": [],
 				"priority": 0
@@ -913,7 +910,6 @@
 					"js/muihelper.js",
 					"js/vue.min.js",
 					"js/page/accounnt/helpCenter.js",
-					"fonts/mui.ttf",
 					"img/topBack-ico.png"
 				],
 				"refer": [],
@@ -943,8 +939,9 @@
 					"css/mui.min.css",
 					"img/topBack-ico.png",
 					"css/page/work/changeShop.css",
-					"images/work-message-nomsgBg.png",
-					"js/vue.min.js"
+					"js/page/work/changeShop.js",
+					"js/vue.min.js",
+					"img/work-successTrue.png"
 				],
 				"refer": [],
 				"priority": 0
@@ -962,7 +959,8 @@
 					"js/pullToRefresh.js",
 					"js/muihelper.js",
 					"js/vue.min.js",
-					"images/work-message-nomsgBg.png"
+					"images/work-message-nomsgBg.png",
+					"js/page/work/partyAdmin.js"
 				],
 				"refer": [
 					"page/work/createParty.html",
@@ -981,7 +979,9 @@
 					"images/budgetAdmin-bg.png",
 					"js/iscroll.js",
 					"css/mui.min.css",
-					"js/pullToRefresh.js"
+					"js/pullToRefresh.js",
+					"js/muihelper.js",
+					"js/vue.min.js"
 				],
 				"refer": [],
 				"priority": 0
@@ -1020,15 +1020,7 @@
 					"css/page/repwd.css",
 					"img/topBackB-ico.png",
 					"css/mui.min.css",
-					"js/vue.min.js",
-					"js/common.js",
-					"images/login-bg.png",
-					"js/muihelper.js",
-					"js/mui.min.js",
-					"fonts/mui.ttf",
-					"img/loginLogo.png",
-					"img/loginPwd-ico.png",
-					"img/loginPhoneNum-ico.png"
+					"js/vue.min.js"
 				],
 				"refer": [],
 				"priority": 0
@@ -1055,16 +1047,9 @@
 					"css/mui.min.css",
 					"css/page/work/partySettlement.css",
 					"img/topBackB-ico.png",
-					"css/pullToRefresh.css",
-					"js/muihelper.js",
-					"js/mui.min.js",
-					"js/iscroll.js",
-					"js/vue.min.js",
-					"js/pullToRefresh.js"
+					"css/pullToRefresh.css"
 				],
-				"refer": [
-					"page/work/applysettlement.html"
-				],
+				"refer": [],
 				"priority": 0
 			},
 			"page/account/bindBankCard.html": {
@@ -1076,10 +1061,7 @@
 					"js/muihelper.js",
 					"js/mui.min.js",
 					"js/vue.min.js",
-					"images/nyyh.png",
-					"images/jsyh.png",
-					"img/topBack-ico.png",
-					"js/fas.js"
+					"images/nyyh.png"
 				],
 				"refer": [
 					"page/account/addBankCard.html"
@@ -1109,9 +1091,12 @@
 					"page/qrcode/common.js",
 					"page/qrcode/common.css",
 					"js/muihelper.js",
-					"js/mui.js"
+					"js/mui.js",
+					"js/vue.min.js"
 				],
-				"refer": [],
+				"refer": [
+					"page/work/luck.html"
+				],
 				"priority": 0
 			},
 			"page/work/messageArticle.html": {
@@ -1145,21 +1130,16 @@
 				"refer": [],
 				"priority": 0
 			},
-			"page/work/cashsuccess.html": {
+			"page/work/luck.html": {
 				"resources": [
-					"img/mine_cash_panel.png",
-					"js/common.js",
-					"css/page/work/cashsuccess.css",
+					"images/qrCode-isCheckInfoBg.png",
+					"img/qrCode-isSuccessT.png",
+					"img/qrCode-isCheckInfoclose.png",
+					"img/qrCode-isSuccessF.png",
 					"js/muihelper.js",
-					"js/page/work/cashsuccess.js",
-					"css/mui.min.css",
-					"js/vue.min.js",
-					"img/topBack-ico.png",
-					"images/applySuccess-bg.png"
+					"js/mui.js"
 				],
-				"refer": [
-					"page/work/jsdentail.html"
-				],
+				"refer": [],
 				"priority": 0
 			}
 		},

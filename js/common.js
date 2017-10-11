@@ -70,6 +70,7 @@ var CheckValue = function() {
 				return val;
 			} else {
 				mui.toast("请输入正确的手机号！");
+				return false;
 			}
 		}
 	}
@@ -80,8 +81,9 @@ var CheckValue = function() {
 				return val;
 			} else {
 				mui.toast("请输入6位正确格式的验证码");
+				return false;
 			}
-		}
+		} 
 	}
 	this.checkPwd = function(val) {
 		var reg = /[\S]{6,16}/;
@@ -90,6 +92,7 @@ var CheckValue = function() {
 				return val;
 			} else {
 				mui.toast("请输入6-12位非空白字符的密码！");
+				return false;
 			}
 		}
 
@@ -100,6 +103,7 @@ var CheckValue = function() {
 				return val;
 			} else {
 				mui.toast("请输入数字！");
+				return false;
 			}
 		}
 	}

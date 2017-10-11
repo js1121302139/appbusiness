@@ -23,7 +23,6 @@
 						<span class="shopName" v-text="item.merchantName"></span>
 					</li>
 				</ul>
-
 			</div>
 			<div class="isNoData" v-if="isNoData"  :class="{scale1:isNoData}">
 				<div class="isNoDataInfo mui-text-center">
@@ -32,70 +31,19 @@
 					<p>小主你旗下暂时还没有分店哦!</p>
 				</div>
 			</div>
+			<div class="addSuccess" :class="{isok:isSuccess}">
+					<div class="addSuccessInfo mui-text-center">
+						<div class="addSuccessInfoTrue">
+
+						</div>
+						<p class="addSuccessTxt">切换成功</p>
+					</div>
+				</div>
 		</div>
 
 		<script src="../../js/mui.min.js"></script>
 		<script type="text/javascript" src="../../js/muihelper.js"></script>
 		<script type="text/javascript" src="../../js/vue.min.js"></script>
-		<script type="text/javascript">
-			var Vue = new Vue({
-				el: "#changeShop",
-				data: function() {
-					return {
-						list: [],
-						picservice: picservice,
-						isNoData: false
-					}
-				},
-				created: function() {
-					var _this = this;
-					mui.plusReady(function() {
-						_this.getShops(function(resData) {
-							_this.list = resData.data;
-							_this.isNoData = (_this.list.length < 2) ? true : '';
-						})
-					})
-				},
-				methods: {
-					getShops: function(callBack) {
-						var sendData = {
-							config: {
-								"token": Fun_App.getdata("token")
-							},
-							fun_Success: function(data) {
-								callBack(data)
-							}
-						}
-						Fun_App.ExAjax("merchant/getMerchants", sendData);
-					},
-					changeShop: function(id) {
-						var sendData = {
-							config: {
-								"token": Fun_App.getdata("token"),
-								"merchantId": id //切换商户的ID
-							},
-							fun_Success: function(data) {
-								if(data.success) {
-									//打开需要更新的页面
-									Fun_App.storagedata("token", data.data.token)
-									console.log(Fun_App.getdata("token"));
-									detailPage = plus.webview.getWebviewById('page/work/home.html');
-									mui.fire(detailPage, "getindexData")
-									detailPage = plus.webview.getWebviewById('page/order/myorder.html');
-									mui.fire(detailPage, "getMyOrderTop")
-									detailPage = plus.webview.getWebviewById('page/order/myorder.html');
-									mui.fire(detailPage, "myOrderList")
-									detailPage = plus.webview.getWebviewById('page/account/myaccount.html');
-									mui.fire(detailPage, "getInfodata")
-									mui.back()
-								}
-							}
-						};
-						Fun_App.ExAjax("merchant/switchMerchant", sendData)
-					}
-				}
-			})
-		</script>
+		<script type="text/javascript" src="../../js/page/work/changeShop.js" ></script>
 	</body>
-
 </html>

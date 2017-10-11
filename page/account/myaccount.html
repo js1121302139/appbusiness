@@ -35,6 +35,12 @@
 					<li class="mui-table-view-cell" id="helpCenter">
 						<a class="mui-navigate-right"><img src="../../img/help_icon.png" />帮助中心</a>
 					</li>
+					<li class="mui-table-view-cell" id="helpBook">
+						<a class="mui-navigate-right"><img src="../../img/helpBook.png" />操作手册</a>
+					</li>
+					<li class="mui-table-view-cell" id="RightsBook">
+						<a class="mui-navigate-right"><img src="../../img/myAccount-RightsBook-ico.png" />权益手册</a>
+					</li>
 					<li class="mui-table-view-cell msgItem">
 						<a class="mui-navigate-right"><img src="../../img/inforemind_icon.png" />消息提醒</a>
 						<div class="mui-switch mui-switch-handle mui-active msgBtn" id="msgBtn">
@@ -58,14 +64,35 @@
 						<a href="javascript:;" class="mui-navigate-right"><img src="../../img/contact_icon.png" /><span class="right-info shopPeople" ></span>联系营销顾问</a>
 					</li> 
 					<li class="mui-table-view-cell callNum" id="feedbackBtn2">
-						<a href="tel:400-699-9171" class="mui-navigate-right"><img src="../../img/customer.png" /><span class="right-info">400-699-9171</span>联系兑咖客服</a>
+						<a href="tel:400-699-6171" class="mui-navigate-right"><img src="../../img/customer.png" /><span class="right-info">400-699-6171</span>联系兑咖客服</a>
 					</li>
 				</ul>
 				<div class="exit-login mui-text-center">
 					<a href="javascript:;" id="exit">退出</a>
 				</div>
 			</div>
-
+<div class="update-box mui-hidden" id="updateBox">
+			<div class="u-d-box">
+				<img class="u-d-title" src="../../images/half_update_bg.png" />
+				<img src="../../img/game_icon01.png" class="u-d-close" id="closeUpdateBtn" />
+				<span class="u-d-t-text">版本更新</span>
+				<span class="u-d-v-text" id="updateVersionTxt"></span>
+				<span class="u-d-n-text">新版本特性</span>
+				<div class="u-d-desc" id="updateDescList">
+					<div class="mui-scroll-wrapper" style="height: 5.62rem;">
+						<div class="mui-scroll">
+							<!--这里放置真实显示的DOM内容-->
+							<ul id="updateDestTxt">
+								<!--<li>全新UI界面更好的用户体验增加了收费入口，轻松切换，在详情页内，安全操作</li>-->
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="u-d-btn" id="updateBtn">
+					立即更新
+				</div>
+			</div>
+		</div>
 		</div>
 		<script type="text/javascript" src="../../js/mui.min.js" async="async"></script>
 		<script type="text/javascript" src="../../js/muihelper.js" async="async"></script>
@@ -73,5 +100,5 @@
 		<script>
 		</script>
 	</body>
-
+	
 </html>

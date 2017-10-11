@@ -1,50 +1,68 @@
-var countMonyBox = document.querySelector("#countMony"),
-    moneyListBox = document.querySelector("#moneyList"),
-    monthBtnBOx = document.querySelector("#monthBtn"),
-    MouthListBox = document.querySelector(".MouthList"),
-    optionMonth = new Date().getMonth(),
-    jtBox = null,
-    totalPage = 0;
-(function (mui) {
-    mui.init({});
-
-    //点击时更改样式显示月份列表
-    tapState = false;
-    monthBtnBOx.addEventListener("tap", function () {
-        jtBox = this.querySelector(".jt");
-        if (tapState) {
-            jtBox.style.transform = "rotate(-360deg)"
-            MouthListBox.style.top = '132.5rem';
-            tapState = false;
-        } else {
-            MouthListBox.style.top = '3.9rem';
-            jtBox.style.transform = "rotate(-180deg)"
-            tapState = true;
-        }
-    })
-    //点击某月查询某月的数据
-    mui(".MouthList li").each(function (i, item) {
-        item.addEventListener("tap", function () {
-            optionMonth = i;
-            document.querySelector("#monthTxt").innerText = this.innerText;
-            jtBox.style.transform = "rotate(-360deg)"
-            MouthListBox.style.top = '132.5rem';
-            tapState = false;
-            moneyListBox.innerHTML = "";
-            getMonthincomeData(1, optionMonth)
-        })
-    })
-    var page = 1;
-
-    function pullupRefresh() {
-        ++page;
-        getMonthincomeData(page, optionMonth);
-        this.endPullupToRefresh(page > totalPage)
-        return;
-    }
-
-    
-    mui.plusReady(function () {
-        getMonthincomeData(page, optionMonth);
-    })
-}(mui))
+var Vue = new Vue({
+				el: "#monthlyEarnings", 
+				data: function() {
+					return {
+						page: 1,
+						totalPage: null,
+						pageLen: pageLen,
+						pageData: {},
+						mouth: new Date().getMonth() + 1,
+						list: [],
+						showMouth: false,
+						isNoData:false
+					}
+				},
+				created: function() {
+					var _this = this;
+					mui.plusReady(function() {
+						_this.getIncomeMonth(function(resData) {
+							_this.totalPage = Math.ceil(resData.total / _this.pageLen);
+							_this.pageData = resData.data;
+							_this.list = resData.data.merchantShareLogsList;
+							_this.isNoData = (_this.list.length < 1) ? true : '';
+						}, 1, null)
+						refresher.init({
+							id: "wrapper",
+							pullUpAction: _this.Load
+						});
+					})
+				},
+				methods: {
+					getIncomeMonth: function(callBack, page, mouth) {
+						var sendData = {
+							config: {
+								token: Fun_App.getdata("token"),
+								pageIndex: page,
+								month: mouth
+							},
+							fun_Success: function(data) {
+								callBack(data);
+							}
+						}
+						Fun_App.ExAjax("merchantShare/incomeMonth", sendData);
+					},
+					Load: function() {
+						this.page++;
+						var _this = this;
+						if(this.page <= this.totalPage) {
+							this.getIncomeMonth(function(resData) {
+								_this.list = _this.list.concat(resData.data.merchantShareLogsList);
+							}, this.page, this.mouth)
+						} else {
+							refresher.info.pullUpLable = '没有更多数据了!';
+						}
+						wrapper.refresh();
+					},
+					changeMouth: function(mouth) {
+						this.showMouth = !this.showMouth;
+						this.mouth = mouth;
+						var _this = this;
+						this.getIncomeMonth(function(resData) {
+							_this.totalPage = resData.total / _this.pageLen;
+							_this.pageData = resData.data;
+							_this.list = resData.data.merchantShareLogsList;
+							_this.isNoData = (_this.list.length < 1) ? true : '';
+						}, 1, mouth)
+					}
+				}
+			})

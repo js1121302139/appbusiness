@@ -9,7 +9,6 @@
 		<link rel="stylesheet" type="text/css" href="../../css/page/account/bindBankCard.css" />
 		<script src="../../js/fas.js"></script>
 		<script>
-			//不知到為什麼這個頁面點擊會有延遲300ms
 			document.addEventListener('DOMContentLoaded', function() {
 				FastClick.attach(document.body);
 			}, false);
@@ -42,59 +41,11 @@
 			</div>
 		</div>
 		<script src="../../js/mui.min.js"></script>
-		<script src="../../js/page/accounnt/bindBankCard.js"></script>
 		<script type="text/javascript" src="../../js/muihelper.js"></script>
 		<script type="text/javascript" src="../../js/vue.min.js"></script>
+		<script src="../../js/page/accounnt/bindBankCard.js"></script>
 		<script type="text/javascript">
-			var Vue = new Vue({
-				el: "#bankCardList",
-				data: function() {
-					return {
-						pageData: {},
-						showBtn: false
-					}
-				},
-				created: function() {
-					var _this = this;
-					mui.plusReady(function() {
-						_this.getCardLsit(function(resData) {
-							_this.pageData = resData;
-							if(resData.data.length == 0) {
-								_this.showBtn = true;
-							}
-						});
-					})
-				},
-				methods: {
-					getCardLsit: function(callBack) {
-						var sendData = {
-							config: {
-								token: Fun_App.getdata("token")
-							},
-							fun_Success: function(data) {
-								callBack(data)
-							}
-						}
-						Fun_App.ExAjax("merchantPerson/allBankCard", sendData)
-					},
-					open: function(id) {
-						mui.plusReady(function() {
-							Fun_App.openWin("./addBankCard.html", "pop-in", id)
-						})
-					}
-				},
-				computed: {
-					classObject: function(item) {
-						return "backCards" + item
-					}
-				},
-				filters:{
-					bankCode:function(val){
-						return val.substring(val.length-4);
-					}
-				}
-				
-			})
+			
 		</script>
 	</body>
 

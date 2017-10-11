@@ -1,100 +1,97 @@
-(function(mui) {
-	var msgListBox = document.querySelector("#msgList");
-	/*mui.init({
-		pullRefresh: {
-			container: '#pullrefresh',
-			up: {
-				contentrefresh: '加载...',
-				callback: pullupRefresh
-			}
-		}
-	});*/
-	mui(".mui-scroll-wrapper").scroll()
-
-	function pullupRefresh() {
-		/*++page;
-		orders();*/
-	}
-
-	//未读消息数组
-	var unreadMsg = [];
-
-	function message() {
-		var sendData = {
-			config: {
-				"token": Fun_App.getdata("token")
+var Vue = new Vue({
+			el: "#message",
+			data: function() {
+				return {
+					list: [],
+					picservice: picservice,
+					page: 1, 
+					totalPage: null,
+					pageLen: pageLen,
+					isNoData:false
+				} 
 			},
-			fun_Success: function(data) {
-				msgListBox.innerHTML = "";
-				for(var i = 0; i < data.data.length; i++) {
-					var datas = data.data[i];
-					if(datas.status == 0) {
-						//添加未读消息的id
-						unreadMsg.push(datas.adminMessageId);
+			created: function() {
+				var _this = this;
+				mui.plusReady(function() {
+					refresher.init({
+						id: "wrapper",
+						pullUpAction: _this.Load 
+					});
+					_this.messageList(function(resData) {
+						_this.list = resData.data;
+						(resData.total<1)?_this.isNoData=true:_this.isNoData=false;
+						_this.totalPage = Math.ceil(resData.total / _this.pageLen);
+					}, 1)
+					window.addEventListener("messageList", function() {
+						_this.messageList(function(resData) {
+							_this.list = resData.data;
+							_this.totalPage = Math.ceil(resData.total / _this.pageLen);
+						}, 1)
+					})
+				})
+			},
+			methods: {
+				messageList: function(callBack, page) {
+					var sendData = {
+						config: {
+							"token": Fun_App.getdata("token"),
+							'pageIndex': page
+						},
+						fun_Success: function(data) {
+							var datas = data;
+							for(var i = 0; i < datas.data.length; i++) {
+								if(datas.data[i].status == 1) {
+									datas.data.push(datas.data[i])
+									datas.data.splice(i, 1);
+								}
+							}
+							callBack(datas);
+						}
 					}
-					msgListBox.innerHTML +=
-						'<li class="ListItem" msgId="' + datas.adminMessageId + '">' +
-						'<p class="msgDate mui-text-center">'+datas.createTime+'</p>' +
-						'<div class="msgInfo">' +
-						'<div class="msgTop">' +
-						'<h1 class="msgTit mui-ellipsis">'+datas.title+' </h1>' +
-						'<div class="msg-ico">' +
-						'<span class="msgBadge" style="display: '+(datas.status==0?'block':'none')+'"></span>' +
-						'</div>' +
-						'</div>' +
-						'<div class="msgimg">' +
-						'<img src="../../img/ico-data02.png" alt="">' +
-						'</div>' +
-						'<p class="magText mui-ellipsis">福利大放送哦121321福利123132123大放送哦福利大放送哦福利大放送哦</p>' +
-						'</div>' +
-						'</li>'
-
+					Fun_App.ExAjax("merchant/message", sendData);
+				},
+				open: function(data) {
+					mui.plusReady(function() {
+						Fun_App.openWin('./messageArticle.html', "pop-in", data);
+					})
+				},
+				// 读消息
+				read: function() {
+					var mseeageId = []
+					for(var i = 0; i < this.list.length; i++) {
+						if(this.list[i].status == 0) {
+							mseeageId.push(this.list[i].adminMessageId)
+							this.list[i].status = 1;
+						}
+					}
+					var sendData = {
+						config: {
+							"token": Fun_App.getdata("token"),
+							"adminMessageIds": mseeageId
+						},
+						fun_Success: function(data) {
+							if(data.success == true) {
+								detailPage = plus.webview.getWebviewById('page/work/home.html');
+								mui.fire(detailPage, "getindexData");
+							};
+						}
+					}
+					mseeageId.length>=1?Fun_App.ExAjax("merchant/read", sendData):mui.toast('你还没有可读的消息！');
+					
+				},
+				Load: function() {
+					this.page++;
+					var _this = this;
+					if(this.page <= this.totalPage) {
+						this.messageList(function(resData) {
+							_this.list = _this.list.concat(resData.data);
+						}, this.page)
+					} else {
+						refresher.info.pullUpLable = '没有更多数据了!';
+					}
+					wrapper.refresh();
 				}
 			}
-		}
-		Fun_App.ExAjax("merchant/message", sendData);
-	}
-	//阅读消息
-	function readMessage(adminMessageId) {
 
-		var sendData = {
-			config: {
-				"token": Fun_App.getdata("token"),
-				"adminMessageIds": adminMessageId
-			},
-			fun_Success: function(data) {
-				if(data.success == true) {
-					unreadMsg.splice(unreadMsg.indexOf(adminMessageId), 1);
-				};
-			}
-		}
-		Fun_App.ExAjax("merchant/read", sendData);
-	}
-	mui.plusReady(function() {
-		var msgState = Fun_App.getdata("msgState"); //是否接受消息
-		if(msgState == 'true') {
-			message()
-		}
-		var msgListBox = document.querySelectorAll(".msgList .mui-media")
-		var msgNullBox = document.querySelector(".messageNull");
-		//单条消息点击更新消息状态
-		mui(".mui-table-view-cell").each(function(i, item) {
-			item.addEventListener("tap", function() {
-
-				var _thisId = parseInt(this.getAttribute("msgId"));
-				if(unreadMsg.indexOf(_thisId) != -1) readMessage([_thisId]);
-				this.querySelector(".mui-badge").style.display = "none";
-			})
 		})
-		if(msgListBox.length == 0) {
-			msgNullBox.style.display = "block";
-			document.querySelector('.msgListNull').style.background = "url(../../img/work-msg.png) center center no-repeat"
-		}
-		document.querySelector("#TopMsg").addEventListener("tap", function() {
-			if(unreadMsg.length > 0) {
-				readMessage(unreadMsg);
-			}
-		})
-	})
-
-}(mui))
+	

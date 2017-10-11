@@ -347,6 +347,19 @@ table {
 /*重构的顶部*/
 /*顶部的卡片视图*/
 /*没有数据*/
+.lastBtnBox {
+  padding: 0 0.75rem;
+  text-align: center;
+}
+.lastBtnBox .addBtn {
+  margin: 1.81rem auto 0;
+  width: 100%;
+  font-size: 1.12rem;
+  font-weight: bold;
+  border-radius: 0.37rem;
+  color: #fff;
+  background-color: #222;
+}
 .topBar {
   padding-top: 1.25rem;
   height: 4rem;
@@ -431,9 +444,14 @@ body .mui-content {
   -ms-flex-pack: center;
   justify-content: center;
 }
+.mui-card .qrcodeBox #qrcode img {
+  width: 100%;
+  height: 100%;
+}
 .mui-card .qrcodeBox #qrcode > img:first-child {
   position: absolute;
   width: 50px;
+  height: 3.125rem;
   top: 0;
   left: 0;
   right: 0;
@@ -441,11 +459,8 @@ body .mui-content {
   margin: auto;
   display: none;
 }
-.mui-card .qrcodeBox #qrcode img {
-  width: 100%;
-}
 .mui-card .card-footer {
-  margin-top: 0.31rem;
+  margin-top: -0.9375rem;
   margin-bottom: 1.25rem;
   color: #999;
   font-size: 0.87rem;

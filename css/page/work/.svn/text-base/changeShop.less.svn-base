@@ -28,3 +28,43 @@
     transform: scale(1)!important;
 }
 .isNoData(4.1rem,0rem);
+
+.addSuccess {
+        position: absolute;
+    top: 0;
+    z-index: 99999;
+    bottom: -17.18rem;
+    left: 0;
+    right: 0;
+    width: 14.25rem;
+    height: 6.68rem;
+    margin: auto;
+    color: #fff;
+    border-radius: 0.56rem;
+    background-color: #3d3d3d;
+    opacity: 0;
+    transform: scale(0);
+    transition: all 0.25s;
+    .addSuccessInfo {
+        padding: 1.5rem 0;
+        .addSuccessInfoTrue {
+            display: inline-block;
+            width: 1.87rem;
+            height: 1.87rem;
+            margin-bottom: 0.81rem;
+            background: url(../../../img/work-successTrue.png) center center no-repeat;
+            background-size: contain;
+        }
+        .addSuccessTxt {
+            color: #fff;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+    }
+}
+
+.isok {
+    transform: scale(1);
+    opacity: 1;
+    pointer-events: none;
+}

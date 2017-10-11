@@ -25,7 +25,8 @@
 						<div class="starLv">
 							<div class="evaluateStar">
 								<div class="evaluateStars" tip="3.4">
-									<p class="evaluateStarsitem" v-for="(items,key) in pageData.averageGrade |0"></p>
+									<p class="evaluateStarsitem" v-for="(items,key) in shopMark |0"></p>
+									<p class="evaluateStarsitem evaluateStarsitem5" v-if="shopMark % 1 >= 0.5"></p>
 								</div>
 								<p class="evaluateStarsLine"></p>
 								<p class="evaluateStarsLine"></p>
@@ -33,7 +34,7 @@
 								<p class="evaluateStarsLine"></p>
 								<p class="evaluateStarsLine"></p>
 							</div>
-							<div class="evaluateNum" id="evaluateNum" v-text="pageData.averageGrade">
+							<div class="evaluateNum" id="evaluateNum" v-text="shopMark">
 								4.8
 							</div>
 						</div>
@@ -74,7 +75,7 @@
 					<li class="wrapperListItem" v-for="(item,key) in list">
 						<div class="ListItemTop">
 							<div class="userImg">
-								<img v-if="item.headImg=='' || item.headImg==null" src="../../images/user-img.png" >
+								<img v-if="item.headImg=='' || item.headImg==null" src="../../images/user-img.png">
 								<img v-else="" :src="picservice + item.headImg" alt="">
 							</div>
 							<div class="userInfo">
@@ -111,73 +112,12 @@
 		</div>
 		<script src="../../js/mui.min.js"></script>
 		<script type="text/javascript" src="../../js/muihelper.js"></script>
-		<!--<script type="text/javascript" src="../../js/page/work/evaluatemange.js"></script>-->
 		<script type="text/javascript" src="../../js/iscroll.js"></script>
 		<script type="text/javascript" src="../../js/pullToRefresh.js"></script>
 		<script type="text/javascript" src="../../js/vue.min.js"></script>
+		<script type="text/javascript" src="../../js/page/work/evaluatemange.js"></script>
 		<script type="text/javascript">
-			var Vue = new Vue({
-				el: "#evaluatemange",
-				data: function() {
-					return {
-						picservice: picservice,
-						page: 1,
-						pageLen: pageLen,
-						totalPage: null,
-						pageData: {},
-						list: [],
-						evatotalNum: 0,
-						isNoData:false
-					}
-				},
-				created: function() {
-					var _this = this;
-					mui.plusReady(function() {
-						_this.getEvaluatemange(function(resData) {
-							_this.totalPage = Math.ceil(resData.total / _this.pageLen);
-							_this.pageData = resData.data;
-							_this.evatotalNum = _this.pageData.totalNum;
-							_this.list = resData.data.merchantComments;
-							_this.isNoData = (_this.list.length < 1) ? true : '';
-						}, 1);
-						refresher.init({
-							id: "wrapper",
-							pullUpAction: _this.Load
-						});
-					})
-				},
-				methods: {
-					getEvaluatemange: function(callBack, page) {
-						var sendData = {
-							config: {
-								token: Fun_App.getdata("token")
-							},
-							fun_Success: function(data) {
-								callBack(data);
-							}
-						}
-						Fun_App.ExAjax("merchantPerson/comment", sendData);
-					},
-					Load: function() {
-						this.page++;
-						var _this = this;
-						if(this.page <= this.totalPage) {
-							this.getEvaluatemange(function(resData) {
-								_this.list = _this.list.concat(resData.data.merchantComments);
-							}, this.page)
-						} else {
-							refresher.info.pullUpLable = '没有更多数据了!';
-						}
-
-						wrapper.refresh();
-					}
-				},
-				filters: {
-					ceil: function(val) {
-						return Math.ceil(val)
-					}
-				}
-			})
+			
 		</script>
 	</body>
 

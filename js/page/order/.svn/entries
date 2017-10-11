@@ -1,8 +1,8 @@
 10
 
 dir
-3922
-https://192.168.1.200/svn/shop/Source/appbusiness/js/page/order
+4195
+https://192.168.1.200/svn/shop/Source/branches/appbusiness/js/page/order
 https://192.168.1.200/svn/shop
 
 
@@ -28,14 +28,14 @@ hc-js
 
 orderdentail.js
 file
+4308
 
 
 
-
-2017-09-07T08:45:40.602323Z
-a44c948b5014b32eee122930712409da
-2017-08-18T12:23:49.180399Z
-3244
+2017-09-27T02:43:01.898488Z
+9ee9eb563abd489fab20f65cf819b390
+2017-09-27T06:40:52.461636Z
+4308
 hc-js
 
 
@@ -58,18 +58,18 @@ hc-js
 
 
 
-6502
+1502
 
 myorder.js
 file
+4573
 
 
 
-
-2017-09-07T08:45:40.605325Z
-9ca172b5a4643c4640d381c812684573
-2017-08-18T12:23:49.180399Z
-3244
+2017-10-09T06:25:26.379249Z
+6026bbfab010c412bb8bcb006dcf38bb
+2017-10-09T06:34:56.948142Z
+4573
 hc-js
 
 
@@ -92,5 +92,5 @@ hc-js
 
 
 
-7379
+3679
 

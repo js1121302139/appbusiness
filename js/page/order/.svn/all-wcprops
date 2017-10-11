@@ -1,17 +1,17 @@
 K 25
 svn:wc:ra_dav:version-url
-V 56
-/svn/shop/!svn/ver/3244/Source/appbusiness/js/page/order
+V 65
+/svn/shop/!svn/ver/4192/Source/branches/appbusiness/js/page/order
 END
 orderdentail.js
 K 25
 svn:wc:ra_dav:version-url
-V 72
-/svn/shop/!svn/ver/3244/Source/appbusiness/js/page/order/orderdentail.js
+V 81
+/svn/shop/!svn/ver/4308/Source/branches/appbusiness/js/page/order/orderdentail.js
 END
 myorder.js
 K 25
 svn:wc:ra_dav:version-url
-V 67
-/svn/shop/!svn/ver/3244/Source/appbusiness/js/page/order/myorder.js
+V 76
+/svn/shop/!svn/ver/4573/Source/branches/appbusiness/js/page/order/myorder.js
 END

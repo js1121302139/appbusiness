@@ -1,260 +1,240 @@
-(function($, doc) {
-	$.init();
-	$.plusReady(function() {
-		var accountNameBox = doc.querySelector("#accountName"), //账号名称
-			pageTitBox = doc.querySelector("#pageTit"), //页面标题
-			accountPhoneNumBox = doc.querySelector("#accountPhoneNum"), //账号电话
-			userResultBox = doc.querySelector("#userResult"), //角色
-			accountPhoneCodeBox = doc.querySelector("#accountPhoneCode"),
-			userResult1Box = doc.querySelector("#userResult1"), //团队
-			addBtnBox = doc.querySelector("#addBtn"), //添加按钮
-			getMsgBox = doc.querySelector(".getMsg"),
-			jobCode = Fun_App.getdata("jobCode"),
-			second = 90;
-		jobs = [], groups = [];
-		var Job = new $.PopPicker(); //角色
-		var group = new $.PopPicker(); //团队
-		var accountId = null;
-		var accountData = { //获取用户输入的数据
-			accountName: null, //账户姓名
-			accountPhoneNum: null, //账户的电话
-			jobName: null, //角色的名称
-			jobId: null, //角色的id
-			groupId: null, //团队的id
-			accountPhoneCode: null
-		};
-		getJobAndGroupData();
-
-		var getObj = Fun_App.getextrasdata();
-		//判断当前是否是添加或者是编辑
-		if(getObj != undefined) {
-			addBtnBox.innerText = '编辑';
-			pageTitBox.innerText = '编辑子账号';
-			accountId = getObj.id;
-			accountNameBox.value = accountData.accountName = getObj.name; //账户名称
-			accountPhoneNumBox.value = accountData.accountPhoneNum = getObj.phone; //电话号码 
-			userResultBox.innerText = accountData.jobName = getObj.jobName; //角色
-			delete accountData.accountPhoneCode;
-			console.log(JSON.stringify(accountData))
-			document.querySelector("#PhoneCode").style.display = 'none';
-			//获取团队的名称
-			for(var i = 0; i < groups.length; i++) {
-				if(groups[i].groupId == getObj.groupId) {
-					userResult1Box.innerText = groups[i].text;
-				}
-			}
-			//获取角色的id
-			for(var j = 0; j < jobs.length; j++) {
-				if(jobs[j].text == getObj.jobName) {
-					accountData.jobId = jobs[j].jobId
-				}
-			}
-			if(getObj.jobName == "店长") {
-				document.querySelector("#showUserPicker2").style.display = "none";
-			}
-			for(i in jobs) {
-				if(jobs[i].text == "员工") {
-					jobs.splice(i, 1);
-				}
-			}
-		}
-		//角色数据
-		Job.setData(
-			jobs //角色
-		);
-		//团队数据
-		group.setData(
-			groups //团队
-		);
-		//获取角色和团队的信息
-		function getJobAndGroupData() {
-			var sendData = {
-				config: {
-					"token": Fun_App.getdata("token"),
+var Vue = new Vue({
+				el: "#addSonAccount",
+				data: function() {
+					return {
+						getObj: null, //获取编辑的数据
+						isEdit: false,
+						isShowGroup: false,
+						check: new CheckValue(),
+						isSend: false, //当前状态是否可以发送请求
+						pageData: {
+							"token": Fun_App.getdata("token"),
+							"id": null,
+							"name": null, //姓名
+							"phone": null, //手机号
+							"groupId": null, //团队ID
+							"jobId": null, //角色id
+							"jobName": '请选择', //角色名字
+							"groupName": '请选择', //下面会做delete
+							'messageCode': null
+						},
+						job: null,
+						jobs: [], // 角色
+						group: null,
+						groups: [], // 团队
+						showOutTime: false, //显示倒计时
+						second: 90,
+						isSuccess: false //是否成功显示成功提示
+					}
 				},
-				fun_Success: function(data) {
-					if(data.success) {
-						for(i in data.data) {
-							for(j in data.data[i]) {
-								if(i == "job") {
-									jobs.push({
-										"jobId": data.data[i][j].jobId,
-										"text": data.data[i][j].jobName
-									})
-								} else {
-									groups.push({
-										"groupId": data.data[i][j].groupId,
-										"text": data.data[i][j].name
-									})
+				created: function() {
+					var _this = this;
+					mui.plusReady(function() {
+						_this.getObj = Fun_App.getextrasdata();
+						console.log(JSON.stringify(_this.getObj)); 
+						var JobAndGroupdata = _this.getJobAndGroupData();
+						if(_this.getObj == 'add') { //判断当前的状态是不是添加
+							_this.isEdit = true;
+							// 删除id
+							delete _this.pageData.id
+						} else {
+							_this.isEdit = false;
+							// 编辑删除短信验证码
+							delete _this.pageData.messageCode
+						};
+						// 当前状态时编辑的时候
+						if(!_this.isEdit) {
+							_this.pageData.name = _this.getObj.name;
+							_this.pageData.id = _this.getObj.id;
+							_this.pageData.phone = _this.getObj.phone;
+							_this.pageData.jobId = _this.getObj.jobId;
+							// 显示角色为员工的团队
+							for(var i =0;i<JobAndGroupdata.group.length;i++){
+								if(_this.getObj.groupId == JobAndGroupdata.group[i].groupId)_this.pageData.groupName = JobAndGroupdata.group[i].name;
+							}
+							_this.pageData.jobId != 2 ? _this.isShowGroup = true : ""; //是否显示团队
+							_this.pageData.jobName = _this.getObj.jobName;
+						}
+						_this.job = new mui.PopPicker();
+						for(var i = 0; i < JobAndGroupdata.job.length; i++) {
+							_this.jobs.push({
+								'jobId': JobAndGroupdata.job[i].jobId,
+								'text': JobAndGroupdata.job[i].jobName
+							})
+						}
+						//如果当前是编辑状态就设置为店长一个选项
+						//			if(!_this.isEdit) {
+						//				_this.jobs = _this.jobs.slice(0, 1);
+						//			}
+						_this.job.setData(_this.jobs)
+						_this.group = new mui.PopPicker();
+						if(JobAndGroupdata.group != undefined) {
+							for(var i = 0; i < JobAndGroupdata.group.length; i++) {
+								_this.groups.push({
+									'groupId': JobAndGroupdata.group[i].groupId,
+									'text': JobAndGroupdata.group[i].name
+								})
+							}
+							_this.group.setData(_this.groups)
+						}
+					})
+				},
+				methods: {
+					// 获取团队和角色信息
+					getJobAndGroupData: function() {
+						var datas;
+						var sendData = {
+							config: {
+								"token": Fun_App.getdata("token"),
+							},
+							fun_Success: function(data) {
+								if(data.success) {
+									datas = data.data;
 								}
 							}
 						}
-					}
-				}
-			}
-			Fun_App.ExAjax("merchantAccount/getJobAndGroup", sendData)
-		}
-		//添加账号
-		function addAccount() {
-			var sendData = {
-				config: {
-					"token": Fun_App.getdata("token"),
-					"name": accountData.accountName, //姓名
-					"phone": accountData.accountPhoneNum, //手机号
-					"groupId": accountData.groupId, //团队ID
-					"jobId": accountData.jobId, //角色id
-					"jobName": accountData.jobName, //角色名字
-					'messageCode':accountData.accountPhoneCode
-				},
-				fun_Success: function(data) {
-					if(data.success) {
-						doc.querySelector(".addSuccess").style.display = "block";
-						closeWin(1000)
-					} else {
-						mui.toast(data.message);
-						return false;
-					}
-				}
-			}
-			console.log(JSON.stringify(sendData.config))
-			Fun_App.ExAjax("merchantAccount/create", sendData)
-		}
-		getMsgBox.addEventListener("tap", function() {
-			this.focus();
-			accountData.accountPhoneNum != null ? smsVerify() :"";
-		})
+						Fun_App.ExAjax("merchantAccount/getJobAndGroup", sendData)
+						return datas;
+					},
 
-		function smsVerify() {
-			var sendData = {
-				config: {
-					"token": Fun_App.getdata('token'),
-					"phone": accountData.accountPhoneNum,
-					'type': 7
-				},
-				fun_Success: function(data) {
-					(data.success && second == 90) ? mui.toast(data.message): mui.toast(data.message);
-					
-				}
-			}
-			console.log(sendData.config.phone)
-			secondTime()
+					// 显示联动插件
+					showPicker: function(selects, key) {
+						var _this = this;
+						selects.show(function(items) {
+							if(key === "job") { //判断选项的类型
+								_this.pageData.jobId = items[0].jobId;
+								_this.pageData.jobName = items[0].text;
+								//判断当前选择的角色是否显示团队
+								if(items[0].jobId != 2 && Fun_App.getdata('jobCode') == 'BOSS') {
+									_this.isShowGroup = true;
+								} else {
+									_this.isShowGroup = false
+									_this.pageData.groupId = null;
+									_this.pageData.groupName = null;
+								}
+							} else {
+								_this.pageData.groupId = items[0].groupId;
+								_this.pageData.groupName = items[0].text;
+							}
+						})
 
-			function secondTime() {
-				second--;
-				if(second < 1) {
-					second = 90;
-					getMsgBox.disabled = false;
-					getMsgBox.innerText = '获取短信验证码';
-				} else {
-					getMsgBox.disabled = true;
-					getMsgBox.innerText = '还剩' + second + '秒';
-					setTimeout(secondTime, 1000)
-				}
-			}
-			Fun_App.ExAjax("merchant/smsVerify", sendData);
+					},
+					// 检测角色信息
+					checkUserData: function(key) {
+						clearInterval(this.timer);
+						var _this = this;
+						switch(key) {
+							case "mobile":
+								(_this.check.checkPhoneNum(_this.pageData.phone) == false) ? this.isSend = true: this.isSend = false;
+								break;
+							case "messageCode":
+								(_this.check.checkCode(_this.pageData.messageCode) == false) ? this.isSend = true: this.isSend = false;
+								break;
+						}
+					},
+					// 短信验证码倒计时
+					timeOut: function() {
+						this.showOutTime = true;
+						this.second--;
+						if(this.second < 1) {
+							this.showOutTime = false;
+							this.second = 90;
+						} else {
+							var timeout = setTimeout(this.timeOut, 1000);
+						}
+					},
+					// 短信接口
+					smsVerify: function() {
+						var _this = this;
+						var sendData = {
+							config: {
+								"token": Fun_App.getdata('token'),
+								"phone": this.pageData.phone,
+								'type': 7
+							},
+							fun_Success: function(data) {
+								(data.success) ? mui.toast(data.message): mui.toast(data.message);
+							}
+						}
+						if(this.showOutTime == false && this.pageData.phone != null) {
+							mui.plusReady(function() {
+								Fun_App.ExAjax("merchant/smsVerify", sendData);
+								// 发送成功调用倒计时
+								_this.timeOut()
+							})
+						} else {
+							mui.toast('请输入手机号!');
+						}
+					},
+					// 创建子账号
+					createAccount: function() {
+						var _this = this ;
+						var sendData = {
+							config: this.pageData,
+							fun_Success: function(data) {
+								mui("#addBtn").button('reset');
+								if(data.success) {
+									_this.isSuccess = true;
+									var teamAdminPage = plus.webview.getWebviewById('teamAdmin.html');
+									mui.fire(teamAdminPage, "getTeamList")
+									_this.closeWin(1000);
+								}
+								data.success ? mui.toast(data.message) : mui.toast(data.message);
+							}
+						}
+						if(Fun_App.checkObjIsNull(this.pageData, ['groupId']) != false) {
+							mui("#addBtn").button('loading');
+							Fun_App.ExAjax("merchantAccount/create", sendData);
+						} else {
+							mui.toast('还有数据没填！');
+						}
 
-		}
-		//关闭窗口事件
-		function closeWin(timer) {
-			var detailPage = plus.webview.getWebviewById('teamAdmin.html');
-			mui.fire(detailPage, 'getTeamList');
-			setTimeout(function() {
-				plus.webview.currentWebview().close();
-			}, timer)
-		}
-		//编辑员工信息
-		function editAccount() {
-			var sendData = {
-				config: {
-					"token": Fun_App.getdata("token"),
-					"id": accountId,
-					"name": accountData.accountName, //姓名
-					"phone": accountData.accountPhoneNum, //手机号
-					"groupId": accountData.groupId, //团队ID
-					"jobId": accountData.jobId, //角色id
-					"jobName": accountData.jobName //角色名字
-				},
-				fun_Success: function(data) {
-					if(data.success) {
-						doc.querySelector(".addSuccess .addSuccessTxt").innerText = "编辑成功";
-						doc.querySelector(".addSuccess").style.display = "block";
-						closeWin(1000) //关闭当前窗口
+					},
+					// 关闭窗口
+					/*
+					 *@param {number}
+					 * */
+					closeWin: function(timer) {
+						var detailPage = plus.webview.getWebviewById('teamAdmin.html');
+						mui.fire(detailPage, 'getTeamList');
+						setTimeout(function() {
+							plus.webview.currentWebview().close();
+						}, timer)
+					},
+					// 编辑角色信息
+					editAccount: function() {
+						var _this = this;
+						console.log(JSON.stringify(this.pageData))
+						var sendData = {
+							config: this.pageData,
+							fun_Success: function(data) {
+								mui("#addBtn").button('reset');
+								if(data.success) {
+									_this.isSuccess = true;
+									var teamAdminPage = plus.webview.getWebviewById('teamAdmin.html');
+									mui.fire(teamAdminPage, "getTeamList")
+									_this.closeWin(1000);
+								}
+								(data.success) ? mui.toast(data.message): mui.toast(data.message);
+							}
+						}
+						console.log(Fun_App.checkObjIsNull(this.pageData, ["groupId"]))
+						if(Fun_App.checkObjIsNull(this.pageData, ["groupId"]) != false) {
+							console.log(JSON.stringify(this.pageData))
+							mui("#addBtn").button('loading');
+							Fun_App.ExAjax("merchantAccount/editAccount", sendData)
+						} else {
+							mui.toast('还有数据没填！');
+						}
+					},
+					// 提交数据
+					upData: function() {
+						console.log(JSON.stringify(this.pageData))
+						// 删除groupName这个属性因为提交数据用不到
+						delete this.pageData.groupName
+						// 判断当前状态是否是编辑 and 创建 
+						this.isEdit ? this.createAccount() : this.editAccount();
 					}
-				}
-			}
-			console.log("edit:" + JSON.stringify(sendData.config))
-			Fun_App.ExAjax("merchantAccount/editAccount", sendData);
-		}
-		//选项弹窗
-		$(".mui-table-view").on("tap", ".select", function(index) {
-			var ids = this.getAttribute("id"); //获取选项的id
-			sonDoc = this.childNodes[1];
-			if(ids === "showUserPicker") { //判断选项的类型
-				Job.show(function(items) {
-
-					sonDoc.innerText = accountData.jobName = (items[0].text!=undefined?items[0].text:"");
-					accountData.jobId = items[0].jobId;
-					if(items[0].text == "员工" && jobCode == 'BOSS') {
-						document.querySelector("#showUserPicker2").style.display = "block";
-					} else {
-						document.querySelector("#showUserPicker2").style.display = "none";
-					}
-				})
-			} else {
-				group.show(function(items) {
-
-					sonDoc.innerText = items[0].text == undefined ? '请先绑定店长' : items[0].text;
-					accountData.groupId = items[0].groupId;
-				})
-			}
-		}, false)
-		//判断用户输入数据
-		mui("input").each(function(i, item) {
-			item.addEventListener("change", function() {
-				var ids = this.getAttribute("id");
-				if(ids == "accountName") {
-					if(this.value == "" && this.value.length < 20) {
-						$.toast("姓名不能为空,且不能大于10个字符！");
-						return false;
-					} else {
-						accountData.accountName = this.value;
-					}
-				} else if(ids == "accountPhoneNum") {
-					var pat = /(^(([0\+]\d{2,3}-)?(0\d{2,3})-)(\d{7,8})(-(\d{3,}))?$)|(^0{0,1}1[3|4|5|6|7|8|9][0-9]{9}$)/;
-					if(!pat.test(this.value)) {
-						$.toast("手机号码格式不正确")
-						return false;
-					} else {
-						accountData.accountPhoneNum = this.value;
-					}
-				}else{
-					accountData.accountPhoneCode = this.value;
 				}
 			})
-		})
-		//判断当前是编辑还是添加
-		addBtnBox.addEventListener("tap", function() {
-			var BtnTxt = this.innerText; //获取当前按钮的文本
-			console.log(BtnTxt)
-			console.log(JSON.stringify(accountData))
-			this.focus();
-			if(Fun_App.checkObjIsNull(accountData, "groupId") == false) {
-				mui.toast("你还有东西没填哦")
-				console.log(JSON.stringify(accountData))
-			} else {
-				//判断当前页面的状态执行不同的任务
-				if(BtnTxt == "绑定") {
-					addAccount(); //添加账号
-				} else {
-					editAccount(); //编辑账号
-				}
-
-			}
-
-		})
-		if(jobCode != 'BOSS') {
-			document.querySelector("#showUserPicker2").style.display = "none";
-		}
-	})
-
-}(mui, document))
+		

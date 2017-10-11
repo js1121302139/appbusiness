@@ -29,7 +29,7 @@
 							</div>
 							<div class="ListItem-Info">
 								<div class="order-People">
-									<div class="order-PeopleImg"><img class="order-PeopleImg" :src="picservice + item.headImg" alt=""></div>
+									<div class="order-PeopleImg"><img class="order-PeopleImg" src="" :src="item.headImg==''?'../../img/work-head.png':picservice+item.headImg" alt=""></div>
 									<div class="order-PeopleInfo" v-text="item.memberName">罗炼羽 15632456528</div>
 								</div>
 								<div class="order-Income">
@@ -43,82 +43,20 @@
 					</ul>
 				</div>
 			</div>
-			<div class="isNoData" v-if="isNoData" :class="{scale1:isNoData}">
+			<!--<div class="isNoData" v-if="isNoData" :class="{scale1:isNoData}">
 				<div class="isNoDataInfo mui-text-center">
 					<div class="isNoDataBg"></div>
 					<p class="isNoDataTit">暂无结算明细</p>
 					<p>小主暂时还没有订单信息哦!</p>
 				</div>
-			</div>
+			</div>-->
 		</div>
 		<script src="../../js/mui.min.js"></script>
+		<script src="../../js/vue.min.js"></script>
 		<script type="text/javascript" src="../../js/iscroll.js"></script>
 		<script type="text/javascript" src="../../js/pullToRefresh.js"></script>
 		<script type="text/javascript" src="../../js/muihelper.js"></script>
-		<!--<script type="text/javascript" src="../../js/page/order/orderdentail.js" ></script>-->
-		<script src="../../js/vue.min.js"></script>
-		<script type="text/javascript">
-			var Vue = new Vue({
-				el: "#orderdentail",
-				data: function() {
-					return {
-						page: 1,
-						totalPage: null,
-						pageLen: pageLen,
-						picservice: picservice,
-						list: [],
-						statisTime: null,
-						isNoData:true
-					}
-				},
-				created: function() {
-
-					var _this = this;
-					mui.plusReady(function() {
-						_this.statisTime = Fun_App.getextrasdata();
-						_this.getList(function(resData) {
-							_this.list = resData.data;
-							_this.isNoData = (resData.data.length<1)?true:'';		
-							_this.totalPage = Math.ceil(resData.total / _this.pageLen);
-						}, 1)
-						refresher.init({
-							id: "wrapper",
-							pullDownAction: _this.Refresh,
-							pullUpAction: _this.Load
-						});
-					})
-				},
-				methods: {
-					getList: function(callBack, page) {
-						var sendData = {
-							config: {
-								token: Fun_App.getdata("token"),
-								statisTime: this.statisTime,
-								pageIndex: page
-							},
-							fun_Success: function(data) {
-								callBack(data)
-							}
-						}
-						Fun_App.ExAjax("merchantOrders/detailInfo", sendData)
-					},
-					Load: function() {
-						var _this = this;
-						this.page++;
-						if(this.page <= this.totalPage) {
-							this.getList(function(resData) {
-								_this.list = _this.list.concat(resData.data)
-							}, this.page)
-						} else {
-							refresher.info.pullUpLable = '没有更多数据了!';
-						}
-
-						wrapper.refresh();
-					}
-				}
-
-			})
-		</script>
+		<script type="text/javascript" src="../../js/page/order/orderdentail.js" ></script>
 	</body>
 
 </html>

@@ -347,3 +347,16 @@ table {
 /*重构的顶部*/
 /*顶部的卡片视图*/
 /*没有数据*/
+.lastBtnBox {
+  padding: 0 0.75rem;
+  text-align: center;
+}
+.lastBtnBox .addBtn {
+  margin: 1.81rem auto 0;
+  width: 100%;
+  font-size: 1.12rem;
+  font-weight: bold;
+  border-radius: 0.37rem;
+  color: #fff;
+  background-color: #222;
+}

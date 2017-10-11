@@ -1,185 +1,227 @@
 K 25
 svn:wc:ra_dav:version-url
-V 55
-/svn/shop/!svn/ver/3885/Source/appbusiness/js/page/work
+V 64
+/svn/shop/!svn/ver/4192/Source/branches/appbusiness/js/page/work
 END
 integral.js
 K 25
 svn:wc:ra_dav:version-url
-V 67
-/svn/shop/!svn/ver/2956/Source/appbusiness/js/page/work/integral.js
+V 76
+/svn/shop/!svn/ver/4192/Source/branches/appbusiness/js/page/work/integral.js
 END
-promotionAward.js
+partyAdmin.js
 K 25
 svn:wc:ra_dav:version-url
-V 73
-/svn/shop/!svn/ver/3502/Source/appbusiness/js/page/work/promotionAward.js
-END
-cashsuccess.js
-K 25
-svn:wc:ra_dav:version-url
-V 70
-/svn/shop/!svn/ver/2956/Source/appbusiness/js/page/work/cashsuccess.js
-END
-integralexchange.js
-K 25
-svn:wc:ra_dav:version-url
-V 75
-/svn/shop/!svn/ver/2956/Source/appbusiness/js/page/work/integralexchange.js
-END
-gxjsdentail.js
-K 25
-svn:wc:ra_dav:version-url
-V 70
-/svn/shop/!svn/ver/2956/Source/appbusiness/js/page/work/gxjsdentail.js
-END
-jsdentail.js
-K 25
-svn:wc:ra_dav:version-url
-V 68
-/svn/shop/!svn/ver/3502/Source/appbusiness/js/page/work/jsdentail.js
-END
-dataAnalysis.js
-K 25
-svn:wc:ra_dav:version-url
-V 71
-/svn/shop/!svn/ver/2956/Source/appbusiness/js/page/work/dataAnalysis.js
+V 78
+/svn/shop/!svn/ver/4308/Source/branches/appbusiness/js/page/work/partyAdmin.js
 END
 evaluatemange.js
 K 25
 svn:wc:ra_dav:version-url
-V 72
-/svn/shop/!svn/ver/3244/Source/appbusiness/js/page/work/evaluatemange.js
+V 81
+/svn/shop/!svn/ver/4570/Source/branches/appbusiness/js/page/work/evaluatemange.js
 END
 detailinfo.js
 K 25
 svn:wc:ra_dav:version-url
-V 69
-/svn/shop/!svn/ver/2956/Source/appbusiness/js/page/work/detailinfo.js
+V 78
+/svn/shop/!svn/ver/4192/Source/branches/appbusiness/js/page/work/detailinfo.js
 END
 shopmain.js
 K 25
 svn:wc:ra_dav:version-url
-V 67
-/svn/shop/!svn/ver/2956/Source/appbusiness/js/page/work/shopmain.js
+V 76
+/svn/shop/!svn/ver/4192/Source/branches/appbusiness/js/page/work/shopmain.js
 END
 myshop.js
 K 25
 svn:wc:ra_dav:version-url
-V 65
-/svn/shop/!svn/ver/2956/Source/appbusiness/js/page/work/myshop.js
+V 74
+/svn/shop/!svn/ver/4192/Source/branches/appbusiness/js/page/work/myshop.js
 END
 receivablesCode.js
 K 25
 svn:wc:ra_dav:version-url
-V 74
-/svn/shop/!svn/ver/3987/Source/appbusiness/js/page/work/receivablesCode.js
-END
-createactivity.js
-K 25
-svn:wc:ra_dav:version-url
-V 73
-/svn/shop/!svn/ver/3423/Source/appbusiness/js/page/work/createactivity.js
+V 83
+/svn/shop/!svn/ver/4678/Source/branches/appbusiness/js/page/work/receivablesCode.js
 END
 myincome.js
 K 25
 svn:wc:ra_dav:version-url
-V 67
-/svn/shop/!svn/ver/3244/Source/appbusiness/js/page/work/myincome.js
+V 76
+/svn/shop/!svn/ver/4308/Source/branches/appbusiness/js/page/work/myincome.js
 END
 monthlyEarnings.js
 K 25
 svn:wc:ra_dav:version-url
-V 74
-/svn/shop/!svn/ver/3423/Source/appbusiness/js/page/work/monthlyEarnings.js
+V 83
+/svn/shop/!svn/ver/4308/Source/branches/appbusiness/js/page/work/monthlyEarnings.js
 END
-decorationshop.js
+budgetAdmin.js
 K 25
 svn:wc:ra_dav:version-url
-V 73
-/svn/shop/!svn/ver/2956/Source/appbusiness/js/page/work/decorationshop.js
-END
-myuser.js
-K 25
-svn:wc:ra_dav:version-url
-V 65
-/svn/shop/!svn/ver/3244/Source/appbusiness/js/page/work/myuser.js
-END
-extensionewm.js
-K 25
-svn:wc:ra_dav:version-url
-V 71
-/svn/shop/!svn/ver/2956/Source/appbusiness/js/page/work/extensionewm.js
+V 79
+/svn/shop/!svn/ver/4308/Source/branches/appbusiness/js/page/work/budgetAdmin.js
 END
 addSonAccount.js
 K 25
 svn:wc:ra_dav:version-url
-V 72
-/svn/shop/!svn/ver/3931/Source/appbusiness/js/page/work/addSonAccount.js
+V 81
+/svn/shop/!svn/ver/4529/Source/branches/appbusiness/js/page/work/addSonAccount.js
+END
+extensionewm.js
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/shop/!svn/ver/4192/Source/branches/appbusiness/js/page/work/extensionewm.js
 END
 shareprofit.js
 K 25
 svn:wc:ra_dav:version-url
-V 70
-/svn/shop/!svn/ver/3502/Source/appbusiness/js/page/work/shareprofit.js
+V 79
+/svn/shop/!svn/ver/4308/Source/branches/appbusiness/js/page/work/shareprofit.js
 END
-msgcenter.js
-K 25
-svn:wc:ra_dav:version-url
-V 68
-/svn/shop/!svn/ver/3244/Source/appbusiness/js/page/work/msgcenter.js
-END
-promotiondentail.js
+partyIn.js
 K 25
 svn:wc:ra_dav:version-url
 V 75
-/svn/shop/!svn/ver/3502/Source/appbusiness/js/page/work/promotiondentail.js
-END
-qrCodeExchangeFor.js
-K 25
-svn:wc:ra_dav:version-url
-V 76
-/svn/shop/!svn/ver/2956/Source/appbusiness/js/page/work/qrCodeExchangeFor.js
-END
-home.js
-K 25
-svn:wc:ra_dav:version-url
-V 63
-/svn/shop/!svn/ver/3733/Source/appbusiness/js/page/work/home.js
+/svn/shop/!svn/ver/4308/Source/branches/appbusiness/js/page/work/partyIn.js
 END
 gxapplysettlement.js
 K 25
 svn:wc:ra_dav:version-url
-V 76
-/svn/shop/!svn/ver/3502/Source/appbusiness/js/page/work/gxapplysettlement.js
+V 85
+/svn/shop/!svn/ver/4192/Source/branches/appbusiness/js/page/work/gxapplysettlement.js
 END
 applysettlement.js
 K 25
 svn:wc:ra_dav:version-url
+V 83
+/svn/shop/!svn/ver/4678/Source/branches/appbusiness/js/page/work/applysettlement.js
+END
+partySettlement.js
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/shop/!svn/ver/4308/Source/branches/appbusiness/js/page/work/partySettlement.js
+END
+promotionAward.js
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/shop/!svn/ver/4535/Source/branches/appbusiness/js/page/work/promotionAward.js
+END
+cashsuccess.js
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/shop/!svn/ver/4308/Source/branches/appbusiness/js/page/work/cashsuccess.js
+END
+integralexchange.js
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/shop/!svn/ver/4192/Source/branches/appbusiness/js/page/work/integralexchange.js
+END
+gxjsdentail.js
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/shop/!svn/ver/4192/Source/branches/appbusiness/js/page/work/gxjsdentail.js
+END
+dataAnalysis.js
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/shop/!svn/ver/4192/Source/branches/appbusiness/js/page/work/dataAnalysis.js
+END
+jsdentail.js
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/shop/!svn/ver/4308/Source/branches/appbusiness/js/page/work/jsdentail.js
+END
+changeShop.js
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/shop/!svn/ver/4529/Source/branches/appbusiness/js/page/work/changeShop.js
+END
+createactivity.js
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/shop/!svn/ver/4308/Source/branches/appbusiness/js/page/work/createactivity.js
+END
+decorationshop.js
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/shop/!svn/ver/4192/Source/branches/appbusiness/js/page/work/decorationshop.js
+END
+createParty.js
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/shop/!svn/ver/4449/Source/branches/appbusiness/js/page/work/createParty.js
+END
+myuser.js
+K 25
+svn:wc:ra_dav:version-url
 V 74
-/svn/shop/!svn/ver/3502/Source/appbusiness/js/page/work/applysettlement.js
+/svn/shop/!svn/ver/4308/Source/branches/appbusiness/js/page/work/myuser.js
+END
+msgcenter.js
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/shop/!svn/ver/4593/Source/branches/appbusiness/js/page/work/msgcenter.js
+END
+promotiondentail.js
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/shop/!svn/ver/4535/Source/branches/appbusiness/js/page/work/promotiondentail.js
+END
+qrCodeExchangeFor.js
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/shop/!svn/ver/4192/Source/branches/appbusiness/js/page/work/qrCodeExchangeFor.js
+END
+home.js
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/shop/!svn/ver/4449/Source/branches/appbusiness/js/page/work/home.js
+END
+messageArticle.js
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/shop/!svn/ver/4308/Source/branches/appbusiness/js/page/work/messageArticle.js
 END
 txdentail.js
 K 25
 svn:wc:ra_dav:version-url
-V 68
-/svn/shop/!svn/ver/2956/Source/appbusiness/js/page/work/txdentail.js
+V 77
+/svn/shop/!svn/ver/4192/Source/branches/appbusiness/js/page/work/txdentail.js
 END
 activityCenter.js
 K 25
 svn:wc:ra_dav:version-url
-V 73
-/svn/shop/!svn/ver/3423/Source/appbusiness/js/page/work/activityCenter.js
+V 82
+/svn/shop/!svn/ver/4501/Source/branches/appbusiness/js/page/work/activityCenter.js
 END
 shopenvironment.js
 K 25
 svn:wc:ra_dav:version-url
-V 74
-/svn/shop/!svn/ver/2956/Source/appbusiness/js/page/work/shopenvironment.js
+V 83
+/svn/shop/!svn/ver/4192/Source/branches/appbusiness/js/page/work/shopenvironment.js
 END
 teamAdmin.js
 K 25
 svn:wc:ra_dav:version-url
-V 68
-/svn/shop/!svn/ver/3792/Source/appbusiness/js/page/work/teamAdmin.js
+V 77
+/svn/shop/!svn/ver/4308/Source/branches/appbusiness/js/page/work/teamAdmin.js
 END

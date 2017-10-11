@@ -1,71 +1,83 @@
 K 25
 svn:wc:ra_dav:version-url
-V 55
-/svn/shop/!svn/ver/3894/Source/appbusiness/page/account
+V 64
+/svn/shop/!svn/ver/4192/Source/branches/appbusiness/page/account
 END
 addBankCard.html
 K 25
 svn:wc:ra_dav:version-url
-V 72
-/svn/shop/!svn/ver/4008/Source/appbusiness/page/account/addBankCard.html
+V 81
+/svn/shop/!svn/ver/4678/Source/branches/appbusiness/page/account/addBankCard.html
 END
 safeCenter.html
 K 25
 svn:wc:ra_dav:version-url
-V 71
-/svn/shop/!svn/ver/4118/Source/appbusiness/page/account/safeCenter.html
+V 80
+/svn/shop/!svn/ver/4529/Source/branches/appbusiness/page/account/safeCenter.html
 END
-bindWeixin.html
+bookshopkeeper.html
 K 25
 svn:wc:ra_dav:version-url
-V 71
-/svn/shop/!svn/ver/3503/Source/appbusiness/page/account/bindWeixin.html
+V 84
+/svn/shop/!svn/ver/4501/Source/branches/appbusiness/page/account/bookshopkeeper.html
 END
 bindBankCard.html
 K 25
 svn:wc:ra_dav:version-url
-V 73
-/svn/shop/!svn/ver/4008/Source/appbusiness/page/account/bindBankCard.html
+V 82
+/svn/shop/!svn/ver/4308/Source/branches/appbusiness/page/account/bindBankCard.html
 END
 myaccount.html
 K 25
 svn:wc:ra_dav:version-url
-V 70
-/svn/shop/!svn/ver/4175/Source/appbusiness/page/account/myaccount.html
+V 79
+/svn/shop/!svn/ver/4678/Source/branches/appbusiness/page/account/myaccount.html
+END
+helpBook.html
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/shop/!svn/ver/4501/Source/branches/appbusiness/page/account/helpBook.html
+END
+bookassistant.html
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/shop/!svn/ver/4501/Source/branches/appbusiness/page/account/bookassistant.html
 END
 aboutbook.html
 K 25
 svn:wc:ra_dav:version-url
-V 70
-/svn/shop/!svn/ver/3699/Source/appbusiness/page/account/aboutbook.html
-END
-bindsuccess.html
-K 25
-svn:wc:ra_dav:version-url
-V 72
-/svn/shop/!svn/ver/3503/Source/appbusiness/page/account/bindsuccess.html
+V 79
+/svn/shop/!svn/ver/4291/Source/branches/appbusiness/page/account/aboutbook.html
 END
 safelogin.html
 K 25
 svn:wc:ra_dav:version-url
-V 70
-/svn/shop/!svn/ver/4092/Source/appbusiness/page/account/safelogin.html
+V 79
+/svn/shop/!svn/ver/4678/Source/branches/appbusiness/page/account/safelogin.html
 END
 aboutyundui.html
 K 25
 svn:wc:ra_dav:version-url
-V 72
-/svn/shop/!svn/ver/3699/Source/appbusiness/page/account/aboutyundui.html
+V 81
+/svn/shop/!svn/ver/4192/Source/branches/appbusiness/page/account/aboutyundui.html
 END
 safepay.html
 K 25
 svn:wc:ra_dav:version-url
-V 68
-/svn/shop/!svn/ver/4100/Source/appbusiness/page/account/safepay.html
+V 77
+/svn/shop/!svn/ver/4678/Source/branches/appbusiness/page/account/safepay.html
 END
 helpCenter.html
 K 25
 svn:wc:ra_dav:version-url
-V 71
-/svn/shop/!svn/ver/3503/Source/appbusiness/page/account/helpCenter.html
+V 80
+/svn/shop/!svn/ver/4501/Source/branches/appbusiness/page/account/helpCenter.html
+END
+rightsBook.html
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/shop/!svn/ver/4501/Source/branches/appbusiness/page/account/rightsBook.html
 END

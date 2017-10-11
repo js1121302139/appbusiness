@@ -10,93 +10,8 @@
 		<script type="text/javascript" src="../js/mui.js"></script>
 		<script type="text/javascript" src="../js/muihelper.js"></script>
 		<script type="text/javascript" src="qrcode/common.js"></script>
-		<script type="text/javascript">
-			var ws = null,
-				wo = null;
-			var scan = null,
-				domready = false;
+		<script src="../js/vue.min.js"></script>
 
-			(function($, doc) {
-				$.plusReady(function() {
-					plus.nativeUI.closeWaiting();
-					//关闭当前页
-					Fun_App.closeCurrentPage();
-
-					plusReady();
-					/*console.log(JSON.stringify(plus.webview.all()))*/
-				});
-			}(mui, document));
-
-			// H5 plus事件处理
-			function plusReady() {
-
-				if(ws || !window.plus || !domready) {
-					return;
-				}
-				// 获取窗口对象
-				ws = plus.webview.currentWebview();
-				//wo = ws.opener();
-				// 开始扫描
-				ws.addEventListener('show', function() {
-					scan = new plus.barcode.Barcode('bcid');
-					scan.onmarked = onmarked;
-					scan.start();
-				}, false);
-				// 显示页面并关闭等待框
-				ws.show('pop-in');
-				//wo.evalJS('closeWaiting()');
-			}
-			// 监听DOMContentLoaded事件
-			document.addEventListener('DOMContentLoaded', function() {
-				domready = true;
-
-				plusReady();
-			}, false);
-			// 二维码扫描成功
-			function onmarked(type, result, file) {
-				switch(type) {
-					case plus.barcode.QR:
-						type = 'QR';
-						break;
-					case plus.barcode.EAN13:
-						type = 'EAN13';
-						break;
-					case plus.barcode.EAN8:
-						type = 'EAN8';
-						break;
-					default:
-						type = '其它' + type;
-						break;
-				}
-				if(result!=null){
-					orderVerification(result);
-					function orderVerification(orderSn){
-						var sendData = {
-							config: {
-								token: Fun_App.getdata("token"),
-								orderSn:orderSn
-							},
-							fun_Success: function(data) {
-								function scannerExit(){
-									mui.toast('订单核销成功!')
-									var ws = plus.webview.getWebviewById("partyAdmin.html");
-									mui.fire(ws,"getPartyList")
-									mui.back()
-								}
-								if(data.success){
-									scannerExit()
-								}else{
-									mui.toast(data.message);
-									mui.back();
-								}
-							}
-						}
-						Fun_App.ExAjax("merchantParty/orderVerification",sendData)
-					}
-					console.log(JSON.stringify(result))
-				}
-			}
-		</script>
 		<link rel="stylesheet" href="qrcode/common.css" type="text/css" charset="utf-8" />
 		<style type="text/css">
 			#bcid {
@@ -174,7 +89,7 @@
 	</head>
 
 	<body style="background-color: #000000;">
-		<div id="bcid">
+		<div id="bcid"> 
 			<div style="height:40%">
 				<header class="mui-bar" id="headertop">
 					<a href="javascript:" class="yd-btn-back mui-icon  mui-pull-left mui-action-back"><img src="../img/game_icon01.png" /></a>
@@ -182,10 +97,93 @@
 			</div>
 			<p class="tip">...正在加载摄像头...</p>
 		</div>
-		<!--<footer>
-			<div class="fbt" onclick="back()">取　 消</div>
-			<div class="fbt" onclick="scanPicture()">从相册选择二维码</div>
-		</footer>-->
 	</body>
+	<script type="text/javascript">
+		var ws = null,
+			wo = null;
+		var scan = null,
+			domready = false;
+			
+		(function($, doc) {
+			$.plusReady(function() {
+				plus.nativeUI.closeWaiting();
+				//关闭当前页
+				Fun_App.closeCurrentPage();
+
+				plusReady();
+				/*console.log(JSON.stringify(plus.webview.all()))*/
+			});
+		}(mui, document));
+		
+		// H5 plus事件处理
+		function plusReady() {
+
+			if(ws || !window.plus || !domready) {
+				return;
+			}
+			// 获取窗口对象
+			ws = plus.webview.currentWebview();
+			//wo = ws.opener();
+			// 开始扫描
+			ws.addEventListener('show', function() {
+				scan = new plus.barcode.Barcode('bcid');
+				scan.onmarked = onmarked;
+				scan.start();
+			}, false);
+			// 显示页面并关闭等待框
+			ws.show('pop-in');
+			//wo.evalJS('closeWaiting()');
+		}
+		// 监听DOMContentLoaded事件
+		document.addEventListener('DOMContentLoaded', function() {
+			domready = true;
+			plusReady();
+		}, false);
+		// 二维码扫描成功
+		function onmarked(type, result, file) {
+			switch(type) {
+				case plus.barcode.QR:
+					type = 'QR';
+					break;
+				case plus.barcode.EAN13:
+					type = 'EAN13';
+					break;
+				case plus.barcode.EAN8:
+					type = 'EAN8';
+					break;
+				default:
+					type = '其它' + type;
+					break;
+			}
+			console.log(JSON.stringify(result)+"--->>>->");
+			if(result != null && result!='undefined') {
+				(Fun_App.getextrasdata()!='luck')?orderVerification(result):Fun_App.openWin("./work/luck.html","pop-in",result);
+			}
+		}
+
+		function orderVerification(orderSn) {
+			var sendData = {
+				config: {
+					token: Fun_App.getdata("token"),
+					orderSn: orderSn
+				},
+				fun_Success: function(data) {
+					function scannerExit() {
+						mui.toast('订单核销成功!')
+						var ws = plus.webview.getWebviewById("partyAdmin.html");
+						mui.fire(ws, "getPartyList")
+						mui.back()
+					}
+					if(data.success) {
+						scannerExit()
+					} else {
+						mui.toast(data.message);
+						mui.back();
+					}
+				}
+			}
+			Fun_App.ExAjax("merchantParty/orderVerification", sendData)
+		}
+	</script>
 
 </html>

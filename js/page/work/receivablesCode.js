@@ -1,7 +1,8 @@
 mui.plusReady(function() {
 	var qrCodeSrc = Fun_App.getdata("qrCodeSrc");
 	var qrCodeBox = document.getElementById("qrcode");
-	//异步加载二维码效果还不错
+	
+	//本地加载二维码效果
 	setTimeout(function() {
 		if(qrCodeSrc == null || qrCodeSrc == "null") {
 			var qrcode = new QRCode(qrCodeBox, {
@@ -16,10 +17,10 @@ mui.plusReady(function() {
 			}
 		} else {
 			var img = document.createElement("img");
-			img.setAttribute("src", qrCodeSrc)
+			img.setAttribute("src", qrCodeSrc);
 			qrCodeBox.appendChild(img);
 			qrCodeBox.querySelector("img").style.display = 'block';
-			document.querySelector("#qrcodeLogo").style.display="block";
+			document.querySelector("#qrcodeLogo").style.display = "block";
 		}
 		document.querySelector("#qrcodeLogo").style.display = "block";
 	}, 0);

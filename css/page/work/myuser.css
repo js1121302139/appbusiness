@@ -499,6 +499,7 @@ body,
   display: flex;
   flex-flow: column;
   align-content: space-between;
+  text-align: -webkit-right;
 }
 .wrapperList .userLsit .userBox .moneyAndMsgBtn p {
   flex: 1;
@@ -560,7 +561,15 @@ body,
   line-height: 3.12rem;
   background-color: #222;
 }
-.senAllMsg a {
+.senAllMsg button {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  border: none;
+  height: 100%;
+  border-radius: 0;
+  background: transparent;
+  font-size: 15px;
   font-size: 0.93rem;
   color: #fff;
 }

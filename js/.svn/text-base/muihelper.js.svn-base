@@ -7,11 +7,13 @@
 var picservice = 'http://192.168.1.220/ejsimage';*/
 //测试环境
 var strservicef = 'http://www.yunduiwang.com/merchant/';
+var luckservice = 'http://192.168.1.8:8082/acti/'; // 一元抽奖的服务地址
 var picservice = 'http://www.yunduiwang.com:81/ejsimage';
 //外网链接
 /*var strservicef = 'http://sj.duikavip.com/merchant/';
-var picservice =  'http://image.duikavip.com/ejsimage';*/
-
+var luckservice = 'http://api.duikavip.com/acti/'; // 一元抽奖的服务地址
+var picservice =  'http://image.duikavip.com/ejsimage';
+*/
 var _self;
 /*
  * 主要的公共函数
@@ -101,8 +103,9 @@ var Fun_App = {
 	/*  
 	 * ajax 数据请求方法
 	 */
-	ExAjax: function(url, rdata) {
-
+	ExAjax: function(url, rdata,type) {
+		// 判断请求的类型是什么
+		this.type=(type==undefined)?"POST":type;
 		nowNetWorkState = this.getNetWorkState(); //现在的网络状态
 		//mui.toast("状态码："+nowNetWorkState); 
 		if(nowNetWorkState == 0) {
@@ -114,8 +117,9 @@ var Fun_App = {
 		/*var waiting = plus.nativeUI.showWaiting();*/
 		else {
 			mui.ajax({
-				url: strservicef + url,
-				type: "post",
+				// 根据请求的类型修改服务器的地址
+				url:(this.type=="POST")? strservicef + url:luckservice + url ,
+				type: this.type,
 				data: rdata.config,
 				dataType: 'json',
 				timeout: 10000,
@@ -379,5 +383,13 @@ window.addEventListener("tap", function() {
 		}
 	} else {
 		plus.navigator.setStatusBarStyle("light")
+	}
+})
+
+window.addEventListener('resize', function() {
+	if(document.activeElement.tagName == 'INPUT' || document.activeElement.tagName == 'TEXTAREA') {
+		window.setTimeout(function() {
+			document.activeElement.scrollIntoViewIfNeeded();
+		}, 0);
 	}
 })

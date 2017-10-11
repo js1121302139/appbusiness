@@ -1,15 +1,15 @@
 10
 
 dir
-3922
-https://192.168.1.200/svn/shop/Source/appbusiness/unpackage
+4195
+https://192.168.1.200/svn/shop/Source/branches/appbusiness/unpackage
 https://192.168.1.200/svn/shop
 
 
 
-2017-08-18T12:25:51.767411Z
-3245
-hc-js
+2017-09-15T03:35:55.857059Z
+4095
+hc-xhj
 
 
 
@@ -35,7 +35,7 @@ file
 
 
 
-2017-09-07T08:45:42.393823Z
+2017-09-19T02:30:10.241979Z
 37a6259cc0c1dae299a7866489dff0bd
 2017-08-18T12:25:51.767411Z
 3245
@@ -68,11 +68,11 @@ dir
 
 .confirmed_dependencies
 file
-4008
 
 
 
-2017-09-12T04:16:25.760802Z
+
+2017-10-07T07:45:42.121592Z
 d7a460f03746813d71c071d1103e6c83
 2017-09-14T01:55:12.020247Z
 4008
