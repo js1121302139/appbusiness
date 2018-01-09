@@ -347,6 +347,7 @@ table {
 /*重构的顶部*/
 /*顶部的卡片视图*/
 /*没有数据*/
+<<<<<<< HEAD
 .lastBtnBox {
   padding: 0 0.75rem;
   text-align: center;
@@ -360,6 +361,8 @@ table {
   color: #fff;
   background-color: #222;
 }
+=======
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
 .topBar {
   padding-top: 1.25rem;
   height: 4rem;
@@ -386,6 +389,7 @@ table {
 .mui-content {
   padding-top: 4rem !important;
 }
+<<<<<<< HEAD
 .isNoData {
   position: absolute;
   width: 100%;
@@ -420,6 +424,8 @@ table {
   font-size: 0.875rem;
   color: #8d8e92;
 }
+=======
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
 html,
 body,
 #partyAdmin {
@@ -438,6 +444,7 @@ body,
   display: none;
 }
 .wrapperList .listItem {
+<<<<<<< HEAD
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -448,6 +455,11 @@ body,
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
+=======
+  display: flex;
+  flex: 1;
+  width: 100%;
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
   flex-direction: column;
   padding: 0.9375rem 0.75rem 0 0.75rem;
   margin-bottom: 0.625rem;
@@ -458,6 +470,7 @@ body,
   color: #333;
 }
 .wrapperList .listItem .InfoTit {
+<<<<<<< HEAD
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -467,14 +480,23 @@ body,
   width: 100%;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
+=======
+  display: flex;
+  flex: 1;
+  width: 100%;
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
   justify-content: space-between;
   margin-bottom: 0.03125rem;
 }
 .wrapperList .listItem .InfoTit .partyTit {
+<<<<<<< HEAD
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-item-align: end;
+=======
+  display: flex;
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
   align-self: flex-end;
   font-size: 1rem;
 }
@@ -483,6 +505,7 @@ body,
   color: #D7B374;
 }
 .wrapperList .listItem .InfoTit .partyRoad {
+<<<<<<< HEAD
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -492,27 +515,40 @@ body,
   width: 100%;
   -webkit-box-pack: start;
   -ms-flex-pack: start;
+=======
+  display: flex;
+  flex: 1;
+  width: 100%;
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
   justify-content: flex-start;
   padding-left: 0.37rem;
 }
 .wrapperList .listItem .InfoTit .partyRoad span {
+<<<<<<< HEAD
   display: -webkit-box;
   display: -ms-flexbox;
+=======
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
   display: flex;
   width: 2.28rem;
   height: 0.96rem;
   background: #D7B374;
+<<<<<<< HEAD
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
+=======
+  align-items: center;
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
   justify-content: center;
   border-radius: 0.46rem 0.46rem 0.46rem 0;
   font-size: 0.68rem;
   color: #fff;
 }
 .wrapperList .listItem .orderInfo {
+<<<<<<< HEAD
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -526,6 +562,12 @@ body,
   flex-direction: row;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
+=======
+  display: flex;
+  flex: 1;
+  width: 100%;
+  flex-direction: row;
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
   justify-content: space-between;
   padding-bottom: 0.9375rem;
 }
@@ -533,6 +575,7 @@ body,
   margin-top: 0.8125rem;
 }
 .wrapperList .listItem .orderInfo .orderInfoR {
+<<<<<<< HEAD
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -551,12 +594,24 @@ body,
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
+=======
+  display: flex;
+  width: 4.375rem;
+  align-items: flex-end;
+}
+.wrapperList .listItem .orderInfo .orderInfoR .orderContainer {
+  display: flex;
+  align-items: center;
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
   flex-direction: column;
   width: 4.375rem;
   height: 4.375rem;
   border-radius: 35px;
   padding: 1rem 0 0.84375rem 0;
+<<<<<<< HEAD
   -webkit-box-shadow: inset 0 0 0 0.1875rem #D7B374;
+=======
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
   box-shadow: inset 0 0 0 0.1875rem #D7B374;
 }
 .wrapperList .listItem .orderInfo .orderInfoR .orderContainer .orderContainerNum {
@@ -569,11 +624,15 @@ body,
   color: #999;
 }
 .wrapperList .listItem .itemBottom {
+<<<<<<< HEAD
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-flex: 1;
   -ms-flex: 1;
+=======
+  display: flex;
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
   flex: 1;
   width: 100%;
   height: 2.125rem;
@@ -582,8 +641,11 @@ body,
   border-top: 1px solid #e5e5e5;
 }
 .wrapperList .listItem .itemBottom div {
+<<<<<<< HEAD
   -webkit-box-flex: 1;
   -ms-flex: 1;
+=======
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
   flex: 1;
   position: relative;
 }
@@ -601,7 +663,11 @@ body,
 }
 .wrapperList .ListEnd {
   width: 100%;
+<<<<<<< HEAD
   height: 3.21875rem;
+=======
+  height: 51 0.3125rem;
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
   position: relative;
   line-height: 3.21875rem;
   margin-top: -0.625rem;
@@ -637,6 +703,7 @@ body,
   background-color: #e8e8e8;
 }
 footer {
+<<<<<<< HEAD
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -650,6 +717,13 @@ footer {
   justify-content: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
+=======
+  display: flex;
+  flex: 1;
+  position: fixed;
+  z-index: 99999;
+  justify-content: center;
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
   align-items: center;
   bottom: 0;
   width: 100%;
@@ -658,6 +732,7 @@ footer {
   background-color: #222;
 }
 footer div {
+<<<<<<< HEAD
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -670,6 +745,11 @@ footer div {
   flex-direction: column;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
+=======
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
   justify-content: center;
 }
 footer div:after {
@@ -687,7 +767,10 @@ footer div .partyScanner-ico {
   background: url(../../../img/partyScanner-ico.png) center center no-repeat;
 }
 footer div .footerico {
+<<<<<<< HEAD
   -ms-flex-item-align: center;
+=======
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
   align-self: center;
   display: inline-block;
   width: 2.06rem;
@@ -695,6 +778,45 @@ footer div .footerico {
   background-size: 1.37rem 1.37rem;
 }
 .scale1 {
+<<<<<<< HEAD
   -webkit-transform: scale(1) !important;
   transform: scale(1) !important;
 }
+=======
+  transform: scale(1) !important;
+}
+.isNoData {
+  position: absolute;
+  width: 100%;
+  top: 4.1rem;
+  bottom: 50px;
+  z-index: 9999;
+  background: #fff;
+  transform: scale(0);
+  transition: all 0.25s;
+}
+.isNoData .isNoDataInfo {
+  position: absolute;
+  top: 8.125rem;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+.isNoData .isNoDataInfo .isNoDataBg {
+  margin: 0 auto;
+  width: 4.21875rem;
+  height: 8.125rem;
+  margin-bottom: 0.9375rem;
+  background: url(../../../images/work-message-nomsgBg.png) left top no-repeat;
+  background-size: cover;
+}
+.isNoData .isNoDataInfo p {
+  margin-bottom: 0.625rem;
+  font-size: 0.6875rem;
+  color: #999;
+}
+.isNoData .isNoDataInfo .isNoDataTit {
+  font-size: 0.875rem;
+  color: #8d8e92;
+}
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64

@@ -1,0 +1,177 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>推广奖励-结算记录</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../../css/pullToRefresh.css">
+		<link href="../../css/page/work/jsdentail.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<header class="mui-bar topBar mui-bar-nav">
+			<a class="mui-action-back topBack-ico mui-pull-left"></a>
+			<h1 class="mui-title" >结算记录</h1>
+		</header>
+		<div class="mui-content">
+			<div id="wrapper" class="wrapperList">
+				<ul id="jsList">
+					<!--<li class="wrapperListItem">
+						<div class="orderLeft">
+							<div class="orderCode">
+								结算单号:132456987212
+							</div>
+							<div class="orderDate">
+								2017-02-11 11:02
+							</div>
+						</div>
+						<div class="orderRight">
+							<div class=" withdrawals">
+								结算955.55
+							</div>
+							<div class="balance">
+								余额10000000
+							</div>
+						</div>
+					</li>-->
+				</ul>
+			</div>
+
+			<!--
+				<div class="order-good-item">
+							<div class="order-good-top">
+								<div class="order-good-top-left">
+									<span>结算单号：5987545455555418</span>
+								</div>
+							</div>
+							<div class="mui-table-view-cell  ">
+								<div class="mui-table">
+									<div class="mui-table-cell">
+										<span class="shop-top-title mui-ellipsis ">结算金额：<span class="drawing-num">955.00</span>元</span>
+									</div>
+									<div class="mui-table-cell">
+										<span class="shop-top-title mui-ellipsis ">剩余金额：<span class="surplus-num">0.00</span>元</span>
+									</div>
+								</div>
+								<div class="mui-table">
+									<div class="mui-table-cell txtime">
+										2017-02-11 11:20
+									</div>
+								</div>
+							</div>
+						</div>
+				<div class="order-good-item">
+				<div class="order-good-top">
+					<div class="order-good-top-left">
+						<span>结算单号：5987545455555418</span>
+					</div>
+				</div>
+				<div class="mui-table-view-cell  ">
+					<div class="mui-table">
+						<div class="mui-table-cell">
+							<span class="shop-top-title mui-ellipsis ">结算金额：<span class="drawing-num">955.00</span>元</span>
+						</div>
+						<div class="mui-table-cell">
+							<span class="shop-top-title mui-ellipsis ">剩余金额：<span class="surplus-num">0.00</span>元</span>
+						</div>
+					</div>
+					<div class="mui-table">
+						<div class="mui-table-cell txtime">
+							2017-02-11 11:20
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="order-good-item">
+				<div class="order-good-top">
+					<div class="order-good-top-left">
+						<span>结算单号：5987545455555418</span>
+					</div>
+				</div>
+				<div class="mui-table-view-cell  ">
+					<div class="mui-table">
+						<div class="mui-table-cell">
+							<span class="shop-top-title mui-ellipsis ">结算金额：<span class="drawing-num">955.00</span>元</span>
+						</div>
+						<div class="mui-table-cell">
+							<span class="shop-top-title mui-ellipsis ">剩余金额：<span class="surplus-num">0.00</span>元</span>
+						</div>
+					</div>
+					<div class="mui-table">
+						<div class="mui-table-cell txtime">
+							2017-02-11 11:20
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="order-good-item">
+				<div class="order-good-top">
+					<div class="order-good-top-left">
+						<span>结算单号：5987545455555418</span>
+					</div>
+				</div>
+				<div class="mui-table-view-cell  ">
+					<div class="mui-table">
+						<div class="mui-table-cell">
+							<span class="shop-top-title mui-ellipsis ">结算金额：<span class="drawing-num">955.00</span>元</span>
+						</div>
+						<div class="mui-table-cell">
+							<span class="shop-top-title mui-ellipsis ">剩余金额：<span class="surplus-num">0.00</span>元</span>
+						</div>
+					</div>
+					<div class="mui-table">
+						<div class="mui-table-cell txtime">
+							2017-02-11 11:20
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="order-good-item">
+				<div class="order-good-top">
+					<div class="order-good-top-left">
+						<span>结算单号：5987545455555418</span>
+					</div>
+				</div>
+				<div class="mui-table-view-cell  ">
+					<div class="mui-table">
+						<div class="mui-table-cell">
+							<span class="shop-top-title mui-ellipsis ">结算金额：<span class="drawing-num">955.00</span>元</span>
+						</div>
+						<div class="mui-table-cell">
+							<span class="shop-top-title mui-ellipsis ">剩余金额：<span class="surplus-num">0.00</span>元</span>
+						</div>
+					</div>
+					<div class="mui-table">
+						<div class="mui-table-cell txtime">
+							2017-02-11 11:20
+						</div>
+					</div>
+				</div>
+			</div>
+		-->
+		</div>
+		<script src="../../js/mui.min.js"></script>
+		<script src="../../js/muihelper.js"></script>
+		<script type="text/javascript" src="../../js/page/work/promotiondentail.js" ></script>
+		<script type="text/javascript" src="../../js/iscroll.js"></script>
+		<script type="text/javascript" src="../../js/pullToRefresh.js"></script>
+		<script type="text/javascript">
+            refresher.init({
+                id: "wrapper",
+                /*pullDownAction: Refresh,*/
+                pullUpAction: Load
+            });
+
+            function Refresh() {
+                wrapper.refresh();
+            }
+
+            function Load() {
+
+            }
+		</script>
+	</body>
+
+</html>

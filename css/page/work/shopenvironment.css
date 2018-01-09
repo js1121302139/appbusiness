@@ -5,7 +5,11 @@
   width: 40%;
 }
 .mui-media-body img {
+<<<<<<< HEAD
   width: 0.9375rem;
+=======
+  width: 15px;
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
   display: inline-block;
   float: left;
 }
@@ -16,12 +20,17 @@
   white-space: nowrap;
 }
 .delete-img {
+<<<<<<< HEAD
   width: 1.125rem;
+=======
+  width: 18px;
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
   position: absolute;
   top: 2%;
   left: 89%;
 }
 .mui-table-view.mui-grid-view {
+<<<<<<< HEAD
   padding: 0 0px 0.625rem 0;
 }
 .mui-table-view.mui-grid-view .mui-table-view-cell {
@@ -31,6 +40,17 @@
 .saveRelease {
   color: #fff;
   padding: 1rem;
+=======
+  padding: 0 0px 10px 0;
+}
+.mui-table-view.mui-grid-view .mui-table-view-cell {
+  margin-right: -4px;
+  padding: 10px 4px 0 14px;
+}
+.saveRelease {
+  color: #fff;
+  padding: 16px;
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
   position: fixed;
   bottom: 0;
 }

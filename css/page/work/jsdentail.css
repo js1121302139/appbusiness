@@ -347,6 +347,7 @@ table {
 /*重构的顶部*/
 /*顶部的卡片视图*/
 /*没有数据*/
+<<<<<<< HEAD
 .lastBtnBox {
   padding: 0 0.75rem;
   text-align: center;
@@ -394,6 +395,8 @@ table {
   font-size: 0.875rem;
   color: #8d8e92;
 }
+=======
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
 .topBar {
   padding-top: 1.25rem;
   height: 4rem;
@@ -421,13 +424,18 @@ table {
   padding-top: 4rem !important;
 }
 .wrapperList {
+<<<<<<< HEAD
   top: 4rem;
+=======
+  top: 64px;
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
   bottom: 0rem;
 }
 .wrapperList .pullDown {
   display: none;
 }
 .wrapperList .wrapperListItem {
+<<<<<<< HEAD
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -458,6 +466,23 @@ table {
 }
 .wrapperList .wrapperListItem .orderLeft .orderTxt {
   width: 3.75rem;
+=======
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  padding: 14px 12px 16px 12px;
+  margin-bottom: 10px;
+  background-color: #fff;
+}
+.wrapperList .wrapperListItem .orderLeft {
+  display: flex;
+  flex: 2;
+  flex-direction: column;
+  align-content: space-between;
+}
+.wrapperList .wrapperListItem .orderLeft .orderTxt {
+  width: 60px;
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
   display: inline-block;
   text-align: justify;
   vertical-align: top;
@@ -468,6 +493,7 @@ table {
   height: 0;
 }
 .wrapperList .wrapperListItem .orderLeft div {
+<<<<<<< HEAD
   -webkit-box-flex: 1;
   -ms-flex: 1;
   flex: 1;
@@ -479,11 +505,21 @@ table {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
+=======
+  flex: 1;
+}
+.wrapperList .wrapperListItem .orderRight {
+  display: flex;
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
   flex-direction: column;
 }
 .wrapperList .wrapperListItem .orderCode,
 .wrapperList .wrapperListItem balance {
+<<<<<<< HEAD
   font-size: 0.875rem;
+=======
+  font-size: 14px;
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
   color: #333;
   margin-bottom: 0.93rem;
 }
@@ -501,31 +537,52 @@ table {
   color: #f00;
 }
 .wrapperList .wrapperListItem .withdrawals {
+<<<<<<< HEAD
   margin-bottom: 1.03125rem;
   font-size: 0.9375rem;
   color: #D7B374;
 }
 .wrapperList .wrapperListItem .orderDate {
   font-size: 0.75rem;
+=======
+  margin-bottom: 16.5px;
+  font-size: 15px;
+  color: #D7B374;
+}
+.wrapperList .wrapperListItem .orderDate {
+  font-size: 12px;
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
   color: #999;
 }
 .order-good-item {
   background-color: #fff;
   border-bottom: 1px solid #e6e6e6;
   border-top: 1px solid #e6e6e6;
+<<<<<<< HEAD
   margin-bottom: 0.625rem;
+=======
+  margin-bottom: 10px;
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
   font-size: 1rem;
 }
 .order-good-item .order-good-top {
   border-bottom: 1px solid #e6e6e6;
+<<<<<<< HEAD
   padding: 0.625rem 0 0.625rem 0.9375rem;
+=======
+  padding: 10px 0 10px 15px;
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
   font-family: "黑体";
 }
 .order-good-item .mui-table-view-cell {
   font-size: 0.95rem;
 }
 .order-good-item .mui-table-view-cell .mui-table {
+<<<<<<< HEAD
   padding-bottom: 0.625rem;
+=======
+  padding-bottom: 10px;
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
 }
 .order-good-item .mui-table-view-cell .drawing-num {
   color: #FE7700;
@@ -537,6 +594,45 @@ table {
   color: #999;
 }
 .scale1 {
+<<<<<<< HEAD
   -webkit-transform: scale(1) !important;
   transform: scale(1) !important;
 }
+=======
+  transform: scale(1) !important;
+}
+.isNoData {
+  position: absolute;
+  width: 100%;
+  top: 4.1rem;
+  bottom: 0rem;
+  z-index: 9999;
+  background: #fff;
+  transform: scale(0);
+  transition: all 0.25s;
+}
+.isNoData .isNoDataInfo {
+  position: absolute;
+  top: 8.125rem;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+.isNoData .isNoDataInfo .isNoDataBg {
+  margin: 0 auto;
+  width: 4.21875rem;
+  height: 8.125rem;
+  margin-bottom: 0.9375rem;
+  background: url(../../../images/work-message-nomsgBg.png) left top no-repeat;
+  background-size: cover;
+}
+.isNoData .isNoDataInfo p {
+  margin-bottom: 0.625rem;
+  font-size: 0.6875rem;
+  color: #999;
+}
+.isNoData .isNoDataInfo .isNoDataTit {
+  font-size: 0.875rem;
+  color: #8d8e92;
+}
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64

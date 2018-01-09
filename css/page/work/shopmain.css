@@ -1,5 +1,6 @@
 .mui-content img {
   width: 90%;
+<<<<<<< HEAD
   margin: 0.9375rem 5%;
 }
 .mui-content .min-pic-bottm {
@@ -8,6 +9,16 @@
 .saveRelease {
   color: #fff;
   padding: 1rem;
+=======
+  margin: 15px 5%;
+}
+.mui-content .min-pic-bottm {
+  margin-left: 15px;
+}
+.saveRelease {
+  color: #fff;
+  padding: 16px;
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
   position: fixed;
   bottom: 0;
 }

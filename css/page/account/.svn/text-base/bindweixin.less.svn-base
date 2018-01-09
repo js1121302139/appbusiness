@@ -1,0 +1,82 @@
+
+@import "../common.less";
+
+.topBar("../../../img/topBack-ico.png");
+//添加地址
+.mine-weixin-tips {
+    display: block;
+    padding: 0.62rem 0.93rem;
+    color: #999;
+    font-size: 0.8125rem;
+}
+.mine-weixin-tips {
+   // background-image: url("../../../img/mine_icon_tips.png");
+    background-repeat: no-repeat;
+    background-size: 18px 16px;
+    background-position: 11px 10px;
+    font-size: 12px;
+    vertical-align: text-top;
+    clear: both;
+    overflow: hidden;
+}
+.mine-weixin-tips-content {
+    width: 95%;
+    margin-left: 21px;
+}
+.mine-weixin-box {
+    margin-top: 10px;
+    input {
+        font-size: 0.8125rem;
+        margin: 6px 0 0;
+    }
+    
+    .codePic {
+        display: inline-block;
+        float: right; 
+        height: 36px;
+        width: 106px;
+        margin-right: 12px;
+        margin-top: 7px;
+    }
+    .codeBtn {
+        float: right;
+        height: 36px;
+        width: 106px;
+        margin-right: 12px;
+        margin-top: 7px;
+    }
+    .mui-btn-blue,
+    .mui-btn-primary,
+    input[type=submit] {
+        background: #ffffff;
+        color: #333333;
+        border: 1px solid #333333;
+    }
+}
+.mui-input-group .mui-input-row {
+    height: 50px;
+    line-height: 50px;
+}
+.mui-content-padded {
+    margin: 33px auto 0;
+    height: 40px;
+    max-width: 345px;
+}
+.mui-btn-block {
+    font-size: 1rem;
+}
+.btn-gradient {
+     border-radius: 5px;
+     color: #fff;
+}
+.footerButton {
+    width: 95%;
+    height: 40px;
+    margin: 32px auto 0;
+    line-height: 40px;
+    background-color: #222;
+    z-index: 9999;
+    font-size: 18px;
+    color: #fff;
+    border-radius: 5px;
+}

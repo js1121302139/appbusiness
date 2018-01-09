@@ -347,6 +347,7 @@ table {
 /*重构的顶部*/
 /*顶部的卡片视图*/
 /*没有数据*/
+<<<<<<< HEAD
 .lastBtnBox {
   padding: 0 0.75rem;
   text-align: center;
@@ -360,6 +361,8 @@ table {
   color: #fff;
   background-color: #222;
 }
+=======
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
 .topBar {
   background-color: #000;
 }
@@ -368,9 +371,15 @@ table {
 }
 header {
   display: flex;
+<<<<<<< HEAD
   width: 100% ;
   height: 11.875rem ;
   padding: 2rem 0.75rem 0.75rem;
+=======
+  width: 100%;
+  height: 190px;
+  padding: 32px 12px 12px;
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
   background: url(../../../images/budgetAdmin-bg.png);
   background-size: 100% 11.87rem;
   flex-direction: column;
@@ -387,8 +396,13 @@ header .topNav {
 }
 header .topNav .topBack-ico {
   display: inline-block;
+<<<<<<< HEAD
   width: 1.25rem ;
   height: 1.25rem   ;
+=======
+  width: 20px;
+  height: 20px;
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
   background: url("../../../img/topBackB-ico.png") center center no-repeat;
   background-size: contain;
 }
@@ -401,13 +415,22 @@ header .settlementInfo .settlementInfoL {
   display: flex;
   flex: 1;
   width: 100%;
+<<<<<<< HEAD
   margin-top: 1.09375rem;
+=======
+  margin-top: 17.5px;
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
   flex-direction: column;
 }
 header .settlementInfo .settlementInfoL .orderMoney b {
   position: relative;
+<<<<<<< HEAD
   font-size: 2.25rem;
   margin-right: 0.625rem;
+=======
+  font-size: 36px;
+  margin-right: 10px;
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
 }
 header .settlementInfo .settlementInfoL .orderMoney b span {
   display: block;
@@ -417,8 +440,13 @@ header .settlementInfo .settlementInfoL .orderMoney b span {
   right: -2.81rem;
   position: absolute;
   font-size: 0.68rem ;
+<<<<<<< HEAD
   width: 2.9rem ;
   height: 1.03rem  ;
+=======
+  width: 2.9rem;
+  height: 1.03rem;
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
   line-height: 1.03rem;
   border-radius: 0.5rem 0.5rem 0.5rem 0;
   background-color: #D7B374;
@@ -428,7 +456,11 @@ header .settlementInfo .settlementInfoL .orderNum {
   font-size: 1rem;
 }
 header .settlementInfo .settlementInfoR {
+<<<<<<< HEAD
   width: 6.0625rem;
+=======
+  width: 97px;
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
   background: url("../../../images/partySettlementEnd-bg.png") bottom no-repeat;
   background-size: 6.06rem 4.62rem;
   padding-bottom: 0.75rem;
@@ -453,8 +485,13 @@ header .settlementInfo .settlementInfoR {
 .wrapperList .wrapperListItem .ListItem-Tit {
   display: flex;
   flex: 1;
+<<<<<<< HEAD
   width: 100%  ;
   height: 2.375rem ;
+=======
+  width: 100%;
+  height: 2.375rem;
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
   line-height: 2.375rem;
   border-bottom: 1px solid #e5e5e5;
 }
@@ -468,28 +505,49 @@ header .settlementInfo .settlementInfoR {
   height: 5.4375rem;
   display: flex;
   flex: 1;
+<<<<<<< HEAD
   width: 100% ;
   height: 5.4375rem   ;
 }
 .wrapperList .wrapperListItem .ListItem-Info .order-People {
   width: 10.3125rem;
+=======
+  width: 100%;
+  height: 87px;
+}
+.wrapperList .wrapperListItem .ListItem-Info .order-People {
+  width: 165px;
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
   display: flex;
   flex: 1;
   align-items: center;
   flex-direction: row;
 }
 .wrapperList .wrapperListItem .ListItem-Info .order-People .order-PeopleImg {
+<<<<<<< HEAD
   width: 2.56rem ;
   height: 2.56rem ;
+=======
+  width: 2.56rem;
+  height: 2.56rem;
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
   margin-right: 0.62rem ;
   border-radius: 1.28rem;
 }
 .wrapperList .wrapperListItem .ListItem-Info .order-People .order-PeopleImg img {
+<<<<<<< HEAD
   width: 2.56rem  ;
   height: 2.56rem  ;
 }
 .wrapperList .wrapperListItem .ListItem-Info .order-Income {
   padding: 0.9375rem 0;
+=======
+  width: 2.56rem;
+  height: 2.56rem;
+}
+.wrapperList .wrapperListItem .ListItem-Info .order-Income {
+  padding: 15px 0;
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
   display: flex;
   flex-direction: column;
   align-content: space-around;

@@ -1,0 +1,232 @@
+@import "../common";
+* {
+    font-family: arial !important;
+}
+
+//账户页面样式
+.mui-content {
+    .mui-table-view {
+        margin-bottom: 20px;
+        .mui-table-view-cell {
+            .right-info {
+                font-size: 0.9rem;
+                color: #686060;
+                position: absolute;
+                right: 40px;
+            }
+            .new-edition { 
+                padding: 0 2px;
+                background: #EE0000;
+                color: #FFF;
+                margin-left: 5px;
+            }
+        }
+    }
+}
+
+#newVersion {
+    //    display: none;
+    font-size: 0;
+    display: inline-block;
+    margin-top: 0.68rem;
+    width: 1.31rem;
+    height: 0.5rem;
+    border-radius: 0.2rem;
+    font-size: 0.43rem;
+    background: #D7B374;
+    line-height: 0.5rem;
+    color: #fff;
+}
+
+//顶部用户登录
+.login_user {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    .wh(100%, 140px);
+    padding: 20px 22px 0;
+    text-align: center;
+    background-color: #fff;
+    .login_user_info {
+        display: flex;
+        flex: 1;
+        .userInfo {
+            flex: 1;
+            padding: 20px 0;
+            p {
+                margin: 0;
+                padding: 0;
+                font-size: 20px;
+                line-height: 24px;
+                color: #333;
+            }
+            p:last-child {
+                font-size: 15px;
+            }
+        }
+        .userLogoImg {
+            .wh(83px, 83px);
+            img {
+                .wh(83px, 83px);
+            }
+        }
+    }
+}
+
+
+/*开关按钮*/
+
+.msgItem {
+    position: relative;
+    .mui-switch {
+        background-color: #999;
+        &:before {
+            display: none;
+        }
+    }
+    .mui-switch-handle {}
+    .mui-active {
+        background-color: #222;
+        border-color: #222;
+    }
+    .msgBtn {
+        transform: scale(0.75);
+        position: absolute;
+        top: 50%;
+        bottom: 50%;
+        right: 5px;
+        margin: auto 0;
+    }
+}
+
+.user-info-box {
+    color: #333;
+    .mui-table-view {
+        margin-top: 0.93rem;
+        .mui-table-view-cell {
+            .mui-navigate-right {
+                &:after {
+                    color: #333;
+                }
+            }
+        }
+        img {
+            width: 1.8rem;
+            height: 1.8rem;
+            vertical-align: bottom;
+            margin-right: 0.62rem;
+        }
+    }
+    .mui-table-view span.mui-pull-right {
+        color: #999;
+        margin-right: 1.25rem;
+    }
+    .mui-switch.mui-active {}
+}
+
+.mui-table-view-cell>a:not(.mui-btn) {
+    line-height: 30px;
+}
+
+.exit-login {
+    .wh(100%, 40px);
+    padding:0 0.9375rem;
+    margin: 32px auto 30px;
+    a {
+        display: inline-block;
+        .wh(100%, 40px);
+        line-height: 40px;
+        background-color: #222;
+        border-radius: 4px;
+        font-size: 16px;
+        color: #fff;
+    }
+}
+
+
+//更新弹窗
+.update-box {
+    position: fixed;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+    z-index: 999;
+    background: rgba(0, 0, 0, 0.2);
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+    border-radius: 0.37rem;
+    .u-d-box {
+        position: relative;
+        width: 15.93rem;
+        margin: 0 auto;
+        height: 17.18rem;
+        background: #FFFFFF;
+        border-radius: 0.37rem;
+    }
+    .u-d-title {
+        width: 100%;
+    }
+    .u-d-close {
+        position: absolute;
+        bottom: -3rem;
+        left: 7.18rem;
+        width: 1.5rem;
+        display: block;
+    }
+    .u-d-t-text {
+        font-size: 1.43rem;
+        font-weight: bold;
+        color: #FFFFFF;
+        width: 100%;
+        text-align: center;
+        display: block;
+        position: absolute;
+        top: 1.75rem;
+    }
+    .u-d-v-text {
+        font-size: 0.81rem;
+        color: #FFFFFF;
+        width: 100%;
+        text-align: center;
+        display: block;
+        position: absolute;
+        top: 3.37rem;
+    }
+    .u-d-n-text {
+        font-size: 0.81rem;
+        color: #333333;
+        display: block;
+        position: absolute;
+        top: 6.5rem;
+        left: 0.93rem;
+        font-weight: bold;
+    }
+    .u-d-desc {
+        position: absolute;
+        top: 8.43rem;
+        width: 100%;
+        height: 6.25rem;
+        font-size: 0.81rem;
+        color: #333333;
+        border-bottom: 1px solid #E5E5E5;
+        padding-bottom: 0.62rem;
+        ul {
+            padding: 0rem 0.93rem;
+            margin: 0rem;
+            margin-left: 0.93rem;
+            list-style: square;
+        }
+    }
+    .u-d-btn{
+        color: #FF2B6C;
+        display: block;
+        text-align: center;
+        width: 100%;
+        font-size: 0.93rem;
+        position: absolute;
+        bottom: 0.25rem;
+        height: 1.5rem;
+    }
+}

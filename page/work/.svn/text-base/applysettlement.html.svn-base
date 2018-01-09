@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title>兑咖网-申请结算</title>
+		<link rel="stylesheet" type="text/css" href="../../css/mui.min.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/page/work/applysettlement.css" />
+	</head>
+
+	<body>
+		<div id="applysettlement">
+			<header class="mui-bar topBar mui-bar-nav">
+				<a class="mui-action-back topBack-ico mui-pull-left"></a>
+				<h1 class="mui-title">申请结算</h1>
+			</header>
+			<div class="mui-content">
+				<div class="mine-cash-top">
+					<div class="mui-card">
+						<form class="mui-input-group">
+							<div class="mui-input-row mui-radio">
+								<label>结算方式</label>
+							</div>
+							<div class="mui-input-row mui-radio" v-for="(item,key) in Card">
+								<label class="cardName">{{item.bankName+'储蓄卡('}}{{item.bankCode | replacex }}{{')'}}</label>
+								<input name="radio1" type="radio" checked="">
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="mine-cash-middle">
+					<div class="topMoney">
+						<p class="isMoney" id="numTotal"><span class="allMoney">可提现</span> {{pageData.money==null?0:pageData.money}}</p>
+						<a href="JavaScript:;"  class="mui-btn setMoney" @click="money=pageData.money" id="allMoneyBtn">全部结算</a>
+					</div>
+					<div class="cashMiddleItem">
+						<h1 class="settlement">结算金额</h1>
+						<input type="number" v-model="money" @input="maxMoney" class="bigInput" id="cashMoneyNum">
+					</div>
+					<div class="cashMiddleItem phoneNum">
+						<div class="phoneNumCode">
+							<h1 class="settlement">短信验证码</h1>
+							<div class="phoneNumCodeRight">
+								<input type="tel" maxlength="6" pattern="[0-9]*" v-model="pageData.messageCode" id="smCode">
+								<button href="JavaScript:;" class="mui-btn getPhoneCode" :disabled="showOutTime" @click="smsVerify" v-text="second==90?'获取验证码':'剩余'+second+'秒'" id="getPhoneCode">获取验证码</button>
+							</div>
+						</div>
+						<div class="phoneNumCodePrompt mui-text-right">
+
+						</div>
+					</div>
+
+					<div class="cashMiddleItem">
+						<h1 class="settlement">结算密码</h1>
+						<input type="password" v-model="pageData.balancePwd" class="bigInput" placeholder="请输入结算密码">
+					</div>
+				</div>
+			</div>
+			<div class="lastBtnBox mui-text-center">
+					<button data-loading-text="结算中" class="addBtn mui-text-center" :disabled="applyBtn" id="cashBtn" @click="applyDrawing">结算</button>
+			</div>
+		</div>
+		<!--弹出菜单-->
+
+		<script type="text/javascript" src="../../js/mui.min.js"></script>
+		<script type="text/javascript" src="../../js/muihelper.js"></script>
+		<script type="text/javascript" src="../../js/vue.min.js"></script>
+		<script src="../../js/page/work/applysettlement.js"></script>
+	</body>
+
+</html>

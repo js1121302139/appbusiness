@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="zh">
 
@@ -58,4 +59,66 @@
 			})
 		</script>
 
+=======
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../../css/page/account/helpBook.css" />
+	</head>
+
+	<body>
+		<div id="webView">
+			<header class="mui-bar topBar mui-bar-nav">
+				<a class="mui-action-back topBack-ico mui-pull-left" @click="closWebView"></a>
+				<h1 class="mui-title" v-text="PageTit" >操作手册</h1>
+			</header>
+
+			<div id="content" class="mui-content">
+				<!--
+	        	作者：foreverxhj@sohu.com
+	        	时间：2017-04-13
+	        	描述：商圈商家
+	        -->
+			</div>
+		</div>
+		<script type="text/javascript" src="../../js/mui.js"></script>
+		<script src="../../js/vue.min.js"></script>
+		<script>
+			var Vue = new Vue({
+				el: "#webView",
+				data: function() {
+					return {
+						PageTit: "操作手册",
+						pageUrl: "https://mp.weixin.qq.com/s/ikK__q1sghSsfdCCvaofWw"
+					}
+				},
+				created: function() {
+					var _this = this ;
+					mui.plusReady(function() {
+						var ws = plus.webview.currentWebview();
+						if(plus.webview.getWebviewById("webViews") == null) {
+							var embed = plus.webview.create(_this.pageUrl, "webViews", {
+								top: '74px',
+								bottom: '0px'
+							});
+						}
+						console.log(JSON.stringify(plus.webview.all()))
+						ws.append(embed);
+					})
+				},
+				methods: {
+					closWebView:function(){
+						plus.webview.getWebviewById("webViews").close();
+						plus.webview.currentWebview().close();
+					}
+				}
+			})
+		</script>
+
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
 </html>

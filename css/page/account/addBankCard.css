@@ -388,6 +388,7 @@ table {
 }
 .mui-content .mui-table-view {
   margin-top: 0;
+<<<<<<< HEAD
   padding: 0 0.75rem;
 }
 .mui-content .mui-table-view .mui-table-view-cell {
@@ -395,6 +396,15 @@ table {
   display: flex;
   width: 100%;
   height: 3rem;
+=======
+  padding: 0 12px;
+}
+.mui-content .mui-table-view .mui-table-view-cell {
+  padding: 0px;
+  display: flex;
+  width: 100%;
+  height: 48px;
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
   flex: 1;
   align-items: center;
   background-color: #fff;
@@ -404,8 +414,13 @@ table {
 }
 .mui-content .mui-table-view .mui-table-view-cell input,
 .mui-content .mui-table-view .mui-table-view-cell button {
+<<<<<<< HEAD
   height: 3rem;
   line-height: 3rem;
+=======
+  height: 48px;
+  line-height: 48px;
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
   flex: 1;
   position: inherit;
   right: 0;
@@ -413,11 +428,16 @@ table {
   padding: 0;
   border: none;
   text-align: right;
+<<<<<<< HEAD
   font-size: 0.8125rem;
+=======
+  font-size: 13px;
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
   color: #999;
 }
 .mui-content .mui-table-view .mui-table-view-cell button {
   background: url("../../../img/order-ListGo-ico.png") right center no-repeat;
+<<<<<<< HEAD
   background-size: 0.75rem 0.75rem;
   padding-right: 11.5px;
 }
@@ -426,6 +446,16 @@ table {
   width: 100%;
   height: 3rem;
   padding: 0 0.75rem;
+=======
+  background-size: 12px 12px;
+  padding-right: 11.5px;
+}
+.phoneCode {
+  margin-top: 10px;
+  width: 100%;
+  height: 48px;
+  padding: 0 12px;
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
   display: flex;
   flex: 1;
   align-items: center;
@@ -435,7 +465,11 @@ table {
 .phoneCode input {
   padding: 0;
   margin: 0;
+<<<<<<< HEAD
   width: 8.1875rem;
+=======
+  width: 131px;
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
   height: 100%;
   border: none;
   align-self: center;
@@ -443,6 +477,7 @@ table {
 .phoneCode a {
   display: block;
   text-align: center;
+<<<<<<< HEAD
   width: 6.625rem;
   height: 1.875rem;
   line-height: 1.875rem;
@@ -461,4 +496,24 @@ table {
   font-size: 1.125rem;
   color: #fff;
   border-radius: 0.3125rem;
+=======
+  width: 106px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 4px;
+  box-shadow: 0 0 0 1px #333 ;
+  color: #333;
+  margin-left: 6px;
+}
+.footerButton {
+  width: 95%;
+  height: 40px;
+  margin: 32px auto 0;
+  line-height: 40px;
+  background-color: #222;
+  z-index: 9999;
+  font-size: 18px;
+  color: #fff;
+  border-radius: 5px;
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
 }

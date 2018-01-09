@@ -347,6 +347,7 @@ table {
 /*重构的顶部*/
 /*顶部的卡片视图*/
 /*没有数据*/
+<<<<<<< HEAD
 .lastBtnBox {
   padding: 0 0.75rem;
   text-align: center;
@@ -360,6 +361,8 @@ table {
   color: #fff;
   background-color: #222;
 }
+=======
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
 .topBar {
   padding-top: 1.25rem;
   height: 4rem;
@@ -388,11 +391,15 @@ table {
 }
 .mui-table-view .mui-navigate-right {
   position: relative;
+<<<<<<< HEAD
   display: -webkit-box !important;
   display: -ms-flexbox !important;
   display: flex !important;
   -webkit-box-align: center;
   -ms-flex-align: center;
+=======
+  display: flex !important;
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
   align-items: center;
   overflow: hidden;
   margin: -11px -15px;
@@ -402,7 +409,12 @@ table {
   color: inherit;
 }
 .mui-table-view .mui-navigate-right img {
+<<<<<<< HEAD
   width: 1.375rem;
   height: 1.375rem;
+=======
+  width: 22px;
+  height: 22px;
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
   margin-right: 0.9375rem;
 }

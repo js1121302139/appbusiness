@@ -15,6 +15,7 @@
 			<header>
 				<div class="topNav">
 					<a class="mui-action-back topBack-ico mui-pull-left"></a>
+<<<<<<< HEAD
 					<span id="" class="mui-btn mui-btn-blue mui-btn-link mui-pull-right" v-if="!isBOOS || isMaster" @click="open">申请结算</span>
 				</div>
 				<div class="settlementInfo">
@@ -22,6 +23,15 @@
 						<p class="orderMoney"><b v-html="settlementMoney + applyState.Text"></b>可结算金额 </p>
 						<p class="orderNum">订单数:<small v-text="pageData.orderPartyNumber">50</small>
 							订单总额:<small v-text="pageData.settleMoneyTotal">50</small>
+=======
+					<span id="" class="mui-btn mui-btn-blue mui-btn-link mui-pull-right" v-if="isBOOS" @click="open">申请结算</span>
+				</div>
+				<div class="settlementInfo">
+					<div class="settlementInfoL">
+						<p class="orderMoney"><b v-html="pageData.settleMoneyTotal==undefined?0:pageData.settleMoneyTotal + applyState.Text"></b>可结算金额 </p>
+						<p class="orderNum">订单数
+							<small v-text="pageData.orderPartyNumber">50</small>
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
 						</p>
 					</div>
 					<div class="settlementInfoR" v-show="showIco">
@@ -32,7 +42,11 @@
 				<ul id="yyaccountList">
 					<li class="wrapperListItem" v-for="(item,key) in pageData.orderParties">
 						<div class="ListItem-Tit">
+<<<<<<< HEAD
 							<div class="itemTit-orderNum  mui-ellipsis" v-text="'订单号:'+item.orderSn">
+=======
+							<div class="itemTit-orderNum" v-text="'订单号:'+item.orderSn">
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
 								订单号: 1611111111111
 							</div>
 							<div class="itemTit-orderDate mui-text-right " v-text="item.createTime">
@@ -47,10 +61,16 @@
 							<div class="order-Income">
 								<p>数&nbsp; &nbsp;&nbsp;量:<span> {{item.number}}</span></p>
 								<p>总金额:<span> {{item.moneyTotal}}</span></p>
+<<<<<<< HEAD
 								<p>佣&nbsp; &nbsp;&nbsp;金:<span> {{item.scalingAmount}}</span></p>
 								<p>类&nbsp; &nbsp;&nbsp;型:<span> {{item.type==3?'购票':'众筹'}}</span></p>
 							</div>
 						</div> 
+=======
+								<p>类&nbsp; &nbsp;&nbsp;型:<span> {{item.type==3?'购票':'众筹'}}</span></p>
+							</div>
+						</div>
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
 					</li>
 				</ul>
 			</div>

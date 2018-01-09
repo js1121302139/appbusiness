@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/page/work/changeShop.css" />
+		<style>
+			.isNoDataBg{
+				background: url(images/isNetwork.png) left top no-repeat !important;
+				background-size: contain !important;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="nopage">
+			<header class="mui-bar topBar mui-bar-nav" style="background: #fff;">
+				<a class="mui-action-back topBack-ico mui-pull-left"></a>
+				<h1 class="mui-title">页面丢失</h1>
+			</header>
+			<div class="isNoData" v-if="isNoData"  :class="{scale1:isNoData}">
+				<div class="isNoDataInfo mui-text-center">
+					<div class="isNoDataBg"></div>
+					<p class="isNoDataTit">页面丢失</p>
+					<p>页面被小兑吃了么？</p>
+				</div>
+			</div>
+		</div>
+
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript" src="js/muihelper.js"></script>
+		<script type="text/javascript" src="js/vue.min.js"></script>
+		<script type="text/javascript">
+			var Vue = new Vue({
+				el: "#nopage",
+				data: function() {
+					return {
+						isNoData: true
+					}
+				},
+				created: function() {
+				},
+				methods: {
+				}
+			})
+		</script>
+	</body>
+
+</html>

@@ -347,6 +347,7 @@ table {
 /*重构的顶部*/
 /*顶部的卡片视图*/
 /*没有数据*/
+<<<<<<< HEAD
 .lastBtnBox {
   padding: 0 0.75rem;
   text-align: center;
@@ -360,6 +361,8 @@ table {
   color: #fff;
   background-color: #222;
 }
+=======
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
 .mui-slider .mui-segmented-control.mui-segmented-control-inverted ~ .mui-slider-group .mui-slider-item {
   border-top: 1px solid #e5e5e5;
 }
@@ -373,7 +376,11 @@ table {
   border-bottom: 1px solid #e5e5e5;
 }
 .account-myshop-tab-box .bac-bule {
+<<<<<<< HEAD
   height: 9.0625rem;
+=======
+  height: 145px;
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
   background: -moz-linear-gradient(top, #0AADFE, #0D80EF);
   background: linear-gradient(top, #0AADFE, #0D80EF);
   background: -webkit-linear-gradient(top, #0AADFE, #0D80EF);
@@ -386,11 +393,19 @@ table {
 .account-myshop-tab-box .bac-bule .bac-top .my-shopinfo {
   width: 63%;
   font-size: 1rem;
+<<<<<<< HEAD
   margin: 2.5rem 0.8125rem 0 0;
 }
 .account-myshop-tab-box .bac-bule .bac-top .user-img {
   width: 5.625rem;
   margin: 1.3125rem 0 0 4%;
+=======
+  margin: 40px 13px 0 0;
+}
+.account-myshop-tab-box .bac-bule .bac-top .user-img {
+  width: 90px;
+  margin: 21px 0 0 4%;
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
 }
 .account-myshop-tab-box .bac-bule .bac-top .user-img img {
   width: 4.37rem;
@@ -400,7 +415,11 @@ table {
 }
 .account-myshop-tab-box .bac-bule .bac-top .location-img {
   position: relative;
+<<<<<<< HEAD
   top: 0.1875rem;
+=======
+  top: 3px;
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
 }
 .account-myshop-tab-box .bac-bule .bac-top .location-img img {
   width: 8%;
@@ -437,19 +456,33 @@ table {
   border-bottom: none;
 }
 .account-myshop-tab-box .couponInfo {
+<<<<<<< HEAD
   height: 2.1875rem;
   line-height: 2.1875rem;
+=======
+  height: 35px;
+  line-height: 35px;
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
   color: #ffffff;
   background-color: rgba(153, 153, 153, 0.83);
   font-size: 0.80rem;
 }
 .account-myshop-tab-box .couponInfo span {
+<<<<<<< HEAD
   margin-left: 0.9375rem;
 }
 .account-myshop-tab-box .couponInfo button {
   margin-top: 0.125rem;
   margin-right: 0.9375rem;
   height: 1.875rem;
+=======
+  margin-left: 15px;
+}
+.account-myshop-tab-box .couponInfo button {
+  margin-top: 2px;
+  margin-right: 15px;
+  height: 30px;
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
   float: right;
 }
 .account-myshop-list-box .mui-scroll-wrapper {
@@ -468,7 +501,11 @@ table {
 }
 .account-myshop-list-box .account-myshop-money-box .account-myshop-income-box {
   position: absolute;
+<<<<<<< HEAD
   top: 3.625rem;
+=======
+  top: 58px;
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
   text-align: center;
   width: 100%;
 }
@@ -508,7 +545,11 @@ table {
 .account-myshop-list-box .shop-top-money {
   color: #FE7D19;
   float: right;
+<<<<<<< HEAD
   margin-right: 0.9375rem;
+=======
+  margin-right: 15px;
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
 }
 .account-myshop-list-box .shop-top-box .shop-top-title {
   color: #666666;
@@ -526,7 +567,11 @@ table {
 }
 .account-myshop-list-box .shop-top-box .inmoney {
   color: #0B84F0;
+<<<<<<< HEAD
   margin-right: 0.625rem;
+=======
+  margin-right: 10px;
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
 }
 .account-myshop-list-box .shop-bottom-box {
   line-height: 2rem;
@@ -537,6 +582,7 @@ table {
   display: inline;
 }
 .account-myshop-list-box .shop-bottom-box .mobileInfo {
+<<<<<<< HEAD
   line-height: 1.0625rem;
 }
 .account-myshop-list-box .shop-bottom-box .btn-xxt {
@@ -544,6 +590,15 @@ table {
   margin-top: 1.1875rem;
   border-radius: 5px;
   padding: 0.25rem 1.125rem;
+=======
+  line-height: 17px;
+}
+.account-myshop-list-box .shop-bottom-box .btn-xxt {
+  height: 27px;
+  margin-top: 19px;
+  border-radius: 5px;
+  padding: 4px 18px;
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
   background-color: #fff;
   border: 1px solid #87b9f0;
 }
@@ -557,8 +612,13 @@ input[type=submit] {
   border: 1px solid #007aff;
   background-color: #D2EAFD;
   border-radius: 17px;
+<<<<<<< HEAD
   margin-top: 0.375rem;
   margin-right: 0.75rem;
+=======
+  margin-top: 6px;
+  margin-right: 12px;
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
 }
 /*店铺列表*/
 .account-myshop-box .mui-table-view li {

@@ -347,6 +347,7 @@ table {
 /*重构的顶部*/
 /*顶部的卡片视图*/
 /*没有数据*/
+<<<<<<< HEAD
 .lastBtnBox {
   padding: 0 0.75rem;
   text-align: center;
@@ -360,6 +361,8 @@ table {
   color: #fff;
   background-color: #222;
 }
+=======
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
 .topBar {
   padding-top: 1.25rem;
   height: 4rem;
@@ -389,8 +392,13 @@ table {
 .partyImgList {
   display: flex;
   flex: 1;
+<<<<<<< HEAD
   margin: 0.625rem 0 0.625rem 0;
   padding: 0 0.75rem;
+=======
+  margin: 10px 0 10px 0;
+  padding: 0 12px;
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -423,7 +431,11 @@ table {
   display: flex;
   flex: 1;
   width: 100%;
+<<<<<<< HEAD
   height: 2.75rem;
+=======
+  height: 44px;
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
   text-align: center;
   align-items: center;
   justify-content: center;
@@ -431,26 +443,47 @@ table {
 }
 .addBtn img {
   margin-right: 0.37rem;
+<<<<<<< HEAD
   width: 1rem;
   height: 1rem;
 }
 .partyForm {
   padding-bottom: 3.0625rem;
+=======
+  width: 16px;
+  height: 16px;
+}
+.partyForm {
+  padding-bottom: 49px;
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
 }
 .partyForm .partyFormItem {
   display: flex;
   flex: 1;
+<<<<<<< HEAD
   margin-bottom: 0.625rem;
+=======
+  margin-bottom: 10px;
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
   width: 100%;
   background-color: #fff;
 }
 .partyForm .partyFormItem .partyFormItemTit {
+<<<<<<< HEAD
   text-indent: 2.5625rem;
   height: 2.6875rem;
   line-height: 2.6875rem;
   font-size: 0.8125rem;
   color: #333;
   border-bottom: 0.0625rem solid #e6e6e6;
+=======
+  text-indent: 41px;
+  height: 43px;
+  line-height: 43px;
+  font-size: 13px;
+  color: #333;
+  border-bottom: 1px solid #e6e6e6;
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
 }
 .partyForm .partyFormItem .addPartyImg {
   display: flex;
@@ -462,7 +495,11 @@ table {
 }
 .partyForm .partyName {
   display: flex;
+<<<<<<< HEAD
   padding: 0.625rem 0.75rem 0;
+=======
+  padding: 10px 12px 0;
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
   flex-direction: row;
   justify-content: space-between;
   margin-bottom: 0.62rem;
@@ -474,15 +511,26 @@ table {
 }
 .partyForm .partyName .partyTitUpImg img {
   display: flex;
+<<<<<<< HEAD
   width: 11rem;
   height: 7.0625rem;
+=======
+  width: 176px;
+  height: 113px;
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
 }
 .partyForm .partyName .partyTitUpImg a {
   display: flex;
   justify-content: center;
+<<<<<<< HEAD
   width: 11rem;
   height: 1.6875rem;
   line-height: 1.6875rem;
+=======
+  width: 176px;
+  height: 27px;
+  line-height: 27px;
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
   color: #fff;
   background-color: rgba(0, 0, 0, 0.61);
 }
@@ -492,6 +540,7 @@ table {
 }
 .partyForm .partyName .partyTit textarea {
   border: none;
+<<<<<<< HEAD
   height: 8.75rem;
   font-size: 0.75rem;
 }
@@ -513,6 +562,21 @@ table {
 .partyForm .partyImg {
   padding-bottom: 0.75rem;
   margin-bottom: 0.625rem;
+=======
+  height: 140px;
+  font-size: 12px;
+}
+.partyForm .partyName .partyTit .textNum {
+  position: absolute;
+  bottom: 10px;
+  right: 0;
+  font-size: 13px;
+  color: #999;
+}
+.partyForm .partyImg {
+  padding-bottom: 12px;
+  margin-bottom: 10px;
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
   flex-direction: column;
 }
 .partyForm .partyImg .partyFormItemTit {
@@ -522,7 +586,11 @@ table {
   color: #333;
 }
 .partyForm .partyImg .bz {
+<<<<<<< HEAD
   padding: 0 0.75rem;
+=======
+  padding: 0 12px;
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
 }
 .partyForm .partyClass {
   flex-direction: column;
@@ -536,17 +604,30 @@ table {
 .partyForm .partyClass .partyClassBtn {
   display: flex;
   flex: 1;
+<<<<<<< HEAD
   width: 17.1875rem;
   margin: 0.8125rem auto 0.75rem;
+=======
+  width: 275px;
+  margin: 13px auto 12px;
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
   justify-content: space-between;
 }
 .partyForm .partyClass .partyClassBtn a {
   display: block;
+<<<<<<< HEAD
   width: 6.8125rem;
   height: 1.9375rem;
   border-radius: 0.96875rem;
   line-height: 1.9375rem;
   font-size: 0.9375rem;
+=======
+  width: 109px;
+  height: 31px;
+  border-radius: 15.5px;
+  line-height: 31px;
+  font-size: 15px;
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
   color: #999;
   border: 1px solid #999;
 }
@@ -570,13 +651,18 @@ table {
 .partyForm .partyDateAndMoney .partyDateAndMoneyList {
   display: flex;
   flex: 1;
+<<<<<<< HEAD
   padding: 0 0.75rem;
+=======
+  padding: 0 12px;
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
   flex-direction: column;
 }
 .partyForm .partyDateAndMoney .partyDateAndMoneyList .partyDateAndMoneyListItem {
   display: flex;
   flex: 1;
   width: 100%;
+<<<<<<< HEAD
   height: 2.75rem;
   position: relative;
   align-items: center;
@@ -586,6 +672,17 @@ table {
 .partyForm .partyDateAndMoney .partyDateAndMoneyList .partyDateAndMoneyListItem span {
   display: block;
   width: 5.3125rem;
+=======
+  height: 44px;
+  position: relative;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #e6e6e6;
+}
+.partyForm .partyDateAndMoney .partyDateAndMoneyList .partyDateAndMoneyListItem span {
+  display: block;
+  width: 85px;
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
 }
 .partyForm .partyDateAndMoney .partyDateAndMoneyList .partyDateAndMoneyListItem input,
 .partyForm .partyDateAndMoney .partyDateAndMoneyList .partyDateAndMoneyListItem .optionDate {
@@ -597,15 +694,24 @@ table {
   padding: 0;
   border: none;
   text-align: right;
+<<<<<<< HEAD
   font-size: 0.75rem;
 }
 .partyForm .partyDateAndMoney .partyDateAndMoneyList .partyDateAndMoneyListItem img {
   margin-left: 0.125rem;
   height: 1rem;
+=======
+  font-size: 12px;
+}
+.partyForm .partyDateAndMoney .partyDateAndMoneyList .partyDateAndMoneyListItem img {
+  margin-left: 2px;
+  height: 16px;
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
 }
 .partyForm .partyDateAndMoney .partyDateAndMoneyList .crowdfundingClass {
   display: none;
 }
+<<<<<<< HEAD
 .partyForm .partyAddress {
   flex-direction: column;
 }
@@ -677,13 +783,19 @@ table {
   font-size: 0.81rem;
   color: #333;
 }
+=======
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
 .partyForm .partyProcess {
   flex-direction: column;
 }
 .partyForm .partyProcess .partyProcessList {
   display: flex;
   flex: 1;
+<<<<<<< HEAD
   padding: 0 0.75rem;
+=======
+  padding: 0 12px;
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
   flex-direction: column;
 }
 .partyForm .partyProcess .partyProcessList .partyProcessItem,
@@ -692,9 +804,15 @@ table {
   flex: 1;
   align-items: center;
   justify-content: space-between;
+<<<<<<< HEAD
   width: 100%, ;
   height: 2.75rem;
   border-bottom: 0.0625rem solid #e6e6e6;
+=======
+  width: 100%;
+  height: 44px;
+  border-bottom: 1px solid #e6e6e6;
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
 }
 .partyForm .partyPackage {
   flex-direction: column;
@@ -708,7 +826,11 @@ table {
 .partyForm .partyPackage .partyPackageList {
   display: flex;
   flex: 1;
+<<<<<<< HEAD
   padding: 0 0.75rem;
+=======
+  padding: 0 12px;
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
   flex-direction: column;
 }
 .partyForm .partyPackage .partyPackageList .partyProcessItem,
@@ -717,10 +839,17 @@ table {
   flex: 1;
   align-items: center;
   width: 100%;
+<<<<<<< HEAD
   height: 2.75rem;
   overflow: hidden;
   justify-content: space-between;
   border-bottom: 0.0625rem solid #e6e6e6;
+=======
+  height: 44px;
+  overflow: hidden;
+  justify-content: space-between;
+  border-bottom: 1px solid #e6e6e6;
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
 }
 .partyForm .partyPackage .partyPackageList .partyProcessItem input,
 .partyForm .partyPackage .partyPackageList .partyPackageItem input {
@@ -734,7 +863,11 @@ table {
   align-items: center;
   white-space: nowrap;
   overflow-x: scroll;
+<<<<<<< HEAD
   width: 18.4375rem;
+=======
+  width: 295px;
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
   height: 1.37rem;
   line-height: 1.37rem;
 }
@@ -743,10 +876,17 @@ table {
   display: flex;
   order: 99;
   justify-content: flex-end;
+<<<<<<< HEAD
   width: 1rem;
   height: 1rem;
   background: url(../../../img/createPartyDelItemItem-ico.png) center center no-repeat;
   background-size: 1rem 1rem;
+=======
+  width: 16px;
+  height: 16px;
+  background: url(../../../img/createPartyDelItemItem-ico.png) center center no-repeat;
+  background-size: 16px 16px;
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
 }
 .partyForm .partyStrem-ico .partyFormItemTit {
   background: url('../../../img/createPartyTit5-ico.png') 12px center no-repeat;
@@ -764,6 +904,7 @@ table {
   color: #333;
 }
 .partyForm .partyInfo .Info {
+<<<<<<< HEAD
   padding: 0 0.75rem;
 }
 .partyForm .partyInfo .Info .infoItem {
@@ -777,6 +918,21 @@ table {
   margin-bottom: 0;
   font-size: 0.75rem;
   border-bottom: 0.0625rem solid #e6e6e6;
+=======
+  padding: 0 12px;
+}
+.partyForm .partyInfo .Info .infoItem {
+  border-bottom: 1px solid #e6e6e6;
+}
+.partyForm .partyInfo .Info .infoItem textarea {
+  border: none;
+  height: 90px;
+  padding: 0;
+  margin-top: 10px;
+  margin-bottom: 0;
+  font-size: 12px;
+  border-bottom: 1px solid #e6e6e6;
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
 }
 .partyForm .partyInfo .Info .infoItem .partyImgList {
   padding: 0;
@@ -787,6 +943,7 @@ footer {
   display: flex;
   flex: 1;
   width: 100%;
+<<<<<<< HEAD
   height: 3.0625rem;
 }
 footer a {
@@ -795,6 +952,16 @@ footer a {
   line-height: 3.0625rem;
   background-color: #222;
   font-size: 1.125rem;
+=======
+  height: 49px;
+}
+footer a {
+  flex: 1;
+  height: 49px;
+  line-height: 49px;
+  background-color: #222;
+  font-size: 18px;
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
   color: #fff;
 }
 footer .submitParty {
@@ -802,10 +969,17 @@ footer .submitParty {
 }
 .ListEnd {
   width: 100%;
+<<<<<<< HEAD
   height: 3.1875rem;
   position: relative;
   line-height: 3.1875rem;
   margin-top: -0.625rem;
+=======
+  height: 51.5px;
+  position: relative;
+  line-height: 51.5px;
+  margin-top: -10px;
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
   background-color: #f5f5f5;
 }
 .ListEnd span {
@@ -814,10 +988,17 @@ footer .submitParty {
 .ListEnd span:after {
   content: " ";
   display: block;
+<<<<<<< HEAD
   width: 5.125rem;
   height: 0.0625rem;
   position: absolute;
   left: 0.8125rem;
+=======
+  width: 82px;
+  height: 1px;
+  position: absolute;
+  left: 13px;
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
   top: 0;
   bottom: 0;
   margin: auto;
@@ -827,9 +1008,15 @@ footer .submitParty {
   content: " ";
   display: block;
   position: absolute;
+<<<<<<< HEAD
   width: 5.125rem;
   height: 0.0625rem;
   right: 0.8125rem;
+=======
+  width: 82px;
+  height: 1px;
+  right: 13px;
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
   top: 0;
   bottom: 0;
   margin: auto;

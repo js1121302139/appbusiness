@@ -347,6 +347,7 @@ table {
 /*重构的顶部*/
 /*顶部的卡片视图*/
 /*没有数据*/
+<<<<<<< HEAD
 .lastBtnBox {
   padding: 0 0.75rem;
   text-align: center;
@@ -360,6 +361,8 @@ table {
   color: #fff;
   background-color: #222;
 }
+=======
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
 html,
 body,
 #monthlyEarnings {
@@ -368,6 +371,7 @@ body,
   overflow: hidden;
   background: #fff;
 }
+<<<<<<< HEAD
 .isNoData {
   position: absolute;
   width: 100%;
@@ -411,11 +415,23 @@ body,
 }
 .headerCart .topNav {
   margin-top: 1.5625rem;
+=======
+.headerCart {
+  width: 100%;
+  height: 200px;
+  background: url("../../../images/monthlyEarnings-bg.png");
+  background-size: 100% 200px;
+  color: #fff;
+}
+.headerCart .topNav {
+  margin-top: 25px;
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
   background: none;
   -webkit-box-shadow: none;
   box-shadow: none;
 }
 .headerCart .topNav .mui-title {
+<<<<<<< HEAD
   line-height: 2.75rem;
   color: #fff;
 }
@@ -426,6 +442,18 @@ body,
   height: 1rem;
   background: url(../../../img/work-down.png) center center no-repeat;
   background-size: 1rem 1rem;
+=======
+  line-height: 44px;
+  color: #fff;
+}
+.headerCart .topNav .mui-title .jt {
+  margin-left: 10px;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background: url(../../../img/work-down.png) center center no-repeat;
+  background-size: 16px 16px;
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
   -webkit-transition: all 0.25s;
   transition: all 0.25s;
 }
@@ -434,18 +462,28 @@ body,
   width: 2.75rem;
   height: 2.75rem;
   background: url(../../../img/close-icon.png) center center no-repeat;
+<<<<<<< HEAD
   background-size: 1.375rem 1.375rem;
+=======
+  background-size: 22px 22px;
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
 }
 .headerCart .topNav .closeBg::before {
   content: " ";
 }
 .headerCart .countIncome {
+<<<<<<< HEAD
   width: 20.5625rem;
   height: 10rem;
+=======
+  width: 329px;
+  height: 160px;
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
   position: relative;
   background: none;
   margin: 0 auto;
   z-index: 10000;
+<<<<<<< HEAD
   top: 4.1875rem;
   padding-top: 3.3125rem;
   border-radius: 4px;
@@ -453,16 +491,32 @@ body,
   background-size: 100% 100%;
   -webkit-box-shadow: 0 0 0.5rem 0.1875rem rgba(184, 184, 184, 0.4);
   box-shadow: 0 0 0.5rem 0.1875rem rgba(184, 184, 184, 0.4);
+=======
+  top: 67px;
+  padding-top: 53px;
+  border-radius: 4px;
+  background: url("../../../images/monthlyEarningsMoney-bg.png") left top no-repeat;
+  background-size: 100% 100%;
+  box-shadow: 0 0 8px 3px rgba(184, 184, 184, 0.4);
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
 }
 .headerCart .countIncome p {
   color: #D7B374;
 }
 .headerCart .countIncome .countTxt {
+<<<<<<< HEAD
   font-size: 1rem;
   margin-bottom: 0.75rem;
 }
 .headerCart .countIncome .countMony {
   font-size: 2.5625rem;
+=======
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+.headerCart .countIncome .countMony {
+  font-size: 41px;
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
 }
 .wrapperList {
   top: 14.4375rem;
@@ -473,6 +527,7 @@ body,
 }
 .wrapperList .listItem {
   position: relative;
+<<<<<<< HEAD
   padding: 0 0.75rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -491,6 +546,15 @@ body,
   justify-content: space-between;
   -webkit-box-align: center;
   -ms-flex-align: center;
+=======
+  padding: 0 12px;
+  display: flex;
+  flex: 1;
+  width: 100%;
+  height: 44px;
+  flex-direction: row;
+  justify-content: space-between;
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
   align-items: center;
 }
 .wrapperList .listItem:after {
@@ -498,6 +562,7 @@ body,
   content: " ";
   display: block;
   width: 95%;
+<<<<<<< HEAD
   height: 0.0625rem;
   right: 0px;
   left: 0;
@@ -509,6 +574,18 @@ body,
 }
 .wrapperList .listItem p {
   font-size: 0.8125rem;
+=======
+  height: 1px;
+  right: 0px;
+  left: 0;
+  bottom: -1px;
+  margin: auto;
+  background-color: #e5e5e5;
+  transform: scaleY(0.5);
+}
+.wrapperList .listItem p {
+  font-size: 13px;
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
 }
 .wrapperList .listItem .itemDate {
   color: #333;
@@ -537,6 +614,46 @@ body,
   left: 0;
 }
 .scale1 {
+<<<<<<< HEAD
   -webkit-transform: scale(1) !important;
   transform: scale(1) !important;
 }
+=======
+  transform: scale(1) !important;
+}
+.isNoData {
+  position: absolute;
+  width: 100%;
+  top: 0px;
+  bottom: 0rem;
+  z-index: 9999;
+  background: #fff;
+  transform: scale(0);
+  transition: all 0.25s;
+}
+.isNoData .isNoDataInfo {
+  position: absolute;
+  top: 8.125rem;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+.isNoData .isNoDataInfo .isNoDataBg {
+  margin: 0 auto;
+  width: 4.21875rem;
+  height: 8.125rem;
+  margin-bottom: 0.9375rem;
+  background: url(../../../images/work-message-nomsgBg.png) left top no-repeat;
+  background-size: cover;
+}
+.isNoData .isNoDataInfo p {
+  margin-bottom: 0.625rem;
+  font-size: 0.6875rem;
+  color: #999;
+}
+.isNoData .isNoDataInfo .isNoDataTit {
+  font-size: 0.875rem;
+  color: #8d8e92;
+}
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm1vbnRobHlFYXJuaW5ncy5sZXNzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBOztJQUVJLHdGQUE4QztJQUE5Qyw4Q0FBOEM7SUFDOUMsWUFBWTtJQUNaO1FBQ0ksaUJBQWlCO1FBQ2pCLHlCQUFpQjtnQkFBakIsaUJBQWlCO1FBQ2pCO1lBQ0ksWUFBWTtZQUNaO2dCQUNJLHNCQUFzQjtnQkFDdEIsZUFBZTtnQkFDZixnQkFBZ0I7Z0JBQ2hCLG9FQUFvRTtnQkFDcEUsZ0NBQWdDO2lCQUMvQiw4QkFBc0I7aUJBQXRCLHNCQUFzQjthQUMxQjtTQUNKO1FBQ0Q7WUFDSSx1QkFBdUI7WUFDdkIsZUFBZTtZQUNmLGdCQUFnQjtZQUNoQjtnQkFDSSxhQUFhO2FBQ2hCO1lBQ0QscUVBQXFFO1lBQ3JFLGlDQUFpQztTQUNwQztLQUNKO0lBQ0Q7UUFDSSxpQkFBaUI7UUFDakIsd0JBQXdCO1FBQ3hCO1lBQ0ksWUFBWTtZQUNaLFdBQVc7WUFDWCxnQkFBZ0I7WUFDaEIsb0JBQW9CO1lBQ3BCLFVBQVU7WUFDVixpQkFBaUI7U0FDcEI7UUFDRDtZQUNJLGtCQUFrQjtZQUNsQixVQUFVO1lBQ1YsV0FBVztZQUNYLG1CQUFtQjtTQUN0QjtLQUNKO0NBQ0o7O0FBRUQ7SUFDSSxZQUFZO0lBQ1o7UUFDSSxnQkFBZ0I7UUFDaEIscUJBQXFCO1FBQ3JCLFVBQVU7UUFDVixXQUFXO1FBQ1gsbUJBQW1CO1FBQ25CO1lBQ0ksUUFBUTtTQUNYO1FBQ0Q7WUFDSSxzQkFBc0I7WUFDdEIsbUJBQW1CO1NBQ3RCO1FBQ0Q7WUFDSSxtQkFBbUI7WUFDbkIsWUFBWTtZQUNaLHdCQUF3QjtTQUMzQjtRQUNEO1lBQ0ksZUFBZTtZQUNmLG9CQUFvQjtTQUN2Qjs7S0FFSjs7Q0FFSjtBQUNELFFBQVE7QUFDUjtJQUNJLGdCQUFnQjtJQUNoQixjQUFjO0lBQ2QsUUFBUTtJQUNSLGFBQWE7SUFDYixZQUFZO0lBQ1osYUFBYTtJQUNiLDhCQUFzQjtJQUF0QixzQkFBc0I7O0tBRXJCO1FBQ0csZ0JBQWdCO1FBQ2hCLHFCQUFxQjtRQUNyQixVQUFVO1FBQ1YsV0FBVztRQUNYLG1CQUFtQjtRQUNuQjtZQUNJLFFBQVE7U0FDWDtLQUNKO0NBQ0oiLCJmaWxlIjoibW9udGhseUVhcm5pbmdzLmxlc3MiLCJzb3VyY2VzQ29udGVudCI6WyIvL1xyXG4uTSB7XHJcbiAgICBiYWNrZ3JvdW5kOiBsaW5lYXItZ3JhZGllbnQoIzAwYWVmZiwgIzBhN2ZmMSk7XHJcbiAgICBjb2xvcjogI2ZmZjtcclxuICAgIC5oZWFkZXIge1xyXG4gICAgICAgIGJhY2tncm91bmQ6IG5vbmU7XHJcbiAgICAgICAgYm94LXNoYWRvdzogbm9uZTtcclxuICAgICAgICAubXVpLXRpdGxlIHsgXHJcbiAgICAgICAgICAgIGNvbG9yOiAjZmZmO1xyXG4gICAgICAgICAgICAuanQge1xyXG4gICAgICAgICAgICAgICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xyXG4gICAgICAgICAgICAgICAgd2lkdGg6IDAuNzFyZW07XHJcbiAgICAgICAgICAgICAgICBoZWlnaHQ6IDAuNjJyZW07XHJcbiAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kOiB1cmwoLi4vLi4vLi4vaW1nL3dvcmstZG93bi5wbmcpIGNlbnRlciBjZW50ZXIgbm8tcmVwZWF0O1xyXG4gICAgICAgICAgICAgICAgYmFja2dyb3VuZC1zaXplOiAwLjcxcmVtIDAuNHJlbTtcclxuICAgICAgICAgICAgICAgICB0cmFuc2l0aW9uOiBhbGwgMC4yNXM7XHJcbiAgICAgICAgICAgIH1cclxuICAgICAgICB9XHJcbiAgICAgICAgLmNsb3NlQmcge1xyXG4gICAgICAgICAgICBkaXNwbGF5OiBpaW5saW5lLWJsb2NrO1xyXG4gICAgICAgICAgICB3aWR0aDogMi43NXJlbTtcclxuICAgICAgICAgICAgaGVpZ2h0OiAyLjc1cmVtO1xyXG4gICAgICAgICAgICAmOjpiZWZvcmUge1xyXG4gICAgICAgICAgICAgICAgY29udGVudDogXCIgXCI7XHJcbiAgICAgICAgICAgIH1cclxuICAgICAgICAgICAgYmFja2dyb3VuZDogdXJsKC4uLy4uLy4uL2ltZy9jbG9zZS1pY29uLnBuZykgY2VudGVyIGNlbnRlciBuby1yZXBlYXQ7XHJcbiAgICAgICAgICAgIGJhY2tncm91bmQtc2l6ZTogMS4xMnJlbSAxLjEycmVtO1xyXG4gICAgICAgIH1cclxuICAgIH1cclxuICAgIC5tdWktY29udGVudCB7XHJcbiAgICAgICAgYmFja2dyb3VuZDogbm9uZTtcclxuICAgICAgICBwYWRkaW5nLWJvdHRvbTogMS4yNXJlbTtcclxuICAgICAgICAuY291bnRUeHQge1xyXG4gICAgICAgICAgICBjb2xvcjogI2ZmZjtcclxuICAgICAgICAgICAgcGFkZGluZzogMDtcclxuICAgICAgICAgICAgZm9udC1zaXplOiAxNnB4O1xyXG4gICAgICAgICAgICBsZXR0ZXItc3BhY2luZzogMnB4O1xyXG4gICAgICAgICAgICBtYXJnaW46IDA7XHJcbiAgICAgICAgICAgIG1hcmdpbi10b3A6IDI1cHg7XHJcbiAgICAgICAgfVxyXG4gICAgICAgIC5jb3VudE1vbnkge1xyXG4gICAgICAgICAgICBmb250LXNpemU6IDMxLjVweDtcclxuICAgICAgICAgICAgbWFyZ2luOiAwO1xyXG4gICAgICAgICAgICBwYWRkaW5nOiAwO1xyXG4gICAgICAgICAgICBtYXJnaW4tdG9wOiAxMi41cHg7XHJcbiAgICAgICAgfVxyXG4gICAgfVxyXG59XHJcblxyXG4ubXVpLXNjcm9sbC13cmFwcGVye1xyXG4gICAgdG9wOjkuNjJyZW07XHJcbiAgICAubXVpLXRhYmxlLXZpZXctY2VsbHtcclxuICAgICAgICBoZWlnaHQ6IDIuODFyZW07XHJcbiAgICAgICAgbGluZS1oZWlnaHQ6IDIuODFyZW07XHJcbiAgICAgICAgbWFyZ2luOiAwO1xyXG4gICAgICAgIHBhZGRpbmc6IDA7XHJcbiAgICAgICAgcGFkZGluZzogMCAwLjcxcmVtO1xyXG4gICAgICAgICY6YWZ0ZXJ7XHJcbiAgICAgICAgICAgIGxlZnQ6IDA7XHJcbiAgICAgICAgfVxyXG4gICAgICAgIHNwYW57XHJcbiAgICAgICAgICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcclxuICAgICAgICAgICAgZm9udC1zaXplOiAwLjgxcmVtO1xyXG4gICAgICAgIH1cclxuICAgICAgICAuRGF0ZVRpbWV7XHJcbiAgICAgICAgICAgIGZvbnQtc2l6ZTogMC44MXJlbTtcclxuICAgICAgICAgICAgY29sb3I6ICMzMzM7XHJcbiAgICAgICAgICAgIGxldHRlci1zcGFjaW5nOiAwLjA2cmVtO1xyXG4gICAgICAgIH1cclxuICAgICAgICAubW9uZXl7XHJcbiAgICAgICAgICAgIGNvbG9yOiAjZmU2NzAwO1xyXG4gICAgICAgICAgICBmb250LXdlaWdodDogbm9ybWFsO1xyXG4gICAgICAgIH1cclxuICAgICAgICBcclxuICAgIH1cclxuICAgIFxyXG59XHJcbi8q5pyI5Lu95YiX6KGoKi9cclxuLk1vdXRoTGlzdHtcclxuICAgIHBvc2l0aW9uOiBmaXhlZDtcclxuICAgIHRvcDogMTMyLjVyZW07XHJcbiAgICBsZWZ0OiAwO1xyXG4gICAgei1pbmRleDogOTk5O1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgICBoZWlnaHQ6MTAwJSA7XHJcbiAgICB0cmFuc2l0aW9uOiBhbGwgMC4yNXM7XG4gICAgXHJcbiAgICAgLm11aS10YWJsZS12aWV3LWNlbGx7XHJcbiAgICAgICAgaGVpZ2h0OiAyLjgxcmVtO1xyXG4gICAgICAgIGxpbmUtaGVpZ2h0OiAyLjgxcmVtO1xyXG4gICAgICAgIG1hcmdpbjogMDtcclxuICAgICAgICBwYWRkaW5nOiAwO1xyXG4gICAgICAgIHBhZGRpbmc6IDAgMC43MXJlbTtcclxuICAgICAgICAmOmFmdGVye1xyXG4gICAgICAgICAgICBsZWZ0OiAwO1xyXG4gICAgICAgIH1cclxuICAgIH1cclxufVxyXG4iXX0= */
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64

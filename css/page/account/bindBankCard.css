@@ -347,6 +347,7 @@ table {
 /*重构的顶部*/
 /*顶部的卡片视图*/
 /*没有数据*/
+<<<<<<< HEAD
 .lastBtnBox {
   padding: 0 0.75rem;
   text-align: center;
@@ -360,6 +361,8 @@ table {
   color: #fff;
   background-color: #222;
 }
+=======
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
 .topBar {
   padding-top: 1.25rem;
   height: 4rem;
@@ -387,25 +390,41 @@ table {
   padding-top: 4rem !important;
 }
 .mui-content {
+<<<<<<< HEAD
   margin-top: 0.625rem;
 }
 .addBankCar {
   padding: 0 0.75rem;
+=======
+  margin-top: 10px;
+}
+.addBankCar {
+  padding: 0 12px;
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
 }
 .addBankCar .addBankCardBtn,
 .addBankCar .addBankCardBtn:hover {
   display: block;
   width: 100%;
+<<<<<<< HEAD
   height: 3.125rem;
   margin: 0rem auto;
   line-height: 3.125rem;
   text-align: center;
   border-radius: 0.3125rem;
+=======
+  height: 50px;
+  margin: 0px auto;
+  line-height: 50px;
+  text-align: center;
+  border-radius: 5px;
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
   border: 1px dashed #333;
   color: #333;
 }
 .addBankCar .addBankCardBtn img,
 .addBankCar .addBankCardBtn:hover img {
+<<<<<<< HEAD
   width: 0.875rem ;
   height: 0.875rem ;
   display: inline-block;
@@ -416,6 +435,21 @@ table {
   margin-top: 0.3125rem;
   padding: 0 0.75rem;
 }
+=======
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 6px;
+}
+.backCardsList {
+  margin-top: 5px;
+  padding: 0 0.75rem;
+}
+.backCardsList .JTYX {
+  background: url(../../../images/jtyh.png) center center no-repeat;
+}
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
 .backCardsList .GDYX {
   background: url(../../../images/gdyh.png) center center no-repeat;
 }
@@ -451,22 +485,37 @@ table {
 }
 .backCardsList .backCards {
   width: 100%;
+<<<<<<< HEAD
   height: 6.875rem;
   margin: 0 auto;
   margin-bottom: 0.625rem;
+=======
+  height: 110px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
   background-size: contain;
 }
 .backCardsList .backCards .backCardNumber {
   position: relative;
+<<<<<<< HEAD
   top: 3.34375rem;
   height: 1.875rem;
   padding-right: 1.0625rem;
   line-height: 1.875rem;
   font-size: 1.5rem;
+=======
+  top: 53.5px;
+  height: 30px;
+  padding-right: 17px;
+  line-height: 30px;
+  font-size: 24px;
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
   color: #fff;
 }
 .backCardsList .backCards .backCardNumber b {
   color: #fff;
+<<<<<<< HEAD
   font-size: 1.875rem;
 }
 .footerButton {
@@ -479,4 +528,18 @@ table {
   font-size: 1.125rem;
   color: #fff;
   border-radius: 0.3125rem;
+=======
+  font-size: 30px;
+}
+.footerButton {
+  width: 95%;
+  height: 40px;
+  margin: 32px auto 0;
+  line-height: 40px;
+  background-color: #222;
+  z-index: 9999;
+  font-size: 18px;
+  color: #fff;
+  border-radius: 5px;
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
 }

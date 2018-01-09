@@ -2,19 +2,31 @@
   background-color: #fff;
   border-bottom: 1px solid #e6e6e6;
   border-top: 1px solid #e6e6e6;
+<<<<<<< HEAD
   margin-bottom: 0.625rem;
+=======
+  margin-bottom: 10px;
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
   font-size: 1rem;
 }
 .order-good-item .order-good-top {
   border-bottom: 1px solid #e6e6e6;
+<<<<<<< HEAD
   padding: 0.625rem 0 0.625rem 0.9375rem;
+=======
+  padding: 10px 0 10px 15px;
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
   font-family: "黑体";
 }
 .order-good-item .mui-table-view-cell {
   font-size: 0.95rem;
 }
 .order-good-item .mui-table-view-cell .mui-table {
+<<<<<<< HEAD
   padding-bottom: 0.625rem;
+=======
+  padding-bottom: 10px;
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
 }
 .order-good-item .mui-table-view-cell .drawing-num {
   color: #FE7700;

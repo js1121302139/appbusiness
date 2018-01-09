@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @import "../common";
 body {
     background-color: #f5f5f5;
@@ -78,3 +79,74 @@ body,
     -webkit-transform: scale(1)!important;
             transform: scale(1)!important;
 }
+=======
+@import "../common";
+body {
+    background-color: #f5f5f5;
+}
+ 
+html,
+body,
+#myincome {
+    height: 100%;
+    min-height: 100%;
+    overflow: hidden;
+}
+
+.mine-top-box("../../../images/order-bg.png", "../../../img/topBackB-ico.png");
+.wrapperList {
+    width: 100%;
+    top: 15.375rem;
+    bottom: 3.125rem;
+    background-color: #fff;
+    .pullDown {
+        display: none;
+    }
+    .wrapperListItem {
+        position: relative;
+        display: flex;
+        flex: 1;
+        height: 2.75rem;
+        line-height: 2.75rem;
+        padding: 0 0.96875rem 0 0.9375rem;
+        justify-content: space-between;
+        &:after {
+            position: absolute;
+            content: " ";
+            display: block;
+            .wh(95%, 0.0625rem);
+            right: 0px;
+            left: 0;
+            bottom: -0.0625rem;
+            margin: auto;
+            background-color: #e5e5e5;
+            transform: scaleY(0.5);
+        }
+        .ordersDate {
+            width: 17.65625rem;
+            font-size: 0.81rem;
+            color: #333;
+        }
+        .ordersMoney {
+            font-size: 0.9375rem;
+            color: #D7B374;
+        }
+    }
+}
+
+.footerButton {
+    position: fixed;
+    bottom: 0px;
+    .wh(100%, 3.0625rem);
+    background-color: #D7B374;
+    color: #fff;
+    font-size: 1.12rem;
+    border: none;
+    border-radius: 0;
+    z-index: 9999;
+}
+.scale1{
+    transform: scale(1)!important;
+}
+.isNoData(0rem,0rem); 
+>>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64

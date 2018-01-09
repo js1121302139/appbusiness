@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/shop/!svn/ver/4192/Source/branches/appbusiness/unpackage
+END
+.dependencies
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/shop/!svn/ver/4192/Source/branches/appbusiness/unpackage/.dependencies
+END
+.confirmed_dependencies
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/shop/!svn/ver/4192/Source/branches/appbusiness/unpackage/.confirmed_dependencies
+END
