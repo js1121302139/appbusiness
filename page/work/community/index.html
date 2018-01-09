@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../../css/mui.min.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<div id="index">
+			<header class="mui-bar topBar mui-bar-nav">
+				<a class="mui-action-back topBack-ico mui-pull-left"></a>
+				<h1 class="mui-title">pk活动管理</h1>
+				<span id="Topactivity" class="mui-btn  Topactivity mui-btn-blue mui-btn-link mui-pull-right" @click="open('./recDetail','1')">账单明细</span>
+			</header>
+			<div class="footer">
+				<div class="footerItem" @click="open('./newAddRec')">
+					新建充值
+				</div>
+				<div class="footerItem" @click="open('./myVipUser')">
+					充值用户
+				</div>
+				<div class="footerItem" @click="open('./cashWithdrawal')">
+					提现
+				</div>
+			</div>
+		</div>
+		<script src="../../../js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+	</body>
+
+</html>

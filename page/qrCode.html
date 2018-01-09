@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<meta name="HandheldFriendly" content="true" />
+		<meta name="MobileOptimized" content="320" />
+		<title>兑咖网-扫码</title>
+		<script type="text/javascript" src="../js/mui.js"></script>
+		<script type="text/javascript" src="../js/md5.min.js"></script>
+		<script type="text/javascript" src="../js/muihelper.js"></script>
+		<script type="text/javascript" src="qrcode/common.js"></script>
+		<script src="../js/vue.min.js"></script>
+
+		<link rel="stylesheet" href="qrcode/common.css" type="text/css" charset="utf-8" />
+		<style type="text/css">
+			#bcid {
+				width: 100%;
+				position: absolute;
+				top: 15%;
+				bottom: 20%;
+				text-align: center;
+			}
+			
+			.tip {
+				color: #FFFFFF;
+				font-weight: bold;
+				text-shadow: 0px -1px #103E5C;
+			}
+			
+			footer {
+				width: 100%;
+				height: 44px;
+				position: absolute;
+				bottom: 0px;
+				line-height: 44px;
+				text-align: center;
+				color: #FFF;
+			}
+			
+			.fbt {
+				width: 50%;
+				height: 100%;
+				background-color: #FFCC33;
+				float: left;
+			}
+			
+			.fbt:active {
+				-webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.5);
+				box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.5);
+			}
+			
+			body,
+			html {
+				background-color: #FFFFFF;
+				overflow: hidden;
+				position: relative;
+				height: 100%;
+			}
+			
+			.mui-bar {
+				background: rgba(0, 0, 0, 0.01);
+				box-shadow: none;
+				-webkit-box-shadow: none;
+				text-align: left;
+			}
+			
+			.mui-bar .detail-index-title {
+				font-size: 0.81rem;
+				color: #333;
+				line-height: 1;
+				margin-left: 0.68rem;
+			}
+			
+			.mui-bar .yd-btn-back img {
+				width: 2rem;
+			}
+			
+			.mui-bar .mui-pull-right {
+				margin-left: 0.93rem;
+			}
+			
+			.mui-bar .mui-icon img {
+				width: 1.37rem;
+				margin: 0.93rem;
+				margin-top: 2rem;
+			}
+		</style>
+	</head>
+
+	<body style="background-color: #000000;">
+		<div id="bcid">
+			<div style="height:40%">
+				<header class="mui-bar" id="headertop">
+					<a href="javascript:" class="yd-btn-back mui-icon  mui-pull-left mui-action-back"><img src="../img/game_icon01.png" /></a>
+				</header>
+			</div>
+			<p class="tip">...正在加载摄像头...</p>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var ws = null,
+			wo = null;
+		var scan = null,
+			domready = false;
+		var LUCK = "luck",
+			PARTY = "party",
+			SONSIGN = "sonsign",
+			TICKER = 'ticker';
+
+		(function($, doc) {
+			$.plusReady(function() {
+				plus.nativeUI.closeWaiting();
+				//关闭当前页
+				Fun_App.closeCurrentPage();
+
+				plusReady();
+				/*console.log(JSON.stringify(plus.webview.all()))*/
+			});
+		}(mui, document));
+
+		// H5 plus事件处理
+		function plusReady() {
+
+			if(ws || !window.plus || !domready) {
+				return;
+			}
+			// 获取窗口对象
+			ws = plus.webview.currentWebview();
+			//wo = ws.opener();
+			// 开始扫描
+			ws.addEventListener('show', function() {
+				scan = new plus.barcode.Barcode('bcid');
+				scan.onmarked = onmarked;
+				scan.start();
+			}, false);
+			// 显示页面并关闭等待框
+			ws.show('pop-in');
+			//wo.evalJS('closeWaiting()');
+		}
+		// 监听DOMContentLoaded事件
+		document.addEventListener('DOMContentLoaded', function() {
+			domready = true;
+			plusReady();
+		}, false);
+		// 二维码扫描成功
+		function onmarked(type, result, file) {
+			switch(type) {
+				case plus.barcode.QR:
+					type = 'QR';
+					break;
+				case plus.barcode.EAN13:
+					type = 'EAN13';
+					break;
+				case plus.barcode.EAN8:
+					type = 'EAN8';
+					break;
+				default:
+					type = '其它' + type;
+					break;
+			}
+			console.log(result + "--->>>->");
+			if(result != null && result != 'undefined') {
+				var qrType = Fun_App.getextrasdata();
+				var resultArray = result.split('&');
+				resObj = {
+					method: resultArray[1],
+					body: resultArray[0]
+				}
+				console.log(resObj.method)
+				switch(resObj.method) {
+					case LUCK:
+						Fun_App.openWin("./work/luck.html", "pop-in", result);
+						break;
+					case PARTY:
+						orderVerification(result);
+						break;
+					case SONSIGN:
+						console.log(typeof result);
+						var resData = result.split("&");
+						var data = resData[0].replace(/=/g, "@");
+						if(resData[1] == undefined) {
+							mui.toast("二维码识别错误！")
+							plus.webview.currentWebview().close();
+						}
+						Fun_App.openWin("./work/" + resData[1] + "Sonsign.html", "pop-in", data);
+						break;
+					case TICKER:
+						if(atob(resObj.body).split(',')[1] === Fun_App.getdata('merchantId2')) {
+							Fun_App.openWin("./work/marketingAdmin/marketingClear.html", "pop-in", resObj.body);
+						}else{
+							mui.toast('这个券不是是咱商铺的！')
+							plus.webview.currentWebview().close();
+						}
+
+						break;
+				}
+				//(Fun_App.getextrasdata() != 'luck') ? orderVerification(result): Fun_App.openWin("./work/luck.html", "pop-in", result);
+			}
+		}
+
+		function orderVerification(orderSn) {
+			var sendData = {
+				config: {
+					token: Fun_App.getdata("token"),
+					orderSn: orderSn
+				},
+				fun_Success: function(data) {
+					function scannerExit() {
+						mui.toast('订单核销成功!')
+						var ws = plus.webview.getWebviewById("partyAdmin.html");
+						mui.fire(ws, "getPartyList")
+						mui.back()
+					}
+					if(data.success) {
+						scannerExit()
+					} else {
+						mui.toast(data.message);
+						//						mui.back();
+					}
+				}
+			}
+			Fun_App.ExAjax("merchantParty/orderVerification", sendData)
+		}
+	</script>
+
+</html>

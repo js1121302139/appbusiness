@@ -1,0 +1,193 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../../../css/pullToRefresh.css" />
+		<link rel="stylesheet" type="text/css" href="./css/recHistory.css" />
+	</head>
+
+	<body>
+		<div id="recHistory">
+			<header class="mui-bar topBar mui-bar-nav">	
+				<a class="mui-action-back topBack-ico mui-pull-left"></a>
+				<h1 class="mui-title">充值用户</h1>
+				<!--<span id="Topactivity" class="mui-btn  Topactivity mui-btn-blue mui-btn-link mui-pull-right" @click="open">创建活动</span>-->
+			</header>
+			<div class="mui-content">
+				<div class="detailPageTit">
+					<div class="detailPageTitItem" v-for="item in tit"  @click="changeTab(item)">
+						<span v-text="item.name+'记录'" :class="{active : item.active}">
+							
+						</span>
+					</div>
+				</div>
+				<div id="wrapper" class="recHistoryList wrapperList">
+					<ul>
+						<li v-for="item in pageList" v-if="tit[0].active">
+							<div class="historyItem">
+								<!--<div class="ListItemLeft">
+									<p>用户</p>
+									<p v-text="item.offer_name">充值360充值360</p>
+									<p v-text="item.payTime">2017-11-13 13:30:00</p>
+								</div>
+								<div class="ListItemRight">
+									<p v-text="'订单号:'+item.order_no">订单号：1111111111</p>
+									<h1 v-text="'+'+item.discount_price">+360</h1>
+									<p>微信充值</p>
+								</div>-->
+								<div class="historyItemTit">
+									<p v-text="'订单号:'+item.order_no">订单号:</p>
+									<p v-text="memName">hajkdhakd</p>
+								</div>
+								<div>
+									<p class="recName" v-text="item.offer_name">chongzhi</p>
+									<p class="recPrice" v-text="'+'+item.list_price">+115</p>
+								</div>
+								<div>
+									<p class="recTime" v-text="item.pay_time">16:00</p>
+									<p class="recType">weixin</p>
+								</div>
+							</div>
+						</li>
+						<li v-for="item in pageList" v-if="tit[1].active">
+							<div class="historyItem">
+								<div class="historyItemTit">
+									<p v-text="'订单号:'+item.order_sn">订单号:</p>
+									<p v-text=""></p>
+								</div>
+								<div>
+									<p class="recName" v-text="item.member_name">chongzhi</p>
+									<p class="recPrice" v-text="item.money_total">+115</p>
+								</div>
+								<div>
+									<p class="recTime" v-text="item.pay_time">16:00</p>
+									<p class="recType">消费金额</p>
+								</div>
+								<!--<div class="ListItemLeft">
+									<p>用户</p>
+									<p v-text="item.offer_name">充值360充值360</p>
+									<p v-text="item.payTime">2017-11-13 13:30:00</p>
+								</div>
+								<div class="ListItemRight">
+									<p v-text="'订单号:'+item.order_sn">订单号：1111111111</p>
+									<h1 v-text="'-'+item.card_consume_fee">+360</h1>
+									<p>微信充值</p>
+								</div>-->
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<script src="../../../js/mui.min.js"></script>
+		<script type="text/javascript" src="../../../js/md5.min.js"></script>
+		<script type="text/javascript" src="../../../js/iscroll.js"></script>
+		<script type="text/javascript" src="../../../js/pullToRefresh.js"></script>
+		<script src="../../../js/muihelper.js"></script>
+		<script src="../../../js/vue.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+			var Vue = new Vue({
+				el: '#recHistory',
+				data: function() {
+					return {
+						// 页码
+						pageNo: 1,
+						// 每页数据大小
+						pageSize: pageLen,
+						// 总页数
+						totalNum: 0,
+						tit: [{
+							name: "充值",
+							type: 'recharge',
+							active: true
+						}, {
+							name: '消费',
+							type: 'consumption',
+							active: false
+						}],
+						memberId: '',
+						memName: '',
+						pageList: [],
+						getUrl: 'member-service/mem/merchantAcct/getMemberRecharge'
+					}
+				},
+				created: function() {
+					var _this = this;
+					mui.plusReady(function() {
+						var userInfo = Fun_App.getextrasdata();
+						console.log(JSON.stringify(userInfo))
+						_this.memberId = userInfo.memId;
+						_this.memName  = userInfo.memName
+						_this.getUserRecDetail(function(resData) {
+							_this.pageList = resData;
+						})
+					})
+				},
+				mounted: function() {
+					refresher.init({
+						id: "wrapper",
+						pullDownAction: function() {},
+						pullUpAction: this.upLoad
+					});
+				},
+				methods: {
+					getUserRecDetail: function(callBack) {
+						var sendData = {
+							config: {},
+							data_Config: [
+								'memberId=' + this.memberId,
+								'merchantCode=' + Fun_App.getdata('merchantId')
+							],
+							fun_Success: function(resData) {
+								callBack(resData.data);
+							}
+						}
+						Fun_App.ExEncryptionAjax(this.getUrl, sendData, '', 'post', 'abc')
+					},
+					// 改变Tab状态
+					changeTab: function(item) {
+						wrapper.refresh();
+						var _this = this;
+						for(var i = 0; i < this.tit.length; i++) {
+							this.tit[i].active = false;
+						}
+						item.active = true;
+						this.type = item.type;
+						// 判断type是否是消费记录
+						if(item.type == "consumption") {
+							this.getUrl = 'member-service/mem/merchantAcct/getMemberConsume'
+						} else {
+							this.getUrl = 'member-service/mem/merchantAcct/getMemberRecharge'
+						}
+						this.getUserRecDetail(function(resData) {
+							_this.pageList = resData;
+						})
+					},
+					// 上拉加载
+					upLoad: function() {
+						/*this.pageNo++;
+						console.log(this.totalNum + "this.totalNum")
+						if(this.pageNo > Math.ceil(this.totalNum / this.pageSize)) {
+
+							wrapper.refresh();
+							return false;
+						}
+						this.getList(this.pageNo, function(resData) {
+							console.log(JSON.stringify(resData))
+							this.pageList = this.pageList.concat(resData.data);
+						}.bind(this))*/
+						refresher.info.pullUpLable = '没有更多数据了!';
+						wrapper.refresh();
+					}
+
+				}
+			})
+		</script>
+	</body>
+
+</html>

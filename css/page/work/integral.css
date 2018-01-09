@@ -1,0 +1,55 @@
+.integral-container {
+  color: #000000;
+}
+.integral-container .integral-title {
+  background-color: #FFFFFF;
+  height: 3.125rem;
+  line-height: 3.125rem;
+}
+.integral-container .integral-title img {
+  width: 1.2rem;
+  position: relative;
+  top: 0.3125rem;
+  left: 0.5rem;
+}
+.integral-container .integral-den {
+  padding-left: 3%;
+  font-size: 0.85rem;
+}
+.integral-container .integral-den .integral-num {
+  font-size: 0.95rem;
+  color: #0B84F0;
+  margin-right: 0.2rem;
+}
+.integral-container .mui-table-view .integral-info-left {
+  width: 70%;
+  display: inline-block;
+}
+.integral-container .mui-table-view .integral-info-left .font-1 {
+  font-size: 0.9rem;
+  color: #000000;
+}
+.integral-container .mui-table-view .integral-info-left p {
+  margin-bottom: 0.3125rem;
+}
+.integral-container .mui-table-view .integral-info-left .mobile-num {
+  margin-left: 0.3125rem;
+}
+.integral-container .mui-table-view .integral-info-right {
+  width: 28%;
+  display: inline-block;
+}
+.integral-container .mui-table-view .integral-info-right p {
+  font-size: 1.3rem;
+  text-align: right;
+  padding-bottom: 0.75rem;
+}
+.integral-container .mui-table-view .integral-info-right .font-1 {
+  font-size: 1rem;
+}
+.integral-container .mui-table-view .color-z p {
+  color: #FE7700;
+}
+.integral-container .mui-table-view .color-s p {
+  color: #0B84F0;
+}

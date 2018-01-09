@@ -1,0 +1,61 @@
+ <!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../../../css/page/work/integralexchange.css" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">积分换取</h1>
+		</header>
+		<div class="mui-content">
+			<div class="integralMsg">
+				尊敬的用户您好，在本页面每500云积分换取一个创维码，创维码可用于匀兑会员推广以及增加收益！
+			</div>
+			<div class="integralContent">
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell mui-row">
+						<div class="mui-col-sm-3 mui-col-xs-3">
+							可用积分
+						</div>
+						<div class="mui-col-sm-9 mui-col-xs-9">
+							1000
+						</div>
+					</li>
+					<li class="mui-table-view-cell mui-row">
+						<div class="mui-col-sm-3 mui-col-xs-3">
+							换取个数
+						</div>
+						<div class="mui-col-sm-9 mui-col-xs-9">
+							<input type="text" name="" id="" value="" />
+						</div>
+					</li>
+					<li class="mui-table-view-cell mui-row">
+						<div class="mui-col-sm-3 mui-col-xs-3">
+							支付密码
+						</div>
+						<div class="mui-col-sm-9 mui-col-xs-9">
+							<input type="password" class="mui-input-password" name="" id="" value="" />
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="integralBtn">
+			<a href="javascript:;" class="mui-btn mui-btn-block">确定换取</a>
+		</div>
+
+		<script src="../../../js/mui.min.js"></script>
+		<script type="text/javascript" src="../../../js/page/work/integral.js" ></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+	</body>
+
+</html>

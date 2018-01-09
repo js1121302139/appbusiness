@@ -1,0 +1,28 @@
+.mui-content .mui-table-view-cell:after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 0.0625rem;
+  content: '';
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+  background-color: #c8c7cc;
+}
+.mui-content .mui-table-view-cell .myLogin {
+  background: url(../../../img/ico-safecenter-1.png) 1.09rem center no-repeat;
+  background-size: 6% !important;
+}
+.mui-content .mui-table-view-cell .myPlay {
+  background: url(../../../img/ico-safecenter-2.png) 1.09rem center no-repeat;
+}
+.mui-content .mui-table-view-cell .myWecath {
+  background: url(../../../img/ico-safecenter-3.png) 1.09rem center no-repeat;
+}
+.mui-content .mui-table-view-cell .myBankCard {
+  background: url(../../../img/ico-safecenter-4.png) 1.09rem center no-repeat;
+}
+.mui-content .mui-table-view-cell .mui-navigate-right {
+  text-indent: 3.12rem;
+  background-size: 8%;
+}

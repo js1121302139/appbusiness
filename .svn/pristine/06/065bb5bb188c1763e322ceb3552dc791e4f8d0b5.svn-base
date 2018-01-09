@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/rechargeSuccess.css"/>
+	</head>
+
+	<body>
+		<div id="">
+			<header class="mui-bar topBar mui-bar-nav">
+				<a class="mui-action-back topBack-ico mui-pull-left"></a>
+				<h1 class="mui-title">扫码确认</h1>
+				<!--<span id="Topactivity" class="mui-btn  Topactivity mui-btn-blue mui-btn-link mui-pull-right" @click="open">创建活动</span>-->
+			</header>
+			<div class="mui-content">
+			    <div class="recCard">
+			    		<div class="recCountMoney">
+			    			<h1>360元</h1>
+			    			<h1>360元</h1>
+			    		</div>
+			    		<div class="sellingPrice">
+			    			售价300元
+			    		</div>
+			    </div>
+			    <div class="recMerchandise">
+			    		<div class="listIem">
+			    			<p>充值商品</p>
+			    			<p>10000元送1000</p>
+			    		</div>
+			    		<div class="listIem">
+			    			<p>充值商品</p>
+			    			<p>10000元送1000</p>
+			    		</div>
+			    		<div class="listIem">
+			    			<p>充值商品</p>
+			    			<p>10000元送1000</p>
+			    		</div>
+			    </div>
+			</div>
+		<button data-loading-text="提交中" id="buttom" class="sure" @click="">确认提交</button>
+			
+		</div>
+
+		
+		<script src="../../../js/mui.min.js"></script>
+		<script src="../../../js/muihelper.js" ></script>
+		<script src="../../../js/vue.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+	</body>
+
+</html>

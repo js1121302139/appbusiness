@@ -1,0 +1,137 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../../css/pullToRefresh.css">
+		<link rel="stylesheet" href="../../css/mui.picker.min.css">
+		<link rel="stylesheet" href="../../css/mui.poppicker.css">
+		<link rel="stylesheet" href="../../css/page/work/activityCenter.css" />
+	</head>
+	<style>
+
+	</style>
+
+	<body>
+		<div id="activityCenter">
+			<header class="mui-bar topBar mui-bar-nav">
+				<a class="mui-action-back topBack-ico mui-pull-left"></a>
+				<h1 class="mui-title">活动管理</h1>
+				<!--<span id="Topactivity" class="mui-btn  Topactivity mui-btn-blue mui-btn-link mui-pull-right" @click="open">创建活动</span>-->
+			</header>
+			<div class="mui-content">
+				<div class="activityBg">
+				</div>
+				<div id="segmentedControl" class="mui-segmented-control mui-segmented-control-inverted mui-segmented-control-primary">
+					<!--<a class="mui-control-item mui-active" href="#wrappers"><span>自建活动</span></a>-->
+					<a class="mui-control-item mui-active" href="#item1"><span>现金券体验</span></a>
+				</div>
+			</div>
+			<div class="optionDate mui-slider-item mui-control-content mui-active" id="item1">
+				<div id="scroll">
+					<div id="dateHeader" class="dateHeader mui-text-center">
+						<span name="pre" @click="changeMouth('pre')" class=" pre mui-pull-left">
+                	</span>
+						<div id="headerM" class="headerM" v-text="nowY +'年'+ nowM + '月'" @click="showMouthList">
+						</div>
+						<span name="next" @click="changeMouth('next')" class="next mui-pull-right">
+       				</span>
+					</div>
+					<div class="weekLsit mui-text-center">
+						<div class="weekLsit-item">
+							日
+						</div>
+						<div class="weekLsit-item">
+							一
+						</div>
+						<div class="weekLsit-item">
+							二
+						</div>
+						<div class="weekLsit-item">
+							三
+						</div>
+						<div class="weekLsit-item">
+							四
+						</div>
+						<div class="weekLsit-item">
+							五
+						</div>
+						<div class="weekLsit-item">
+							六
+						</div>
+
+					</div>
+					<div id="dayLsit" class="dayLsit mui-text-center mui-clearfix">
+						<div class="dayList-item" v-for="item in noneDay"></div>
+						<div @click="updateRoomNum(key)" :class="{active: item.isActive}" class="dayList-item" v-for="(item,key) in showDay" v-text="item.day"></div>
+						<!--
+					<div class="dayList-item">1</div>
+					<div class="dayList-item">1</div>
+					<div class="dayList-item">1</div>
+					<div class="dayList-item">1</div>
+					<div class="dayList-item">1</div>
+					<div class="dayList-item">1</div>
+					<div class="dayList-item">1</div> 
+					<div class="dayList-item">1</div>
+					<div class="dayList-item">1</div>
+					<div class="dayList-item">1</div>
+					<div class="dayList-item">1</div>
+					<div class="dayList-item">1</div>-->
+					</div>
+					<div class="roomNum" v-if="isShowRoom">
+						<p id="editRoom" @click="changeRoom(activityId,keys)" class="countRoom">房间数量：{{roomNum}} <img src="../../img/activeity-editIco.png" alt="" /></p>
+						<p class="sellRoomNum" v-text="'已售数量:'+ soldNum"> 0</p>
+					</div>
+				</div>
+			</div>
+			<div class="wrappers   mui-control-content" id="wrappers">
+				<div id="wrapper" class="wrapperList">
+					<ul id="activityList">
+						<li class="ListItem" v-for="(item,key) in list">
+							<div class="activityInfo">
+								<p v-html="item.activityName + item.activityDate +'期 '+'<span>('+item.discount+'折)</span>'">兑咖狂欢日 2017-06-12 期{{1}}<span>(折)</span></p>
+								<p v-text="item.remark">兑咖狂欢F2C积分够，全场8折畅心购</p>
+							</div>
+							<div :class="'activityState mui-text-right stateBg'+item.state">
+								<!--item.activityDate | activityState-->
+								<p class="runState">{{item.state=='0'?'审核中':'进行中'}}</p>
+								<a href="javascript:;" class="rmActiveityBtn mui-text-center" @click="offShelfActivity(item.id)">撤销</a>
+							</div>
+						</li>
+						<!--<li class="ListItem">
+							<div class="activityInfo">
+								<p >兑咖狂欢日 2017-06-12 期{{1}}<span>(折)</span></p>
+								<p >兑咖狂欢F2C积分够，全场8折畅心购</p>
+							</div>
+							<div class="activityState mui-text-center">
+								<p class="runState">审核中</p>
+								<a href="javascript:;" class="rmActiveityBtn">撤销</a>
+							</div>
+						</li>-->
+
+					</ul>
+					<div class="isNoData" v-if="isNoData" :class="{scale1:isNoData}">
+						<div class="isNoDataInfo mui-text-center">
+							<div class="isNoDataBg"></div>
+							<p class="isNoDataTit">暂无自建活动</p>
+							<p>小主点击右上角创建一个嘛!</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="../../js/mui.min.js"></script>
+		<script type="text/javascript" src="../../js/muihelper.js"></script>
+		<script src="../../js/common.js"></script>
+		<script type="text/javascript" src="../../js/iscroll.js"></script>
+		<script src="../../js/mui.picker.min.js"></script>
+		<script src="../../js/mui.poppicker.js"></script>
+		<script type="text/javascript" src="../../js/pullToRefresh.js"></script>
+		<script type="text/javascript" src="../../js/vue.min.js"></script>
+		<script type="text/javascript" src="../../js/page/work/activityCenter.js"></script>
+		</body>
+
+</html>

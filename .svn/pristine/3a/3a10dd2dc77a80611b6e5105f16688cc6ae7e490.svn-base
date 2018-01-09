@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title>Document</title>
+		<link rel="stylesheet" href="../../css/mui.min.css" />
+		<link rel="stylesheet" href="../../css/pullToRefresh.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/page/work/storeSonsign.css" />
+	</head>
+
+	<body>
+		<div id="myuser">
+			<header class="mui-bar topBar mui-bar-nav">
+				<a class="mui-action-back topBack-ico mui-pull-left"></a>
+				<h1 class="mui-title">寄存管理</h1>
+			</header>
+			<div class="mui-content">
+				<div class="sonsigBar mui-text-center"> 
+					<div class="sonsigBarItem" @click="changeClass(item)" :class="{ active : item.state}" v-for="(item , key ) in sonignBar" v-text="item.tit">
+						未领取
+					</div>
+				</div>
+			</div>
+			<div id="wrapper" class="wrapperList">
+				<ul class="storeSonsignList" id="">
+					<li class="storeSonsignItem" @click="openWin('fetchSonsign.html',item)" v-for="(item , key ) in pageData">
+						<!--{{item}}-->
+						<!--<div class="mui-input-row mui-checkbox mui-left" @click.stop="selectUser(key,item.id,false	)">
+							<label>asdad</label>
+							<input name="checkbox1" type="checkbox" :checked="item.steat">
+						</div>
+						<bottom>发送通知</bottom>-->
+						<div class="storeSonsignTit">
+							<p v-text="'取单号'+item.nbr">取单号</p>
+							<p v-text="item.createTime">2017-11-30 23:00</p> 
+						</div> 
+						<div class="storeSonsignInfo">
+							<div class="storeSonsignInfoLeft">
+								<img src="../../img/aboutLogo-ico.png" alt="" />
+								<div class="userInfo">
+									<p v-text="item.memName">哈哈哈</p>
+									<p v-text="'到期日期 '+item.effectTime"> 2017-11-31</p>
+								</div>
+							</div>
+							<div class="storeSonsignInfoRight">
+								<p>共件{{item.content | lenG}}商品</p>
+								<!--<button>
+									提醒他 
+								</button>-->
+							</div>
+						</div>
+					</li> 
+				</ul>
+				<div class="isNoData" v-if="isNoData" :class="{scale1:isNoData}">
+					<div class="isNoDataInfo mui-text-center">
+						<div class="isNoDataBg"></div>
+						<p class="isNoDataTit">暂无寄存</p>
+						<p>暂时还没有寄!</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="footer" @click.stop="openWin('../../page/qrCode.html','sonsign')">
+				<!--<div class="selectAll">
+					<div class="mui-input-row mui-checkbox mui-left" @click="selectUser(null,null,true)">
+						<label>全选</label>
+						<input name="checkbox1" type="checkbox" :checked="checkedAll">
+					</div>
+				</div>-->
+				<!--<div class="sendMsg">
+					<!--<botton @click="alertInput">
+						群发通知
+					</botton>-
+				</div>-->
+				<div class="openCamear" @click.stop="openWin('../../page/qrCode.html','sonsign')">
+					
+				</div>
+				扫一扫
+			</div>
+		</div>
+	</body>
+	<script src="../../js/mui.js"></script>
+	<script src="../../js/fas.js"></script>
+	<script src="../../js/md5.min.js"></script>
+	<script type="text/javascript" src="../../js/muihelper.js"></script>
+	<script type="text/javascript" src="../../js/iscroll.js"></script>
+	<script type="text/javascript" src="../../js/pullToRefresh.js"></script>
+	<script type="text/javascript" src="../../js/vue.min.js"></script>
+	<script type="text/javascript" src="../../js/page/work/storeSonsign.js"></script>
+
+</html>

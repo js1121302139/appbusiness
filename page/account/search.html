@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../css/mui.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../../css/page/account/search.css?1111" />
+	</head>
+
+	<body>
+		<div class="search">
+			<input id="inputBox" type="text" placeholder="搜索地点" /><button id="serch">搜索</button>
+		</div>
+		<script src="../../js/mui.js"></script>
+		<script type="text/javascript">
+			mui.init()
+
+			function win(val) {
+				var ws = plus.webview.currentWebview().opener();
+				mui.fire(ws, 'win', {
+					ws: val
+				})
+			}
+			var serchBox = document.querySelector("#serch"),
+				inputBox = document.querySelector("#inputBox");
+			serchBox.onclick = function() {
+				win(inputBox.value)
+			}
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,88 @@
+@import "../common";
+
+.topBar("../../../img/topBack-ico.png");
+
+.mui-content {
+    margin-top: 0.46rem;
+    .mui-active{
+        background-color: #fff;
+    }
+    .mui-table-view-cell {
+        display: flex;
+        flex: 1;
+        padding:0 0.6rem;
+        justify-content: space-between;
+        align-items: center;
+        height: 2.4rem;
+        span{
+            font-size: 0.75rem;
+            color: #333;
+        }
+        .cellTit{
+            font-size: 0.7rem;
+        }
+        input{
+            font-size: 0.6rem;
+            color: #999;
+        }
+        input,button{
+            position: inherit;
+            margin: 0;
+            right: 0;
+            width: 8.825rem;
+            height: 2.4rem;
+            flex: 1;
+            text-align: right;
+            border: none;
+            padding-right: 0.15rem;
+        }
+    }
+    .BzItem{
+        height: 4.5rem;
+        justify-content: flex-start;
+        flex-direction: column;
+        .cellTit{
+            padding: 0.75rem 0 0.5rem 0;
+            width: 100%;
+        }
+        textarea{
+            flex: 1;
+            height: 2.55rem;
+            border: none;
+            padding: 0;
+            margin: 0;
+            font-size: 0.65rem;
+        }
+    }
+
+}
+
+
+
+/*底部的btn*/
+
+.footerButton {
+    width: 95%;
+    height: 2rem;
+    margin: 1.6rem auto 0;
+    line-height: 2rem;
+    background-color: #222;
+    z-index: 9999;
+    font-size: 0.9rem;
+    color: #fff;
+    border-radius: 5px;
+}
+
+
+/*活动规则*/
+
+.activeitygz {
+    font-size: 0.75rem;
+    line-height: 1.5rem;
+    color: #666666;
+    padding: 0 0.93rem;
+}
+#roomNum{
+    display: none;
+}
+

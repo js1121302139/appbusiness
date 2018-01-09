@@ -1,0 +1,238 @@
+@import "../common.less";
+.mui-slider .mui-segmented-control.mui-segmented-control-inverted~.mui-slider-group .mui-slider-item {
+    border-top: 1px solid @BorderColor;
+}
+
+.mui-table-view-cell:after,
+.mui-table-view-cell:before {
+    background-color: #fff;
+}
+//我的店铺TAB标签页
+.account-myshop-tab-box {
+    position: relative;
+    top: 0;
+    border-bottom: 1px solid @BorderColor;
+    .bac-bule{
+        height: 9.0625rem;
+        background: -moz-linear-gradient(top, @BtnColorDeepBefore, @BtnColorDeepAfter);
+        background: linear-gradient(top, @BtnColorDeepBefore, @BtnColorDeepAfter);
+        background: -webkit-linear-gradient(top, @BtnColorDeepBefore, @BtnColorDeepAfter);
+        color: #ffffff;
+        font-family: "微软雅黑";
+        .bac-top{
+            height: 60%;
+            
+            .my-shopinfo{
+                width: 63%;
+                font-size: 1rem;
+                margin: 2.5rem 0.8125rem 0 0;
+
+            }
+            .user-img{
+                width: 5.625rem;
+                margin: 1.3125rem 0 0 4%;
+                img{    
+                    width: 4.37rem;
+                    height: 4.37rem;
+                    box-shadow: 0 0 0 0.12rem #00ADFF;
+                    border-radius:4.37rem;
+                }
+            }
+            .location-img{
+               
+                position: relative;
+                top: 0.1875rem;
+                img{
+                    width: 8%;
+                }
+            }
+            
+            .detailName,.detailAddress {
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+            .detailAddress{
+                font-size: 0.9rem;
+            }
+
+            
+        }
+        .bac-bottom{
+            height: 37%;
+            float: right;
+        }
+    }
+    .mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active {
+        color: @BascicColor;
+    }
+    .mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active {
+        border-bottom: 2px solid @BascicColor;
+    }
+    .mui-segmented-control.mui-segmented-control-inverted~.mui-slider-progress-bar {
+        background-color: @BascicColor;
+    }
+    .mui-slider-indicator.mui-segmented-control {
+        background-color: #fff;
+    }
+    .mui-control-content {
+        .mui-loading {
+            margin-top: 3.12rem;
+        }
+    }
+    .mui-slider .mui-segmented-control.mui-segmented-control-inverted~.mui-slider-group .mui-slider-item {
+        border-bottom: none;
+    }
+    .couponInfo{
+        height: 2.1875rem;
+        line-height: 2.1875rem;
+        color: #ffffff;
+        background-color: rgba(153, 153, 153, 0.83);;
+        font-size: 0.80rem;
+        span{
+            margin-left: 0.9375rem;
+        }
+        button{
+            margin-top: 0.125rem;
+            margin-right: 0.9375rem;
+            height: 1.875rem;
+            float: right;
+        }
+    }
+}
+
+//我的店铺列表
+.account-myshop-list-box {
+   .mui-scroll-wrapper{
+       top: 14.37rem;
+   }
+    .account-myshop-money-box {
+        background: #FFFFFF;
+        padding: 1.25rem 0.62rem;
+        border-bottom: 1px solid @BorderColor;
+        position: relative;
+        img {
+            width: 10rem;
+            display: block;
+            margin: 0 auto;
+        }
+        .account-myshop-income-box {
+            position: absolute;
+            top: 3.625rem;
+            text-align: center;
+            width: 100%;
+            span {
+                display: block;
+            }
+            .account-myshop-title {
+                color: #999;
+                font-size: 0.87rem;
+            }
+            .account-myshop-money {
+                font-size: 1rem;
+            }
+        }
+    }
+    .mui-table-view.mui-grid-view {
+        padding: 0rem;
+        li {
+            padding: 0.62rem 0.62rem 0 0.62rem;
+            border-bottom: 1px solid #e6e6e6;
+        }
+        .mui-table-view-cell {
+            padding: 0;
+            vertical-align: middle;
+            text-align: left;
+            position: relative;
+            .hotshop {
+                position: absolute;
+                top: 0rem;
+                left: 0rem;
+                z-index: 99;
+                width: 2.75rem;
+            }
+        }
+    }
+    span {
+        display: inline-block;
+    }
+    .shop-top-money{
+        color: #FE7D19;
+        float: right;
+        margin-right: 0.9375rem;
+    }
+    .shop-top-box {
+        .shop-top-title {
+            color: #666666;
+            font-size: 0.8rem;
+            font-weight: 600;
+            display: inline-block;
+            width: 75%;
+            span{
+                display: inline;
+            }
+        }
+        .shop-top-distance {
+            font-size: 0.75rem;
+            color: #666;
+        }
+        .inmoney {
+            color: @BascicColor;
+            margin-right: 0.625rem;
+        }
+    }
+    .shop-bottom-box {
+        line-height: 2rem;
+        color: #333;
+        font-size: 0.8rem;
+        span{
+            display: inline;
+        }
+        .mobileInfo{
+            line-height: 1.0625rem;
+        }
+        .btn-xxt{
+            height: 1.6875rem;
+            margin-top: 1.1875rem;
+            border-radius: 5px;
+            padding: 0.25rem 1.125rem;
+            background-color: #fff;
+            border: 1px solid #87b9f0
+        }
+    }
+    .mui-slider .mui-segmented-control.mui-segmented-control-inverted~.mui-slider-group .mui-slider-item {
+        border-bottom: none;
+    }
+}
+
+.mui-btn-blue, .mui-btn-primary, input[type=submit] {
+    color: @BascicColor;
+    border: 1px solid #007aff;
+    background-color: #D2EAFD;
+    border-radius: 17px;
+    margin-top: 0.375rem;
+    margin-right: 0.75rem;
+}
+/*店铺列表*/
+.account-myshop-box{
+    .mui-table-view{
+        li{
+            border-bottom: 1px solid #E5E5E5;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

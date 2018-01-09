@@ -1,0 +1,80 @@
+@import './common.less';
+@import '../../../../css/page/common.less';
+.topBar("../../../../img/topBack-ico.png");
+.newRecItem {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    align-items: center;
+    height: 2.8125rem;
+    border-top: 0.0625rem solid #ccc;
+    border-bottom: 0.0625rem solid #ccc;
+    margin-bottom: 0.625rem;
+    padding: 0 0.75rem;
+    .tit {
+        flex: 2;
+    }
+    input {
+        flex: 5;
+        padding: 0;
+        margin: 0;
+        border: 0;
+        background: transparent;
+        text-align: right;
+        margin-right: 1rem;
+    }
+    img {
+        width: 1.375rem;
+        height: 1.375rem;
+    }
+}
+
+.mui-content {
+    padding-bottom: 2.75rem;
+    .newAddRecCard {
+        height: 12.5rem;
+        padding: 0 0.15625rem;
+        margin-bottom: 3.1875rem;
+        background: url('../img/recCard-bg.png') left top no-repeat;
+        background-size: 100% 100%;
+        .input {
+            position: relative;
+            display: flex;
+            flex: 1;
+            top: 2.09375rem;
+            height: 13.3125rem;
+            padding: 0 1.25rem;
+            align-items: flex-end;
+            justify-content: space-between;
+            background: url(../img/recCard.png) left top no-repeat;
+            background-size: 100% 100%;
+            input {
+                padding: 0;
+                margin: 0;
+                border: 0;
+                height: 2.5rem;
+                margin-bottom: 2rem;
+                text-align: center;
+            }
+        }
+    }
+}
+
+.sure {
+    position: fixed;
+    bottom: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    width: 100%;
+    height: 2.5rem;
+    font-size: 1.125rem;
+    color: #fff;
+    background: #333;
+}

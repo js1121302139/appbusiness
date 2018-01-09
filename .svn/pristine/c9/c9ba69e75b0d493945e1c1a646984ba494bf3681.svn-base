@@ -1,0 +1,43 @@
+@import './common.less';
+@import '../../../../css/page/common.less';
+.topBar("../../../../img/topBack-ico.png");
+.recCard ();
+.mui-content {
+    padding-bottom: 3.125rem;
+    .recCard {
+        margin-bottom: 0.625rem;
+    }
+    .cashWithdrawalLsit {
+        top: 7.5rem;
+        bottom: 0;
+        .pullDown {
+            display: none;
+        }
+        .scroller {
+            padding: 0.9375rem 0.75rem 0;
+        }
+        .detailItem();
+    }
+    .clickItem();
+}
+
+.sure {
+    position: fixed;
+    bottom: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    width: 100%;
+    height: 2.5rem;
+    font-size: 1.125rem;
+    color: #fff;
+    background: #333;
+    border:none;
+    border-radius: 0;
+}

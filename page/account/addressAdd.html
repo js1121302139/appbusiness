@@ -1,0 +1,133 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../../css/page/account/addressAdd.css"/>
+	</head>
+
+	<body>
+		<div id="addressAdd">
+			<header class="mui-bar topBar mui-bar-nav">
+				<a class="mui-action-back topBack-ico mui-pull-left"></a>
+				<h1 class="mui-title">{{isAdd?'新增':'编辑'}}地点</h1>
+			</header>
+			<div class="mui-content">
+			   <div class="addressCotent">
+			   	<div class="addressCotentItem">
+			   	  <p>地点名称</p><input type="text" name="" id="" v-model="sendData.location" value="" placeholder="输入地点名称 ，如：火山灰"/>
+			   </div>
+			   <div class="addressCotentItem">
+			   	  <p>地址</p><input type="text" name="" id="" v-model="sendData.address" value="" placeholder="获取信息地址"/><img src="../../img/activity-Address-ico.png" @click="open" class="optionAddress">
+			   </div>
+			   </div>
+			</div>
+			<button class="saveAddress" @click="saveAddress" v-text="isAdd?'保存':'编辑'">保存</button>
+		</div>
+		
+		
+		<script src="../../js/mui.min.js"></script>
+		<script src="../../js/muihelper.js"></script>
+		<script type="text/javascript" src="../../js/vue.min.js" ></script>
+		<script type="text/javascript">
+			var Vue = new Vue({
+				el:"#addressAdd",
+				data:function(){
+					return {
+						NEWADDRESSURL:"merchantPerson/addAddress",
+						UPDATEADDRESSURL:"merchantPerson/updateAddress",
+						isAdd:false,// 是 否 添加
+						addressId:null,// 地址ID 修改地址时用
+						 sendData:{
+						 	location:null,
+						 	address:null,
+						 	lola:{ // 坐标经纬度 
+						 		longitude:null,
+						 		latitude :null
+						 	},
+						 	shopName:null
+						 }
+					}
+				},created:function(){
+					mui.plusReady(function(){
+						var getPageData = Fun_App.getextrasdata()
+						 console.log(JSON.stringify(getPageData));
+						 this.sendData.shopName = Fun_App.getdata('shopName');
+						 if(getPageData.isAdd =='add'){
+						 	this.isAdd=true;
+						 }else{
+						 	this.addressId=getPageData.openData.id;
+						 	this.sendData.location = getPageData.openData.location;
+						 	this.sendData.address = getPageData.openData.address;
+						 }
+						 var _this = this;
+						 window.addEventListener('getAddress',function(e){
+						 	console.log(JSON.stringify(e.detail))
+						 	_this.sendData.lola = e.detail.point;
+						 	_this.sendData.address = e.detail.addr;
+						 })
+					}.bind(this))
+				},
+				methods:{
+					open: function() {
+						mui.plusReady(function() {
+							Fun_App.openWin('map.html', 'pop-in', ''); // 寻找地址
+						})
+					},
+					// 添加和更新地址的方法
+					newAddressAndUpdata:function(){
+						var _this = this ;
+						var sendData = {
+							config:{
+								token:Fun_App.getdata('token'),
+								addressId:this.addressId,
+								merchantName:this.sendData.shopName,
+								address:this.sendData.address,
+								location:this.sendData.location,
+								longitude:this.sendData.lola.longitude,
+								latitude:this.sendData.lola.latitude
+							},
+							fun_Success:function(resData){
+								if(resData.success){
+									mui.fire(plus.webview.currentWebview().opener(),"reload");
+									_this.isAdd?mui.toast('添加地址成功!'):mui.toast('编辑地址成功!');
+									
+									plus.webview.currentWebview().close("slide-out-right",500);
+								}else{
+									alert()
+								}
+							}
+						}
+						// 当前状态为t则删除addressId
+						this.isAdd?delete sendData.config.addressId:'';
+						console.log(JSON.stringify(sendData.config))
+						Fun_App.ExAjax((this.isAdd?this.NEWADDRESSURL:this.UPDATEADDRESSURL),sendData);
+					},
+					saveAddress:function(){
+						if(Fun_App.checkObjIsNull(this.sendData,['address'])!=false){ 
+							// chenggong
+							if(Fun_App.checkObjIsNull(this.sendData.lola,null)!=false){
+								console.log(JSON.stringify(this.sendData)+'address');
+								this.newAddressAndUpdata();
+							}else{
+								mui.alert('请确认你在地图上的位置','提示','好的',function (e) {
+								  this.open();
+								}.bind(this),'div')
+								
+							}
+						}else{
+							mui.toast('还有数据没有填写完整!')
+						}
+					},
+					getAddress:function(val){
+						console.table(JSON.stringify(val))
+					}
+				}
+			})
+		</script>
+	</body>
+
+</html>

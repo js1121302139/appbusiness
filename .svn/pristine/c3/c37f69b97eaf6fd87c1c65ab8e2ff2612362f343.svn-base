@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../../css/mui.dtpicker.css" />
+		<link rel="stylesheet" href="../../css/mui.picker.min.css" />
+		<link rel="stylesheet" href="../../css/page/work/createacrivity.css" />
+	</head>
+
+	<body>
+		<div id="created">
+			<header class="mui-bar topBar mui-bar-nav">
+				<a class="mui-action-back topBack-ico mui-pull-left"></a>
+				<h1 class="mui-title">创建活动</h1>
+			</header>
+			<div class="mui-content">
+				<div class="mui-row">
+					<ul class="mui-table-view">
+						<li class="mui-table-view-cell">
+							<span class="cellTit">活动名称</span>
+							<input type="text" v-model="activity.activityName" maxlength="20" placeholder="请输入活动名称">
+						</li>
+						<li class="mui-table-view-cell">
+							<span class="cellTit">活动时间</span>
+							<button @click='optionDate' v-text="activity.activityDate" class="btn mui-btn mui-btn-block dateStart"></button>
+						</li>
+						<li class="mui-table-view-cell">
+							<span class="cellTit">折扣力度</span>
+							<input type="tel" v-model.number="activity.discount" maxlength="1" placeholder="请输入折扣力度,如8折">
+							<span>折</span>
+						</li>
+						<li class="mui-table-view-cell">
+							<span class="cellTit">消费封顶</span>
+							<input type="tel" v-model.number="activity.consumeTop" maxlength="5" placeholder="请输入单笔消费封顶金额">
+							<span>元</span>
+						</li>
+						<li class="mui-table-view-cell" v-if="isShow">
+							<span class="cellTit">参与房间</span>
+							<input type="tel" v-model.number="activity.roomNum" maxlength="3" placeholder="请输入参与活动房间数">
+							<span>间</span>
+						</li>
+						<!--此处估计后面有用-->
+						<!--<li class="mui-table-view-cell">
+							<span class="cellTit">限制单数</span>
+							<input type="tel" placeholder="请输入本次活动限制单数">
+							<span>单</span>
+						</li>-->
+						<li class="mui-table-view-cell BzItem">
+							<span class="cellTit mui-text-left">备注</span>
+							<textarea v-model="activity.remark" maxlength="20" placeholder="请输入备注(0/20)"></textarea>
+						</li>
+					</ul>
+
+				</div>
+				<div class="footerButton mui-text-center" id="senActiveity" @click="createActive">
+					创建活动
+				</div>
+				<!--活动规则-->
+				<div class="activeitygz">
+					体验日活动规则: <br /> 1.不参与全场打折商品类别:{{pageData.remarkSorts}}
+					<br /> 2.兑贝抵用上限价格:{{pageData.integralUpperLimit==0?'无上限':pageData.integralUpperLimit}}
+					<br /> 3.活动时间消费者使用次数:{{pageData.joinFrequency==0?'无上限':pageData.integralUpperLimit}},其余正常消费兑贝不参与;
+					<br /> 4.自建活动,平台收取等同不参与兑贝日消费佣金比例。
+				</div>
+			</div>
+		</div>
+
+	</body>
+	<script src="../../js/mui.min.js"></script>
+	<script src="../../js/mui.picker.min.js"></script>
+	<script type="text/javascript" src="../../js/muihelper.js"></script>
+	<script type="text/javascript" src="../../js/common.js"></script>
+	<script type="text/javascript" src="../../js/vue.min.js"></script>
+	<script type="text/javascript" src="../../js/page/work/createactivity.js"></script>
+	<script type="text/javascript">
+	</script>
+
+</html>

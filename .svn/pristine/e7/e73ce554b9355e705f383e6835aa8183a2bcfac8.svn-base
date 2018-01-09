@@ -1,0 +1,366 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../../../css/pullToRefresh.css" />
+		<link rel="stylesheet" type="text/css" href="css/myVipUser.css" />
+	</head>
+
+	<body>
+		<div id="myVipUser">
+			<header class="mui-bar topBar mui-bar-nav">
+				<a class="mui-action-back topBack-ico mui-pull-left"></a>
+				<h1 class="mui-title">我的vip用户</h1>
+				<!--<span id="Topactivity" class="mui-btn  Topactivity mui-btn-blue mui-btn-link mui-pull-right" @click="open">创建活动</span>-->
+			</header>
+			<div class="mui-content">
+				<div class="optionTab">
+					<div class="optionTabItem" :class="{active:item.active}" @click="changeTab(item)" v-for="item in tabBar">
+						<p v-text="item.titName">总额</p>
+						<img src="img/myVipUser-ico.png" v-show="!item.active" />
+						<img src="img/myVipUser-active-ico.png" v-show="item.active" />
+					</div>
+					<!--<div class="optionTabItem">
+						<p>余额</p>
+						<img src="img/myVipUser-ico.png" />
+					</div>
+					<div class="optionTabItem">
+						<p>消费次数</p>
+						<img src="img/myVipUser-ico.png" />
+					</div>
+					<div class="optionTabItem">
+						<p>最后消费</p>
+						<img src="img/myVipUser-ico.png" />
+					</div>-->
+
+					<div id="wrapper" class="userLsit">
+						<ul>
+							<li :key="item" v-for="item in pageList" @click="open('userRecHistory',item)">
+								<div class="userLsitItem">
+									<div class="userInfo">
+										<div class="userHeader">
+											<img src="../../../images/60x60.gif" />
+										</div>
+										<div class="userRecInfo mui-ellipsis">
+											<p class="userName" v-text="item.memName">用户名</p>
+											<p v-text="'首充时间:'"></p>
+											<p v-text="'最后一次消费:'"></p>
+										</div>
+										<!--<div class="date">
+										<p v-text="'首充时间:'+item.statusTime"></p>
+										<p v-text="'最后一次消费:'+item.endTime"></p>
+									</div>-->
+									</div>
+									<div class="recInfo">
+										<div class="recInfoItem">
+											<!--<p v-text="item.rechargeSum">200</p>-->
+											<p v-text="11">200</p>
+											<h1>充值总额</h1>
+
+										</div>
+										<div class="recInfoItem">
+											<p v-text="item.balance">200</p>
+											<h1>卡内余额</h1>
+										</div>
+										<div class="recInfoItem">
+											<p v-text="88">200</p>
+											<h1>消费次数</h1>
+										</div>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<script src="../../../js/mui.min.js"></script>
+			<script type="text/javascript" src="../../../js/fas.js"></script>
+			<script type="text/javascript" src="../../../js/md5.min.js"></script>
+			<script type="text/javascript" src="../../../js/iscroll.js"></script>
+			<script type="text/javascript" src="../../../js/pullToRefresh.js"></script>
+			<script src="../../../js/muihelper.js"></script>
+			<script src="../../../js/vue.min.js"></script>
+			<script type="text/javascript">
+				var Vue = new Vue({
+					el: "#myVipUser",
+					data: function() {
+						return {
+							tabBar: [{
+									titName: '总额',
+									active: false,
+									type: 'rechargeSum'
+								},
+								{
+									titName: '余额',
+									active: false,
+									type: 'balance'
+								},
+								{
+									titName: '消费次数',
+									active: false,
+									type: 'times'
+								},
+								{
+									titName: '最后消费',
+									active: false,
+									type: 'balance'
+								}
+							],
+							pageList: [{
+								"id": 1,
+								"merId": 2,
+								"memId": 643,
+								"acctNo": "6001004200001",
+								"memName": "qwe",
+								"balance": 1850,
+								"status": 1,
+								"statusTime": "2017-12-15 16:55:43",
+								"createTime": "2017-12-15 16:55:43",
+								"endTime": "2030-01-01 00:00:00",
+								"grade": null,
+								"rechargeSum": null,
+								"times": null
+							}, {
+								"id": 2,
+								"merId": 408,
+								"memId": 5397,
+								"acctNo": "6001040800788",
+								"memName": "庄颖勤",
+								"balance": 0,
+								"status": 1,
+								"statusTime": "2017-12-18 19:22:51",
+								"createTime": "2017-12-18 19:22:51",
+								"endTime": "2030-01-01 00:00:00",
+								"grade": null,
+								"rechargeSum": null,
+								"times": null
+							}, {
+								"id": 3,
+								"merId": 408,
+								"memId": 5416,
+								"acctNo": "6001040800789",
+								"memName": "宇宙超级无敌帅炸天",
+								"balance": 997246.79,
+								"status": 1,
+								"statusTime": "2017-12-26 17:14:14",
+								"createTime": "2017-12-26 17:14:14",
+								"endTime": "2030-01-01 00:00:00",
+								"grade": 1,
+								"rechargeSum": null,
+								"times": null
+							}, {
+								"id": 4,
+								"merId": 44,
+								"memId": 5714,
+								"acctNo": "6001001500790",
+								"memName": "宇宙超级无敌帅炸天",
+								"balance": 0,
+								"status": 1,
+								"statusTime": "2017-12-26 17:19:03",
+								"createTime": "2017-12-26 17:19:03",
+								"endTime": "2030-01-01 00:00:00",
+								"grade": 1,
+								"rechargeSum": null,
+								"times": null
+							}, {
+								"id": 5,
+								"merId": 44,
+								"memId": 5713,
+								"acctNo": "6001040800791",
+								"memName": "一休哥",
+								"balance": 0,
+								"status": 1,
+								"statusTime": "2017-12-26 17:56:01",
+								"createTime": "2017-12-26 17:56:01",
+								"endTime": "2030-01-01 00:00:00",
+								"grade": 1,
+								"rechargeSum": null,
+								"times": null
+							}, {
+								"id": 6,
+								"merId": 15,
+								"memId": 7922,
+								"acctNo": "6001001500792",
+								"memName": "5555",
+								"balance": 0,
+								"status": 1,
+								"statusTime": "2017-12-26 19:48:36",
+								"createTime": "2017-12-26 19:48:36",
+								"endTime": "2030-01-01 00:00:00",
+								"grade": 1,
+								"rechargeSum": null,
+								"times": null
+							}, {
+								"id": 7,
+								"merId": 408,
+								"memId": 5585,
+								"acctNo": "6001040800791",
+								"memName": "一休哥",
+								"balance": 0,
+								"status": 1,
+								"statusTime": "2017-12-26 19:57:20",
+								"createTime": "2017-12-26 19:57:20",
+								"endTime": "2030-01-01 00:00:00",
+								"grade": 1,
+								"rechargeSum": null,
+								"times": null
+							}, {
+								"id": 8,
+								"merId": 408,
+								"memId": 7922,
+								"acctNo": "6001040800793",
+								"memName": "5555",
+								"balance": 0,
+								"status": 1,
+								"statusTime": "2017-12-27 10:03:46",
+								"createTime": "2017-12-27 10:03:46",
+								"endTime": "2030-01-01 00:00:00",
+								"grade": 1,
+								"rechargeSum": null,
+								"times": null
+							}, {
+								"id": 9,
+								"merId": 408,
+								"memId": 7948,
+								"acctNo": "6001040800795",
+								"memName": "o0f2beck",
+								"balance": 0,
+								"status": 1,
+								"statusTime": "2017-12-27 14:01:32",
+								"createTime": "2017-12-27 14:01:32",
+								"endTime": "2030-01-01 00:00:00",
+								"grade": 1,
+								"rechargeSum": null,
+								"times": null
+							}, {
+								"id": 10,
+								"merId": 424,
+								"memId": 5585,
+								"acctNo": "6001042400797",
+								"memName": "好好的哥哥",
+								"balance": 0,
+								"status": 1,
+								"statusTime": "2017-12-27 20:47:55",
+								"createTime": "2017-12-27 20:47:55",
+								"endTime": "2030-01-01 00:00:00",
+								"grade": 1,
+								"rechargeSum": null,
+								"times": null
+							}, {
+								"id": 11,
+								"merId": 408,
+								"memId": 7947,
+								"acctNo": "6001040800798",
+								"memName": "tznkm8iu",
+								"balance": 300,
+								"status": 1,
+								"statusTime": "2017-12-28 13:42:22",
+								"createTime": "2017-12-28 13:42:22",
+								"endTime": "2030-01-01 00:00:00",
+								"grade": 1,
+								"rechargeSum": null,
+								"times": null
+							}, {
+								"id": 12,
+								"merId": 408,
+								"memId": 643,
+								"acctNo": "6001040800800",
+								"memName": "13819357833",
+								"balance": 300,
+								"status": 1,
+								"statusTime": "2017-12-28 19:50:06",
+								"createTime": "2017-12-28 19:50:06",
+								"endTime": "2030-01-01 00:00:00",
+								"grade": 1,
+								"rechargeSum": null,
+								"times": null
+							}, {
+								"id": 13,
+								"merId": 408,
+								"memId": 7926,
+								"acctNo": "6001040800801",
+								"memName": "f8ujakk0",
+								"balance": 0,
+								"status": 1,
+								"statusTime": "2017-12-28 20:17:46",
+								"createTime": "2017-12-28 20:17:46",
+								"endTime": "2030-01-01 00:00:00",
+								"grade": 1,
+								"rechargeSum": null,
+								"times": null
+							}, {
+								"id": 14,
+								"merId": 408,
+								"memId": 6208,
+								"acctNo": "6001040800802",
+								"memName": "ctaeikoq",
+								"balance": 0,
+								"status": 1,
+								"statusTime": "2017-12-28 20:29:59",
+								"createTime": "2017-12-28 20:29:59",
+								"endTime": "2030-01-01 00:00:00",
+								"grade": 1,
+								"rechargeSum": null,
+								"times": null
+							}]
+						}
+					},
+					created: function() {
+						var _this = this;
+						mui.plusReady(function() {
+							_this.getList(_this.pageNo, function(resData) {
+								_this.pageList = resData.data;
+								console.log(JSON.stringify(_this.pageList))
+								_this.totalNum = resData.total;
+							})
+						})
+					},
+					mounted: function() {
+						refresher.init({
+							id: "wrapper",
+							pullDownAction: function() {
+								wrapper.refresh();
+							},
+							pullUpAction: function() {
+								wrapper.refresh();
+							}
+						});
+					},
+					methods: {
+						// 
+						changeTab: function(item) {
+							var _this = this;
+							for(var i = 0; i < this.tabBar.length; i++) {
+								this.tabBar[i].active = false;
+							}
+							item.active = true;
+							var _order = [];
+//							for(var i = 0; i < this.pageList.length; i++) {
+//								this.pageList[i][type] =  
+//							}
+						},
+						getList: function(pageNo, callBack) {
+							var sendData = {
+								config: {
+									merchantCode: Fun_App.getdata('merchantId')
+								},
+								fun_Success: function(resData) {
+									callBack.call(this, resData);
+								}
+							}
+							Fun_App.ExEncryptionAjax('member-service/mem/merchantAcct/getVipMember', sendData, '', 'post', 'abc')
+						},
+						open: function(url, data) {
+							Fun_App.openWin(url + ".html", 'pop-in', data)
+						}
+					},
+					computed: {}
+				})
+			</script>
+	</body>
+
+</html>

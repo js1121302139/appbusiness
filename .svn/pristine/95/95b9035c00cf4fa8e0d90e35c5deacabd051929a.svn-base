@@ -1,0 +1,186 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../../css/page/account/map.css" />
+	</head>
+
+	<body>
+
+		<header class="mui-bar topBar mui-bar-nav">
+			<a class="mui-action-back topBack-ico mui-pull-left"></a>
+			<h1 class="mui-title">地图</h1>
+		</header>
+
+		<div id="map">
+
+		</div>
+		<button class="sure" id="sure">确定</button>
+		<script src="../../js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.plusReady(function() {
+				var current = plus.webview.currentWebview();
+				var openerView = plus.webview.currentWebview().opener(); // 上一个页面
+				var search = plus.webview.create("search.html", 'search', {
+					top: 94,
+					height: 37.5,
+					width: '100%',
+					dock: 'top',
+					background: 'transparent'
+				});
+				current.append(search);
+				plus.webview.show('search')
+				
+				function win(event) {
+					searchAdd(event.detail.ws, map, sendData.point, function(map, resData) {
+						showAddrList(map, resData)
+					})
+				}
+
+				var map = new plus.maps.Map("map");
+				var em = null,
+					searchTxtBox = document.querySelector("#searchTxt"),
+					searchBtnBox = document.querySelector("#searchBtn"),
+					addrTxt = '',
+					isLoadMap = false,
+					sendData = {
+						point: null,
+						addr: ''
+					},
+					center = null,
+					userNam = {
+						name: "我当前位置",
+						title: "我在xxx附近"
+					};
+				plus.geolocation.getCurrentPosition(function(data) {
+					console.log(JSON.stringify(data)+"userAdd")
+					sendData.addr =data.address.province + data.address.city+ data.address.street;// 设置用户的初始位置
+				}, function(err) {
+
+				});
+				
+				/**
+				 *@param {Object} data {name:String,title:String}
+				 @param {Object} point{longitude:NNumber,latitude:NNumber}
+				 @param {Object} map
+				 * */
+				// 标点控件
+				function decorate(map, point, data) {
+					var title = data.title;
+					var marker = new plus.maps.Marker(new plus.maps.Point(point.longitude, point.latitude));
+					// 判断当前是不是第一次加载地图 并将状态设置成true
+					if(!isLoadMap) {
+						marker.setDraggable(true)
+						isLoadMap = true;
+						// sendData.addr = data.title; // 设置用户的初始地址
+					}
+					// 设置标签
+					marker.setLabel(data.name)
+					// 设置弹出泡泡
+					var bubble = new plus.maps.Bubble(title);
+					marker.setBubble(bubble);
+					map.addOverlay(marker);
+
+					// 点击时获取当前控件的坐标信息
+					marker.onclick = function(marker) {
+						console.log(JSON.stringify(marker.getPoint()))
+						plus.nativeUI.confirm('确认使用这个地址么', function(e) {
+							console.log(e.index)
+							if(e.index==0) {
+								console.log(JSON.stringify(sendData))
+								sendData={
+									point:marker.getPoint(),
+									addr:title
+								}
+								console.log(JSON.stringify(marker.getPoint()),title+"click")
+							} else {
+								mui.toast('用户已取消!')
+							}
+						})
+					}
+				}
+				/**
+				 *@param {Object} add {point:{}..}
+				 * */
+				// 获取周边地名
+				function getAdd(add) {
+					console.log(JSON.stringify(add) + "getAdd")
+					plus.maps.Map.reverseGeocode(add.point, {}, function(event) {
+						userNam.name = isLoadMap?add.name:userNam.name;
+						userNam.title =  event.address;
+						decorate(map, add.point, userNam);
+					}, function(e) {
+						mui.toast("出错了!:" + JSON.stringify(e));
+					});
+				}
+				// 检索地址
+				function searchAdd(text, map, point, callBack) {
+					console.log(text+"检索地址---")
+					var searchObj = new plus.maps.Search(map);
+					searchObj.onPoiSearchComplete = function(state, res) {
+						if(state == 0) {
+							callBack(map, res.poiList);
+						} else {
+							mui.toast("检索失败");
+						}
+					}
+					var pt = new plus.maps.Point(point.longitude, point.latitude);// 每个地点的坐标
+					searchObj.poiSearchNearBy(text, pt, 50);
+				}
+				// 顯示地圖控件
+				var showMap = function(point) {
+					if(point == false) {
+						map.getUserLocation(function(state, point) {
+							// 獲取到用戶的位置 並且不是第一次加載地圖；
+							if(state == 0 && isLoadMap == false) {
+								map.centerAndZoom(new plus.maps.Point(point.longitude, point.latitude), 22)
+								center = new plus.maps.Point(point.longitude, point.latitude);
+								getAdd({
+									point: center
+								})
+								sendData.point = point;
+							}
+						})
+					} else {
+						map.centerAndZoom(new plus.maps.Point(point.longitude, point.latitude), 22);
+					}
+					// 地图点击事件
+					map.onclick = function(points) {
+						
+						// sendData.point = points;
+						// 添加控件的时候先清除控件
+						map.clearOverlays();
+						getAdd({point: points})
+					}
+				}
+
+				function showAddrList(map, list) {
+					console.log(JSON.stringify(list) + "showAddrList")
+					for(var i = 0; i < list.length; i++) { // 循环遍历搜索出来的地址
+							getAdd(list[i]);
+					}
+					mui.toast('查找完成,共'+list.length+"个地址");
+				}
+				// 主函数
+				showMap(false);
+				
+				// 点击确定按钮后的事件
+				document.querySelector("#sure").onclick=function(){
+					mui.fire(openerView,'getAddress',sendData)// 发送位置信息到上一个页面
+					current.close();// 关闭当前页面
+				}
+				
+				// 监听搜索框
+				window.addEventListener('win', function(e) {
+					win(e)
+				}, false)
+
+			})
+		</script>
+	</body>
+
+</html>

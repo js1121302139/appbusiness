@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>结算明细</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../../css/mui.min.css" rel="stylesheet" />
+		<link href="../../../css/page/work/txdentail.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+		    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+		    <h1 class="mui-title">结算明细</h1>
+		</header>
+		<div class="mui-content">
+			<div class="order-good-item">
+				<div class="order-good-top">
+					<div class="order-good-top-left">
+						<span>结算流水：5987545455555418</span>
+					</div>
+				</div>
+				<div class="mui-table-view-cell  ">
+					<div class="mui-table">
+						<div class="mui-table-cell">
+							<span class="shop-top-title mui-ellipsis ">结算金额：<span class="drawing-num">955.00</span>元</span>
+						</div>
+						<div class="mui-table-cell">
+							<span class="shop-top-title mui-ellipsis ">剩余金额：<span class="surplus-num">0.00</span>元</span>
+						</div>
+					</div>
+					<div class="mui-table">
+						<div class="mui-table-cell txtime">
+							2017-02-11 11:20
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="order-good-item">
+				<div class="order-good-top">
+					<div class="order-good-top-left">
+						<span>结算流水：5987545455555418</span>
+					</div>
+				</div>
+				<div class="mui-table-view-cell  ">
+					<div class="mui-table">
+						<div class="mui-table-cell">
+							<span class="shop-top-title mui-ellipsis ">结算金额：<span class="drawing-num">955.00</span>元</span>
+						</div>
+						<div class="mui-table-cell">
+							<span class="shop-top-title mui-ellipsis ">剩余金额：<span class="surplus-num">0.00</span>元</span>
+						</div>
+					</div>
+					<div class="mui-table">
+						<div class="mui-table-cell txtime">
+							2017-02-11 11:20
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="order-good-item">
+				<div class="order-good-top">
+					<div class="order-good-top-left">
+						<span>结算流水：5987545455555418</span>
+					</div>
+				</div>
+				<div class="mui-table-view-cell  ">
+					<div class="mui-table">
+						<div class="mui-table-cell">
+							<span class="shop-top-title mui-ellipsis ">结算金额：<span class="drawing-num">955.00</span>元</span>
+						</div>
+						<div class="mui-table-cell">
+							<span class="shop-top-title mui-ellipsis ">剩余金额：<span class="surplus-num">0.00</span>元</span>
+						</div>
+					</div>
+					<div class="mui-table">
+						<div class="mui-table-cell txtime">
+							2017-02-11 11:20
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="order-good-item">
+				<div class="order-good-top">
+					<div class="order-good-top-left">
+						<span>结算流水：5987545455555418</span>
+					</div>
+				</div>
+				<div class="mui-table-view-cell  ">
+					<div class="mui-table">
+						<div class="mui-table-cell">
+							<span class="shop-top-title mui-ellipsis ">结算金额：<span class="drawing-num">955.00</span>元</span>
+						</div>
+						<div class="mui-table-cell">
+							<span class="shop-top-title mui-ellipsis ">剩余金额：<span class="surplus-num">0.00</span>元</span>
+						</div>
+					</div>
+					<div class="mui-table">
+						<div class="mui-table-cell txtime">
+							2017-02-11 11:20
+						</div>
+					</div>
+				</div>
+			</div>
+		
+		</div>
+		<script src="../../../js/mui.min.js"></script>
+		<script type="text/javascript" src="../../../js/page/work/txdentail.js" ></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+	</body>
+
+</html>

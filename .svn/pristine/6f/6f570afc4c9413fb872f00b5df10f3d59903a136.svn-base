@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../../css/mui.dtpicker.css" />
+		<link rel="stylesheet" href="../../css/mui.picker.min.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/page/work/addSonsign.css" />
+	</head>
+
+	<body>
+		<div id="addSonsign">
+			<header class="mui-bar topBar mui-bar-nav">
+				<a class="mui-action-back topBack-ico mui-pull-left"></a>
+				<h1 class="mui-title">填写寄存信息</h1>
+			</header>
+			<div class="mui-content">
+				<div class="userInfo">
+					<div class="userTit">
+						<span></span>
+						<p>用户信息</p>
+						<span></span>
+					</div>
+					<div class="user">
+						<div class="userItem">
+							<span>用户名</span>
+							<p v-text="pageData.memberName"></p>
+						</div>
+						<div class="userItem">
+							<span>订单金额</span>
+							<p v-text="pageData.moneyTotal">今天</p>
+						</div>
+						<div class="userItem">
+							<span>寄存编号</span>
+							<p v-text="pageData.orderSn">今天</p>
+						</div>
+						<div class="userItem">
+							<span>下单时间</span>
+							<p v-text="pageData.payTime">今天</p> 
+						</div>
+					</div>
+				</div>
+				<ul class="mui-table-view selectDate" class="">
+					<li class="mui-table-view-cell" @click='optionDate'>
+						<a class="mui-navigate-right selectDateItem">
+							<span>选择寄存有效期</span><span v-text="effectTime">请选择日期</span>
+						</a>
+					</li>
+				</ul>
+				<div class="goodsList" v-for="(item ,key) in sendData.goods">
+					<div class="goodsItem">
+						<div class="goodsListTit goodsInfos">
+							<img src="../../img/addsongsigns-ico.png" alt="" />
+							<span v-text="'寄存商品'+(key+1)"></span>
+						</div>
+						<div class="goodsInfos">
+							<span>商品名称:</span> <input type="text" placeholder="请输入商品名称" v-model="sendData.goods[key].name" />
+						</div>
+						<div class="goodsInfos">
+							<span>寄存数量:</span> <input type="number" placeholder="请输入商品数量" pattern="[0-9]*" v-model="sendData.goods[key].num" />
+						</div>
+						<div class="goodsInfos">
+							<span>单位:</span> <input type="text" maxlength="1" placeholder="请输入单位（如：瓶、件、包...）" v-model="sendData.goods[key].unit" />
+						</div>
+
+					</div>
+				</div>
+				<button @click="addGoods" class="addGoods">
+							<img src="../../img/addSonsign-Btn-ico.png" alt="" /><span>添加更多寄存商品</span>
+						</button>
+			</div> 
+			<div class="addSuccess" :class="{isok:isSuccess}">
+					<div class="addSuccessInfo mui-text-center">
+						<div class="addSuccessInfoTrue">
+
+						</div>
+						<p class="addSuccessTxt" >添加成功</p>
+					</div>
+				</div>
+			<button data-loading-text="提交中" id="buttom" class="sure" @click="getSonsignList">确认提交</button>
+		</div>
+		<script src="../../js/mui.min.js"></script>
+		<script src="../../js/muihelper.js"></script>
+		<script src="../../js/vue.min.js"></script>
+		<script src="../../js/mui.picker.min.js"></script>
+		<script src="../../js/md5.min.js"></script>
+		<script src="../../js/page/work/addSonsign.js"></script>
+	</body>
+
+</html>

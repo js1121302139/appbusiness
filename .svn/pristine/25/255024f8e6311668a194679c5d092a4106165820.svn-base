@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>登录</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="./css/page/login.css" />
+	</head>
+
+	<body>
+		<div id="login" class="mui-content" style="background: #fff;">
+			<div class="loginTop-box">
+				<img id="loginLogo" src="img/loginLogo.png">
+			</div>
+			<div class="login-box">
+				<div class="userPhoneNumber mui-input-row input-border">
+					<span class="userPhoneNumberIco"></span>
+					<input id="uNumber" name="uNumber" type="tel" maxlength="11" pattern="[0-9]*" @blur="checkVals('userName')" v-model="pageData.userName" value="18046058436" placeholder="请输入手机号" class="mui-input-clear">
+				</div>
+				<div class="userPwd mui-input-row input-border">
+					<span class="userPwdIco "></span>
+					<input id="uPwd" class="mui-input-password" name="uPwd" pattern="[A-z0-9]" @blur="checkVals('password')" v-model="pageData.password" type="password" value="058436" placeholder="请输入密码">
+				</div>
+			</div>
+			<div class="forgetpassword mui-text-right">
+				<a href="javascript:;" @click="open" class="">忘记密码?</a>
+			</div>
+			<div class="login_local mui-text-center">
+				<button id="buttom" :disabled="isSend" class="" data-loading-text="登录中" @click="login" href="JavaScript:;">登录</button>
+			</div>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript" src="js/muihelper.js"></script>
+		<script type="text/javascript" src="js/common.js"></script>
+		<script src="js/vue.min.js"></script>
+		<script src="js/page/login.js"></script>
+	</body>
+
+</html>

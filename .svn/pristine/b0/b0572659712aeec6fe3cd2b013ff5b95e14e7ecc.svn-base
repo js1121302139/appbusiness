@@ -1,0 +1,163 @@
+@import './common.less';
+@import '../../../../css/page/common.less';
+.topBar("../../../../img/topBack-ico.png");
+.recCard ();
+
+.recList { 
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    top: 15.25rem;
+    bottom: 3.125rem;
+    .pullDown {
+        display: none;
+    }
+    .scroller {
+        padding: 0 0.75rem;
+    }
+    .ListItem {
+        background: #fff;
+        margin-bottom: 0.625rem;
+        height: 12.375rem;
+        box-shadow: 0 0 0.5rem 0 #c3c3c3;
+        .topTit {
+            position: relative;
+            display: flex;
+            flex: 1;
+            height: 2.8125rem;
+            padding: 0 0.5rem;
+            justify-content: space-between;
+            align-items: center;
+            &:before {
+                content: "";
+                position: absolute;
+                left: 0;
+                display: block;
+                background: @fontY;
+                width: 0.1875rem;
+                height: 1.5rem;
+            }
+            &:after {
+                content: "";
+                position: absolute;
+                display: block;
+                background: #E5E5E5;
+                bottom: 0;
+                left: 0.5rem;
+                right: 0.5rem;
+                height: 0.0625rem;
+            }
+            .topTitInfo {
+                display: flex;
+                flex: 1;
+                align-items: center;
+                height: 1.5rem;
+                h1 {
+                    font-size: 1rem;
+                }
+            }
+            p {} 
+        }
+        .ListItemInfo {
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            padding: 0 0.3125rem;
+            .ListItemInfoBox {
+                display: flex;
+                flex: 1;
+                padding: 0.625rem 0;
+                border-bottom: #E5E5E5 0.0625rem solid;
+                justify-content: space-between;
+                .ItemInfoBoxItem {
+                    display: flex;
+                    flex: 1;
+                    flex-direction: column;
+                    justify-content: space-around;
+                    text-align: center;
+                    height: 4.375rem;
+                    margin: 0 0.3125rem;
+                    box-shadow: 0 0 0.5rem 0 #C3C3C3;
+                    align-content: space-between;
+                    img {
+                        align-self: center;
+                        width: 1.125rem;
+                        height: 1.125rem;
+                    }
+                }
+            }
+        }
+        .recOperation {
+            display: flex;
+            flex: 1;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.9375rem 0;
+            height: 3.875rem;
+            .recOperationDate {
+                font-size: 0.75rem;
+                color: #333;
+                h1:nth-child(1) {
+                    margin-bottom: 0.625rem;
+                }
+            }
+            .fun {
+                height: 1.375rem;
+                button {
+                    padding: 0;
+                    margin: 0;
+                    width: 2.5rem;
+                    height: 1.375rem;
+                    font-size: 0.8125rem;
+                    border: 0;
+                    margin-left: 0.625rem;
+                    box-shadow: 0 0 0 1px #333;
+                }
+            }
+        }
+    }
+}
+
+.footer {
+    position: fixed;
+    display: flex;
+    flex: 1;
+    bottom: 0;
+    width: 100%;
+    height: 3.125rem;
+    background: #222;
+    border-top: 0.0625rem solid #000000;
+    .footerItem {
+        position: relative;
+        display: flex;
+        flex: 1;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        vertical-align: center;
+        .footerItem-center {
+            display: flex;
+            flex: 1;
+            justify-content: center;
+            align-items: center;
+            height: 2.1875rem;
+            border-right: 0.0625rem solid #fff;
+            img {
+                width: 1.375rem;
+                height: 1.375rem;
+                margin-right: 0.375rem;
+            }
+            p {
+                color: #fff;
+                font-size: 1rem;
+                align-self: center;
+            }
+        }
+        
+    }
+     .footerItem:last-child{
+         .footerItem-center {
+             border: none;
+         }
+     }
+}

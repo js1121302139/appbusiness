@@ -1,0 +1,133 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../../../css/pullToRefresh.css" />
+		<link href="../../../css/page/work/jsdentail.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<div id="clearingDentail">
+			<header class="mui-bar topBar mui-bar-nav">
+				<a class="mui-action-back topBack-ico mui-pull-left"></a>
+				<h1 class="mui-title">结算明细</h1>
+			</header>
+			<div class="mui-content">
+				<div id="wrapper" class="wrapperList">
+					<ul id="jsList">
+						<li class="wrapperListItem" v-for="(item,key) in list">
+							<div class="orderLeft">
+								<div class="orderCode" v-text="'结算单号 : '+item.code">
+									<span class="orderTxt">结算单号<i></i></span>:132456987212
+								</div>
+								<div :class="'state state'+item.state" v-html="'进度:' +'<span>'+dentailState[item.state]+'</span>'">
+									<span class="orderTxt">进度<i></i></span>: <span>审核中</span>
+								</div>
+								<div class="orderDate" v-text="'结算时间:'+item.createTime">
+									<span class="orderTxt">结算时间<i></i></span>2017-02-11 11:02
+								</div>
+
+							</div>
+							<div class="orderRight">
+								<div class=" withdrawals" v-text="'结算:'+item.money">
+									结算955.55
+								</div>
+								<div class="balance" v-text="">
+									<!--余额10000000-->
+								</div>
+							</div>
+						</li>
+						<!--<li class="wrapperListItem">
+							<div class="orderLeft">
+								<div class="orderCode orderinfo" />
+									<span class="orderTxt">结算单号<i></i></span>:132456987212
+								</div>
+								<div class="'state state orderinfo">
+									<span class="orderTxt">进度<i></i></span>:审核中
+								</div>
+								<div class="orderDate orderinfo" >
+									<span class="orderTxt">结算时间<i></i></span> ：2017-02-11 11:02
+								</div>
+
+							</div>
+							<div class="orderRight">
+								<div class=" withdrawals" >
+									结算955.55
+								</div>
+								<div class="balance" >
+									余额10000000
+								</div>
+							</div>
+						</li>-->
+					</ul>
+				</div>
+			</div>
+			<div class="isNoData" v-if="isNoData" :class="{scale1:isNoData}">
+				<div class="isNoDataInfo mui-text-center">
+					<div class="isNoDataBg"></div>
+					<p class="isNoDataTit">暂无结算明细</p>
+					<p>不妨去结算一单再来看看？</p>
+				</div>
+			</div>
+		</div>
+		</div>
+		<script>
+		</script>
+
+	</body>
+	<script type="text/javascript" src="../../../js/mui.min.js"></script>
+	<script type="text/javascript" src="../../../js/md5.min.js"></script>
+	<script type="text/javascript" src="../../../js/muihelper.js"></script>
+	<script type="text/javascript" src="../../../js/iscroll.js"></script>
+	<script type="text/javascript" src="../../../js/pullToRefresh.js"></script>
+	<script src="../../../js/vue.min.js"></script>
+	<script>
+		var Vue = new Vue({
+			el: '#clearingDentail',
+			data: function() {
+				return {
+					list: [],
+					isNoData: false,
+					dentailState: {
+						1: '审核中',
+						2: '审核通过',
+						3: '已打款',
+						5: '审核失败',
+						null: '已打款'
+					},
+				}
+			},
+			created: function() {
+				var _this = this;
+				mui.plusReady(function() {
+					_this.getSettleDetail(function(resData) {
+						_this.list = resData;
+					})
+				})
+			},
+			mounted: function() {
+
+			},
+			methods: {
+				getSettleDetail: function(callBack) {
+					var sendData = {
+						config: {},
+						data_Config: [
+							'merchantCode=' + Fun_App.getdata('merchantId')
+						],
+						fun_Success: function(resData) {
+							callBack(resData.data);
+						}
+					}
+					Fun_App.ExEncryptionAjax('member-service/mem/merchantAcct/getSettleDetail', sendData, '', 'post', 'abc')
+				}
+
+			}
+		})
+	</script>
+
+</html>

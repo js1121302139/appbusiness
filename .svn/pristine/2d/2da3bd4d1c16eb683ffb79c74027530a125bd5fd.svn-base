@@ -1,0 +1,187 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../../../css/mui.picker.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/newAddRec.css" />
+	</head>
+
+	<body>
+
+		<div id="newAddRec">
+			<header class="mui-bar topBar mui-bar-nav">
+				<a class="mui-action-back topBack-ico mui-pull-left"></a>
+				<h1 class="mui-title" v-text="pageTit+'充值'">新建充值</h1>
+				<!--<span id="Topactivity" class="mui-btn  Topactivity mui-btn-blue mui-btn-link mui-pull-right" @click="open">创建活动</span>-->
+			</header>
+			<div class="mui-content">
+				<div class="newAddRecCard"> 
+					<div class="input"> 
+						<input type="text" v-model="pageData.listPrice" placeholder="请输入面额" />
+					</div>
+				</div>
+				<div class="newRecInfo"> 
+					<div class="newRecItem">
+						<span class="tit">充值卡名称</span>
+						<input type="text" :value="pageData.offerName" v-model="pageData.offerName" placeholder="充值100···" />
+						<span> </span>
+					</div>
+					<div class="newRecItem">
+						<span class="tit">售卖折扣</span>
+						<input type="number" v-model="pageData.discount" placeholder="请输入折扣(如0.5)" />
+						<span>折</span>
+					</div>
+					<div class="newRecItem">
+						<span class="tit">售卖金额</span>
+						<input type="number" :value="pageData.discountPrice" disabled="" pattern="[0-9*]" placeholder="" />
+						<span>元</span>
+					</div>
+					<!--<div class="newRecItem">
+						<span class="tit">上架数量</span>
+						<input type="number" v-model="pageData.offerNum" disabled="" pattern="[0-9*]" placeholder="请输入上架数量" />
+						<span>份</span>
+					</div>-->
+				</div>
+				<div class="newRecDate">
+					<div class="newRecItem" @click="selectDate('startTime')">
+						<span class="tit">上架时间</span>
+						<span> {{pageData.startTime | isno}} </span>
+						<img src="../../../img/createPartyjt-ico.png"/>
+					</div>
+					<div class="newRecItem" @click="selectDate('endTime')">
+						<span class="tit">下架时间</span>
+						<span> {{pageData.endTime | isno}} </span>
+						<img src="../../../img/createPartyjt-ico.png"/>
+					</div>
+				</div>
+			</div>
+			<button data-loading-text="提交中" id="buttom" class="sure" @click="sureUpData" v-text="pageTit+'上架'">上架</button>
+		</div>
+		<script src="../../../js/mui.min.js"></script>
+		<script src="../../../js/mui.picker.min.js"></script>
+		<script type="text/javascript" src="../../../js/md5.min.js"></script>
+		<script src="../../../js/muihelper.js"></script>
+		<script src="../../../js/vue.min.js"></script>
+		<script type="text/javascript">
+			var Vue = new Vue({
+				el: '#newAddRec',
+				data: function() {
+					return {
+						merchantInfo: {},
+						pageTit: '新建',
+						upUrl: 'member-service/mem/merchantOffer/add',
+
+						// 折扣
+						pageData: {
+							// 面额
+							listPrice: '',
+							// 折扣
+							discount: '',
+							// 上架数量
+							offerNum: '10000',
+							// 上架时间
+							startTime: '',
+							// 下架时间
+							endTime: '',
+							// 售价
+							discountPrice: 0,
+							// 卡名称
+							offerName: ''
+						}
+					}
+				},
+				created: function() {
+					var _this = this;
+					mui.plusReady(function() {
+						var merchantId = atob(Fun_App.getdata('merchantId').replace(/@/g, '='));
+						var page = Fun_App.getextrasdata();
+						_this.merchantInfo = Fun_App.assign(eval("(" + Fun_App.getdata('merchantInfo') + ")"), {
+							merchantId: merchantId.split(':')[1]
+						});
+						if(page) {
+							_this.pageTit = '编辑';
+							_this.upUrl = 'member-service/mem/merchantOffer/update';
+							_this.pageData = {
+								id: page.id,
+								// 面额
+								listPrice: page.listPrice,
+								// 售卖金额
+								discountPrice: page.discountPrice,
+								//
+								discount: page.discount,
+								// 上架数量
+								offerNum: page.offerNum,
+								// 上架时间
+								startTime: page.startTime,
+								// 下架时间
+								endTime: page.endTime,
+								// 卡名称
+								offerName: page.offerName
+							}
+							return false;
+						}
+					})
+				},
+				methods: {
+					selectDate: function(type) {
+						var _this = this;
+						var picker = new mui.DtPicker();
+						var seconds = new Date().getSeconds();
+						picker.show(function(rs) {
+
+							_this.pageData[type] = rs.text + ":" + seconds;
+							if(_this.pageData.startTime !== '' && _this.pageData.endTime !== '') {
+								Fun_App.checkDateTime(_this.pageData.startTime, _this.pageData.endTime) == false ? _this.pageData.endTime = '' : '';
+							}
+							picker.dispose();
+						});
+					},
+					sureUpData: function() {
+						var datas = this.pageData;
+						datas.merId = this.merchantInfo.merchantId;
+						datas.merName = this.merchantInfo.merchantName;
+						var sendData = {
+							config: datas,
+							fun_Success: function(resData) {
+								mui.toast(resData.retMsg);
+								if(resData.retCode == 0) {
+									mui.fire(plus.webview.currentWebview().opener(), 'getList');
+									plus.webview.currentWebview().close();
+								}
+							}
+						}
+						console.log(JSON.stringify(datas))
+						if(Fun_App.findObj(this.pageData, []) !== false) {
+							Fun_App.ExEncryptionAjax(this.upUrl, sendData, '', 'post', 'abc')
+						} else {
+							mui.toast('还有数据没有填写完整！')
+						}
+					}
+				},
+				watch: {
+					pageData: {
+						handler: function(val, oldVal) {
+							val.discount = Number(val.discount).toFixed(2);
+							if(val.discount > 1) val.discount = 0.5;
+							this.pageData.discountPrice = Math.round(val.listPrice * val.discount);
+						},
+						deep: true
+					}
+				},
+				filters: {
+					isno: function(val) {
+						return val === '' ? '必填' : val;
+					},
+					isNum: function(val) {
+						console.log(val)
+					}
+				}
+			})
+		</script>
+	</body>
+
+</html>

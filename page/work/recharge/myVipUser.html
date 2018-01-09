@@ -1,0 +1,170 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../../../css/pullToRefresh.css" />
+		<link rel="stylesheet" type="text/css" href="css/myVipUser.css" />
+	</head>
+
+	<body>
+		<div id="myVipUser">
+			<header class="mui-bar topBar mui-bar-nav">
+				<a class="mui-action-back topBack-ico mui-pull-left"></a>
+				<h1 class="mui-title">我的vip用户</h1>
+				<!--<span id="Topactivity" class="mui-btn  Topactivity mui-btn-blue mui-btn-link mui-pull-right" @click="open">创建活动</span>-->
+			</header>
+			<div class="mui-content">
+				<div class="optionTab">
+					<div class="optionTabItem" :class="{active:item.active}" @click="changeTab(item)" v-for="item in tabBar">
+						<p v-text="item.titName">总额</p>
+						<img src="img/myVipUser-ico.png" v-show="!item.active" />
+						<img src="img/myVipUser-active-ico.png" v-show="item.active" />
+					</div>
+					<!--<div class="optionTabItem">
+						<p>余额</p>
+						<img src="img/myVipUser-ico.png" />
+					</div>
+					<div class="optionTabItem">
+						<p>消费次数</p>
+						<img src="img/myVipUser-ico.png" />
+					</div>
+					<div class="optionTabItem">
+						<p>最后消费</p>
+						<img src="img/myVipUser-ico.png" />
+					</div>-->
+
+					<div id="wrapper" class="userLsit">
+						<ul>
+							<li :key="item" v-for="item in pageList" @click="open('userRecHistory',item)">
+								<div class="userLsitItem">
+									<div class="userInfo">
+										<div class="userHeader">
+											<img src="../../../images/60x60.gif" />
+										</div>
+										<div class="userRecInfo mui-ellipsis">
+											<p class="userName" v-text="item.memName">用户名</p>
+											<p v-text="'首充时间:'"></p>
+											<p v-text="'最后一次消费:'"></p>
+										</div>
+										<!--<div class="date">
+										<p v-text="'首充时间:'+item.statusTime"></p>
+										<p v-text="'最后一次消费:'+item.endTime"></p>
+									</div>-->
+									</div>
+									<div class="recInfo">
+										<div class="recInfoItem">
+											<!--<p v-text="item.rechargeSum">200</p>-->
+											<p v-text="11">200</p>
+											<h1>充值总额</h1>
+
+										</div>
+										<div class="recInfoItem">
+											<p v-text="item.balance">200</p>
+											<h1>卡内余额</h1>
+										</div>
+										<div class="recInfoItem">
+											<p v-text="88">200</p>
+											<h1>消费次数</h1>
+										</div>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<script src="../../../js/mui.min.js"></script>
+			<script type="text/javascript" src="../../../js/fas.js"></script>
+			<script type="text/javascript" src="../../../js/md5.min.js"></script>
+			<script type="text/javascript" src="../../../js/iscroll.js"></script>
+			<script type="text/javascript" src="../../../js/pullToRefresh.js"></script>
+			<script src="../../../js/muihelper.js"></script>
+			<script src="../../../js/vue.min.js"></script>
+			<script type="text/javascript">
+				var Vue = new Vue({
+					el: "#myVipUser",
+					data: function() {
+						return {
+							tabBar: [{
+									titName: '总额',
+									active: false,
+									type: 'rechargeSum'
+								},
+								{
+									titName: '余额',
+									active: false,
+									type: 'balance'
+								},
+								{
+									titName: '消费次数',
+									active: false,
+									type: 'times'
+								},
+								{
+									titName: '最后消费',
+									active: false,
+									type: 'balance'
+								}
+							],
+							pageList: []
+						}
+					},
+					created: function() {
+						var _this = this;
+						mui.plusReady(function() {
+							_this.getList(_this.pageNo, function(resData) {
+								_this.pageList = resData.data;
+								console.log(JSON.stringify(_this.pageList))
+								_this.totalNum = resData.total;
+							})
+						})
+					},
+					mounted: function() {
+						refresher.init({
+							id: "wrapper",
+							pullDownAction: function() {
+								wrapper.refresh();
+							},
+							pullUpAction: function() {
+								wrapper.refresh();
+							}
+						});
+					},
+					methods: {
+						// 
+						changeTab: function(item) {
+							var _this = this;
+							for(var i = 0; i < this.tabBar.length; i++) {
+								this.tabBar[i].active = false;
+							}
+							item.active = true;
+							var _order = [];
+//							for(var i = 0; i < this.pageList.length; i++) {
+//								this.pageList[i][type] =  
+//							}
+						},
+						getList: function(pageNo, callBack) {
+							var sendData = {
+								config: {
+									merchantCode: Fun_App.getdata('merchantId')
+								},
+								fun_Success: function(resData) {
+									callBack.call(this, resData);
+								}
+							}
+							Fun_App.ExEncryptionAjax('member-service/mem/merchantAcct/getVipMember', sendData, '', 'post', 'abc')
+						},
+						open: function(url, data) {
+							Fun_App.openWin(url + ".html", 'pop-in', data)
+						}
+					},
+					computed: {}
+				})
+			</script>
+	</body>
+
+</html>

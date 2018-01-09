@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../../css/page/work/fetchSonign.css" />
+		<link rel="stylesheet" href="../../css/page/work/fetchSonign.css" />
+	</head>
+
+	<body>
+		<div id="myuser">
+			<header class="mui-bar topBar mui-bar-nav">
+				<a class="mui-action-back topBack-ico mui-pull-left"></a>
+				<h1 class="mui-title">用户寄存信息</h1>
+			</header>
+			<div class="mui-content">
+				<!--寄存信息-->
+				<div class="sonsignInfo">
+					<div class="infoTit">
+						<p v-text="pageData.merchantName">老友记海鲜火锅</p>
+						<p class="infoTitDate" v-text="pageData.effectTime+' 到期'">2017-12-6 23:00 到期</p>
+					</div>
+					<div class="sonsignList">
+						<div class="sonsignListItem" v-for="item in pageData.sonsignList">
+							<p v-text="item.name">佛罗里达老百威</p> <span v-text="'x ' +item.num + item.unit"> 24瓶</span>
+						</div>
+					</div>
+					<div class="sonsignInfoFooter">
+						<p v-text="'寄存单号:'+pageData.orderNumber">1273163187631873</p>
+						<p v-text="'寄存时间:'+pageData.createTime">寄存时间：2017-11-15 21:20</p>
+					</div>
+				</div>
+				<!--消费信息-->
+				<div class="consumptionInfo">
+					<div class="infoTit">
+						<p>消费单信息</p>
+					</div>
+					<div class="consumptionItem">
+						<span>用户名:</span>
+						<span v-text="pageData.memName">用户名</span>
+					</div>
+					<!--<div class="consumptionItem">
+						<span>订单金额:</span>
+						<span  v-text="pageData.memName">用户名</span>
+					</div>-->
+					<div class="consumptionItem">
+						<span>订单号:</span>
+						<span v-text="pageData.orderNumber">用户名</span>
+					</div>
+					<div class="consumptionItem">
+						<span>下单时间:</span>
+						<span v-text="pageData.createTime">用户名</span>
+					</div>
+				</div>
+				<div class="addSuccess" :class="{isok:isSuccess}">
+					<div class="addSuccessInfo mui-text-center">
+						<div class="addSuccessInfoTrue">
+
+						</div>
+						<p class="addSuccessTxt">领取成功</p>
+					</div>
+				</div>
+				<button data-loading-text="领取中" v-if="showBtn" id="buttom" class="sure" @click="chk">确认领取</button>
+			</div>
+		</div>
+		<script src="../../js/mui.min.js"></script>
+		<script src="../../js/muihelper.js"></script>
+		<script src="../../js/vue.min.js"></script>
+		<script src="../../js/md5.min.js"></script>
+		<script src="../../js/page/work/fetchSonign.js"></script>
+		<script type="text/javascript">
+		</script>
+	</body>
+
+</html>

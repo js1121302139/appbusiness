@@ -1,0 +1,291 @@
+@import "../common.less";
+body {
+    background-color: #fff;
+}
+
+//头部的样式
+.header {
+    position: relative;
+    height: 12.5rem;
+    background: url(../../../img/home-header-bg.png) left center no-repeat;
+    background-size: cover;
+    //background: -webkit-gradient(linear, left top, left bottom, from(#00aeff), to(#218bea));
+    //background: linear-gradient(#00aeff, #218bea);
+    //border-radius: 0 0 1.5rem 1.5rem;
+    overflow: visible;
+    //顶部的消息提醒和二维码 
+    .funBar {
+        position: absolute;
+        width: 100%;
+        height: 1.37rem;
+        line-height: 1.37rem;
+        top: 2.06rem;
+        right: 0;
+        padding: 0 0.75rem;
+        .changeShop {
+            font-size: 0.81rem;
+            color: #fff;
+        }
+        .funBarIcoBtn {
+            float: right;
+            .msg {
+                background-size: cover;
+                position: relative;
+                margin-right: 0.93rem;
+                width: 1.37rem;
+                height: 1.37rem;
+                display: inline-block;
+                background: url(../../../img/work-msgico.png) left center no-repeat;
+                background-size: 1.37rem 1.37rem;
+                .mui-badge-warning {
+                    position: absolute;
+                    right: -0.43rem;
+                    top: -0.25rem;
+                }
+                .mui-badge {
+                    padding: 0;
+                    width: 1rem;
+                    height: 1rem;
+                    line-height: 1rem;
+                    text-align: center;
+                    font-size: 0.75rem;
+                    color: #fff;
+                }
+            }
+            .qrcode {
+                width: 1.37rem;
+                height: 1.37rem;
+                display: inline-block;
+                background: url(../../../img/work-qrcode.png) left center no-repeat;
+                background-size: 1.37rem 1.37rem;
+            }
+        }
+    }
+    //收益的信息
+    .shopCard {
+        position: relative;
+        width: 100%;
+        height: 10.62rem;
+        padding: 0 0.75rem;
+        top: 4.06rem;
+        z-index: 1;
+        .f2cDay {
+            position: absolute; 
+            top: -0.15625rem;
+            right: 0.5rem;
+            width: 4.1875rem;
+            height: 4.1875rem;
+            overflow: hidden;
+            background: url(../../../img/work-f2cDay.png) top right no-repeat;
+            background-size: cover;
+            .f2cTxt {
+                font-size: 0.75rem;
+                position: absolute;
+                line-height: 0.875rem;
+                width: 200%;
+                top: 0.5625rem;
+                text-align: center;
+                -webkit-transform: rotateZ(45deg);
+                        transform: rotateZ(45deg);
+                left: -1.375rem;
+                p {
+                    color: #fff;
+                }
+            }
+        }
+        .profit {
+            background: #fff;
+            background: url(../../../img/home-profit-bg.png)left top no-repeat;
+            background-size: 100% 100%;
+            margin: 0 auto;
+            border-radius: 0.37rem;
+            p {
+                color: white;
+                margin: 0;
+            }
+            #logoimg {
+                width:4.37rem ;
+                height: 4.37rem;
+                border-radius: 2.18rem;
+                -webkit-box-shadow: 0 0 0 0.18rem #bebebf;
+                        box-shadow: 0 0 0 0.18rem #bebebf;
+            }
+            .business {
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                -webkit-box-flex: 1;
+                    -ms-flex: 1;
+                        flex: 1;
+                width: 100%;
+                padding-left: 0.93rem;
+                -webkit-box-align: center;
+                    -ms-flex-align: center;
+                        align-items: center;
+                .headerImg {
+                    position: relative;
+                     width:4.37rem ;
+                height: 4.37rem;
+                    margin-right: 0.56rem;
+                    top: -0.4rem;
+                }
+                .businessInfo {
+                    -webkit-box-flex: 1;
+                        -ms-flex: 1;
+                            flex: 1;
+                    padding-right: 1.43rem;
+                    line-height: 0.9375rem;
+                    .businessName {
+                        margin-bottom: 0.62rem;
+                    }
+                    .businessAddress {
+                        background: url(../../../img/work-postiom.png) left center no-repeat;
+                        background-size: 1rem 1rem;
+                        text-indent: 1rem;
+                        line-height: 1rem;
+                        font-size: 0.8125rem;
+                        height: 1rem;
+                    }
+                }
+            }
+            .infoBoard {
+                position: relative;
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                height: 5.15rem;
+                -webkit-box-align: end;
+                    -ms-flex-align: end;
+                        align-items: flex-end;
+                overflow: hidden;
+                font-size: 0;
+                &:after {
+                    position: absolute;
+                    content: "";
+                    top: 0.93rem;
+                    display: block;
+                    height: 0.06rem;
+                    left: 0;
+                    right: 0;
+                    margin: 0 auto;
+                    width: 95%;
+                    background: #222;
+                }
+                div {
+                    -webkit-box-flex: 1;
+                        -ms-flex: 1;
+                            flex: 1;
+                    height: 3.75rem;
+                    -webkit-box-orient: vertical;
+                    -webkit-box-direction: normal;
+                        -ms-flex-direction: column;
+                            flex-direction: column;
+                    -webkit-box-align: center;
+                        -ms-flex-align: center;
+                            align-items: center;
+                    position: relative;
+                    &:after {
+                        content: " ";
+                        display: block;
+                        position: absolute;
+                        right: 0;
+                        top: -0.62rem;
+                        bottom: 0;
+                        margin: auto;
+                        width: 0.06rem;
+                        height: 2.06rem;
+                        background-color: #111;
+                    }
+                    p {
+                        -webkit-box-flex: 1;
+                            -ms-flex: 1;
+                                flex: 1;
+                        padding: 0.5rem 0 0.12rem 0;
+                        font-size: 0.75rem;
+                        margin-bottom: 0.75rem;
+                    }
+                    span {
+                        -webkit-box-flex: 1;
+                            -ms-flex: 1;
+                                flex: 1;
+                    }
+                }
+                div:last-child:after {
+                    display: none;
+                }
+                .infoBoard {}
+                .profitCount {
+                    color: #d7b374;
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+}
+
+//下面的功能列表
+.funLsit {
+    margin-top: 2.12rem;
+    .mui-grid-9 {
+        background: white;
+        .mui-table-view-cell {
+            margin-bottom: -0.06rem;
+        }
+        .funLsit-icocommon {
+            width: 2.5rem;
+            height: 2rem;
+        }
+        .funLsit-ico1 {
+            background: url(../../../img/work-yg.png) center center no-repeat;
+            background-size: cover;
+        }
+        .funLsit-ico2 {
+            background: url(../../../img/work-tab-02.png) center center no-repeat;
+            background-size: cover;
+        }
+        .funLsit-ico3 {
+            background: url(../../../img/work-tab-03.png) center center no-repeat;
+            background-size: cover;
+        }
+        .funLsit-ico4 {
+            background: url(../../../img/work-tab-04.png) center center no-repeat;
+            background-size: cover;
+        }
+        .funLsit-ico5 {
+            background: url(../../../img/work-tab-05.png) center center no-repeat;
+            background-size: cover;
+        }
+        .funLsit-ico6 {
+            background: url(../../../img/work-tab-06.png) center center no-repeat;
+            background-size: cover;
+        }
+        .funLsit-ico7 {
+            background: url(../../../img/work-tab-07.png) center center no-repeat;
+            background-size: cover;
+        }
+        .funLsit-ico8 {
+            background: url(../../../img/work-tab-08.png) center center no-repeat;
+            background-size: cover;
+        }
+        .funLsit-ico9 {
+            background: url(../../../img/work-tab-09.png) center center no-repeat;
+            background-size: cover;
+        }
+        .funLsit-ico10 {
+            background: url(../../../img/work-partyAdmin-ico.png) center center no-repeat;
+            background-size: cover;
+        }
+        .funLsit-ico11 {
+            background: url(../../../img/work-reserve-ico.png) center center no-repeat;
+            background-size: cover;
+        }
+        .funLsit-ico12 {
+            background: url(../../../img/work-scannerQrCode.png) center center no-repeat;
+            background-size: cover;
+        }
+        .funLsit-ico13 { 
+            background: url(../../../img/work-songsign-ico.png) center center no-repeat;
+            background-size: contain;
+        }
+    }
+}

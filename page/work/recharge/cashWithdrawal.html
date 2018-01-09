@@ -1,0 +1,232 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../../../css/pullToRefresh.css" />
+		<link rel="stylesheet" type="text/css" href="css/cashWithdrawal.css" />
+	</head>
+
+	<body>
+		<div id="cashWithdrawal">
+			<header class="mui-bar topBar mui-bar-nav">
+				<a class="mui-action-back topBack-ico mui-pull-left"></a>
+				<h1 class="mui-title">提现</h1>
+				<span id="Topactivity" class="mui-btn  Topactivity mui-btn-blue mui-btn-link mui-pull-right" @click="open('./clearingDentail')">结算明细</span>
+			</header>
+			<div class="mui-content">
+				<div class="recCard">
+					<div class="todayRec">
+						<h2 class="todayRecMoney" v-text="topData.allMoney">999</h2>
+						<div class="todayRecTit">
+							<img src="img/todayrecMoney.png" />
+							<p>今日充值金额</p>
+						</div>
+					</div>
+					<div class="todayRecInfo">
+						<div class="todayRecItem">
+							<p v-text="settleMoneyData.already">35</p>
+							<h1>已结算金额</h1>
+
+						</div>
+						<div class="todayRecItem">
+							<p v-text="settleMoneyData.all">35</p>
+							<h1>可结算金额<img src="img/question.png"/></h1>
+
+						</div>
+					</div>
+				</div>
+
+				<!--<div id="wrapper" class="cashWithdrawalLsit">
+					<ul>
+						<li>
+							<div class="detailItem">
+								<div class="detailItemDate">
+									<p>时间</p>
+									<p>07-11</p>
+								</div>
+								<div class="onlineRec">
+									<p>线上充值</p>
+									<p>+1999.00</p>
+								</div>
+							</div>
+
+						</li>
+					</ul>
+				</div>-->
+				<div class="clickItem" :key="item" v-for="item in pageData">
+					<div class="pullDownItemHeader" @click="showDrop(item)">
+						<h1 v-text="item.payTime">2017-11</h1>
+						<div class="recInfo">
+							<p v-text="item.pSum">充值222元</p>
+							<img :class="{trdropDown:item.show}" src="img/dropDown-ico.png" />
+						</div>
+						<!--<p v-text="item.mSum">99人</p>-->
+					</div>
+					<div class="pullDownList" v-show="item.show">
+						<div class="detailItem" v-for="dayItem in item.data" @click="open('./dayRecHistory',dayItem)">
+							<div class="detailItemDate">
+								<p v-text="dayItem.payTime">07-11</p>
+							</div>
+							<div class="onlineRec">
+								<p v-text="dayItem.mSum+'人充值'">+1999.00</p>
+							</div>
+							<div class="onlineRec">
+								<p v-text="'+'+dayItem.pSum">+1999.00</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<button data-loading-text="提交中" id="buttom" class="sure" @click="open('./applysettlement')">确认提交</button>
+		</div>
+
+	</body>
+	<script src="../../../js/mui.min.js"></script>
+	<script type="text/javascript" src="../../../js/md5.min.js"></script>
+	<script src="../../../js/muihelper.js"></script>
+	<script type="text/javascript" src="../../../js/iscroll.js"></script>
+	<script type="text/javascript" src="../../../js/pullToRefresh.js"></script>
+	<script src="../../../js/vue.min.js"></script>
+	<script type="text/javascript">
+		var Vue = new Vue({
+			el: "#cashWithdrawal",
+			data: function() {
+				return {
+					topData: {},
+					settleMoneyData: {},
+					pageData: []
+				}
+			},
+			created: function() {
+				var _this = this;
+				mui.plusReady(function() {
+					_this.getAllsum(function(resData) {
+						_this.topData.allMoney = resData.data.pSum;
+					})
+					_this.getSettleMoney(function(resData) {
+						_this.settleMoneyData = resData;
+						console.log(JSON.stringify(_this.settleMoneyData))
+					})
+					_this.getYearDetail(function(resData) {
+						console.log(JSON.stringify(resData))
+						for(var i = 0; i < resData.data.length; i++) {
+							resData.data[i].show = false;
+							resData.data[i].data = [];
+						}
+						_this.pageData = resData.data;
+						console.log(JSON.stringify(_this.pageData))
+					})
+				})
+			},
+			mounted: function() {
+				/*refresher.init({
+					id: "wrapper",
+					pullDownAction: function() {},
+					pullUpAction: function() {
+						wrapper.refresh();
+					}
+				});*/
+			},
+			methods: {
+				getAllsum: function(callBack) {
+					var sendData = {
+						config: {
+							merchantCode: Fun_App.getdata('merchantId')
+						},
+						fun_Success: function(resData) {
+							callBack(resData);
+						}
+					}
+					Fun_App.ExEncryptionAjax('member-service/mem/merchantAcct/getAllSum', sendData, '', 'post', 'abc')
+				},
+				getSettleMoney: function(callBack) {
+					var sendData = {
+						config: {},
+						data_Config: [
+							'merchantCode=' + Fun_App.getdata('merchantId')
+						],
+						fun_Success: function(resData) {
+							callBack(resData.data);
+						}
+					}
+					Fun_App.ExEncryptionAjax('member-service/mem/merchantAcct/getSettleMoney', sendData, '', 'post', 'abc')
+				},
+				// 充值卡一年的充值记录
+				getYearDetail: function(callBack) {
+					var sendData = {
+						config: {
+							merchantOfferId: ''
+						},
+						fun_Success: function(resData) {
+							callBack.call(this, resData);
+						}
+					}
+					Fun_App.ExEncryptionAjax('member-service/mem/merchantAcct/getMonthDetail', sendData, '', 'post', 'abc')
+				},
+				// 每月充值记录
+				getConsumptionYear: function(callBack) {
+					var sendData = {
+						config: {},
+						data_Config: [],
+						fun_Success: function(resData) {
+							callBack(resData.data);
+						}
+					}
+					Fun_App.ExEncryptionAjax('member-service/mem/getYearConsume', sendData, '', 'post', 'abc')
+				},
+				// 点击后的每天充值记录
+				getMouthDetail: function(item, callBack) {
+					var sendData = {
+						config: {},
+						data_Config: [
+							'day=' + item.payTime
+						],
+						fun_Success: function(resData) {
+							callBack(resData.data);
+
+						}
+					}
+					Fun_App.ExEncryptionAjax('member-service/mem/merchantAcct/getDayDetail', sendData, '', 'post', 'abc')
+				},
+				// 显示展开项目
+				showDrop: function(item) {
+					item.show = !item.show;
+					item.data = [];
+					// 判断当前是否是充值
+					if(item.show) this.getMouthDetail(item, function(resData) {
+						item.data = resData;
+					});
+				},
+				// 打开页面
+
+				open: function(url, data) {
+					if(url === './applysettlement') {
+						if(!this.settleMoneyData.all) {
+							mui.toast('结算条件不足!');
+							return false;
+						}
+					}var _this = this ;
+					mui.plusReady(function() {
+						Fun_App.openWin(url + ".html", 'pop-in', {
+							data: data,
+							type: 'recharge',
+							status: false,
+							money: _this.settleMoneyData.all
+						})
+					})
+				},
+				alertWin: function() {
+					mui.alert('message', 'title', 'btnValue', function(e) {
+						e.index
+					}, 'div')
+				}
+			}
+		})
+	</script>
+
+</html>

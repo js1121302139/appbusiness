@@ -1,0 +1,256 @@
+// 充值金额卡片
+@fontY: #D7B374;
+.recCard() {
+    .recCard {
+        display: flex;
+        flex: 1;
+        height: 10.625rem;
+        padding: 0 0.75rem;
+        flex-direction: column;
+        background: #fff;
+        .todayRec {
+            display: flex;
+            flex-direction: column;
+            padding: 1.25rem 0 0.9375rem;
+            text-align: center;
+            border-bottom: #E5E5E5 0.0625rem solid;
+            .todayRecMoney {
+                color: @fontY;
+                font-size: 2.25rem;
+                margin-bottom: 0.625rem;
+            }
+            .todayRecTit {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                p {
+                    color: #333;
+                    font-size: 0.875rem;
+                }
+                img {
+                    width: 1.375rem;
+                    height: 1.375rem;
+                }
+            }
+        }
+        .todayRecInfo {
+            display: flex;
+            flex: 1;
+            justify-content: space-around;
+            width: 100%;
+            align-items: center;
+            .todayRecItem {
+                display: flex;
+                text-align: center;
+                flex: 1;
+                justify-content: space-between;
+                height: 2.8125rem;
+                flex-direction: column;
+                border-right: 0.0625rem solid #E5E5E5;
+                p {
+                    color: @fontY;
+                    font-size: 1.125rem;
+                    margin-bottom: 0.5625rem;
+                }
+                h1 {
+                    color: #333;
+                    font-size: 0.75rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    img {}
+                }
+                img {
+                    width: 0.9375rem;
+                    height: 0.9375rem;
+                }
+            }
+        }
+        .todayRecInfo {
+            .todayRecItem:last-child {
+                border: none;
+            }
+        }
+    }
+}
+
+// 记录项
+.historyItem() {
+    .historyItem {
+        display: flex;
+        flex: 1;
+        height: 6.46875rem;
+        background: #fff;
+        margin-bottom: 0.625rem;
+        flex-direction: column;
+        padding: 0 0.75rem;
+        div {
+            display: flex;
+            margin-bottom: 0.78125rem;
+            justify-content: space-between;
+            .recName {
+                font-size: 1rem;
+                color: #333;
+            }
+            .recPrice {
+                font-size: 1.25rem;
+                color: #333;
+            }
+            .recTime,
+            .recType {
+                font-size: 0.75rem;
+                color: #999;
+            }
+        }
+        div:last-child {
+            margin: 0;
+        }
+        .historyItemTit {
+            align-items: center;
+            justify-content: space-between;
+            height: 2.1875rem;
+            margin-bottom: 0.9375rem;
+            border-bottom: #d8d8d8 0.0625rem solid;
+            p {
+                color: #333;
+                font-size: 0.8125rem;
+            }
+        }
+    }
+}
+
+// 明细标题
+.detailPageTit() {
+    .detailPageTit {
+        display: flex;
+        flex: 1;
+        height: 2.8125rem;
+        align-items: center;
+        justify-content: space-between;
+        background: #fff;
+        .detailPageTitItem {
+            display: flex;
+            flex: 1;
+            height: 100%;
+            justify-content: center;
+            span {
+                display: inline-block;
+                height: 100%;
+                align-self: center;
+                color: #999;
+                line-height: 2.8125rem;
+                padding: 0 0.3125rem;
+            }
+        }
+        .active {
+            color: #333 !important;
+            border-bottom: 0.0625rem solid #333;
+        }
+    }
+}
+
+// 明细项
+.detailItem() {
+    .detailItem {
+        height: 2.6875rem;
+        display: flex;
+        flex: 1;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.3125rem 0.75rem;
+        border-bottom: 1px solid #e5e5e5;
+        background: #FAFAFA;
+        p {
+            color: #333;
+            font-size: 0.8125rem;
+            text-align: center;
+        }
+        &>div {
+            display: flex;
+        }
+    }
+}
+
+// 明细卡片
+.detailCard () {
+    .detailCard {
+        display: flex;
+        flex: 1;
+        justify-content: space-between;
+        .detailCardMoney,
+        .detailCardPeoples {
+            flex: 1;
+            text-align: center;
+        }
+    }
+}
+
+// 点击展开项
+.clickItem() {
+    .clickItem {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        .pullDownItemHeader {
+            position: relative;
+            display: flex;
+            flex: 1;
+            align-items: center;
+            height: 3.125rem;
+            background: #fff;
+            justify-content: space-between;
+            padding: 0 0.5rem;
+            &:after {
+                content: '';
+                display: block;
+                height: 1px;
+                position: absolute;
+                background: #E5E5E5;
+                bottom: 0px;
+                left: 0;
+                width: 100%;
+            }
+            .recInfo {
+                display: flex;
+                align-items: center;
+                p {
+                    color: @fontY;
+                    font-size: 0.8125rem;
+                }
+                img {
+                    transition: all .25s;
+                    width: 0.9375rem;
+                    height: 0.9375rem;
+                }
+                .trdropDown {
+                    position: relative;
+                    transform: rotate(180deg);
+                }
+            }
+        }
+        .pullDownList {
+            //display: none;
+            padding: 0 8px;
+            background: #fafafa;
+            border-bottom: 0.0625rem solid #E5E5E5;
+            .detailItem();
+            .detailItem:last-child {
+                border-bottom: none;
+            }
+        }
+    }
+}
+
+// 下拉刷新上啦加载
+.wrapperList(@top, @bottom, @pullDown, @pullUp) {
+    .wrapperList {
+        top: @top;
+        bottom: @bottom;
+        .pullDown {
+            display: @pullDown ;
+        }
+        .pullUp {
+            display: @pullUp ;
+        }
+    }
+}

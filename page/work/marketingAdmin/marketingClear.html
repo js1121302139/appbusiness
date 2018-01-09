@@ -1,0 +1,141 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../../../css/page/common.css" />
+		<link rel="stylesheet" type="text/css" href="./css/marketingClear.css" />
+	</head>
+
+	<body>
+		<div id="marketingClear">
+			<header class="mui-bar topBar mui-bar-nav">
+				<a class="mui-action-back topBack-ico mui-pull-left"></a>
+				<h1 class="mui-title">券核销</h1>
+				<!--<span id="Topactivity" class="mui-btn  Topactivity mui-btn-blue mui-btn-link mui-pull-right" @click="">新建</span>-->
+			</header>
+			<div class="mui-content">
+				<div class="clearHeade">
+					<p class="shopName" v-text="pageData.merchantName">老友记海鲜</p>
+					<div class="clearCard">
+						<div class="clearInfo">
+							<h1 v-text="pageData.refGoodName">澳洲大龙虾 *1</h1>
+							<p v-text="pageData.effectETime+'到期'">880980da</p>
+						</div>
+						<p class="tip">
+							备注：{{pageData.useCondition}}
+						</p>
+					</div>
+				</div>
+				<div class="clearList">
+					<div class="detailItem">
+						<p>用户名</p>
+						<p v-text="pageData.memberName">himini</p>
+					</div>
+					<div class="detailItem">
+						<p>券类型</p>
+						<p v-text="marketingType[pageData.type]"></p>
+					</div>
+					<div class="detailItem">
+						<p>券编号</p>
+						<p v-text="pageData.ticketNo">himini</p>
+					</div>
+				</div>
+				<div class="clearList">
+					<div class="detailItem">
+						<p>领券日期</p>
+						<p v-text="pageData.createTime">himini</p>
+					</div>
+					<div class="detailItem">
+						<p>到期日期</p>
+						<p v-text="pageData.effectETime">himini</p>
+					</div>
+				</div>
+			</div>
+			<button data-loading-text="提交中" id="buttom" class="sure" @click='clearTicket'>确认核销</button>
+		</div>
+		<script src="../../../js/mui.min.js"></script>
+		<script type="text/javascript" src="../../../js/fas.js" ></script>
+		<script type="text/javascript" src="../../../js/md5.min.js"></script>
+		<script type="text/javascript" src="../../../js/muihelper.js"></script>
+		<script type="text/javascript" src="../../../js/vue.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+			var Vue = new Vue({
+				el: '#marketingClear',
+				data: function() {
+					return {
+						// 获取到的券编码信息
+						pageData: {},
+						// 券编码
+						ticketNum: '',
+						// 券名称
+						marketingType: {
+							1: '现金券',
+							2: '菜品券',
+							3: '免单券',
+							4: '霸王餐',
+							5: '打折券',
+						}
+					}
+				},
+				created: function() {
+					var _this = this;
+					// 清除300ms延迟
+					document.addEventListener('DOMContentLoaded', function() {
+						FastClick.attach(document.body);
+					}, false);
+					mui.plusReady(function() {
+						// 获取扫描界面传来的券编码信息
+						_this.ticketNum = atob(Fun_App.getextrasdata()).split(',')[0];
+						// 关闭上一个页面
+						plus.webview.close(plus.webview.currentWebview().opener(),'none')
+						// 获取优惠券信息
+						_this.getTicketInfo()
+					})
+				},
+				methods: {
+					getTicketInfo: function() {
+						var _this = this ;
+						var sendData = {
+							config: {
+								// 优惠券id需要截取出后面的编码
+								'id': this.ticketNum.split(':')[1]
+							},
+							fun_Success: function(resData) {
+								_this.pageData = resData.data;
+							}
+						}
+						Fun_App.ExEncryptionAjax('order-service/ticket/member/get', sendData, '', 'get', 'merchant_query')
+					},
+					// 核销这张优惠券
+					clearTicket: function() {
+						var sendData = {
+							config: {
+								// 直接拿到传过来的券编码
+								ticketCode: btoa(this.ticketNum),
+								merToken: Fun_App.getdata('token')
+							},
+							fun_Success: function(resData) {
+								mui.toast(resData.retMsg)
+								if(resData.retCode===0){
+									Fun_App.openWin('./index.html','pop-in','核销');
+								}
+								console.log(JSON.stringify(resData))
+							}
+						}
+						mui.confirm('你确认核销这张券么？', '提示', ['取消', '确认'], function(e) {
+							if(e.index) {
+								Fun_App.ExEncryptionAjax('order-service/ticket/member/chkTicketCode', sendData, '', 'get', 'merchant_query');
+							}
+						}, 'div')
+					}
+				}
+			})
+		</script>
+	</body>
+
+</html>

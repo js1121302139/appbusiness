@@ -1,0 +1,219 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../../css/mui.picker.min.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/page/work/createParty.css" />
+	</head>
+
+	<body>
+		<header class="mui-bar topBar mui-bar-nav">
+			<a class="mui-action-back topBack-ico mui-pull-left"></a>
+			<h1 class="mui-title">玩咖管理</h1>
+		</header>
+		<div id="app">
+			<div class="mui-content">
+				<div class="partyForm">
+					<div class="partyFormItem partyName">
+						<div class="partyTitUpImg mui-text-center">
+							<img  @click="addmasterImg" :src="locaImg.masterImg==''?'../../images/createPartylogo.png':locaImg.masterImg" alt="">
+							<a href="JavaScript:;" ref="vue" id="partyNameUpImg" @click="addmasterImg">上传活动主图(必填)</a>
+						</div>
+						<div class="partyTit" id="partyTit">
+							<textarea placeholder="活动标题(必填15字)" @input="titleLen" v-model="data.theme" id="partyTitText" maxlength="15"></textarea>
+							<span class="textNum">
+                       ({{titLen}}/15)
+                    </span>
+						</div>
+					</div>
+					<div class="partyFormItem partyTit">
+						<input type="text" name="" id="" v-model="data.title" value="" placeholder="请输入副标题"/>
+						</div>
+					<div class="partyFormItem partyImg ">
+						<div class="partyFormItemTit partyImg-ico">
+							活动图片(必填)
+						</div>
+						<div class="partyImgList">
+
+							<!--<div class="partyImgItem">
+                        <img src="../../images/createPartylogo.png" alt="" />
+                    </div>-->
+							<div class="partyImgItem" :id="key" @click="removeImgBox('partyImgBox',locaImg.partyImgBox,'',key)" v-for="(item,key) in locaImg.partyImgBox">
+								<img :src="item" alt="" />
+							</div>
+							<a href="JavaScript:;" @click="addPartyImgs('partyImgBox')" class="addPartyImg"></a>
+						</div>
+						<p class="bz">备注:请上传两张图  图片大小:750*480</p>
+					</div>
+					
+					<div class="partyFormItem partyClass partyClass-ico">
+						<div class="partyFormItemTit">
+							活动类型(必填)
+						</div>
+						<div class="partyClassBtn mui-text-center">
+							<a href="javascript:;" @click="changePartyClass(3)" :class="{active:!isActive}">购票</a>
+							<a href="javascript:;" @click="changePartyClass(4)" :class="{active:isActive}">众筹</a>
+						</div>
+					</div>
+					<div class="partyFormItem partyDateAndMoney partyFormItem-ico">
+						<div class="partyFormItemTit">
+							活动时间与定价(必填)
+						</div>
+						<ul class="partyDateAndMoneyList">
+							<li class="partyDateAndMoneyListItem">
+								<span v-text="isActive?'众筹单价':'购票单价'">众筹单价</span> 
+								<input type="number" id="partyPrice" v-model.number="data.price" @blur="checkNum(data.price)" placeholder="请输入单价">
+							</li>
+							<li class="partyDateAndMoneyListItem">
+								<span v-text="isActive?'众筹人数':'购票人数'">众筹人数</span>
+								<input type="tel" pattern="\d*" id="peopleNum" v-model.number="data.number" placeholder="请输入人数">
+							</li>
+							<li class="partyDateAndMoneyListItem" v-show="isActive">
+								<span>众筹开始时间</span>
+								<div class="optionDate" @click="addTime('prepareStartTime')" id="prepareStartTime" v-text="data.prepareStartTime==''?'请选择':data.prepareStartTime"></div>
+								<img src="../../img/createPartyjt-ico.png" alt="">
+							</li>
+							<li class="partyDateAndMoneyListItem" v-show="isActive">
+								<span>众筹结束时间</span>
+								<div class="optionDate" @click="addTime('prepareEndTime')" id="prepareEndTime" v-text="data.prepareEndTime==''?'请选择':data.prepareEndTime"></div>
+								<img src="../../img/createPartyjt-ico.png" alt="">
+							</li>
+							<li class="partyDateAndMoneyListItem">
+								<span>活动起始时间</span>
+								<div class="optionDate" @click="addTime('startTime')" id="startTime" v-text="data.startTime==''?'请选择':data.startTime"></div>
+								<img src="../../img/createPartyjt-ico.png" alt="">
+							</li>
+							<li class="partyDateAndMoneyListItem">
+								<span>活动结束时间</span>
+								<div class="optionDate" @click="addTime('endTime')" id="endTime" v-text="data.endTime==''?'请选择':data.endTime"></div>
+								<img src="../../img/createPartyjt-ico.png" alt="">
+							</li>
+						</ul>
+					</div>
+					<div class="partyFormItem partyAddress partyAddress-ico" v-if="isMaster">
+						<div class="partyFormItemTit">
+							
+							常驻地点选择
+						</div>
+						<ol class="partyPackageList">
+							<!--<li class="partyPackageItem">
+							<span>1.1400-14:30 活动签到,集合1.1400-14:30 活动签到,集合1.1400-14:30 活动签到,集合1.1400-14:30 活动签到,集合</span>
+							<a href="JavaScript:;" class="delItem">del</a>
+						</li>-->
+							<!--<li class="partyPackageItem">
+							<span>1.1400-14:30 活动签到,集合</span>
+							<a href="JavaScript:;" class="delItem">del</a>
+						</li>-->
+							<li class="partyPackageItem" v-for="(item,key) in addressLsit" 
+								:key="key"
+								:class="{active:item.status==1}"
+								@click="setaddress(item,key)"
+							>
+							<span v-text="item.location" >
+								
+							</span>
+							<img src="../../img/createParty-selectAddr-ico.png"/>
+							</li> 
+						</ol> 
+						<a href="JavaScript:;" id="partyCourse" class="addBtn addLi addMenu" @click="openAddressWin">
+							<img src="../../img/createPartyAdd-ico.png" alt="">
+							<span>设置常驻地点</span>
+						</a>
+					</div>
+					<div class="partyFormItem partyPackage partyInfo partyInfo-ico">
+						<div class="partyFormItemTit">
+							活动详情(必填)
+						</div>
+						<div class="Info">
+							<div class="infoItem" v-for="(item,key) in partyInfoMod">
+								<textarea placeholder="请输入详情" v-model="locaImg.partyInfoText[key]"></textarea>
+								<div class="partyImgList">
+									<div class="partyImgItem" @click="removeImgBox('',locaImg.models[key],locaImg.serverModels[key],keys)" v-for="(i,keys) in locaImg.models[key]">
+										<img :src="i" alt="" />
+									</div>
+									<!--<div class="partyImgItem">
+                                	<img src="../../images/createPartylogo.png" alt="" />
+                            	</div>-->
+									<a href="JavaScript:;" @click="addModelImg(key)" class="addPartyImg"></a>
+								</div>
+							</div>
+						</div>
+						<a href="JavaScript:;" @click="addModel" id="addmodel" class="addBtn addMod">
+							<img src="../../img/createPartyAdd-ico.png" alt="">
+							<span>添加模板</span>
+						</a>
+					</div>
+					
+					
+					<div class="partyFormItem partyPackage partyStrem-ico">
+						<div class="partyFormItemTit">
+							活动流程(必填)
+						</div>
+						<ol class="partyPackageList">
+							<!--<li class="partyPackageItem">
+							<span>1.1400-14:30 活动签到,集合1.1400-14:30 活动签到,集合1.1400-14:30 活动签到,集合1.1400-14:30 活动签到,集合</span>
+							<a href="JavaScript:;" class="delItem">del</a>
+						</li>-->
+							<!--<li class="partyPackageItem">
+							<span>1.1400-14:30 活动签到,集合</span>
+							<a href="JavaScript:;" class="delItem">del</a>
+						</li>-->
+							<li class="partyPackageItem" :key="key" v-for="(item,key) in  data.activityFlow">
+								<input type="text" v-model="data.activityFlow[key]" placeholder="请填写" />
+								<a href="JavaScript:;" @click="removListItem('activityFlow',key)" class="delItem"></a>
+							</li>
+						</ol>
+						<a href="JavaScript:;" id="partyCourse" @click="addListItem('step')" class="addBtn addLi addMenu">
+							<img src="../../img/createPartyAdd-ico.png" alt="">
+							<span>添加流程</span>
+						</a>
+					</div>
+					<div class="partyFormItem partyPackage partyPackage-ico">
+						<div class="partyFormItemTit">
+							MENU套餐(必填)
+						</div>
+						<ol class="partyPackageList">
+							<li class="partyPackageItem" :key="key" v-for="(item,key) in  data.activityPackage">
+								<input type="text" v-model="data.activityPackage[key]" placeholder="请填写" />
+								<a href="JavaScript:;" @click="removListItem('activityPackage',key)" class="delItem"></a>
+							</li>
+							<!--<li class="partyPackageItem">
+							<span>1.1400-14:30 活动签到,集合</span>
+							<a href="JavaScript:;" class="delItem">del</a>
+						</li>
+						<li class="partyPackageItem">
+							<span>1.1400-14:30 活动签到,集合</span>
+							<a href="JavaScript:;" class="delItem">del</a>
+						</li>-->
+							<!--<li class="partyProcessItem">
+							<input type="text" onblur="changeInput(this)" placeholder="placeholder">
+							<a href="JavaScript:;" class="delItem"></a>
+						</li>-->
+						</ol>
+						<a href="javascript:;" id="menu" @click="addListItem('menu')" class="addBtn addLi addMenu">
+							<img src="../../img/createPartyAdd-ico.png" alt="">
+							<span>添加套餐</span>
+						</a>
+					</div>
+					<div class="ListEnd mui-text-center">
+						<span>别再糟蹋生活 活在DUI的时代</span>
+					</div>
+				</div>
+			</div>
+			<footer class="mui-text-center">
+				<a href="JavaScript:;" @click="open" class="preview">预览</a>
+				<a href="JavaScript:;" @click="checkObj" class="submitParty">提交审核</a>
+			</footer>
+
+		</div>
+		<script src="../../js/mui.min.js"></script>
+		<script type="text/javascript" src="../../js/muihelper.js"></script>
+		<script type="text/javascript" src="../../js/mui.picker.min.js"></script>
+		<script type="text/javascript" src="../../js/vue.min.js"></script>
+		<script src="../../js/page/work/createParty.js"></script>
+	</body>
+</html>

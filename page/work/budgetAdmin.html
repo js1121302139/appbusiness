@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>预订管理</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="../../css/pullToRefresh.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/page/work/budgetAdmin.css" />
+	</head>
+
+	<body>
+		<div id="budgetAdmin">
+			<header>
+				<div class="topNav">
+					<a class="mui-action-back topBack-ico mui-pull-left"></a>
+				</div>
+				<div class="settlementInfo">
+					<div class="settlementInfoL">
+						<p class="orderMoney"><b v-text="pageData.orderMoneyTotal">6524</b>历史预定金额 </p>
+						<p class="orderNum">订单数
+							<small v-text="pageData.orderCount">50</small>
+						</p>
+					</div>
+					<div class="settlementInfoR">
+					</div>
+				</div>
+			</header>
+			<div id="wrapper" class="wrapperList">
+				<ul id="yyaccountList">
+					<li class="wrapperListItem" v-for="(item,key) in list">
+						<div class="ListItem-Tit">
+							<div class="itemTit-orderNum" v-text="'订单号:'+ item.orderSn">
+
+							</div>
+							<div class="itemTit-orderDate mui-text-right" v-text="item.createTime">
+							</div>
+						</div>
+						<div class="ListItem-Info">
+							<div class="order-People">
+								<div class="order-PeopleImg"><img class="order-PeopleImg" :src="picservice + item.headImg" alt=""></div>
+								<div class="order-PeopleInfo mui-ellipsis" v-text="item.memberName">罗炼羽 </div>
+							</div>
+							<div class="order-Income">
+								<p>预定金额:<span>&nbsp;{{item.bookedMoney}}</span></p>
+								<p>使用状态:<span>&nbsp;{{status[item.status]}}</span></p>
+								<p>使用金额:<span>&nbsp;{{item.usedMoney==null?0:item.usedMoney}}</span></p>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="isNoData" v-if="isNoData" :class="{scale1:isNoData}">
+				<div class="isNoDataInfo mui-text-center">
+					<div class="isNoDataBg"></div>
+					<p class="isNoDataTit">暂无预定信息</p>
+					<p>小主你还没有预定订单哦!</p>
+				</div>
+			</div>
+		</div>
+		<script src="../../js/mui.min.js"></script>
+		<script type="text/javascript" src="../../js/iscroll.js"></script>
+		<script type="text/javascript" src="../../js/pullToRefresh.js"></script>
+		<script type="text/javascript" src="../../js/muihelper.js"></script>
+		<script type="text/javascript" src="../../js/vue.min.js"></script>
+		<script type="text/javascript" src="../../js/page/work/budgetAdmin.js"></script>
+	</body>
+
+</html>

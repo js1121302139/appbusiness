@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title>兑咖-营业收入</title>
+		<link rel="stylesheet" href="../../css/mui.min.css">
+		<link rel="stylesheet" href="../../css/pullToRefresh.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/page/work/myincome.css" />
+	</head>
+
+	<body>
+		<div id="myincome">
+			<div class="minetop-box">
+				<div class="topBar">
+					<div class="mui-action-back topBack-ico mui-pull-left"></div>
+					<div class="" id="myDetailed" @click="open('dentail')" v-if="isShowApplyBtn">结算明细</div>
+				</div>
+				<div class="mine-topInfo mui-text-center">
+					<p class="topInfoTit">总营业收入</p>
+					<p class="topInfoCountMoney" id="yyaccount" v-text="topInfo.saleMoney==null?0:topInfo.saleMoney">99</p>
+				</div>
+				<div class="mine-topInfoMoney mui-text-center">
+					<div class="preMoney">
+						<p>已结算金额(元)</p>
+						<p class="money" id="SettlementMoney" v-text="topInfo.settled==null?0:topInfo.settled">99999</p>
+					</div>
+					<div class="nextMoney">
+						<p>可结算金额(元)</p>
+						<p class="money" id="OutstandingMoney" v-text="topInfo.balance==null?0:topInfo.balance">99999</p>
+					</div>
+				</div>
+			</div>
+			<div class="mui-content">
+				<!--<div class="wrappers">
+					<div id="wrapper" class="wrapperList">
+						<ul id="yyaccountList">
+							<!--<li class="wrapperListItem" >
+							<p class="ordersDate" >2016-01-12 16:00:00</p> 
+							<p class="ordersMoney mui-right"  >￥99</p>
+						</li>
+						<li class="wrapperListItem" >
+							<p class="ordersDate" >2016-01-12 16:00:00</p> 
+							<p class="ordersMoney mui-right"  >￥99</p>
+						</li>
+						<li class="wrapperListItem" >
+							<p class="ordersDate" >2016-01-12 16:00:00</p> 
+							<p class="ordersMoney mui-right"  >￥99</p>
+						</li>
+
+							<li class="wrapperListItem" :key="key" v-for="(item,key) in incomeList">
+								<p class="ordersDate" v-text="item.createTime">2016-01-12 16:00:00</p>
+								<p class="ordersMoney mui-right" v-text="item.money">￥99</p>
+							</li>
+						</ul>
+					</div> 
+				</div>-->
+				<div id="wrapper" class="wrapperList" :class="{isbottom0:!isShowApplyBtn}">
+					<ul>
+						<li class="wrapperListItem" :key="key" v-for="(item,key) in incomeList">
+							<p class="ordersDate" v-text="item.createTime">2016-01-12 16:00:00</p>
+							<p class="ordersMoney mui-right" v-text="'￥'+item.money">99</p>
+						</li>
+					</ul>
+					<div class="isNoData" v-if="isNoData" :class="{scale1:isNoData}">
+						<div class="isNoDataInfo mui-text-center">
+							<div class="isNoDataBg"></div>
+							<p class="isNoDataTit">暂无营业收入</p>
+							<p>小主你还没有营业收入哦!</p>
+						</div>
+					</div>
+				</div>
+				<button v-if="isShowApplyBtn" class="footerButton mui-text-center" :disabled="topInfo.balance==0" id="myMoney" @click="open('applysettlement')">
+					申请结算
+				</button>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../../js/mui.min.js"></script>
+	<script type="text/javascript" src="../../js/muihelper.js"></script>
+	<script type="text/javascript" src="../../js/iscroll.js"></script>
+	<script type="text/javascript" src="../../js/pullToRefresh.js"></script>
+	<script type="text/javascript" src="../../js/vue.min.js"></script>
+	<script type="text/javascript" src="../../js/page/work/myincome.js" ></script>
+	<script type="text/javascript">
+		</script>
+
+</html>

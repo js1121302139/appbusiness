@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>订单</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../../css/page/order/myorder.css" />
+		<link rel="stylesheet" href="../../css/pullToRefresh.css" />
+	</head>
+
+	<body>
+		<div class="mui-content" id="myorder">
+			<div class="mine-top-box">
+				<div class="totalMoney mui-text-center">
+					<p class="totalMoney-Tit">总营业收入(元)</p>
+					<p class="totalMoney-Money" id="totalMoney" v-text="pageTop.actualTotalIncome==null?0:pageTop.actualTotalIncome">9999.99</p>
+				</div>
+				<div class="orderInfo mui-text-center">
+					<div class="totalOrder">
+						<p>总订单数(单)</p>
+						<p id="orderNum" v-text="pageTop.ordersTotal==null?0:pageTop.ordersTotal">789789</p>
+					</div>
+					<div class="orderTotalMoney">
+						<p>订单总额(元)</p>
+						<p id="orderTotal" v-text="pageTop.ordersTotalMoney==null?0:pageTop.ordersTotalMoney">99999</p>
+					</div>
+				</div>
+			</div>
+			<div id="wrapper" class="wrapperList">
+				<ul id="allOrderList">
+					<li class="wrapperListItem" v-for="(item, key) in list">
+						<div class="ordersItemTit">
+							<div class="ordersDate">
+								{{item.statisTime | cutTime}}
+							</div>
+							<div class="question mui-text-center" @click="showPopup(item)">
+
+							</div>
+							<div class="seeInfo mui-text-right" @click="detailInfo(item.statisTime)">
+								查看明细
+							</div>
+						</div>
+						<div class="ordersInfo ">
+							<div class="ordersCount mui-text-left">
+								<p>订单数</p>
+								<p v-text="item.orderNum">68856</p>
+							</div>
+							<div class="ordersMoney mui-text-center">
+								<p>订单总额</p>
+								<p v-text="item.moneyTotal">68856</p>
+							</div>
+							<div class="ordersIncome mui-text-right">
+								<p>营业收入</p>
+								<p v-text="item.actualIncome">68856</p>
+							</div>
+						</div>
+					</li>
+					
+				</ul>
+			
+			</div>
+			<div class="isNoData" v-if="isNoData" :class="{scale1:isNoData}">
+						<div class="isNoDataInfo mui-text-center">
+							<div class="isNoDataBg"></div>
+							<p class="isNoDataTit">暂无订单数据</p>
+							<p>小主暂时还没有订单信息哦!</p>
+						</div>
+					</div>
+		</div>
+		<script src="../../js/mui.js"></script>
+		<script type="text/javascript" src="../../js/muihelper.js"></script>
+		<script type="text/javascript" src="../../js/iscroll.js"></script>
+		<script type="text/javascript" src="../../js/pullToRefresh.js"></script>
+		<script type="text/javascript" src="../../js/vue.min.js"></script>
+		<script type="text/javascript" src="../../js/page/order/myorder.js"></script>
+	</body>
+
+</html>
