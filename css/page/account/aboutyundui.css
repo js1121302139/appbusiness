@@ -347,7 +347,6 @@ table {
 /*重构的顶部*/
 /*顶部的卡片视图*/
 /*没有数据*/
-<<<<<<< HEAD
 .lastBtnBox {
   padding: 0 0.75rem;
   text-align: center;
@@ -361,8 +360,6 @@ table {
   color: #fff;
   background-color: #222;
 }
-=======
->>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
 .topBar {
   padding-top: 1.25rem;
   height: 4rem;
@@ -398,7 +395,6 @@ body {
   background: #fff;
 }
 .mui-content .aboutTop {
-<<<<<<< HEAD
   margin-top: 5rem;
 }
 .mui-content .aboutTop img {
@@ -412,35 +408,15 @@ body {
 }
 .mui-content .aboutTop .appEdition {
   font-size: 0.875rem;
-=======
-  margin-top: 80px;
-}
-.mui-content .aboutTop img {
-  width: 122px;
-  margin-bottom: 19px;
-}
-.mui-content .aboutTop .aboutTit {
-  margin-bottom: 15px;
-  font-size: 16px;
-  color: #333;
-}
-.mui-content .aboutTop .appEdition {
-  font-size: 14px;
->>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
   color: #999;
 }
 .mui-content .aboutBottom {
   position: fixed;
-<<<<<<< HEAD
   bottom: 0.3125rem;
-=======
-  bottom: 5px;
->>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
   width: 100%;
 }
 .mui-content .aboutBottom a {
   display: block;
-<<<<<<< HEAD
   margin-bottom: 1.1875rem;
   font-size: 0.875rem;
   color: #D7B374;
@@ -448,14 +424,5 @@ body {
 .mui-content .aboutBottom div {
   margin-bottom: 0.625rem;
   font-size: 0.75rem;
-=======
-  margin-bottom: 19px;
-  font-size: 14px;
-  color: #D7B374;
-}
-.mui-content .aboutBottom div {
-  margin-bottom: 10px;
-  font-size: 12px;
->>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
   color: #999;
 }

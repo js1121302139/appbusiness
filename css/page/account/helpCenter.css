@@ -347,7 +347,6 @@ table {
 /*重构的顶部*/
 /*顶部的卡片视图*/
 /*没有数据*/
-<<<<<<< HEAD
 .lastBtnBox {
   padding: 0 0.75rem;
   text-align: center;
@@ -361,8 +360,6 @@ table {
   color: #fff;
   background-color: #222;
 }
-=======
->>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
 .topBar {
   padding-top: 1.25rem;
   height: 4rem;

@@ -33,20 +33,12 @@
 						<button class="getMsg" @click="smsVerify" :disabled="showOutTime" v-text="second==90?'获取验证码':'剩余'+second+'秒'">获取验证码</button>
 					</li>
 					<li id='showUserPicker' @click="showPicker(job,'job')" class="select mui-text-left mui-btn mui-btn-block mui-table-view-cell">
-<<<<<<< HEAD
 						<span class="option" id="userResult" v-text="pageData.jobName==null?'请选择':pageData.jobName">123</span>
-=======
-						<span class="option" id="userResult" v-text="pageData.jobName">123</span>
->>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
 						<a href="javascript:;" class="mui-navigate-right">角色</a>
 
 					</li>
 					<li id='showUserPicker2' v-if="isShowGroup" @click="showPicker(group,'group')" class="select mui-text-left mui-btn mui-btn-block mui-table-view-cell">
-<<<<<<< HEAD
 						<span class="option" id="userResult1" v-text="pageData.groupName==null?'请选择':pageData.groupName">123</span>
-=======
-						<span class="option" id="userResult1" v-text="pageData.groupName">123</span>
->>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
 						<a href="javascript:;" class="mui-navigate-right">团队</a>
 					</li>
 				</ul>
@@ -65,10 +57,6 @@
 						</div>
 						<p class="addSuccessTxt" v-text="isEdit==true?'绑定成功':'编辑成功'">绑定成功</p>
 					</div>
-<<<<<<< HEAD
-=======
-
->>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
 				</div>
 			</div>
 

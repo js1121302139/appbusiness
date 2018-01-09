@@ -347,7 +347,6 @@ table {
 /*重构的顶部*/
 /*顶部的卡片视图*/
 /*没有数据*/
-<<<<<<< HEAD
 .lastBtnBox {
   padding: 0 0.75rem;
   text-align: center;
@@ -367,45 +366,10 @@ table {
 .mine-safe-box input {
   font-size: 0.87rem;
   margin: 0.375rem 0 0;
-=======
-.topBar {
-  padding-top: 1.25rem;
-  height: 4rem;
-  box-shadow: 0 0.0625rem 0.375rem #ccc;
-  background-color: #fff;
-}
-.topBar .topBack-ico {
-  display: inline-block;
-  width: 2.75rem;
-  height: 2.75rem;
-  background: url("../../../img/topBack-ico.png") left center no-repeat;
-  background-size: 1.25rem 1.25rem;
-}
-.topBar .mui-title {
-  font-size: 1.12rem;
-  color: #333;
-  z-index: -1;
-}
-.topBar .rightIco {
-  display: block;
-  width: 2.75rem;
-  height: 2.75rem;
-}
-.mui-content {
-  padding-top: 4rem !important;
-}
-.mine-safe-box {
-  margin-top: 10px;
-}
-.mine-safe-box input {
-  font-size: 0.87rem;
-  margin: 6px 0 0;
->>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
 }
 .mine-safe-box .codePic {
   display: inline-block;
   float: right;
-<<<<<<< HEAD
   height: 2.25rem;
   width: 6.625rem;
   margin-right: 0.75rem;
@@ -417,19 +381,6 @@ table {
   width: 6.625rem;
   margin-right: 0.75rem;
   margin-top: 0.4375rem;
-=======
-  height: 36px;
-  width: 106px;
-  margin-right: 12px;
-  margin-top: 7px;
-}
-.mine-safe-box .codeBtn {
-  float: right;
-  height: 36px;
-  width: 106px;
-  margin-right: 12px;
-  margin-top: 7px;
->>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
 }
 .mine-safe-box .mui-btn-blue,
 .mine-safe-box .mui-btn-primary,
@@ -439,7 +390,6 @@ table {
   border: 1px solid #333333;
 }
 .mui-input-group .mui-input-row {
-<<<<<<< HEAD
   height: 3.0625rem;
   line-height: 3.0625rem;
 }
@@ -449,23 +399,11 @@ table {
 }
 .mui-content-padded {
   margin: 2.0625rem 0.9375rem 0;
-=======
-  height: 49px;
-  line-height: 49px;
-}
-.btn-gradient {
-  border-radius: 5px;
-  color: #fff;
-}
-.mui-content-padded {
-  margin: 33px 15px 0;
->>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
 }
 .footer {
   padding: 0 0.9375rem;
 }
 .footer .footerButton {
-<<<<<<< HEAD
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -480,16 +418,4 @@ table {
   font-size: 1.125rem;
   color: #fff;
   border-radius: 0.3125rem;
-=======
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  height: 40px;
-  margin: 32px auto 0;
-  background-color: #222;
-  z-index: 9999;
-  font-size: 18px;
-  color: #fff;
-  border-radius: 5px;
->>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
 }

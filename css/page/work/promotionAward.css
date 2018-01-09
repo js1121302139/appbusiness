@@ -347,7 +347,6 @@ table {
 /*重构的顶部*/
 /*顶部的卡片视图*/
 /*没有数据*/
-<<<<<<< HEAD
 .lastBtnBox {
   padding: 0 0.75rem;
   text-align: center;
@@ -361,8 +360,6 @@ table {
   color: #fff;
   background-color: #222;
 }
-=======
->>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
 body {
   background-color: #f5f5f5;
 }
@@ -449,7 +446,6 @@ body {
 }
 .wrapperList .wrapperListItem {
   position: relative;
-<<<<<<< HEAD
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -461,13 +457,6 @@ body {
   padding: 0 0.96875rem 0 0.9375rem;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
-=======
-  display: flex;
-  flex: 1;
-  height: 44px;
-  line-height: 44px;
-  padding: 0 15.5px 0 15px;
->>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
   justify-content: space-between;
 }
 .wrapperList .wrapperListItem:after {
@@ -475,7 +464,6 @@ body {
   content: " ";
   display: block;
   width: 95%;
-<<<<<<< HEAD
   height: 0.0625rem;
   right: 0px;
   left: 0;
@@ -491,35 +479,14 @@ body {
 }
 .wrapperList .wrapperListItem .ordersMoney {
   font-size: 0.9375rem;
-=======
-  height: 1px;
-  right: 0px;
-  left: 0;
-  bottom: -1px;
-  margin: auto;
-  background-color: #e5e5e5;
-  transform: scaleY(0.5);
-}
-.wrapperList .wrapperListItem .ordersDate {
-  font-size: 13px;
-  color: #333;
-}
-.wrapperList .wrapperListItem .ordersMoney {
-  font-size: 15px;
->>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
   color: #D7B374;
 }
 .footerButton {
   position: fixed;
   bottom: 0px;
   width: 100%;
-<<<<<<< HEAD
   height: 3.0625rem;
   line-height: 3.0625rem;
-=======
-  height: 49px;
-  line-height: 49px;
->>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
   background-color: #D7B374;
   z-index: 9999;
 }

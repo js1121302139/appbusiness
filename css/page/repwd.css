@@ -347,7 +347,6 @@ table {
 /*重构的顶部*/
 /*顶部的卡片视图*/
 /*没有数据*/
-<<<<<<< HEAD
 .lastBtnBox {
   padding: 0 0.75rem;
   text-align: center;
@@ -361,8 +360,6 @@ table {
   color: #fff;
   background-color: #222;
 }
-=======
->>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
 .topBar {
   padding-top: 1.25rem;
   height: 4rem;
@@ -404,10 +401,7 @@ body {
   background: none !important;
 }
 .topBar {
-<<<<<<< HEAD
   -webkit-box-shadow: none;
-=======
->>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
   box-shadow: none;
 }
 .topBar * {
@@ -415,7 +409,6 @@ body {
 }
 .mui-content .loginTop-box {
   margin-top: 2.5rem;
-<<<<<<< HEAD
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -426,12 +419,6 @@ body {
   -ms-flex-pack: center;
   justify-content: center;
   margin-bottom: 1.9375rem;
-=======
-  display: flex;
-  flex: 1;
-  justify-content: center;
-  margin-bottom: 31px;
->>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
   width: 100%;
   height: 10.18rem;
 }
@@ -439,7 +426,6 @@ body {
   width: 10.18rem;
 }
 .mui-content .login-box {
-<<<<<<< HEAD
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -452,13 +438,6 @@ body {
   -ms-flex-direction: column;
   flex-direction: column;
   padding: 0 2.34375rem;
-=======
-  display: flex;
-  flex: 1;
-  width: 100%;
-  flex-direction: column;
-  padding: 0 37.5px;
->>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
 }
 .mui-content .login-box .mui-icon {
   display: block;
@@ -476,7 +455,6 @@ body {
   color: #fff;
 }
 .mui-content .login-box .userPhoneCode {
-<<<<<<< HEAD
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -486,16 +464,10 @@ body {
   width: 100%;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
-=======
-  display: flex;
-  flex: 1;
-  width: 100%;
->>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
   justify-content: space-between;
 }
 .mui-content .login-box .userPhoneCode a {
   position: relative;
-<<<<<<< HEAD
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -505,23 +477,13 @@ body {
   height: 100%;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
-=======
-  display: flex;
-  flex: 1;
-  height: 100%;
->>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
   justify-content: center;
   color: #fff;
 }
 .mui-content .login-box .userPhoneCode a:before {
   content: " ";
-<<<<<<< HEAD
   width: 0.0625rem ;
   height: 1.5625rem ;
-=======
-  width: 1px;
-  height: 25px;
->>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
   display: block;
   position: absolute;
   left: 0;
@@ -531,7 +493,6 @@ body {
   background-color: #fff;
 }
 .mui-content .login-box .userPhoneCode input {
-<<<<<<< HEAD
   padding: 0.625rem 0;
   -webkit-box-flex: 2;
   -ms-flex: 2;
@@ -552,22 +513,10 @@ body {
   -ms-flex-align: center;
   align-items: center;
   padding-left: 0.9375rem;
-=======
-  padding: 10px 0;
-  flex: 2;
-}
-.mui-content .login-box div {
-  display: flex;
-  flex: 1;
-  flex-direction: row;
-  align-items: center;
-  padding-left: 15px;
->>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
   border-bottom: 1px solid #fff;
 }
 .mui-content .login-box div .userPhoneNumberIco {
   background: url("../../img/loginPhoneNum-ico.png") center;
-<<<<<<< HEAD
   background-size: 1.375rem 1.375rem;
 }
 .mui-content .login-box div .userPwdIco {
@@ -582,49 +531,23 @@ body {
   display: block;
   width: 1.375rem;
   height: 1.375rem;
-=======
-  background-size: 22px 22px;
-}
-.mui-content .login-box div .userPwdIco {
-  background: url("../../img/loginPwd-ico.png") center;
-  background-size: 22px 22px;
-}
-.mui-content .login-box div .userPhoneCodeIco {
-  background: url("../../img/loginPhoneCode-ico.png") center;
-  background-size: 22px 22px;
-}
-.mui-content .login-box div span {
-  display: block;
-  width: 22px;
-  height: 22px;
->>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
 }
 .mui-content .login-box input {
   margin: 0;
   padding: 0;
   background: none;
   color: #fff;
-<<<<<<< HEAD
   text-indent: 1.5rem;
 }
 .mui-content .forgetpassword {
   padding: 0 2.34375rem;
   margin-top: 0.9375rem;
   margin-bottom: 1.75rem;
-=======
-  text-indent: 24px;
-}
-.mui-content .forgetpassword {
-  padding: 0 37.5px;
-  margin-top: 15px;
-  margin-bottom: 28px;
->>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
 }
 .mui-content .forgetpassword a {
   color: #fff;
 }
 .mui-content .login_local {
-<<<<<<< HEAD
   padding: 0 2.34375rem;
 }
 .mui-content .login_local a {
@@ -632,45 +555,24 @@ body {
   height: 2.5rem;
   line-height: 2.5rem;
   font-size: 1.125rem;
-=======
-  padding: 0 37.5px;
-}
-.mui-content .login_local a {
-  display: block;
-  height: 40px;
-  line-height: 40px;
-  font-size: 18px;
->>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
   border-radius: 5px;
   background-color: #fff;
   color: #333;
 }
 .sureBtn {
-<<<<<<< HEAD
   padding: 0 2.34375rem;
   margin-top: 1.875rem;
   height: 2.5rem;
-=======
-  padding: 0 37.5px;
-  margin-top: 30px;
-  height: 40px;
->>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
 }
 .sureBtn button {
   display: block;
   background-color: #fff;
   width: 100%;
   border-radius: 5px;
-<<<<<<< HEAD
   font-size: 1rem;
   border: none;
   color: #333;
   -webkit-transition: all 0.2s;
-=======
-  font-size: 16px;
-  border: none;
-  color: #333;
->>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
   transition: all 0.2s;
 }
 .sureBtn button:active {

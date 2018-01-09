@@ -2,13 +2,8 @@
   position: absolute;
   right: 0;
   bottom: 0;
-<<<<<<< HEAD
   left: 0;
   height: 0.0625rem;
-=======
-  left: 0px;
-  height: 1px;
->>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
   content: '';
   -webkit-transform: scaleY(0.5);
   transform: scaleY(0.5);

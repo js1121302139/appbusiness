@@ -20,7 +20,7 @@
 			<div class="mui-content">
 				<div class="recCard">
 					<div class="todayRec">
-						<h2 class="todayRecMoney">{{TodayAllsum.pSum | fillZero}}</h2>
+						<h2 class="todayRecMoney" >{{TodayAllsum.pSum | fillZero}}</h2>
 						<div class="todayRecTit">
 							<img src="img/todayrecMoney.png" />
 							<p>今日充值金额</p>
@@ -28,12 +28,12 @@
 					</div>
 					<div class="todayRecInfo">
 						<div class="todayRecItem">
-							<p>{{TodayAllsum.mSum | fillZero}}</p>
+							<p >{{TodayAllsum.mSum | fillZero}}</p>
 							<h1>今日充值人数</h1>
 
 						</div>
 						<div class="todayRecItem">
-							<p>{{TodayAllsum.comsumeSum | fillZero}} </p>
+							<p >{{TodayAllsum.comsumeSum | fillZero}}	</p>
 							<h1>总充值金额</h1>
 						</div>
 						<!--<div class="todayRecItem">
@@ -49,7 +49,7 @@
 							<div class="ListItem">
 								<div class="topTit">
 									<div class="topTitInfo">
-										<h1 v-text="item.offerName"></h1>
+										<h1>面值{{item.listPrice}} (售价{{item.discountPrice}})</h1>
 										<!--<h1 v-text="'('+'售价'++')'"></h1>-->
 									</div>
 									<p>{{recStatus[item.status].tit}}</p>
@@ -59,12 +59,12 @@
 										<div class="ItemInfoBoxItem">
 											<img src="img/rec-money.png" />
 											<h1>充值总金额</h1>
-											<p>{{item.psum | fillZero}}</p>
+											<p>{{item | recCountMoney}}</p>
 										</div>
 										<div class="ItemInfoBoxItem">
 											<img src="img/rec-peopleNum.png" alt="" />
 											<h1>充值总人数</h1>
-											<p>{{item.msum | fillZero}}</p>
+											<p>{{item.offerBuyNum | fillZero}}</p>
 										</div>
 										<!--<div class="ItemInfoBoxItem">
 											<img src="img/remaining.png" />
@@ -260,6 +260,9 @@
 				filters: {
 					isno: function(val) {
 						return val === '' ? '非必填' : val;
+					},
+					recCountMoney: function(item) {
+						return item.offerBuyNum * item.discountPrice
 					},
 					recSurplus: function(item) {
 						return item.offerNum - item.offerBuyNum < 0 ? 0 : item.offerNum - item.offerBuyNum;

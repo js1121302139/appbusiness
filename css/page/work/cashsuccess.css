@@ -347,7 +347,6 @@ table {
 /*重构的顶部*/
 /*顶部的卡片视图*/
 /*没有数据*/
-<<<<<<< HEAD
 .lastBtnBox {
   padding: 0 0.75rem;
   text-align: center;
@@ -361,8 +360,6 @@ table {
   color: #fff;
   background-color: #222;
 }
-=======
->>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
 .topBar {
   padding-top: 1.25rem;
   height: 4rem;
@@ -394,31 +391,23 @@ table {
   padding: 0 0.93rem;
 }
 .mine-success-box .successTxt {
-<<<<<<< HEAD
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-flex: 1;
   -ms-flex: 1;
-=======
-  display: flex;
->>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
   flex: 1;
   width: 100%;
   height: 15.62rem;
   padding: 1.5rem 1.25rem 1.12rem 1.62rem;
-<<<<<<< HEAD
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
-=======
->>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
   flex-direction: column;
   background: url(../../../img/mine_cash_panel.png) center center no-repeat;
   background-size: 100% 15.62rem;
 }
 .mine-success-box .successTxt .successTop {
-<<<<<<< HEAD
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -451,21 +440,6 @@ table {
 .mine-success-box .successTxt .successTop .topLeft .successTxtItem {
   display: -webkit-box;
   display: -ms-flexbox;
-=======
-  display: flex;
-  flex: 3;
-  flex-direction: row;
-  height: 8.37rem;
-  align-content: center;
-  justify-content: space-between;
-}
-.mine-success-box .successTxt .successTop .topLeft {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-}
-.mine-success-box .successTxt .successTop .topLeft .successTxtItem {
->>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
   display: flex;
   margin-bottom: 1.68rem;
   font-size: 0.81rem;
@@ -473,7 +447,6 @@ table {
 }
 .mine-success-box .successTxt .successTop .topLeft .successTxtItem .left {
   width: 5.62rem;
-<<<<<<< HEAD
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -490,20 +463,11 @@ table {
   flex: 1;
   -webkit-box-pack: end;
   -ms-flex-pack: end;
-=======
-  display: flex;
-  justify-content: flex-start;
-}
-.mine-success-box .successTxt .successTop .topRight {
-  display: flex;
-  flex: 1;
->>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
   justify-content: flex-end;
 }
 .mine-success-box .successTxt .successTop .topRight a {
   font-size: 0.75rem;
   color: #999;
-<<<<<<< HEAD
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -511,18 +475,12 @@ table {
   padding: 0 0.46rem;
   -webkit-box-align: center;
   -ms-flex-align: center;
-=======
-  display: flex;
-  height: 1.18rem;
-  padding: 0 0.46rem;
->>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
   align-items: center;
   border-radius: 0.18rem;
   border: 0.06rem solid #999;
 }
 .mine-success-box .successTxt .succesFooter {
   padding-top: 0.56rem;
-<<<<<<< HEAD
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -534,11 +492,6 @@ table {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
-=======
-  display: flex;
-  flex: 1;
-  align-content: flex-end;
->>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
   flex-direction: column;
   font-size: 0.75rem;
   color: #999;
@@ -549,7 +502,6 @@ table {
 }
 .footerButton {
   margin: 0 auto;
-<<<<<<< HEAD
   margin-top: 2rem;
   width: 90%;
   height: 2.5rem;
@@ -559,15 +511,4 @@ table {
   font-size: 1.125rem;
   color: #fff;
   border-radius: 0.3125rem;
-=======
-  margin-top: 32.5px;
-  width: 90%;
-  height: 40px;
-  line-height: 40px;
-  background-color: #222;
-  z-index: 9999;
-  font-size: 18px;
-  color: #fff;
-  border-radius: 5px;
->>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
 }
