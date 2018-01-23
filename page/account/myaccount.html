@@ -33,7 +33,7 @@
 						<li class="mui-table-view-cell" id="safeCenter"  @click="openwin('./safeCenter')">
 							<a class="mui-navigate-right"><img src="../../img/security_icon.png" />安全中心</a>
 						</li>
-						<li class="mui-table-view-cell" id="setWifi"  @click="openwin('./setwifi/index')">
+						<li class="mui-table-view-cell" id="setWifi"  @click="openwin('./setWifi/index')">
 							<a class="mui-navigate-right"><img src="../../img/security_icon.png" />设置WI-FI</a>
 						</li>
 						<li class="mui-table-view-cell" id="helpCenter" @click="openwin('./helpCenter')">
@@ -78,7 +78,7 @@
 						<a href="javascript:;" id="changeHJ">切换环境</a>
 					</div>-->
 				</div>
-				<div class="update-box mui-hidden" id="updateBox">
+				<div class="update-box " id="updateBox">
 					<div class="u-d-box">
 						<img class="u-d-title" src="../../images/half_update_bg.png" />
 						<img src="../../img/game_icon01.png" class="u-d-close" id="closeUpdateBtn" />
@@ -86,6 +86,7 @@
 						<span class="u-d-v-text" id="updateVersionTxt"></span>
 						<span class="u-d-n-text">新版本特性</span>
 						<div class="u-d-desc" id="updateDescList">
+							<div class="dowonLoadBar"></div>
 							<div class="mui-scroll-wrapper" style="height: 5.62rem;">
 								<div class="mui-scroll">
 									<ul id="updateDestTxt">

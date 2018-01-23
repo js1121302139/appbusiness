@@ -12,7 +12,7 @@
 	<body>
 		<div id="setWifi">
 			<header class="mui-bar topBar mui-bar-nav">
-				<a class="mui-action-back topBack-ico mui-pull-left"></a>
+				<a ref='mui-back' class="mui-back topBack-ico mui-pull-left"></a>
 				<h1 class="mui-title">设置wifi</h1>
 				<span id="Topactivity" class="mui-btn  Topactivity mui-btn-blue mui-btn-link mui-pull-right" @click="addWifi">新增</span>
 			</header>
@@ -25,45 +25,90 @@
 						</div>
 						<div class="newItem">
 							<span class="tit">Wi-Fi名称</span>
-							<input type="text" :disabled="!item.isEdit" v-model="item.wifiName" placeholder="请输入Wi-Fi名称" />
+							<input type="text" @input="inputWifi(item)" v-model="item.wifiName" placeholder="请输入Wi-Fi名称" />
 						</div>
 						<div class="newItem">
 							<span class="tit">Wi-Fi密码</span>
-							<input type="password" :disabled="!item.isEdit" v-model="item.wifiPassword" placeholder="请输入Wi-Fi密码" />
+							<input type="text" @input="inputWifi(item)" v-model="item.wifiPassword" placeholder="请输入Wi-Fi密码" />
 						</div>
 
 					</div>
 				</div>
 			</div>
-			<button data-loading-text="提交中" id="buttom" class="sure" @click="saveWifi">保存账号</button>
+			<button data-loading-text="提交中" id="buttom" class="sure" @click="saveWifi">保存</button>
 		</div>
 		<script src="../../../js/mui.min.js"></script>
 		<script src="../../../js/muihelper.js"></script>
 		<script type="text/javascript" src="../../../js/md5.min.js"></script>
 		<script type="text/javascript" src="../../../js/vue.min.js"></script>
 		<script type="text/javascript">
-			mui.init()
+			mui.init();
 			var Vue = new Vue({
 				el: "#setWifi",
 				data: function() {
 					return {
 						wifiList: [],
-						isPush: true
+						changeList: [],
+						isPush: true,
+						isSave: true
 					}
 				},
 				created: function() {
 					var _this = this;
 					mui.plusReady(function() {
 						_this.getWifiList(function(resData) {
-							console.log(JSON.stringify(resData))
 							_this.wifiList = resData;
+							if(!_this.wifiList.length) {
+								_this.isPush = false;
+								_this.isSave = false;
+								_this.wifiList.push({
+									wifiName: '',
+									wifiPassword: '',
+									isEdit: true
+								})
+							}
 						})
+					})
+
+				},
+				mounted: function() {
+					var _this = this;
+					var len = this.wifiList.length - 1;
+					console.log(len)
+					mui.plusReady(function() {
+						document.querySelector('.mui-back').onclick = function() {
+							console.log(_this.isSave, _this.changeList.length)
+							if(_this.changeList.length || !_this.isSave) {
+								mui.confirm('确定要放弃保存？', '提示', ['取消', '确认'], function(e) {
+									if(e.index) {
+										plus.webview.currentWebview().close()
+									}
+								}, 'div')
+							} else {
+								plus.webview.currentWebview().close()
+							}
+
+						}
 					})
 				},
 				methods: {
+					inputWifi: function(item) {
+						if(item.isEdit) return false;
+						if(!this.changeList.length) {
+							this.changeList.push(item);
+							return false;
+						}
+						for(var i = 0; i < this.changeList.length; i++) {
+							if(this.changeList[i].id !== item.id) {
+								this.changeList.push(item);
+							}
+						}
+					},
 					addWifi: function() {
+						console.log(this.isPush)
 						if(this.isPush) {
 							this.isPush = false;
+							this.isSave = false;
 							this.wifiList.push({
 								wifiName: '',
 								wifiPassword: '',
@@ -80,7 +125,6 @@
 								merchantCode: Fun_App.getdata('merchantId')
 							},
 							fun_Success: function(resData) {
-								console.log(JSON.stringify(resData))
 								callBack(resData.data);
 							}
 						}
@@ -88,7 +132,50 @@
 					},
 					saveWifi: function() {
 						var _this = this;
-						console.log(this.wifiList.length)
+						var len = this.wifiList.length - 1;
+						if(!this.changeList.length) {
+							console.log(JSON.stringify(this.wifiList[len]))
+							if(this.wifiList[len].isEdit) {
+								this.addWIFI();
+							}
+							return false;
+						} else {
+							this.changeWifiList();
+							if(this.wifiList[len].isEdit) {
+								this.addWIFI();
+							}
+						}
+
+					},
+					changeWifiList: function() {
+						var _this = this;
+						if(Fun_App.findObj(this.changeList) === false) {
+							mui.toast('数据不完整！')
+							return false;
+						};
+						for(var i = 0; i < this.changeList.length; i++) {
+							if(this.changeList[i].wifiPassword.length < 8) {
+								mui.toast('请输入8位的Wi-Fi密码');
+								return false;
+							}
+						}
+						var sendData = {
+							config: this.changeList,
+							fun_Success: function(resData) {
+								mui.toast(resData.retMsg)
+								console.log(JSON.stringify(resData))
+								if(resData.retCode == 0) {
+									_this.isPush = true;
+									_this.isSave = true;
+									mui.toast('修改成功');
+									_this.changeList=[];
+								}
+							}
+						}
+						Fun_App.ExEncryptionAjax('order-service/merchant/wifi/update/list', sendData, '', 'post', 'abc')
+					},
+					addWIFI: function() {
+						var _this = this;
 						var sendData = {
 							config: {
 								"merchantCode": Fun_App.getdata('merchantId'),
@@ -97,12 +184,18 @@
 							},
 							fun_Success: function(resData) {
 								mui.toast(resData.retMsg)
-								console.log(JSON.stringify(resData))
 								if(resData.retCode == 0) {
-									_this.isPush == true;
+									_this.isPush = true;
+									_this.isSave = true;
+									mui.toast('添加成功');
+									_this.wifiList.slice((_this.wifiList.length - 1), 1)
+									_this.getWifiList(function(resData) {
+										_this.wifiList = resData;
+									})
 								}
 							}
 						}
+						console.log(Fun_App.findObj(sendData))
 						if(Fun_App.findObj(sendData) === false) {
 							mui.toast('数据不完整！')
 							return false;
@@ -114,11 +207,9 @@
 						Fun_App.ExEncryptionAjax('order-service//merchant/wifi/merchantCode/save', sendData, '', 'post', 'abc')
 					},
 					delWifi: function(item, key) {
-						console.log(JSON.stringify(item))
 						var _this = this;
 						mui.confirm('确认删除这个Wi-Fi么？', '提示', ['取消', '确认'], function(e) {
 							if(e.index == 1) {
-								_this.isPush == true;
 								_this.wifiList.splice(key, 1);
 								var sendData = {
 									config: {
@@ -131,14 +222,35 @@
 										})
 									}
 								}
-								Fun_App.ExEncryptionAjax('order-service//merchant/wifi/merchantCode/del', sendData, '', 'get', 'merchant_query')
-							};
+								if(item.id) {
+									Fun_App.ExEncryptionAjax('order-service//merchant/wifi/merchantCode/del', sendData, '', 'get', 'merchant_query')
+								} else {
+									_this.isSave = true;
+									_this.isPush = true;
+								}
+							}
 
 						}, 'div')
 					}
 				},
+				watch: {
+					dataRest: {
+						handler: function(newValue, oldValue) {
+							for(var i = 0; i < this.wifiList.length; i++) {
+								if(newValue[i] != oldValue[i]) {
+									console.log(JSON.stringify(newValue[i]), JSON.stringify(oldValue[i]))
+								}
+							}
+						},
+						deep: true
+					}
+				},
 				computed: {
-
+					dataRest: function() {
+						var obj = {};
+						for(var i = 0; i < this.wifiList.length; i++) obj[i] = this.wifiList[i];
+						return obj;
+					}
 				}
 			})
 		</script>

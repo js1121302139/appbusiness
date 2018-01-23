@@ -22,7 +22,7 @@
 					<p class="shopName" v-text="pageData.merchantName">老友记海鲜</p>
 					<div class="clearCard">
 						<div class="clearInfo">
-							<h1 v-text="pageData.refGoodName">澳洲大龙虾 *1</h1>
+							<h1 v-text="pageData.ticketName">澳洲大龙虾 *1</h1>
 							<p v-text="pageData.effectETime+'到期'">880980da</p>
 						</div>
 						<p class="tip">
@@ -92,7 +92,9 @@
 						// 获取扫描界面传来的券编码信息
 						_this.ticketNum = atob(Fun_App.getextrasdata()).split(',')[0];
 						// 关闭上一个页面
-						plus.webview.close(plus.webview.currentWebview().opener(),'none')
+						 setTimeout(function(){
+						 	plus.webview.close(plus.webview.currentWebview().opener(),'none')
+						 },500)
 						// 获取优惠券信息
 						_this.getTicketInfo()
 					})
@@ -107,6 +109,7 @@
 							},
 							fun_Success: function(resData) {
 								_this.pageData = resData.data;
+								console.log(JSON.stringify(resData))
 							}
 						}
 						Fun_App.ExEncryptionAjax('order-service/ticket/member/get', sendData, '', 'get', 'merchant_query')

@@ -14,7 +14,7 @@
 		<div id="myVipUser">
 			<header class="mui-bar topBar mui-bar-nav">
 				<a class="mui-action-back topBack-ico mui-pull-left"></a>
-				<h1 class="mui-title">我的vip用户</h1>
+				<h1 class="mui-title">我的VIP用户</h1>
 				<!--<span id="Topactivity" class="mui-btn  Topactivity mui-btn-blue mui-btn-link mui-pull-right" @click="open">创建活动</span>-->
 			</header>
 			<div class="mui-content">
@@ -22,7 +22,7 @@
 					<div class="optionTabItem" :class="{active:item.active}" @click="changeTab(item)" v-for="item in tabBar">
 						<p v-text="item.titName">总额</p>
 						<img src="img/myVipUser-ico.png" v-show="!item.active" />
-						<img src="img/myVipUser-active-ico.png" v-show="item.active" />
+						<img src="img/myVipUser-active-ico.png" :class="{active:item.sort==1}" v-show="item.active" />
 					</div>
 					<!--<div class="optionTabItem">
 						<p>余额</p>
@@ -37,45 +37,54 @@
 						<img src="img/myVipUser-ico.png" />
 					</div>-->
 
-					<div id="wrapper" class="userLsit">
-						<ul>
-							<li :key="item" v-for="item in pageList" @click="open('userRecHistory',item)">
-								<div class="userLsitItem">
-									<div class="userInfo">
-										<div class="userHeader">
-											<img src="../../../images/60x60.gif" />
-										</div>
-										<div class="userRecInfo mui-ellipsis">
-											<p class="userName" v-text="item.memName">用户名</p>
-											<p v-text="'首充时间:'"></p>
-											<p v-text="'最后一次消费:'"></p>
-										</div>
-										<!--<div class="date">
+				</div>
+				<div class="isNoData" v-if="isNoData" :class="{scale1:isNoData}">
+					<div class="isNoDataInfo mui-text-center">
+						<div class="isNoDataBg"></div>
+						<p class="isNoDataTit">暂无充值用户</p>
+						<p>请耐心等待你的第一个充值用户！</p>
+					</div>
+				</div>
+				<div id="wrapper" class="userLsit">
+					<ul>
+						<li :key="item" v-for="item in pageList" @click="open('userRecHistory',item)">
+							<div class="userLsitItem">
+								<div class="userInfo">
+									<div class="userHeader">
+										<img src="../../../images/user-img.png" :src="headImage(item.headImg)" />
+									</div>
+									<div class="userRecInfo mui-ellipsis">
+										<p class="userName" v-text="item.memName">用户名</p>
+										<p v-text="'首充时间:'+item.firstRechargeTime"></p>
+										<p v-if="item.lateConsumeTime!==null" v-text="'最后一次消费:'+item.lateConsumeTime"></p>
+									</div>
+									<!--<div class="date">
 										<p v-text="'首充时间:'+item.statusTime"></p>
 										<p v-text="'最后一次消费:'+item.endTime"></p>
 									</div>-->
-									</div>
-									<div class="recInfo">
-										<div class="recInfoItem">
-											<!--<p v-text="item.rechargeSum">200</p>-->
-											<p v-text="11">200</p>
-											<h1>充值总额</h1>
+								</div>
+								<div class="recInfo">
+									<div class="recInfoItem">
+										<!--<p v-text="item.rechargeSum">200</p>-->
+										<p>{{item.rechargeTotalMoney |zero}}</p>
+										<h1>充值总额</h1>
 
-										</div>
-										<div class="recInfoItem">
-											<p v-text="item.balance">200</p>
-											<h1>卡内余额</h1>
-										</div>
-										<div class="recInfoItem">
-											<p v-text="88">200</p>
-											<h1>消费次数</h1>
-										</div>
+									</div>
+									<div class="recInfoItem">
+										<p>{{item.balance |zero}}</p>
+										<h1>卡内余额</h1>
+									</div>
+									<div class="recInfoItem">
+										<p>{{item.consumeTimes | zero}}</p>
+										<h1>消费次数</h1>
 									</div>
 								</div>
-							</li>
-						</ul>
-					</div>
+							</div>
+						</li>
+
+					</ul>
 				</div>
+
 			</div>
 			<script src="../../../js/mui.min.js"></script>
 			<script type="text/javascript" src="../../../js/fas.js"></script>
@@ -89,37 +98,52 @@
 					el: "#myVipUser",
 					data: function() {
 						return {
+							// 页码
+							pageNo: 1,
+							// 每页数据大小
+							pageSize: pageLen,
+							// 总页数
+							totalNum: 0,
 							tabBar: [{
 									titName: '总额',
 									active: false,
-									type: 'rechargeSum'
+									type: 'rechargeSum',
+									sort: ''
 								},
 								{
 									titName: '余额',
 									active: false,
-									type: 'balance'
+									type: 'balance',
+									sort: ''
 								},
 								{
 									titName: '消费次数',
 									active: false,
-									type: 'times'
+									type: 'times',
+									sort: ''
 								},
 								{
 									titName: '最后消费',
 									active: false,
-									type: 'balance'
+									type: 'balance',
+									sort: ''
 								}
 							],
-							pageList: []
+							pageList: [],
+							// 没有数据
+							isNoData: true
 						}
 					},
 					created: function() {
 						var _this = this;
 						mui.plusReady(function() {
-							_this.getList(_this.pageNo, function(resData) {
+							_this.getList( function(resData) {
 								_this.pageList = resData.data;
-								console.log(JSON.stringify(_this.pageList))
+								console.log(JSON.stringify(resData))
 								_this.totalNum = resData.total;
+								if(resData.total) {
+									_this.isNoData = false;
+								}
 							})
 						})
 					},
@@ -129,37 +153,97 @@
 							pullDownAction: function() {
 								wrapper.refresh();
 							},
-							pullUpAction: function() {
+							pullUpAction: this.upLoad
+						});
+					},
+					beforeUpdate:function(){
+						refresher.init({
+							id: "wrapper",
+							pullDownAction: function() {
 								wrapper.refresh();
-							}
+							},
+							pullUpAction: this.upLoad
 						});
 					},
 					methods: {
-						// 
-						changeTab: function(item) {
-							var _this = this;
-							for(var i = 0; i < this.tabBar.length; i++) {
-								this.tabBar[i].active = false;
+						headImage: function(val) {
+							if(val == '' || val == 'null' || val == null) {
+								return '../../../images/user-img.png'
 							}
-							item.active = true;
-							var _order = [];
-//							for(var i = 0; i < this.pageList.length; i++) {
-//								this.pageList[i][type] =  
-//							}
+							return picservice + val;
 						},
-						getList: function(pageNo, callBack) {
+						changeTab: function(item) {
+							var _this = this ;
+							// 等于空的时候就循环一次并将状态重置，循环完后再设置当前点击的状态 tip sort默认值为空
+							if(item.sort==''){
+								for(var i=0;i<this.tabBar.length;i++){
+									this.tabBar[i].active=false;
+									this.tabBar[i].sort = '';
+								}
+								item.active=true;
+								item.sort=1;
+							}else{
+								// 更改排序状态
+								if(item.sort==1){item.sort=2}else{item.sort=1}
+							}
+							console.log(JSON.stringify(item))
+							_this.getList( function(resData) {
+								console.log(JSON.stringify(resData))
+								_this.pageList = resData.data;
+								_this.totalNum = resData.total;
+								if(resData.total) {
+									_this.isNoData = false;
+								}
+							})
+						},
+						getList: function(callBack) {
 							var sendData = {
 								config: {
-									merchantCode: Fun_App.getdata('merchantId')
+									merchantCode: Fun_App.getdata('merchantId'),
+									pageNo: this.pageNo,
+									pageSize: this.pageSize,
+									sort1: this.tabBar[0].sort,
+									sort2: this.tabBar[1].sort,
+									sort3: this.tabBar[2].sort,
+									sort4: this.tabBar[3].sort
 								},
 								fun_Success: function(resData) {
-									callBack.call(this, resData);
+									callBack(resData.data);
 								}
 							}
-							Fun_App.ExEncryptionAjax('member-service/mem/merchantAcct/getVipMember', sendData, '', 'post', 'abc')
+							for(var item in sendData.config){
+								if(!sendData.config[item]){
+									delete sendData.config[item]
+								}
+							}
+							Fun_App.ExEncryptionAjax('member-service/mem/merchantAcct/getVipMember', sendData, '', 'get', 'merchant_query')
+						},
+						// 用户排序
+						userStore:function(){
+							
 						},
 						open: function(url, data) {
 							Fun_App.openWin(url + ".html", 'pop-in', data)
+						},
+						// 上拉加载
+						upLoad: function() {
+							this.pageNo++;
+							console.log(this.totalNum + "this.totalNum")
+							if(this.pageNo > Math.ceil(this.totalNum / this.pageSize)) {
+								refresher.info.pullUpLable = '没有更多数据了!';
+								wrapper.refresh();
+								return false;
+							}
+							this.getList(this.pageNo, function(resData) {
+								this.pageList = this.pageList.concat(resData.data);
+							}.bind(this))
+
+							wrapper.refresh();
+						}
+					},
+					filters: {
+						zero: function(val) {
+							return val == null ? 0 : val
 						}
 					},
 					computed: {}

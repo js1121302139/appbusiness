@@ -13,11 +13,7 @@
 			"img/ico-index1.png",
 			"img/ico-index2.png",
 			"js/muihelper.js",
-<<<<<<< HEAD
 			"page/account/myaccount.html"
-=======
-			"js/page/index.js"
->>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
 		],
 		"refer": [
 			"page/work/home.html",
@@ -53,15 +49,7 @@
 			"img/home-profit-bg.png",
 			"js/common.js",
 			"img/work-reserve-ico.png",
-<<<<<<< HEAD
 			"img/work-partyAdmin-ico.png"
-=======
-			"img/work-partyAdmin-ico.png",
-			"img/work-scannerQrCode.png",
-			"js/fas.js",
-			"js/vue.min.js",
-			"img/work-f2cDay.png"
->>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
 		],
 		"refer": [
 			"page/work/myincome.html",
@@ -78,12 +66,9 @@
 			"page/work/changeShop.html",
 			"page/work/partyAdmin.html",
 			"page/work/budgetAdmin.html",
-<<<<<<< HEAD
 			"page/work/recharge/index.html",
 			"page/work/marketingAdmin/index.html",
 			"page/work/storeSonsign.html",
-=======
->>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
 			"page/qrCode.html"
 		]
 	},
@@ -103,15 +88,9 @@
 			"img/ico-data02.png",
 			"js/iscroll.js",
 			"js/vue.min.js",
-<<<<<<< HEAD
 			"js/pullToRefresh.js"
 		],
 		"refer": []
-=======
-			"js/pullToRefresh.js",
-			"img/order-ListGo-ico.png"
-		]
->>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
 	},
 	"page/work/myuser.html": {
 		"resources": [
@@ -130,12 +109,8 @@
 			"js/iscroll.js",
 			"js/pullToRefresh.js",
 			"js/vue.min.js"
-<<<<<<< HEAD
 		],
 		"refer": []
-=======
-		]
->>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
 	},
 	"page/work/myincome.html": {
 		"resources": [
@@ -169,12 +144,8 @@
 			"js/vue.min.js"
 		],
 		"refer": [
-<<<<<<< HEAD
 			"page/work/myincome.html",
 			"page/work/cashsuccess.html"
-=======
-			"page/work/myincome.html"
->>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
 		]
 	},
 	"page/work/myshop.html": {
@@ -187,12 +158,8 @@
 			"js/muihelper.js",
 			"js/mui.min.js",
 			"css/mui.min.css"
-<<<<<<< HEAD
 		],
 		"refer": []
-=======
-		]
->>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
 	},
 	"page/order/myorder.html": {
 		"resources": [
@@ -217,12 +184,7 @@
 			"img/order-ListGo-ico.png",
 			"images/order-ListBg.png",
 			"img/orderQuestion-ico.png",
-<<<<<<< HEAD
 			"js/vue.min.js"
-=======
-			"js/vue.min.js",
-			"images/work-message-nomsgBg.png"
->>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
 		],
 		"refer": [
 			"page/order/orderdentail.html"
@@ -246,13 +208,7 @@
 			"img/loginLogo.png",
 			"css/page/login.css",
 			"img/loginPwd-ico.png",
-<<<<<<< HEAD
 			"img/loginPhoneNum-ico.png"
-=======
-			"img/loginPhoneNum-ico.png",
-			"js/vue.min.js",
-			"js/page/login.js"
->>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
 		],
 		"refer": [
 			"index.html",
@@ -279,15 +235,7 @@
 			"css/mui.min.css",
 			"images/user-img.png",
 			"js/page/accounnt/myaccount.js",
-<<<<<<< HEAD
 			"img/customer.png"
-=======
-			"img/customer.png",
-			"img/helpBook.png",
-			"img/myAccount-RightsBook-ico.png",
-			"images/half_update_bg.png",
-			"img/game_icon01.png"
->>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
 		],
 		"refer": [
 			"login.html",
@@ -326,12 +274,8 @@
 			"js/mui.min.js",
 			"fonts/mui.ttf",
 			"css/mui.min.css"
-<<<<<<< HEAD
 		],
 		"refer": []
-=======
-		]
->>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
 	},
 	"page/work/gxjsdentail.html": {
 		"resources": [
@@ -340,12 +284,8 @@
 			"js/mui.min.js",
 			"fonts/mui.ttf",
 			"css/mui.min.css"
-<<<<<<< HEAD
 		],
 		"refer": []
-=======
-		]
->>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
 	},
 	"page/work/evaluatemange.html": {
 		"resources": [
@@ -368,12 +308,8 @@
 			"js/pullToRefresh.js",
 			"img/smallStar-ico.png.png",
 			"img/topBackB-ico.png"
-<<<<<<< HEAD
 		],
 		"refer": []
-=======
-		]
->>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
 	},
 	"page/work/activityCenter.html": {
 		"resources": [
@@ -414,12 +350,8 @@
 			"js/mui.min.js",
 			"css/mui.min.css",
 			"js/page/work/dataAnalysis.js"
-<<<<<<< HEAD
 		],
 		"refer": []
-=======
-		]
->>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
 	},
 	"page/work/receivablesCode.html": {
 		"resources": [
@@ -434,12 +366,8 @@
 			"img/topBack-ico.png",
 			"images/receivablesCode-bg.png",
 			"img/qrcode-ico.png"
-<<<<<<< HEAD
 		],
 		"refer": []
-=======
-		]
->>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
 	},
 	"page/work/createactivity.html": {
 		"resources": [
@@ -454,12 +382,8 @@
 			"js/page/work/createactivity.js",
 			"js/common.js",
 			"js/vue.min.js"
-<<<<<<< HEAD
 		],
 		"refer": []
-=======
-		]
->>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
 	},
 	"page/order/orderdentail.html": {
 		"resources": [
@@ -473,17 +397,9 @@
 			"js/iscroll.js",
 			"js/vue.min.js",
 			"img/topBack-ico.png",
-<<<<<<< HEAD
 			"js/pullToRefresh.js"
 		],
 		"refer": []
-=======
-			"js/pullToRefresh.js",
-			"img/work-head.png",
-			"images/work-message-nomsgBg.png",
-			"js/page/order/orderdentail.js"
-		]
->>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
 	},
 	"page/work/jsdentail.html": {
 		"resources": [
@@ -497,12 +413,8 @@
 			"js/iscroll.js",
 			"js/vue.min.js",
 			"js/pullToRefresh.js"
-<<<<<<< HEAD
 		],
 		"refer": []
-=======
-		]
->>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
 	},
 	"page/account/safeCenter.html": {
 		"resources": [
@@ -532,12 +444,8 @@
 			"js/muihelper.js",
 			"js/vue.min.js",
 			"js/mui.js"
-<<<<<<< HEAD
 		],
 		"refer": []
-=======
-		]
->>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
 	},
 	"page/work/teamAdmin.html": {
 		"resources": [
@@ -575,12 +483,8 @@
 			"js/iscroll.js",
 			"js/vue.min.js",
 			"js/pullToRefresh.js"
-<<<<<<< HEAD
 		],
 		"refer": []
-=======
-		]
->>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
 	},
 	"page/work/addSonAccount.html": {
 		"resources": [
@@ -597,12 +501,8 @@
 			"img/work-successTrue.png",
 			"js/vue.min.js",
 			"js/common.js"
-<<<<<<< HEAD
 		],
 		"refer": []
-=======
-		]
->>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
 	},
 	"page/work/promotionAward.html": {
 		"resources": [
@@ -631,12 +531,8 @@
 			"fonts/mui.ttf",
 			"css/mui.min.css",
 			"js/page/work/promotiondentail.js"
-<<<<<<< HEAD
 		],
 		"refer": []
-=======
-		]
->>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
 	},
 	"page/account/bindWeixin.html": {
 		"resources": [
@@ -660,12 +556,8 @@
 			"fonts/mui.ttf",
 			"css/mui.min.css",
 			"images/mine_icon_weixin_success.png"
-<<<<<<< HEAD
 		],
 		"refer": []
-=======
-		]
->>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
 	},
 	"page/account/safelogin.html": {
 		"resources": [
@@ -675,12 +567,8 @@
 			"js/muihelper.js",
 			"js/vue.min.js",
 			"js/mui.js"
-<<<<<<< HEAD
 		],
 		"refer": []
-=======
-		]
->>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
 	},
 	"page/account/helpCenter.html": {
 		"resources": [
@@ -691,12 +579,8 @@
 			"js/muihelper.js",
 			"js/vue.min.js",
 			"js/page/accounnt/helpCenter.js"
-<<<<<<< HEAD
 		],
 		"refer": []
-=======
-		]
->>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
 	},
 	"page/account/aboutyundui.html": {
 		"resources": [
@@ -720,17 +604,9 @@
 			"js/mui.min.js",
 			"css/mui.min.css",
 			"img/topBack-ico.png",
-<<<<<<< HEAD
 			"css/page/work/changeShop.css"
 		],
 		"refer": []
-=======
-			"css/page/work/changeShop.css",
-			"js/page/work/changeShop.js",
-			"js/vue.min.js",
-			"img/work-successTrue.png"
-		]
->>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
 	},
 	"page/work/partyAdmin.html": {
 		"resources": [
@@ -744,13 +620,7 @@
 			"img/topBack-ico.png",
 			"js/pullToRefresh.js",
 			"js/muihelper.js",
-<<<<<<< HEAD
 			"js/vue.min.js"
-=======
-			"js/vue.min.js",
-			"images/work-message-nomsgBg.png",
-			"js/page/work/partyAdmin.js"
->>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
 		],
 		"refer": [
 			"page/work/createParty.html",
@@ -767,12 +637,8 @@
 			"js/iscroll.js",
 			"css/mui.min.css",
 			"js/pullToRefresh.js"
-<<<<<<< HEAD
 		],
 		"refer": []
-=======
-		]
->>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
 	},
 	"page/work/createParty.html": {
 		"resources": [
@@ -795,23 +661,15 @@
 			"img/createPartyTit4-ico.png",
 			"img/createPartyTit6-ico.png",
 			"img/createPartyTit1-ico.png"
-<<<<<<< HEAD
 		],
 		"refer": []
-=======
-		]
->>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
 	},
 	"repwd.html": {
 		"resources": [
 			"img/loginPhoneCode-ico.png",
 			"css/page/repwd.css"
-<<<<<<< HEAD
 		],
 		"refer": []
-=======
-		]
->>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
 	},
 	"guidePage.html": {
 		"resources": [
@@ -821,12 +679,8 @@
 			"images/guidePage2.jpg",
 			"images/guidePage1.jpg",
 			"js/ender.js"
-<<<<<<< HEAD
 		],
 		"refer": []
-=======
-		]
->>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
 	},
 	"page/account/bindBankCard.html": {
 		"resources": [
@@ -855,12 +709,8 @@
 			"css/mui.picker.min.css",
 			"js/addressArr.js",
 			"css/page/account/addBankCard.css"
-<<<<<<< HEAD
 		],
 		"refer": []
-=======
-		]
->>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
 	},
 	"page/account/aboutbook.html": {
 		"resources": [
@@ -869,12 +719,8 @@
 			"js/mui.min.js",
 			"css/mui.min.css",
 			"css/page/account/aboutbook.css"
-<<<<<<< HEAD
 		],
 		"refer": []
-=======
-		]
->>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
 	},
 	"page/qrCode.html": {
 		"resources": [
@@ -882,7 +728,6 @@
 			"page/qrcode/common.js",
 			"js/muihelper.js",
 			"js/mui.js",
-<<<<<<< HEAD
 			"page/qrcode/common.css"
 		],
 		"refer": [
@@ -901,7 +746,8 @@
 			"page/work/recharge/everyOneRec.html",
 			"page/work/recharge/newAddRec.html",
 			"page/work/recharge/cashWithdrawal.html",
-			"page/work/recharge/recDetail.html"
+			"page/work/recharge/recDetail.html",
+			"page/work/recharge/myVipUser.html"
 		],
 		"resources": []
 	},
@@ -927,23 +773,6 @@
 	"page/work/marketingAdmin/marketingClear.html": {
 		"refer": [
 			"page/work/marketingAdmin/index.html"
-=======
-			"page/qrcode/common.css",
-			"js/vue.min.js"
-		],
-		"refer": [
-			"page/work/luck.html"
-		]
-	},
-	"page/work/luck.html": {
-		"resources": [
-			"images/qrCode-isCheckInfoBg.png",
-			"img/qrCode-isSuccessT.png",
-			"img/qrCode-isCheckInfoclose.png",
-			"img/qrCode-isSuccessF.png",
-			"js/muihelper.js",
-			"js/mui.js"
->>>>>>> 5364d9569539cb1231114c2af6ab18bbe1a1cf64
 		]
 	}
 }

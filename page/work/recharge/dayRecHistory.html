@@ -24,15 +24,15 @@
 					<div class="historyItem" v-if="header==='充值记录'" v-for="item in pageList">
 						<div class="historyItemTit">
 							<p v-text="'订单号:'+item.order_no">订单号:</p>
-							<!--<p v-text="item.mem_name">hajkdhakd</p>-->
+							<p v-text="item.mem_name"></p>
 						</div>
 						<div>
-							<p class="recName" v-text="item.mem_name">chongzhi</p>
+							<p class="recName" v-text="item.offer_name">chongzhi</p>
 							<p class="recPrice" v-text="'+'+item.pSum">+115</p>
 						</div>
 						<div>
 							<p class="recTime" v-text="item.payTime">16:00</p>
-							<p class="recType">weixin</p>
+							<p class="recType">微信</p>
 						</div>
 					</div>
 					<div class="historyItem" v-if="header==='消费记录'" v-for="item in pageList">
@@ -42,7 +42,7 @@
 						</div>
 						<div>
 							<p class="recName" v-text="item.member_name">chongzhi</p>
-							<p class="recPrice" v-text="item.pSum">+115</p>
+							<p class="recPrice" v-text="'-' + item.pSum">+115</p>
 						</div>
 						<div>
 							<p class="recTime" v-text="item.payTime">16:00</p>

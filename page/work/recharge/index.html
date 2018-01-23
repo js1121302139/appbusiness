@@ -33,14 +33,13 @@
 
 						</div>
 						<div class="todayRecItem">
-							<p >{{TodayAllsum.comsumeSum | fillZero}}	</p>
+							<p >{{allSum.pSum | fillZero}}	</p>
 							<h1>总充值金额</h1>
 						</div>
-						<!--<div class="todayRecItem">
-							<p >{{TodayAllsum.pSum | fillZero}}</p>
-							<h1>总消费金额</h1>
-
-						</div>-->
+						<div class="todayRecItem">
+							<p >{{allSum.notConsumeMoney | fillZero}}</p>
+							<h1>未消费金额</h1>
+						</div>
 					</div>
 				</div>
 				<div id="wrapper" class="recList">
@@ -51,20 +50,20 @@
 									<div class="topTitInfo">
 										<h1>面值{{item.listPrice}} (售价{{item.discountPrice}})</h1>
 										<!--<h1 v-text="'('+'售价'++')'"></h1>-->
-									</div>
-									<p>{{recStatus[item.status].tit}}</p>
+									</div> 
+									<p :class="{statusTxt : item.status==1}">{{recStatus[item.status].tit}}</p>
 								</div>
 								<div class="ListItemInfo">
 									<div class="ListItemInfoBox">
 										<div class="ItemInfoBoxItem">
 											<img src="img/rec-money.png" />
 											<h1>充值总金额</h1>
-											<p>{{item | recCountMoney}}</p>
+											<p >{{item.psum | fillZero}}</p>
 										</div>
 										<div class="ItemInfoBoxItem">
-											<img src="img/rec-peopleNum.png" alt="" />
+											<img src="img/rec-peopleNum.png" alt="" /> 
 											<h1>充值总人数</h1>
-											<p>{{item.offerBuyNum | fillZero}}</p>
+											<p>{{item.msum | fillZero}}</p>
 										</div>
 										<!--<div class="ItemInfoBoxItem">
 											<img src="img/remaining.png" />
@@ -79,7 +78,7 @@
 											<h1>下架:{{item.endTime  | splitDate}}</h1>
 										</div>
 										<div class="fun">
-											<button @click="open('./newAddRec',item)" :disabled="item.status==1">编辑</button>
+											<button :class="{active : item.status==1}" @click="open('./newAddRec',item)" :disabled="item.status==1">编辑</button>
 											<!--
 											--><button @click="open('./everyOneRec',item)">明细</button>
 											<!--
@@ -90,6 +89,13 @@
 							</div>
 						</li>
 					</ul>
+				</div>
+				<div class="isNoData" v-if="isNoData" :class="{scale1:isNoData}">
+					<div class="isNoDataInfo mui-text-center">
+						<div class="isNoDataBg"></div>
+						<p class="isNoDataTit">暂无充值卡</p>
+						<p>点击右下角新建一张吧!</p>
+					</div>
 				</div>
 			</div>
 			<div class="footer">
@@ -146,8 +152,12 @@
 						},
 						// 今日充值总数
 						TodayAllsum: {},
+						// 历史充值
+						allSum:{},
 						// 获取到到数据列表
-						pageList: []
+						pageList: [],
+						// 没有数据
+						isNoData:false 
 					}
 				},
 				created: function() {
@@ -165,10 +175,20 @@
 						_this.getList(_this.pageNo, function(resData) {
 							_this.pageList = resData.data;
 							_this.totalNum = resData.total;
+							if(!resData.total){
+								_this.isNoData=true;
+							}
 						})
 						// 获取今日充值
 						_this.getTodayAllsum(function(resData) {
 							_this.TodayAllsum = resData.data;
+						})
+						_this.getAllsum(function(resData){
+							console.log(JSON.stringify(resData)+'all')
+							_this.allSum = resData.data;
+						})
+						_this.getConsumptionAll(function(resData){
+							_this.allSum.notConsumeMoney = resData.data.notConsumeMoney;
 						})
 					})
 				},
@@ -183,6 +203,7 @@
 						pullDownAction: function() {},
 						pullUpAction: _this.upLoad
 					});
+					
 				},
 				methods: {
 					// 打开页面
@@ -224,6 +245,30 @@
 						}
 						Fun_App.ExEncryptionAjax('member-service/mem/merchantAcct/getTodayAllsum', sendData, '', 'post', 'abc')
 					},
+					// 获取所有充值
+					getAllsum: function(callBack) {
+						var sendData = {
+							data_Config: [
+								'merchantCode=' + Fun_App.getdata('merchantId')
+							],
+							config: {},
+							fun_Success: function(resData) {
+								callBack.call(this, resData);
+							}
+						}
+						Fun_App.ExEncryptionAjax('member-service/mem/merchantAcct/getAllSum', sendData, '', 'post', 'abc')
+					},
+					getConsumptionAll: function(callBack) {
+						var sendData = {
+							config: {
+								merchantCode: Fun_App.getdata('merchantId')
+							},
+							fun_Success: function(resData) {
+								callBack.call(this, resData);
+							}
+						}
+						Fun_App.ExEncryptionAjax('member-service/mem//merchantAcct/getConsumeAndNotConsumeMoney', sendData, '', 'get', 'merchant_query');
+					},
 					// 获取充值卡列表
 					getList: function(pageNo, callBack) {
 						console.log(Fun_App.getdata('merchantId') + '-------<')
@@ -250,7 +295,6 @@
 							return false;
 						}
 						this.getList(this.pageNo, function(resData) {
-							console.log(JSON.stringify(resData))
 							this.pageList = this.pageList.concat(resData.data);
 						}.bind(this))
 

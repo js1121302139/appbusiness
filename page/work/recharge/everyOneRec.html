@@ -13,13 +13,13 @@
 		<div id="everyOneRec">
 			<header class="mui-bar topBar mui-bar-nav">
 				<a class="mui-action-back topBack-ico mui-pull-left"></a>
-				<h1 class="mui-title" >{{itemData.offerName}}明细</h1>
+				<h1 class="mui-title">{{itemData.offerName}}明细</h1>
 				<!--<span id="Topactivity" class="mui-btn  Topactivity mui-btn-blue mui-btn-link mui-pull-right" @click="open">创建活动</span>-->
 			</header>
 			<div class="mui-content">
 				<div class="recCard">
 					<div class="todayRec">
-						<h2 class="todayRecMoney" v-text="topData.pSum">999</h2>
+						<h2 class="todayRecMoney">{{topData.pSum|zero}}</h2>
 						<div class="todayRecTit">
 							<img src="img/todayrecMoney.png" />
 							<p>今日充值金额</p>
@@ -27,34 +27,30 @@
 					</div>
 					<div class="todayRecInfo">
 						<div class="todayRecItem">
-							<h1>今日充值人数</h1>
 							<p v-text="topData.mSum">35</p>
-						</div>
-						<!--<div class="todayRecItem">
-							<h1>昨日充值金额</h1>
-							<p v-text="topData.pSum">35</p>
+							<h1>今日充值人数</h1>
+							
 						</div>
 						<div class="todayRecItem">
+							<p v-text="yesterDay.yesterdayPnum">35</p>
+							<h1>昨日充值金额</h1>
+							
+						</div>
+						<div class="todayRecItem">
+							<p v-text="yesterDay.yesterdayMsum">1</p>
 							<h1>昨日充值人数</h1>
-							<p>35</p>
-						</div>-->
+							
+						</div>
 					</div>
 				</div>
-				<div class="recDate">
-					<span v-text="'创建时间:'+itemData.createTime"></span>
-					<span v-text="'创建时间:'+itemData.endTime"></span>
-					<!--<div>
-						<!--<span v-text="itemData.createTime"></span>
-						
+				<div class="chart">
+					<div ref="main" style="height: 13.375rem;margin-bottom: 0.625rem; background: #fff;"></div>
+					<div class="recDate">
+						<span v-text="'创建时间:'+daySE.start"></span>
+						<span v-text="'结束时间:'+daySE.end"></span>
 					</div>
-					<div>
-						<h1>下架时间:</h1>
-						<span v-text="itemData.endTime">2017-1-1</span>
-						
+				</div>
 
-					</div>-->
-				</div>
-				<div class="chart" ref="main" style="height: 13.375rem;margin-bottom: 0.625rem; background: #fff;"></div>
 				<div class="clickItem" :key="item" v-for="item in pageData">
 					<div class="pullDownItemHeader" @click="showDrop(item)">
 						<h1 v-text="item.payTime">2017-11</h1>
@@ -70,7 +66,7 @@
 								<p v-text="dayItem.payTime">07-11</p>
 							</div>
 							<div class="onlineRec">
-								<p v-text="dayItem.mSum+'人充值'">+1999.00</p>
+								<p v-text="dayItem.mSum+'单充值'">+1999.00</p>
 							</div>
 							<div class="onlineRec">
 								<p v-text="'+'+dayItem.pSum">+1999.00</p>
@@ -98,6 +94,7 @@
 					return {
 						itemData: {},
 						topData: {},
+						yesterDay:{},
 						pageData: [],
 						sevDay: [],
 						sevMoney: [],
@@ -109,7 +106,7 @@
 					mui.plusReady(function() {
 						// offerSpecId
 						_this.itemData = Fun_App.getextrasdata();
-						console.log('top'+JSON.stringify(_this.itemData))
+						console.log('top' + JSON.stringify(_this.itemData))
 						_this.itemData.createTime = _this.itemData.createTime.split(' ')[0];
 						_this.itemData.endTime = _this.itemData.endTime.split(' ')[0];
 						_this.getTodaysum(function(resData) {
@@ -124,6 +121,7 @@
 							_this.pageData = resData.data;
 						})
 						_this.getSevDay();
+						_this.getYesterDayRec();
 					})
 				},
 				mounted: function() {
@@ -131,11 +129,13 @@
 				},
 				methods: {
 					getTodaysum: function(callBack) {
-						
+
 						var sendData = {
 							config: {
-								merchantOfferId: this.itemData.offerSpecId
 							},
+							data_Config: [
+								'merchantOfferId=' + this.itemData.id,
+							],
 							fun_Success: function(resData) {
 								callBack.call(this, resData);
 							}
@@ -145,8 +145,7 @@
 					getYearDetail: function(callBack) {
 						console.log(this.itemData.id)
 						var sendData = {
-							config: {
-							},
+							config: {},
 							data_Config: [
 								'merchantOfferId=' + this.itemData.id,
 							],
@@ -171,13 +170,24 @@
 						}
 						Fun_App.ExEncryptionAjax('member-service/mem/merchantAcct/getDayDetail', sendData, '', 'post', 'abc')
 					},
+					getYesterDayRec:function(){
+						var _this = this ;
+						var sendData={
+							config:{
+								merchantOfferId:this.itemData.id
+							},
+							fun_Success:function(resData){
+								_this.yesterDay=resData.data;
+							}
+						}
+						Fun_App.ExEncryptionAjax('member-service/mem/merchantAcct/yesterday/recharge/mSumAndPNum',sendData,'','get','merchant_query')
+					},
 					getSevDay: function() {
 						var _this = this;
-						console.log('merchantOfferId' + this.itemData.offerSpecId)
 						var sendData = {
 							config: {},
 							data_Config: [
-								'merOfferOrderId=' + this.itemData.id,
+								'merchantOfferId=' + this.itemData.id,
 								'dayS=' + this.daySE.start,
 								'dayE=' + this.daySE.end
 							],
@@ -206,8 +216,8 @@
 
 									},
 									grid: {
-										top: 30,
-										bottom: 30,
+										top: 15,
+										bottom: 57,
 										left: 0,
 										right: 0
 									},
@@ -277,6 +287,9 @@
 					}
 				},
 				filters: {
+					zero: function(val) {
+						return val == null ? 0 : val
+					},
 					dateDay: function(day) {
 						return day.split(" ")[0];
 					}
@@ -286,7 +299,7 @@
 					daySE: function() {
 						var oneDayTime = 1000 * 60 * 60 * 24;
 						var date = new Date();
-						var dayStartTime = date.getTime() - oneDayTime * 8;
+						var dayStartTime = date.getTime() - oneDayTime * 8; 
 						var dayEndTime = date.getTime() - oneDayTime;
 						return {
 							start: Fun_App.dateFormat(new Date(dayStartTime)).textday,

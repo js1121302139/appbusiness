@@ -386,6 +386,49 @@ table {
 .mui-content {
   padding-top: 4rem !important;
 }
+.isNoData {
+  position: absolute;
+  width: 100%;
+  top: 7.4375rem;
+  bottom: 0;
+  z-index: 9999;
+  background: #fff;
+  transform: scale(0);
+  transition: all 0.25s;
+}
+.isNoData .isNoDataInfo {
+  position: absolute;
+  top: 8.125rem;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+.isNoData .isNoDataInfo .isNoDataBg {
+  margin: 0 auto;
+  width: 4.21875rem;
+  height: 8.125rem;
+  margin-bottom: 0.9375rem;
+  background: url(../../../images/work-message-nomsgBg.png) left top no-repeat;
+  background-size: cover;
+}
+.isNoData .isNoDataInfo p {
+  margin-bottom: 0.625rem;
+  font-size: 0.6875rem;
+  color: #999;
+}
+.isNoData .isNoDataInfo .isNoDataTit {
+  font-size: 0.875rem;
+  color: #8d8e92;
+}
+.isNoData .isNoDataBg {
+  background: url(../../../../images/work-message-nomsgBg.png) left top no-repeat !important;
+  background-size: cover !important;
+  height: 7.4375rem;
+}
+.scale1 {
+  -webkit-transform: scale(1) !important;
+  transform: scale(1) !important;
+}
 .mui-content .detailPageTit {
   display: -webkit-box;
   display: -ms-flexbox;

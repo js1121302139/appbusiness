@@ -55,6 +55,7 @@ var vue = new Vue({
 	methods: {
 		getUserInfo: function() {
 			var _this = this;
+			console.log(this.pageData.qrToken);
 			var sendData = {
 				config: this.pageData.qrToken,
 				data_Config: [
@@ -67,6 +68,7 @@ var vue = new Vue({
 						return false;
 					};
 					var datas = resData.data;
+					console.log(JSON.stringify(datas));
 					_this.pageData = {
 						// 二维码信息
 						qrToken: "",
@@ -78,7 +80,7 @@ var vue = new Vue({
 						orderSn: datas.orderSn,
 						// 支付时间
 						payTime: datas.payTime,
-
+						// 
 						resData: datas
 					}
 				}

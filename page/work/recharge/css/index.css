@@ -386,6 +386,53 @@ table {
 .mui-content {
   padding-top: 4rem !important;
 }
+.isNoData {
+  position: absolute;
+  width: 100%;
+  top: 15.25rem;
+  bottom: 3.125rem;
+  z-index: 9999;
+  background: #fff;
+  transform: scale(0);
+  transition: all 0.25s;
+}
+.isNoData .isNoDataInfo {
+  position: absolute;
+  top: 8.125rem;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+.isNoData .isNoDataInfo .isNoDataBg {
+  margin: 0 auto;
+  width: 4.21875rem;
+  height: 8.125rem;
+  margin-bottom: 0.9375rem;
+  background: url(../../../images/work-message-nomsgBg.png) left top no-repeat;
+  background-size: cover;
+}
+.isNoData .isNoDataInfo p {
+  margin-bottom: 0.625rem;
+  font-size: 0.6875rem;
+  color: #999;
+}
+.isNoData .isNoDataInfo .isNoDataTit {
+  font-size: 0.875rem;
+  color: #8d8e92;
+}
+.isNoData .isNoDataBg {
+  background: url(../../../../images/work-message-nomsgBg.png) left top no-repeat !important;
+  background-size: cover !important;
+  height: 15.25rem;
+}
+.isNoData .isNoDataInfo {
+  top: 1.25rem;
+  bottom: 0;
+}
+.scale1 {
+  -webkit-transform: scale(1) !important;
+  transform: scale(1) !important;
+}
 .recCard {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -516,8 +563,9 @@ table {
 }
 .recList .ListItem {
   background: #fff;
-  margin-bottom: 0.625rem;
+  margin-top: 0.625rem;
   height: 12.375rem;
+  border-radius: 0.3125rem;
   -webkit-box-shadow: 0 0 0.5rem 0 #c3c3c3;
   box-shadow: 0 0 0.5rem 0 #c3c3c3;
 }
@@ -557,6 +605,9 @@ table {
   right: 0.5rem;
   height: 0.0625rem;
 }
+.recList .ListItem .topTit .statusTxt {
+  color: #D7B374;
+}
 .recList .ListItem .topTit .topTitInfo {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -572,6 +623,9 @@ table {
 .recList .ListItem .topTit .topTitInfo h1 {
   font-size: 1rem;
 }
+.recList .ListItem .topTit p {
+  transition: all .25s;
+}
 .recList .ListItem .ListItemInfo {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -583,7 +637,7 @@ table {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  padding: 0 0.3125rem;
+  padding: 0 0.5rem;
 }
 .recList .ListItem .ListItemInfo .ListItemInfoBox {
   display: -webkit-box;
@@ -614,6 +668,7 @@ table {
   text-align: center;
   height: 4.375rem;
   margin: 0 0.3125rem;
+  border-radius: 0.3125rem;
   -webkit-box-shadow: 0 0 0.5rem 0 #C3C3C3;
   box-shadow: 0 0 0.5rem 0 #C3C3C3;
   -ms-flex-line-pack: justify;
@@ -661,6 +716,11 @@ table {
   margin-left: 0.625rem;
   -webkit-box-shadow: 0 0 0 1px #333;
   box-shadow: 0 0 0 1px #333;
+}
+.recList .ListItem .recOperation .fun .active {
+  background: #E5E5E5;
+  color: #fff;
+  box-shadow: none;
 }
 .footer {
   position: fixed;

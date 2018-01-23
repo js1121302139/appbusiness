@@ -1,29 +1,27 @@
-///*
+/*
 // * 服务器的地址
 // * http://192.168.1.220/api/login
 // */
-//// 内网地址
+// 内网地址
 //var strservicef = 'http://192.168.1.62:8083/';
-//// var picservice = 'http://test.duikavip.com:8090/image/';
+// var picservice = 'http://test.duikavip.com:8090/image/';
 // 开发环境
-var luckservice = 'http://192.168.1.8:8082/acti/'; // 一元抽奖的服务地址
-var encrystrservicef = 'http://192.168.1.9:9090/dev/api/';
-var strservicef = 'http://192.168.1.9:9090/dev/merchant/';
-var picservice = 'http://test.duikavip.com:9090/ejsimage';
-
+//var luckservice = 'http://192.168.1.8:8082/acti/'; // 一元抽奖的服务地址
+//var encrystrservicef = 'http://192.168.1.9:9090/dev/api/';
+//var strservicef = 'http://192.168.1.9:9090/dev/merchant/'; 
+//var picservice = 'http://test.duikavip.com:9090/ejsimage';
 //测试环境
 
 //var luckservice = 'http://192.168.1.8:8082/acti/'; // 一元抽奖的服务地址
 //var encrystrservicef = 'http://test.duikavip.com:8085/api/';
 //var strservicef = 'http://test.duikavip.com:8084/merchant/';
-//var picservice = 'http://test.duikavip.com:8084/ejsimage';
+//var picservice = 'http://test.duikavip.com:8084/ejsimage';s
 
-////外网链接
-
-//var encrystrservicef = 'http://api.duikavip.com:81/api/';
-//var strservicef = 'http://sj.duikavip.com/merchant/';
-//var luckservice = 'http://api.duikavip.com/acti/'; // 一元抽奖的服务地址
-//var picservice = 'http://image.duikavip.com/ejsimage';
+//外网链接
+var encrystrservicef = 'http://api.duikavip.com:81/api/';
+var strservicef = 'http://sj.duikavip.com/merchant/';
+var luckservice = 'http://api.duikavip.com/acti/'; // 一元抽奖的服务地址
+var picservice = 'http://image.duikavip.com/ejsimage'; 
 
 var _self;
 /* 

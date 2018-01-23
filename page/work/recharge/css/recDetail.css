@@ -386,8 +386,8 @@ table {
 .mui-content {
   padding-top: 4rem !important;
 }
-.mui-content .detailCard {
-  margin-top: 0.625rem;
+.mui-content .ma10 {
+  margin-bottom: 0.625rem;
 }
 .mui-content .detailCard {
   display: -webkit-box;
@@ -582,7 +582,7 @@ table {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 0.3125rem 0.75rem;
+  padding: 0.3125rem 0;
   border-bottom: 1px solid #e5e5e5;
   background: #FAFAFA;
 }
@@ -595,6 +595,16 @@ table {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+.mui-content .clickItem .pullDownList .detailItem .detailItemDate {
+  width: 4.625rem;
+  margin-right: 4.625rem;
+}
+.mui-content .clickItem .pullDownList .detailItem .onlineRec {
+  flex: 1;
+}
+.mui-content .clickItem .pullDownList .detailItem .onlineRec:last-child {
+  justify-content: flex-end;
 }
 .mui-content .clickItem .pullDownList .detailItem:last-child {
   border-bottom: none;

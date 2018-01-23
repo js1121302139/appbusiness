@@ -1,0 +1,131 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/getTicketInfo.css" />
+	</head>
+
+	<body>
+		<div id="ticketInfo">
+			<header class="mui-bar topBar mui-bar-nav">
+				<a class="mui-action-back topBack-ico mui-pull-left"></a>
+				<h1 class="mui-title">领取详情</h1>
+				<!--<span id="Topactivity" class="mui-btn  Topactivity mui-btn-blue mui-btn-link mui-pull-right" @click="">新建</span>-->
+			</header>
+			<div class="mui-content">
+				<div class="isNoData" v-if="!isNoData" :class="{scale1:!isNoData}">
+					<div class="isNoDataInfo mui-text-center">
+						<div class="isNoDataBg"></div>
+						<p class="isNoDataTit">无领取用户!</p>
+						<p>还没有用户领取券哦!</p>
+					</div>
+				</div>
+				<div class="ticketMonth" :key="item" v-for="item in pageData">
+					<div class="pullDown pullDowns" @click="showDrop(item)">
+						<h1 v-text="item.dateTime">2017-11</h1>
+						<div class="recInfo">
+							<p v-text="'已领取'+item.receiveNum+'人'">333人</p>
+							<img :class="{trdropDown : item.show}" src="../recharge/img/dropDown-ico.png" />
+						</div>
+					</div>
+					<div class="dropDownList" v-show="item.show">
+						<div class="ticketItem" v-for="items in item.dayList">
+							<p class="ticketNum" v-text="'券编号:'+items.ticketNo">3617823681236</p>
+							<div class="memInfo">
+								<div class="userInfo">
+									<img :src="headImage(items.headImg)" />
+									<p class="userName mui-ellipsis" v-text="items.memberName">蒋爸爸</p>
+								</div>
+								<p class="ticketTime mui-ellipsis" v-text="'领取时间:'+items.createTime">领取时间：9819283091283</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="../../../js/mui.min.js"></script>
+		<script type="text/javascript" src="../../../js/md5.min.js"></script>
+		<script type="text/javascript" src="../../../js/muihelper.js"></script>
+		<script type="text/javascript" src="../../../js/vue.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+			var vue = new Vue({
+				el: "#ticketInfo",
+				data: function() {
+					return {
+						isNoData: true,
+						pageData: [{
+							show: true
+						}, {
+							show: true
+						}],
+						ticker: ''
+					}
+				},
+				created: function() {
+					var _this = this;
+					mui.plusReady(function() {
+						_this.ticker = Fun_App.getextrasdata().id;
+						_this.getTickerMonth(function(resData) {
+							console.log(JSON.stringify(resData))
+							_this.isNoData= resData.data.data.total;
+							for(var i = 0; i < resData.data.data.length; i++) {
+								resData.data.data[i].show = false;
+								resData.data.data[i].dayList = [];
+							}
+							_this.pageData = resData.data.data;
+						})
+					})
+				},
+				methods: {
+					headImage: function(val) {
+						if(val == '' || val == 'null' || val == null) {
+							return '../../../images/user-img.png'
+						}
+						return picservice + val;
+					},
+					showDrop: function(item) {
+						item.show = !item.show;
+						item.show && this.getDayTicker(item.dateTime, function(resData) {
+							item.dayList = resData.data.data;
+						})
+					},
+					getDayTicker: function(day, callBack) {
+						var sendData = {
+							config: {
+								ticketId: this.ticker ,
+								dateTime: day,
+								token: Fun_App.getdata('token'),
+								pageNo: 1,
+								pageSize: 99999
+							},
+							fun_Success: function(resData) {
+								callBack(resData);
+							}
+						}
+						Fun_App.ExEncryptionAjax('order-service//ticket/receive/detail', sendData, '', 'get', 'merchant_query');
+					},
+					getTickerMonth: function(callBack) {
+						var sendData = {
+							config: {
+								ticketId: this.ticker ,
+								token: Fun_App.getdata('token'),
+								pageNo: 1,
+								pageSize: 99999
+							},
+							fun_Success: function(resData) {
+								callBack(resData);
+							}
+						}
+						Fun_App.ExEncryptionAjax('order-service/ticket/receive/list', sendData, '', 'get', 'merchant_query');
+					}
+				}
+			})
+		</script>
+	</body>
+
+</html>

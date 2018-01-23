@@ -15,6 +15,8 @@ var Vue = new Vue({
 				createTime: "",
 				// 用户名
 				memName: "",
+				// 支付时间
+				payTime:'',
 				// 二维码文本
 				qrToken: ""
 			},
@@ -44,7 +46,8 @@ var Vue = new Vue({
 						sonsignList: eval(getPage.content),
 						orderNumber: getPage.nbr,
 						createTime: getPage.createTime,
-						memName: getPage.memName
+						memName: getPage.memName,
+						payTime:getPage.payTime
 					}
 
 				}
@@ -85,6 +88,7 @@ var Vue = new Vue({
 		// 核销
 		chk: function() {
 			var _this = this;
+			console.log(this.pageData.repoNbr)
 			var sendData = {
 				config: this.pageData.repoNbr,
 				data_Config: [

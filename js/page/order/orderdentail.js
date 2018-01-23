@@ -17,7 +17,8 @@ var Vue = new Vue({
 					var _this = this;
 					mui.plusReady(function() {
 						_this.statisTime = Fun_App.getextrasdata();
-						
+						console.log(_this.statisTime )
+						console.log(Fun_App.getdata('token'))
 						_this.getList(function(resData) {
 							_this.list = resData.data;
 							_this.isNoData = (resData.data.length<1)?true:'';		

@@ -46,7 +46,7 @@
 						<span>份</span>
 					</div>-->
 				</div>
-				<div class="newRecDate">
+				<!--<div class="newRecDate">
 					<div class="newRecItem" @click.stop="selectDate('startTime')">
 						<span class="tit">上架时间</span>
 						<span> {{pageData.startTime | isno}} </span>
@@ -59,9 +59,10 @@
 						<img src="../../../img/createPartyjt-ico.png"  v-if="!pageData.endTime"/>
 						<img src="../../../img/icon-delete.png" @click.stop="pageData.endTime=''"  v-if="pageData.endTime"/>
 					</div>
-				</div>
+				</div>-->
 			</div>
-			<button data-loading-text="提交中" id="buttom" class="sure" @click="sureUpData" v-text="pageTit+'上架'">上架</button>
+			<button data-loading-text="提交中" v-if="pageTit=='新建'" id="buttom" class="sure" @click="sureUpData" v-text="pageTit+'上架'">上架</button>
+			<button data-loading-text="提交中" v-if="pageTit=='编辑'" id="buttom" class="sure" @click="sureUpData" v-text="'确认'+pageTit">上架</button>
 		</div>
 		<script src="../../../js/mui.min.js"></script>
 		<script src="../../../js/mui.picker.min.js"></script>
@@ -85,10 +86,10 @@
 							discount: '0',
 							// 上架数量
 							offerNum: '10000',
-							// 上架时间
-							startTime: '',
-							// 下架时间
-							endTime: '',
+//							// 上架时间
+//							startTime: '',
+//							// 下架时间
+//							endTime: '',
 							// 售价
 							discountPrice: '',
 							// 卡名称
@@ -117,10 +118,10 @@
 								discount: page.discount,
 								// 上架数量
 								offerNum: page.offerNum,
-								// 上架时间
-								startTime: page.startTime,
-								// 下架时间
-								endTime: page.endTime,
+//								// 上架时间
+//								startTime: page.startTime,
+//								// 下架时间
+//								endTime: page.endTime,
 								
 							}
 							return false;
@@ -154,7 +155,11 @@
 								}
 							}
 						}
-						if(Fun_App.findObj(this.pageData, ['startTime','endTime']) !== false) {
+						if(this.pageData.listPrice==0){
+							mui.toast('面值不能为0');
+							return false;
+						}
+						if(Fun_App.findObj(this.pageData, []) !== false) {
 							Fun_App.ExEncryptionAjax(this.upUrl, sendData, '', 'post', 'abc')
 						} else {
 							mui.toast('还有数据没有填写完整！')
@@ -166,6 +171,11 @@
 						handler: function(val, oldVal) {
 							if(Number(val.discountPrice) > Number(val.listPrice)){
 								val.discountPrice = val.listPrice;
+							}
+							if(!Number(val.discountPrice)){
+								val.discountPrice =  '';
+							}else{
+								val.discountPrice=Number(val.discountPrice).toFixed(2)
 							}
 							val.offerName = '面值'+ Number(val.listPrice)+' (售价'+Number(val.discountPrice)+')'
 							var num = (Number(val.discountPrice) /  Number(val.listPrice)*10).toFixed(3);

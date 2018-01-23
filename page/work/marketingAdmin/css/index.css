@@ -386,16 +386,73 @@ table {
 .mui-content {
   padding-top: 4rem !important;
 }
+.isNoData {
+  position: absolute;
+  width: 100%;
+  top: 11.75rem;
+  bottom: 0;
+  z-index: 9999;
+  background: #fff;
+  transform: scale(0);
+  transition: all 0.25s;
+}
+.isNoData .isNoDataInfo {
+  position: absolute;
+  top: 8.125rem;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+.isNoData .isNoDataInfo .isNoDataBg {
+  margin: 0 auto;
+  width: 4.21875rem;
+  height: 8.125rem;
+  margin-bottom: 0.9375rem;
+  background: url(../../../images/work-message-nomsgBg.png) left top no-repeat;
+  background-size: cover;
+}
+.isNoData .isNoDataInfo p {
+  margin-bottom: 0.625rem;
+  font-size: 0.6875rem;
+  color: #999;
+}
+.isNoData .isNoDataInfo .isNoDataTit {
+  font-size: 0.875rem;
+  color: #8d8e92;
+}
+.isNoData .isNoDataBg {
+  background: url(../../../../images/work-message-nomsgBg.png) left top no-repeat !important;
+  background-size: cover !important;
+  height: 15.25rem;
+}
+.isNoData .isNoDataInfo {
+  top: 1.25rem;
+  bottom: 0;
+}
+.scale1 {
+  -webkit-transform: scale(1) !important;
+  transform: scale(1) !important;
+}
 .detailPageTit {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
   flex: 1;
   height: 2.75rem;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   border-bottom: 0.0625rem solid #E5E5E5;
   background: #fff;
 }
 .detailPageTit .detailPageTitItem {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
   flex: 1;
   height: 100%;
   text-align: center;
@@ -417,9 +474,10 @@ table {
   bottom: 0;
   left: -100%;
   width: 100%;
+  -webkit-transition: all .25s;
   transition: all .25s;
   padding: 0 0.75rem;
-  z-index: 9999;
+  z-index: 10000;
 }
 .editDrop .mui-backdrop {
   position: absolute;
@@ -468,33 +526,54 @@ table {
   margin-bottom: 2.375rem;
   text-align: center;
 }
+.editDrop .editMarketing .editMarketingTit input {
+  margin-bottom: 0;
+}
 .editDrop .editMarketing .editMarketingTit span {
   font-size: 1.5rem;
 }
 .editDrop .modelItem {
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   padding: 0 0.75rem;
   background: url(../img/qrcodeMarketing.png) left top no-repeat;
   background-size: 100% 100%;
   height: 7.625rem;
   margin-bottom: 0.625rem;
+  -webkit-box-shadow: 0 0 0.5rem 0.125rem rgba(170, 168, 168, 0.5);
   box-shadow: 0 0 0.5rem 0.125rem rgba(170, 168, 168, 0.5);
 }
 .editDrop .modelItem .modelInfo {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
   flex: 1;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
 }
 .editDrop .modelItem .modelInfo .modelTit {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
   flex: 1;
   margin-bottom: 0.4375rem;
   font-size: 1.125rem;
   color: #333;
 }
 .editDrop .modelItem .modelInfo .editMarketingForm {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
   flex: 1;
   width: 9.375rem;
   margin-bottom: 0.625rem;
@@ -506,9 +585,13 @@ table {
   text-indent: 0.3125rem;
 }
 .editDrop .modelItem .modelInfo .editMarketingForm .firstInput {
+  -webkit-box-flex: 3;
+  -ms-flex: 3;
   flex: 3;
 }
 .editDrop .modelItem .modelInfo .editMarketingForm .lastInput {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
   flex: 1;
   margin-left: 0.625rem;
 }
@@ -516,8 +599,14 @@ table {
   margin-bottom: 0;
 }
 .editDrop .modelItem .modelEdit {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
   flex: 1;
   border-radius: 0.3125rem;
   background: #D7B374;
@@ -527,10 +616,17 @@ table {
   left: 0;
 }
 .mui-content .options {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
   flex: 1;
   height: 2.75rem;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -ms-flex-pack: distribute;
   justify-content: space-around;
   background: #fff;
 }
@@ -540,10 +636,12 @@ table {
   line-height: 1.5625rem;
   border-radius: 1.5625rem;
   color: #999;
+  -webkit-box-shadow: 0 0 0 0.0625rem #999;
   box-shadow: 0 0 0 0.0625rem #999;
 }
 .mui-content .options .active {
   background: #D7B374;
+  -webkit-box-shadow: 0 0 0 0.0625rem #D7B374;
   box-shadow: 0 0 0 0.0625rem #D7B374;
   color: #fff;
 }
@@ -565,7 +663,7 @@ table {
 }
 .mui-content .modelLsit {
   position: absolute;
-  z-index: 1;
+  z-index: 9999;
   width: 100%;
   top: 6.75rem;
   bottom: 0;
@@ -581,31 +679,55 @@ table {
   margin-bottom: 0.625rem;
 }
 .mui-content .marketingItem {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
   flex: 1;
   padding: 0 0.5rem;
   margin-bottom: 0.625rem;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   background: #fff;
+  -webkit-box-shadow: 0 0 0.5rem 0.125rem rgba(170, 168, 168, 0.5);
   box-shadow: 0 0 0.5rem 0.125rem rgba(170, 168, 168, 0.5);
 }
 .mui-content .marketingItem .itemTit {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
   flex: 1;
   height: 2.8125rem;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   border-bottom: 0.0625rem solid #E5E5E5;
 }
 .mui-content .marketingItem .itemTit .titInfo {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
   flex: 1;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 .mui-content .marketingItem .itemTit .titInfo .Tit {
   position: relative;
   left: -0.5rem;
   text-indent: 0.75rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   border-left: 0.1875rem solid #D7B374;
   height: 1.5rem;
@@ -613,9 +735,13 @@ table {
   color: #333;
 }
 .mui-content .marketingItem .itemTit .titInfo .titType {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   width: 3.1875rem;
   height: 1rem;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   line-height: 1rem;
   text-align: center;
@@ -625,7 +751,11 @@ table {
   border-radius: 0.5rem 0.5rem 0.5rem 0;
 }
 .mui-content .marketingItem .itemTit .titState {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   font-size: 1rem;
   color: #333;
@@ -640,13 +770,24 @@ table {
   color: #333;
 }
 .mui-content .marketingItem .marketingInfo {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
   flex: 1;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 .mui-content .marketingItem .marketingInfo .InfoLeft {
   padding: 0.9375rem 0 0;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
   flex: 1;
   width: 13.875rem;
 }
@@ -673,14 +814,22 @@ table {
   background-size: 100% 100%;
 }
 .mui-content .marketingItem .marketingFn {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
   flex: 1;
   height: 2.5rem;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   border-top: 0.0625rem solid #E5E5E5;
 }
 .mui-content .marketingItem .marketingFn .fnItem,
 .mui-content .marketingItem .marketingFn .fnItemInfo {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
   flex: 1;
   text-align: center;
   height: 1.625rem;
@@ -696,23 +845,39 @@ table {
   background: #fff;
 }
 .mui-content .modelLsit .modelItem {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   padding: 0 0.75rem;
   background: url(../img/qrcodeMarketing.png) left top no-repeat;
   background-size: 100% 100%;
   height: 7.625rem;
+  -webkit-box-shadow: 0 0 0.5rem 0.125rem rgba(170, 168, 168, 0.5);
   box-shadow: 0 0 0.5rem 0.125rem rgba(170, 168, 168, 0.5);
 }
 .mui-content .modelLsit .modelItem .modelInfo {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   width: 10rem;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
   flex: 1;
   padding-right: 25px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
 }
 .mui-content .modelLsit .modelItem .modelInfo .modelTit {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
   flex: 1;
   margin-bottom: 1.46875rem;
   font-size: 1.125rem;
@@ -722,6 +887,8 @@ table {
   white-space: nowrap;
 }
 .mui-content .modelLsit .modelItem .modelInfo .modelDate {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
   flex: 1;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -730,8 +897,14 @@ table {
   color: #999;
 }
 .mui-content .modelLsit .modelItem .modelEdit {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   width: 4.75rem;
   height: 1.6875rem;
@@ -741,17 +914,27 @@ table {
 }
 .share {
   position: fixed;
-  bottom: -3.125rem;
+  bottom: -100%;
+  -webkit-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out;
   z-index: 9999;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
   flex: 1;
   width: 100%;
-  height: 3.125rem;
+  height: 100%;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  padding-bottom: 10px;
   font-size: 0rem;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
-  background: rgba(45, 45, 45, 0.75);
+  background: rgba(45, 45, 45, 0.35);
 }
 .share img {
   width: 2.8125rem;
@@ -762,5 +945,5 @@ table {
   margin: 0;
 }
 .shareAni {
-  bottom: 0;
+  bottom: 0%;
 }

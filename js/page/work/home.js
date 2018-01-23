@@ -34,6 +34,7 @@ var Vue = new Vue({
 			_this.showBox.isBOOS = (Fun_App.getdata("jobCode") == 'BOSS') ? true : false;
 			_this.showBox.isMaster = (Fun_App.getdata("merchantType") != 0) ? true : false;
 			Fun_App.pulldownRefresh();
+			console.log(Fun_App.getdata("merchantId"))
 			window.addEventListener("getindexData", function() {
 				setTimeout(function() {
 					_this.getHome(function(resData) {
@@ -101,19 +102,19 @@ var Vue = new Vue({
 		open: function(pageurl, sendData) {
 			Fun_App.openWin(pageurl + '.html', "pop-in", sendData);
 		},
-		createView: function() {
+		createView: function(view) {
 			var merchantInfo = eval('(' + Fun_App.getdata('merchantInfo') + ')')
 			var token = Fun_App.getdata('token'),
 				merchantId = encodeURI(Fun_App.getdata('merchantId2')),
 				mchName = encodeURI(encodeURI(merchantInfo.merchantName)),
 				logoImg = encodeURI(merchantInfo.merchantLogo),
 				mchAddr = encodeURI(encodeURI(merchantInfo.merchantAddress));
-				var url = '?token='+token+'&merchantId='+merchantId+'&mchName='+mchName+'&mchAddr='+mchAddr+'&logoImg='+picservice+logoImg
-				console.log('http://test.duikavip.com:9090/tkb'+url)
-			if(!plus.webview.getWebviewById('tkb')) {
-				plus.webview.create('http://test.duikavip.com:9090/tkb' + url, 'tkb');
-			}
-			plus.webview.getWebviewById('tkb').show()
+				var url = '?token='+token+'&merchantId='+merchantId+'&mchName='+mchName+'&mchAddr='+mchAddr+'&logoImg='+picservice+logoImg;
+				if(!plus.webview.getWebviewById('tkb')) {
+					plus.webview.create('http://h5.duikavip.com/'+view + url, 'tkb');
+				}
+				plus.webview.getWebviewById('tkb').show();
+
 		}
 	}
 })

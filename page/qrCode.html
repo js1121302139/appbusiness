@@ -161,7 +161,7 @@
 					break;
 			}
 			console.log(result + "--->>>->");
-			if(result != null && result != 'undefined') {
+			if(result != null && result != 'undefined') { 
 				var qrType = Fun_App.getextrasdata();
 				var resultArray = result.split('&');
 				resObj = {
@@ -177,23 +177,38 @@
 						orderVerification(result);
 						break;
 					case SONSIGN:
-						console.log(typeof result);
-						var resData = result.split("&");
-						var data = resData[0].replace(/=/g, "@");
-						if(resData[1] == undefined) {
-							mui.toast("二维码识别错误！")
+						console.log(JSON.stringify(result));
+						var resData = result.split("&");   
+						console.log(resData);
+						try{
+							var data = eval("(" + atob(resData[0]) + ")");
+						}catch(e){
+							//TODO handle the exception
+							mui.toast("二维码数据错误！");
+							plus.webview.currentWebview().close(); 
+							return false;
+						}
+						if(!resData[1]) {
+							mui.toast("二维码识别错误！");
 							plus.webview.currentWebview().close();
 						}
-						Fun_App.openWin("./work/" + resData[1] + "Sonsign.html", "pop-in", data);
+						var pageUrl = "./work/" + data.method + "Sonsign.html";
+						delete data.method;
+						data = btoa(JSON.stringify(data)).replace(/=/g, "@");
+						console.log(JSON.stringify(data))
+						Fun_App.openWin(pageUrl, "pop-in", data);
 						break;
 					case TICKER:
 						if(atob(resObj.body).split(',')[1] === Fun_App.getdata('merchantId2')) {
 							Fun_App.openWin("./work/marketingAdmin/marketingClear.html", "pop-in", resObj.body);
-						}else{
+						} else {
 							mui.toast('这个券不是是咱商铺的！')
 							plus.webview.currentWebview().close();
 						}
-
+						break;
+					default:
+						plus.webview.currentWebview().close();
+						mui.toast("没有匹配");
 						break;
 				}
 				//(Fun_App.getextrasdata() != 'luck') ? orderVerification(result): Fun_App.openWin("./work/luck.html", "pop-in", result);

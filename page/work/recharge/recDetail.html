@@ -17,9 +17,9 @@
 				<h1 class="mui-title">账单明细</h1>
 				<!--<span id="Topactivity" class="mui-btn  Topactivity mui-btn-blue mui-btn-link mui-pull-right" @click="open">创建活动</span>-->
 			</header>
-			<div class="mui-content"> 
-				<div class="detailPageTit">
-					<div class="detailPageTitItem" v-for="item in tit"  @click="changeTab(item)">
+			<div class="mui-content">
+				<div class="detailPageTit ma10">
+					<div class="detailPageTitItem" v-for="item in tit" @click="changeTab(item)">
 						<span v-text="item.name+'记录'" :class="{active : item.active}">
 							
 						</span>
@@ -28,38 +28,39 @@
 				<!--充值记录-->
 				<div class="detailCard" v-if="tit[0].active">
 					<div class="detailCardItem">
-						<p class="CardItemMoney" v-text="topData.mSum">9999</p>
+						<p class="CardItemMoney" v-text="topData.pSum ">9999</p>
 						<!--<p class="CardItemMoney" v-text="99">9999</p>-->
-						<p class="CardItemtit"><img src="img/recCountMoney-ico.png"/><span>总充值金额</span></p>
-						
+						<p class="CardItemtit"><img src="img/recCountMoney-ico.png" /><span>总充值金额</span></p>
+
 					</div>
 					<div class="detailCardItem">
-						<p class="CardItemMoney">{{topData.pSum  | fillZero}}</p>
+						<p class="CardItemMoney">{{topData.mSum | fillZero}}</p>
 						<!--<p class="CardItemMoney" v-text="99">9999</p>-->
-						<p class="CardItemtit"><img src="img/recCountPeople.png"/><span>总充值人数</span></p>
-						
+						<p class="CardItemtit"><img src="img/recCountPeople.png" /><span>总充值人数</span></p>
+
 					</div>
 				</div>
-				<!--消费记录-->
+				<!--消费记录 tit[1].active-->
 				<div class="detailCard" v-if="tit[1].active">
 					<div class="detailCardItem">
-						<p class="CardItemMoney" v-text="topData.mSum">9999</p>
+						<p class="CardItemMoney" >{{topData.consumeMoney | fillZero}}</p>
 						<!--<p class="CardItemMoney" v-text="99">9999</p>-->
-						<p class="CardItemtit"><img src="img/recCountMoney-ico.png"/><span>已消费总额</span></p>
-						
+						<p class="CardItemtit"><img src="img/recCountMoney-ico.png" /><span>已消费总额</span></p>
+
 					</div>
 					<div class="detailCardItem">
-						<p class="CardItemMoney">{{topData.pSum  | fillZero}}</p>
+						<p class="CardItemMoney">{{topData.notConsumeMoney | fillZero}}</p>
 						<!--<p class="CardItemMoney" v-text="99">9999</p>-->
-						<p class="CardItemtit"><img src="img/recCountPeople.png"/><span>未消费总额</span></p>
-						
+						<p class="CardItemtit"><img src="img/recCountPeople.png" /><span>未消费总额</span></p>
+
 					</div>
 				</div>
 				<div class="clickItem" :key="item" v-for="item in pageData">
 					<div class="pullDownItemHeader" @click="showDrop(item)">
 						<h1 v-text="item.payTime">2017-11</h1>
 						<div class="recInfo">
-							<p v-text="'充值'+item.pSum+'元,共'+item.mSum+'人'">充值222元</p>
+							<p v-if="tit[0].active" v-text="'充值'+item.pSum+'元,共'+item.mSum+'人'">充值222元</p>
+							<p v-if="tit[1].active" v-text="'消费'+item.pSum+'元,共'+item.mSum+'人'">充值222元</p>
 							<img :class="{trdropDown:item.show}" src="img/dropDown-ico.png" />
 						</div>
 						<!--<p v-text="item.mSum">99人</p>-->
@@ -70,10 +71,12 @@
 								<p v-text="dayItem.payTime">07-11</p>
 							</div>
 							<div class="onlineRec">
-								<p v-text="dayItem.mSum+'人充值'">+1999.00</p>
+								<p v-if="tit[0].active" v-text="dayItem.mSum+'单充值'">+1999.00</p>
+								<p v-if="tit[1].active" v-text="dayItem.mSum+'单消费'">+1999.00</p>
 							</div>
 							<div class="onlineRec">
-								<p v-text="'+'+dayItem.pSum">+1999.00</p>
+								<p v-if="tit[0].active" v-text="'+'+dayItem.pSum">+1999.00</p>
+								<p v-if="tit[1].active" v-text="'-'+dayItem.pSum">+1999.00</p>
 							</div>
 						</div>
 					</div>
@@ -133,6 +136,19 @@
 					// 获取所有的充值金额，人数
 					getAllsum: function(callBack) {
 						var sendData = {
+							config: {},
+							data_Config: [
+								'merchantCode=' + Fun_App.getdata('merchantId')
+							],
+							fun_Success: function(resData) {
+								callBack.call(this, resData);
+							}
+						}
+						Fun_App.ExEncryptionAjax('member-service/mem/merchantAcct/getAllSum', sendData, '', 'post', 'abc');
+					},
+					// 获取充值卡的消费金额
+					getConsumptionAll: function(callBack) {
+						var sendData = {
 							config: {
 								merchantCode: Fun_App.getdata('merchantId')
 							},
@@ -140,7 +156,7 @@
 								callBack.call(this, resData);
 							}
 						}
-						Fun_App.ExEncryptionAjax('member-service/mem/merchantAcct/getAllSum', sendData, '', 'post', 'abc')
+						Fun_App.ExEncryptionAjax('member-service/mem//merchantAcct/getConsumeAndNotConsumeMoney', sendData, '', 'get', 'merchant_query');
 					},
 					// 充值卡一年的充值记录
 					getYearDetail: function(callBack) {
@@ -241,6 +257,9 @@
 								}
 								_this.pageData = resData;
 							})
+							_this.getConsumptionAll(function(resData) {
+								_this.topData = resData.data;
+							})
 						} else {
 							this.getYearDetail(function(resData) {
 								console.log(JSON.stringify(resData))
@@ -249,6 +268,9 @@
 									resData.data[i].data = [];
 								}
 								_this.pageData = resData.data;
+							})
+							_this.getAllsum(function(resData) {
+								_this.topData = resData.data;
 							})
 						}
 					},
@@ -261,9 +283,9 @@
 						})
 					}
 				},
-				filters:{
-					fillZero:function(val){
-						if(!val){
+				filters: {
+					fillZero: function(val) {
+						if(!val) {
 							return 0;
 						}
 						return val;

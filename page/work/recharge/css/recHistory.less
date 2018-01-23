@@ -1,6 +1,19 @@
 @import './common.less';
 @import '../../../../css/page/common.less';
 .topBar("../../../../img/topBack-ico.png");
+.isNoData(7.4375rem, 0);
+.isNoData {
+    .isNoDataBg {
+        background: url(../../../../images/work-message-nomsgBg.png) left top no-repeat !important;
+        background-size: cover !important;
+        height: 7.4375rem;
+    }
+}
+
+.scale1 {
+    -webkit-transform: scale(1)!important;
+    transform: scale(1)!important;
+}
 .mui-content {
     .detailPageTit();
     .wrapperList(7.125rem, 0, none, block);

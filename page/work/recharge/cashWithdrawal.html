@@ -23,7 +23,7 @@
 						<h2 class="todayRecMoney" v-text="topData.allMoney">999</h2>
 						<div class="todayRecTit">
 							<img src="img/todayrecMoney.png" />
-							<p>今日充值金额</p>
+							<p>线上充值总金额</p>
 						</div>
 					</div>
 					<div class="todayRecInfo">
@@ -61,7 +61,7 @@
 					<div class="pullDownItemHeader" @click="showDrop(item)">
 						<h1 v-text="item.payTime">2017-11</h1>
 						<div class="recInfo">
-							<p v-text="item.pSum">充值222元</p>
+							<p v-text="'充值'+item.pSum+'元'">充值222元</p>
 							<img :class="{trdropDown:item.show}" src="img/dropDown-ico.png" />
 						</div>
 						<!--<p v-text="item.mSum">99人</p>-->
@@ -135,11 +135,12 @@
 			methods: {
 				getAllsum: function(callBack) {
 					var sendData = {
-						config: {
-							merchantCode: Fun_App.getdata('merchantId')
-						},
+						data_Config: [
+							'merchantCode=' + Fun_App.getdata('merchantId')
+						],
+						config: {},
 						fun_Success: function(resData) {
-							callBack(resData);
+							callBack.call(this, resData);
 						}
 					}
 					Fun_App.ExEncryptionAjax('member-service/mem/merchantAcct/getAllSum', sendData, '', 'post', 'abc')
@@ -210,7 +211,8 @@
 							mui.toast('结算条件不足!');
 							return false;
 						}
-					}var _this = this ;
+					}
+					var _this = this;
 					mui.plusReady(function() {
 						Fun_App.openWin(url + ".html", 'pop-in', {
 							data: data,

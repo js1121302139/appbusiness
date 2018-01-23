@@ -12,23 +12,34 @@
 
 	<body>
 		<div id="recHistory">
-			<header class="mui-bar topBar mui-bar-nav">	
+			<header class="mui-bar topBar mui-bar-nav">
 				<a class="mui-action-back topBack-ico mui-pull-left"></a>
-				<h1 class="mui-title">充值用户</h1>
+				<h1 class="mui-title">{{memName}}</h1>
 				<!--<span id="Topactivity" class="mui-btn  Topactivity mui-btn-blue mui-btn-link mui-pull-right" @click="open">创建活动</span>-->
 			</header>
 			<div class="mui-content">
 				<div class="detailPageTit">
-					<div class="detailPageTitItem" v-for="item in tit"  @click="changeTab(item)">
+					<div class="detailPageTitItem" v-for="item in tit" @click="changeTab(item)">
 						<span v-text="item.name+'记录'" :class="{active : item.active}">
 							
 						</span>
 					</div>
 				</div>
+				<!--isNoData-->
+				<div class="isNoData" v-if="false" :class="{scale1:isNoData}">
+					<div class="isNoDataInfo mui-text-center">
+						<div class="isNoDataBg"></div>
+						<p class="isNoDataTit">暂无记录</p>
+						<p>他还没有对你的充值卡产生兴趣哦！</p>
+					</div>
+				</div>
 				<div id="wrapper" class="recHistoryList wrapperList">
 					<ul>
-						<li v-for="item in pageList" v-if="tit[0].active">
-							<div class="historyItem">
+						<li :key="item" v-for="(item,key) in pageList" v-if="tit[0].active">
+							<div class="ondayRecHistory">
+								<h1 v-text="key	">7月14日</h1><span>充值{{item.rechargeTotalMoney}}元</span>
+							</div>
+							<div class="historyItem" :key="items" v-for="items in item.rechargeData">
 								<!--<div class="ListItemLeft">
 									<p>用户</p>
 									<p v-text="item.offer_name">充值360充值360</p>
@@ -40,31 +51,34 @@
 									<p>微信充值</p>
 								</div>-->
 								<div class="historyItemTit">
-									<p v-text="'订单号:'+item.order_no">订单号:</p>
+									<p v-text="'订单号:'+items.order_no">订单号:</p>
 									<p v-text="memName">hajkdhakd</p>
 								</div>
 								<div>
-									<p class="recName" v-text="item.offer_name">chongzhi</p>
-									<p class="recPrice" v-text="'+'+item.list_price">+115</p>
+									<p class="recName" v-text="items.offer_name">chongzhi</p>
+									<p class="recPrice" v-text="'+'+items.list_price">+115</p>
 								</div>
 								<div>
-									<p class="recTime" v-text="item.pay_time">16:00</p>
-									<p class="recType">weixin</p>
+									<p class="recTime" v-text="items.pay_time">16:00</p>
+									<p class="recType">微信</p>
 								</div>
 							</div>
 						</li>
-						<li v-for="item in pageList" v-if="tit[1].active">
-							<div class="historyItem">
+						<li :key="item" v-for="(item,key) in pageList" v-if="tit[1].active">
+							<div class="ondayRecHistory">
+								<h1 v-text="key">7月14日</h1><span>消费{{item.consumeTotalMoney}}元</span>
+							</div>
+							<div class="historyItem" :key="items" v-for="items in item.consumeData">
 								<div class="historyItemTit">
-									<p v-text="'订单号:'+item.order_sn">订单号:</p>
+									<p v-text="'订单号:'+items.order_sn">订单号:</p>
 									<p v-text=""></p>
 								</div>
 								<div>
-									<p class="recName" v-text="item.member_name">chongzhi</p>
-									<p class="recPrice" v-text="item.money_total">+115</p>
+									<p class="recName" v-text="items.member_name">chongzhi</p>
+									<p class="recPrice" v-text="items.money_total">+115</p>
 								</div>
 								<div>
-									<p class="recTime" v-text="item.pay_time">16:00</p>
+									<p class="recTime" v-text="items.pay_time">16:00</p>
 									<p class="recType">消费金额</p>
 								</div>
 								<!--<div class="ListItemLeft">
@@ -113,7 +127,9 @@
 						memberId: '',
 						memName: '',
 						pageList: [],
-						getUrl: 'member-service/mem/merchantAcct/getMemberRecharge'
+						getUrl: 'member-service/mem/merchantAcct/getMemberRecharge',
+						// 没有数据
+						isNoData: true
 					}
 				},
 				created: function() {
@@ -122,9 +138,13 @@
 						var userInfo = Fun_App.getextrasdata();
 						console.log(JSON.stringify(userInfo))
 						_this.memberId = userInfo.memId;
-						_this.memName  = userInfo.memName
+						_this.memName = userInfo.memName
 						_this.getUserRecDetail(function(resData) {
 							_this.pageList = resData;
+							if(resData.length) {
+								_this.isNoData = false;
+							}
+							console.log(JSON.stringify(_this.pageList))
 						})
 					})
 				},
@@ -145,13 +165,13 @@
 							],
 							fun_Success: function(resData) {
 								callBack(resData.data);
+								wrapper.refresh();
 							}
 						}
 						Fun_App.ExEncryptionAjax(this.getUrl, sendData, '', 'post', 'abc')
 					},
 					// 改变Tab状态
 					changeTab: function(item) {
-						wrapper.refresh();
 						var _this = this;
 						for(var i = 0; i < this.tit.length; i++) {
 							this.tit[i].active = false;
@@ -166,6 +186,11 @@
 						}
 						this.getUserRecDetail(function(resData) {
 							_this.pageList = resData;
+							if(resData.length) {
+								_this.isNoData = false;
+							} else {
+								_this.isNoData = true;
+							}
 						})
 					},
 					// 上拉加载

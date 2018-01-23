@@ -6,6 +6,7 @@
 		<title></title>
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<link href="../../../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../../../css/mui.picker.min.css" />
 		<link rel="stylesheet" href="../../../css/pullToRefresh.css" />
 		<link rel="stylesheet" type="text/css" href="css/index.css" />
 	</head>
@@ -15,7 +16,7 @@
 			<header class="mui-bar topBar mui-bar-nav">
 				<a class="mui-action-back topBack-ico mui-pull-left"></a>
 				<h1 class="mui-title">营销管理</h1>
-				<span id="Topactivity" class="mui-btn  Topactivity mui-btn-blue mui-btn-link mui-pull-right" @click="">新建</span>
+				<!--<span id="Topactivity" class="mui-btn  Topactivity mui-btn-blue mui-btn-link mui-pull-right" @click="">新建</span>-->
 			</header>
 			<div class="mui-content">
 				<div class="detailPageTit">
@@ -36,6 +37,13 @@
 					<div class="optionItem">
 						未使用
 					</div>-->
+				</div>
+				<div class="isNoData" v-if="!isNoData" :class="{scale1:!isNoData}">
+					<div class="isNoDataInfo mui-text-center">
+						<div class="isNoDataBg"></div>
+						<p class="isNoDataTit">无数据!</p>
+						<p>更新券状态就有了哦!</p>
+					</div>
 				</div>
 				<div id="wrapper1" class="wrapperLsit" v-show="activityState[0].active">
 					<ul>
@@ -68,7 +76,7 @@
 									</div>
 								</div>
 								<div class="marketingFn">
-									<div class="fnItem">
+									<div class="fnItem" @click="open('getTicketInfo',item)">
 										领取详情
 									</div>
 									<div class="fnItem" @click="share(item)">
@@ -159,7 +167,7 @@
 									</div>
 								</div>
 								<div class="marketingFn">
-									<div class="fnItemInfo">
+									<div class="fnItemInfo" @click="open('getTicketInfo',item)">
 										领取详情
 									</div>
 								</div>
@@ -184,6 +192,7 @@
 					</ul>
 				</div>
 			</div>
+			<!--分享-->
 			<div class="share" @click.stop="share" :class="{shareAni : shareInfoshow.show}">
 				<img :src="item.img" :key="item" @click.stop="sendShare(item)" v-for="item in shareInfo" />
 				<!--<img src="../../../img/sharewxhy-ico.png" />-->
@@ -194,17 +203,18 @@
 				</div>
 				<div class="editMarketing" v-if="editInfo.editTit=='免单券'">
 					<div class="editMarketingTit">
-						<span v-text="editInfo.editTit+'编辑'">免单券编辑</span>
+						<input type="text" name="" id="" v-model="editInfo.ticketName" :placeholder="editInfo.editTit+'名称'" />
+						<!--<span v-text="editInfo.editTit+'编辑'">免单券编辑</span>-->
 					</div>
 					<div class="modelItem">
 						<div class="modelInfo">
 							<!--<p class="modelTit">免单券</p>-->
 							<div class="editMarketingForm">
 								<input type="text" placeholder="使用有效期" :value="editInfo.effectETime" class="firstInput" />
-								<input type="text" placeholder="份数" v-model="editInfo.count" :value="editInfo.count" class="lastInput" />
+								<input type="text" placeholder="份数" v-model="editInfo.count" class="lastInput" />
 							</div>
 							<div class="editMarketingForm">
-								<input type="text" placeholder="备注(26个字以内)" :value="editInfo.actiBrief" v-model="editInfo.actiBrief" class="firstInput" />
+								<input type="text" placeholder="备注(26个字以内)" disabled v-model="editInfo.actiBrief" class="firstInput" />
 							</div>
 						</div>
 						<div class="modelEdit">
@@ -213,7 +223,8 @@
 				</div>
 				<div class="editMarketing" v-if="editInfo.editTit=='菜品券'">
 					<div class="editMarketingTit">
-						<span v-text="editInfo.editTit+'编辑'">免单券编辑</span>
+						<input type="text" name="" id="" v-model="editInfo.ticketName" :placeholder="editInfo.editTit+'名称'" />
+						<!--<span v-text="editInfo.editTit+'编辑'">免单券编辑</span>-->
 					</div>
 					<div class="modelItem">
 						<div class="modelInfo">
@@ -231,6 +242,7 @@
 				</div>
 				<div class="editMarketing" v-if="editInfo.editTit=='现金券'">
 					<div class="editMarketingTit">
+						<!--<input type="text" name="" id="" v-model="editInfo.ticketName" :placeholder="editInfo.editTit+'名称'" />-->
 						<span v-text="editInfo.editTit+'编辑'">免单券编辑</span>
 					</div>
 					<div class="modelItem">
@@ -239,8 +251,9 @@
 								<input type="text" placeholder="现金券名" v-model="editInfo.ticketName" :value="editInfo.ticketName" class="firstInput" />
 								<input type="text" placeholder="份数" v-model="editInfo.count" :value="editInfo.count" class="lastInput" />
 							</div>
-							<div class="editMarketingForm">
-								<input type="text" placeholder="使用有效期" :value="editInfo.effectETime" class="firstInput" />
+							<div class="editMarketingForm" @click.stop="selectDate">
+								<!--<p v-text="editInfo.effectETime" @clcik="selectDate" class="firstInput"></p>-->
+								<input type="text" placeholder="使用有效期" disabled v-model="editInfo.effectETime" class="firstInput" />
 							</div>
 						</div>
 						<div class="modelEdit">
@@ -252,6 +265,7 @@
 		</div>
 		<script src="../../../js/mui.min.js"></script>
 		<script type="text/javascript" src="../../../js/fas.js"></script>
+		<script src="../../../js/mui.picker.min.js"></script>
 		<script type="text/javascript" src="../../../js/md5.min.js"></script>
 		<script type="text/javascript" src="../../../js/iscroll.js"></script>
 		<script type="text/javascript" src="../../../js/pullToRefresh.js"></script>
@@ -265,6 +279,7 @@
 						pageNo: 1,
 						pageSize: pageLen,
 						totalNum: 0,
+						isNoData: true,
 						// 券列表状态默认1
 						status: 1,
 						editActive: false,
@@ -314,17 +329,24 @@
 								img: '../../../img/sharewxhy-ico.png'
 							}
 						],
+						// 获取分享对象
+						shareObj: {},
 						// 分享控件显示
 						shareInfoshow: {
 							show: false,
 							data: '',
 						},
 						// 编辑信息
-						editInfo: {},
+						editInfo: {
+							effectETime: '',
+							ticketName: ''
+						},
 						// 券列表
 						pageList: [],
 						// 营销模版
-						modelList: []
+						modelList: [],
+						// 分享的图片
+						shopLogo: ''
 					}
 				},
 				created: function() {
@@ -332,19 +354,56 @@
 					mui.plusReady(function() {
 						var hx = Fun_App.getextrasdata();
 						// if 是核销页面过来就关闭核销页面
-						if(hx){
-							plus.webview.close(plus.webview.currentWebview().opener(),'none');
+						if(hx) {
+							plus.webview.close(plus.webview.currentWebview().opener(), 'none');
 						}
 						// 获取券列表
 						_this.getTicketList(_this.pageNo, function(resData) {
 							_this.pageList = resData.data;
 							_this.totalNum = resData.total;
+							_this.isNoData = resData.total;
+							_this.isNoData = Number(resData.total);
 						});
 						// 获取营销模版列表
 						_this.getModels(_this.pageNo, function(resData) {
 							_this.modelList = resData.data;
 							_this.totalNum = resData.total;
 						});
+						// 获取分享的图片
+						plus.downloader.createDownload(Fun_App.getdata('shopLogo'), {}, function(download, status) {
+							console.log("---<<<" + _this.shopLogo)
+							if(download.state == 4 && status == 200) {
+								console.log(JSON.stringify(download))
+								// 将图片进行压缩
+								plus.zip.compressImage({
+									src: download.getFileName(),
+									dst: "_downloads/logo.png",
+									overwrite: true,
+									format: 'png',
+									quality: 50,
+									width: "10%",
+									height: "10%"
+								}, function(data) {
+									_this.shopLogo = [data.target];
+								}, function(err) {
+									_this.shopLogo = ['shareLogo.png'];
+								})
+								// 下载完成
+							} else {
+								_this.shopLogo = ['shareLogo.png'];
+							}
+						}).start()
+						// 获取分享对象
+						plus.share.getServices(function(success) {
+							for(var i = 0; i < success.length; i++) {
+								if(success[i].id === 'weixin') {
+									_this.shareObj = success[i];
+								}
+							}
+							console.log(JSON.stringify(_this.shareObj))
+						}, function(e) {
+							console.log(JSON.stringify(e));
+						})
 					})
 				},
 				mounted: function() {
@@ -364,6 +423,21 @@
 					}
 				},
 				methods: {
+					// 打开页面
+					open: function(url, data) {
+						console.log(data)
+						Fun_App.openWin(url + ".html", 'pop-in', data)
+					},
+					// 选择时间
+					selectDate: function() {
+						var _this = this;
+						var picker = new mui.DtPicker();
+						var seconds = new Date().getSeconds();
+						picker.show(function(rs) {
+							_this.editInfo.effectETime = rs.text + ":" + seconds;
+							picker.dispose();
+						});
+					},
 					getTicketList: function(pageNo, callBack) {
 						console.log(this.status + "status")
 						var sendData = {
@@ -421,6 +495,8 @@
 							_this.pageList = [];
 							_this.pageList = resData.data
 							_this.totalNum = resData.total;
+							_this.isNoData = resData.total;
+							_this.isNoData = Number(resData.total);
 						});
 					},
 					// 改变单张券的上下架
@@ -439,9 +515,9 @@
 									_this.pageList = [];
 									_this.pageList = resData.data;
 									_this.totalNum = resData.total;
-									console.log(resData.total + "total");
+									_this.isNoData = Number(resData.total);
 								});
-								// 重置三个列表的高度数据*****
+								// 重置三个列表的高度*****
 								wrapper1.refresh();
 								wrapper2.refresh();
 								wrapper3.refresh();
@@ -486,7 +562,7 @@
 						var url = '';
 						/*
 						 * （模版编辑和未使用的编辑）
-						 当前点击是模版中的编辑
+						 *	当前点击是模版中的编辑
 						 * */
 						if(this.editInfo.editType === 'model') {
 							url = 'order-service/merchant/ticket/save';
@@ -508,9 +584,16 @@
 									_this.getTicketList(_this.pageNo, function(resData) {
 										_this.pageList = resData.data
 										_this.totalNum = resData.total;
+										_this.isNoData = Number(resData.total);
 									});
 								}
 							}
+						}
+						console.log(JSON.stringify(sendData.config))
+						// 判断count是不是为0
+						if(this.editInfo.count == 0) {
+							mui.toast('优惠券数量不能为0');
+							return false;
 						}
 						Fun_App.ExEncryptionAjax(url, sendData, ' ', 'POST', 'abc');
 
@@ -558,31 +641,24 @@
 					},
 					// 发送分享
 					sendShare: function(item) {
-						var shareInfo = {};
 						var _this = this;
-						var logo = picservice + _this.shareInfoshow.data.merchantLogo;
-						plus.share.getServices(function(success) {
-							for(var i = 0; i < success.length; i++) {
-								shareInfo[success[i].id] = success[i]
-							}
-							shareInfo.weixin.send({
+						mui.plusReady(function() {
+							console.log(JSON.stringify(_this.shopLogo))
+							_this.shareInfoshow.show = !_this.shareInfoshow.show;
+							_this.shareObj.send({
 								title: _this.shareInfoshow.data.ticketName,
 								content: _this.shareInfoshow.data.actiBrief,
 								href: _this.shareInfoshow.data.url + '#/home/receive',
-								thumbs: ["shareLogo.png"],
-								pictures: [logo],
+								thumbs: _this.shopLogo,
 								extra: {
 									scene: item.id
 								}
 							}, function() {
 								mui.toast('分享成功！');
-								_this.shareInfoshow.show = !_this.shareInfoshow.show;
 							}, function(e) {
 								mui.toast('分享失败！');
-								_this.shareInfoshow.show = !_this.shareInfoshow.show;
+								console.log(JSON.stringify(e))
 							})
-						}, function(e) {
-							console.log(JSON.stringify(e));
 						})
 					},
 					// 分享按钮点击时

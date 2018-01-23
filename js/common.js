@@ -83,7 +83,7 @@ var CheckValue = function() {
 				mui.toast("请输入6位正确格式的验证码");
 				return false;
 			}
-		} 
+		}
 	}
 	this.checkPwd = function(val) {
 		var reg = /[\S]{6,16}/;
@@ -122,3 +122,25 @@ var changeClass = {
 
 	}
 }
+//
+//function bubbleSort(array, key) {
+//	var length = array.length,
+//		i,
+//		j,
+//		date=new Date(),
+//		temp;
+//	for(i = length - 1; 0 < i; i--) {
+//		for(j= 0; j < i; j++) {
+//			if(new Date(array[j][key]) instanceof "Date" && new Date(array[j + 1][key]) instanceof "Date"){
+//				array[j][key] = date(array[j][key]);
+//				array[j + 1][key] = date(array[j + 1][key]);
+//			}
+//			if(array[j][key] > array[j + 1][key]) {
+//				temp = array[j];
+//				array[j] = array[j + 1];
+//				array[j + 1] = temp;
+//			}
+//		}
+//	}
+//	return array;
+//}

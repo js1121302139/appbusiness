@@ -27,9 +27,7 @@ var Vue = new Vue({
 			try {
 				console.log(typeof Fun_App.getdata("userInfo"))
 				if(Fun_App.getdata("userInfo")!=='null' && Fun_App.getdata("userInfo")!==null && Fun_App.getdata("userInfo")!=='' ) {
-					if(Fun_App.getdata("token")){
-						_this.pullMessage();
-					}
+					_this.pullMessage();
 					_this.pageData = eval('(' + Fun_App.getdata('userInfo') + ')');
 					_this.pageData.password = atob(_this.pageData.password)  
 					_this.login();
@@ -95,6 +93,7 @@ var Vue = new Vue({
 			function logoutPushMsg(msg) {
 				if(msg.payload) {
 					if(typeof(msg.payload) == "string") {
+						console.log(msg)
 						localmsg = eval('(' + msg.content + ')');
 						createLocalPushMsg(localmsg);
 					} else {
@@ -110,6 +109,7 @@ var Vue = new Vue({
 				var options = {
 					cover: false,
 				};
+				console.log('推送消息启动')
 				plus.push.createMessage(content.title, "LocalMSG", options);
 			}
 		},

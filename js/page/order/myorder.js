@@ -104,7 +104,7 @@ var Vue = new Vue({
 			var alertStr =
 				'<div class=""><p>订单数</p><p>' + showData.orderNum + '</p></div>' +
 				'<div class=""><p>订单总额</p><p>' + showData.moneyTotal + '</p></div>' +
-				'<div class=""><p>兑贝抵扣</p><p>' + showData.integral + '</p></div>' +
+				'<div class=""><p>现金券抵扣</p><p>' + showData.integral + '</p></div>' +
 				'<div class=""><p>佣金扣除</p><p>' + showData.scalingAmount + '</p></div>' +
 				'<div class=""><p>营业收入</p><p>' + showData.actualIncome + '</p></div>';
 			mui.alert(alertStr, '', '知道了', function(e) {

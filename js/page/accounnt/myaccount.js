@@ -1,6 +1,7 @@
 (function($) {
+	// 主函数
+	
 	mui.plusReady(function() {
-
 		window.addEventListener("getInfodata", function() {
 			getInfodata();
 		})
@@ -13,7 +14,79 @@
 			merchantType = Fun_App.getdata("merchantType"),
 			allWebview = plus.webview.all(),
 			Sys = (plus.os.name == "Android") ? 1 : 2;
+		var updateBtnBox = document.querySelector("#updateBtn");
+		var dowonLoadBarBox = document.querySelector(".dowonLoadBar");
+		var isDowonLoad = updateBtnBox.getAttribute("isDowonLoad") || false;
 		Fun_App.storagedata("HJ", "CS");
+		
+		
+		function downloadInit(downloadUrl, callBack) {
+		var dowonloadFileName = downloadUrl.split('/');
+		dowonloadFileName = dowonloadFileName[dowonloadFileName.length - 1];
+		var _this = this;
+		// 创建下载任务
+		var task = plus.downloader.createDownload(downloadUrl, {
+			filename: "_downloads/DOWAPP/" + dowonloadFileName
+		})
+		// 监听下载任务 
+		task.addEventListener('statechanged', function(task, status) {
+			if(status == 200 && status !== null) {
+				changeSize(task, callBack);
+			}
+		})
+
+		plus.io.resolveLocalFileSystemURL('_downloads/DOWAPP/' + dowonloadFileName, function(e) {
+			_this.installAPP('_downloads/DOWAPP/' + dowonloadFileName)
+			updateBtnBox.setAttribute("isDowonLoad", 'end');
+			updateBtnBox.innerText = '可以安装'
+		}, function(e) {
+			console.log(JSON.stringify(e))
+			// 开始下载任务
+			task.start();
+		})
+		// 安装app
+		this.installAPP = function(appUrl) {
+			plus.runtime.install(appUrl, {
+				force: false
+			}, function(success) {
+				// 安装成功
+				updateBox.classList.add("mui-hidden");
+			}, function(err) {
+				mui.toast('安装出错，请前往应用商店下载安装！');
+			})
+		}
+		// 实时监听安装包下载的进度
+		function changeSize(res, callBack) {
+			// 计算当前的下载进度
+			var downloadSpeed = Number((res.downloadedSize / res.totalSize) * 100).toFixed(2);
+			callBack && callBack({
+				speed: downloadSpeed,
+				state: res.state,
+				path: res.options.filename
+			});
+		}
+		// 判断当前运行环境是否安卓
+		if(plus.os.name !== 'Android') return false;
+		// 获取当前网络类型 
+		var netType = plus.networkinfo.getCurrentType();
+		// 判断当前网络类型
+		if(netType == 1 || netType == 0) {
+			mui.toast('当前无网络连接!');
+			return false;
+		}
+		// 监听推送消息点击事件
+		plus.push.addEventListener("click", function(msg) {
+			// 格式化获取到的payload
+			var resData = eval('(' + msg.payload + ')');
+			// 若当前的的状态为true就进行安装app
+			if(resData.state) {
+				// 安装app方法
+				_this.installAPP(resData.path)
+			}
+		}, false);
+
+	}
+
 		//		changeHJBox.addEventListener("tap", function() {
 		//			if(Fun_App.getdata("HJ")=="CS"){		
 		//				alert("当前环境正式")
@@ -64,7 +137,7 @@
 				page: "./rightsBook"
 			},
 			"#setWifi": {
-				page: "./setwifi/index"
+				page: "./setWifi/index"
 			}
 		};
 		//打开页面
@@ -145,7 +218,6 @@
 		function showUpdateVersion() {
 			var version = (plus.os.name == "Android") ? 1 : 2;
 			var nowEdition = plus.runtime.version;
-
 			var updateDate = {
 				config: {
 					"token": Fun_App.getdata("token"),
@@ -187,10 +259,26 @@
 		});
 
 		//开始下载新版本
+		var upAPP = null,
+			appPath = '';
 		mui(document.body).on('tap', '#updateBtn', function(e) {
-			updateBox.classList.add("mui-hidden");
-			if(plus.os.name == "Android") {
-				plus.runtime.openURL(downLoadUrl);
+			if(plus.os.name === "Android") {
+				if(!isDowonLoad) {
+					updateBtnBox.innerText = '正在下载···'
+					upAPP = new downloadInit('https://api.duikavip.com/portal/duika_v1.3.4.apk', function(res) {
+						updateBtnBox.setAttribute("isDowonLoad", 'start');
+						dowonLoadBarBox.style.width = res.speed + "%";
+						if(res.state == 4) {
+							updateBtnBox.setAttribute("isDowonLoad", 'end');
+							updateBtnBox.innerText = '可以安装'
+							appPath = res.path;
+						}
+					});
+				}
+				if(isDowonLoad == 'end') {
+					console.log(appPath);
+					upAPP.installAPP(appPath);
+				}
 			} else {
 				plus.runtime.openURL("https://itunes.apple.com/us/app/%E5%85%91%E5%92%96%E8%81%94%E7%9B%9F/id1252521011?mt=8");
 			}
@@ -212,7 +300,6 @@
 			}
 			callNumBox.addEventListener("tap", function() {
 				var callTel = this.querySelector("a").getAttribute("href");
-				console.log(callTel)
 				plus.device.dial(callTel, true);
 			})
 			Fun_App.ExAjax("merchantPerson/index", sendData)
